@@ -20,10 +20,10 @@
 // | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | ESC  |
 //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
                         bindings = <
-   &none &kp B &kp L &kp D &kp C &kp V              &kp J &kp Y  &kp O     &kp U    &kp COMMA &none
-   &none &kp N &kp R &kp T &kp S &kp G              &kp P &kp H  &kp A     &kp E    &kp I     &none
-   &none &kp X &kp Q &kp M &kp W &kp Z              &kp K &kp F  &kp APOS  &kp SEMI &kp DOT   &none
-                  &kp TAB &kp SPACE &kp RET    &kp ESC &kp BSPC &mo 1
+   &none &kp B       &kp L      &kp D      &kp C       &kp V              &kp J &kp Y       &kp O      &kp U      &kp COMMA   &none
+   &none &mt LCTRL N &mt LALT R &mt LCMD T &mt LSHFT S &kp G              &kp P &mt LSHFT H &mt LCMD A &mt LALT E &mt LCTRL I &none
+   &none &kp X       &kp Q      &kp M      &kp W       &kp Z              &kp K &kp F       &kp APOS   &kp SEMI   &kp DOT     &none
+                            &kp TAB &kp SPACE &kp RET                               &kp ESC &kp BSPC &mo 1
                         >;
                 };
                 lower_layer {
