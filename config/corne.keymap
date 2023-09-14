@@ -15,14 +15,25 @@
 };
 
 / {
+    behaviors {
+        comma_capsword: comma_capsword {
+            compatible = "zmk,behavior-tap-dance";
+            label = "COMMA_CAPSWORD";
+            #binding-cells = <0>;
+            bindings =
+                <&kp COMMA>,
+                <&caps_word>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
         default_layer {
             bindings = <
-&none  &kp B        &kp L       &kp D       &kp C        &kp V        &kp J     &kp Y        &kp O       &kp U       &kp COMMA    &none
-&none  &mt LCTRL N  &mt LALT R  &mt LCMD T  &mt LSHFT S  &kp G        &kp P     &mt LSHFT H  &mt LCMD A  &mt LALT E  &mt LCTRL I  &none
-&none  &kp X        &kp Q       &kp M       &kp W        &kp Z        &kp K     &kp F        &kp APOS    &kp SEMI    &kp DOT      &none
+&none  &kp B        &kp L       &kp D       &kp C        &kp V        &kp J     &kp Y        &kp O       &kp U       &comma_capsword  &none
+&none  &mt LCTRL N  &mt LALT R  &mt LCMD T  &mt LSHFT S  &kp G        &kp P     &mt LSHFT H  &mt LCMD A  &mt LALT E  &mt LCTRL I      &none
+&none  &kp X        &kp Q       &kp M       &kp W        &kp Z        &kp K     &kp F        &kp APOS    &kp SEMI    &kp DOT          &none
                                 &kp TAB     &kp RET      &kp SPACE    &kp BSPC  &kp ESC      &mo 1
             >;
         };
@@ -41,7 +52,7 @@
 &none  &kp EXCL  &kp AT  &kp HASH  &kp DLLR  &kp PRCNT    &kp CARET  &kp AMPS   &kp KP_MULTIPLY  &kp LPAR  &kp RPAR  &none
 &none  &trans    &trans  &trans    &trans    &trans       &kp MINUS  &kp EQUAL  &kp LBKT         &kp RBKT  &kp BSLH  &none
 &none  &trans    &trans  &trans    &trans    &trans       &kp UNDER  &kp PLUS   &kp LBRC         &kp RBRC  &kp PIPE  &none
-                        &kp LGUI  &trans    &kp SPACE    &kp RET    &trans     &kp RALT
+                         &kp LGUI  &trans    &kp SPACE    &kp RET    &trans     &kp RALT
             >;
         };
     };
