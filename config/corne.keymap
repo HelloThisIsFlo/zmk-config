@@ -14,7 +14,6 @@
     flavor = "tap-preferred";
 };
 
-
 / {
     behaviors {
         comma_capsword: comma_capsword {
@@ -42,10 +41,10 @@
 
         default_layer {
             bindings = <
-&none  &kp B        &kp L       &kp D       &kp C        &kp V        &kp J       &kp Y        &kp O       &kp U       &comma_capsword  &none
-&none  &mt LCTRL N  &mt LALT R  &mt LCMD T  &mt LSHFT S  &kp G        &kp P       &mt LSHFT H  &mt LCMD A  &mt LALT E  &mt LCTRL I      &none
-&none  &kp X        &kp Q       &kp M       &kp W        &kp Z        &kp K       &kp F        &kp APOS    &kp SEMI    &dot_UNDERSCORE  &none
-                                &kp TAB     &kp RET      &kp SPACE    &lt 1 BSPC  &kp ESC      &mo 2
+&none  &kp B        &kp L       &kp D       &kp C        &kp V          &kp J       &kp Y        &kp O       &kp U       &comma_capsword  &none
+&none  &mt LCTRL N  &mt LALT R  &mt LCMD T  &mt LSHFT S  &kp G          &kp P       &mt LSHFT H  &mt LCMD A  &mt LALT E  &mt LCTRL I      &none
+&none  &kp X        &kp Q       &kp M       &kp W        &kp Z          &kp K       &kp F        &kp APOS    &kp SEMI    &dot_UNDERSCORE  &none
+                                &kp TAB     &kp RET      &lt 4 SPACE    &lt 1 BSPC  &kp ESC      &mo 2
             >;
         };
 
@@ -76,6 +75,17 @@
 &none  &trans    &trans  &trans    &trans    &trans       &kp UNDER  &kp PLUS   &kp LBRC         &kp RBRC  &kp PIPE  &none
                          &kp LGUI  &trans    &kp SPACE    &kp RET    &trans     &kp RALT
             >;
+        };
+
+        tmp_epistory {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans    &kp UP    &trans     &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &kp LEFT  &kp DOWN  &kp RIGHT  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans    &trans    &trans     &trans  &trans
+                        &trans  &trans  &trans    &trans  &trans    &trans
+            >;
+
+            label = "tmp_epistory";
         };
     };
 };
