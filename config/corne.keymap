@@ -10,52 +10,37 @@
 #include <dt-bindings/zmk/ext_power.h>
 
 &mt {
-    tapping-term-ms = <200>;
-    flavor = "tap-preferred";
- };
+        tapping-term-ms = <200>;
+        flavor = "tap-preferred";
+};
 
 / {
         keymap {
                 compatible = "zmk,keymap";
 
                 default_layer {
-// -----------------------------------------------------------------------------------------
-// |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BKSP |
-// | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
-// | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | ESC  |
-//                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
                         bindings = <
-   &none &kp B       &kp L      &kp D      &kp C       &kp V              &kp J &kp Y       &kp O      &kp U      &kp COMMA   &none
-   &none &mt LCTRL N &mt LALT R &mt LCMD T &mt LSHFT S &kp G              &kp P &mt LSHFT H &mt LCMD A &mt LALT E &mt LCTRL I &none
-   &none &kp X       &kp Q      &kp M      &kp W       &kp Z              &kp K &kp F       &kp APOS   &kp SEMI   &kp DOT     &none
-                            &kp TAB &kp RET &kp SPACE                               &kp BSPC &kp ESC &mo 1
+&none &kp B       &kp L      &kp D      &kp C       &kp V              &kp J &kp Y       &kp O      &kp U      &kp COMMA   &none
+&none &mt LCTRL N &mt LALT R &mt LCMD T &mt LSHFT S &kp G              &kp P &mt LSHFT H &mt LCMD A &mt LALT E &mt LCTRL I &none
+&none &kp X       &kp Q      &kp M      &kp W       &kp Z              &kp K &kp F       &kp APOS   &kp SEMI   &kp DOT     &none
+                        &kp TAB &kp RET &kp SPACE                               &kp BSPC &kp ESC &mo 1
                         >;
                 };
                 lower_layer {
-// -----------------------------------------------------------------------------------------
-// |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BKSP |
-// | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      |
-// | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
-//                    | GUI |     | SPC |   | ENT |     | ALT |
                         bindings = <
-   &none &kp N1            &kp N2           &kp N3             &kp N4       &kp N5                &kp N6   &kp N7   &kp N8 &kp N9    &kp N0 &none
-   &none &bt BT_SEL 0      &bt BT_SEL 1     &bt BT_SEL 2       &bt BT_SEL 3 &bt BT_SEL 4          &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans &none
-   &none &ext_power EP_TOG &ext_power EP_ON &ext_power  EP_OFF &trans       &trans                &trans       &trans         &trans   &trans   &trans &trans    &trans &none
+&none &kp N1            &kp N2           &kp N3             &kp N4       &kp N5                &kp N6   &kp N7   &kp N8 &kp N9    &kp N0 &none
+&none &bt BT_SEL 0      &bt BT_SEL 1     &bt BT_SEL 2       &bt BT_SEL 3 &bt BT_SEL 4          &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans &none
+&none &ext_power EP_TOG &ext_power EP_ON &ext_power  EP_OFF &trans       &trans                &trans       &trans         &trans   &trans   &trans &trans    &trans &none
                                                 &kp LGUI  &trans &kp SPACE                               &kp RET  &trans   &kp RALT
                         >;
                 };
 
                 raise_layer {
-// -----------------------------------------------------------------------------------------
-// |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BKSP |
-// | CTRL |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
-// | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
-//                    | GUI |     | SPC |   | ENT |     | ALT |
                         bindings = <
-   &none &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT   &kp CARET &kp AMPS  &kp KP_MULTIPLY &kp LPAR &kp RPAR &none
-   &none &trans   &trans &trans   &trans   &trans      &kp MINUS &kp EQUAL &kp LBKT        &kp RBKT &kp BSLH &none
-   &none &trans   &trans &trans   &trans   &trans      &kp UNDER &kp PLUS  &kp LBRC        &kp RBRC &kp PIPE &none
-                             &kp LGUI &trans   &kp SPACE   &kp RET   &trans    &kp RALT
+&none &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT   &kp CARET &kp AMPS  &kp KP_MULTIPLY &kp LPAR &kp RPAR &none
+&none &trans   &trans &trans   &trans   &trans      &kp MINUS &kp EQUAL &kp LBKT        &kp RBKT &kp BSLH &none
+&none &trans   &trans &trans   &trans   &trans      &kp UNDER &kp PLUS  &kp LBRC        &kp RBRC &kp PIPE &none
+                        &kp LGUI &trans   &kp SPACE   &kp RET   &trans    &kp RALT
                         >;
                 };
         };
