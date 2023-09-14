@@ -50,8 +50,8 @@
 
         Numbers {
             bindings = <
-&trans  &trans           &kp KP_N7       &kp KP_N8       &kp KP_N9        &trans       &trans    &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC  &trans
-&trans  &mt LCTRL LCTRL  &mt LALT KP_N4  &mt LCMD KP_N5  &mt LSHFT KP_N6  &trans       &kp LEFT  &kp UP             &kp DOWN         &kp RIGHT             &trans                &trans
+&trans  &trans           &kp KP_N9       &kp KP_N8       &kp KP_N9        &trans       &trans    &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC  &trans
+&trans  &mt LCTRL LCTRL  &mt LALT KP_N4  &mt LCMD KP_N5  &mt LSHFT KP_N6  &trans       &kp LEFT  &kp DOWN           &kp UP           &kp RIGHT             &trans                &trans
 &trans  &trans           &kp KP_N1       &kp KP_N2       &kp KP_N3        &trans       &trans    &trans             &trans           &trans                &trans                &trans
                                          &trans          &trans           &kp KP_N0    &trans    &trans             &trans
             >;
