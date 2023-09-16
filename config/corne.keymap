@@ -44,6 +44,24 @@
                 <&to 0>,
                 <&to 1>;
         };
+        k_toni: k_toni {
+            compatible = "zmk,behavior-tap-dance";
+            label = "K_TONI";
+            #binding-cells = <0>;
+            bindings =
+                <&kp K>,
+                <&none>,
+                <&toni>;
+        };
+    };
+
+    macros {
+        toni: toni {
+            compatible = "zmk,behavior-macro";
+            label = "TONI";
+            #binding-cells = <0>;
+            bindings = <&kp LS(T) &kp O &kp N &kp I>;
+        };
     };
 
     keymap {
@@ -51,7 +69,7 @@
 
         Gallium {
             bindings = <
-&none  &kp B        &kp L       &kp D       &kp C        &kp V          &kp K       &kp Y        &kp O       &kp U       &comma_capsword  &none
+&none  &kp B        &kp L       &kp D       &kp C        &kp V          &k_toni     &kp Y        &kp O       &kp U       &comma_capsword  &none
 &none  &mt LCTRL N  &mt LALT R  &mt LCMD T  &mt LSHFT S  &kp G          &kp P       &mt LSHFT H  &mt LCMD A  &mt LALT E  &mt LCTRL I      &none
 &none  &kp X        &kp Q       &kp M       &kp W        &kp Z          &kp J       &kp F        &kp APOS    &kp SEMI    &dot_UNDERSCORE  &none
                                 &kp TAB     &kp RET      &lt 6 SPACE    &lt 3 BSPC  &kp ESC      &mo 4
