@@ -34,18 +34,41 @@
             #binding-cells = <0>;
             mods = <(MOD_LSFT)>;
         };
+        Special_Key: Special_Key {
+            compatible = "zmk,behavior-tap-dance";
+            label = "SPECIAL_KEY";
+            #binding-cells = <0>;
+            bindings =
+                <&mo 3>,
+                <&none>,
+                <&to 0>,
+                <&to 1>;
+        };
     };
 
     keymap {
         compatible = "zmk,keymap";
 
-        default_layer {
+        Gallium {
             bindings = <
-&none  &kp B        &kp L       &kp D       &kp C        &kp V          &kp K       &kp Y        &kp O       &kp U       &comma_capsword  &none
-&none  &mt LCTRL N  &mt LALT R  &mt LCMD T  &mt LSHFT S  &kp G          &kp P       &mt LSHFT H  &mt LCMD A  &mt LALT E  &mt LCTRL I      &none
-&none  &kp X        &kp Q       &kp M       &kp W        &kp Z          &kp J       &kp F        &kp APOS    &kp SEMI    &dot_UNDERSCORE  &none
-                                &kp TAB     &kp RET      &lt 4 SPACE    &lt 1 BSPC  &kp ESC      &mo 2
+&none  &kp B        &kp L       &kp D       &kp C        &kp V          &kp K       &kp Y        &kp O         &kp U       &comma_capsword  &none
+&none  &mt LCTRL N  &mt LALT R  &mt LCMD T  &mt LSHFT S  &kp G          &kp P       &mt LSHFT H  &mt LCMD A    &mt LALT E  &mt LCTRL I      &none
+&none  &kp X        &kp Q       &kp M       &kp W        &kp Z          &kp J       &kp F        &kp APOS      &kp SEMI    &dot_UNDERSCORE  &none
+                                &kp TAB     &kp RET      &lt 5 SPACE    &lt 2 BSPC  &kp ESC      &Special_Key
             >;
+
+            label = "Gallium";
+        };
+
+        Sturdy {
+            bindings = <
+&none  &kp V        &kp M       &kp L       &kp C        &kp P          &kp X       &kp F        &kp O         &kp U       &kp J        &none
+&none  &mt LCTRL S  &mt LALT T  &mt LCMD R  &mt LSHFT D  &kp Y          &kp DOT     &mt LSHFT N  &mt LCMD A    &mt LALT E  &mt LCTRL I  &none
+&none  &kp Z        &kp K       &kp Q       &kp G        &kp W          &kp B       &kp H        &kp SQT       &kp SEMI    &kp COMMA    &none
+                                &kp TAB     &kp RET      &lt 5 SPACE    &lt 2 BSPC  &kp ESC      &Special_Key
+            >;
+
+            label = "Sturdy";
         };
 
         Numbers {
@@ -56,15 +79,15 @@
                                          &trans          &trans           &kp KP_N0    &trans    &trans             &trans
             >;
 
-            label = "num";
+            label = "Numbers";
         };
 
-        lower_layer {
+        Settings {
             bindings = <
-&none  &kp N1             &kp N2            &kp N3             &kp N4        &kp N5          &kp N6    &kp N7     &kp N8   &kp N9     &kp N0  &none
-&none  &bt BT_SEL 0       &bt BT_SEL 1      &bt BT_SEL 2       &bt BT_SEL 3  &bt BT_SEL 4    &kp LEFT  &kp DOWN   &kp UP   &kp RIGHT  &trans  &none
-&none  &ext_power EP_TOG  &ext_power EP_ON  &ext_power EP_OFF  &trans        &trans          &trans    &trans     &trans   &trans     &trans  &trans
-                                            &trans             &none         &kp LGUI        &trans    &kp SPACE  &kp RET
+&none  &trans             &trans            &trans             &trans        &trans          &trans  &trans     &trans   &trans  &trans  &trans
+&none  &bt BT_SEL 0       &bt BT_SEL 1      &bt BT_SEL 2       &bt BT_SEL 3  &bt BT_SEL 4    &trans  &trans     &trans   &trans  &trans  &none
+&none  &ext_power EP_TOG  &ext_power EP_ON  &ext_power EP_OFF  &trans        &trans          &trans  &trans     &trans   &trans  &trans  &trans
+                                            &trans             &none         &kp LGUI        &trans  &kp SPACE  &kp RET
             >;
         };
 
@@ -85,7 +108,7 @@
                         &trans  &trans  &trans    &trans  &trans    &trans
             >;
 
-            label = "tmp_epistory";
+            label = "TMP";
         };
     };
 };
