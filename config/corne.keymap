@@ -39,7 +39,7 @@
             label = "SPECIAL_KEY";
             #binding-cells = <0>;
             bindings =
-                <&mo 3>,
+                <&mo 4>,
                 <&none>,
                 <&to 0>,
                 <&to 1>;
@@ -51,10 +51,10 @@
 
         Gallium {
             bindings = <
-&none  &kp B        &kp L       &kp D       &kp C        &kp V          &kp K       &kp Y        &kp O         &kp U       &comma_capsword  &none
-&none  &mt LCTRL N  &mt LALT R  &mt LCMD T  &mt LSHFT S  &kp G          &kp P       &mt LSHFT H  &mt LCMD A    &mt LALT E  &mt LCTRL I      &none
-&none  &kp X        &kp Q       &kp M       &kp W        &kp Z          &kp J       &kp F        &kp APOS      &kp SEMI    &dot_UNDERSCORE  &none
-                                &kp TAB     &kp RET      &lt 5 SPACE    &lt 2 BSPC  &kp ESC      &Special_Key
+&none  &kp B        &kp L       &kp D       &kp C        &kp V          &kp K       &kp Y        &kp O       &kp U       &comma_capsword  &none
+&none  &mt LCTRL N  &mt LALT R  &mt LCMD T  &mt LSHFT S  &kp G          &kp P       &mt LSHFT H  &mt LCMD A  &mt LALT E  &mt LCTRL I      &none
+&none  &kp X        &kp Q       &kp M       &kp W        &kp Z          &kp J       &kp F        &kp APOS    &kp SEMI    &dot_UNDERSCORE  &none
+                                &kp TAB     &kp RET      &lt 6 SPACE    &lt 3 BSPC  &kp ESC      &mo 4
             >;
 
             label = "Gallium";
@@ -65,10 +65,21 @@
 &none  &kp V        &kp M       &kp L       &kp C        &kp P          &kp X       &kp F        &kp O         &kp U       &kp J        &none
 &none  &mt LCTRL S  &mt LALT T  &mt LCMD R  &mt LSHFT D  &kp Y          &kp DOT     &mt LSHFT N  &mt LCMD A    &mt LALT E  &mt LCTRL I  &none
 &none  &kp Z        &kp K       &kp Q       &kp G        &kp W          &kp B       &kp H        &kp SQT       &kp SEMI    &kp COMMA    &none
-                                &kp TAB     &kp RET      &lt 5 SPACE    &lt 2 BSPC  &kp ESC      &Special_Key
+                                &kp TAB     &kp RET      &lt 6 SPACE    &lt 3 BSPC  &kp ESC      &Special_Key
             >;
 
             label = "Sturdy";
+        };
+
+        QWERTY {
+            bindings = <
+&none  &kp Q        &kp W       &kp E       &kp R        &kp T          &kp Y       &kp U        &kp I         &kp O       &kp P           &none
+&none  &mt LCTRL A  &mt LALT S  &mt LCMD D  &mt LSHFT F  &kp G          &kp H       &mt LSHFT J  &mt LCMD K    &mt LALT L  &mt LCTRL SEMI  &none
+&none  &kp Z        &kp X       &kp C       &kp V        &kp B          &kp N       &kp M        &kp COMMA     &kp DOT     &kp SLASH       &none
+                                &kp TAB     &kp RET      &lt 6 SPACE    &lt 3 BSPC  &kp ESC      &Special_Key
+            >;
+
+            label = "QWERTY";
         };
 
         Numbers {
@@ -84,20 +95,24 @@
 
         Settings {
             bindings = <
-&none  &trans             &trans            &trans             &trans        &trans          &trans  &trans     &trans   &trans  &trans  &trans
+&none  &trans             &trans            &trans             &trans        &trans          &to 0   &to 1      &to 2    &trans  &trans  &trans
 &none  &bt BT_SEL 0       &bt BT_SEL 1      &bt BT_SEL 2       &bt BT_SEL 3  &bt BT_SEL 4    &trans  &trans     &trans   &trans  &trans  &none
 &none  &ext_power EP_TOG  &ext_power EP_ON  &ext_power EP_OFF  &trans        &trans          &trans  &trans     &trans   &trans  &trans  &trans
                                             &trans             &none         &kp LGUI        &trans  &kp SPACE  &kp RET
             >;
+
+            label = "Settings";
         };
 
-        raise_layer {
+        Symbols {
             bindings = <
 &none  &kp EXCL  &kp AT  &kp HASH  &kp DLLR  &kp PRCNT    &kp CARET  &kp AMPS   &kp KP_MULTIPLY  &kp LPAR  &kp RPAR  &none
 &none  &trans    &trans  &trans    &trans    &trans       &kp MINUS  &kp EQUAL  &kp LBKT         &kp RBKT  &kp BSLH  &none
 &none  &trans    &trans  &trans    &trans    &trans       &kp UNDER  &kp PLUS   &kp LBRC         &kp RBRC  &kp PIPE  &none
                          &kp LGUI  &trans    &kp SPACE    &kp RET    &trans     &kp RALT
             >;
+
+            label = "Symbols";
         };
 
         tmp_epistory {
@@ -108,7 +123,7 @@
                         &trans  &trans  &trans    &trans  &trans    &trans
             >;
 
-            label = "TMP";
+            label = "Episotory (TMP)";
         };
     };
 };
