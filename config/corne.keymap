@@ -80,9 +80,9 @@
 
         Sturdy {
             bindings = <
-&none  &kp V        &kp M       &kp L       &kp C        &kp P          &kp X       &kp F        &kp O       &kp U       &kp J        &none
+&none  &kp V        &kp M       &kp L       &kp C        &kp P          &kp B       &kp F        &kp O       &kp U       &kp J        &none
 &none  &mt LCTRL S  &mt LALT T  &mt LCMD R  &mt LSHFT D  &kp Y          &kp DOT     &mt LSHFT N  &mt LCMD A  &mt LALT E  &mt LCTRL I  &none
-&none  &kp Z        &kp K       &kp Q       &kp G        &kp W          &kp B       &kp H        &kp SQT     &kp SEMI    &kp COMMA    &none
+&none  &kp Z        &kp K       &kp Q       &kp G        &kp W          &kp X       &kp H        &kp SQT     &kp SEMI    &kp COMMA    &none
                                 &kp TAB     &kp RET      &lt 9 SPACE    &lt 6 BSPC  &kp ESC      &mo 7
             >;
 
