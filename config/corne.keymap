@@ -41,7 +41,7 @@
             bindings =
                 <&mo 7>,
                 <&none>,
-                <&to 0>,
+                <&to 1>,
                 <&to 4>;
         };
         k_toni: k_toni {
@@ -67,6 +67,17 @@
     keymap {
         compatible = "zmk,keymap";
 
+        Sturdy {
+            bindings = <
+&none  &kp V        &kp M       &kp L       &kp C        &kp P          &kp X       &kp F        &kp O       &kp U       &kp J        &none
+&none  &mt LCTRL S  &mt LALT T  &mt LCMD R  &mt LSHFT D  &kp Y          &kp DOT     &mt LSHFT N  &mt LCMD A  &mt LALT E  &mt LCTRL I  &none
+&none  &kp Z        &kp K       &kp Q       &kp G        &kp W          &kp B       &kp H        &kp SQT     &kp SEMI    &kp COMMA    &none
+                                &kp TAB     &kp RET      &lt 9 SPACE    &lt 6 BSPC  &kp ESC      &mo 7
+            >;
+
+            label = "Sturdy";
+        };
+
         Gallium {
             bindings = <
 &none  &kp B        &kp L       &kp D       &kp C        &kp V          &kp K       &kp Y        &kp O       &kp U       &comma_capsword  &none
@@ -76,17 +87,6 @@
             >;
 
             label = "Gallium";
-        };
-
-        Sturdy {
-            bindings = <
-&none  &kp V        &kp M       &kp L       &kp C        &kp P          &kp B       &kp F        &kp O       &kp U       &kp J        &none
-&none  &mt LCTRL S  &mt LALT T  &mt LCMD R  &mt LSHFT D  &kp Y          &kp DOT     &mt LSHFT N  &mt LCMD A  &mt LALT E  &mt LCTRL I  &none
-&none  &kp Z        &kp K       &kp Q       &kp G        &kp W          &kp X       &kp H        &kp SQT     &kp SEMI    &kp COMMA    &none
-                                &kp TAB     &kp RET      &lt 9 SPACE    &lt 6 BSPC  &kp ESC      &mo 7
-            >;
-
-            label = "Sturdy";
         };
 
         Dhorf {
@@ -146,7 +146,7 @@
 
         Settings {
             bindings = <
-&none  &trans             &trans            &trans             &trans        &trans          &to 0   &to 1      &to 4    &to 2   &to 3   &trans
+&none  &trans             &trans            &trans             &trans        &trans          &to 1   &to 0      &to 4    &to 2   &to 3   &trans
 &none  &bt BT_SEL 0       &bt BT_SEL 1      &bt BT_SEL 2       &bt BT_SEL 3  &bt BT_SEL 4    &to 5   &trans     &trans   &trans  &trans  &none
 &none  &ext_power EP_TOG  &ext_power EP_ON  &ext_power EP_OFF  &trans        &trans          &trans  &trans     &trans   &trans  &trans  &trans
                                             &trans             &none         &kp LGUI        &trans  &kp SPACE  &kp RET
