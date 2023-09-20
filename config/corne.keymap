@@ -39,10 +39,10 @@
             label = "SPECIAL_KEY";
             #binding-cells = <0>;
             bindings =
-                <&mo 7>,
+                <&mo 8>,
                 <&none>,
-                <&to 1>,
-                <&to 4>;
+                <&to 2>,
+                <&to 5>;
         };
         k_toni: k_toni {
             compatible = "zmk,behavior-tap-dance";
@@ -67,12 +67,23 @@
     keymap {
         compatible = "zmk,keymap";
 
+        SturdyF {
+            bindings = <
+&none  &kp Z        &kp M       &kp L       &kp C        &kp P           &kp X       &kp F        &kp O       &kp U       &kp J        &none
+&none  &mt LCTRL S  &mt LALT T  &mt LCMD R  &mt LSHFT D  &kp Y           &kp DOT     &mt LSHFT N  &mt LCMD A  &mt LALT E  &mt LCTRL I  &none
+&none  &kp V        &kp K       &kp Q       &kp G        &kp W           &kp B       &kp H        &kp SQT     &kp SEMI    &kp COMMA    &none
+                                &kp TAB     &kp RET      &lt 10 SPACE    &lt 7 BSPC  &kp ESC      &mo 8
+            >;
+
+            label = "SturdyF";
+        };
+
         Sturdy {
             bindings = <
-&none  &kp Z        &kp M       &kp L       &kp C        &kp P          &kp X       &kp F        &kp O       &kp U       &kp J        &none
-&none  &mt LCTRL S  &mt LALT T  &mt LCMD R  &mt LSHFT D  &kp Y          &kp DOT     &mt LSHFT N  &mt LCMD A  &mt LALT E  &mt LCTRL I  &none
-&none  &kp V        &kp K       &kp Q       &kp G        &kp W          &kp B       &kp H        &kp SQT     &kp SEMI    &kp COMMA    &none
-                                &kp TAB     &kp RET      &lt 9 SPACE    &lt 6 BSPC  &kp ESC      &mo 7
+&none  &kp V        &kp M       &kp L       &kp C        &kp P           &kp X       &kp F        &kp O       &kp U       &kp J        &none
+&none  &mt LCTRL S  &mt LALT T  &mt LCMD R  &mt LSHFT D  &kp Y           &kp DOT     &mt LSHFT N  &mt LCMD A  &mt LALT E  &mt LCTRL I  &none
+&none  &kp Z        &kp K       &kp Q       &kp G        &kp W           &kp B       &kp H        &kp SQT     &kp SEMI    &kp COMMA    &none
+                                &kp TAB     &kp RET      &lt 10 SPACE    &lt 7 BSPC  &kp ESC      &mo 8
             >;
 
             label = "Sturdy";
@@ -80,10 +91,10 @@
 
         Gallium {
             bindings = <
-&none  &kp B        &kp L       &kp D       &kp C        &kp V          &kp K       &kp Y        &kp O       &kp U       &comma_capsword  &none
-&none  &mt LCTRL N  &mt LALT R  &mt LCMD T  &mt LSHFT S  &kp G          &kp P       &mt LSHFT H  &mt LCMD A  &mt LALT E  &mt LCTRL I      &none
-&none  &kp X        &kp Q       &kp M       &kp W        &kp Z          &kp J       &kp F        &kp APOS    &kp SEMI    &dot_UNDERSCORE  &none
-                                &kp TAB     &kp RET      &lt 9 SPACE    &lt 6 BSPC  &kp ESC      &mo 7
+&none  &kp B        &kp L       &kp D       &kp C        &kp V           &kp K       &kp Y        &kp O       &kp U       &comma_capsword  &none
+&none  &mt LCTRL N  &mt LALT R  &mt LCMD T  &mt LSHFT S  &kp G           &kp P       &mt LSHFT H  &mt LCMD A  &mt LALT E  &mt LCTRL I      &none
+&none  &kp X        &kp Q       &kp M       &kp W        &kp Z           &kp J       &kp F        &kp APOS    &kp SEMI    &dot_UNDERSCORE  &none
+                                &kp TAB     &kp RET      &lt 10 SPACE    &lt 7 BSPC  &kp ESC      &mo 8
             >;
 
             label = "Gallium";
@@ -91,10 +102,10 @@
 
         Dhorf {
             bindings = <
-&none  &kp V        &kp L       &kp H       &kp K        &kp Q          &kp J       &kp F        &kp O       &kp U       &kp COMMA    &none
-&none  &mt LCTRL S  &mt LALT R  &mt LCMD N  &mt LSHFT T  &kp W          &kp Y       &mt LSHFT C  &mt LCMD A  &mt LALT E  &mt LCTRL I  &none
-&none  &kp Z        &kp X       &kp M       &kp D        &kp B          &kp W       &kp G        &kp APOS    &kp SEMI    &kp DOT      &none
-                                &kp TAB     &kp RET      &lt 9 SPACE    &lt 6 BSPC  &kp ESC      &mo 7
+&none  &kp V        &kp L       &kp H       &kp K        &kp Q           &kp J       &kp F        &kp O       &kp U       &kp COMMA    &none
+&none  &mt LCTRL S  &mt LALT R  &mt LCMD N  &mt LSHFT T  &kp W           &kp Y       &mt LSHFT C  &mt LCMD A  &mt LALT E  &mt LCTRL I  &none
+&none  &kp Z        &kp X       &kp M       &kp D        &kp B           &kp W       &kp G        &kp APOS    &kp SEMI    &kp DOT      &none
+                                &kp TAB     &kp RET      &lt 10 SPACE    &lt 7 BSPC  &kp ESC      &mo 8
             >;
 
             label = "Dhorf";
@@ -102,10 +113,10 @@
 
         Whorf {
             bindings = <
-&none  &kp F        &kp L       &kp H       &kp D        &kp M          &kp V       &kp W        &kp O       &kp U       &kp COMMA    &none
-&none  &mt LCTRL S  &mt LALT R  &mt LCMD N  &mt LSHFT T  &kp K          &kp G       &mt LSHFT Y  &mt LCMD A  &mt LALT E  &mt LCTRL I  &none
-&none  &kp X        &kp J       &kp B       &kp Z        &kp Q          &kp P       &kp C        &kp APOS    &kp SEMI    &kp DOT      &none
-                                &kp TAB     &kp RET      &lt 9 SPACE    &lt 6 BSPC  &kp ESC      &mo 7
+&none  &kp F        &kp L       &kp H       &kp D        &kp M           &kp V       &kp W        &kp O       &kp U       &kp COMMA    &none
+&none  &mt LCTRL S  &mt LALT R  &mt LCMD N  &mt LSHFT T  &kp K           &kp G       &mt LSHFT Y  &mt LCMD A  &mt LALT E  &mt LCTRL I  &none
+&none  &kp X        &kp J       &kp B       &kp Z        &kp Q           &kp P       &kp C        &kp APOS    &kp SEMI    &kp DOT      &none
+                                &kp TAB     &kp RET      &lt 10 SPACE    &lt 7 BSPC  &kp ESC      &mo 8
             >;
 
             label = "Whorf";
@@ -113,10 +124,10 @@
 
         Recurva {
             bindings = <
-&trans  &kp F        &kp R       &kp D       &kp P        &kp V          &kp Q       &kp J        &kp U       &kp O       &kp Y        &trans
-&trans  &mt LCTRL S  &mt LALT N  &mt LCMD T  &mt LSHFT C  &kp B          &kp DOT     &mt LSHFT H  &mt LCMD E  &mt LALT A  &mt LCTRL I  &trans
-&trans  &kp Z        &kp X       &kp K       &kp G        &kp W          &kp M       &kp L        &kp SEMI    &kp SQT     &kp COMMA    &trans
-                                 &kp TAB     &kp RET      &lt 9 SPACE    &lt 6 BSPC  &kp ESC      &mo 7
+&trans  &kp F        &kp R       &kp D       &kp P        &kp V           &kp Q       &kp J        &kp U       &kp O       &kp Y        &trans
+&trans  &mt LCTRL S  &mt LALT N  &mt LCMD T  &mt LSHFT C  &kp B           &kp DOT     &mt LSHFT H  &mt LCMD E  &mt LALT A  &mt LCTRL I  &trans
+&trans  &kp Z        &kp X       &kp K       &kp G        &kp W           &kp M       &kp L        &kp SEMI    &kp SQT     &kp COMMA    &trans
+                                 &kp TAB     &kp RET      &lt 10 SPACE    &lt 7 BSPC  &kp ESC      &mo 8
             >;
 
             label = "Recurva";
@@ -124,10 +135,10 @@
 
         QWERTY {
             bindings = <
-&none  &kp Q        &kp W       &kp E       &kp R        &kp T          &kp Y       &kp U        &kp I       &kp O       &kp P           &none
-&none  &mt LCTRL A  &mt LALT S  &mt LCMD D  &mt LSHFT F  &kp G          &kp H       &mt LSHFT J  &mt LCMD K  &mt LALT L  &mt LCTRL SEMI  &none
-&none  &kp Z        &kp X       &kp C       &kp V        &kp B          &kp N       &kp M        &kp COMMA   &kp DOT     &kp SLASH       &none
-                                &kp TAB     &kp RET      &lt 9 SPACE    &lt 6 BSPC  &kp ESC      &mo 7
+&none  &kp Q        &kp W       &kp E       &kp R        &kp T           &kp Y       &kp U        &kp I       &kp O       &kp P           &none
+&none  &mt LCTRL A  &mt LALT S  &mt LCMD D  &mt LSHFT F  &kp G           &kp H       &mt LSHFT J  &mt LCMD K  &mt LALT L  &mt LCTRL SEMI  &none
+&none  &kp Z        &kp X       &kp C       &kp V        &kp B           &kp N       &kp M        &kp COMMA   &kp DOT     &kp SLASH       &none
+                                &kp TAB     &kp RET      &lt 10 SPACE    &lt 7 BSPC  &kp ESC      &mo 8
             >;
 
             label = "QWERTY";
@@ -146,8 +157,8 @@
 
         Settings {
             bindings = <
-&none  &trans             &trans            &trans             &trans        &trans          &to 1   &to 0      &to 4    &to 2   &to 3   &trans
-&none  &bt BT_SEL 0       &bt BT_SEL 1      &bt BT_SEL 2       &bt BT_SEL 3  &bt BT_SEL 4    &to 5   &trans     &trans   &trans  &trans  &none
+&none  &trans             &trans            &trans             &trans        &trans          &to 2   &to 1      &to 5    &to 3   &to 4   &trans
+&none  &bt BT_SEL 0       &bt BT_SEL 1      &bt BT_SEL 2       &bt BT_SEL 3  &bt BT_SEL 4    &to 6   &to 0      &trans   &trans  &trans  &none
 &none  &ext_power EP_TOG  &ext_power EP_ON  &ext_power EP_OFF  &trans        &trans          &trans  &trans     &trans   &trans  &trans  &trans
                                             &trans             &none         &kp LGUI        &trans  &kp SPACE  &kp RET
             >;
