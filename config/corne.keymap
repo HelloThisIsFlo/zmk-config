@@ -21,14 +21,11 @@
         */
         hrm_l: homerowmods_left {
             compatible = "zmk,behavior-hold-tap";
-            compatible = "zmk,behavior-hold-tap";
             label = "HRM_L";
             #binding-cells = <2>;
             quick-tap-ms = <0>;
-            // tapping-term-ms = <500>; // Large Term since we're using 'hold-preferred'
-            tapping-term-ms = <100>;                        // <---[[produces tap if held longer than tapping-term-ms]]
-            flavor = "tap-unless-interrupted"; // Trying settings from ZMK's doc (along w/ tapping-term-ms 100)
-            // flavor = "hold-preferred";// Experiment w/ hold-preferred (vs tap-preferred). Shouldn't be a problem since we prevent hold when using keys on the same hand
+            tapping-term-ms = <125>;
+            flavor = "tap-preferred";
             bindings =
                 <&kp>,
                 <&kp>;
@@ -42,10 +39,8 @@
             label = "HRM_R";
             #binding-cells = <2>;
             quick-tap-ms = <0>;
-            // tapping-term-ms = <500>; // Large Term since we're using 'hold-preferred'
-            tapping-term-ms = <100>;                        // <---[[produces tap if held longer than tapping-term-ms]]
-            flavor = "tap-unless-interrupted"; // Trying settings from ZMK's doc (along w/ tapping-term-ms 100)
-            // flavor = "hold-preferred";// Experiment w/ hold-preferred (vs tap-preferred). Shouldn't be a problem since we prevent hold when using keys on the same hand
+            tapping-term-ms = <125>;
+            flavor = "tap-preferred";
             bindings =
                 <&kp>,
                 <&kp>;
