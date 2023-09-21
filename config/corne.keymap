@@ -97,17 +97,6 @@
     keymap {
         compatible = "zmk,keymap";
 
-        Sturdy {
-            bindings = <
-&none  &kp V           &kp M          &kp L          &kp C           &kp P           &kp X       &kp F           &kp O          &kp U          &kp J           &none
-&none  &hrm_l LCTRL S  &hrm_l LALT T  &hrm_l LCMD R  &hrm_l LSHFT D  &kp Y           &kp DOT     &hrm_r LSHFT N  &hrm_r LCMD A  &hrm_r LALT E  &hrm_r LCTRL I  &none
-&none  &kp Z           &kp K          &kp Q          &kp G           &kp W           &kp B       &kp H           &kp SQT        &kp SEMI       &kp COMMA       &none
-                                      &kp TAB        &kp RET         &lt 10 SPACE    &lt 7 BSPC  &kp ESC         &mo 8
-            >;
-
-            label = "Sturdy";
-        };
-
         APT {
             bindings = <
 &trans  &kp W           &kp G          &kp D          &kp F           &kp B           &kp Q       &kp L           &kp U          &kp O          &kp Y           &trans
@@ -117,6 +106,17 @@
             >;
 
             label = "APT";
+        };
+
+        Sturdy {
+            bindings = <
+&none  &kp V           &kp M          &kp L          &kp C           &kp P           &kp X       &kp F           &kp O          &kp U          &kp J           &none
+&none  &hrm_l LCTRL S  &hrm_l LALT T  &hrm_l LCMD R  &hrm_l LSHFT D  &kp Y           &kp DOT     &hrm_r LSHFT N  &hrm_r LCMD A  &hrm_r LALT E  &hrm_r LCTRL I  &none
+&none  &kp Z           &kp K          &kp Q          &kp G           &kp W           &kp B       &kp H           &kp SQT        &kp SEMI       &kp COMMA       &none
+                                      &kp TAB        &kp RET         &lt 10 SPACE    &lt 7 BSPC  &kp ESC         &mo 8
+            >;
+
+            label = "Sturdy";
         };
 
         Gallium {
@@ -187,8 +187,8 @@
 
         Settings {
             bindings = <
-&none  &trans             &trans            &trans             &trans        &trans          &to 2   &to 0      &to 5    &to 3   &to 4   &trans
-&none  &bt BT_SEL 0       &bt BT_SEL 1      &bt BT_SEL 2       &bt BT_SEL 3  &bt BT_SEL 4    &to 6   &to 0      &to 1    &trans  &trans  &none
+&none  &trans             &trans            &trans             &trans        &trans          &to 2   &to 1      &to 5    &to 3   &to 4   &trans
+&none  &bt BT_SEL 0       &bt BT_SEL 1      &bt BT_SEL 2       &bt BT_SEL 3  &bt BT_SEL 4    &to 6   &to 1      &to 0    &trans  &trans  &none
 &none  &ext_power EP_TOG  &ext_power EP_ON  &ext_power EP_OFF  &trans        &trans          &trans  &trans     &trans   &trans  &trans  &trans
                                             &trans             &none         &kp LGUI        &trans  &kp SPACE  &kp RET
             >;
