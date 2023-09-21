@@ -16,6 +16,9 @@
 
 / {
     behaviors {
+        /* NOTE: In QMK, Manna-Harbour is working on a similar feature:
+        https://github.com/manna-harbour/qmk_firmware/blob/bilateral-combinations/docs/tap_hold.md#bilateral-combinations
+        */
         hrm_l: homerowmods_left {
             compatible = "zmk,behavior-hold-tap";
             label = "HRM_L";
