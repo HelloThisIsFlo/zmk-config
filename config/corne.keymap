@@ -23,7 +23,7 @@
             compatible = "zmk,behavior-hold-tap";
             label = "HRM_L";
             #binding-cells = <2>;
-            tapping-term-ms = <150>;
+            tapping-term-ms = <500>; // Large Term since we're using 'hold-preferred'
             quick-tap-ms = <0>;
             flavor = "hold-preferred";// Experiment w/ hold-preferred (vs tap-preferred). Shouldn't be a problem since we prevent hold when using keys on the same hand
             bindings =
@@ -38,7 +38,7 @@
             compatible = "zmk,behavior-hold-tap";
             label = "HRM_R";
             #binding-cells = <2>;
-            tapping-term-ms = <150>;
+            tapping-term-ms = <500>; // Large Term since we're using 'hold-preferred'
             quick-tap-ms = <0>;
             flavor = "hold-preferred";// Experiment w/ hold-preferred (vs tap-preferred). Shouldn't be a problem since we prevent hold when using keys on the same hand
             bindings =
