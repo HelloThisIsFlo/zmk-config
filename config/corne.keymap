@@ -17,9 +17,9 @@
 
 / {
     // Make sure to import in this order (?)
-    #include "./flo_behaviors.h"
-    #include "./flo_macros.h"
-    #include "./flo_combos.h"
+    #include "./flo_behaviors.dtsi"
+    #include "./flo_macros.dtsi" 
+    #include "./flo_combos.dtsi" 
 
     keymap {
         compatible = "zmk,keymap";
