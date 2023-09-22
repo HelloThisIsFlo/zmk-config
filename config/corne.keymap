@@ -9,7 +9,7 @@
 #include <dt-bindings/zmk/ext_power.h>
 #include <dt-bindings/zmk/keys.h>
 
-#define _____  &trans
+// #define _____  &trans
 
 
 #include "./flo_config.h"
@@ -23,16 +23,7 @@
 
     keymap {
         compatible = "zmk,keymap";
-
-        APT {
-            bindings = <
-_____  &kp W           &kp G          &kp D          &kp F           &kp B           &kp Q       &kp L           &kp U          &kp O          &kp Y           _____
-_____  &hml LCTRL R    &hml LALT S    &hml LCMD T    &hml LSHFT H    &kp K           &kp J       &hmr LSHFT N    &hmr LCMD E    &hmr LALT A    &hmr LCTRL I    _____
-_____  &kp X           &kp C          &kp M          &kp P           &kp V           &kp Z       &kp COMMA       &kp DOT        &kp SQT        &kp SEMI        _____
-                                       &kp TAB        &kp RET         &lt 10 SPACE    &lt 7 BSPC  &kp ESC         &mo 8
-            >;
-
-            label = "APT";
-        }; 
+        #include "./l_alpha-HD-vv-pf.dtsi"  // base (alpha) layer (& related adaptive layers)
+        #include "./l_layers.dtsi"  // all other (common) layers (shouldn't vary)
     };
 };
