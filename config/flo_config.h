@@ -111,6 +111,7 @@ LB5 │  V   P   L   D   /* │ │  -+   U   O   Y   F  │ RB5
 #define my_tapping_term 170
 #define my_quick_tapping_term 112
 #define my_ak_delay 40
+#define my_combo_timeout 20
 
 &mt {
     tapping-term-ms = <my_tapping_term>;
