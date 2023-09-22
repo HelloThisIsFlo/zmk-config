@@ -27,7 +27,7 @@
         APT {
             bindings = <
 _____  &kp W           &kp G          &kp D          &kp F           &kp B           &kp Q       &kp L           &kp U          &kp O          &kp Y           _____
-_____  &hrm_l LCTRL R  &hrm_l LALT S  &hrm_l LCMD T  &hrm_l LSHFT H  &kp K           &kp J       &hrm_r LSHFT N  &hrm_r LCMD E  &hrm_r LALT A  &hrm_r LCTRL I  _____
+_____  &hml LCTRL R    &hml LALT S    &hml LCMD T    &hml LSHFT H    &kp K           &kp J       &hmr LSHFT N    &hmr LCMD E    &hmr LALT A    &hmr LCTRL I    _____
 _____  &kp X           &kp C          &kp M          &kp P           &kp V           &kp Z       &kp COMMA       &kp DOT        &kp SQT        &kp SEMI        _____
                                        &kp TAB        &kp RET         &lt 10 SPACE    &lt 7 BSPC  &kp ESC         &mo 8
             >;
