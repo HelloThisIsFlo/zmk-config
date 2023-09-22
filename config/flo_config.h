@@ -123,4 +123,4 @@ LB5 │  V   P   L   D   /* │ │  -+   U   O   Y   F  │ RB5
 };
 
 
-// #define EN_PRONOUN_COMBOS //  (I, I'm, I've I'd I'll etc)
+#define EN_PRONOUN_COMBOS //  (I, I'm, I've I'd I'll etc)
