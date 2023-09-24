@@ -2,6 +2,19 @@
 
     macros {
 
+    ZMK_MACRO(slow_wait,
+        wait-ms = <1000>;
+        tap-ms = <10>;
+        bindings = <&kp w &kp a &kp i &kp t> ;
+    )
+
+
+    ZMK_MACRO(slow_tap,
+        wait-ms = <10>;
+        tap-ms = <1000>;
+        bindings = <&kp t &kp a &kp p> ;
+    )
+
     ZMK_MACRO(AppSwitch,
             wait-ms = <50>;
             tap-ms = <20>;
