@@ -1,11 +1,3 @@
-/*
-*
-* Copyright (c) 2021 lowprokb.ca
-* SPDX-License-Identifier: MIT
-* 
-*/
-
-
 #define COMBO_LAYER(NAME, BINDINGS, KEYPOS, LAYERS) \
   combo_##NAME { \
     bindings = <BINDINGS>; \
@@ -20,30 +12,15 @@
     timeout-ms = <my_combo_timeout>; \
 };
 
-/*       KEY POSITIONS for Corne-ish Zen
-     ╭─────────────────────╮ ╭─────────────────────╮
-  0  │   1   2   3   4  5  │ │  6   7   8   9  10  │ 11
- 12  │  13  14  15  16  17 | | 18  19  20  21  22  │ 23
- 24  │  25  26  27  28  29 │ │ 30  31  32  33  34  │ 35
-     ╰────────╮ 36  37  38 │ │ 39  40  41 ╭────────╯
-              ╰────────────╯ ╰────────────╯   */
 /*    KEY POSITION Names
-     ╭─────────────────────╮ ╭─────────────────────╮
-LT5  │ LT4 LT3 LT2 LT1 LT0 │ │ RT0 RT1 RT2 RT3 RT4 │ RT5
-LM5  │ LM4 LM3 LM2 LM1 LM0 │ │ RM0 RM1 RM2 RM3 RM4 │ RM5
-LB5  │ LB4 LB3 LB2 LB1 LB0 │ │ RB0 RB1 RB2 RB3 RB4 │ RB5
-     ╰───────╮ LH3 LH2 LH1 | | RH1 RH2 RH3 ╭───────╯
-             ╰─────────────╯ ╰─────────────╯
+╭─────────────────────╮ ╭─────────────────────╮
+│ LT4 LT3 LT2 LT1 LT0 │ │ RT0 RT1 RT2 RT3 RT4 │
+│ LM4 LM3 LM2 LM1 LM0 │ │ RM0 RM1 RM2 RM3 RM4 │
+│ LB4 LB3 LB2 LB1 LB0 │ │ RB0 RB1 RB2 RB3 RB4 |
+╰───────╮ LH2 LH2 LH0 | | RH0 RH1 RH2 ╭───────╯
+        ╰─────────────╯ ╰────────────╯
 */
-/*  Base (alpha) Layer  Hands Down Vibranium-vv
-    Building for a 36/42 key board
-     ╭─────────────────────╮ ╭──────────────────────╮
-ESC  │  X   W   M   G  "[  │ │  #$  .:  ']   J   B  │ BSP
-TAB  │  S   C   N   T   K  | |  ,;   A   E   I   H  │ Tg(Num)
-LSFT │  V   P   L   D   /* │ │  -+   U   O   Y   F  │ RSFT
-     ╰──────╮  App BSP  R  │ │  SPC RET TAB  ╭──────╯
-            ╰──────────────╯ ╰───────────────╯
-*/
+
 
 combos {
     compatible = "zmk,combos";
@@ -63,16 +40,15 @@ COMBO_LAYER(capslk, &kp CAPS, LM3 LM2 RM2 RM3, l_alpha) // CAPS LOCK
 //
 COMBO_ANY(Gent, &kp LG(RETURN), LB2 LB1 LB0)
 COMBO_ANY(entr, &kp RETURN,     LB1 LB0)
-COMBO_ANY(tab,  &kp TAB,        LT1 LT0)
+COMBO_ANY(tab,  &kp TAB,        LT4 LT3)
 COMBO_ANY(spce, &kp SPACE,      LM1 LM0)
 COMBO_ANY(esc,  &kp ESC,        LM4 LM1)
 COMBO_ANY(sall, &kp LG(A),      LB4 LB1)
 COMBO_LAYER(selword, &m_selword,  LB4 LB0, l_alpha)
-COMBO_ANY(undo, &kp LG(Z),      LB4 LB3)
-COMBO_ANY(redo, &kp LG(LS(Z)),  LB4 LB3 LB2)
-COMBO_ANY(cut,  &kp LG(X),      LB4 LB2)
+COMBO_ANY(undo, &kp LG(Z),      LB3 LB1)
+COMBO_ANY(redo, &kp LG(LS(Z)),  LB3 LB2 LB1)
 COMBO_ANY(copy, &lk LG(X) LG(C), LB3 LB2)
-COMBO_ANY(pste, &kp LG(V),      LB2 LB1)
+COMBO_ANY(pste, &lk LG(LS(LA(KC_V))) LG(V), LB2 LB1)
 COMBO_LAYER(cloz, &kp LG(W),      LM3 LB3, l_alpha)
 COMBO_LAYER(new,  &kp LG(N),      LM2 LB2, l_alpha)
 COMBO_LAYER(open, &kp LG(O),      LM1 LB1, l_alpha)
@@ -84,7 +60,7 @@ COMBO_LAYER(findsel, &m_findsel,  LM4 LB0, l_alpha)
 //
 // COMBO_LAYER(typeJapan, &lk_Japan P J,  RT1 RT2 RT3, l_alpha) // Japan <- NOT NEEDED
 COMBO_LAYER(typeQ, &lk_qu Q U,      LT3 LT1, l_alpha)
-COMBO_LAYER(typeZ, &kp Z,           LT4 LT3, l_alpha)
+COMBO_LAYER(typeZ, &kp Z,           LT1 LT0, l_alpha)
 COMBO_LAYER(typeColn, &lk LA(SEMI) COLON,    RT1 RT3, l_alpha)
 COMBO_LAYER(typeSemi, &kp SEMI,     RM0 RM1, l_alpha)
 COMBO_LAYER(typeExcl, &kp EXCL,     RT1 RT2, l_alpha)
@@ -93,7 +69,6 @@ COMBO_LAYER(typeGrav, &kp GRAVE,    RT3 RT4, l_alpha)
 COMBO_LAYER(typeatMk, &lk LS(LA(SEMI)) AT_SIGN,  RT0 RT1, l_alpha) // @ (№ if held)
 COMBO_LAYER(typeUnder, &kp UNDER,   RB1 RB3, l_alpha) // _
 COMBO_LAYER(typeEqual, &lk PRCNT EQUAL,   RB2 RB3, l_alpha) // = (percent if held)
-//COMBO_LAYER(typePercent, &kp PRCNT, RB3 RB4, l_alpha) // percent  <- NOT NEEDED (? I think yes, because there's the one above)
 COMBO_LAYER(typeNdash, &lk LA(LS(MINUS)) LA(MINUS), RB0 RB1, l_alpha) // N-dash (M-dash if held)
 COMBO_LAYER(typeMdash, &kp LA(LS(MINUS)), RB0 RB2, l_alpha) // M-dash (minus)
 COMBO_LAYER(typeTilde, &kp TILDE,   RB1 RB4, l_alpha) // tilde (not dead key)
