@@ -232,7 +232,7 @@
     ZMK_MACRO(ak_ck,
             wait-ms = <10>;
             tap-ms = <10>;
-        bindings = <&kp BSPC &kp C &kp K>;tataptap taptaptataptp tapta
+        bindings = <&kp BSPC &kp C &kp K>;
         )
     ZMK_MACRO(ak_a,
             wait-ms = <10>;
