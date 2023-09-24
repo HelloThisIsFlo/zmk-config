@@ -5,25 +5,92 @@
  */
 
 #include <behaviors.dtsi>
-#include <dt-bindings/zmk/bt.h>
-#include <dt-bindings/zmk/ext_power.h>
-#include <dt-bindings/zmk/keys.h>
 
 // #define _____  &trans
 
-
 #include "./flo_config.h"
-
+#include <dt-bindings/zmk/keys.h>
 
 / {
-    // Make sure to import in this order (?)
-    #include "./flo_behaviors.dtsi"
-    #include "./flo_macros.dtsi" 
-    #include "./flo_combos.dtsi" 
+    chosen {
+        zmk,matrix_transform = &five_column_transform;
+    };
+
+    behaviors {
+        /* NOTE: In QMK, Manna-Harbour is working on a similar feature:
+        https://github.com/manna-harbour/qmk_firmware/blob/bilateral-combinations/docs/tap_hold.md#bilateral-combinations
+        */
+
+        hrm_l: homerowmods_left {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HRM_L";
+            #binding-cells = <2>;
+            quick-tap-ms = <0>;
+            tapping-term-ms = <125>;
+            flavor = "tap-preferred";
+            bindings =
+                <&kp>,
+                <&kp>;
+
+            hold-trigger-key-positions = <THUMBS KEYS_R>;
+        };
+        hrm_r: homerowmods_right {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HRM_R";
+            #binding-cells = <2>;
+            quick-tap-ms = <0>;
+            tapping-term-ms = <125>;
+            flavor = "tap-preferred";
+            bindings =
+                <&kp>,
+                <&kp>;
+
+            hold-trigger-key-positions = <THUMBS KEYS_L>;
+        };
+    };
+
+    combos {
+        compatible = "zmk,combos";
+
+        Test1 {
+            bindings = <&kp NUMBER_1>;
+            key-positions = <10 11>;
+            timeout-ms = <20>;
+        };
+        Test2 {
+            bindings = <&kp NUMBER_2>;
+            key-positions = <11 12>;
+            timeout-ms = <20>;
+        };
+        Test3 {
+            bindings = <&kp NUMBER_3>;
+            key-positions = <12 13>;
+            timeout-ms = <20>;
+        };
+        Test4 {
+            bindings = <&kp NUMBER_4>;
+            key-positions = <13 14>;
+            timeout-ms = <20>;
+        };
+        Test5 {
+            bindings = <&kp NUMBER_5>;
+            key-positions = <0 1>;
+            timeout-ms = <20>;
+        };
+    };
 
     keymap {
         compatible = "zmk,keymap";
-        #include "./l_alpha-HD-vv-pf.dtsi"  // base (alpha) layer (& related adaptive layers)
-        #include "./l_layers.dtsi"  // all other (common) layers (shouldn't vary)
+
+        Debug {
+            bindings = <
+  &kp A           &kp B              &kp C              &kp D                &kp E           &kp F       &kp G                &kp H              &kp I              &kp J
+  &hrm_l LCTRL K  &hrm_l LEFT_ALT L  &hrm_l LEFT_GUI M  &hrm_l LEFT_SHIFT N  &kp O           &kp P       &hrm_r LEFT_SHIFT Q  &hrm_r LEFT_GUI R  &hrm_r LEFT_ALT S  &hrm_r LCTRL T
+  &kp W           &kp X              &kp Y              &kp Z                &kp A           &kp B       &kp C                &kp D              &kp E              &kp F
+                                     &kp TAB            &kp RET              &lt 10 SPACE    &lt 7 BSPC  &kp ESC              &mo 8
+            >;
+
+            label = "Debug";
+        };
     };
 };
