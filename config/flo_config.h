@@ -95,7 +95,8 @@
     tapping-term-ms = <my_tapping_term>;
 };
 &sl {
-    release-after-ms = <my_tapping_term>;
+    // release-after-ms = <my_tapping_term>;
+    release-after-ms = <2000>;
 };
 &caps_word {
     continue-list = <UNDER MINUS BSPC DEL LEFT RIGHT>;
