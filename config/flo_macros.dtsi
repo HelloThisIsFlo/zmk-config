@@ -9,9 +9,9 @@
     )
 
 
-    ZMK_MACRO(tap_1ms,
+    ZMK_MACRO(tap_2ms,
         wait-ms = <10>;
-        tap-ms = <1>;
+        tap-ms = <2>;
         bindings = <&kp T &kp A &kp P> ;
     )
 
