@@ -54,10 +54,10 @@
 
         Debug {
             bindings = <
-  &kp A           &kp B              &kp C              &kp D                &kp E           &kp F       &kp G                &kp H              &kp I              &kp J
-  &hml LCTRL K    &hml LEFT_ALT L    &hml LEFT_GUI M    &hml LEFT_SHIFT N    &kp O           &kp P       &hmr LEFT_SHIFT Q    &hmr LEFT_GUI R    &hmr LEFT_ALT S    &hmr LCTRL T
-  &kp W           &kp X              &kp Y              &kp Z                &kp A           &kp B       &kp C                &kp D              &kp E              &kp F
-                                     &kp TAB            &kp RET              &lt 10 SPACE    &lt 7 BSPC  &kp ESC              &mo 8
+  &kp Q           &kp W              &kp E              &kp T                &kp Y               &kp U       &kp I                &kp O              &kp P              &kp LEFT_BRACKET
+  &hml LCTRL A    &hml LEFT_ALT S    &hml LEFT_GUI D    &hml LEFT_SHIFT F    &kp G               &kp H       &hmr LEFT_SHIFT J    &hmr LEFT_GUI K    &hmr LEFT_ALT L    &hmr LCTRL SEMI
+  &kp Z           &kp X              &kp C              &kp V                &kp B               &kp N       &kp M                &kp COMMA          &kp DOT            &kp SLASH
+                                     &kp TAB            &kp RET              &kp SPACE           &kp BSPC    &kp ESC              &none
             >;
 
             label = "Debug";
