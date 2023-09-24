@@ -1,4 +1,13 @@
 behaviors {
+
+    toggle_hdvv_aptmak: toggle_hdvv_aptmak {
+        compatible = "zmk,behavior-tap-dance";
+        label = "toggle_hdvv_aptmak";
+        #binding-cells = <0>;
+        tapping-term-ms = <200>;
+        bindings = <&none>, <&to l_alpha>, <&to APTmak>;
+    };
+
     skapp: sticky_key_app_switcher {
         compatible = "zmk,behavior-sticky-key";
         label = "SK_APP_SWITCHER";
