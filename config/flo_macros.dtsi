@@ -2,16 +2,16 @@
 
     macros {
 
-    ZMK_MACRO(slow_wait,
-        wait-ms = <1000>;
+    ZMK_MACRO(no_wait,
+        wait-ms = <0>;
         tap-ms = <10>;
         bindings = <&kp W &kp A &kp I &kp T> ;
     )
 
 
-    ZMK_MACRO(slow_tap,
+    ZMK_MACRO(tap_1ms,
         wait-ms = <10>;
-        tap-ms = <1000>;
+        tap-ms = <1>;
         bindings = <&kp T &kp A &kp P> ;
     )
 
@@ -145,9 +145,10 @@
                 ;
         };
 
+// TODO: This is a test (wait 0 and tap 1ms)
     ZMK_MACRO(ak_g,
-            wait-ms = <10>;
-            tap-ms = <10>;
+            wait-ms = <0>;
+            tap-ms = <1>;
         bindings = <&macro_tap &kp G>
                 , <&sl l_akG>;
         )
@@ -227,12 +228,12 @@
         bindings = <&macro_tap &kp V>
                 , <&sl l_akV>;
         )
-
+// TODO: This is a test (steps reversed)
     ZMK_MACRO(ak_t,
             wait-ms = <10>;
             tap-ms = <10>;
-        bindings = <&macro_tap &kp T>
-                , <&sl l_akT>;
+        bindings = <&sl l_akT>
+                , <&macro_tap &kp T>;
         )
     ZMK_MACRO(ak_ck,
             wait-ms = <10>;
