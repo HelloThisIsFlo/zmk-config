@@ -85,6 +85,9 @@
 #define l_cfg   22
 #define APTmak  23
 
+#define alpha_and_ak_layers l_alpha l_akG l_akM l_akX l_akT l_akK l_akD l_akW l_akF l_akB l_akV l_akA l_akU l_akE l_akO l_akI l_akJ l_akDot
+
+
 // #define my_tapping_term 170
 #define my_tapping_term 250 // increased to help debugging
 // #define my_quick_tapping_term 112 // Unused atm

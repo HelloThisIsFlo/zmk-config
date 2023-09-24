@@ -11,6 +11,14 @@
     key-positions = <KEYPOS>; \
     timeout-ms = <my_combo_timeout>; \
 };
+// TODO: Migrate ALL COMBO_LAYER(..., ..., ..., l_alpha) to COMBO_ALPHA(..., ..., ...)
+#define COMBO_ALPHA(NAME, BINDINGS, KEYPOS) \
+  combo_##NAME { \
+    bindings = <BINDINGS>; \
+    key-positions = <KEYPOS>; \
+    layers = <alpha_and_ak_layers>; \
+    timeout-ms = <my_combo_timeout>; \
+};
 
 /*    KEY POSITION Names
 ╭─────────────────────╮ ╭─────────────────────╮
@@ -87,14 +95,14 @@ combos {
 //
 // H Digraphs REQUIRE macros (defined earlier) to process
 //
-COMBO_LAYER(sch, &Sch,  LM4  LM3 LM2, l_alpha) // Sch
-COMBO_LAYER(tch, &Tch,  LM4  LM3 LM1, l_alpha) // Tch
-COMBO_LAYER(th,  &lk_th H T, LM2 LM1, l_alpha) // Th/sion
-COMBO_LAYER(ch,  &Ch,        LM3 LM2, l_alpha) // Ch
-COMBO_LAYER(wh,  &Wh,        LT3 LT2, l_alpha) // Wh
-COMBO_LAYER(sh,  &lk_sh H S, LM4 LM3, l_alpha) // Sh/sion
-COMBO_LAYER(gh,  &lk_gh H G, LT2 LT1, l_alpha) // Gh/ght
-COMBO_LAYER(ph,  &Ph,        RB3 RB4, l_alpha) // Ph
+COMBO_ALPHA(sch, &Sch,  LM4  LM3 LM2) // Sch
+COMBO_ALPHA(tch, &Tch,  LM4  LM3 LM1) // Tch
+COMBO_ALPHA(th,  &lk_th H T, LM2 LM1) // Th/sion
+COMBO_ALPHA(ch,  &Ch,        LM3 LM2) // Ch
+COMBO_ALPHA(wh,  &Wh,        LT3 LT2) // Wh
+COMBO_ALPHA(sh,  &lk_sh H S, LM4 LM3) // Sh/sion
+COMBO_ALPHA(gh,  &lk_gh H G, LT2 LT1) // Gh/ght
+COMBO_ALPHA(ph,  &Ph,        RB3 RB4) // Ph
 
 // #ifdef EN_PRONOUN_COMBOS
 // //
