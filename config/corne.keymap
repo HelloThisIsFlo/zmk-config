@@ -55,6 +55,16 @@
         #include "./l_alpha-HD-vv-pf.dtsi"  // base (alpha) layer (& related adaptive layers)
         #include "./l_layers.dtsi"  // all other (common) layers (shouldn't vary)
 
+                APTmak {
+                        label = "APTmak";
+                        bindings = <
+&kp V           &kp W          &kp F          &kp P           &kp B               &kp J       &kp L           &kp U          &kp Y          &kp SINGLE_QUOTE          
+&hml LCTRL R    &hml LALT S    &hml LCMD T    &hml LSHFT H    &kp K               &kp X       &hmr LSHFT N    &hmr LCMD A    &hmr LALT I    &hmr LCTRL O
+&kp SEMICOLON   &kp C          &kp G          &kp D           &kp Q               &kp Z       &kp M           &kp COMMA      &kp DOT        &kp SLASH
+                               &kp TAB        &kp RET         &lt 10 SPACE        &kp E       &kp BSPC        &to l_alpha
+                        >;
+                };
+
 /* Debug Layer
         Debug {
             bindings = <

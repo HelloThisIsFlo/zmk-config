@@ -83,6 +83,7 @@
 #define l_fn    20
 #define l_num   21
 #define l_cfg   22
+#define APTmak  23
 
 // #define my_tapping_term 170
 #define my_tapping_term 250 // increased to help debugging
