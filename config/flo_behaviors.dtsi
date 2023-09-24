@@ -18,8 +18,8 @@ behaviors {
         label = "homerow_mods";
         #binding-cells = <2>;
         tapping-term-ms = <my_tapping_term>;
-        quick-tap-ms = <my_quick_tapping_term>;
-        flavor = "balanced";
+        quick-tap-ms = <0>;
+        flavor = "tap-preferred";
         bindings = <&kp>, <&kp>;
     };
     hmr: homerow_mods_right { // use on right hand to mod left
@@ -27,7 +27,8 @@ behaviors {
         label = "homerow_mods";
         #binding-cells = <2>;
         tapping-term-ms = <my_tapping_term>;
-        flavor = "balanced";
+        quick-tap-ms = <0>;
+        flavor = "tap-preferred";
         bindings = <&kp>, <&kp>;
         hold-trigger-key-positions = <KEYS_L THUMBS>; // left hand allowed
     };
@@ -36,7 +37,8 @@ behaviors {
         label = "homerow_mods";
         #binding-cells = <2>;
         tapping-term-ms = <my_tapping_term>;
-        flavor = "balanced";
+        quick-tap-ms = <0>;
+        flavor = "tap-preferred";
         bindings = <&kp>, <&kp>;
         hold-trigger-key-positions = <KEYS_R THUMBS>; // right hand allowed
     };
@@ -45,7 +47,8 @@ behaviors {
         label = "hrm_t";
         #binding-cells = <2>;
         tapping-term-ms = <my_tapping_term>;
-        flavor = "balanced";
+        quick-tap-ms = <0>;
+        flavor = "tap-preferred";
         bindings = <&kp>, <&ak_t>;
         hold-trigger-key-positions = <KEYS_R THUMBS>; // right hand allowed
     };
@@ -54,7 +57,8 @@ behaviors {
         label = "hrm_a";
         #binding-cells = <2>;
         tapping-term-ms = <my_tapping_term>;
-        flavor = "balanced";
+        quick-tap-ms = <0>;
+        flavor = "tap-preferred";
         bindings = <&kp>, <&ak_a>;
         hold-trigger-key-positions = <KEYS_L THUMBS>; // left hand allowed
     };
@@ -63,7 +67,8 @@ behaviors {
         label = "hrm_e";
         #binding-cells = <2>;
         tapping-term-ms = <my_tapping_term>;
-        flavor = "balanced";
+        quick-tap-ms = <0>;
+        flavor = "tap-preferred";
         bindings = <&kp>, <&ak_e>;
         hold-trigger-key-positions = <KEYS_L THUMBS>; // left hand allowed
     };
@@ -72,7 +77,8 @@ behaviors {
         label = "hrm_i";
         #binding-cells = <2>;
         tapping-term-ms = <my_tapping_term>;
-        flavor = "balanced";
+        quick-tap-ms = <0>;
+        flavor = "tap-preferred";
         bindings = <&kp>, <&ak_i>;
         hold-trigger-key-positions = <KEYS_L THUMBS>; // left hand allowed
     };
