@@ -84,7 +84,8 @@
 #define l_num   21
 #define l_cfg   22
 
-#define my_tapping_term 170
+// #define my_tapping_term 170
+#define my_tapping_term 250 // increased to help debugging
 // #define my_quick_tapping_term 112 // Unused atm
 // #define my_ak_delay 40 // Unused atm
 #define my_combo_timeout 20
