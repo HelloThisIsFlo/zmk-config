@@ -16,6 +16,7 @@
         zmk,matrix_transform = &five_column_transform;
     };
 
+    #include "./flo_macro.dtsi"
     #include "./flo_behaviors.dtsi"
 
     combos {
