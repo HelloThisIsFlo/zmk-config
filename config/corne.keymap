@@ -1,24 +1,23 @@
-/*
- * Copyright (c) 2020 The ZMK Contributors
- *
- * SPDX-License-Identifier: MIT
- */
-
 #include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/ext_power.h>
 
-// #define _____  &trans
 
 #include "./flo_config.h"
-#include <dt-bindings/zmk/keys.h>
 
 / {
     chosen {
         zmk,matrix_transform = &five_column_transform;
     };
 
+
+    // Make sure to import in this order
     #include "./flo_macros.dtsi"
     #include "./flo_behaviors.dtsi"
+    #include "./flo_combos.dtsi"
 
+/* Debug Combos
     combos {
         compatible = "zmk,combos";
 
@@ -48,10 +47,15 @@
             timeout-ms = <20>;
         };
     };
+*/
 
     keymap {
         compatible = "zmk,keymap";
 
+        #include "./l_alpha-HD-vv-pf.dtsi"  // base (alpha) layer (& related adaptive layers)
+        #include "./l_layers.dtsi"  // all other (common) layers (shouldn't vary)
+
+/* Debug Layer
         Debug {
             bindings = <
   &kp Q           &kp W              &kp E              &kp T                &kp Y               &kp U       &kp I                &kp O              &kp P              &kp LEFT_BRACKET
@@ -62,5 +66,6 @@
 
             label = "Debug";
         };
+*/
     };
 };
