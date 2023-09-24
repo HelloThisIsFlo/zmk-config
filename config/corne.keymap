@@ -16,38 +16,7 @@
         zmk,matrix_transform = &five_column_transform;
     };
 
-    behaviors {
-        /* NOTE: In QMK, Manna-Harbour is working on a similar feature:
-        https://github.com/manna-harbour/qmk_firmware/blob/bilateral-combinations/docs/tap_hold.md#bilateral-combinations
-        */
-
-        hrm_l: homerowmods_left {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HRM_L";
-            #binding-cells = <2>;
-            quick-tap-ms = <0>;
-            tapping-term-ms = <125>;
-            flavor = "tap-preferred";
-            bindings =
-                <&kp>,
-                <&kp>;
-
-            hold-trigger-key-positions = <THUMBS KEYS_R>;
-        };
-        hrm_r: homerowmods_right {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HRM_R";
-            #binding-cells = <2>;
-            quick-tap-ms = <0>;
-            tapping-term-ms = <125>;
-            flavor = "tap-preferred";
-            bindings =
-                <&kp>,
-                <&kp>;
-
-            hold-trigger-key-positions = <THUMBS KEYS_L>;
-        };
-    };
+    #include "./flo_behaviors.dtsi"
 
     combos {
         compatible = "zmk,combos";
@@ -85,7 +54,7 @@
         Debug {
             bindings = <
   &kp A           &kp B              &kp C              &kp D                &kp E           &kp F       &kp G                &kp H              &kp I              &kp J
-  &hrm_l LCTRL K  &hrm_l LEFT_ALT L  &hrm_l LEFT_GUI M  &hrm_l LEFT_SHIFT N  &kp O           &kp P       &hrm_r LEFT_SHIFT Q  &hrm_r LEFT_GUI R  &hrm_r LEFT_ALT S  &hrm_r LCTRL T
+  &hml LCTRL K    &hml LEFT_ALT L    &hml LEFT_GUI M    &hml LEFT_SHIFT N    &kp O           &kp P       &hmr LEFT_SHIFT Q    &hmr LEFT_GUI R    &hmr LEFT_ALT S    &hmr LCTRL T
   &kp W           &kp X              &kp Y              &kp Z                &kp A           &kp B       &kp C                &kp D              &kp E              &kp F
                                      &kp TAB            &kp RET              &lt 10 SPACE    &lt 7 BSPC  &kp ESC              &mo 8
             >;
