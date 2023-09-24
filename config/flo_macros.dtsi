@@ -5,14 +5,14 @@
     ZMK_MACRO(slow_wait,
         wait-ms = <1000>;
         tap-ms = <10>;
-        bindings = <&kp w &kp a &kp i &kp t> ;
+        bindings = <&kp W &kp A &kp I &kp T> ;
     )
 
 
     ZMK_MACRO(slow_tap,
         wait-ms = <10>;
         tap-ms = <1000>;
-        bindings = <&kp t &kp a &kp p> ;
+        bindings = <&kp T &kp A &kp P> ;
     )
 
     ZMK_MACRO(AppSwitch,
