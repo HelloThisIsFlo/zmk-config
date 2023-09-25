@@ -1,35 +1,35 @@
 layout: {qmk_keyboard: corne_rotated, qmk_layout: LAYOUT_split_3x5_3}
 layers:
   l_alpha:
-  - '&ak_x'
-  - '&ak_w'
-  - '&ak_m'
-  - '&ak_g'
-  - '&ak_j'
+  - X_
+  - W_
+  - M_
+  - G_
+  - J_
   - {t: '#', s: $}
   - {t: '&dot_ak', s: ':'}
   - {t: '''', s: '['}
   - {t: '"', s: ']'}
-  - '&ak_b'
+  - B_
   - {t: S, h: LCTRL}
   - {t: C, h: LALT}
   - {t: N, h: LGUI}
   - {t: '&ak_t T', h: LSHFT}
-  - '&ak_k'
+  - K_
   - {t: CMMA, s: '&typeSemi'}
   - {t: '&ak_a A', h: RSHFT}
   - {t: '&ak_e E', h: RGUI}
   - {t: '&ak_i I', h: RALT}
   - {t: H, h: RCTRL}
-  - '&ak_v'
-  - '&ak_f'
+  - V_
+  - F_
   - L
-  - '&ak_d'
+  - D_
   - {t: /, s: '*'}
   - {t: '-', s: +}
-  - '&ak_u'
-  - '&ak_o'
-  - '&ak_y'
+  - U_
+  - O_
+  - Y_
   - P
   - '&tap_3ms'
   - {t: RETURN, h: l_nav}
@@ -676,7 +676,7 @@ layers:
   - HOME
   - UP
   - PG UP
-  - ''
+  - {type: none}
   - LCTRL
   - LALT
   - LGUI
@@ -696,13 +696,13 @@ layers:
   - END
   - LG(0)
   - PG DN
-  - ''
-  - ''
+  - {type: none}
+  - {type: none}
   - {t: '&S_AppSwitch', type: held}
-  - '&AppSwitch'
+  - {t: '&AppSwitch', type: held}
   - LG(LBKT)
   - LG(RBKT)
-  - ''
+  - {type: none}
   l_sym:
   - Z
   - Q
@@ -734,12 +734,12 @@ layers:
   - '&'
   - ^
   - '%'
-  - ''
+  - {type: none}
   - LA(BSPC)
   - LA(DEL)
   - {type: held}
   - LA(0)
-  - ''
+  - {type: none}
   l_fn:
   - F9
   - F10
@@ -771,12 +771,12 @@ layers:
   - '5'
   - '6'
   - '='
-  - ''
+  - {type: none}
   - BSPC
   - DEL
   - KP 0
   - {t: ., type: held}
-  - ''
+  - {type: none}
   l_num:
   - ESC
   - HOME
@@ -808,24 +808,24 @@ layers:
   - KP 2
   - KP 3
   - KP EQUAL
-  - ''
+  - {type: none}
   - {t: BSPC, h: l_fn}
   - {t: KP ENTER, h: l_nav}
   - KP 0
   - KP DOT
-  - ''
+  - {type: none}
   l_cfg:
   - {t: BT, h: '3'}
   - {t: BT, h: '2'}
   - {t: BT, h: '1'}
   - {t: BT, h: '0'}
   - {t: BT CLR, type: held}
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
+  - {type: none}
+  - {type: none}
+  - {type: none}
+  - {type: none}
+  - {type: none}
+  - {type: none}
   - NEXT
   - PP
   - VOL UP
@@ -834,7 +834,7 @@ layers:
   - VOL UP
   - MUTE
   - NEXT
-  - ''
+  - {type: none}
   - '&bootloader'
   - PREV
   - MUTE
@@ -845,12 +845,12 @@ layers:
   - PP
   - PREV
   - '&sys_reset'
-  - ''
-  - ''
+  - {type: none}
+  - {type: none}
   - l_num
-  - ''
-  - ''
-  - ''
+  - {type: none}
+  - {type: none}
+  - {type: none}
   APTmak:
   - V
   - W
