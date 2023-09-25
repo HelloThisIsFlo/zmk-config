@@ -217,10 +217,10 @@
                 , <&sl l_akF>;
         )
     ZMK_MACRO(ak_v,
-            wait-ms = <10>;
+            wait-ms = <0>;
             tap-ms = <10>;
-        bindings = <&sl l_akV>
-                , <&macro_tap &kp V>;
+        bindings = <&macro_tap &kp V>
+                , <&sl l_akV>;
         )
 // TODO: This is a test (steps reversed)
     ZMK_MACRO(ak_t,
