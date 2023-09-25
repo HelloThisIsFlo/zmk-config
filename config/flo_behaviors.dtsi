@@ -1,5 +1,20 @@
 behaviors {
 
+    aksl: aksl {
+        compatible = "zmk,behavior-sticky-key"
+        label = "adaptive_key_sticky_layer"
+        #binding-cells = <1>;
+        release-after-ms = <1000>; // Can be 'infinite', it will be triggered by the macro immediately
+        bindings = <&mo>;
+        // We are NOT using 'quick-release', that way the ak layer won't be deactivated until
+        // the &kp releases.
+        //
+        // PROs of this solution
+        // - Fixes bug: We guarantee that there is no time-window during which a key can be pressed before the previous' key ak layer had time to enable
+        // - We can tune the 'ak_window' by setting it as the 'tap-ms' in the macros
+        // - The &kp is still outputted immediately
+    }
+
     toggle_hdvv_aptmak: toggle_hdvv_aptmak {
         compatible = "zmk,behavior-tap-dance";
         label = "toggle_hdvv_aptmak";

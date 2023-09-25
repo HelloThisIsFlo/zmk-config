@@ -216,11 +216,13 @@
         bindings = <&macro_tap &kp F>
                 , <&sl l_akF>;
         )
+// TODO: Current test, using custom behavior: aksl
+// TODO: If this works, make it a c macro: AK_MACRO(name, layer, key)
     ZMK_MACRO(ak_v,
             wait-ms = <0>;
-            tap-ms = <10>;
-        bindings = <&macro_tap &kp V>
-                , <&sl l_akV>;
+            tap-ms = <my_ak_window>; // See &aksl behavior for explanation
+        bindings = <&aksl l_akV>
+                , <&macro_tap &kp V>;
         )
 // TODO: This is a test (steps reversed)
     ZMK_MACRO(ak_t,
