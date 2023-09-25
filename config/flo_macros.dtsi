@@ -127,14 +127,9 @@
         bindings = <&kp LBKT &kp RBKT &kp LEFT>
                 ;
         };
-    dot_ak: dot_ak {
-        label = "dot_ak";
-        compatible = "zmk,behavior-macro";
-        #binding-cells = <0>;
-        wait-ms = <50>; // need to slow this down for some systems.
-        bindings = <&macro_tap &kp DOT>
-                , <&sl l_akDot>;
-        };
+
+AK_MACRO(dot_ak, l_akDot, DOT)
+
     dotcom: dotcom {
         label = "dotcom";
         compatible = "zmk,behavior-macro";
