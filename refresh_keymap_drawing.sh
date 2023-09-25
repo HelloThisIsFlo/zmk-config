@@ -14,11 +14,11 @@ keymap -c ./config.yaml \
     -z ../config/corne.keymap \
     > ./chocofi_keymap.yaml
 
-rm ./chocofi_keymap.prev.yaml
-
-keymap draw \
+keymap -c ./config.yaml \
+    draw \
     ./chocofi_keymap.yaml \
     > ./chocofi_keymap.svg
 
+rm ./chocofi_keymap.prev.yaml
 
 cd - >/dev/null
