@@ -1,12 +1,15 @@
 /* See &aksl behavior for explanation*/
 #define AK_MACRO(NAME, LAYER, KEY) \
-ZMK_MACRO(<NAME>, \
-        wait-ms = <0>; \
-        tap-ms = <0>;  \
-        bindings = <&aksl LAYER> \
-                , <&macro_tap_time my_ak_window> \
-                , <&macro_tap &kp KEY>; \
-)
+        NAME: NAME { \
+                label = <NAME>; \
+                compatible = "zmk,behavior-macro"; \
+                #binding-cells = <0>; \
+                wait-ms = <0>; \
+                tap-ms = <0>;  \
+                bindings = <&aksl LAYER> \
+                        , <&macro_tap_time my_ak_window> \
+                        , <&macro_tap &kp KEY>; \
+        };
 
 // TODO: Continue migrating the AK_MACROS to this format.
 
