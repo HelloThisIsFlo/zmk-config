@@ -6,27 +6,27 @@ layers:
   - M⛶
   - G⛶
   - J⛶
-  - {t: '#', s: $}
-  - {t: .⛶, s: ':'}
-  - {t: '''', s: '['}
-  - {t: '"', s: ']'}
+  - {t: '&bkp HASH', s: '&bkp DLLR'}
+  - {t: .⛶, s: '&bkp COLON'}
+  - {t: '&bkp SQT', s: '&bkp LBKT'}
+  - {t: '&bkp DQT', s: '&bkp RBKT'}
   - B⛶
-  - {t: S, h: '$$mdi:apple-keyboard-control$$'}
-  - {t: C, h: '$$mdi:apple-keyboard-option$$'}
-  - {t: N, h: '$$mdi:apple-keyboard-command$$'}
+  - {t: '&bkp S', h: '$$mdi:apple-keyboard-control$$'}
+  - {t: '&bkp C', h: '$$mdi:apple-keyboard-option$$'}
+  - {t: '&bkp N', h: '$$mdi:apple-keyboard-command$$'}
   - {t: T⛶, h: '$$mdi:apple-keyboard-shift$$'}
   - K⛶
-  - {t: ',', s: '&typeSemi'}
+  - {t: '&bkp CMMA', s: '&typeSemi'}
   - {t: A⛶, h: '$$mdi:apple-keyboard-shift$$'}
   - {t: E⛶, h: '$$mdi:apple-keyboard-command$$'}
   - {t: I⛶, h: '$$mdi:apple-keyboard-option$$'}
-  - {t: H, h: '$$mdi:apple-keyboard-control$$'}
+  - {t: '&bkp H', h: '$$mdi:apple-keyboard-control$$'}
   - '&bkp V'
   - P⛶
   - '&bkp L'
   - D⛶
-  - {t: /, s: '*'}
-  - {t: '-', s: +}
+  - {t: '&bkp FSLH', s: '&bkp STAR'}
+  - {t: '&bkp MINUS', s: '&bkp PLUS'}
   - U⛶
   - O⛶
   - Y⛶
@@ -35,7 +35,7 @@ layers:
   - {t: '$$mdi:keyboard-return$$', h: l_nav}
   - {t: R, h: l_nav}
   - {t: '$$mdi:keyboard-space$$', h: l_sym}
-  - {t: '$$mdi:backspace-outline$$', h: l_fn, s: '$$mdi:backspace-reverse-outline$$'}
+  - {t: '$$mdi:backspace-outline$$', h: l_fn, s: '&bkp DELETE'}
   - {t: '$$mdi:swap-horizontal$$', h: APTmak|HDvv}
   l_akG:
   - T
@@ -714,10 +714,10 @@ layers:
   - LA(LS(2))
   - LA(3)
   - RA(Y)
-  - {t: <, h: '&pairLtGt GT'}
-  - {t: '[', h: '&pairBkt RBKT'}
-  - {t: (, h: '&pairPar RPAR'}
-  - {t: '{', h: '&pairBrc RBRC'}
+  - {t: '&bkp LT', h: '&pairLtGt GT'}
+  - {t: '&bkp LBKT', h: '&pairBkt RBKT'}
+  - {t: '&bkp LPAR', h: '&pairPar RPAR'}
+  - {t: '&bkp LBRC', h: '&pairBrc RBRC'}
   - $$mdi:keyboard-tab$$
   - LA(1)
   - {t: '*', h: '$$mdi:apple-keyboard-shift$$'}
@@ -862,16 +862,16 @@ layers:
   - U
   - Y
   - ''''
-  - {t: R, h: '$$mdi:apple-keyboard-control$$'}
-  - {t: S, h: '$$mdi:apple-keyboard-option$$'}
-  - {t: T, h: '$$mdi:apple-keyboard-command$$'}
-  - {t: H, h: '$$mdi:apple-keyboard-shift$$'}
+  - {t: '&bkp R', h: '$$mdi:apple-keyboard-control$$'}
+  - {t: '&bkp S', h: '$$mdi:apple-keyboard-option$$'}
+  - {t: '&bkp T', h: '$$mdi:apple-keyboard-command$$'}
+  - {t: '&bkp H', h: '$$mdi:apple-keyboard-shift$$'}
   - K
   - X
-  - {t: N, h: '$$mdi:apple-keyboard-shift$$'}
-  - {t: A, h: '$$mdi:apple-keyboard-command$$'}
-  - {t: I, h: '$$mdi:apple-keyboard-option$$'}
-  - {t: O, h: '$$mdi:apple-keyboard-control$$'}
+  - {t: '&bkp N', h: '$$mdi:apple-keyboard-shift$$'}
+  - {t: '&bkp A', h: '$$mdi:apple-keyboard-command$$'}
+  - {t: '&bkp I', h: '$$mdi:apple-keyboard-option$$'}
+  - {t: '&bkp O', h: '$$mdi:apple-keyboard-control$$'}
   - ;
   - C
   - G
