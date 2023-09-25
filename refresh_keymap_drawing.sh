@@ -11,11 +11,11 @@ CONFIG=./config.yaml
 keymap -c $CONFIG \
     parse \
     -z ../config/corne.keymap \
-    > ./chocofi_keymap.yaml
+    > ./corne.yaml
 
 keymap -c $CONFIG \
     draw \
-    ./chocofi_keymap.yaml \
-    > ./chocofi_keymap.svg
+    ./corne.yaml \
+    > ./corne.svg
 
 cd - >/dev/null

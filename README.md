@@ -2,7 +2,7 @@
 
 # Layout
 
-![3x5 layout](./keymap-drawer/chocofi_keymap.svg)
+![3x5 layout](./keymap-drawer/corne.svg)
 
 
 # TODO
