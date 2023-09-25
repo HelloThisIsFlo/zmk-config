@@ -299,7 +299,7 @@ layers:
   l_akW:
   - S
   - {t: ' ', type: trans}
-  - '&ak_lm'
+  - M
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
