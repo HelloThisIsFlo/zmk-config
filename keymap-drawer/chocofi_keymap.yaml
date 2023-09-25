@@ -1,42 +1,42 @@
 layout: {qmk_keyboard: corne_rotated, qmk_layout: LAYOUT_split_3x5_3}
 layers:
   l_alpha:
-  - X_
-  - W_
-  - M_
-  - G_
-  - J_
+  - X⛶
+  - W⛶
+  - M⛶
+  - G⛶
+  - J⛶
   - {t: '#', s: $}
-  - {t: '&dot_ak', s: ':'}
+  - {t: .⛶, s: ':'}
   - {t: '''', s: '['}
   - {t: '"', s: ']'}
-  - B_
+  - B⛶
   - {t: S, h: '$$mdi:apple-keyboard-control$$'}
   - {t: C, h: '$$mdi:apple-keyboard-option$$'}
   - {t: N, h: '$$mdi:apple-keyboard-command$$'}
-  - {t: '&ak_t T', h: '$$mdi:apple-keyboard-shift$$'}
-  - K_
+  - {t: T⛶, h: '$$mdi:apple-keyboard-shift$$'}
+  - K⛶
   - {t: CMMA, s: '&typeSemi'}
-  - {t: '&ak_a A', h: '$$mdi:apple-keyboard-shift$$'}
-  - {t: '&ak_e E', h: '$$mdi:apple-keyboard-command$$'}
-  - {t: '&ak_i I', h: '$$mdi:apple-keyboard-option$$'}
+  - {t: A⛶, h: '$$mdi:apple-keyboard-shift$$'}
+  - {t: E⛶, h: '$$mdi:apple-keyboard-command$$'}
+  - {t: I⛶, h: '$$mdi:apple-keyboard-option$$'}
   - {t: H, h: '$$mdi:apple-keyboard-control$$'}
-  - V_
-  - F_
+  - V⛶
+  - F⛶
   - L
-  - D_
+  - D⛶
   - {t: /, s: '*'}
   - {t: '-', s: +}
-  - U_
-  - O_
-  - Y_
+  - U⛶
+  - O⛶
+  - Y⛶
   - P
   - '&tap_3ms'
   - {t: '$$mdi:keyboard-return$$', h: l_nav}
   - {t: R, h: l_nav}
   - {t: '$$mdi:keyboard-space$$', h: l_sym}
   - {t: '$$mdi:backspace-outline$$', h: l_fn, s: '$$mdi:backspace-reverse-outline$$'}
-  - '&toggle_hdvv_aptmak'
+  - {t: '$$mdi:swap-horizontal$$', h: APTmak|HDvv}
   l_akG:
   - T
   - D
@@ -887,7 +887,7 @@ layers:
   - {t: '$$mdi:keyboard-space$$', h: l_akV}
   - E
   - $$mdi:backspace-outline$$
-  - '&toggle_hdvv_aptmak'
+  - {t: '$$mdi:swap-horizontal$$', h: APTmak|HDvv}
 combos:
 - p: [34, 35]
   k: l_cfg
@@ -898,28 +898,43 @@ combos:
 - p: [13, 14]
   k: $$mdi:keyboard-space$$
 - p: [10, 13]
-  k: ESC
+  k: $$escape$$
+  a: top
+  o: 1.3
+  s: -0.2
 - p: [10, 11, 12]
-  k: '&Sch'
-  l: [l_alpha, l_akG, l_akM, l_akX, l_akT, l_akK, l_akD, l_akW, l_akF, l_akB, l_akV, l_akA, l_akU, l_akE, l_akO, l_akI, l_akJ, l_akDot]
+  k: sch
+  l: [l_alpha]
+  a: top
+  o: -0.2
+  type: h-digraph
 - p: [10, 11, 13]
-  k: '&Tch'
-  l: [l_alpha, l_akG, l_akM, l_akX, l_akT, l_akK, l_akD, l_akW, l_akF, l_akB, l_akV, l_akA, l_akU, l_akE, l_akO, l_akI, l_akJ, l_akDot]
+  k: tch
+  l: [l_alpha]
+  a: bottom
+  o: -0.2
+  type: h-digraph
 - p: [12, 13]
-  k: {t: '&Th T', h: '&tion H'}
-  l: [l_alpha, l_akG, l_akM, l_akX, l_akT, l_akK, l_akD, l_akW, l_akF, l_akB, l_akV, l_akA, l_akU, l_akE, l_akO, l_akI, l_akJ, l_akDot]
+  k: {t: th, h: tion}
+  l: [l_alpha]
+  type: h-digraph
 - p: [11, 12]
-  k: '&Ch'
-  l: [l_alpha, l_akG, l_akM, l_akX, l_akT, l_akK, l_akD, l_akW, l_akF, l_akB, l_akV, l_akA, l_akU, l_akE, l_akO, l_akI, l_akJ, l_akDot]
+  k: ch
+  l: [l_alpha]
+  type: h-digraph
 - p: [1, 2]
-  k: '&Wh'
-  l: [l_alpha, l_akG, l_akM, l_akX, l_akT, l_akK, l_akD, l_akW, l_akF, l_akB, l_akV, l_akA, l_akU, l_akE, l_akO, l_akI, l_akJ, l_akDot]
+  k: wh
+  l: [l_alpha]
+  type: h-digraph
 - p: [10, 11]
-  k: {t: '&Sh S', h: '&sion H'}
-  l: [l_alpha, l_akG, l_akM, l_akX, l_akT, l_akK, l_akD, l_akW, l_akF, l_akB, l_akV, l_akA, l_akU, l_akE, l_akO, l_akI, l_akJ, l_akDot]
+  k: {t: sh, h: sion}
+  l: [l_alpha]
+  type: h-digraph
 - p: [2, 3]
-  k: {t: '&Gh G', h: '&ght H'}
-  l: [l_alpha, l_akG, l_akM, l_akX, l_akT, l_akK, l_akD, l_akW, l_akF, l_akB, l_akV, l_akA, l_akU, l_akE, l_akO, l_akI, l_akJ, l_akDot]
+  k: {t: gh, h: ght}
+  l: [l_alpha]
+  type: h-digraph
 - p: [28, 29]
-  k: '&Ph'
-  l: [l_alpha, l_akG, l_akM, l_akX, l_akT, l_akK, l_akD, l_akW, l_akF, l_akB, l_akV, l_akA, l_akU, l_akE, l_akO, l_akI, l_akJ, l_akDot]
+  k: ph
+  l: [l_alpha]
+  type: h-digraph

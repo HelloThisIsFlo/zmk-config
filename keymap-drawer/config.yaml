@@ -58,6 +58,10 @@ draw_config:
         rect.combo, rect.combo-separate {
             fill: #cdf;
         }
+        rect.h-digraph {
+            fill: #f5d4bf;
+        }
+
 
         /* color accent for held keys */
         rect.held, rect.combo.held {
@@ -199,32 +203,69 @@ parse_config:
         "&caps_word": $$mdi:caps-lock$$
 
         # Adaptive Keys
-        "&ak_a": "A_"
-        "&ak_b": "B_"
-        "&ak_c": "C_"
-        "&ak_d": "D_"
-        "&ak_e": "E_"
-        "&ak_f": "F_"
-        "&ak_g": "G_"
-        "&ak_h": "H_"
-        "&ak_i": "I_"
-        "&ak_j": "J_"
-        "&ak_k": "K_"
-        "&ak_l": "L_"
-        "&ak_m": "M_"
-        "&ak_n": "N_"
-        "&ak_o": "O_"
-        "&ak_p": "P_"
-        "&ak_q": "Q_"
-        "&ak_r": "R_"
-        "&ak_s": "S_"
-        "&ak_t": "T_"
-        "&ak_u": "U_"
-        "&ak_v": "V_"
-        "&ak_w": "W_"
-        "&ak_x": "X_"
-        "&ak_y": "Y_"
-        "&ak_z": "Z_"
+        "&ak_a": "A⛶"
+        "&ak_b": "B⛶"
+        "&ak_c": "C⛶"
+        "&ak_d": "D⛶"
+        "&ak_e": "E⛶"
+        "&ak_f": "F⛶"
+        "&ak_g": "G⛶"
+        "&ak_h": "H⛶"
+        "&ak_i": "I⛶"
+        "&ak_j": "J⛶"
+        "&ak_k": "K⛶"
+        "&ak_l": "L⛶"
+        "&ak_m": "M⛶"
+        "&ak_n": "N⛶"
+        "&ak_o": "O⛶"
+        "&ak_p": "P⛶"
+        "&ak_q": "Q⛶"
+        "&ak_r": "R⛶"
+        "&ak_s": "S⛶"
+        "&ak_t": "T⛶"
+        "&ak_u": "U⛶"
+        "&ak_v": "V⛶"
+        "&ak_w": "W⛶"
+        "&ak_x": "X⛶"
+        "&ak_y": "Y⛶"
+        "&ak_z": "Z⛶"
+
+        "&ak_a A": "A⛶"
+        "&ak_b B": "B⛶"
+        "&ak_c C": "C⛶"
+        "&ak_d D": "D⛶"
+
+        "&ak_e E": "E⛶"
+
+        "&ak_f F": "F⛶"
+        "&ak_g G": "G⛶"
+        "&ak_h H": "H⛶"
+
+        "&ak_i I": "I⛶"
+
+        "&ak_j J": "J⛶"
+        "&ak_k K": "K⛶"
+        "&ak_l L": "L⛶"
+        "&ak_m M": "M⛶"
+        "&ak_n N": "N⛶"
+        "&ak_o O": "O⛶"
+        "&ak_p P": "P⛶"
+        "&ak_q Q": "Q⛶"
+        "&ak_r R": "R⛶"
+        "&ak_s S": "S⛶"
+        "&ak_t T": "T⛶"
+        "&ak_u U": "U⛶"
+        "&ak_v V": "V⛶"
+        "&ak_w W": "W⛶"
+        "&ak_x X": "X⛶"
+        "&ak_y Y": "Y⛶"
+        "&ak_z Z": "Z⛶"
+
+        "&dot_ak": ".⛶"
+
+        "&toggle_hdvv_aptmak":
+            tap: $$mdi:swap-horizontal$$
+            hold: "APTmak|HDvv"
 
         # Empty
         "&none":
@@ -441,4 +482,56 @@ parse_config:
         # System
         C_POWER: $$mdi:power$$
         C_AL_LOCK: $$mdi:lock$$
-    zmk_combos: {}
+
+
+    zmk_combos: 
+        # Alpha layer combos are active on all alpha & AK layers,
+        # but for simplicity, I'm only showing them on the base Alpha layer
+        combo_ch:
+            key: "ch"
+            type: 'h-digraph'
+            l: ['l_alpha']
+        combo_th:
+            key:
+                t: "th"
+                h: "tion"
+            type: 'h-digraph'
+            l: ['l_alpha']
+        combo_sch:
+            key: "sch"
+            type: 'h-digraph'
+            a: top
+            o: -0.2
+            l: ['l_alpha']
+        combo_tch:
+            key: "tch"
+            type: 'h-digraph'
+            a: bottom
+            o: -0.2
+            l: ['l_alpha']
+        combo_wh:
+            key: "wh"
+            type: 'h-digraph'
+            l: ['l_alpha']
+        combo_sh:
+            key:
+                t: "sh"
+                h: "sion"
+            type: 'h-digraph'
+            l: ['l_alpha']
+        combo_gh:
+            key:
+                t: "gh"
+                h: "ght"
+            type: 'h-digraph'
+            l: ['l_alpha']
+        combo_ph:
+            key: "ph"
+            type: 'h-digraph'
+            l: ['l_alpha']
+
+        combo_esc:
+            key: "$$escape$$"
+            a: top
+            o: 1.3
+            s: -0.2
