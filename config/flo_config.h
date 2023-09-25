@@ -97,7 +97,7 @@
 
 // #define my_quick_tapping_term 112 // Unused atm
 // #define my_ak_delay 40 // Unused atm
-#define my_combo_timeout 15
+#define my_combo_timeout 20
 
 &mt {
     tapping-term-ms = <my_tapping_term>;
