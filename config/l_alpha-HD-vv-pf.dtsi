@@ -5,7 +5,7 @@
                             bindings = <
 &ak_x         &ak_w        &ak_m        &ak_g           &ak_j            &HashDllr   &DotColn        &SqtLbkt       &DqtRbkt       &ak_b
 &hml LCTRL S  &hml LALT C  &hml LGUI N  &hrm_t LSHFT T  &ak_k            &CmmaSemi   &hrm_a RSHFT A  &hrm_e RGUI E  &hrm_i RALT I  &hmr RCTRL H
-&kp V         &ak_p        &debugL      &ak_d           &SlshStar        &MinusPlus  &ak_u           &ak_o          &ak_y          &ak_f
+&bkp V        &ak_p        &bkp L       &ak_d           &SlshStar        &MinusPlus  &ak_u           &ak_o          &ak_y          &ak_f
                            &tap_3ms        &lt l_nav RETURN    &lt l_nav R      &lt l_sym SPACE &mm_bspc_del &toggle_hdvv_aptmak
                             >;
                    };

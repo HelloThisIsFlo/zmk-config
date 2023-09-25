@@ -17,6 +17,23 @@ behaviors {
         // - The &kp is still outputted immediately
     };
 
+    bkp: bkp {
+        // This is a macro that simply taps one key
+        // The difference with '&kp' is that, because it is a macro, the '&kp' will be buffered and outputted _after_ any currently running macro
+        // This eliminates ALL the timing issues with the ak layers and &aksl 😃🎉
+        // 
+        // It will however, slow down the output. So, to not slow down too much, make sure to still use a relatively short 'ak_window'.
+        // If we target 120 wpm, we can bump 'ak_window' up to 100ms (wpm = 120, cpm = 120 x 5 = 600, max_ak_window = 60 / (1000 x 600) = 100ms)
+        label = "buffered_key_press";
+        compatible = "zmk,behavior-macro-one-param";
+        #binding-cells = <1>;
+        wait-ms = <0>;
+        tap-ms = <10>;
+        bindings = <&macro_param_1to1>,
+                <&kp MACRO_PLACEHOLDER>; \
+    };
+
+
     toggle_hdvv_aptmak: toggle_hdvv_aptmak {
         compatible = "zmk,behavior-tap-dance";
         label = "toggle_hdvv_aptmak";
