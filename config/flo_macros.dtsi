@@ -153,11 +153,11 @@
         };
 
 
-AK_MACRO(ak_g, &kp G, G)
-AK_MACRO(ak_d, &kp D, D)
-AK_MACRO(ak_x, &kp X, X)
-AK_MACRO(ak_xc, &kp C, X)
-AK_MACRO(ak_m, &kp M, M)
+AK_MACRO(ak_g, l_akG, G)
+AK_MACRO(ak_d, l_akD, D)
+AK_MACRO(ak_x, l_akX, X)
+AK_MACRO(ak_xc, l_akC, X)
+AK_MACRO(ak_m, l_akM, M)
     ZMK_MACRO(ak_lg,
             wait-ms = <10>;
             tap-ms = <10>;
@@ -175,9 +175,9 @@ AK_MACRO(ak_m, &kp M, M)
             tap-ms = <10>;
         bindings = <&kp BSPC &kp L &kp K>;
         )
-AK_MACRO(ak_k, &kp K, K)
-AK_MACRO(ak_w, &kp W, W)
-AK_MACRO(ak_b, &kp B, B)
+AK_MACRO(ak_k, l_akK, K)
+AK_MACRO(ak_w, l_akW, W)
+AK_MACRO(ak_b, l_akB, B)
     ZMK_MACRO(ak_sf,
             wait-ms = <10>;
             tap-ms = <10>;
@@ -194,7 +194,7 @@ AK_MACRO(ak_t, l_akT, T)
         bindings = <&kp BSPC &kp C &kp K>;
         )
 
-AK_MACRO(ak_a, &kp A, A)
+AK_MACRO(ak_a, l_akA, A)
 
 
     ZMK_MACRO(ak_e,
