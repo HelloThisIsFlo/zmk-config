@@ -11,19 +11,6 @@
                         , <&macro_tap &kp KEY>; \
         };
 
-#define AK_MACRO_SEQUENCE(NAME, LAYER, SEQUENCE) \
-        NAME: NAME { \
-                label = ZMK_MACRO_STRINGIFY(ZM_ ## NAME); \
-                compatible = "zmk,behavior-macro"; \
-                #binding-cells = <0>; \
-                wait-ms = <0>; \
-                tap-ms = <0>;  \
-                bindings = <&aksl LAYER> \
-                        , <&macro_tap_time my_ak_window> \
-                        , SEQUENCE; \
-        };
-
-// TODO: Continue migrating the AK_MACROS to this format.
 
     macros {
 
@@ -171,8 +158,6 @@ ZMK_MACRO(ak_lg,
         tap-ms = <10>;
         bindings = <&kp BSPC &kp L &kp G>;
 )
-
-AK_MACRO_SEQUENCE(ak_lm, l_akM, <&kp BSPC &kp L &kp M>)
 
 ZMK_MACRO(ak_lk,
         wait-ms = <10>;
