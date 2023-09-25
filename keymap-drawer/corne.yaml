@@ -21,8 +21,8 @@ layers:
   - {t: E⛶, h: '$$mdi:apple-keyboard-command$$'}
   - {t: I⛶, h: '$$mdi:apple-keyboard-option$$'}
   - {t: H, h: '$$mdi:apple-keyboard-control$$'}
-  - V⛶
-  - F⛶
+  - V
+  - P⛶
   - L
   - D⛶
   - {t: /, s: '*'}
@@ -30,7 +30,7 @@ layers:
   - U⛶
   - O⛶
   - Y⛶
-  - P
+  - F⛶
   - '&tap_3ms'
   - {t: '$$mdi:keyboard-return$$', h: l_nav}
   - {t: R, h: l_nav}
@@ -113,7 +113,44 @@ layers:
   - {t: ' ', type: trans}
   l_akX:
   - {t: ' ', type: trans}
-  - '&ak_xc'
+  - P⛶
+  - L
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  l_akP:
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
   - L
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
@@ -317,7 +354,6 @@ layers:
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
-  - S
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
@@ -326,6 +362,7 @@ layers:
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
+  - I
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
@@ -356,43 +393,6 @@ layers:
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
-  - {t: ' ', type: trans}
-  - {t: ' ', type: trans}
-  - {t: ' ', type: trans}
-  - {t: ' ', type: trans}
-  - {t: ' ', type: trans}
-  - {t: ' ', type: trans}
-  - {t: ' ', type: trans}
-  - {t: ' ', type: trans}
-  - {t: ' ', type: trans}
-  - {t: ' ', type: trans}
-  - {t: ' ', type: trans}
-  - {t: ' ', type: trans}
-  - {t: ' ', type: trans}
-  - {t: ' ', type: trans}
-  l_akV:
-  - {t: ' ', type: trans}
-  - {t: ' ', type: trans}
-  - {t: ' ', type: trans}
-  - {t: ' ', type: trans}
-  - {t: ' ', type: trans}
-  - {t: ' ', type: trans}
-  - {t: ' ', type: trans}
-  - {t: ' ', type: trans}
-  - {t: ' ', type: trans}
-  - {t: ' ', type: trans}
-  - {t: ' ', type: trans}
-  - {t: ' ', type: trans}
-  - {t: ' ', type: trans}
-  - {t: ' ', type: trans}
-  - {t: ' ', type: trans}
-  - {t: ' ', type: trans}
-  - {t: ' ', type: trans}
-  - {t: ' ', type: trans}
-  - {t: ' ', type: trans}
-  - {t: ' ', type: trans}
-  - {t: ' ', type: trans}
-  - '&ak_sf'
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
@@ -884,7 +884,7 @@ layers:
   - /
   - $$mdi:keyboard-tab$$
   - $$mdi:keyboard-return$$
-  - {t: '$$mdi:keyboard-space$$', h: l_akV}
+  - {t: '$$mdi:keyboard-space$$', h: l_akB}
   - E
   - $$mdi:backspace-outline$$
   - {t: '$$mdi:swap-horizontal$$', h: APTmak|HDvv}
@@ -934,7 +934,7 @@ combos:
   k: {t: gh, h: ght}
   l: [l_alpha]
   type: h-digraph
-- p: [28, 29]
+- p: [22, 21]
   k: ph
   l: [l_alpha]
   type: h-digraph
