@@ -1,4 +1,4 @@
-<svg width="2056" height="4897" viewBox="0 0 2056 4897" class="keymap" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="1028" height="9728" viewBox="0 0 1028 9728" class="keymap" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <defs>/* start glyphs */
 <svg id="escape">
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>location-exit</title>
@@ -281,7 +281,7 @@ path.combo {
 </g>
 <g transform="translate(476, 98)" class="key keypos-15">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
-<text x="0" y="0" class="key tap">CMMA</text>
+<text x="0" y="0" class="key tap">,</text>
 <text x="0" y="-24" class="key shifted"><tspan style="font-size: 78%">&amp;typeSemi</tspan></text>
 </g>
 <g transform="translate(532, 91)" class="key keypos-16">
@@ -441,7 +441,7 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(1178, 0)" class="layer-l_akG">
+<g transform="translate(150, 392)" class="layer-l_akG">
 <text x="0" y="28" class="label">l_akG:</text>
 <g transform="translate(0, 129)">
 <g transform="translate(28, 49)" class="key keypos-0">
@@ -580,7 +580,7 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(150, 403)" class="layer-l_akM">
+<g transform="translate(150, 796)" class="layer-l_akM">
 <text x="0" y="28" class="label">l_akM:</text>
 <g transform="translate(0, 129)">
 <g transform="translate(28, 49)" class="key keypos-0">
@@ -718,7 +718,7 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(1178, 403)" class="layer-l_akX">
+<g transform="translate(150, 1199)" class="layer-l_akX">
 <text x="0" y="28" class="label">l_akX:</text>
 <g transform="translate(0, 129)">
 <g transform="translate(28, 49)" class="key trans keypos-0">
@@ -855,7 +855,7 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(150, 807)" class="layer-l_akT">
+<g transform="translate(150, 1603)" class="layer-l_akT">
 <text x="0" y="28" class="label">l_akT:</text>
 <g transform="translate(0, 129)">
 <g transform="translate(28, 49)" class="key trans keypos-0">
@@ -992,7 +992,7 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(1178, 807)" class="layer-l_akK">
+<g transform="translate(150, 2006)" class="layer-l_akK">
 <text x="0" y="28" class="label">l_akK:</text>
 <g transform="translate(0, 129)">
 <g transform="translate(28, 49)" class="key trans keypos-0">
@@ -1129,7 +1129,7 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(150, 1210)" class="layer-l_akD">
+<g transform="translate(150, 2410)" class="layer-l_akD">
 <text x="0" y="28" class="label">l_akD:</text>
 <g transform="translate(0, 129)">
 <g transform="translate(28, 49)" class="key trans keypos-0">
@@ -1265,7 +1265,7 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(1178, 1210)" class="layer-l_akW">
+<g transform="translate(150, 2813)" class="layer-l_akW">
 <text x="0" y="28" class="label">l_akW:</text>
 <g transform="translate(0, 129)">
 <g transform="translate(28, 49)" class="key keypos-0">
@@ -1402,7 +1402,7 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(150, 1614)" class="layer-l_akF">
+<g transform="translate(150, 3216)" class="layer-l_akF">
 <text x="0" y="28" class="label">l_akF:</text>
 <g transform="translate(0, 129)">
 <g transform="translate(28, 49)" class="key trans keypos-0">
@@ -1538,7 +1538,7 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(1178, 1614)" class="layer-l_akB">
+<g transform="translate(150, 3620)" class="layer-l_akB">
 <text x="0" y="28" class="label">l_akB:</text>
 <g transform="translate(0, 129)">
 <g transform="translate(28, 49)" class="key trans keypos-0">
@@ -1676,7 +1676,7 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(150, 2017)" class="layer-l_akV">
+<g transform="translate(150, 4023)" class="layer-l_akV">
 <text x="0" y="28" class="label">l_akV:</text>
 <g transform="translate(0, 129)">
 <g transform="translate(28, 49)" class="key trans keypos-0">
@@ -1812,7 +1812,7 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(1178, 2017)" class="layer-l_akA">
+<g transform="translate(150, 4427)" class="layer-l_akA">
 <text x="0" y="28" class="label">l_akA:</text>
 <g transform="translate(0, 129)">
 <g transform="translate(28, 49)" class="key trans keypos-0">
@@ -1948,7 +1948,7 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(150, 2421)" class="layer-l_akU">
+<g transform="translate(150, 4830)" class="layer-l_akU">
 <text x="0" y="28" class="label">l_akU:</text>
 <g transform="translate(0, 129)">
 <g transform="translate(28, 49)" class="key trans keypos-0">
@@ -2084,7 +2084,7 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(1178, 2421)" class="layer-l_akE">
+<g transform="translate(150, 5234)" class="layer-l_akE">
 <text x="0" y="28" class="label">l_akE:</text>
 <g transform="translate(0, 129)">
 <g transform="translate(28, 49)" class="key trans keypos-0">
@@ -2220,7 +2220,7 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(150, 2824)" class="layer-l_akO">
+<g transform="translate(150, 5637)" class="layer-l_akO">
 <text x="0" y="28" class="label">l_akO:</text>
 <g transform="translate(0, 129)">
 <g transform="translate(28, 49)" class="key trans keypos-0">
@@ -2356,7 +2356,7 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(1178, 2824)" class="layer-l_akI">
+<g transform="translate(150, 6041)" class="layer-l_akI">
 <text x="0" y="28" class="label">l_akI:</text>
 <g transform="translate(0, 129)">
 <g transform="translate(28, 49)" class="key trans keypos-0">
@@ -2492,7 +2492,7 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(150, 3228)" class="layer-l_akJ">
+<g transform="translate(150, 6444)" class="layer-l_akJ">
 <text x="0" y="28" class="label">l_akJ:</text>
 <g transform="translate(0, 129)">
 <g transform="translate(28, 49)" class="key trans keypos-0">
@@ -2633,7 +2633,7 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(1178, 3228)" class="layer-l_akDot">
+<g transform="translate(150, 6848)" class="layer-l_akDot">
 <text x="0" y="28" class="label">l_akDot:</text>
 <g transform="translate(0, 129)">
 <g transform="translate(28, 49)" class="key trans keypos-0">
@@ -2770,7 +2770,7 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(150, 3631)" class="layer-l_nav">
+<g transform="translate(150, 7251)" class="layer-l_nav">
 <text x="0" y="28" class="label">l_nav:</text>
 <g transform="translate(0, 129)">
 <g transform="translate(28, 49)" class="key keypos-0">
@@ -2941,7 +2941,7 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(1178, 3631)" class="layer-l_sym">
+<g transform="translate(150, 7654)" class="layer-l_sym">
 <text x="0" y="28" class="label">l_sym:</text>
 <g transform="translate(0, 129)">
 <g transform="translate(28, 49)" class="key keypos-0">
@@ -3120,7 +3120,7 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(150, 4035)" class="layer-l_fn">
+<g transform="translate(150, 8058)" class="layer-l_fn">
 <text x="0" y="28" class="label">l_fn:</text>
 <g transform="translate(0, 129)">
 <g transform="translate(28, 49)" class="key keypos-0">
@@ -3189,7 +3189,7 @@ path.combo {
 </g>
 <g transform="translate(476, 98)" class="key keypos-15">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
-<text x="0" y="0" class="key tap">CMMA</text>
+<text x="0" y="0" class="key tap">,</text>
 </g>
 <g transform="translate(532, 91)" class="key keypos-16">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
@@ -3299,7 +3299,7 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(1178, 4035)" class="layer-l_num">
+<g transform="translate(150, 8461)" class="layer-l_num">
 <text x="0" y="28" class="label">l_num:</text>
 <g transform="translate(0, 129)">
 <g transform="translate(28, 49)" class="key keypos-0">
@@ -3487,7 +3487,7 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(150, 4438)" class="layer-l_cfg">
+<g transform="translate(150, 8865)" class="layer-l_cfg">
 <text x="0" y="28" class="label">l_cfg:</text>
 <g transform="translate(0, 129)">
 <g transform="translate(28, 49)" class="key keypos-0">
@@ -3663,7 +3663,7 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(1178, 4438)" class="layer-APTmak">
+<g transform="translate(150, 9268)" class="layer-APTmak">
 <text x="0" y="28" class="label">APTmak:</text>
 <g transform="translate(0, 129)">
 <g transform="translate(28, 49)" class="key keypos-0">

@@ -16,7 +16,7 @@ layers:
   - {t: N, h: '$$mdi:apple-keyboard-command$$'}
   - {t: T⛶, h: '$$mdi:apple-keyboard-shift$$'}
   - K⛶
-  - {t: CMMA, s: '&typeSemi'}
+  - {t: ',', s: '&typeSemi'}
   - {t: A⛶, h: '$$mdi:apple-keyboard-shift$$'}
   - {t: E⛶, h: '$$mdi:apple-keyboard-command$$'}
   - {t: I⛶, h: '$$mdi:apple-keyboard-option$$'}
@@ -756,7 +756,7 @@ layers:
   - {t: F7, h: '$$mdi:apple-keyboard-command$$'}
   - {t: F8, h: '$$mdi:apple-keyboard-shift$$'}
   - F14
-  - CMMA
+  - ','
   - {t: '1', h: '$$mdi:apple-keyboard-shift$$'}
   - {t: '2', h: '$$mdi:apple-keyboard-command$$'}
   - {t: '3', h: '$$mdi:apple-keyboard-option$$'}
