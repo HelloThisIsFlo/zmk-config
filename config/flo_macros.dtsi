@@ -156,8 +156,8 @@
 AK_MACRO(ak_g, l_akG, G)
 AK_MACRO(ak_d, l_akD, D)
 AK_MACRO(ak_x, l_akX, X)
-AK_MACRO(ak_xc, l_akX, C)
 AK_MACRO(ak_m, l_akM, M)
+AK_MACRO(ak_p, l_akP, P)
 
 ZMK_MACRO(ak_lg,
         wait-ms = <10>;
