@@ -156,87 +156,69 @@
 AK_MACRO(ak_g, l_akG, G)
 AK_MACRO(ak_d, l_akD, D)
 AK_MACRO(ak_x, l_akX, X)
-AK_MACRO(ak_xc, l_akC, X)
+AK_MACRO(ak_xc, l_akX, C)
 AK_MACRO(ak_m, l_akM, M)
-    ZMK_MACRO(ak_lg,
-            wait-ms = <10>;
-            tap-ms = <10>;
+
+ZMK_MACRO(ak_lg,
+        wait-ms = <10>;
+        tap-ms = <10>;
         bindings = <&kp BSPC &kp L &kp G>;
-        )
-    ZMK_MACRO(ak_lm,
-            wait-ms = <10>;
-            tap-ms = <10>;
+)
+ZMK_MACRO(ak_lm,
+        wait-ms = <10>;
+        tap-ms = <10>;
         bindings = <&kp BSPC &kp L &kp M>
-                    , <&sl l_akM>
+                , <&sl l_akM>
         ;
-        )
-    ZMK_MACRO(ak_lk,
-            wait-ms = <10>;
-            tap-ms = <10>;
+)
+ZMK_MACRO(ak_lk,
+        wait-ms = <10>;
+        tap-ms = <10>;
         bindings = <&kp BSPC &kp L &kp K>;
-        )
+)
+
 AK_MACRO(ak_k, l_akK, K)
 AK_MACRO(ak_w, l_akW, W)
 AK_MACRO(ak_b, l_akB, B)
-    ZMK_MACRO(ak_sf,
-            wait-ms = <10>;
-            tap-ms = <10>;
+
+ZMK_MACRO(ak_sf,
+        wait-ms = <10>;
+        tap-ms = <10>;
         bindings = <&kp BSPC &kp S &kp F>;
-        )
+)
 
 AK_MACRO(ak_f, l_akF, F)
 AK_MACRO(ak_v, l_akV, V)
 AK_MACRO(ak_t, l_akT, T)
 
-    ZMK_MACRO(ak_ck,
-            wait-ms = <10>;
-            tap-ms = <10>;
+ZMK_MACRO(ak_ck,
+        wait-ms = <10>;
+        tap-ms = <10>;
         bindings = <&kp BSPC &kp C &kp K>;
-        )
+)
 
 AK_MACRO(ak_a, l_akA, A)
+AK_MACRO(ak_e, l_akE, E)
+AK_MACRO(ak_o, l_akO, O)
+AK_MACRO(ak_i, l_akI, I)
+AK_MACRO(ak_y, l_akJ, Y) // J and Y are sharing the same layer!!
+AK_MACRO(ak_j, l_akJ, J) // J and Y are sharing the same layer!!
 
-
-    ZMK_MACRO(ak_e,
-            wait-ms = <10>;
-            tap-ms = <10>;
-        bindings = <&kp E &sl l_akE>;
-        )
-    ZMK_MACRO(ak_o,
-            wait-ms = <10>;
-            tap-ms = <10>;
-        bindings = <&kp O &sl l_akO>;
-        )
-    ZMK_MACRO(ak_i,
-            wait-ms = <10>;
-            tap-ms = <10>;
-        bindings = <&kp I &sl l_akI>;
-        )
-    ZMK_MACRO(ak_y,
-            wait-ms = <10>;
-            tap-ms = <10>;
-        bindings = <&kp Y &sl l_akJ>;
-        )
-    ZMK_MACRO(ak_j,
-            wait-ms = <10>;
-            tap-ms = <10>;
-        bindings = <&kp J &sl l_akJ>;
-        )
-    ZMK_MACRO(l_j_o,
-            wait-ms = <10>;
-            tap-ms = <10>;
+ZMK_MACRO(l_j_o,
+        wait-ms = <10>;
+        tap-ms = <10>;
         bindings = <&kp O &sl l_akJ>;
-        )
-    ZMK_MACRO(l_j_y,
-            wait-ms = <10>;
-            tap-ms = <10>;
+)
+ZMK_MACRO(l_j_y,
+        wait-ms = <10>;
+        tap-ms = <10>;
         bindings = <&kp Y &sl l_akJ>;
-        )
-    ZMK_MACRO(l_j_g,
-            wait-ms = <10>;
-            tap-ms = <10>;
+)
+ZMK_MACRO(l_j_g,
+        wait-ms = <10>;
+        tap-ms = <10>;
         bindings = <&kp P &kp G>;
-        )
+)
 
 
 
