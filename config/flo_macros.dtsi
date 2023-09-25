@@ -1,4 +1,14 @@
- 
+/* See &aksl behavior for explanation*/
+#define AK_MACRO(NAME, LAYER, KEY) \
+ZMK_MACRO(<NAME>, \
+        wait-ms = <0>; \
+        tap-ms = <0>;  \
+        bindings = <&aksl LAYER> \
+                , <&macro_tap_time my_ak_window> \
+                , <&macro_tap &kp KEY>; \
+)
+
+// TODO: Continue migrating the AK_MACROS to this format.
 
     macros {
 
@@ -139,37 +149,12 @@
                 ;
         };
 
-// TODO: This is a test (wait 0 and tap 1ms)
-    ZMK_MACRO(ak_g,
-            wait-ms = <0>;
-            tap-ms = <1>;
-        bindings = <&macro_tap &kp G>
-                , <&sl l_akG>;
-        )
-    ZMK_MACRO(ak_d,
-            wait-ms = <10>;
-            tap-ms = <10>;
-        bindings = <&macro_tap &kp D>
-                , <&sl l_akD>;
-        )
-    ZMK_MACRO(ak_x,
-            wait-ms = <10>;
-            tap-ms = <10>;
-        bindings = <&macro_tap &kp X>
-                , <&sl l_akX>;
-        )
-    ZMK_MACRO(ak_xc,
-            wait-ms = <10>;
-            tap-ms = <10>;
-        bindings = <&macro_tap &kp C>
-                , <&sl l_akX>;
-        )
-    ZMK_MACRO(ak_m,
-            wait-ms = <10>;
-            tap-ms = <10>;
-        bindings = <&macro_tap &kp M>
-                , <&sl l_akM>;
-        )
+
+AK_MACRO(ak_g, &kp G, G)
+AK_MACRO(ak_d, &kp D, D)
+AK_MACRO(ak_x, &kp X, X)
+AK_MACRO(ak_xc, &kp C, X)
+AK_MACRO(ak_m, &kp M, M)
     ZMK_MACRO(ak_lg,
             wait-ms = <10>;
             tap-ms = <10>;
@@ -187,68 +172,28 @@
             tap-ms = <10>;
         bindings = <&kp BSPC &kp L &kp K>;
         )
-    ZMK_MACRO(ak_k,
-            wait-ms = <10>;
-            tap-ms = <10>;
-        bindings = <&macro_tap &kp K>
-                , <&sl l_akK>;
-        )
-    ZMK_MACRO(ak_w,
-            wait-ms = <10>;
-            tap-ms = <10>;
-        bindings = <&macro_tap &kp W>
-                , <&sl l_akW>;
-        )
-    ZMK_MACRO(ak_b,
-            wait-ms = <10>;
-            tap-ms = <10>;
-        bindings = <&macro_tap &kp B>
-                , <&sl l_akB>;
-        )
+AK_MACRO(ak_k, &kp K, K)
+AK_MACRO(ak_w, &kp W, W)
+AK_MACRO(ak_b, &kp B, B)
     ZMK_MACRO(ak_sf,
             wait-ms = <10>;
             tap-ms = <10>;
         bindings = <&kp BSPC &kp S &kp F>;
         )
-    ZMK_MACRO(ak_f,
-            wait-ms = <10>;
-            tap-ms = <10>;
-        bindings = <&macro_tap &kp F>
-                , <&sl l_akF>;
-        )
-// TODO: Current test, using custom behavior: aksl
-// TODO: If this works, make it a c macro: AK_MACRO(name, layer, key)
-    ZMK_MACRO(ak_v,
-            wait-ms = <0>;
-            tap-ms = <0>; 
-        bindings = <&aksl l_akV>
-                , <&macro_tap_time my_ak_window> // See &aksl behavior for explanation
-                , <&macro_tap &kp V>;
-        )
-// TODO: This is a test (steps reversed)
-    ZMK_MACRO(ak_t,
-            wait-ms = <10>;
-            tap-ms = <10>;
-        bindings = <&sl l_akT>
-                , <&macro_tap &kp T>;
-        )
+
+AK_MACRO(ak_f, l_akF, F)
+AK_MACRO(ak_v, l_akV, V)
+AK_MACRO(ak_t, l_akT, T)
+
     ZMK_MACRO(ak_ck,
             wait-ms = <10>;
             tap-ms = <10>;
         bindings = <&kp BSPC &kp C &kp K>;
         )
-    ZMK_MACRO(ak_a,
-            wait-ms = <10>;
-            tap-ms = <10>;
-        bindings = <&macro_tap &kp A>
-                , <&sl l_akA>;
-        )
-    ZMK_MACRO(ak_u,
-            wait-ms = <10>;
-            tap-ms = <10>;
-        bindings = <&macro_tap &kp U>
-                , <&sl l_akU>;
-        )
+
+AK_MACRO(ak_a, &kp A, A)
+
+
     ZMK_MACRO(ak_e,
             wait-ms = <10>;
             tap-ms = <10>;
