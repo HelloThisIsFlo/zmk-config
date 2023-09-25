@@ -376,17 +376,23 @@ path.combo {
 </g>
 <g transform="translate(279, 259) rotate(15.0)" class="key keypos-31">
 <rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key"/>
-<use href="#mdi:keyboard-return" xlink:href="#mdi:keyboard-return" x="-7" y="-7" height="14" width="14.0" class="key tap glyph mdi:keyboard-return"/>
+<text x="0" y="0" class="key tap">
+<tspan x="0" dy="-1.2em">&amp;bkp</tspan><tspan x="0" dy="1.2em">RETURN</tspan>
+</text>
 <text x="0" y="30" class="key hold">l_nav</text>
 </g>
 <g transform="translate(358, 272) rotate(30.0)" class="key keypos-32">
 <rect rx="6" ry="6" x="-32" y="-49" width="64" height="98" class="key"/>
-<text x="0" y="0" class="key tap">R</text>
+<text x="0" y="0" class="key tap">
+<tspan x="0" dy="-1.2em">&amp;bkp</tspan><tspan x="0" dy="1.2em">R</tspan>
+</text>
 <text x="0" y="47" class="key hold">l_nav</text>
 </g>
 <g transform="translate(526, 272) rotate(-30.0)" class="key keypos-33">
 <rect rx="6" ry="6" x="-32" y="-49" width="64" height="98" class="key"/>
-<use href="#mdi:keyboard-space" xlink:href="#mdi:keyboard-space" x="-7" y="-7" height="14" width="14.0" class="key tap glyph mdi:keyboard-space"/>
+<text x="0" y="0" class="key tap">
+<tspan x="0" dy="-1.2em">&amp;bkp</tspan><tspan x="0" dy="1.2em">SPACE</tspan>
+</text>
 <text x="0" y="47" class="key hold">l_sym</text>
 </g>
 <g transform="translate(605, 259) rotate(-15.0)" class="key keypos-34">
