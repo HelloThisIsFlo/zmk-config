@@ -23,7 +23,7 @@ layers:
   - {t: H, h: '$$mdi:apple-keyboard-control$$'}
   - V
   - P⛶
-  - L
+  - '&debugL'
   - D⛶
   - {t: /, s: '*'}
   - {t: '-', s: +}
