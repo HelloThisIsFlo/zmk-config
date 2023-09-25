@@ -89,7 +89,7 @@
 
 
 #define my_tapping_term 170
-#define my_ak_window 250
+#define my_ak_window 200 // Needs to be less than 225ms (min repeat term for Mac OS, larger and it'll repeat the key on some systems)
 // #define my_quick_tapping_term 112 // Unused atm
 // #define my_ak_delay 40 // Unused atm
 #define my_combo_timeout 15
