@@ -1,7 +1,7 @@
 /* See &aksl behavior for explanation*/
 #define AK_MACRO(NAME, LAYER, KEY) \
         NAME: NAME { \
-                label = <NAME>; \
+                label = ZMK_MACRO_STRINGIFY(ZM_ ## NAME); \
                 compatible = "zmk,behavior-macro"; \
                 #binding-cells = <0>; \
                 wait-ms = <0>; \
