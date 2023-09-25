@@ -34,6 +34,16 @@ behaviors {
     };
 
 
+    blt: blt {
+        compatible = "zmk,behavior-hold-tap";
+        label = "buffered_layer_tap";
+        #binding-cells = <2>;
+        flavor = "tap-preferred";
+        tapping-term-ms = <my_tapping_term>;
+        bindings = <&mo>, <&bkp>;
+    };
+
+
     toggle_hdvv_aptmak: toggle_hdvv_aptmak {
         compatible = "zmk,behavior-tap-dance";
         label = "toggle_hdvv_aptmak";
