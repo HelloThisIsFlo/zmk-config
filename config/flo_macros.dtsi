@@ -11,6 +11,18 @@
                         , <&macro_tap &kp KEY>; \
         };
 
+#define AK_MACRO_SEQUENCE(NAME, LAYER, SEQUENCE) \
+        NAME: NAME { \
+                label = ZMK_MACRO_STRINGIFY(ZM_ ## NAME); \
+                compatible = "zmk,behavior-macro"; \
+                #binding-cells = <0>; \
+                wait-ms = <0>; \
+                tap-ms = <0>;  \
+                bindings = <&aksl LAYER> \
+                        , <&macro_tap_time my_ak_window> \
+                        , SEQUENCE; \
+        };
+
 // TODO: Continue migrating the AK_MACROS to this format.
 
     macros {
@@ -159,13 +171,9 @@ ZMK_MACRO(ak_lg,
         tap-ms = <10>;
         bindings = <&kp BSPC &kp L &kp G>;
 )
-ZMK_MACRO(ak_lm,
-        wait-ms = <10>;
-        tap-ms = <10>;
-        bindings = <&kp BSPC &kp L &kp M>
-                , <&sl l_akM>
-        ;
-)
+
+AK_MACRO_SEQUENCE(ak_lm, l_akM, <&kp BSPC &kp L &kp M>)
+
 ZMK_MACRO(ak_lk,
         wait-ms = <10>;
         tap-ms = <10>;
@@ -199,16 +207,10 @@ AK_MACRO(ak_i, l_akI, I)
 AK_MACRO(ak_y, l_akJ, Y) // J and Y are sharing the same layer!!
 AK_MACRO(ak_j, l_akJ, J) // J and Y are sharing the same layer!!
 
-ZMK_MACRO(l_j_o,
-        wait-ms = <10>;
-        tap-ms = <10>;
-        bindings = <&kp O &sl l_akJ>;
-)
-ZMK_MACRO(l_j_y,
-        wait-ms = <10>;
-        tap-ms = <10>;
-        bindings = <&kp Y &sl l_akJ>;
-)
+AK_MACRO(l_j_o, l_akJ, O) // Typing 'O' but goig back to l_akJ
+AK_MACRO(l_j_y, l_akJ, Y) // Typing 'Y' but goig back to l_akJ
+
+
 ZMK_MACRO(l_j_g,
         wait-ms = <10>;
         tap-ms = <10>;
