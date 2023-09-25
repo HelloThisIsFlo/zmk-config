@@ -75,7 +75,7 @@ layers:
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
   l_akM:
-  - F
+  - P
   - L
   - {t: ' ', type: trans}
   - '&ak_lg'
@@ -197,7 +197,7 @@ layers:
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
-  - '&Ch'
+  - {t: ' ', type: trans}
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
   - '&ak_ck'
