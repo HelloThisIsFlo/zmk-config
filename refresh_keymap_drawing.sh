@@ -6,19 +6,16 @@ cd "$DIR"
 
 cd ./keymap-drawer/
 
-mv ./chocofi_keymap.yaml ./chocofi_keymap.prev.yaml
+CONFIG=./config.yaml
 
-keymap -c ./config.yaml \
+keymap -c $CONFIG \
     parse \
-    -b ./chocofi_keymap.prev.yaml \
     -z ../config/corne.keymap \
     > ./chocofi_keymap.yaml
 
-keymap -c ./config.yaml \
+keymap -c $CONFIG \
     draw \
     ./chocofi_keymap.yaml \
     > ./chocofi_keymap.svg
-
-rm ./chocofi_keymap.prev.yaml
 
 cd - >/dev/null
