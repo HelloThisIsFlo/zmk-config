@@ -198,6 +198,7 @@ ZMK_MACRO(ak_ck,
 )
 
 AK_MACRO(ak_a, l_akA, A)
+AK_MACRO(ak_u, l_akU, U)
 AK_MACRO(ak_e, l_akE, E)
 AK_MACRO(ak_o, l_akO, O)
 AK_MACRO(ak_i, l_akI, I)
