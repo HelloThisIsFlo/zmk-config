@@ -53,7 +53,7 @@ behaviors {
         compatible = "zmk,behavior-mod-morph";
         label = "MM_BACKSPACE_DELETE";
         #binding-cells = <0>;
-        bindings = <&lt l_fn BACKSPACE>, <&kp DELETE>;
+        bindings = <&lt l_fn BACKSPACE>, <&bkp DELETE>;
         mods = <(MOD_LSFT|MOD_RSFT)>;
     };
     hm: homerow_mods { // use on either hand
@@ -63,7 +63,7 @@ behaviors {
         tapping-term-ms = <my_tapping_term>;
         quick-tap-ms = <0>;
         flavor = "tap-preferred";
-        bindings = <&kp>, <&kp>;
+        bindings = <&kp>, <&bkp>;
     };
     hmr: homerow_mods_right { // use on right hand to mod left
         compatible = "zmk,behavior-hold-tap";
@@ -72,7 +72,7 @@ behaviors {
         tapping-term-ms = <my_tapping_term>;
         quick-tap-ms = <0>;
         flavor = "tap-preferred";
-        bindings = <&kp>, <&kp>;
+        bindings = <&kp>, <&bkp>;
         hold-trigger-key-positions = <KEYS_L THUMBS>; // left hand allowed
     };
     hml: homerow_mods_left { // use on left hand to mod right
@@ -82,7 +82,7 @@ behaviors {
         tapping-term-ms = <my_tapping_term>;
         quick-tap-ms = <0>;
         flavor = "tap-preferred";
-        bindings = <&kp>, <&kp>;
+        bindings = <&kp>, <&bkp>;
         hold-trigger-key-positions = <KEYS_R THUMBS>; // right hand allowed
     };
     hrm_t: hrm_t {
@@ -253,7 +253,7 @@ behaviors {
         #binding-cells = <2>;
         tapping-term-ms = <my_tapping_term>;
         flavor = "tap-preferred";
-        bindings = <&pairPar>, <&kp>;
+        bindings = <&pairPar>, <&bkp>;
     };
     lk_bkt: lk_bkt { // [ on tap, [] on "linger"
         compatible = "zmk,behavior-hold-tap";
@@ -261,7 +261,7 @@ behaviors {
         #binding-cells = <2>;
         tapping-term-ms = <my_tapping_term>;
         flavor = "tap-preferred";
-        bindings = <&pairBkt>, <&kp>;
+        bindings = <&pairBkt>, <&bkp>;
     };
     lk_brc: lk_brc { // { on tap, {} on "linger"
         compatible = "zmk,behavior-hold-tap";
@@ -269,7 +269,7 @@ behaviors {
         #binding-cells = <2>;
         tapping-term-ms = <my_tapping_term>;
         flavor = "tap-preferred";
-        bindings = <&pairBrc>, <&kp>;
+        bindings = <&pairBrc>, <&bkp>;
     };
     lk_ltgt: lk_ltgt { // < on tap, <|> on "linger"
         compatible = "zmk,behavior-hold-tap";
@@ -277,77 +277,77 @@ behaviors {
         #binding-cells = <2>;
         tapping-term-ms = <my_tapping_term>;
         flavor = "tap-preferred";
-        bindings = <&pairLtGt>, <&kp>;
+        bindings = <&pairLtGt>, <&bkp>;
     };
 
     CmmaSemi: CmmaSemi {
         compatible = "zmk,behavior-mod-morph";
         label = "comma_semi";
         #binding-cells = <0>;
-        bindings = <&kp CMMA>, <&typeSemi>;
+        bindings = <&bkp CMMA>, <&typeSemi>;
         mods = <(MOD_LSFT|MOD_RSFT)>;
     };
     DotColn: DotColn {
         compatible = "zmk,behavior-mod-morph";
         label = "DotColn";
         #binding-cells = <0>;
-        bindings = <&dot_ak>, <&kp COLON>;
+        bindings = <&dot_ak>, <&bkp COLON>;
         mods = <(MOD_LSFT|MOD_RSFT)>;
     };
     SlshStar: SlshStar {
         compatible = "zmk,behavior-mod-morph";
         label = "SlshStar";
         #binding-cells = <0>;
-        bindings = <&kp FSLH>, <&kp STAR>;
+        bindings = <&bkp FSLH>, <&bkp STAR>;
         mods = <(MOD_LSFT|MOD_RSFT)>;
     };
     HashDllr: HashDllr {
         compatible = "zmk,behavior-mod-morph";
         label = "HashDllr";
         #binding-cells = <0>;
-        bindings = <&kp HASH>, <&kp DLLR>;
+        bindings = <&bkp HASH>, <&bkp DLLR>;
         mods = <(MOD_LSFT|MOD_RSFT)>;
     };
     MinusPlus: MinusPlus {
         compatible = "zmk,behavior-mod-morph";
         label = "MinusPlus";
         #binding-cells = <0>;
-        bindings = <&kp MINUS>, <&kp PLUS>;
+        bindings = <&bkp MINUS>, <&bkp PLUS>;
         mods = <(MOD_LSFT|MOD_RSFT)>;
     };
     DqtLbkt: DqtLbkt {
         compatible = "zmk,behavior-mod-morph";
         label = "DqtLbkt";
         #binding-cells = <0>;
-        bindings = <&kp DQT>, <&kp LBKT>;
+        bindings = <&bkp DQT>, <&bkp LBKT>;
         mods = <(MOD_LALT|MOD_RALT)>;
     };
     DqtRbkt: DqtRbkt {
         compatible = "zmk,behavior-mod-morph";
         label = "DqtRbkt";
         #binding-cells = <0>;
-        bindings = <&kp DQT>, <&kp RBKT>;
+        bindings = <&bkp DQT>, <&bkp RBKT>;
         mods = <(MOD_LALT|MOD_RALT)>;
     };
     SqtLbkt: SqtLbkt {
         compatible = "zmk,behavior-mod-morph";
         label = "SqtLbkt";
         #binding-cells = <0>;
-        bindings = <&kp SQT>, <&kp LBKT>;
+        bindings = <&bkp SQT>, <&bkp LBKT>;
         mods = <(MOD_LALT|MOD_RALT)>;
     };
     SqtRbkt: SqtRbkt {
         compatible = "zmk,behavior-mod-morph";
         label = "SqtRbkt";
         #binding-cells = <0>;
-        bindings = <&kp SQT>, <&kp RBKT>;
+        bindings = <&bkp SQT>, <&bkp RBKT>;
         mods = <(MOD_LALT|MOD_RALT)>;
     };
     BspcDel: Bspc_Del {
         compatible = "zmk,behavior-mod-morph";
         label = "Bspc_Del";
         #binding-cells = <0>;
-        bindings = <&kp BSPC>, <&kp DEL>;
+        bindings = <&bkp BSPC>, <&bkp DEL>;
         mods = <(MOD_LSFT|MOD_RSFT)>;
     };
 };
