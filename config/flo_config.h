@@ -70,22 +70,21 @@
 #define l_akW   7
 #define l_akF   8
 #define l_akB   9
-#define l_akV   10
-#define l_akA   11
-#define l_akU   12
-#define l_akE   13
-#define l_akO   14
-#define l_akI   15
-#define l_akJ   16
-#define l_akDot 17
-#define l_nav   18
-#define l_sym   19
-#define l_fn    20
-#define l_num   21
-#define l_cfg   22
-#define APTmak  23
+#define l_akA   10
+#define l_akU   11
+#define l_akE   12
+#define l_akO   13
+#define l_akI   14
+#define l_akJ   15
+#define l_akDot 16
+#define l_nav   17
+#define l_sym   18
+#define l_fn    19
+#define l_num   20
+#define l_cfg   21
+#define APTmak  22
 
-#define alpha_and_ak_layers l_alpha l_akG l_akM l_akX l_akT l_akK l_akD l_akW l_akF l_akB l_akV l_akA l_akU l_akE l_akO l_akI l_akJ l_akDot
+#define alpha_and_ak_layers l_alpha l_akG l_akM l_akX l_akT l_akK l_akD l_akW l_akF l_akB l_akA l_akU l_akE l_akO l_akI l_akJ l_akDot
 
 
 #define my_tapping_term 170
