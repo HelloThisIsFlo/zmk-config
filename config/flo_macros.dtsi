@@ -220,8 +220,9 @@
 // TODO: If this works, make it a c macro: AK_MACRO(name, layer, key)
     ZMK_MACRO(ak_v,
             wait-ms = <0>;
-            tap-ms = <my_ak_window>; // See &aksl behavior for explanation
+            tap-ms = <0>; 
         bindings = <&aksl l_akV>
+                , <&macro_tap_time my_ak_window> // See &aksl behavior for explanation
                 , <&macro_tap &kp V>;
         )
 // TODO: This is a test (steps reversed)

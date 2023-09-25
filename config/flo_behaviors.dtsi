@@ -1,5 +1,7 @@
 behaviors {
 
+    // TODO: REVIEW - THIS DOESN'T WORK. The key in the macro is _not_ tapped immediately 
+    // Currently trying to update tap time in macro, let's see if it works
     aksl: aksl {
         compatible = "zmk,behavior-sticky-key";
         label = "adaptive_key_sticky_layer";
