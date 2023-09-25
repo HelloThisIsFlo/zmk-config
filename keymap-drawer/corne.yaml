@@ -21,9 +21,9 @@ layers:
   - {t: E⛶, h: '$$mdi:apple-keyboard-command$$'}
   - {t: I⛶, h: '$$mdi:apple-keyboard-option$$'}
   - {t: H, h: '$$mdi:apple-keyboard-control$$'}
-  - V
+  - '&bkp V'
   - P⛶
-  - '&debugL'
+  - '&bkp L'
   - D⛶
   - {t: /, s: '*'}
   - {t: '-', s: +}
