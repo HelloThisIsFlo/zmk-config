@@ -32,9 +32,9 @@ layers:
   - Y⛶
   - F⛶
   - '&tap_3ms'
-  - {t: '&bkp RETURN', h: l_nav}
+  - {t: '$$mdi:keyboard-return$$', h: l_nav}
   - {t: R, h: l_nav}
-  - {t: '&bkp SPACE', h: l_sym}
+  - {t: '$$mdi:keyboard-space$$', h: l_sym}
   - {t: '$$mdi:backspace-outline$$', h: l_fn, s: '$$mdi:backspace-reverse-outline$$'}
   - {t: '$$mdi:swap-horizontal$$', h: APTmak|HDvv}
   l_akG:
