@@ -142,7 +142,7 @@ behaviors {
         #binding-cells = <2>;
         tapping-term-ms = <my_tapping_term>;
         flavor = "tap-preferred";
-        bindings = <&kp>, <&kp>;
+        bindings = <&bkp>, <&bkp>;
     };
     lk_qu: lk_qu {
         compatible = "zmk,behavior-hold-tap";
@@ -150,7 +150,7 @@ behaviors {
         #binding-cells = <2>;
         tapping-term-ms = <my_tapping_term>;
         flavor = "tap-preferred";
-        bindings = <&kp>, <&Qu>;
+        bindings = <&bkp>, <&Qu>;
     };
 
     lk_E_accent: lk_E_accent { // ´, é on "linger"

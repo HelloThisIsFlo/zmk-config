@@ -68,8 +68,8 @@ COMBO_ANY(esc,  &kp ESC,        LM4 LM1)
 // // type a glyph (tiny board accommodation)
 // //
 // // COMBO_LAYER(typeJapan, &lk_Japan P J,  RT1 RT2 RT3, l_alpha) // Japan <- NOT NEEDED
-// COMBO_LAYER(typeQ, &lk_qu Q U,      LT3 LT1, l_alpha)
-// COMBO_LAYER(typeZ, &kp Z,           LT1 LT0, l_alpha)
+COMBO_ALPHA(typeQ, &lk_qu Q U, LT3 LT1)
+COMBO_ALPHA(typeZ, &bkp Z,     LT1 LT0)
 // COMBO_LAYER(typeColn, &lk LA(SEMI) COLON,    RT1 RT3, l_alpha)
 // COMBO_LAYER(typeSemi, &kp SEMI,     RM0 RM1, l_alpha)
 // COMBO_LAYER(typeExcl, &kp EXCL,     RT1 RT2, l_alpha)
