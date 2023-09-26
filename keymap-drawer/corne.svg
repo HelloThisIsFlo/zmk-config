@@ -73,6 +73,9 @@
 <svg id="mdi:play-pause">
 <svg xmlns="http://www.w3.org/2000/svg" id="mdi-play-pause" viewBox="0 0 24 24"><path d="M3,5V19L11,12M13,19H16V5H13M18,5V19H21V5" /></svg>
 </svg>
+<svg id="mdi:redo">
+<svg xmlns="http://www.w3.org/2000/svg" id="mdi-redo" viewBox="0 0 24 24"><path d="M18.4,10.6C16.55,9 14.15,8 11.5,8C6.85,8 2.92,11.03 1.54,15.22L3.9,16C4.95,12.81 7.95,10.5 11.5,10.5C13.45,10.5 15.23,11.22 16.62,12.38L13,16H22V7L18.4,10.6Z" /></svg>
+</svg>
 <svg id="mdi:skip-next">
 <svg xmlns="http://www.w3.org/2000/svg" id="mdi-skip-next" viewBox="0 0 24 24"><path d="M16,18H18V6H16M6,18L14.5,12L6,6V18Z" /></svg>
 </svg>
@@ -81,6 +84,9 @@
 </svg>
 <svg id="mdi:swap-horizontal">
 <svg xmlns="http://www.w3.org/2000/svg" id="mdi-swap-horizontal" viewBox="0 0 24 24"><path d="M21,9L17,5V8H10V10H17V13M7,11L3,15L7,19V16H14V14H7V11Z" /></svg>
+</svg>
+<svg id="mdi:undo">
+<svg xmlns="http://www.w3.org/2000/svg" id="mdi-undo" viewBox="0 0 24 24"><path d="M12.5,8C9.85,8 7.45,9 5.6,10.6L2,7V16H11L7.38,12.38C8.77,11.22 10.54,10.5 12.5,10.5C16.04,10.5 19.05,12.81 20.1,16L22.47,15.22C21.08,11.03 17.15,8 12.5,8Z" /></svg>
 </svg>
 <svg id="mdi:volume-high">
 <svg xmlns="http://www.w3.org/2000/svg" id="mdi-volume-high" viewBox="0 0 24 24"><path d="M14,3.23V5.29C16.89,6.15 19,8.83 19,12C19,15.17 16.89,17.84 14,18.7V20.77C18,19.86 21,16.28 21,12C21,7.72 18,4.14 14,3.23M16.5,12C16.5,10.23 15.5,8.71 14,7.97V16C15.5,15.29 16.5,13.76 16.5,12M3,9V15H7L12,20V4L7,9H3Z" /></svg>
@@ -103,6 +109,29 @@
     <path d="M12,2.5L8,7H16L12,2.5M12,10A2,2 0 0,0 10,12A2,2 0 0,0 12,14A2,2 0
     0,0 14,12A2,2 0 0,0 12,10Z" transform="scale (1.5, 1.4)" transform-origin="center"/>
 </svg>
+
+</svg>
+<svg id="tabler:browser-x">
+<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-browser-x" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 4m0 1a1 1 0 0 1 1 -1h14a1 1 0 0 1 1 1v14a1 1 0 0 1 -1 1h-14a1 1 0 0 1 -1 -1z" />
+  <path d="M4 8h16" />
+  <path d="M8 4v4" />
+  <path d="M10 16l4 -4" />
+  <path d="M14 16l-4 -4" />
+</svg>
+
+
+
+</svg>
+<svg id="tabler:square-x">
+<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-square-x" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M3 5a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-14z" />
+  <path d="M9 9l6 6m0 -6l-6 6" />
+</svg>
+
+
 
 </svg>
 </defs>/* end glyphs */
@@ -414,32 +443,98 @@ path.combo {
 <text x="643" y="254" class="combo tap">l_cfg</text>
 </g>
 <g class="combo combopos-1">
+<path d="M238,178 l-46,-6" class="combo"/>
+<path d="M238,178 l46,6" class="combo"/>
+<rect rx="6" ry="6" x="226" y="167" width="25" height="23" class="combo"/>
+<text x="238" y="178" class="combo tap"><tspan style="font-size: 70%">LG(RETURN)</tspan></text>
+</g>
+<g class="combo combopos-2">
 <rect rx="6" ry="6" x="260" y="171" width="25" height="23" class="combo"/>
 <use href="#mdi:keyboard-return" xlink:href="#mdi:keyboard-return" x="265" y="176" height="14" width="14.0" class="combo tap glyph mdi:keyboard-return"/>
 </g>
-<g class="combo combopos-2">
+<g class="combo combopos-3">
 <path d="M170,178 l-45,0" class="combo"/>
 <path d="M170,178 l45,0" class="combo"/>
 <rect rx="6" ry="6" x="158" y="167" width="25" height="23" class="combo"/>
 <use href="#mdi:keyboard-tab" xlink:href="#mdi:keyboard-tab" x="163" y="172" height="14" width="14.0" class="combo tap glyph mdi:keyboard-tab"/>
 </g>
-<g class="combo combopos-3">
+<g class="combo combopos-4">
 <path d="M170,176 l-45,2" class="combo"/>
 <path d="M170,176 l45,2" class="combo"/>
 <rect rx="6" ry="6" x="158" y="164" width="25" height="23" class="combo"/>
 <use href="#mdi:keyboard-tab-reverse" xlink:href="#mdi:keyboard-tab-reverse" x="163" y="169" height="14" width="14.0" class="combo tap glyph mdi:keyboard-tab-reverse"/>
 </g>
-<g class="combo combopos-4">
+<g class="combo combopos-5">
 <rect rx="6" ry="6" x="260" y="103" width="25" height="23" class="combo"/>
 <use href="#mdi:keyboard-space" xlink:href="#mdi:keyboard-space" x="265" y="108" height="14" width="14.0" class="combo tap glyph mdi:keyboard-space"/>
 </g>
-<g class="combo combopos-5">
+<g class="combo combopos-6">
 <path d="M116,-13 h-76 a6.0,6.0 0 0 0 -6.0,6.0 v112" class="combo"/>
 <path d="M116,-13 h116 a6.0,6.0 0 0 1 6.0,6.0 v95" class="combo"/>
 <rect rx="6" ry="6" x="103" y="-24" width="25" height="23" class="combo"/>
 <use href="#escape" xlink:href="#escape" x="109" y="-20" height="14" width="14.0" class="combo tap glyph escape"/>
 </g>
-<g class="combo combopos-6">
+<g class="combo combopos-7">
+<path d="M136,187 l-79,7" class="combo"/>
+<path d="M136,187 l79,-7" class="combo"/>
+<rect rx="6" ry="6" x="124" y="176" width="25" height="23" class="combo"/>
+<text x="136" y="187" class="combo tap">LG(A)</text>
+</g>
+<g class="combo combopos-8">
+<path d="M170,191 l-113,4" class="combo"/>
+<path d="M170,191 l113,-4" class="combo"/>
+<rect rx="6" ry="6" x="158" y="180" width="25" height="23" class="combo"/>
+<text x="170" y="191" class="combo tap"><tspan style="font-size: 70%">&amp;m_selword</tspan></text>
+</g>
+<g class="combo combopos-9">
+<path d="M170,178 l-45,0" class="combo"/>
+<path d="M170,178 l45,0" class="combo"/>
+<rect rx="6" ry="6" x="158" y="167" width="25" height="23" class="combo"/>
+<use href="#mdi:undo" xlink:href="#mdi:undo" x="163" y="172" height="14" width="14.0" class="combo tap glyph mdi:undo"/>
+</g>
+<g class="combo combopos-10">
+<path d="M170,176 l-45,2" class="combo"/>
+<path d="M170,176 l45,2" class="combo"/>
+<rect rx="6" ry="6" x="158" y="164" width="25" height="23" class="combo"/>
+<use href="#mdi:redo" xlink:href="#mdi:redo" x="163" y="169" height="14" width="14.0" class="combo tap glyph mdi:redo"/>
+</g>
+<g class="combo combopos-11">
+<rect rx="6" ry="6" x="124" y="163" width="25" height="23" class="combo"/>
+<text x="136" y="174" class="combo tap">
+<tspan x="136" dy="-0.6em">&amp;bkp</tspan><tspan x="136" dy="1.2em">LG(C)</tspan>
+</text>
+<text x="136" y="184" class="combo hold"><tspan style="font-size: 70%">&amp;bkp LG(X)</tspan></text>
+</g>
+<g class="combo combopos-12">
+<rect rx="6" ry="6" x="192" y="163" width="25" height="23" class="combo"/>
+<text x="204" y="174" class="combo tap">
+<tspan x="204" dy="-0.6em">&amp;bkp</tspan><tspan x="204" dy="1.2em">LG(V)</tspan>
+</text>
+<text x="204" y="184" class="combo hold"><tspan style="font-size: 60%">&amp;bkp LG(LS(LA(V)))</tspan></text>
+</g>
+<g class="combo combopos-13">
+<rect rx="6" ry="6" x="90" y="133" width="25" height="23" class="combo"/>
+<use href="#tabler:browser-x" xlink:href="#tabler:browser-x" x="95" y="138" height="14" width="14.0" class="combo tap glyph tabler:browser-x"/>
+</g>
+<g class="combo combopos-14">
+<rect rx="6" ry="6" x="158" y="124" width="25" height="23" class="combo"/>
+<text x="170" y="136" class="combo tap">LG(N)</text>
+</g>
+<g class="combo combopos-15">
+<rect rx="6" ry="6" x="226" y="133" width="25" height="23" class="combo"/>
+<text x="238" y="144" class="combo tap">LG(O)</text>
+</g>
+<g class="combo combopos-16">
+<rect rx="6" ry="6" x="294" y="142" width="25" height="23" class="combo"/>
+<use href="#tabler:square-x" xlink:href="#tabler:square-x" x="299" y="146" height="14" width="14.0" class="combo tap glyph tabler:square-x"/>
+</g>
+<g class="combo combopos-17">
+<path d="M170,157 l-114,-25" class="combo"/>
+<path d="M170,157 l114,25" class="combo"/>
+<rect rx="6" ry="6" x="158" y="146" width="25" height="23" class="combo"/>
+<text x="170" y="157" class="combo tap"><tspan style="font-size: 70%">&amp;m_findsel</tspan></text>
+</g>
+<g class="combo combopos-18">
 <path d="M170,42 l-45,0" class="combo"/>
 <path d="M170,42 l45,0" class="combo"/>
 <rect rx="6" ry="6" x="158" y="31" width="25" height="23" class="combo"/>
@@ -448,50 +543,50 @@ path.combo {
 </text>
 <text x="170" y="52" class="combo hold">&amp;bkp Q</text>
 </g>
-<g class="combo combopos-7">
+<g class="combo combopos-19">
 <rect rx="6" ry="6" x="260" y="35" width="25" height="23" class="combo"/>
 <text x="272" y="47" class="combo tap">
 <tspan x="272" dy="-0.6em">&amp;bkp</tspan><tspan x="272" dy="1.2em">Z</tspan>
 </text>
 </g>
-<g class="combo h-digraph combopos-8">
+<g class="combo h-digraph combopos-20">
 <path d="M102,81 h-62 a6.0,6.0 0 0 0 -6.0,6.0 v18" class="combo"/>
 <path d="M102,81 l0,16" class="combo"/>
 <path d="M102,81 h62 a6.0,6.0 0 0 1 6.0,6.0 v-7" class="combo"/>
 <rect rx="6" ry="6" x="90" y="69" width="25" height="23" class="combo h-digraph"/>
 <text x="102" y="81" class="combo h-digraph tap">sch</text>
 </g>
-<g class="combo h-digraph combopos-9">
+<g class="combo h-digraph combopos-21">
 <path d="M125,149 h-85 a6.0,6.0 0 0 1 -6.0,-6.0 v7" class="combo"/>
 <path d="M125,149 h-17 a6.0,6.0 0 0 1 -6.0,-6.0 v-10" class="combo"/>
 <path d="M125,149 h107 a6.0,6.0 0 0 0 6.0,-6.0 v-10" class="combo"/>
 <rect rx="6" ry="6" x="112" y="137" width="25" height="23" class="combo h-digraph"/>
 <text x="125" y="149" class="combo h-digraph tap">tch</text>
 </g>
-<g class="combo h-digraph combopos-10">
+<g class="combo h-digraph combopos-22">
 <rect rx="6" ry="6" x="192" y="95" width="25" height="23" class="combo h-digraph"/>
 <text x="204" y="106" class="combo h-digraph tap">th</text>
 <text x="204" y="116" class="combo h-digraph hold">tion</text>
 </g>
-<g class="combo h-digraph combopos-11">
+<g class="combo h-digraph combopos-23">
 <rect rx="6" ry="6" x="124" y="95" width="25" height="23" class="combo h-digraph"/>
 <text x="136" y="106" class="combo h-digraph tap">ch</text>
 </g>
-<g class="combo h-digraph combopos-12">
+<g class="combo h-digraph combopos-24">
 <rect rx="6" ry="6" x="124" y="27" width="25" height="23" class="combo h-digraph"/>
 <text x="136" y="38" class="combo h-digraph tap">wh</text>
 </g>
-<g class="combo h-digraph combopos-13">
+<g class="combo h-digraph combopos-25">
 <rect rx="6" ry="6" x="56" y="108" width="25" height="23" class="combo h-digraph"/>
 <text x="68" y="119" class="combo h-digraph tap">sh</text>
 <text x="68" y="128" class="combo h-digraph hold">sion</text>
 </g>
-<g class="combo h-digraph combopos-14">
+<g class="combo h-digraph combopos-26">
 <rect rx="6" ry="6" x="192" y="27" width="25" height="23" class="combo h-digraph"/>
 <text x="204" y="38" class="combo h-digraph tap">gh</text>
 <text x="204" y="48" class="combo h-digraph hold">ght</text>
 </g>
-<g class="combo h-digraph combopos-15">
+<g class="combo h-digraph combopos-27">
 <rect rx="6" ry="6" x="124" y="163" width="25" height="23" class="combo h-digraph"/>
 <text x="136" y="174" class="combo h-digraph tap">ph</text>
 </g>
@@ -617,32 +712,98 @@ path.combo {
 <text x="643" y="254" class="combo tap">l_cfg</text>
 </g>
 <g class="combo combopos-1">
+<path d="M238,178 l-46,-6" class="combo"/>
+<path d="M238,178 l46,6" class="combo"/>
+<rect rx="6" ry="6" x="226" y="167" width="25" height="23" class="combo"/>
+<text x="238" y="178" class="combo tap"><tspan style="font-size: 70%">LG(RETURN)</tspan></text>
+</g>
+<g class="combo combopos-2">
 <rect rx="6" ry="6" x="260" y="171" width="25" height="23" class="combo"/>
 <use href="#mdi:keyboard-return" xlink:href="#mdi:keyboard-return" x="265" y="176" height="14" width="14.0" class="combo tap glyph mdi:keyboard-return"/>
 </g>
-<g class="combo combopos-2">
+<g class="combo combopos-3">
 <path d="M170,178 l-45,0" class="combo"/>
 <path d="M170,178 l45,0" class="combo"/>
 <rect rx="6" ry="6" x="158" y="167" width="25" height="23" class="combo"/>
 <use href="#mdi:keyboard-tab" xlink:href="#mdi:keyboard-tab" x="163" y="172" height="14" width="14.0" class="combo tap glyph mdi:keyboard-tab"/>
 </g>
-<g class="combo combopos-3">
+<g class="combo combopos-4">
 <path d="M170,176 l-45,2" class="combo"/>
 <path d="M170,176 l45,2" class="combo"/>
 <rect rx="6" ry="6" x="158" y="164" width="25" height="23" class="combo"/>
 <use href="#mdi:keyboard-tab-reverse" xlink:href="#mdi:keyboard-tab-reverse" x="163" y="169" height="14" width="14.0" class="combo tap glyph mdi:keyboard-tab-reverse"/>
 </g>
-<g class="combo combopos-4">
+<g class="combo combopos-5">
 <rect rx="6" ry="6" x="260" y="103" width="25" height="23" class="combo"/>
 <use href="#mdi:keyboard-space" xlink:href="#mdi:keyboard-space" x="265" y="108" height="14" width="14.0" class="combo tap glyph mdi:keyboard-space"/>
 </g>
-<g class="combo combopos-5">
+<g class="combo combopos-6">
 <path d="M116,-13 h-76 a6.0,6.0 0 0 0 -6.0,6.0 v112" class="combo"/>
 <path d="M116,-13 h116 a6.0,6.0 0 0 1 6.0,6.0 v95" class="combo"/>
 <rect rx="6" ry="6" x="103" y="-24" width="25" height="23" class="combo"/>
 <use href="#escape" xlink:href="#escape" x="109" y="-20" height="14" width="14.0" class="combo tap glyph escape"/>
 </g>
-<g class="combo combopos-6">
+<g class="combo combopos-7">
+<path d="M136,187 l-79,7" class="combo"/>
+<path d="M136,187 l79,-7" class="combo"/>
+<rect rx="6" ry="6" x="124" y="176" width="25" height="23" class="combo"/>
+<text x="136" y="187" class="combo tap">LG(A)</text>
+</g>
+<g class="combo combopos-8">
+<path d="M170,191 l-113,4" class="combo"/>
+<path d="M170,191 l113,-4" class="combo"/>
+<rect rx="6" ry="6" x="158" y="180" width="25" height="23" class="combo"/>
+<text x="170" y="191" class="combo tap"><tspan style="font-size: 70%">&amp;m_selword</tspan></text>
+</g>
+<g class="combo combopos-9">
+<path d="M170,178 l-45,0" class="combo"/>
+<path d="M170,178 l45,0" class="combo"/>
+<rect rx="6" ry="6" x="158" y="167" width="25" height="23" class="combo"/>
+<use href="#mdi:undo" xlink:href="#mdi:undo" x="163" y="172" height="14" width="14.0" class="combo tap glyph mdi:undo"/>
+</g>
+<g class="combo combopos-10">
+<path d="M170,176 l-45,2" class="combo"/>
+<path d="M170,176 l45,2" class="combo"/>
+<rect rx="6" ry="6" x="158" y="164" width="25" height="23" class="combo"/>
+<use href="#mdi:redo" xlink:href="#mdi:redo" x="163" y="169" height="14" width="14.0" class="combo tap glyph mdi:redo"/>
+</g>
+<g class="combo combopos-11">
+<rect rx="6" ry="6" x="124" y="163" width="25" height="23" class="combo"/>
+<text x="136" y="174" class="combo tap">
+<tspan x="136" dy="-0.6em">&amp;bkp</tspan><tspan x="136" dy="1.2em">LG(C)</tspan>
+</text>
+<text x="136" y="184" class="combo hold"><tspan style="font-size: 70%">&amp;bkp LG(X)</tspan></text>
+</g>
+<g class="combo combopos-12">
+<rect rx="6" ry="6" x="192" y="163" width="25" height="23" class="combo"/>
+<text x="204" y="174" class="combo tap">
+<tspan x="204" dy="-0.6em">&amp;bkp</tspan><tspan x="204" dy="1.2em">LG(V)</tspan>
+</text>
+<text x="204" y="184" class="combo hold"><tspan style="font-size: 60%">&amp;bkp LG(LS(LA(V)))</tspan></text>
+</g>
+<g class="combo combopos-13">
+<rect rx="6" ry="6" x="90" y="133" width="25" height="23" class="combo"/>
+<use href="#tabler:browser-x" xlink:href="#tabler:browser-x" x="95" y="138" height="14" width="14.0" class="combo tap glyph tabler:browser-x"/>
+</g>
+<g class="combo combopos-14">
+<rect rx="6" ry="6" x="158" y="124" width="25" height="23" class="combo"/>
+<text x="170" y="136" class="combo tap">LG(N)</text>
+</g>
+<g class="combo combopos-15">
+<rect rx="6" ry="6" x="226" y="133" width="25" height="23" class="combo"/>
+<text x="238" y="144" class="combo tap">LG(O)</text>
+</g>
+<g class="combo combopos-16">
+<rect rx="6" ry="6" x="294" y="142" width="25" height="23" class="combo"/>
+<use href="#tabler:square-x" xlink:href="#tabler:square-x" x="299" y="146" height="14" width="14.0" class="combo tap glyph tabler:square-x"/>
+</g>
+<g class="combo combopos-17">
+<path d="M170,157 l-114,-25" class="combo"/>
+<path d="M170,157 l114,25" class="combo"/>
+<rect rx="6" ry="6" x="158" y="146" width="25" height="23" class="combo"/>
+<text x="170" y="157" class="combo tap"><tspan style="font-size: 70%">&amp;m_findsel</tspan></text>
+</g>
+<g class="combo combopos-18">
 <path d="M170,42 l-45,0" class="combo"/>
 <path d="M170,42 l45,0" class="combo"/>
 <rect rx="6" ry="6" x="158" y="31" width="25" height="23" class="combo"/>
@@ -651,7 +812,7 @@ path.combo {
 </text>
 <text x="170" y="52" class="combo hold">&amp;bkp Q</text>
 </g>
-<g class="combo combopos-7">
+<g class="combo combopos-19">
 <rect rx="6" ry="6" x="260" y="35" width="25" height="23" class="combo"/>
 <text x="272" y="47" class="combo tap">
 <tspan x="272" dy="-0.6em">&amp;bkp</tspan><tspan x="272" dy="1.2em">Z</tspan>
@@ -778,32 +939,98 @@ path.combo {
 <text x="643" y="254" class="combo tap">l_cfg</text>
 </g>
 <g class="combo combopos-1">
+<path d="M238,178 l-46,-6" class="combo"/>
+<path d="M238,178 l46,6" class="combo"/>
+<rect rx="6" ry="6" x="226" y="167" width="25" height="23" class="combo"/>
+<text x="238" y="178" class="combo tap"><tspan style="font-size: 70%">LG(RETURN)</tspan></text>
+</g>
+<g class="combo combopos-2">
 <rect rx="6" ry="6" x="260" y="171" width="25" height="23" class="combo"/>
 <use href="#mdi:keyboard-return" xlink:href="#mdi:keyboard-return" x="265" y="176" height="14" width="14.0" class="combo tap glyph mdi:keyboard-return"/>
 </g>
-<g class="combo combopos-2">
+<g class="combo combopos-3">
 <path d="M170,178 l-45,0" class="combo"/>
 <path d="M170,178 l45,0" class="combo"/>
 <rect rx="6" ry="6" x="158" y="167" width="25" height="23" class="combo"/>
 <use href="#mdi:keyboard-tab" xlink:href="#mdi:keyboard-tab" x="163" y="172" height="14" width="14.0" class="combo tap glyph mdi:keyboard-tab"/>
 </g>
-<g class="combo combopos-3">
+<g class="combo combopos-4">
 <path d="M170,176 l-45,2" class="combo"/>
 <path d="M170,176 l45,2" class="combo"/>
 <rect rx="6" ry="6" x="158" y="164" width="25" height="23" class="combo"/>
 <use href="#mdi:keyboard-tab-reverse" xlink:href="#mdi:keyboard-tab-reverse" x="163" y="169" height="14" width="14.0" class="combo tap glyph mdi:keyboard-tab-reverse"/>
 </g>
-<g class="combo combopos-4">
+<g class="combo combopos-5">
 <rect rx="6" ry="6" x="260" y="103" width="25" height="23" class="combo"/>
 <use href="#mdi:keyboard-space" xlink:href="#mdi:keyboard-space" x="265" y="108" height="14" width="14.0" class="combo tap glyph mdi:keyboard-space"/>
 </g>
-<g class="combo combopos-5">
+<g class="combo combopos-6">
 <path d="M116,-13 h-76 a6.0,6.0 0 0 0 -6.0,6.0 v112" class="combo"/>
 <path d="M116,-13 h116 a6.0,6.0 0 0 1 6.0,6.0 v95" class="combo"/>
 <rect rx="6" ry="6" x="103" y="-24" width="25" height="23" class="combo"/>
 <use href="#escape" xlink:href="#escape" x="109" y="-20" height="14" width="14.0" class="combo tap glyph escape"/>
 </g>
-<g class="combo combopos-6">
+<g class="combo combopos-7">
+<path d="M136,187 l-79,7" class="combo"/>
+<path d="M136,187 l79,-7" class="combo"/>
+<rect rx="6" ry="6" x="124" y="176" width="25" height="23" class="combo"/>
+<text x="136" y="187" class="combo tap">LG(A)</text>
+</g>
+<g class="combo combopos-8">
+<path d="M170,191 l-113,4" class="combo"/>
+<path d="M170,191 l113,-4" class="combo"/>
+<rect rx="6" ry="6" x="158" y="180" width="25" height="23" class="combo"/>
+<text x="170" y="191" class="combo tap"><tspan style="font-size: 70%">&amp;m_selword</tspan></text>
+</g>
+<g class="combo combopos-9">
+<path d="M170,178 l-45,0" class="combo"/>
+<path d="M170,178 l45,0" class="combo"/>
+<rect rx="6" ry="6" x="158" y="167" width="25" height="23" class="combo"/>
+<use href="#mdi:undo" xlink:href="#mdi:undo" x="163" y="172" height="14" width="14.0" class="combo tap glyph mdi:undo"/>
+</g>
+<g class="combo combopos-10">
+<path d="M170,176 l-45,2" class="combo"/>
+<path d="M170,176 l45,2" class="combo"/>
+<rect rx="6" ry="6" x="158" y="164" width="25" height="23" class="combo"/>
+<use href="#mdi:redo" xlink:href="#mdi:redo" x="163" y="169" height="14" width="14.0" class="combo tap glyph mdi:redo"/>
+</g>
+<g class="combo combopos-11">
+<rect rx="6" ry="6" x="124" y="163" width="25" height="23" class="combo"/>
+<text x="136" y="174" class="combo tap">
+<tspan x="136" dy="-0.6em">&amp;bkp</tspan><tspan x="136" dy="1.2em">LG(C)</tspan>
+</text>
+<text x="136" y="184" class="combo hold"><tspan style="font-size: 70%">&amp;bkp LG(X)</tspan></text>
+</g>
+<g class="combo combopos-12">
+<rect rx="6" ry="6" x="192" y="163" width="25" height="23" class="combo"/>
+<text x="204" y="174" class="combo tap">
+<tspan x="204" dy="-0.6em">&amp;bkp</tspan><tspan x="204" dy="1.2em">LG(V)</tspan>
+</text>
+<text x="204" y="184" class="combo hold"><tspan style="font-size: 60%">&amp;bkp LG(LS(LA(V)))</tspan></text>
+</g>
+<g class="combo combopos-13">
+<rect rx="6" ry="6" x="90" y="133" width="25" height="23" class="combo"/>
+<use href="#tabler:browser-x" xlink:href="#tabler:browser-x" x="95" y="138" height="14" width="14.0" class="combo tap glyph tabler:browser-x"/>
+</g>
+<g class="combo combopos-14">
+<rect rx="6" ry="6" x="158" y="124" width="25" height="23" class="combo"/>
+<text x="170" y="136" class="combo tap">LG(N)</text>
+</g>
+<g class="combo combopos-15">
+<rect rx="6" ry="6" x="226" y="133" width="25" height="23" class="combo"/>
+<text x="238" y="144" class="combo tap">LG(O)</text>
+</g>
+<g class="combo combopos-16">
+<rect rx="6" ry="6" x="294" y="142" width="25" height="23" class="combo"/>
+<use href="#tabler:square-x" xlink:href="#tabler:square-x" x="299" y="146" height="14" width="14.0" class="combo tap glyph tabler:square-x"/>
+</g>
+<g class="combo combopos-17">
+<path d="M170,157 l-114,-25" class="combo"/>
+<path d="M170,157 l114,25" class="combo"/>
+<rect rx="6" ry="6" x="158" y="146" width="25" height="23" class="combo"/>
+<text x="170" y="157" class="combo tap"><tspan style="font-size: 70%">&amp;m_findsel</tspan></text>
+</g>
+<g class="combo combopos-18">
 <path d="M170,42 l-45,0" class="combo"/>
 <path d="M170,42 l45,0" class="combo"/>
 <rect rx="6" ry="6" x="158" y="31" width="25" height="23" class="combo"/>
@@ -812,7 +1039,7 @@ path.combo {
 </text>
 <text x="170" y="52" class="combo hold">&amp;bkp Q</text>
 </g>
-<g class="combo combopos-7">
+<g class="combo combopos-19">
 <rect rx="6" ry="6" x="260" y="35" width="25" height="23" class="combo"/>
 <text x="272" y="47" class="combo tap">
 <tspan x="272" dy="-0.6em">&amp;bkp</tspan><tspan x="272" dy="1.2em">Z</tspan>
@@ -938,32 +1165,98 @@ path.combo {
 <text x="643" y="254" class="combo tap">l_cfg</text>
 </g>
 <g class="combo combopos-1">
+<path d="M238,178 l-46,-6" class="combo"/>
+<path d="M238,178 l46,6" class="combo"/>
+<rect rx="6" ry="6" x="226" y="167" width="25" height="23" class="combo"/>
+<text x="238" y="178" class="combo tap"><tspan style="font-size: 70%">LG(RETURN)</tspan></text>
+</g>
+<g class="combo combopos-2">
 <rect rx="6" ry="6" x="260" y="171" width="25" height="23" class="combo"/>
 <use href="#mdi:keyboard-return" xlink:href="#mdi:keyboard-return" x="265" y="176" height="14" width="14.0" class="combo tap glyph mdi:keyboard-return"/>
 </g>
-<g class="combo combopos-2">
+<g class="combo combopos-3">
 <path d="M170,178 l-45,0" class="combo"/>
 <path d="M170,178 l45,0" class="combo"/>
 <rect rx="6" ry="6" x="158" y="167" width="25" height="23" class="combo"/>
 <use href="#mdi:keyboard-tab" xlink:href="#mdi:keyboard-tab" x="163" y="172" height="14" width="14.0" class="combo tap glyph mdi:keyboard-tab"/>
 </g>
-<g class="combo combopos-3">
+<g class="combo combopos-4">
 <path d="M170,176 l-45,2" class="combo"/>
 <path d="M170,176 l45,2" class="combo"/>
 <rect rx="6" ry="6" x="158" y="164" width="25" height="23" class="combo"/>
 <use href="#mdi:keyboard-tab-reverse" xlink:href="#mdi:keyboard-tab-reverse" x="163" y="169" height="14" width="14.0" class="combo tap glyph mdi:keyboard-tab-reverse"/>
 </g>
-<g class="combo combopos-4">
+<g class="combo combopos-5">
 <rect rx="6" ry="6" x="260" y="103" width="25" height="23" class="combo"/>
 <use href="#mdi:keyboard-space" xlink:href="#mdi:keyboard-space" x="265" y="108" height="14" width="14.0" class="combo tap glyph mdi:keyboard-space"/>
 </g>
-<g class="combo combopos-5">
+<g class="combo combopos-6">
 <path d="M116,-13 h-76 a6.0,6.0 0 0 0 -6.0,6.0 v112" class="combo"/>
 <path d="M116,-13 h116 a6.0,6.0 0 0 1 6.0,6.0 v95" class="combo"/>
 <rect rx="6" ry="6" x="103" y="-24" width="25" height="23" class="combo"/>
 <use href="#escape" xlink:href="#escape" x="109" y="-20" height="14" width="14.0" class="combo tap glyph escape"/>
 </g>
-<g class="combo combopos-6">
+<g class="combo combopos-7">
+<path d="M136,187 l-79,7" class="combo"/>
+<path d="M136,187 l79,-7" class="combo"/>
+<rect rx="6" ry="6" x="124" y="176" width="25" height="23" class="combo"/>
+<text x="136" y="187" class="combo tap">LG(A)</text>
+</g>
+<g class="combo combopos-8">
+<path d="M170,191 l-113,4" class="combo"/>
+<path d="M170,191 l113,-4" class="combo"/>
+<rect rx="6" ry="6" x="158" y="180" width="25" height="23" class="combo"/>
+<text x="170" y="191" class="combo tap"><tspan style="font-size: 70%">&amp;m_selword</tspan></text>
+</g>
+<g class="combo combopos-9">
+<path d="M170,178 l-45,0" class="combo"/>
+<path d="M170,178 l45,0" class="combo"/>
+<rect rx="6" ry="6" x="158" y="167" width="25" height="23" class="combo"/>
+<use href="#mdi:undo" xlink:href="#mdi:undo" x="163" y="172" height="14" width="14.0" class="combo tap glyph mdi:undo"/>
+</g>
+<g class="combo combopos-10">
+<path d="M170,176 l-45,2" class="combo"/>
+<path d="M170,176 l45,2" class="combo"/>
+<rect rx="6" ry="6" x="158" y="164" width="25" height="23" class="combo"/>
+<use href="#mdi:redo" xlink:href="#mdi:redo" x="163" y="169" height="14" width="14.0" class="combo tap glyph mdi:redo"/>
+</g>
+<g class="combo combopos-11">
+<rect rx="6" ry="6" x="124" y="163" width="25" height="23" class="combo"/>
+<text x="136" y="174" class="combo tap">
+<tspan x="136" dy="-0.6em">&amp;bkp</tspan><tspan x="136" dy="1.2em">LG(C)</tspan>
+</text>
+<text x="136" y="184" class="combo hold"><tspan style="font-size: 70%">&amp;bkp LG(X)</tspan></text>
+</g>
+<g class="combo combopos-12">
+<rect rx="6" ry="6" x="192" y="163" width="25" height="23" class="combo"/>
+<text x="204" y="174" class="combo tap">
+<tspan x="204" dy="-0.6em">&amp;bkp</tspan><tspan x="204" dy="1.2em">LG(V)</tspan>
+</text>
+<text x="204" y="184" class="combo hold"><tspan style="font-size: 60%">&amp;bkp LG(LS(LA(V)))</tspan></text>
+</g>
+<g class="combo combopos-13">
+<rect rx="6" ry="6" x="90" y="133" width="25" height="23" class="combo"/>
+<use href="#tabler:browser-x" xlink:href="#tabler:browser-x" x="95" y="138" height="14" width="14.0" class="combo tap glyph tabler:browser-x"/>
+</g>
+<g class="combo combopos-14">
+<rect rx="6" ry="6" x="158" y="124" width="25" height="23" class="combo"/>
+<text x="170" y="136" class="combo tap">LG(N)</text>
+</g>
+<g class="combo combopos-15">
+<rect rx="6" ry="6" x="226" y="133" width="25" height="23" class="combo"/>
+<text x="238" y="144" class="combo tap">LG(O)</text>
+</g>
+<g class="combo combopos-16">
+<rect rx="6" ry="6" x="294" y="142" width="25" height="23" class="combo"/>
+<use href="#tabler:square-x" xlink:href="#tabler:square-x" x="299" y="146" height="14" width="14.0" class="combo tap glyph tabler:square-x"/>
+</g>
+<g class="combo combopos-17">
+<path d="M170,157 l-114,-25" class="combo"/>
+<path d="M170,157 l114,25" class="combo"/>
+<rect rx="6" ry="6" x="158" y="146" width="25" height="23" class="combo"/>
+<text x="170" y="157" class="combo tap"><tspan style="font-size: 70%">&amp;m_findsel</tspan></text>
+</g>
+<g class="combo combopos-18">
 <path d="M170,42 l-45,0" class="combo"/>
 <path d="M170,42 l45,0" class="combo"/>
 <rect rx="6" ry="6" x="158" y="31" width="25" height="23" class="combo"/>
@@ -972,7 +1265,7 @@ path.combo {
 </text>
 <text x="170" y="52" class="combo hold">&amp;bkp Q</text>
 </g>
-<g class="combo combopos-7">
+<g class="combo combopos-19">
 <rect rx="6" ry="6" x="260" y="35" width="25" height="23" class="combo"/>
 <text x="272" y="47" class="combo tap">
 <tspan x="272" dy="-0.6em">&amp;bkp</tspan><tspan x="272" dy="1.2em">Z</tspan>
@@ -1097,32 +1390,98 @@ path.combo {
 <text x="643" y="254" class="combo tap">l_cfg</text>
 </g>
 <g class="combo combopos-1">
+<path d="M238,178 l-46,-6" class="combo"/>
+<path d="M238,178 l46,6" class="combo"/>
+<rect rx="6" ry="6" x="226" y="167" width="25" height="23" class="combo"/>
+<text x="238" y="178" class="combo tap"><tspan style="font-size: 70%">LG(RETURN)</tspan></text>
+</g>
+<g class="combo combopos-2">
 <rect rx="6" ry="6" x="260" y="171" width="25" height="23" class="combo"/>
 <use href="#mdi:keyboard-return" xlink:href="#mdi:keyboard-return" x="265" y="176" height="14" width="14.0" class="combo tap glyph mdi:keyboard-return"/>
 </g>
-<g class="combo combopos-2">
+<g class="combo combopos-3">
 <path d="M170,178 l-45,0" class="combo"/>
 <path d="M170,178 l45,0" class="combo"/>
 <rect rx="6" ry="6" x="158" y="167" width="25" height="23" class="combo"/>
 <use href="#mdi:keyboard-tab" xlink:href="#mdi:keyboard-tab" x="163" y="172" height="14" width="14.0" class="combo tap glyph mdi:keyboard-tab"/>
 </g>
-<g class="combo combopos-3">
+<g class="combo combopos-4">
 <path d="M170,176 l-45,2" class="combo"/>
 <path d="M170,176 l45,2" class="combo"/>
 <rect rx="6" ry="6" x="158" y="164" width="25" height="23" class="combo"/>
 <use href="#mdi:keyboard-tab-reverse" xlink:href="#mdi:keyboard-tab-reverse" x="163" y="169" height="14" width="14.0" class="combo tap glyph mdi:keyboard-tab-reverse"/>
 </g>
-<g class="combo combopos-4">
+<g class="combo combopos-5">
 <rect rx="6" ry="6" x="260" y="103" width="25" height="23" class="combo"/>
 <use href="#mdi:keyboard-space" xlink:href="#mdi:keyboard-space" x="265" y="108" height="14" width="14.0" class="combo tap glyph mdi:keyboard-space"/>
 </g>
-<g class="combo combopos-5">
+<g class="combo combopos-6">
 <path d="M116,-13 h-76 a6.0,6.0 0 0 0 -6.0,6.0 v112" class="combo"/>
 <path d="M116,-13 h116 a6.0,6.0 0 0 1 6.0,6.0 v95" class="combo"/>
 <rect rx="6" ry="6" x="103" y="-24" width="25" height="23" class="combo"/>
 <use href="#escape" xlink:href="#escape" x="109" y="-20" height="14" width="14.0" class="combo tap glyph escape"/>
 </g>
-<g class="combo combopos-6">
+<g class="combo combopos-7">
+<path d="M136,187 l-79,7" class="combo"/>
+<path d="M136,187 l79,-7" class="combo"/>
+<rect rx="6" ry="6" x="124" y="176" width="25" height="23" class="combo"/>
+<text x="136" y="187" class="combo tap">LG(A)</text>
+</g>
+<g class="combo combopos-8">
+<path d="M170,191 l-113,4" class="combo"/>
+<path d="M170,191 l113,-4" class="combo"/>
+<rect rx="6" ry="6" x="158" y="180" width="25" height="23" class="combo"/>
+<text x="170" y="191" class="combo tap"><tspan style="font-size: 70%">&amp;m_selword</tspan></text>
+</g>
+<g class="combo combopos-9">
+<path d="M170,178 l-45,0" class="combo"/>
+<path d="M170,178 l45,0" class="combo"/>
+<rect rx="6" ry="6" x="158" y="167" width="25" height="23" class="combo"/>
+<use href="#mdi:undo" xlink:href="#mdi:undo" x="163" y="172" height="14" width="14.0" class="combo tap glyph mdi:undo"/>
+</g>
+<g class="combo combopos-10">
+<path d="M170,176 l-45,2" class="combo"/>
+<path d="M170,176 l45,2" class="combo"/>
+<rect rx="6" ry="6" x="158" y="164" width="25" height="23" class="combo"/>
+<use href="#mdi:redo" xlink:href="#mdi:redo" x="163" y="169" height="14" width="14.0" class="combo tap glyph mdi:redo"/>
+</g>
+<g class="combo combopos-11">
+<rect rx="6" ry="6" x="124" y="163" width="25" height="23" class="combo"/>
+<text x="136" y="174" class="combo tap">
+<tspan x="136" dy="-0.6em">&amp;bkp</tspan><tspan x="136" dy="1.2em">LG(C)</tspan>
+</text>
+<text x="136" y="184" class="combo hold"><tspan style="font-size: 70%">&amp;bkp LG(X)</tspan></text>
+</g>
+<g class="combo combopos-12">
+<rect rx="6" ry="6" x="192" y="163" width="25" height="23" class="combo"/>
+<text x="204" y="174" class="combo tap">
+<tspan x="204" dy="-0.6em">&amp;bkp</tspan><tspan x="204" dy="1.2em">LG(V)</tspan>
+</text>
+<text x="204" y="184" class="combo hold"><tspan style="font-size: 60%">&amp;bkp LG(LS(LA(V)))</tspan></text>
+</g>
+<g class="combo combopos-13">
+<rect rx="6" ry="6" x="90" y="133" width="25" height="23" class="combo"/>
+<use href="#tabler:browser-x" xlink:href="#tabler:browser-x" x="95" y="138" height="14" width="14.0" class="combo tap glyph tabler:browser-x"/>
+</g>
+<g class="combo combopos-14">
+<rect rx="6" ry="6" x="158" y="124" width="25" height="23" class="combo"/>
+<text x="170" y="136" class="combo tap">LG(N)</text>
+</g>
+<g class="combo combopos-15">
+<rect rx="6" ry="6" x="226" y="133" width="25" height="23" class="combo"/>
+<text x="238" y="144" class="combo tap">LG(O)</text>
+</g>
+<g class="combo combopos-16">
+<rect rx="6" ry="6" x="294" y="142" width="25" height="23" class="combo"/>
+<use href="#tabler:square-x" xlink:href="#tabler:square-x" x="299" y="146" height="14" width="14.0" class="combo tap glyph tabler:square-x"/>
+</g>
+<g class="combo combopos-17">
+<path d="M170,157 l-114,-25" class="combo"/>
+<path d="M170,157 l114,25" class="combo"/>
+<rect rx="6" ry="6" x="158" y="146" width="25" height="23" class="combo"/>
+<text x="170" y="157" class="combo tap"><tspan style="font-size: 70%">&amp;m_findsel</tspan></text>
+</g>
+<g class="combo combopos-18">
 <path d="M170,42 l-45,0" class="combo"/>
 <path d="M170,42 l45,0" class="combo"/>
 <rect rx="6" ry="6" x="158" y="31" width="25" height="23" class="combo"/>
@@ -1131,7 +1490,7 @@ path.combo {
 </text>
 <text x="170" y="52" class="combo hold">&amp;bkp Q</text>
 </g>
-<g class="combo combopos-7">
+<g class="combo combopos-19">
 <rect rx="6" ry="6" x="260" y="35" width="25" height="23" class="combo"/>
 <text x="272" y="47" class="combo tap">
 <tspan x="272" dy="-0.6em">&amp;bkp</tspan><tspan x="272" dy="1.2em">Z</tspan>
@@ -1256,32 +1615,98 @@ path.combo {
 <text x="643" y="254" class="combo tap">l_cfg</text>
 </g>
 <g class="combo combopos-1">
+<path d="M238,178 l-46,-6" class="combo"/>
+<path d="M238,178 l46,6" class="combo"/>
+<rect rx="6" ry="6" x="226" y="167" width="25" height="23" class="combo"/>
+<text x="238" y="178" class="combo tap"><tspan style="font-size: 70%">LG(RETURN)</tspan></text>
+</g>
+<g class="combo combopos-2">
 <rect rx="6" ry="6" x="260" y="171" width="25" height="23" class="combo"/>
 <use href="#mdi:keyboard-return" xlink:href="#mdi:keyboard-return" x="265" y="176" height="14" width="14.0" class="combo tap glyph mdi:keyboard-return"/>
 </g>
-<g class="combo combopos-2">
+<g class="combo combopos-3">
 <path d="M170,178 l-45,0" class="combo"/>
 <path d="M170,178 l45,0" class="combo"/>
 <rect rx="6" ry="6" x="158" y="167" width="25" height="23" class="combo"/>
 <use href="#mdi:keyboard-tab" xlink:href="#mdi:keyboard-tab" x="163" y="172" height="14" width="14.0" class="combo tap glyph mdi:keyboard-tab"/>
 </g>
-<g class="combo combopos-3">
+<g class="combo combopos-4">
 <path d="M170,176 l-45,2" class="combo"/>
 <path d="M170,176 l45,2" class="combo"/>
 <rect rx="6" ry="6" x="158" y="164" width="25" height="23" class="combo"/>
 <use href="#mdi:keyboard-tab-reverse" xlink:href="#mdi:keyboard-tab-reverse" x="163" y="169" height="14" width="14.0" class="combo tap glyph mdi:keyboard-tab-reverse"/>
 </g>
-<g class="combo combopos-4">
+<g class="combo combopos-5">
 <rect rx="6" ry="6" x="260" y="103" width="25" height="23" class="combo"/>
 <use href="#mdi:keyboard-space" xlink:href="#mdi:keyboard-space" x="265" y="108" height="14" width="14.0" class="combo tap glyph mdi:keyboard-space"/>
 </g>
-<g class="combo combopos-5">
+<g class="combo combopos-6">
 <path d="M116,-13 h-76 a6.0,6.0 0 0 0 -6.0,6.0 v112" class="combo"/>
 <path d="M116,-13 h116 a6.0,6.0 0 0 1 6.0,6.0 v95" class="combo"/>
 <rect rx="6" ry="6" x="103" y="-24" width="25" height="23" class="combo"/>
 <use href="#escape" xlink:href="#escape" x="109" y="-20" height="14" width="14.0" class="combo tap glyph escape"/>
 </g>
-<g class="combo combopos-6">
+<g class="combo combopos-7">
+<path d="M136,187 l-79,7" class="combo"/>
+<path d="M136,187 l79,-7" class="combo"/>
+<rect rx="6" ry="6" x="124" y="176" width="25" height="23" class="combo"/>
+<text x="136" y="187" class="combo tap">LG(A)</text>
+</g>
+<g class="combo combopos-8">
+<path d="M170,191 l-113,4" class="combo"/>
+<path d="M170,191 l113,-4" class="combo"/>
+<rect rx="6" ry="6" x="158" y="180" width="25" height="23" class="combo"/>
+<text x="170" y="191" class="combo tap"><tspan style="font-size: 70%">&amp;m_selword</tspan></text>
+</g>
+<g class="combo combopos-9">
+<path d="M170,178 l-45,0" class="combo"/>
+<path d="M170,178 l45,0" class="combo"/>
+<rect rx="6" ry="6" x="158" y="167" width="25" height="23" class="combo"/>
+<use href="#mdi:undo" xlink:href="#mdi:undo" x="163" y="172" height="14" width="14.0" class="combo tap glyph mdi:undo"/>
+</g>
+<g class="combo combopos-10">
+<path d="M170,176 l-45,2" class="combo"/>
+<path d="M170,176 l45,2" class="combo"/>
+<rect rx="6" ry="6" x="158" y="164" width="25" height="23" class="combo"/>
+<use href="#mdi:redo" xlink:href="#mdi:redo" x="163" y="169" height="14" width="14.0" class="combo tap glyph mdi:redo"/>
+</g>
+<g class="combo combopos-11">
+<rect rx="6" ry="6" x="124" y="163" width="25" height="23" class="combo"/>
+<text x="136" y="174" class="combo tap">
+<tspan x="136" dy="-0.6em">&amp;bkp</tspan><tspan x="136" dy="1.2em">LG(C)</tspan>
+</text>
+<text x="136" y="184" class="combo hold"><tspan style="font-size: 70%">&amp;bkp LG(X)</tspan></text>
+</g>
+<g class="combo combopos-12">
+<rect rx="6" ry="6" x="192" y="163" width="25" height="23" class="combo"/>
+<text x="204" y="174" class="combo tap">
+<tspan x="204" dy="-0.6em">&amp;bkp</tspan><tspan x="204" dy="1.2em">LG(V)</tspan>
+</text>
+<text x="204" y="184" class="combo hold"><tspan style="font-size: 60%">&amp;bkp LG(LS(LA(V)))</tspan></text>
+</g>
+<g class="combo combopos-13">
+<rect rx="6" ry="6" x="90" y="133" width="25" height="23" class="combo"/>
+<use href="#tabler:browser-x" xlink:href="#tabler:browser-x" x="95" y="138" height="14" width="14.0" class="combo tap glyph tabler:browser-x"/>
+</g>
+<g class="combo combopos-14">
+<rect rx="6" ry="6" x="158" y="124" width="25" height="23" class="combo"/>
+<text x="170" y="136" class="combo tap">LG(N)</text>
+</g>
+<g class="combo combopos-15">
+<rect rx="6" ry="6" x="226" y="133" width="25" height="23" class="combo"/>
+<text x="238" y="144" class="combo tap">LG(O)</text>
+</g>
+<g class="combo combopos-16">
+<rect rx="6" ry="6" x="294" y="142" width="25" height="23" class="combo"/>
+<use href="#tabler:square-x" xlink:href="#tabler:square-x" x="299" y="146" height="14" width="14.0" class="combo tap glyph tabler:square-x"/>
+</g>
+<g class="combo combopos-17">
+<path d="M170,157 l-114,-25" class="combo"/>
+<path d="M170,157 l114,25" class="combo"/>
+<rect rx="6" ry="6" x="158" y="146" width="25" height="23" class="combo"/>
+<text x="170" y="157" class="combo tap"><tspan style="font-size: 70%">&amp;m_findsel</tspan></text>
+</g>
+<g class="combo combopos-18">
 <path d="M170,42 l-45,0" class="combo"/>
 <path d="M170,42 l45,0" class="combo"/>
 <rect rx="6" ry="6" x="158" y="31" width="25" height="23" class="combo"/>
@@ -1290,7 +1715,7 @@ path.combo {
 </text>
 <text x="170" y="52" class="combo hold">&amp;bkp Q</text>
 </g>
-<g class="combo combopos-7">
+<g class="combo combopos-19">
 <rect rx="6" ry="6" x="260" y="35" width="25" height="23" class="combo"/>
 <text x="272" y="47" class="combo tap">
 <tspan x="272" dy="-0.6em">&amp;bkp</tspan><tspan x="272" dy="1.2em">Z</tspan>
@@ -1416,32 +1841,98 @@ path.combo {
 <text x="643" y="254" class="combo tap">l_cfg</text>
 </g>
 <g class="combo combopos-1">
+<path d="M238,178 l-46,-6" class="combo"/>
+<path d="M238,178 l46,6" class="combo"/>
+<rect rx="6" ry="6" x="226" y="167" width="25" height="23" class="combo"/>
+<text x="238" y="178" class="combo tap"><tspan style="font-size: 70%">LG(RETURN)</tspan></text>
+</g>
+<g class="combo combopos-2">
 <rect rx="6" ry="6" x="260" y="171" width="25" height="23" class="combo"/>
 <use href="#mdi:keyboard-return" xlink:href="#mdi:keyboard-return" x="265" y="176" height="14" width="14.0" class="combo tap glyph mdi:keyboard-return"/>
 </g>
-<g class="combo combopos-2">
+<g class="combo combopos-3">
 <path d="M170,178 l-45,0" class="combo"/>
 <path d="M170,178 l45,0" class="combo"/>
 <rect rx="6" ry="6" x="158" y="167" width="25" height="23" class="combo"/>
 <use href="#mdi:keyboard-tab" xlink:href="#mdi:keyboard-tab" x="163" y="172" height="14" width="14.0" class="combo tap glyph mdi:keyboard-tab"/>
 </g>
-<g class="combo combopos-3">
+<g class="combo combopos-4">
 <path d="M170,176 l-45,2" class="combo"/>
 <path d="M170,176 l45,2" class="combo"/>
 <rect rx="6" ry="6" x="158" y="164" width="25" height="23" class="combo"/>
 <use href="#mdi:keyboard-tab-reverse" xlink:href="#mdi:keyboard-tab-reverse" x="163" y="169" height="14" width="14.0" class="combo tap glyph mdi:keyboard-tab-reverse"/>
 </g>
-<g class="combo combopos-4">
+<g class="combo combopos-5">
 <rect rx="6" ry="6" x="260" y="103" width="25" height="23" class="combo"/>
 <use href="#mdi:keyboard-space" xlink:href="#mdi:keyboard-space" x="265" y="108" height="14" width="14.0" class="combo tap glyph mdi:keyboard-space"/>
 </g>
-<g class="combo combopos-5">
+<g class="combo combopos-6">
 <path d="M116,-13 h-76 a6.0,6.0 0 0 0 -6.0,6.0 v112" class="combo"/>
 <path d="M116,-13 h116 a6.0,6.0 0 0 1 6.0,6.0 v95" class="combo"/>
 <rect rx="6" ry="6" x="103" y="-24" width="25" height="23" class="combo"/>
 <use href="#escape" xlink:href="#escape" x="109" y="-20" height="14" width="14.0" class="combo tap glyph escape"/>
 </g>
-<g class="combo combopos-6">
+<g class="combo combopos-7">
+<path d="M136,187 l-79,7" class="combo"/>
+<path d="M136,187 l79,-7" class="combo"/>
+<rect rx="6" ry="6" x="124" y="176" width="25" height="23" class="combo"/>
+<text x="136" y="187" class="combo tap">LG(A)</text>
+</g>
+<g class="combo combopos-8">
+<path d="M170,191 l-113,4" class="combo"/>
+<path d="M170,191 l113,-4" class="combo"/>
+<rect rx="6" ry="6" x="158" y="180" width="25" height="23" class="combo"/>
+<text x="170" y="191" class="combo tap"><tspan style="font-size: 70%">&amp;m_selword</tspan></text>
+</g>
+<g class="combo combopos-9">
+<path d="M170,178 l-45,0" class="combo"/>
+<path d="M170,178 l45,0" class="combo"/>
+<rect rx="6" ry="6" x="158" y="167" width="25" height="23" class="combo"/>
+<use href="#mdi:undo" xlink:href="#mdi:undo" x="163" y="172" height="14" width="14.0" class="combo tap glyph mdi:undo"/>
+</g>
+<g class="combo combopos-10">
+<path d="M170,176 l-45,2" class="combo"/>
+<path d="M170,176 l45,2" class="combo"/>
+<rect rx="6" ry="6" x="158" y="164" width="25" height="23" class="combo"/>
+<use href="#mdi:redo" xlink:href="#mdi:redo" x="163" y="169" height="14" width="14.0" class="combo tap glyph mdi:redo"/>
+</g>
+<g class="combo combopos-11">
+<rect rx="6" ry="6" x="124" y="163" width="25" height="23" class="combo"/>
+<text x="136" y="174" class="combo tap">
+<tspan x="136" dy="-0.6em">&amp;bkp</tspan><tspan x="136" dy="1.2em">LG(C)</tspan>
+</text>
+<text x="136" y="184" class="combo hold"><tspan style="font-size: 70%">&amp;bkp LG(X)</tspan></text>
+</g>
+<g class="combo combopos-12">
+<rect rx="6" ry="6" x="192" y="163" width="25" height="23" class="combo"/>
+<text x="204" y="174" class="combo tap">
+<tspan x="204" dy="-0.6em">&amp;bkp</tspan><tspan x="204" dy="1.2em">LG(V)</tspan>
+</text>
+<text x="204" y="184" class="combo hold"><tspan style="font-size: 60%">&amp;bkp LG(LS(LA(V)))</tspan></text>
+</g>
+<g class="combo combopos-13">
+<rect rx="6" ry="6" x="90" y="133" width="25" height="23" class="combo"/>
+<use href="#tabler:browser-x" xlink:href="#tabler:browser-x" x="95" y="138" height="14" width="14.0" class="combo tap glyph tabler:browser-x"/>
+</g>
+<g class="combo combopos-14">
+<rect rx="6" ry="6" x="158" y="124" width="25" height="23" class="combo"/>
+<text x="170" y="136" class="combo tap">LG(N)</text>
+</g>
+<g class="combo combopos-15">
+<rect rx="6" ry="6" x="226" y="133" width="25" height="23" class="combo"/>
+<text x="238" y="144" class="combo tap">LG(O)</text>
+</g>
+<g class="combo combopos-16">
+<rect rx="6" ry="6" x="294" y="142" width="25" height="23" class="combo"/>
+<use href="#tabler:square-x" xlink:href="#tabler:square-x" x="299" y="146" height="14" width="14.0" class="combo tap glyph tabler:square-x"/>
+</g>
+<g class="combo combopos-17">
+<path d="M170,157 l-114,-25" class="combo"/>
+<path d="M170,157 l114,25" class="combo"/>
+<rect rx="6" ry="6" x="158" y="146" width="25" height="23" class="combo"/>
+<text x="170" y="157" class="combo tap"><tspan style="font-size: 70%">&amp;m_findsel</tspan></text>
+</g>
+<g class="combo combopos-18">
 <path d="M170,42 l-45,0" class="combo"/>
 <path d="M170,42 l45,0" class="combo"/>
 <rect rx="6" ry="6" x="158" y="31" width="25" height="23" class="combo"/>
@@ -1450,7 +1941,7 @@ path.combo {
 </text>
 <text x="170" y="52" class="combo hold">&amp;bkp Q</text>
 </g>
-<g class="combo combopos-7">
+<g class="combo combopos-19">
 <rect rx="6" ry="6" x="260" y="35" width="25" height="23" class="combo"/>
 <text x="272" y="47" class="combo tap">
 <tspan x="272" dy="-0.6em">&amp;bkp</tspan><tspan x="272" dy="1.2em">Z</tspan>
@@ -1575,32 +2066,98 @@ path.combo {
 <text x="643" y="254" class="combo tap">l_cfg</text>
 </g>
 <g class="combo combopos-1">
+<path d="M238,178 l-46,-6" class="combo"/>
+<path d="M238,178 l46,6" class="combo"/>
+<rect rx="6" ry="6" x="226" y="167" width="25" height="23" class="combo"/>
+<text x="238" y="178" class="combo tap"><tspan style="font-size: 70%">LG(RETURN)</tspan></text>
+</g>
+<g class="combo combopos-2">
 <rect rx="6" ry="6" x="260" y="171" width="25" height="23" class="combo"/>
 <use href="#mdi:keyboard-return" xlink:href="#mdi:keyboard-return" x="265" y="176" height="14" width="14.0" class="combo tap glyph mdi:keyboard-return"/>
 </g>
-<g class="combo combopos-2">
+<g class="combo combopos-3">
 <path d="M170,178 l-45,0" class="combo"/>
 <path d="M170,178 l45,0" class="combo"/>
 <rect rx="6" ry="6" x="158" y="167" width="25" height="23" class="combo"/>
 <use href="#mdi:keyboard-tab" xlink:href="#mdi:keyboard-tab" x="163" y="172" height="14" width="14.0" class="combo tap glyph mdi:keyboard-tab"/>
 </g>
-<g class="combo combopos-3">
+<g class="combo combopos-4">
 <path d="M170,176 l-45,2" class="combo"/>
 <path d="M170,176 l45,2" class="combo"/>
 <rect rx="6" ry="6" x="158" y="164" width="25" height="23" class="combo"/>
 <use href="#mdi:keyboard-tab-reverse" xlink:href="#mdi:keyboard-tab-reverse" x="163" y="169" height="14" width="14.0" class="combo tap glyph mdi:keyboard-tab-reverse"/>
 </g>
-<g class="combo combopos-4">
+<g class="combo combopos-5">
 <rect rx="6" ry="6" x="260" y="103" width="25" height="23" class="combo"/>
 <use href="#mdi:keyboard-space" xlink:href="#mdi:keyboard-space" x="265" y="108" height="14" width="14.0" class="combo tap glyph mdi:keyboard-space"/>
 </g>
-<g class="combo combopos-5">
+<g class="combo combopos-6">
 <path d="M116,-13 h-76 a6.0,6.0 0 0 0 -6.0,6.0 v112" class="combo"/>
 <path d="M116,-13 h116 a6.0,6.0 0 0 1 6.0,6.0 v95" class="combo"/>
 <rect rx="6" ry="6" x="103" y="-24" width="25" height="23" class="combo"/>
 <use href="#escape" xlink:href="#escape" x="109" y="-20" height="14" width="14.0" class="combo tap glyph escape"/>
 </g>
-<g class="combo combopos-6">
+<g class="combo combopos-7">
+<path d="M136,187 l-79,7" class="combo"/>
+<path d="M136,187 l79,-7" class="combo"/>
+<rect rx="6" ry="6" x="124" y="176" width="25" height="23" class="combo"/>
+<text x="136" y="187" class="combo tap">LG(A)</text>
+</g>
+<g class="combo combopos-8">
+<path d="M170,191 l-113,4" class="combo"/>
+<path d="M170,191 l113,-4" class="combo"/>
+<rect rx="6" ry="6" x="158" y="180" width="25" height="23" class="combo"/>
+<text x="170" y="191" class="combo tap"><tspan style="font-size: 70%">&amp;m_selword</tspan></text>
+</g>
+<g class="combo combopos-9">
+<path d="M170,178 l-45,0" class="combo"/>
+<path d="M170,178 l45,0" class="combo"/>
+<rect rx="6" ry="6" x="158" y="167" width="25" height="23" class="combo"/>
+<use href="#mdi:undo" xlink:href="#mdi:undo" x="163" y="172" height="14" width="14.0" class="combo tap glyph mdi:undo"/>
+</g>
+<g class="combo combopos-10">
+<path d="M170,176 l-45,2" class="combo"/>
+<path d="M170,176 l45,2" class="combo"/>
+<rect rx="6" ry="6" x="158" y="164" width="25" height="23" class="combo"/>
+<use href="#mdi:redo" xlink:href="#mdi:redo" x="163" y="169" height="14" width="14.0" class="combo tap glyph mdi:redo"/>
+</g>
+<g class="combo combopos-11">
+<rect rx="6" ry="6" x="124" y="163" width="25" height="23" class="combo"/>
+<text x="136" y="174" class="combo tap">
+<tspan x="136" dy="-0.6em">&amp;bkp</tspan><tspan x="136" dy="1.2em">LG(C)</tspan>
+</text>
+<text x="136" y="184" class="combo hold"><tspan style="font-size: 70%">&amp;bkp LG(X)</tspan></text>
+</g>
+<g class="combo combopos-12">
+<rect rx="6" ry="6" x="192" y="163" width="25" height="23" class="combo"/>
+<text x="204" y="174" class="combo tap">
+<tspan x="204" dy="-0.6em">&amp;bkp</tspan><tspan x="204" dy="1.2em">LG(V)</tspan>
+</text>
+<text x="204" y="184" class="combo hold"><tspan style="font-size: 60%">&amp;bkp LG(LS(LA(V)))</tspan></text>
+</g>
+<g class="combo combopos-13">
+<rect rx="6" ry="6" x="90" y="133" width="25" height="23" class="combo"/>
+<use href="#tabler:browser-x" xlink:href="#tabler:browser-x" x="95" y="138" height="14" width="14.0" class="combo tap glyph tabler:browser-x"/>
+</g>
+<g class="combo combopos-14">
+<rect rx="6" ry="6" x="158" y="124" width="25" height="23" class="combo"/>
+<text x="170" y="136" class="combo tap">LG(N)</text>
+</g>
+<g class="combo combopos-15">
+<rect rx="6" ry="6" x="226" y="133" width="25" height="23" class="combo"/>
+<text x="238" y="144" class="combo tap">LG(O)</text>
+</g>
+<g class="combo combopos-16">
+<rect rx="6" ry="6" x="294" y="142" width="25" height="23" class="combo"/>
+<use href="#tabler:square-x" xlink:href="#tabler:square-x" x="299" y="146" height="14" width="14.0" class="combo tap glyph tabler:square-x"/>
+</g>
+<g class="combo combopos-17">
+<path d="M170,157 l-114,-25" class="combo"/>
+<path d="M170,157 l114,25" class="combo"/>
+<rect rx="6" ry="6" x="158" y="146" width="25" height="23" class="combo"/>
+<text x="170" y="157" class="combo tap"><tspan style="font-size: 70%">&amp;m_findsel</tspan></text>
+</g>
+<g class="combo combopos-18">
 <path d="M170,42 l-45,0" class="combo"/>
 <path d="M170,42 l45,0" class="combo"/>
 <rect rx="6" ry="6" x="158" y="31" width="25" height="23" class="combo"/>
@@ -1609,7 +2166,7 @@ path.combo {
 </text>
 <text x="170" y="52" class="combo hold">&amp;bkp Q</text>
 </g>
-<g class="combo combopos-7">
+<g class="combo combopos-19">
 <rect rx="6" ry="6" x="260" y="35" width="25" height="23" class="combo"/>
 <text x="272" y="47" class="combo tap">
 <tspan x="272" dy="-0.6em">&amp;bkp</tspan><tspan x="272" dy="1.2em">Z</tspan>
@@ -1735,32 +2292,98 @@ path.combo {
 <text x="643" y="254" class="combo tap">l_cfg</text>
 </g>
 <g class="combo combopos-1">
+<path d="M238,178 l-46,-6" class="combo"/>
+<path d="M238,178 l46,6" class="combo"/>
+<rect rx="6" ry="6" x="226" y="167" width="25" height="23" class="combo"/>
+<text x="238" y="178" class="combo tap"><tspan style="font-size: 70%">LG(RETURN)</tspan></text>
+</g>
+<g class="combo combopos-2">
 <rect rx="6" ry="6" x="260" y="171" width="25" height="23" class="combo"/>
 <use href="#mdi:keyboard-return" xlink:href="#mdi:keyboard-return" x="265" y="176" height="14" width="14.0" class="combo tap glyph mdi:keyboard-return"/>
 </g>
-<g class="combo combopos-2">
+<g class="combo combopos-3">
 <path d="M170,178 l-45,0" class="combo"/>
 <path d="M170,178 l45,0" class="combo"/>
 <rect rx="6" ry="6" x="158" y="167" width="25" height="23" class="combo"/>
 <use href="#mdi:keyboard-tab" xlink:href="#mdi:keyboard-tab" x="163" y="172" height="14" width="14.0" class="combo tap glyph mdi:keyboard-tab"/>
 </g>
-<g class="combo combopos-3">
+<g class="combo combopos-4">
 <path d="M170,176 l-45,2" class="combo"/>
 <path d="M170,176 l45,2" class="combo"/>
 <rect rx="6" ry="6" x="158" y="164" width="25" height="23" class="combo"/>
 <use href="#mdi:keyboard-tab-reverse" xlink:href="#mdi:keyboard-tab-reverse" x="163" y="169" height="14" width="14.0" class="combo tap glyph mdi:keyboard-tab-reverse"/>
 </g>
-<g class="combo combopos-4">
+<g class="combo combopos-5">
 <rect rx="6" ry="6" x="260" y="103" width="25" height="23" class="combo"/>
 <use href="#mdi:keyboard-space" xlink:href="#mdi:keyboard-space" x="265" y="108" height="14" width="14.0" class="combo tap glyph mdi:keyboard-space"/>
 </g>
-<g class="combo combopos-5">
+<g class="combo combopos-6">
 <path d="M116,-13 h-76 a6.0,6.0 0 0 0 -6.0,6.0 v112" class="combo"/>
 <path d="M116,-13 h116 a6.0,6.0 0 0 1 6.0,6.0 v95" class="combo"/>
 <rect rx="6" ry="6" x="103" y="-24" width="25" height="23" class="combo"/>
 <use href="#escape" xlink:href="#escape" x="109" y="-20" height="14" width="14.0" class="combo tap glyph escape"/>
 </g>
-<g class="combo combopos-6">
+<g class="combo combopos-7">
+<path d="M136,187 l-79,7" class="combo"/>
+<path d="M136,187 l79,-7" class="combo"/>
+<rect rx="6" ry="6" x="124" y="176" width="25" height="23" class="combo"/>
+<text x="136" y="187" class="combo tap">LG(A)</text>
+</g>
+<g class="combo combopos-8">
+<path d="M170,191 l-113,4" class="combo"/>
+<path d="M170,191 l113,-4" class="combo"/>
+<rect rx="6" ry="6" x="158" y="180" width="25" height="23" class="combo"/>
+<text x="170" y="191" class="combo tap"><tspan style="font-size: 70%">&amp;m_selword</tspan></text>
+</g>
+<g class="combo combopos-9">
+<path d="M170,178 l-45,0" class="combo"/>
+<path d="M170,178 l45,0" class="combo"/>
+<rect rx="6" ry="6" x="158" y="167" width="25" height="23" class="combo"/>
+<use href="#mdi:undo" xlink:href="#mdi:undo" x="163" y="172" height="14" width="14.0" class="combo tap glyph mdi:undo"/>
+</g>
+<g class="combo combopos-10">
+<path d="M170,176 l-45,2" class="combo"/>
+<path d="M170,176 l45,2" class="combo"/>
+<rect rx="6" ry="6" x="158" y="164" width="25" height="23" class="combo"/>
+<use href="#mdi:redo" xlink:href="#mdi:redo" x="163" y="169" height="14" width="14.0" class="combo tap glyph mdi:redo"/>
+</g>
+<g class="combo combopos-11">
+<rect rx="6" ry="6" x="124" y="163" width="25" height="23" class="combo"/>
+<text x="136" y="174" class="combo tap">
+<tspan x="136" dy="-0.6em">&amp;bkp</tspan><tspan x="136" dy="1.2em">LG(C)</tspan>
+</text>
+<text x="136" y="184" class="combo hold"><tspan style="font-size: 70%">&amp;bkp LG(X)</tspan></text>
+</g>
+<g class="combo combopos-12">
+<rect rx="6" ry="6" x="192" y="163" width="25" height="23" class="combo"/>
+<text x="204" y="174" class="combo tap">
+<tspan x="204" dy="-0.6em">&amp;bkp</tspan><tspan x="204" dy="1.2em">LG(V)</tspan>
+</text>
+<text x="204" y="184" class="combo hold"><tspan style="font-size: 60%">&amp;bkp LG(LS(LA(V)))</tspan></text>
+</g>
+<g class="combo combopos-13">
+<rect rx="6" ry="6" x="90" y="133" width="25" height="23" class="combo"/>
+<use href="#tabler:browser-x" xlink:href="#tabler:browser-x" x="95" y="138" height="14" width="14.0" class="combo tap glyph tabler:browser-x"/>
+</g>
+<g class="combo combopos-14">
+<rect rx="6" ry="6" x="158" y="124" width="25" height="23" class="combo"/>
+<text x="170" y="136" class="combo tap">LG(N)</text>
+</g>
+<g class="combo combopos-15">
+<rect rx="6" ry="6" x="226" y="133" width="25" height="23" class="combo"/>
+<text x="238" y="144" class="combo tap">LG(O)</text>
+</g>
+<g class="combo combopos-16">
+<rect rx="6" ry="6" x="294" y="142" width="25" height="23" class="combo"/>
+<use href="#tabler:square-x" xlink:href="#tabler:square-x" x="299" y="146" height="14" width="14.0" class="combo tap glyph tabler:square-x"/>
+</g>
+<g class="combo combopos-17">
+<path d="M170,157 l-114,-25" class="combo"/>
+<path d="M170,157 l114,25" class="combo"/>
+<rect rx="6" ry="6" x="158" y="146" width="25" height="23" class="combo"/>
+<text x="170" y="157" class="combo tap"><tspan style="font-size: 70%">&amp;m_findsel</tspan></text>
+</g>
+<g class="combo combopos-18">
 <path d="M170,42 l-45,0" class="combo"/>
 <path d="M170,42 l45,0" class="combo"/>
 <rect rx="6" ry="6" x="158" y="31" width="25" height="23" class="combo"/>
@@ -1769,7 +2392,7 @@ path.combo {
 </text>
 <text x="170" y="52" class="combo hold">&amp;bkp Q</text>
 </g>
-<g class="combo combopos-7">
+<g class="combo combopos-19">
 <rect rx="6" ry="6" x="260" y="35" width="25" height="23" class="combo"/>
 <text x="272" y="47" class="combo tap">
 <tspan x="272" dy="-0.6em">&amp;bkp</tspan><tspan x="272" dy="1.2em">Z</tspan>
@@ -1894,32 +2517,98 @@ path.combo {
 <text x="643" y="254" class="combo tap">l_cfg</text>
 </g>
 <g class="combo combopos-1">
+<path d="M238,178 l-46,-6" class="combo"/>
+<path d="M238,178 l46,6" class="combo"/>
+<rect rx="6" ry="6" x="226" y="167" width="25" height="23" class="combo"/>
+<text x="238" y="178" class="combo tap"><tspan style="font-size: 70%">LG(RETURN)</tspan></text>
+</g>
+<g class="combo combopos-2">
 <rect rx="6" ry="6" x="260" y="171" width="25" height="23" class="combo"/>
 <use href="#mdi:keyboard-return" xlink:href="#mdi:keyboard-return" x="265" y="176" height="14" width="14.0" class="combo tap glyph mdi:keyboard-return"/>
 </g>
-<g class="combo combopos-2">
+<g class="combo combopos-3">
 <path d="M170,178 l-45,0" class="combo"/>
 <path d="M170,178 l45,0" class="combo"/>
 <rect rx="6" ry="6" x="158" y="167" width="25" height="23" class="combo"/>
 <use href="#mdi:keyboard-tab" xlink:href="#mdi:keyboard-tab" x="163" y="172" height="14" width="14.0" class="combo tap glyph mdi:keyboard-tab"/>
 </g>
-<g class="combo combopos-3">
+<g class="combo combopos-4">
 <path d="M170,176 l-45,2" class="combo"/>
 <path d="M170,176 l45,2" class="combo"/>
 <rect rx="6" ry="6" x="158" y="164" width="25" height="23" class="combo"/>
 <use href="#mdi:keyboard-tab-reverse" xlink:href="#mdi:keyboard-tab-reverse" x="163" y="169" height="14" width="14.0" class="combo tap glyph mdi:keyboard-tab-reverse"/>
 </g>
-<g class="combo combopos-4">
+<g class="combo combopos-5">
 <rect rx="6" ry="6" x="260" y="103" width="25" height="23" class="combo"/>
 <use href="#mdi:keyboard-space" xlink:href="#mdi:keyboard-space" x="265" y="108" height="14" width="14.0" class="combo tap glyph mdi:keyboard-space"/>
 </g>
-<g class="combo combopos-5">
+<g class="combo combopos-6">
 <path d="M116,-13 h-76 a6.0,6.0 0 0 0 -6.0,6.0 v112" class="combo"/>
 <path d="M116,-13 h116 a6.0,6.0 0 0 1 6.0,6.0 v95" class="combo"/>
 <rect rx="6" ry="6" x="103" y="-24" width="25" height="23" class="combo"/>
 <use href="#escape" xlink:href="#escape" x="109" y="-20" height="14" width="14.0" class="combo tap glyph escape"/>
 </g>
-<g class="combo combopos-6">
+<g class="combo combopos-7">
+<path d="M136,187 l-79,7" class="combo"/>
+<path d="M136,187 l79,-7" class="combo"/>
+<rect rx="6" ry="6" x="124" y="176" width="25" height="23" class="combo"/>
+<text x="136" y="187" class="combo tap">LG(A)</text>
+</g>
+<g class="combo combopos-8">
+<path d="M170,191 l-113,4" class="combo"/>
+<path d="M170,191 l113,-4" class="combo"/>
+<rect rx="6" ry="6" x="158" y="180" width="25" height="23" class="combo"/>
+<text x="170" y="191" class="combo tap"><tspan style="font-size: 70%">&amp;m_selword</tspan></text>
+</g>
+<g class="combo combopos-9">
+<path d="M170,178 l-45,0" class="combo"/>
+<path d="M170,178 l45,0" class="combo"/>
+<rect rx="6" ry="6" x="158" y="167" width="25" height="23" class="combo"/>
+<use href="#mdi:undo" xlink:href="#mdi:undo" x="163" y="172" height="14" width="14.0" class="combo tap glyph mdi:undo"/>
+</g>
+<g class="combo combopos-10">
+<path d="M170,176 l-45,2" class="combo"/>
+<path d="M170,176 l45,2" class="combo"/>
+<rect rx="6" ry="6" x="158" y="164" width="25" height="23" class="combo"/>
+<use href="#mdi:redo" xlink:href="#mdi:redo" x="163" y="169" height="14" width="14.0" class="combo tap glyph mdi:redo"/>
+</g>
+<g class="combo combopos-11">
+<rect rx="6" ry="6" x="124" y="163" width="25" height="23" class="combo"/>
+<text x="136" y="174" class="combo tap">
+<tspan x="136" dy="-0.6em">&amp;bkp</tspan><tspan x="136" dy="1.2em">LG(C)</tspan>
+</text>
+<text x="136" y="184" class="combo hold"><tspan style="font-size: 70%">&amp;bkp LG(X)</tspan></text>
+</g>
+<g class="combo combopos-12">
+<rect rx="6" ry="6" x="192" y="163" width="25" height="23" class="combo"/>
+<text x="204" y="174" class="combo tap">
+<tspan x="204" dy="-0.6em">&amp;bkp</tspan><tspan x="204" dy="1.2em">LG(V)</tspan>
+</text>
+<text x="204" y="184" class="combo hold"><tspan style="font-size: 60%">&amp;bkp LG(LS(LA(V)))</tspan></text>
+</g>
+<g class="combo combopos-13">
+<rect rx="6" ry="6" x="90" y="133" width="25" height="23" class="combo"/>
+<use href="#tabler:browser-x" xlink:href="#tabler:browser-x" x="95" y="138" height="14" width="14.0" class="combo tap glyph tabler:browser-x"/>
+</g>
+<g class="combo combopos-14">
+<rect rx="6" ry="6" x="158" y="124" width="25" height="23" class="combo"/>
+<text x="170" y="136" class="combo tap">LG(N)</text>
+</g>
+<g class="combo combopos-15">
+<rect rx="6" ry="6" x="226" y="133" width="25" height="23" class="combo"/>
+<text x="238" y="144" class="combo tap">LG(O)</text>
+</g>
+<g class="combo combopos-16">
+<rect rx="6" ry="6" x="294" y="142" width="25" height="23" class="combo"/>
+<use href="#tabler:square-x" xlink:href="#tabler:square-x" x="299" y="146" height="14" width="14.0" class="combo tap glyph tabler:square-x"/>
+</g>
+<g class="combo combopos-17">
+<path d="M170,157 l-114,-25" class="combo"/>
+<path d="M170,157 l114,25" class="combo"/>
+<rect rx="6" ry="6" x="158" y="146" width="25" height="23" class="combo"/>
+<text x="170" y="157" class="combo tap"><tspan style="font-size: 70%">&amp;m_findsel</tspan></text>
+</g>
+<g class="combo combopos-18">
 <path d="M170,42 l-45,0" class="combo"/>
 <path d="M170,42 l45,0" class="combo"/>
 <rect rx="6" ry="6" x="158" y="31" width="25" height="23" class="combo"/>
@@ -1928,7 +2617,7 @@ path.combo {
 </text>
 <text x="170" y="52" class="combo hold">&amp;bkp Q</text>
 </g>
-<g class="combo combopos-7">
+<g class="combo combopos-19">
 <rect rx="6" ry="6" x="260" y="35" width="25" height="23" class="combo"/>
 <text x="272" y="47" class="combo tap">
 <tspan x="272" dy="-0.6em">&amp;bkp</tspan><tspan x="272" dy="1.2em">Z</tspan>
@@ -2055,32 +2744,98 @@ path.combo {
 <text x="643" y="254" class="combo tap">l_cfg</text>
 </g>
 <g class="combo combopos-1">
+<path d="M238,178 l-46,-6" class="combo"/>
+<path d="M238,178 l46,6" class="combo"/>
+<rect rx="6" ry="6" x="226" y="167" width="25" height="23" class="combo"/>
+<text x="238" y="178" class="combo tap"><tspan style="font-size: 70%">LG(RETURN)</tspan></text>
+</g>
+<g class="combo combopos-2">
 <rect rx="6" ry="6" x="260" y="171" width="25" height="23" class="combo"/>
 <use href="#mdi:keyboard-return" xlink:href="#mdi:keyboard-return" x="265" y="176" height="14" width="14.0" class="combo tap glyph mdi:keyboard-return"/>
 </g>
-<g class="combo combopos-2">
+<g class="combo combopos-3">
 <path d="M170,178 l-45,0" class="combo"/>
 <path d="M170,178 l45,0" class="combo"/>
 <rect rx="6" ry="6" x="158" y="167" width="25" height="23" class="combo"/>
 <use href="#mdi:keyboard-tab" xlink:href="#mdi:keyboard-tab" x="163" y="172" height="14" width="14.0" class="combo tap glyph mdi:keyboard-tab"/>
 </g>
-<g class="combo combopos-3">
+<g class="combo combopos-4">
 <path d="M170,176 l-45,2" class="combo"/>
 <path d="M170,176 l45,2" class="combo"/>
 <rect rx="6" ry="6" x="158" y="164" width="25" height="23" class="combo"/>
 <use href="#mdi:keyboard-tab-reverse" xlink:href="#mdi:keyboard-tab-reverse" x="163" y="169" height="14" width="14.0" class="combo tap glyph mdi:keyboard-tab-reverse"/>
 </g>
-<g class="combo combopos-4">
+<g class="combo combopos-5">
 <rect rx="6" ry="6" x="260" y="103" width="25" height="23" class="combo"/>
 <use href="#mdi:keyboard-space" xlink:href="#mdi:keyboard-space" x="265" y="108" height="14" width="14.0" class="combo tap glyph mdi:keyboard-space"/>
 </g>
-<g class="combo combopos-5">
+<g class="combo combopos-6">
 <path d="M116,-13 h-76 a6.0,6.0 0 0 0 -6.0,6.0 v112" class="combo"/>
 <path d="M116,-13 h116 a6.0,6.0 0 0 1 6.0,6.0 v95" class="combo"/>
 <rect rx="6" ry="6" x="103" y="-24" width="25" height="23" class="combo"/>
 <use href="#escape" xlink:href="#escape" x="109" y="-20" height="14" width="14.0" class="combo tap glyph escape"/>
 </g>
-<g class="combo combopos-6">
+<g class="combo combopos-7">
+<path d="M136,187 l-79,7" class="combo"/>
+<path d="M136,187 l79,-7" class="combo"/>
+<rect rx="6" ry="6" x="124" y="176" width="25" height="23" class="combo"/>
+<text x="136" y="187" class="combo tap">LG(A)</text>
+</g>
+<g class="combo combopos-8">
+<path d="M170,191 l-113,4" class="combo"/>
+<path d="M170,191 l113,-4" class="combo"/>
+<rect rx="6" ry="6" x="158" y="180" width="25" height="23" class="combo"/>
+<text x="170" y="191" class="combo tap"><tspan style="font-size: 70%">&amp;m_selword</tspan></text>
+</g>
+<g class="combo combopos-9">
+<path d="M170,178 l-45,0" class="combo"/>
+<path d="M170,178 l45,0" class="combo"/>
+<rect rx="6" ry="6" x="158" y="167" width="25" height="23" class="combo"/>
+<use href="#mdi:undo" xlink:href="#mdi:undo" x="163" y="172" height="14" width="14.0" class="combo tap glyph mdi:undo"/>
+</g>
+<g class="combo combopos-10">
+<path d="M170,176 l-45,2" class="combo"/>
+<path d="M170,176 l45,2" class="combo"/>
+<rect rx="6" ry="6" x="158" y="164" width="25" height="23" class="combo"/>
+<use href="#mdi:redo" xlink:href="#mdi:redo" x="163" y="169" height="14" width="14.0" class="combo tap glyph mdi:redo"/>
+</g>
+<g class="combo combopos-11">
+<rect rx="6" ry="6" x="124" y="163" width="25" height="23" class="combo"/>
+<text x="136" y="174" class="combo tap">
+<tspan x="136" dy="-0.6em">&amp;bkp</tspan><tspan x="136" dy="1.2em">LG(C)</tspan>
+</text>
+<text x="136" y="184" class="combo hold"><tspan style="font-size: 70%">&amp;bkp LG(X)</tspan></text>
+</g>
+<g class="combo combopos-12">
+<rect rx="6" ry="6" x="192" y="163" width="25" height="23" class="combo"/>
+<text x="204" y="174" class="combo tap">
+<tspan x="204" dy="-0.6em">&amp;bkp</tspan><tspan x="204" dy="1.2em">LG(V)</tspan>
+</text>
+<text x="204" y="184" class="combo hold"><tspan style="font-size: 60%">&amp;bkp LG(LS(LA(V)))</tspan></text>
+</g>
+<g class="combo combopos-13">
+<rect rx="6" ry="6" x="90" y="133" width="25" height="23" class="combo"/>
+<use href="#tabler:browser-x" xlink:href="#tabler:browser-x" x="95" y="138" height="14" width="14.0" class="combo tap glyph tabler:browser-x"/>
+</g>
+<g class="combo combopos-14">
+<rect rx="6" ry="6" x="158" y="124" width="25" height="23" class="combo"/>
+<text x="170" y="136" class="combo tap">LG(N)</text>
+</g>
+<g class="combo combopos-15">
+<rect rx="6" ry="6" x="226" y="133" width="25" height="23" class="combo"/>
+<text x="238" y="144" class="combo tap">LG(O)</text>
+</g>
+<g class="combo combopos-16">
+<rect rx="6" ry="6" x="294" y="142" width="25" height="23" class="combo"/>
+<use href="#tabler:square-x" xlink:href="#tabler:square-x" x="299" y="146" height="14" width="14.0" class="combo tap glyph tabler:square-x"/>
+</g>
+<g class="combo combopos-17">
+<path d="M170,157 l-114,-25" class="combo"/>
+<path d="M170,157 l114,25" class="combo"/>
+<rect rx="6" ry="6" x="158" y="146" width="25" height="23" class="combo"/>
+<text x="170" y="157" class="combo tap"><tspan style="font-size: 70%">&amp;m_findsel</tspan></text>
+</g>
+<g class="combo combopos-18">
 <path d="M170,42 l-45,0" class="combo"/>
 <path d="M170,42 l45,0" class="combo"/>
 <rect rx="6" ry="6" x="158" y="31" width="25" height="23" class="combo"/>
@@ -2089,7 +2844,7 @@ path.combo {
 </text>
 <text x="170" y="52" class="combo hold">&amp;bkp Q</text>
 </g>
-<g class="combo combopos-7">
+<g class="combo combopos-19">
 <rect rx="6" ry="6" x="260" y="35" width="25" height="23" class="combo"/>
 <text x="272" y="47" class="combo tap">
 <tspan x="272" dy="-0.6em">&amp;bkp</tspan><tspan x="272" dy="1.2em">Z</tspan>
@@ -2214,32 +2969,98 @@ path.combo {
 <text x="643" y="254" class="combo tap">l_cfg</text>
 </g>
 <g class="combo combopos-1">
+<path d="M238,178 l-46,-6" class="combo"/>
+<path d="M238,178 l46,6" class="combo"/>
+<rect rx="6" ry="6" x="226" y="167" width="25" height="23" class="combo"/>
+<text x="238" y="178" class="combo tap"><tspan style="font-size: 70%">LG(RETURN)</tspan></text>
+</g>
+<g class="combo combopos-2">
 <rect rx="6" ry="6" x="260" y="171" width="25" height="23" class="combo"/>
 <use href="#mdi:keyboard-return" xlink:href="#mdi:keyboard-return" x="265" y="176" height="14" width="14.0" class="combo tap glyph mdi:keyboard-return"/>
 </g>
-<g class="combo combopos-2">
+<g class="combo combopos-3">
 <path d="M170,178 l-45,0" class="combo"/>
 <path d="M170,178 l45,0" class="combo"/>
 <rect rx="6" ry="6" x="158" y="167" width="25" height="23" class="combo"/>
 <use href="#mdi:keyboard-tab" xlink:href="#mdi:keyboard-tab" x="163" y="172" height="14" width="14.0" class="combo tap glyph mdi:keyboard-tab"/>
 </g>
-<g class="combo combopos-3">
+<g class="combo combopos-4">
 <path d="M170,176 l-45,2" class="combo"/>
 <path d="M170,176 l45,2" class="combo"/>
 <rect rx="6" ry="6" x="158" y="164" width="25" height="23" class="combo"/>
 <use href="#mdi:keyboard-tab-reverse" xlink:href="#mdi:keyboard-tab-reverse" x="163" y="169" height="14" width="14.0" class="combo tap glyph mdi:keyboard-tab-reverse"/>
 </g>
-<g class="combo combopos-4">
+<g class="combo combopos-5">
 <rect rx="6" ry="6" x="260" y="103" width="25" height="23" class="combo"/>
 <use href="#mdi:keyboard-space" xlink:href="#mdi:keyboard-space" x="265" y="108" height="14" width="14.0" class="combo tap glyph mdi:keyboard-space"/>
 </g>
-<g class="combo combopos-5">
+<g class="combo combopos-6">
 <path d="M116,-13 h-76 a6.0,6.0 0 0 0 -6.0,6.0 v112" class="combo"/>
 <path d="M116,-13 h116 a6.0,6.0 0 0 1 6.0,6.0 v95" class="combo"/>
 <rect rx="6" ry="6" x="103" y="-24" width="25" height="23" class="combo"/>
 <use href="#escape" xlink:href="#escape" x="109" y="-20" height="14" width="14.0" class="combo tap glyph escape"/>
 </g>
-<g class="combo combopos-6">
+<g class="combo combopos-7">
+<path d="M136,187 l-79,7" class="combo"/>
+<path d="M136,187 l79,-7" class="combo"/>
+<rect rx="6" ry="6" x="124" y="176" width="25" height="23" class="combo"/>
+<text x="136" y="187" class="combo tap">LG(A)</text>
+</g>
+<g class="combo combopos-8">
+<path d="M170,191 l-113,4" class="combo"/>
+<path d="M170,191 l113,-4" class="combo"/>
+<rect rx="6" ry="6" x="158" y="180" width="25" height="23" class="combo"/>
+<text x="170" y="191" class="combo tap"><tspan style="font-size: 70%">&amp;m_selword</tspan></text>
+</g>
+<g class="combo combopos-9">
+<path d="M170,178 l-45,0" class="combo"/>
+<path d="M170,178 l45,0" class="combo"/>
+<rect rx="6" ry="6" x="158" y="167" width="25" height="23" class="combo"/>
+<use href="#mdi:undo" xlink:href="#mdi:undo" x="163" y="172" height="14" width="14.0" class="combo tap glyph mdi:undo"/>
+</g>
+<g class="combo combopos-10">
+<path d="M170,176 l-45,2" class="combo"/>
+<path d="M170,176 l45,2" class="combo"/>
+<rect rx="6" ry="6" x="158" y="164" width="25" height="23" class="combo"/>
+<use href="#mdi:redo" xlink:href="#mdi:redo" x="163" y="169" height="14" width="14.0" class="combo tap glyph mdi:redo"/>
+</g>
+<g class="combo combopos-11">
+<rect rx="6" ry="6" x="124" y="163" width="25" height="23" class="combo"/>
+<text x="136" y="174" class="combo tap">
+<tspan x="136" dy="-0.6em">&amp;bkp</tspan><tspan x="136" dy="1.2em">LG(C)</tspan>
+</text>
+<text x="136" y="184" class="combo hold"><tspan style="font-size: 70%">&amp;bkp LG(X)</tspan></text>
+</g>
+<g class="combo combopos-12">
+<rect rx="6" ry="6" x="192" y="163" width="25" height="23" class="combo"/>
+<text x="204" y="174" class="combo tap">
+<tspan x="204" dy="-0.6em">&amp;bkp</tspan><tspan x="204" dy="1.2em">LG(V)</tspan>
+</text>
+<text x="204" y="184" class="combo hold"><tspan style="font-size: 60%">&amp;bkp LG(LS(LA(V)))</tspan></text>
+</g>
+<g class="combo combopos-13">
+<rect rx="6" ry="6" x="90" y="133" width="25" height="23" class="combo"/>
+<use href="#tabler:browser-x" xlink:href="#tabler:browser-x" x="95" y="138" height="14" width="14.0" class="combo tap glyph tabler:browser-x"/>
+</g>
+<g class="combo combopos-14">
+<rect rx="6" ry="6" x="158" y="124" width="25" height="23" class="combo"/>
+<text x="170" y="136" class="combo tap">LG(N)</text>
+</g>
+<g class="combo combopos-15">
+<rect rx="6" ry="6" x="226" y="133" width="25" height="23" class="combo"/>
+<text x="238" y="144" class="combo tap">LG(O)</text>
+</g>
+<g class="combo combopos-16">
+<rect rx="6" ry="6" x="294" y="142" width="25" height="23" class="combo"/>
+<use href="#tabler:square-x" xlink:href="#tabler:square-x" x="299" y="146" height="14" width="14.0" class="combo tap glyph tabler:square-x"/>
+</g>
+<g class="combo combopos-17">
+<path d="M170,157 l-114,-25" class="combo"/>
+<path d="M170,157 l114,25" class="combo"/>
+<rect rx="6" ry="6" x="158" y="146" width="25" height="23" class="combo"/>
+<text x="170" y="157" class="combo tap"><tspan style="font-size: 70%">&amp;m_findsel</tspan></text>
+</g>
+<g class="combo combopos-18">
 <path d="M170,42 l-45,0" class="combo"/>
 <path d="M170,42 l45,0" class="combo"/>
 <rect rx="6" ry="6" x="158" y="31" width="25" height="23" class="combo"/>
@@ -2248,7 +3069,7 @@ path.combo {
 </text>
 <text x="170" y="52" class="combo hold">&amp;bkp Q</text>
 </g>
-<g class="combo combopos-7">
+<g class="combo combopos-19">
 <rect rx="6" ry="6" x="260" y="35" width="25" height="23" class="combo"/>
 <text x="272" y="47" class="combo tap">
 <tspan x="272" dy="-0.6em">&amp;bkp</tspan><tspan x="272" dy="1.2em">Z</tspan>
@@ -2373,32 +3194,98 @@ path.combo {
 <text x="643" y="254" class="combo tap">l_cfg</text>
 </g>
 <g class="combo combopos-1">
+<path d="M238,178 l-46,-6" class="combo"/>
+<path d="M238,178 l46,6" class="combo"/>
+<rect rx="6" ry="6" x="226" y="167" width="25" height="23" class="combo"/>
+<text x="238" y="178" class="combo tap"><tspan style="font-size: 70%">LG(RETURN)</tspan></text>
+</g>
+<g class="combo combopos-2">
 <rect rx="6" ry="6" x="260" y="171" width="25" height="23" class="combo"/>
 <use href="#mdi:keyboard-return" xlink:href="#mdi:keyboard-return" x="265" y="176" height="14" width="14.0" class="combo tap glyph mdi:keyboard-return"/>
 </g>
-<g class="combo combopos-2">
+<g class="combo combopos-3">
 <path d="M170,178 l-45,0" class="combo"/>
 <path d="M170,178 l45,0" class="combo"/>
 <rect rx="6" ry="6" x="158" y="167" width="25" height="23" class="combo"/>
 <use href="#mdi:keyboard-tab" xlink:href="#mdi:keyboard-tab" x="163" y="172" height="14" width="14.0" class="combo tap glyph mdi:keyboard-tab"/>
 </g>
-<g class="combo combopos-3">
+<g class="combo combopos-4">
 <path d="M170,176 l-45,2" class="combo"/>
 <path d="M170,176 l45,2" class="combo"/>
 <rect rx="6" ry="6" x="158" y="164" width="25" height="23" class="combo"/>
 <use href="#mdi:keyboard-tab-reverse" xlink:href="#mdi:keyboard-tab-reverse" x="163" y="169" height="14" width="14.0" class="combo tap glyph mdi:keyboard-tab-reverse"/>
 </g>
-<g class="combo combopos-4">
+<g class="combo combopos-5">
 <rect rx="6" ry="6" x="260" y="103" width="25" height="23" class="combo"/>
 <use href="#mdi:keyboard-space" xlink:href="#mdi:keyboard-space" x="265" y="108" height="14" width="14.0" class="combo tap glyph mdi:keyboard-space"/>
 </g>
-<g class="combo combopos-5">
+<g class="combo combopos-6">
 <path d="M116,-13 h-76 a6.0,6.0 0 0 0 -6.0,6.0 v112" class="combo"/>
 <path d="M116,-13 h116 a6.0,6.0 0 0 1 6.0,6.0 v95" class="combo"/>
 <rect rx="6" ry="6" x="103" y="-24" width="25" height="23" class="combo"/>
 <use href="#escape" xlink:href="#escape" x="109" y="-20" height="14" width="14.0" class="combo tap glyph escape"/>
 </g>
-<g class="combo combopos-6">
+<g class="combo combopos-7">
+<path d="M136,187 l-79,7" class="combo"/>
+<path d="M136,187 l79,-7" class="combo"/>
+<rect rx="6" ry="6" x="124" y="176" width="25" height="23" class="combo"/>
+<text x="136" y="187" class="combo tap">LG(A)</text>
+</g>
+<g class="combo combopos-8">
+<path d="M170,191 l-113,4" class="combo"/>
+<path d="M170,191 l113,-4" class="combo"/>
+<rect rx="6" ry="6" x="158" y="180" width="25" height="23" class="combo"/>
+<text x="170" y="191" class="combo tap"><tspan style="font-size: 70%">&amp;m_selword</tspan></text>
+</g>
+<g class="combo combopos-9">
+<path d="M170,178 l-45,0" class="combo"/>
+<path d="M170,178 l45,0" class="combo"/>
+<rect rx="6" ry="6" x="158" y="167" width="25" height="23" class="combo"/>
+<use href="#mdi:undo" xlink:href="#mdi:undo" x="163" y="172" height="14" width="14.0" class="combo tap glyph mdi:undo"/>
+</g>
+<g class="combo combopos-10">
+<path d="M170,176 l-45,2" class="combo"/>
+<path d="M170,176 l45,2" class="combo"/>
+<rect rx="6" ry="6" x="158" y="164" width="25" height="23" class="combo"/>
+<use href="#mdi:redo" xlink:href="#mdi:redo" x="163" y="169" height="14" width="14.0" class="combo tap glyph mdi:redo"/>
+</g>
+<g class="combo combopos-11">
+<rect rx="6" ry="6" x="124" y="163" width="25" height="23" class="combo"/>
+<text x="136" y="174" class="combo tap">
+<tspan x="136" dy="-0.6em">&amp;bkp</tspan><tspan x="136" dy="1.2em">LG(C)</tspan>
+</text>
+<text x="136" y="184" class="combo hold"><tspan style="font-size: 70%">&amp;bkp LG(X)</tspan></text>
+</g>
+<g class="combo combopos-12">
+<rect rx="6" ry="6" x="192" y="163" width="25" height="23" class="combo"/>
+<text x="204" y="174" class="combo tap">
+<tspan x="204" dy="-0.6em">&amp;bkp</tspan><tspan x="204" dy="1.2em">LG(V)</tspan>
+</text>
+<text x="204" y="184" class="combo hold"><tspan style="font-size: 60%">&amp;bkp LG(LS(LA(V)))</tspan></text>
+</g>
+<g class="combo combopos-13">
+<rect rx="6" ry="6" x="90" y="133" width="25" height="23" class="combo"/>
+<use href="#tabler:browser-x" xlink:href="#tabler:browser-x" x="95" y="138" height="14" width="14.0" class="combo tap glyph tabler:browser-x"/>
+</g>
+<g class="combo combopos-14">
+<rect rx="6" ry="6" x="158" y="124" width="25" height="23" class="combo"/>
+<text x="170" y="136" class="combo tap">LG(N)</text>
+</g>
+<g class="combo combopos-15">
+<rect rx="6" ry="6" x="226" y="133" width="25" height="23" class="combo"/>
+<text x="238" y="144" class="combo tap">LG(O)</text>
+</g>
+<g class="combo combopos-16">
+<rect rx="6" ry="6" x="294" y="142" width="25" height="23" class="combo"/>
+<use href="#tabler:square-x" xlink:href="#tabler:square-x" x="299" y="146" height="14" width="14.0" class="combo tap glyph tabler:square-x"/>
+</g>
+<g class="combo combopos-17">
+<path d="M170,157 l-114,-25" class="combo"/>
+<path d="M170,157 l114,25" class="combo"/>
+<rect rx="6" ry="6" x="158" y="146" width="25" height="23" class="combo"/>
+<text x="170" y="157" class="combo tap"><tspan style="font-size: 70%">&amp;m_findsel</tspan></text>
+</g>
+<g class="combo combopos-18">
 <path d="M170,42 l-45,0" class="combo"/>
 <path d="M170,42 l45,0" class="combo"/>
 <rect rx="6" ry="6" x="158" y="31" width="25" height="23" class="combo"/>
@@ -2407,7 +3294,7 @@ path.combo {
 </text>
 <text x="170" y="52" class="combo hold">&amp;bkp Q</text>
 </g>
-<g class="combo combopos-7">
+<g class="combo combopos-19">
 <rect rx="6" ry="6" x="260" y="35" width="25" height="23" class="combo"/>
 <text x="272" y="47" class="combo tap">
 <tspan x="272" dy="-0.6em">&amp;bkp</tspan><tspan x="272" dy="1.2em">Z</tspan>
@@ -2532,32 +3419,98 @@ path.combo {
 <text x="643" y="254" class="combo tap">l_cfg</text>
 </g>
 <g class="combo combopos-1">
+<path d="M238,178 l-46,-6" class="combo"/>
+<path d="M238,178 l46,6" class="combo"/>
+<rect rx="6" ry="6" x="226" y="167" width="25" height="23" class="combo"/>
+<text x="238" y="178" class="combo tap"><tspan style="font-size: 70%">LG(RETURN)</tspan></text>
+</g>
+<g class="combo combopos-2">
 <rect rx="6" ry="6" x="260" y="171" width="25" height="23" class="combo"/>
 <use href="#mdi:keyboard-return" xlink:href="#mdi:keyboard-return" x="265" y="176" height="14" width="14.0" class="combo tap glyph mdi:keyboard-return"/>
 </g>
-<g class="combo combopos-2">
+<g class="combo combopos-3">
 <path d="M170,178 l-45,0" class="combo"/>
 <path d="M170,178 l45,0" class="combo"/>
 <rect rx="6" ry="6" x="158" y="167" width="25" height="23" class="combo"/>
 <use href="#mdi:keyboard-tab" xlink:href="#mdi:keyboard-tab" x="163" y="172" height="14" width="14.0" class="combo tap glyph mdi:keyboard-tab"/>
 </g>
-<g class="combo combopos-3">
+<g class="combo combopos-4">
 <path d="M170,176 l-45,2" class="combo"/>
 <path d="M170,176 l45,2" class="combo"/>
 <rect rx="6" ry="6" x="158" y="164" width="25" height="23" class="combo"/>
 <use href="#mdi:keyboard-tab-reverse" xlink:href="#mdi:keyboard-tab-reverse" x="163" y="169" height="14" width="14.0" class="combo tap glyph mdi:keyboard-tab-reverse"/>
 </g>
-<g class="combo combopos-4">
+<g class="combo combopos-5">
 <rect rx="6" ry="6" x="260" y="103" width="25" height="23" class="combo"/>
 <use href="#mdi:keyboard-space" xlink:href="#mdi:keyboard-space" x="265" y="108" height="14" width="14.0" class="combo tap glyph mdi:keyboard-space"/>
 </g>
-<g class="combo combopos-5">
+<g class="combo combopos-6">
 <path d="M116,-13 h-76 a6.0,6.0 0 0 0 -6.0,6.0 v112" class="combo"/>
 <path d="M116,-13 h116 a6.0,6.0 0 0 1 6.0,6.0 v95" class="combo"/>
 <rect rx="6" ry="6" x="103" y="-24" width="25" height="23" class="combo"/>
 <use href="#escape" xlink:href="#escape" x="109" y="-20" height="14" width="14.0" class="combo tap glyph escape"/>
 </g>
-<g class="combo combopos-6">
+<g class="combo combopos-7">
+<path d="M136,187 l-79,7" class="combo"/>
+<path d="M136,187 l79,-7" class="combo"/>
+<rect rx="6" ry="6" x="124" y="176" width="25" height="23" class="combo"/>
+<text x="136" y="187" class="combo tap">LG(A)</text>
+</g>
+<g class="combo combopos-8">
+<path d="M170,191 l-113,4" class="combo"/>
+<path d="M170,191 l113,-4" class="combo"/>
+<rect rx="6" ry="6" x="158" y="180" width="25" height="23" class="combo"/>
+<text x="170" y="191" class="combo tap"><tspan style="font-size: 70%">&amp;m_selword</tspan></text>
+</g>
+<g class="combo combopos-9">
+<path d="M170,178 l-45,0" class="combo"/>
+<path d="M170,178 l45,0" class="combo"/>
+<rect rx="6" ry="6" x="158" y="167" width="25" height="23" class="combo"/>
+<use href="#mdi:undo" xlink:href="#mdi:undo" x="163" y="172" height="14" width="14.0" class="combo tap glyph mdi:undo"/>
+</g>
+<g class="combo combopos-10">
+<path d="M170,176 l-45,2" class="combo"/>
+<path d="M170,176 l45,2" class="combo"/>
+<rect rx="6" ry="6" x="158" y="164" width="25" height="23" class="combo"/>
+<use href="#mdi:redo" xlink:href="#mdi:redo" x="163" y="169" height="14" width="14.0" class="combo tap glyph mdi:redo"/>
+</g>
+<g class="combo combopos-11">
+<rect rx="6" ry="6" x="124" y="163" width="25" height="23" class="combo"/>
+<text x="136" y="174" class="combo tap">
+<tspan x="136" dy="-0.6em">&amp;bkp</tspan><tspan x="136" dy="1.2em">LG(C)</tspan>
+</text>
+<text x="136" y="184" class="combo hold"><tspan style="font-size: 70%">&amp;bkp LG(X)</tspan></text>
+</g>
+<g class="combo combopos-12">
+<rect rx="6" ry="6" x="192" y="163" width="25" height="23" class="combo"/>
+<text x="204" y="174" class="combo tap">
+<tspan x="204" dy="-0.6em">&amp;bkp</tspan><tspan x="204" dy="1.2em">LG(V)</tspan>
+</text>
+<text x="204" y="184" class="combo hold"><tspan style="font-size: 60%">&amp;bkp LG(LS(LA(V)))</tspan></text>
+</g>
+<g class="combo combopos-13">
+<rect rx="6" ry="6" x="90" y="133" width="25" height="23" class="combo"/>
+<use href="#tabler:browser-x" xlink:href="#tabler:browser-x" x="95" y="138" height="14" width="14.0" class="combo tap glyph tabler:browser-x"/>
+</g>
+<g class="combo combopos-14">
+<rect rx="6" ry="6" x="158" y="124" width="25" height="23" class="combo"/>
+<text x="170" y="136" class="combo tap">LG(N)</text>
+</g>
+<g class="combo combopos-15">
+<rect rx="6" ry="6" x="226" y="133" width="25" height="23" class="combo"/>
+<text x="238" y="144" class="combo tap">LG(O)</text>
+</g>
+<g class="combo combopos-16">
+<rect rx="6" ry="6" x="294" y="142" width="25" height="23" class="combo"/>
+<use href="#tabler:square-x" xlink:href="#tabler:square-x" x="299" y="146" height="14" width="14.0" class="combo tap glyph tabler:square-x"/>
+</g>
+<g class="combo combopos-17">
+<path d="M170,157 l-114,-25" class="combo"/>
+<path d="M170,157 l114,25" class="combo"/>
+<rect rx="6" ry="6" x="158" y="146" width="25" height="23" class="combo"/>
+<text x="170" y="157" class="combo tap"><tspan style="font-size: 70%">&amp;m_findsel</tspan></text>
+</g>
+<g class="combo combopos-18">
 <path d="M170,42 l-45,0" class="combo"/>
 <path d="M170,42 l45,0" class="combo"/>
 <rect rx="6" ry="6" x="158" y="31" width="25" height="23" class="combo"/>
@@ -2566,7 +3519,7 @@ path.combo {
 </text>
 <text x="170" y="52" class="combo hold">&amp;bkp Q</text>
 </g>
-<g class="combo combopos-7">
+<g class="combo combopos-19">
 <rect rx="6" ry="6" x="260" y="35" width="25" height="23" class="combo"/>
 <text x="272" y="47" class="combo tap">
 <tspan x="272" dy="-0.6em">&amp;bkp</tspan><tspan x="272" dy="1.2em">Z</tspan>
@@ -2691,32 +3644,98 @@ path.combo {
 <text x="643" y="254" class="combo tap">l_cfg</text>
 </g>
 <g class="combo combopos-1">
+<path d="M238,178 l-46,-6" class="combo"/>
+<path d="M238,178 l46,6" class="combo"/>
+<rect rx="6" ry="6" x="226" y="167" width="25" height="23" class="combo"/>
+<text x="238" y="178" class="combo tap"><tspan style="font-size: 70%">LG(RETURN)</tspan></text>
+</g>
+<g class="combo combopos-2">
 <rect rx="6" ry="6" x="260" y="171" width="25" height="23" class="combo"/>
 <use href="#mdi:keyboard-return" xlink:href="#mdi:keyboard-return" x="265" y="176" height="14" width="14.0" class="combo tap glyph mdi:keyboard-return"/>
 </g>
-<g class="combo combopos-2">
+<g class="combo combopos-3">
 <path d="M170,178 l-45,0" class="combo"/>
 <path d="M170,178 l45,0" class="combo"/>
 <rect rx="6" ry="6" x="158" y="167" width="25" height="23" class="combo"/>
 <use href="#mdi:keyboard-tab" xlink:href="#mdi:keyboard-tab" x="163" y="172" height="14" width="14.0" class="combo tap glyph mdi:keyboard-tab"/>
 </g>
-<g class="combo combopos-3">
+<g class="combo combopos-4">
 <path d="M170,176 l-45,2" class="combo"/>
 <path d="M170,176 l45,2" class="combo"/>
 <rect rx="6" ry="6" x="158" y="164" width="25" height="23" class="combo"/>
 <use href="#mdi:keyboard-tab-reverse" xlink:href="#mdi:keyboard-tab-reverse" x="163" y="169" height="14" width="14.0" class="combo tap glyph mdi:keyboard-tab-reverse"/>
 </g>
-<g class="combo combopos-4">
+<g class="combo combopos-5">
 <rect rx="6" ry="6" x="260" y="103" width="25" height="23" class="combo"/>
 <use href="#mdi:keyboard-space" xlink:href="#mdi:keyboard-space" x="265" y="108" height="14" width="14.0" class="combo tap glyph mdi:keyboard-space"/>
 </g>
-<g class="combo combopos-5">
+<g class="combo combopos-6">
 <path d="M116,-13 h-76 a6.0,6.0 0 0 0 -6.0,6.0 v112" class="combo"/>
 <path d="M116,-13 h116 a6.0,6.0 0 0 1 6.0,6.0 v95" class="combo"/>
 <rect rx="6" ry="6" x="103" y="-24" width="25" height="23" class="combo"/>
 <use href="#escape" xlink:href="#escape" x="109" y="-20" height="14" width="14.0" class="combo tap glyph escape"/>
 </g>
-<g class="combo combopos-6">
+<g class="combo combopos-7">
+<path d="M136,187 l-79,7" class="combo"/>
+<path d="M136,187 l79,-7" class="combo"/>
+<rect rx="6" ry="6" x="124" y="176" width="25" height="23" class="combo"/>
+<text x="136" y="187" class="combo tap">LG(A)</text>
+</g>
+<g class="combo combopos-8">
+<path d="M170,191 l-113,4" class="combo"/>
+<path d="M170,191 l113,-4" class="combo"/>
+<rect rx="6" ry="6" x="158" y="180" width="25" height="23" class="combo"/>
+<text x="170" y="191" class="combo tap"><tspan style="font-size: 70%">&amp;m_selword</tspan></text>
+</g>
+<g class="combo combopos-9">
+<path d="M170,178 l-45,0" class="combo"/>
+<path d="M170,178 l45,0" class="combo"/>
+<rect rx="6" ry="6" x="158" y="167" width="25" height="23" class="combo"/>
+<use href="#mdi:undo" xlink:href="#mdi:undo" x="163" y="172" height="14" width="14.0" class="combo tap glyph mdi:undo"/>
+</g>
+<g class="combo combopos-10">
+<path d="M170,176 l-45,2" class="combo"/>
+<path d="M170,176 l45,2" class="combo"/>
+<rect rx="6" ry="6" x="158" y="164" width="25" height="23" class="combo"/>
+<use href="#mdi:redo" xlink:href="#mdi:redo" x="163" y="169" height="14" width="14.0" class="combo tap glyph mdi:redo"/>
+</g>
+<g class="combo combopos-11">
+<rect rx="6" ry="6" x="124" y="163" width="25" height="23" class="combo"/>
+<text x="136" y="174" class="combo tap">
+<tspan x="136" dy="-0.6em">&amp;bkp</tspan><tspan x="136" dy="1.2em">LG(C)</tspan>
+</text>
+<text x="136" y="184" class="combo hold"><tspan style="font-size: 70%">&amp;bkp LG(X)</tspan></text>
+</g>
+<g class="combo combopos-12">
+<rect rx="6" ry="6" x="192" y="163" width="25" height="23" class="combo"/>
+<text x="204" y="174" class="combo tap">
+<tspan x="204" dy="-0.6em">&amp;bkp</tspan><tspan x="204" dy="1.2em">LG(V)</tspan>
+</text>
+<text x="204" y="184" class="combo hold"><tspan style="font-size: 60%">&amp;bkp LG(LS(LA(V)))</tspan></text>
+</g>
+<g class="combo combopos-13">
+<rect rx="6" ry="6" x="90" y="133" width="25" height="23" class="combo"/>
+<use href="#tabler:browser-x" xlink:href="#tabler:browser-x" x="95" y="138" height="14" width="14.0" class="combo tap glyph tabler:browser-x"/>
+</g>
+<g class="combo combopos-14">
+<rect rx="6" ry="6" x="158" y="124" width="25" height="23" class="combo"/>
+<text x="170" y="136" class="combo tap">LG(N)</text>
+</g>
+<g class="combo combopos-15">
+<rect rx="6" ry="6" x="226" y="133" width="25" height="23" class="combo"/>
+<text x="238" y="144" class="combo tap">LG(O)</text>
+</g>
+<g class="combo combopos-16">
+<rect rx="6" ry="6" x="294" y="142" width="25" height="23" class="combo"/>
+<use href="#tabler:square-x" xlink:href="#tabler:square-x" x="299" y="146" height="14" width="14.0" class="combo tap glyph tabler:square-x"/>
+</g>
+<g class="combo combopos-17">
+<path d="M170,157 l-114,-25" class="combo"/>
+<path d="M170,157 l114,25" class="combo"/>
+<rect rx="6" ry="6" x="158" y="146" width="25" height="23" class="combo"/>
+<text x="170" y="157" class="combo tap"><tspan style="font-size: 70%">&amp;m_findsel</tspan></text>
+</g>
+<g class="combo combopos-18">
 <path d="M170,42 l-45,0" class="combo"/>
 <path d="M170,42 l45,0" class="combo"/>
 <rect rx="6" ry="6" x="158" y="31" width="25" height="23" class="combo"/>
@@ -2725,7 +3744,7 @@ path.combo {
 </text>
 <text x="170" y="52" class="combo hold">&amp;bkp Q</text>
 </g>
-<g class="combo combopos-7">
+<g class="combo combopos-19">
 <rect rx="6" ry="6" x="260" y="35" width="25" height="23" class="combo"/>
 <text x="272" y="47" class="combo tap">
 <tspan x="272" dy="-0.6em">&amp;bkp</tspan><tspan x="272" dy="1.2em">Z</tspan>
@@ -2850,32 +3869,98 @@ path.combo {
 <text x="643" y="254" class="combo tap">l_cfg</text>
 </g>
 <g class="combo combopos-1">
+<path d="M238,178 l-46,-6" class="combo"/>
+<path d="M238,178 l46,6" class="combo"/>
+<rect rx="6" ry="6" x="226" y="167" width="25" height="23" class="combo"/>
+<text x="238" y="178" class="combo tap"><tspan style="font-size: 70%">LG(RETURN)</tspan></text>
+</g>
+<g class="combo combopos-2">
 <rect rx="6" ry="6" x="260" y="171" width="25" height="23" class="combo"/>
 <use href="#mdi:keyboard-return" xlink:href="#mdi:keyboard-return" x="265" y="176" height="14" width="14.0" class="combo tap glyph mdi:keyboard-return"/>
 </g>
-<g class="combo combopos-2">
+<g class="combo combopos-3">
 <path d="M170,178 l-45,0" class="combo"/>
 <path d="M170,178 l45,0" class="combo"/>
 <rect rx="6" ry="6" x="158" y="167" width="25" height="23" class="combo"/>
 <use href="#mdi:keyboard-tab" xlink:href="#mdi:keyboard-tab" x="163" y="172" height="14" width="14.0" class="combo tap glyph mdi:keyboard-tab"/>
 </g>
-<g class="combo combopos-3">
+<g class="combo combopos-4">
 <path d="M170,176 l-45,2" class="combo"/>
 <path d="M170,176 l45,2" class="combo"/>
 <rect rx="6" ry="6" x="158" y="164" width="25" height="23" class="combo"/>
 <use href="#mdi:keyboard-tab-reverse" xlink:href="#mdi:keyboard-tab-reverse" x="163" y="169" height="14" width="14.0" class="combo tap glyph mdi:keyboard-tab-reverse"/>
 </g>
-<g class="combo combopos-4">
+<g class="combo combopos-5">
 <rect rx="6" ry="6" x="260" y="103" width="25" height="23" class="combo"/>
 <use href="#mdi:keyboard-space" xlink:href="#mdi:keyboard-space" x="265" y="108" height="14" width="14.0" class="combo tap glyph mdi:keyboard-space"/>
 </g>
-<g class="combo combopos-5">
+<g class="combo combopos-6">
 <path d="M116,-13 h-76 a6.0,6.0 0 0 0 -6.0,6.0 v112" class="combo"/>
 <path d="M116,-13 h116 a6.0,6.0 0 0 1 6.0,6.0 v95" class="combo"/>
 <rect rx="6" ry="6" x="103" y="-24" width="25" height="23" class="combo"/>
 <use href="#escape" xlink:href="#escape" x="109" y="-20" height="14" width="14.0" class="combo tap glyph escape"/>
 </g>
-<g class="combo combopos-6">
+<g class="combo combopos-7">
+<path d="M136,187 l-79,7" class="combo"/>
+<path d="M136,187 l79,-7" class="combo"/>
+<rect rx="6" ry="6" x="124" y="176" width="25" height="23" class="combo"/>
+<text x="136" y="187" class="combo tap">LG(A)</text>
+</g>
+<g class="combo combopos-8">
+<path d="M170,191 l-113,4" class="combo"/>
+<path d="M170,191 l113,-4" class="combo"/>
+<rect rx="6" ry="6" x="158" y="180" width="25" height="23" class="combo"/>
+<text x="170" y="191" class="combo tap"><tspan style="font-size: 70%">&amp;m_selword</tspan></text>
+</g>
+<g class="combo combopos-9">
+<path d="M170,178 l-45,0" class="combo"/>
+<path d="M170,178 l45,0" class="combo"/>
+<rect rx="6" ry="6" x="158" y="167" width="25" height="23" class="combo"/>
+<use href="#mdi:undo" xlink:href="#mdi:undo" x="163" y="172" height="14" width="14.0" class="combo tap glyph mdi:undo"/>
+</g>
+<g class="combo combopos-10">
+<path d="M170,176 l-45,2" class="combo"/>
+<path d="M170,176 l45,2" class="combo"/>
+<rect rx="6" ry="6" x="158" y="164" width="25" height="23" class="combo"/>
+<use href="#mdi:redo" xlink:href="#mdi:redo" x="163" y="169" height="14" width="14.0" class="combo tap glyph mdi:redo"/>
+</g>
+<g class="combo combopos-11">
+<rect rx="6" ry="6" x="124" y="163" width="25" height="23" class="combo"/>
+<text x="136" y="174" class="combo tap">
+<tspan x="136" dy="-0.6em">&amp;bkp</tspan><tspan x="136" dy="1.2em">LG(C)</tspan>
+</text>
+<text x="136" y="184" class="combo hold"><tspan style="font-size: 70%">&amp;bkp LG(X)</tspan></text>
+</g>
+<g class="combo combopos-12">
+<rect rx="6" ry="6" x="192" y="163" width="25" height="23" class="combo"/>
+<text x="204" y="174" class="combo tap">
+<tspan x="204" dy="-0.6em">&amp;bkp</tspan><tspan x="204" dy="1.2em">LG(V)</tspan>
+</text>
+<text x="204" y="184" class="combo hold"><tspan style="font-size: 60%">&amp;bkp LG(LS(LA(V)))</tspan></text>
+</g>
+<g class="combo combopos-13">
+<rect rx="6" ry="6" x="90" y="133" width="25" height="23" class="combo"/>
+<use href="#tabler:browser-x" xlink:href="#tabler:browser-x" x="95" y="138" height="14" width="14.0" class="combo tap glyph tabler:browser-x"/>
+</g>
+<g class="combo combopos-14">
+<rect rx="6" ry="6" x="158" y="124" width="25" height="23" class="combo"/>
+<text x="170" y="136" class="combo tap">LG(N)</text>
+</g>
+<g class="combo combopos-15">
+<rect rx="6" ry="6" x="226" y="133" width="25" height="23" class="combo"/>
+<text x="238" y="144" class="combo tap">LG(O)</text>
+</g>
+<g class="combo combopos-16">
+<rect rx="6" ry="6" x="294" y="142" width="25" height="23" class="combo"/>
+<use href="#tabler:square-x" xlink:href="#tabler:square-x" x="299" y="146" height="14" width="14.0" class="combo tap glyph tabler:square-x"/>
+</g>
+<g class="combo combopos-17">
+<path d="M170,157 l-114,-25" class="combo"/>
+<path d="M170,157 l114,25" class="combo"/>
+<rect rx="6" ry="6" x="158" y="146" width="25" height="23" class="combo"/>
+<text x="170" y="157" class="combo tap"><tspan style="font-size: 70%">&amp;m_findsel</tspan></text>
+</g>
+<g class="combo combopos-18">
 <path d="M170,42 l-45,0" class="combo"/>
 <path d="M170,42 l45,0" class="combo"/>
 <rect rx="6" ry="6" x="158" y="31" width="25" height="23" class="combo"/>
@@ -2884,7 +3969,7 @@ path.combo {
 </text>
 <text x="170" y="52" class="combo hold">&amp;bkp Q</text>
 </g>
-<g class="combo combopos-7">
+<g class="combo combopos-19">
 <rect rx="6" ry="6" x="260" y="35" width="25" height="23" class="combo"/>
 <text x="272" y="47" class="combo tap">
 <tspan x="272" dy="-0.6em">&amp;bkp</tspan><tspan x="272" dy="1.2em">Z</tspan>
@@ -3014,32 +4099,98 @@ path.combo {
 <text x="643" y="254" class="combo tap">l_cfg</text>
 </g>
 <g class="combo combopos-1">
+<path d="M238,178 l-46,-6" class="combo"/>
+<path d="M238,178 l46,6" class="combo"/>
+<rect rx="6" ry="6" x="226" y="167" width="25" height="23" class="combo"/>
+<text x="238" y="178" class="combo tap"><tspan style="font-size: 70%">LG(RETURN)</tspan></text>
+</g>
+<g class="combo combopos-2">
 <rect rx="6" ry="6" x="260" y="171" width="25" height="23" class="combo"/>
 <use href="#mdi:keyboard-return" xlink:href="#mdi:keyboard-return" x="265" y="176" height="14" width="14.0" class="combo tap glyph mdi:keyboard-return"/>
 </g>
-<g class="combo combopos-2">
+<g class="combo combopos-3">
 <path d="M170,178 l-45,0" class="combo"/>
 <path d="M170,178 l45,0" class="combo"/>
 <rect rx="6" ry="6" x="158" y="167" width="25" height="23" class="combo"/>
 <use href="#mdi:keyboard-tab" xlink:href="#mdi:keyboard-tab" x="163" y="172" height="14" width="14.0" class="combo tap glyph mdi:keyboard-tab"/>
 </g>
-<g class="combo combopos-3">
+<g class="combo combopos-4">
 <path d="M170,176 l-45,2" class="combo"/>
 <path d="M170,176 l45,2" class="combo"/>
 <rect rx="6" ry="6" x="158" y="164" width="25" height="23" class="combo"/>
 <use href="#mdi:keyboard-tab-reverse" xlink:href="#mdi:keyboard-tab-reverse" x="163" y="169" height="14" width="14.0" class="combo tap glyph mdi:keyboard-tab-reverse"/>
 </g>
-<g class="combo combopos-4">
+<g class="combo combopos-5">
 <rect rx="6" ry="6" x="260" y="103" width="25" height="23" class="combo"/>
 <use href="#mdi:keyboard-space" xlink:href="#mdi:keyboard-space" x="265" y="108" height="14" width="14.0" class="combo tap glyph mdi:keyboard-space"/>
 </g>
-<g class="combo combopos-5">
+<g class="combo combopos-6">
 <path d="M116,-13 h-76 a6.0,6.0 0 0 0 -6.0,6.0 v112" class="combo"/>
 <path d="M116,-13 h116 a6.0,6.0 0 0 1 6.0,6.0 v95" class="combo"/>
 <rect rx="6" ry="6" x="103" y="-24" width="25" height="23" class="combo"/>
 <use href="#escape" xlink:href="#escape" x="109" y="-20" height="14" width="14.0" class="combo tap glyph escape"/>
 </g>
-<g class="combo combopos-6">
+<g class="combo combopos-7">
+<path d="M136,187 l-79,7" class="combo"/>
+<path d="M136,187 l79,-7" class="combo"/>
+<rect rx="6" ry="6" x="124" y="176" width="25" height="23" class="combo"/>
+<text x="136" y="187" class="combo tap">LG(A)</text>
+</g>
+<g class="combo combopos-8">
+<path d="M170,191 l-113,4" class="combo"/>
+<path d="M170,191 l113,-4" class="combo"/>
+<rect rx="6" ry="6" x="158" y="180" width="25" height="23" class="combo"/>
+<text x="170" y="191" class="combo tap"><tspan style="font-size: 70%">&amp;m_selword</tspan></text>
+</g>
+<g class="combo combopos-9">
+<path d="M170,178 l-45,0" class="combo"/>
+<path d="M170,178 l45,0" class="combo"/>
+<rect rx="6" ry="6" x="158" y="167" width="25" height="23" class="combo"/>
+<use href="#mdi:undo" xlink:href="#mdi:undo" x="163" y="172" height="14" width="14.0" class="combo tap glyph mdi:undo"/>
+</g>
+<g class="combo combopos-10">
+<path d="M170,176 l-45,2" class="combo"/>
+<path d="M170,176 l45,2" class="combo"/>
+<rect rx="6" ry="6" x="158" y="164" width="25" height="23" class="combo"/>
+<use href="#mdi:redo" xlink:href="#mdi:redo" x="163" y="169" height="14" width="14.0" class="combo tap glyph mdi:redo"/>
+</g>
+<g class="combo combopos-11">
+<rect rx="6" ry="6" x="124" y="163" width="25" height="23" class="combo"/>
+<text x="136" y="174" class="combo tap">
+<tspan x="136" dy="-0.6em">&amp;bkp</tspan><tspan x="136" dy="1.2em">LG(C)</tspan>
+</text>
+<text x="136" y="184" class="combo hold"><tspan style="font-size: 70%">&amp;bkp LG(X)</tspan></text>
+</g>
+<g class="combo combopos-12">
+<rect rx="6" ry="6" x="192" y="163" width="25" height="23" class="combo"/>
+<text x="204" y="174" class="combo tap">
+<tspan x="204" dy="-0.6em">&amp;bkp</tspan><tspan x="204" dy="1.2em">LG(V)</tspan>
+</text>
+<text x="204" y="184" class="combo hold"><tspan style="font-size: 60%">&amp;bkp LG(LS(LA(V)))</tspan></text>
+</g>
+<g class="combo combopos-13">
+<rect rx="6" ry="6" x="90" y="133" width="25" height="23" class="combo"/>
+<use href="#tabler:browser-x" xlink:href="#tabler:browser-x" x="95" y="138" height="14" width="14.0" class="combo tap glyph tabler:browser-x"/>
+</g>
+<g class="combo combopos-14">
+<rect rx="6" ry="6" x="158" y="124" width="25" height="23" class="combo"/>
+<text x="170" y="136" class="combo tap">LG(N)</text>
+</g>
+<g class="combo combopos-15">
+<rect rx="6" ry="6" x="226" y="133" width="25" height="23" class="combo"/>
+<text x="238" y="144" class="combo tap">LG(O)</text>
+</g>
+<g class="combo combopos-16">
+<rect rx="6" ry="6" x="294" y="142" width="25" height="23" class="combo"/>
+<use href="#tabler:square-x" xlink:href="#tabler:square-x" x="299" y="146" height="14" width="14.0" class="combo tap glyph tabler:square-x"/>
+</g>
+<g class="combo combopos-17">
+<path d="M170,157 l-114,-25" class="combo"/>
+<path d="M170,157 l114,25" class="combo"/>
+<rect rx="6" ry="6" x="158" y="146" width="25" height="23" class="combo"/>
+<text x="170" y="157" class="combo tap"><tspan style="font-size: 70%">&amp;m_findsel</tspan></text>
+</g>
+<g class="combo combopos-18">
 <path d="M170,42 l-45,0" class="combo"/>
 <path d="M170,42 l45,0" class="combo"/>
 <rect rx="6" ry="6" x="158" y="31" width="25" height="23" class="combo"/>
@@ -3048,7 +4199,7 @@ path.combo {
 </text>
 <text x="170" y="52" class="combo hold">&amp;bkp Q</text>
 </g>
-<g class="combo combopos-7">
+<g class="combo combopos-19">
 <rect rx="6" ry="6" x="260" y="35" width="25" height="23" class="combo"/>
 <text x="272" y="47" class="combo tap">
 <tspan x="272" dy="-0.6em">&amp;bkp</tspan><tspan x="272" dy="1.2em">Z</tspan>
@@ -3174,32 +4325,98 @@ path.combo {
 <text x="643" y="254" class="combo tap">l_cfg</text>
 </g>
 <g class="combo combopos-1">
+<path d="M238,178 l-46,-6" class="combo"/>
+<path d="M238,178 l46,6" class="combo"/>
+<rect rx="6" ry="6" x="226" y="167" width="25" height="23" class="combo"/>
+<text x="238" y="178" class="combo tap"><tspan style="font-size: 70%">LG(RETURN)</tspan></text>
+</g>
+<g class="combo combopos-2">
 <rect rx="6" ry="6" x="260" y="171" width="25" height="23" class="combo"/>
 <use href="#mdi:keyboard-return" xlink:href="#mdi:keyboard-return" x="265" y="176" height="14" width="14.0" class="combo tap glyph mdi:keyboard-return"/>
 </g>
-<g class="combo combopos-2">
+<g class="combo combopos-3">
 <path d="M170,178 l-45,0" class="combo"/>
 <path d="M170,178 l45,0" class="combo"/>
 <rect rx="6" ry="6" x="158" y="167" width="25" height="23" class="combo"/>
 <use href="#mdi:keyboard-tab" xlink:href="#mdi:keyboard-tab" x="163" y="172" height="14" width="14.0" class="combo tap glyph mdi:keyboard-tab"/>
 </g>
-<g class="combo combopos-3">
+<g class="combo combopos-4">
 <path d="M170,176 l-45,2" class="combo"/>
 <path d="M170,176 l45,2" class="combo"/>
 <rect rx="6" ry="6" x="158" y="164" width="25" height="23" class="combo"/>
 <use href="#mdi:keyboard-tab-reverse" xlink:href="#mdi:keyboard-tab-reverse" x="163" y="169" height="14" width="14.0" class="combo tap glyph mdi:keyboard-tab-reverse"/>
 </g>
-<g class="combo combopos-4">
+<g class="combo combopos-5">
 <rect rx="6" ry="6" x="260" y="103" width="25" height="23" class="combo"/>
 <use href="#mdi:keyboard-space" xlink:href="#mdi:keyboard-space" x="265" y="108" height="14" width="14.0" class="combo tap glyph mdi:keyboard-space"/>
 </g>
-<g class="combo combopos-5">
+<g class="combo combopos-6">
 <path d="M116,-13 h-76 a6.0,6.0 0 0 0 -6.0,6.0 v112" class="combo"/>
 <path d="M116,-13 h116 a6.0,6.0 0 0 1 6.0,6.0 v95" class="combo"/>
 <rect rx="6" ry="6" x="103" y="-24" width="25" height="23" class="combo"/>
 <use href="#escape" xlink:href="#escape" x="109" y="-20" height="14" width="14.0" class="combo tap glyph escape"/>
 </g>
-<g class="combo combopos-6">
+<g class="combo combopos-7">
+<path d="M136,187 l-79,7" class="combo"/>
+<path d="M136,187 l79,-7" class="combo"/>
+<rect rx="6" ry="6" x="124" y="176" width="25" height="23" class="combo"/>
+<text x="136" y="187" class="combo tap">LG(A)</text>
+</g>
+<g class="combo combopos-8">
+<path d="M170,191 l-113,4" class="combo"/>
+<path d="M170,191 l113,-4" class="combo"/>
+<rect rx="6" ry="6" x="158" y="180" width="25" height="23" class="combo"/>
+<text x="170" y="191" class="combo tap"><tspan style="font-size: 70%">&amp;m_selword</tspan></text>
+</g>
+<g class="combo combopos-9">
+<path d="M170,178 l-45,0" class="combo"/>
+<path d="M170,178 l45,0" class="combo"/>
+<rect rx="6" ry="6" x="158" y="167" width="25" height="23" class="combo"/>
+<use href="#mdi:undo" xlink:href="#mdi:undo" x="163" y="172" height="14" width="14.0" class="combo tap glyph mdi:undo"/>
+</g>
+<g class="combo combopos-10">
+<path d="M170,176 l-45,2" class="combo"/>
+<path d="M170,176 l45,2" class="combo"/>
+<rect rx="6" ry="6" x="158" y="164" width="25" height="23" class="combo"/>
+<use href="#mdi:redo" xlink:href="#mdi:redo" x="163" y="169" height="14" width="14.0" class="combo tap glyph mdi:redo"/>
+</g>
+<g class="combo combopos-11">
+<rect rx="6" ry="6" x="124" y="163" width="25" height="23" class="combo"/>
+<text x="136" y="174" class="combo tap">
+<tspan x="136" dy="-0.6em">&amp;bkp</tspan><tspan x="136" dy="1.2em">LG(C)</tspan>
+</text>
+<text x="136" y="184" class="combo hold"><tspan style="font-size: 70%">&amp;bkp LG(X)</tspan></text>
+</g>
+<g class="combo combopos-12">
+<rect rx="6" ry="6" x="192" y="163" width="25" height="23" class="combo"/>
+<text x="204" y="174" class="combo tap">
+<tspan x="204" dy="-0.6em">&amp;bkp</tspan><tspan x="204" dy="1.2em">LG(V)</tspan>
+</text>
+<text x="204" y="184" class="combo hold"><tspan style="font-size: 60%">&amp;bkp LG(LS(LA(V)))</tspan></text>
+</g>
+<g class="combo combopos-13">
+<rect rx="6" ry="6" x="90" y="133" width="25" height="23" class="combo"/>
+<use href="#tabler:browser-x" xlink:href="#tabler:browser-x" x="95" y="138" height="14" width="14.0" class="combo tap glyph tabler:browser-x"/>
+</g>
+<g class="combo combopos-14">
+<rect rx="6" ry="6" x="158" y="124" width="25" height="23" class="combo"/>
+<text x="170" y="136" class="combo tap">LG(N)</text>
+</g>
+<g class="combo combopos-15">
+<rect rx="6" ry="6" x="226" y="133" width="25" height="23" class="combo"/>
+<text x="238" y="144" class="combo tap">LG(O)</text>
+</g>
+<g class="combo combopos-16">
+<rect rx="6" ry="6" x="294" y="142" width="25" height="23" class="combo"/>
+<use href="#tabler:square-x" xlink:href="#tabler:square-x" x="299" y="146" height="14" width="14.0" class="combo tap glyph tabler:square-x"/>
+</g>
+<g class="combo combopos-17">
+<path d="M170,157 l-114,-25" class="combo"/>
+<path d="M170,157 l114,25" class="combo"/>
+<rect rx="6" ry="6" x="158" y="146" width="25" height="23" class="combo"/>
+<text x="170" y="157" class="combo tap"><tspan style="font-size: 70%">&amp;m_findsel</tspan></text>
+</g>
+<g class="combo combopos-18">
 <path d="M170,42 l-45,0" class="combo"/>
 <path d="M170,42 l45,0" class="combo"/>
 <rect rx="6" ry="6" x="158" y="31" width="25" height="23" class="combo"/>
@@ -3208,7 +4425,7 @@ path.combo {
 </text>
 <text x="170" y="52" class="combo hold">&amp;bkp Q</text>
 </g>
-<g class="combo combopos-7">
+<g class="combo combopos-19">
 <rect rx="6" ry="6" x="260" y="35" width="25" height="23" class="combo"/>
 <text x="272" y="47" class="combo tap">
 <tspan x="272" dy="-0.6em">&amp;bkp</tspan><tspan x="272" dy="1.2em">Z</tspan>
@@ -3368,30 +4585,68 @@ path.combo {
 <text x="643" y="254" class="combo tap">l_cfg</text>
 </g>
 <g class="combo combopos-1">
+<path d="M238,178 l-46,-6" class="combo"/>
+<path d="M238,178 l46,6" class="combo"/>
+<rect rx="6" ry="6" x="226" y="167" width="25" height="23" class="combo"/>
+<text x="238" y="178" class="combo tap"><tspan style="font-size: 70%">LG(RETURN)</tspan></text>
+</g>
+<g class="combo combopos-2">
 <rect rx="6" ry="6" x="260" y="171" width="25" height="23" class="combo"/>
 <use href="#mdi:keyboard-return" xlink:href="#mdi:keyboard-return" x="265" y="176" height="14" width="14.0" class="combo tap glyph mdi:keyboard-return"/>
 </g>
-<g class="combo combopos-2">
+<g class="combo combopos-3">
 <path d="M170,178 l-45,0" class="combo"/>
 <path d="M170,178 l45,0" class="combo"/>
 <rect rx="6" ry="6" x="158" y="167" width="25" height="23" class="combo"/>
 <use href="#mdi:keyboard-tab" xlink:href="#mdi:keyboard-tab" x="163" y="172" height="14" width="14.0" class="combo tap glyph mdi:keyboard-tab"/>
 </g>
-<g class="combo combopos-3">
+<g class="combo combopos-4">
 <path d="M170,176 l-45,2" class="combo"/>
 <path d="M170,176 l45,2" class="combo"/>
 <rect rx="6" ry="6" x="158" y="164" width="25" height="23" class="combo"/>
 <use href="#mdi:keyboard-tab-reverse" xlink:href="#mdi:keyboard-tab-reverse" x="163" y="169" height="14" width="14.0" class="combo tap glyph mdi:keyboard-tab-reverse"/>
 </g>
-<g class="combo combopos-4">
+<g class="combo combopos-5">
 <rect rx="6" ry="6" x="260" y="103" width="25" height="23" class="combo"/>
 <use href="#mdi:keyboard-space" xlink:href="#mdi:keyboard-space" x="265" y="108" height="14" width="14.0" class="combo tap glyph mdi:keyboard-space"/>
 </g>
-<g class="combo combopos-5">
+<g class="combo combopos-6">
 <path d="M116,-13 h-76 a6.0,6.0 0 0 0 -6.0,6.0 v112" class="combo"/>
 <path d="M116,-13 h116 a6.0,6.0 0 0 1 6.0,6.0 v95" class="combo"/>
 <rect rx="6" ry="6" x="103" y="-24" width="25" height="23" class="combo"/>
 <use href="#escape" xlink:href="#escape" x="109" y="-20" height="14" width="14.0" class="combo tap glyph escape"/>
+</g>
+<g class="combo combopos-7">
+<path d="M136,187 l-79,7" class="combo"/>
+<path d="M136,187 l79,-7" class="combo"/>
+<rect rx="6" ry="6" x="124" y="176" width="25" height="23" class="combo"/>
+<text x="136" y="187" class="combo tap">LG(A)</text>
+</g>
+<g class="combo combopos-8">
+<path d="M170,178 l-45,0" class="combo"/>
+<path d="M170,178 l45,0" class="combo"/>
+<rect rx="6" ry="6" x="158" y="167" width="25" height="23" class="combo"/>
+<use href="#mdi:undo" xlink:href="#mdi:undo" x="163" y="172" height="14" width="14.0" class="combo tap glyph mdi:undo"/>
+</g>
+<g class="combo combopos-9">
+<path d="M170,176 l-45,2" class="combo"/>
+<path d="M170,176 l45,2" class="combo"/>
+<rect rx="6" ry="6" x="158" y="164" width="25" height="23" class="combo"/>
+<use href="#mdi:redo" xlink:href="#mdi:redo" x="163" y="169" height="14" width="14.0" class="combo tap glyph mdi:redo"/>
+</g>
+<g class="combo combopos-10">
+<rect rx="6" ry="6" x="124" y="163" width="25" height="23" class="combo"/>
+<text x="136" y="174" class="combo tap">
+<tspan x="136" dy="-0.6em">&amp;bkp</tspan><tspan x="136" dy="1.2em">LG(C)</tspan>
+</text>
+<text x="136" y="184" class="combo hold"><tspan style="font-size: 70%">&amp;bkp LG(X)</tspan></text>
+</g>
+<g class="combo combopos-11">
+<rect rx="6" ry="6" x="192" y="163" width="25" height="23" class="combo"/>
+<text x="204" y="174" class="combo tap">
+<tspan x="204" dy="-0.6em">&amp;bkp</tspan><tspan x="204" dy="1.2em">LG(V)</tspan>
+</text>
+<text x="204" y="184" class="combo hold"><tspan style="font-size: 60%">&amp;bkp LG(LS(LA(V)))</tspan></text>
 </g>
 </g>
 </g>
@@ -3563,30 +4818,68 @@ path.combo {
 <text x="643" y="254" class="combo tap">l_cfg</text>
 </g>
 <g class="combo combopos-1">
+<path d="M238,178 l-46,-6" class="combo"/>
+<path d="M238,178 l46,6" class="combo"/>
+<rect rx="6" ry="6" x="226" y="167" width="25" height="23" class="combo"/>
+<text x="238" y="178" class="combo tap"><tspan style="font-size: 70%">LG(RETURN)</tspan></text>
+</g>
+<g class="combo combopos-2">
 <rect rx="6" ry="6" x="260" y="171" width="25" height="23" class="combo"/>
 <use href="#mdi:keyboard-return" xlink:href="#mdi:keyboard-return" x="265" y="176" height="14" width="14.0" class="combo tap glyph mdi:keyboard-return"/>
 </g>
-<g class="combo combopos-2">
+<g class="combo combopos-3">
 <path d="M170,178 l-45,0" class="combo"/>
 <path d="M170,178 l45,0" class="combo"/>
 <rect rx="6" ry="6" x="158" y="167" width="25" height="23" class="combo"/>
 <use href="#mdi:keyboard-tab" xlink:href="#mdi:keyboard-tab" x="163" y="172" height="14" width="14.0" class="combo tap glyph mdi:keyboard-tab"/>
 </g>
-<g class="combo combopos-3">
+<g class="combo combopos-4">
 <path d="M170,176 l-45,2" class="combo"/>
 <path d="M170,176 l45,2" class="combo"/>
 <rect rx="6" ry="6" x="158" y="164" width="25" height="23" class="combo"/>
 <use href="#mdi:keyboard-tab-reverse" xlink:href="#mdi:keyboard-tab-reverse" x="163" y="169" height="14" width="14.0" class="combo tap glyph mdi:keyboard-tab-reverse"/>
 </g>
-<g class="combo combopos-4">
+<g class="combo combopos-5">
 <rect rx="6" ry="6" x="260" y="103" width="25" height="23" class="combo"/>
 <use href="#mdi:keyboard-space" xlink:href="#mdi:keyboard-space" x="265" y="108" height="14" width="14.0" class="combo tap glyph mdi:keyboard-space"/>
 </g>
-<g class="combo combopos-5">
+<g class="combo combopos-6">
 <path d="M116,-13 h-76 a6.0,6.0 0 0 0 -6.0,6.0 v112" class="combo"/>
 <path d="M116,-13 h116 a6.0,6.0 0 0 1 6.0,6.0 v95" class="combo"/>
 <rect rx="6" ry="6" x="103" y="-24" width="25" height="23" class="combo"/>
 <use href="#escape" xlink:href="#escape" x="109" y="-20" height="14" width="14.0" class="combo tap glyph escape"/>
+</g>
+<g class="combo combopos-7">
+<path d="M136,187 l-79,7" class="combo"/>
+<path d="M136,187 l79,-7" class="combo"/>
+<rect rx="6" ry="6" x="124" y="176" width="25" height="23" class="combo"/>
+<text x="136" y="187" class="combo tap">LG(A)</text>
+</g>
+<g class="combo combopos-8">
+<path d="M170,178 l-45,0" class="combo"/>
+<path d="M170,178 l45,0" class="combo"/>
+<rect rx="6" ry="6" x="158" y="167" width="25" height="23" class="combo"/>
+<use href="#mdi:undo" xlink:href="#mdi:undo" x="163" y="172" height="14" width="14.0" class="combo tap glyph mdi:undo"/>
+</g>
+<g class="combo combopos-9">
+<path d="M170,176 l-45,2" class="combo"/>
+<path d="M170,176 l45,2" class="combo"/>
+<rect rx="6" ry="6" x="158" y="164" width="25" height="23" class="combo"/>
+<use href="#mdi:redo" xlink:href="#mdi:redo" x="163" y="169" height="14" width="14.0" class="combo tap glyph mdi:redo"/>
+</g>
+<g class="combo combopos-10">
+<rect rx="6" ry="6" x="124" y="163" width="25" height="23" class="combo"/>
+<text x="136" y="174" class="combo tap">
+<tspan x="136" dy="-0.6em">&amp;bkp</tspan><tspan x="136" dy="1.2em">LG(C)</tspan>
+</text>
+<text x="136" y="184" class="combo hold"><tspan style="font-size: 70%">&amp;bkp LG(X)</tspan></text>
+</g>
+<g class="combo combopos-11">
+<rect rx="6" ry="6" x="192" y="163" width="25" height="23" class="combo"/>
+<text x="204" y="174" class="combo tap">
+<tspan x="204" dy="-0.6em">&amp;bkp</tspan><tspan x="204" dy="1.2em">LG(V)</tspan>
+</text>
+<text x="204" y="184" class="combo hold"><tspan style="font-size: 60%">&amp;bkp LG(LS(LA(V)))</tspan></text>
 </g>
 </g>
 </g>
@@ -3750,30 +5043,68 @@ path.combo {
 <text x="643" y="254" class="combo tap">l_cfg</text>
 </g>
 <g class="combo combopos-1">
+<path d="M238,178 l-46,-6" class="combo"/>
+<path d="M238,178 l46,6" class="combo"/>
+<rect rx="6" ry="6" x="226" y="167" width="25" height="23" class="combo"/>
+<text x="238" y="178" class="combo tap"><tspan style="font-size: 70%">LG(RETURN)</tspan></text>
+</g>
+<g class="combo combopos-2">
 <rect rx="6" ry="6" x="260" y="171" width="25" height="23" class="combo"/>
 <use href="#mdi:keyboard-return" xlink:href="#mdi:keyboard-return" x="265" y="176" height="14" width="14.0" class="combo tap glyph mdi:keyboard-return"/>
 </g>
-<g class="combo combopos-2">
+<g class="combo combopos-3">
 <path d="M170,178 l-45,0" class="combo"/>
 <path d="M170,178 l45,0" class="combo"/>
 <rect rx="6" ry="6" x="158" y="167" width="25" height="23" class="combo"/>
 <use href="#mdi:keyboard-tab" xlink:href="#mdi:keyboard-tab" x="163" y="172" height="14" width="14.0" class="combo tap glyph mdi:keyboard-tab"/>
 </g>
-<g class="combo combopos-3">
+<g class="combo combopos-4">
 <path d="M170,176 l-45,2" class="combo"/>
 <path d="M170,176 l45,2" class="combo"/>
 <rect rx="6" ry="6" x="158" y="164" width="25" height="23" class="combo"/>
 <use href="#mdi:keyboard-tab-reverse" xlink:href="#mdi:keyboard-tab-reverse" x="163" y="169" height="14" width="14.0" class="combo tap glyph mdi:keyboard-tab-reverse"/>
 </g>
-<g class="combo combopos-4">
+<g class="combo combopos-5">
 <rect rx="6" ry="6" x="260" y="103" width="25" height="23" class="combo"/>
 <use href="#mdi:keyboard-space" xlink:href="#mdi:keyboard-space" x="265" y="108" height="14" width="14.0" class="combo tap glyph mdi:keyboard-space"/>
 </g>
-<g class="combo combopos-5">
+<g class="combo combopos-6">
 <path d="M116,-13 h-76 a6.0,6.0 0 0 0 -6.0,6.0 v112" class="combo"/>
 <path d="M116,-13 h116 a6.0,6.0 0 0 1 6.0,6.0 v95" class="combo"/>
 <rect rx="6" ry="6" x="103" y="-24" width="25" height="23" class="combo"/>
 <use href="#escape" xlink:href="#escape" x="109" y="-20" height="14" width="14.0" class="combo tap glyph escape"/>
+</g>
+<g class="combo combopos-7">
+<path d="M136,187 l-79,7" class="combo"/>
+<path d="M136,187 l79,-7" class="combo"/>
+<rect rx="6" ry="6" x="124" y="176" width="25" height="23" class="combo"/>
+<text x="136" y="187" class="combo tap">LG(A)</text>
+</g>
+<g class="combo combopos-8">
+<path d="M170,178 l-45,0" class="combo"/>
+<path d="M170,178 l45,0" class="combo"/>
+<rect rx="6" ry="6" x="158" y="167" width="25" height="23" class="combo"/>
+<use href="#mdi:undo" xlink:href="#mdi:undo" x="163" y="172" height="14" width="14.0" class="combo tap glyph mdi:undo"/>
+</g>
+<g class="combo combopos-9">
+<path d="M170,176 l-45,2" class="combo"/>
+<path d="M170,176 l45,2" class="combo"/>
+<rect rx="6" ry="6" x="158" y="164" width="25" height="23" class="combo"/>
+<use href="#mdi:redo" xlink:href="#mdi:redo" x="163" y="169" height="14" width="14.0" class="combo tap glyph mdi:redo"/>
+</g>
+<g class="combo combopos-10">
+<rect rx="6" ry="6" x="124" y="163" width="25" height="23" class="combo"/>
+<text x="136" y="174" class="combo tap">
+<tspan x="136" dy="-0.6em">&amp;bkp</tspan><tspan x="136" dy="1.2em">LG(C)</tspan>
+</text>
+<text x="136" y="184" class="combo hold"><tspan style="font-size: 70%">&amp;bkp LG(X)</tspan></text>
+</g>
+<g class="combo combopos-11">
+<rect rx="6" ry="6" x="192" y="163" width="25" height="23" class="combo"/>
+<text x="204" y="174" class="combo tap">
+<tspan x="204" dy="-0.6em">&amp;bkp</tspan><tspan x="204" dy="1.2em">LG(V)</tspan>
+</text>
+<text x="204" y="184" class="combo hold"><tspan style="font-size: 60%">&amp;bkp LG(LS(LA(V)))</tspan></text>
 </g>
 </g>
 </g>
@@ -3946,30 +5277,68 @@ path.combo {
 <text x="643" y="254" class="combo tap">l_cfg</text>
 </g>
 <g class="combo combopos-1">
+<path d="M238,178 l-46,-6" class="combo"/>
+<path d="M238,178 l46,6" class="combo"/>
+<rect rx="6" ry="6" x="226" y="167" width="25" height="23" class="combo"/>
+<text x="238" y="178" class="combo tap"><tspan style="font-size: 70%">LG(RETURN)</tspan></text>
+</g>
+<g class="combo combopos-2">
 <rect rx="6" ry="6" x="260" y="171" width="25" height="23" class="combo"/>
 <use href="#mdi:keyboard-return" xlink:href="#mdi:keyboard-return" x="265" y="176" height="14" width="14.0" class="combo tap glyph mdi:keyboard-return"/>
 </g>
-<g class="combo combopos-2">
+<g class="combo combopos-3">
 <path d="M170,178 l-45,0" class="combo"/>
 <path d="M170,178 l45,0" class="combo"/>
 <rect rx="6" ry="6" x="158" y="167" width="25" height="23" class="combo"/>
 <use href="#mdi:keyboard-tab" xlink:href="#mdi:keyboard-tab" x="163" y="172" height="14" width="14.0" class="combo tap glyph mdi:keyboard-tab"/>
 </g>
-<g class="combo combopos-3">
+<g class="combo combopos-4">
 <path d="M170,176 l-45,2" class="combo"/>
 <path d="M170,176 l45,2" class="combo"/>
 <rect rx="6" ry="6" x="158" y="164" width="25" height="23" class="combo"/>
 <use href="#mdi:keyboard-tab-reverse" xlink:href="#mdi:keyboard-tab-reverse" x="163" y="169" height="14" width="14.0" class="combo tap glyph mdi:keyboard-tab-reverse"/>
 </g>
-<g class="combo combopos-4">
+<g class="combo combopos-5">
 <rect rx="6" ry="6" x="260" y="103" width="25" height="23" class="combo"/>
 <use href="#mdi:keyboard-space" xlink:href="#mdi:keyboard-space" x="265" y="108" height="14" width="14.0" class="combo tap glyph mdi:keyboard-space"/>
 </g>
-<g class="combo combopos-5">
+<g class="combo combopos-6">
 <path d="M116,-13 h-76 a6.0,6.0 0 0 0 -6.0,6.0 v112" class="combo"/>
 <path d="M116,-13 h116 a6.0,6.0 0 0 1 6.0,6.0 v95" class="combo"/>
 <rect rx="6" ry="6" x="103" y="-24" width="25" height="23" class="combo"/>
 <use href="#escape" xlink:href="#escape" x="109" y="-20" height="14" width="14.0" class="combo tap glyph escape"/>
+</g>
+<g class="combo combopos-7">
+<path d="M136,187 l-79,7" class="combo"/>
+<path d="M136,187 l79,-7" class="combo"/>
+<rect rx="6" ry="6" x="124" y="176" width="25" height="23" class="combo"/>
+<text x="136" y="187" class="combo tap">LG(A)</text>
+</g>
+<g class="combo combopos-8">
+<path d="M170,178 l-45,0" class="combo"/>
+<path d="M170,178 l45,0" class="combo"/>
+<rect rx="6" ry="6" x="158" y="167" width="25" height="23" class="combo"/>
+<use href="#mdi:undo" xlink:href="#mdi:undo" x="163" y="172" height="14" width="14.0" class="combo tap glyph mdi:undo"/>
+</g>
+<g class="combo combopos-9">
+<path d="M170,176 l-45,2" class="combo"/>
+<path d="M170,176 l45,2" class="combo"/>
+<rect rx="6" ry="6" x="158" y="164" width="25" height="23" class="combo"/>
+<use href="#mdi:redo" xlink:href="#mdi:redo" x="163" y="169" height="14" width="14.0" class="combo tap glyph mdi:redo"/>
+</g>
+<g class="combo combopos-10">
+<rect rx="6" ry="6" x="124" y="163" width="25" height="23" class="combo"/>
+<text x="136" y="174" class="combo tap">
+<tspan x="136" dy="-0.6em">&amp;bkp</tspan><tspan x="136" dy="1.2em">LG(C)</tspan>
+</text>
+<text x="136" y="184" class="combo hold"><tspan style="font-size: 70%">&amp;bkp LG(X)</tspan></text>
+</g>
+<g class="combo combopos-11">
+<rect rx="6" ry="6" x="192" y="163" width="25" height="23" class="combo"/>
+<text x="204" y="174" class="combo tap">
+<tspan x="204" dy="-0.6em">&amp;bkp</tspan><tspan x="204" dy="1.2em">LG(V)</tspan>
+</text>
+<text x="204" y="184" class="combo hold"><tspan style="font-size: 60%">&amp;bkp LG(LS(LA(V)))</tspan></text>
 </g>
 </g>
 </g>
@@ -4130,30 +5499,68 @@ path.combo {
 <text x="643" y="254" class="combo tap">l_cfg</text>
 </g>
 <g class="combo combopos-1">
+<path d="M238,178 l-46,-6" class="combo"/>
+<path d="M238,178 l46,6" class="combo"/>
+<rect rx="6" ry="6" x="226" y="167" width="25" height="23" class="combo"/>
+<text x="238" y="178" class="combo tap"><tspan style="font-size: 70%">LG(RETURN)</tspan></text>
+</g>
+<g class="combo combopos-2">
 <rect rx="6" ry="6" x="260" y="171" width="25" height="23" class="combo"/>
 <use href="#mdi:keyboard-return" xlink:href="#mdi:keyboard-return" x="265" y="176" height="14" width="14.0" class="combo tap glyph mdi:keyboard-return"/>
 </g>
-<g class="combo combopos-2">
+<g class="combo combopos-3">
 <path d="M170,178 l-45,0" class="combo"/>
 <path d="M170,178 l45,0" class="combo"/>
 <rect rx="6" ry="6" x="158" y="167" width="25" height="23" class="combo"/>
 <use href="#mdi:keyboard-tab" xlink:href="#mdi:keyboard-tab" x="163" y="172" height="14" width="14.0" class="combo tap glyph mdi:keyboard-tab"/>
 </g>
-<g class="combo combopos-3">
+<g class="combo combopos-4">
 <path d="M170,176 l-45,2" class="combo"/>
 <path d="M170,176 l45,2" class="combo"/>
 <rect rx="6" ry="6" x="158" y="164" width="25" height="23" class="combo"/>
 <use href="#mdi:keyboard-tab-reverse" xlink:href="#mdi:keyboard-tab-reverse" x="163" y="169" height="14" width="14.0" class="combo tap glyph mdi:keyboard-tab-reverse"/>
 </g>
-<g class="combo combopos-4">
+<g class="combo combopos-5">
 <rect rx="6" ry="6" x="260" y="103" width="25" height="23" class="combo"/>
 <use href="#mdi:keyboard-space" xlink:href="#mdi:keyboard-space" x="265" y="108" height="14" width="14.0" class="combo tap glyph mdi:keyboard-space"/>
 </g>
-<g class="combo combopos-5">
+<g class="combo combopos-6">
 <path d="M116,-13 h-76 a6.0,6.0 0 0 0 -6.0,6.0 v112" class="combo"/>
 <path d="M116,-13 h116 a6.0,6.0 0 0 1 6.0,6.0 v95" class="combo"/>
 <rect rx="6" ry="6" x="103" y="-24" width="25" height="23" class="combo"/>
 <use href="#escape" xlink:href="#escape" x="109" y="-20" height="14" width="14.0" class="combo tap glyph escape"/>
+</g>
+<g class="combo combopos-7">
+<path d="M136,187 l-79,7" class="combo"/>
+<path d="M136,187 l79,-7" class="combo"/>
+<rect rx="6" ry="6" x="124" y="176" width="25" height="23" class="combo"/>
+<text x="136" y="187" class="combo tap">LG(A)</text>
+</g>
+<g class="combo combopos-8">
+<path d="M170,178 l-45,0" class="combo"/>
+<path d="M170,178 l45,0" class="combo"/>
+<rect rx="6" ry="6" x="158" y="167" width="25" height="23" class="combo"/>
+<use href="#mdi:undo" xlink:href="#mdi:undo" x="163" y="172" height="14" width="14.0" class="combo tap glyph mdi:undo"/>
+</g>
+<g class="combo combopos-9">
+<path d="M170,176 l-45,2" class="combo"/>
+<path d="M170,176 l45,2" class="combo"/>
+<rect rx="6" ry="6" x="158" y="164" width="25" height="23" class="combo"/>
+<use href="#mdi:redo" xlink:href="#mdi:redo" x="163" y="169" height="14" width="14.0" class="combo tap glyph mdi:redo"/>
+</g>
+<g class="combo combopos-10">
+<rect rx="6" ry="6" x="124" y="163" width="25" height="23" class="combo"/>
+<text x="136" y="174" class="combo tap">
+<tspan x="136" dy="-0.6em">&amp;bkp</tspan><tspan x="136" dy="1.2em">LG(C)</tspan>
+</text>
+<text x="136" y="184" class="combo hold"><tspan style="font-size: 70%">&amp;bkp LG(X)</tspan></text>
+</g>
+<g class="combo combopos-11">
+<rect rx="6" ry="6" x="192" y="163" width="25" height="23" class="combo"/>
+<text x="204" y="174" class="combo tap">
+<tspan x="204" dy="-0.6em">&amp;bkp</tspan><tspan x="204" dy="1.2em">LG(V)</tspan>
+</text>
+<text x="204" y="184" class="combo hold"><tspan style="font-size: 60%">&amp;bkp LG(LS(LA(V)))</tspan></text>
 </g>
 </g>
 </g>
@@ -4335,30 +5742,68 @@ path.combo {
 <text x="643" y="254" class="combo tap">l_cfg</text>
 </g>
 <g class="combo combopos-1">
+<path d="M238,178 l-46,-6" class="combo"/>
+<path d="M238,178 l46,6" class="combo"/>
+<rect rx="6" ry="6" x="226" y="167" width="25" height="23" class="combo"/>
+<text x="238" y="178" class="combo tap"><tspan style="font-size: 70%">LG(RETURN)</tspan></text>
+</g>
+<g class="combo combopos-2">
 <rect rx="6" ry="6" x="260" y="171" width="25" height="23" class="combo"/>
 <use href="#mdi:keyboard-return" xlink:href="#mdi:keyboard-return" x="265" y="176" height="14" width="14.0" class="combo tap glyph mdi:keyboard-return"/>
 </g>
-<g class="combo combopos-2">
+<g class="combo combopos-3">
 <path d="M170,178 l-45,0" class="combo"/>
 <path d="M170,178 l45,0" class="combo"/>
 <rect rx="6" ry="6" x="158" y="167" width="25" height="23" class="combo"/>
 <use href="#mdi:keyboard-tab" xlink:href="#mdi:keyboard-tab" x="163" y="172" height="14" width="14.0" class="combo tap glyph mdi:keyboard-tab"/>
 </g>
-<g class="combo combopos-3">
+<g class="combo combopos-4">
 <path d="M170,176 l-45,2" class="combo"/>
 <path d="M170,176 l45,2" class="combo"/>
 <rect rx="6" ry="6" x="158" y="164" width="25" height="23" class="combo"/>
 <use href="#mdi:keyboard-tab-reverse" xlink:href="#mdi:keyboard-tab-reverse" x="163" y="169" height="14" width="14.0" class="combo tap glyph mdi:keyboard-tab-reverse"/>
 </g>
-<g class="combo combopos-4">
+<g class="combo combopos-5">
 <rect rx="6" ry="6" x="260" y="103" width="25" height="23" class="combo"/>
 <use href="#mdi:keyboard-space" xlink:href="#mdi:keyboard-space" x="265" y="108" height="14" width="14.0" class="combo tap glyph mdi:keyboard-space"/>
 </g>
-<g class="combo combopos-5">
+<g class="combo combopos-6">
 <path d="M116,-13 h-76 a6.0,6.0 0 0 0 -6.0,6.0 v112" class="combo"/>
 <path d="M116,-13 h116 a6.0,6.0 0 0 1 6.0,6.0 v95" class="combo"/>
 <rect rx="6" ry="6" x="103" y="-24" width="25" height="23" class="combo"/>
 <use href="#escape" xlink:href="#escape" x="109" y="-20" height="14" width="14.0" class="combo tap glyph escape"/>
+</g>
+<g class="combo combopos-7">
+<path d="M136,187 l-79,7" class="combo"/>
+<path d="M136,187 l79,-7" class="combo"/>
+<rect rx="6" ry="6" x="124" y="176" width="25" height="23" class="combo"/>
+<text x="136" y="187" class="combo tap">LG(A)</text>
+</g>
+<g class="combo combopos-8">
+<path d="M170,178 l-45,0" class="combo"/>
+<path d="M170,178 l45,0" class="combo"/>
+<rect rx="6" ry="6" x="158" y="167" width="25" height="23" class="combo"/>
+<use href="#mdi:undo" xlink:href="#mdi:undo" x="163" y="172" height="14" width="14.0" class="combo tap glyph mdi:undo"/>
+</g>
+<g class="combo combopos-9">
+<path d="M170,176 l-45,2" class="combo"/>
+<path d="M170,176 l45,2" class="combo"/>
+<rect rx="6" ry="6" x="158" y="164" width="25" height="23" class="combo"/>
+<use href="#mdi:redo" xlink:href="#mdi:redo" x="163" y="169" height="14" width="14.0" class="combo tap glyph mdi:redo"/>
+</g>
+<g class="combo combopos-10">
+<rect rx="6" ry="6" x="124" y="163" width="25" height="23" class="combo"/>
+<text x="136" y="174" class="combo tap">
+<tspan x="136" dy="-0.6em">&amp;bkp</tspan><tspan x="136" dy="1.2em">LG(C)</tspan>
+</text>
+<text x="136" y="184" class="combo hold"><tspan style="font-size: 70%">&amp;bkp LG(X)</tspan></text>
+</g>
+<g class="combo combopos-11">
+<rect rx="6" ry="6" x="192" y="163" width="25" height="23" class="combo"/>
+<text x="204" y="174" class="combo tap">
+<tspan x="204" dy="-0.6em">&amp;bkp</tspan><tspan x="204" dy="1.2em">LG(V)</tspan>
+</text>
+<text x="204" y="184" class="combo hold"><tspan style="font-size: 60%">&amp;bkp LG(LS(LA(V)))</tspan></text>
 </g>
 </g>
 </g>
