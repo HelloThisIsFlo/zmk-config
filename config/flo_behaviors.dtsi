@@ -28,7 +28,7 @@ behaviors {
         compatible = "zmk,behavior-macro-one-param";
         #binding-cells = <1>;
         wait-ms = <0>;
-        tap-ms = <10>;
+        tap-ms = <my_ak_window>;
         bindings = <&macro_param_1to1>,
                 <&kp MACRO_PLACEHOLDER>; \
     };
