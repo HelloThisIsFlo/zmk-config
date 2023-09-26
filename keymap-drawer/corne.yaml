@@ -891,6 +891,14 @@ layers:
 combos:
 - p: [34, 35]
   k: l_cfg
+- p: [11, 13]
+  k: '&AppSwitch'
+- p: [12, 13, 16, 17]
+  k: $$mdi:caps-lock$$
+  l: [l_alpha, l_akG, l_akM, l_akX, l_akP, l_akT, l_akK, l_akD, l_akW, l_akF, l_akB, l_akA, l_akU, l_akE, l_akO, l_akI, l_akJ, l_akDot]
+- p: [11, 12, 17, 18]
+  k: $$mdi:apple-keyboard-caps$$
+  l: [l_alpha, l_akG, l_akM, l_akX, l_akP, l_akT, l_akK, l_akD, l_akW, l_akF, l_akB, l_akA, l_akU, l_akE, l_akO, l_akI, l_akJ, l_akDot]
 - p: [22, 23, 24]
   k: LG(RETURN)
 - p: [23, 24]
@@ -972,7 +980,7 @@ combos:
   k: {t: gh, h: ght}
   l: [l_alpha]
   type: h-digraph
-- p: [22, 21]
+- p: [21, 22]
   k: ph
   l: [l_alpha]
   type: h-digraph
