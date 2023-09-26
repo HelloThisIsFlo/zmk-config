@@ -893,8 +893,10 @@ combos:
   k: l_cfg
 - p: [23, 24]
   k: $$mdi:keyboard-return$$
-- p: [0, 1]
+- p: [21, 23]
   k: $$mdi:keyboard-tab$$
+- p: [21, 22, 23]
+  k: $$mdi:keyboard-tab-reverse$$
 - p: [13, 14]
   k: $$mdi:keyboard-space$$
 - p: [10, 13]
@@ -902,6 +904,12 @@ combos:
   a: top
   o: 1.3
   s: -0.2
+- p: [1, 3]
+  k: {t: '&Qu U', h: '&bkp Q'}
+  l: [l_alpha, l_akG, l_akM, l_akX, l_akP, l_akT, l_akK, l_akD, l_akW, l_akF, l_akB, l_akA, l_akU, l_akE, l_akO, l_akI, l_akJ, l_akDot]
+- p: [3, 4]
+  k: '&bkp Z'
+  l: [l_alpha, l_akG, l_akM, l_akX, l_akP, l_akT, l_akK, l_akD, l_akW, l_akF, l_akB, l_akA, l_akU, l_akE, l_akO, l_akI, l_akJ, l_akDot]
 - p: [10, 11, 12]
   k: sch
   l: [l_alpha]
