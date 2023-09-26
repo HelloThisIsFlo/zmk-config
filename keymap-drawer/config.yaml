@@ -202,6 +202,46 @@ parse_config:
         # Modifiers
         "&caps_word": $$mdi:caps-lock$$
 
+        # Buffered Keys
+        "&bkp A": "A"
+        "&bkp B": "B"
+        "&bkp C": "C"
+        "&bkp D": "D"
+        "&bkp E": "E"
+        "&bkp F": "F"
+        "&bkp G": "G"
+        "&bkp H": "H"
+        "&bkp I": "I"
+        "&bkp J": "J"
+        "&bkp K": "K"
+        "&bkp L": "L"
+        "&bkp M": "M"
+        "&bkp N": "N"
+        "&bkp O": "O"
+        "&bkp P": "P"
+        "&bkp Q": "Q"
+        "&bkp R": "R"
+        "&bkp S": "S"
+        "&bkp T": "T"
+        "&bkp U": "U"
+        "&bkp V": "V"
+        "&bkp W": "W"
+        "&bkp X": "X"
+        "&bkp Y": "Y"
+        "&bkp Z": "Z"
+        "&bkp SQT": "'"
+        "&bkp DQT": "\""
+        "&bkp HASH": "#"
+        "&bkp CMMA": ","
+        "&bkp MINUS": "-"
+        "&bkp FSLH": "/"
+        "&bkp LBKT": "["
+        "&bkp RBKT": "]"
+        "&bkp COLON": ":"
+        "&bkp DLLR": "$"
+        "&bkp PLUS": "+"
+        "&bkp DELETE": $$mdi:backspace-reverse-outline$$
+
         # Adaptive Keys
         "&ak_a": "A⛶"
         "&ak_b": "B⛶"
@@ -234,15 +274,11 @@ parse_config:
         "&ak_b B": "B⛶"
         "&ak_c C": "C⛶"
         "&ak_d D": "D⛶"
-
         "&ak_e E": "E⛶"
-
         "&ak_f F": "F⛶"
         "&ak_g G": "G⛶"
         "&ak_h H": "H⛶"
-
         "&ak_i I": "I⛶"
-
         "&ak_j J": "J⛶"
         "&ak_k K": "K⛶"
         "&ak_l L": "L⛶"
@@ -262,6 +298,9 @@ parse_config:
         "&ak_z Z": "Z⛶"
 
         "&dot_ak": ".⛶"
+
+        # Macros
+        "&typeSemi": ";"
 
         "&toggle_hdvv_aptmak":
             tap: $$mdi:swap-horizontal$$
@@ -532,8 +571,36 @@ parse_config:
             type: 'h-digraph'
             l: ['l_alpha']
 
+        combo_typeQ: {}
+        combo_typeZ: {}
+
+        combo_settings: {}
+        combo_appswitch: {}
+        combo_docaps:
+            a: top
+            o: -0.2
+        combo_capslk:
+            a: top
+            o: 0.2
+
+        combo_Gent: {}
+        combo_entr: {}
+        combo_tab: {}
+        combo_stab: {}
+        combo_spce: {}
         combo_esc:
             key: "$$escape$$"
             a: top
             o: 1.3
             s: -0.2
+        combo_sall: {}
+        combo_selword: {}
+        combo_undo: {}
+        combo_redo: {}
+        combo_copy: {}
+        combo_pste: {}
+        combo_cloz: {}
+        combo_new: {}
+        combo_open: {}
+        combo_quit: {}
+        combo_findsel: {}
