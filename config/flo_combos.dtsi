@@ -72,31 +72,33 @@ COMBO_ALPHA(findsel, &m_findsel,          LM4                                   
 //
 // type a glyph (tiny board accommodation)
 //
-//XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX  L_4 L_3 L_2 L_1 L_0   R_0 R_1 R_2 R_3 R_4 )
-COMBO_ALPHA(typeQ, &lk_qu Q U,                LT3     LT1                           )
-COMBO_ALPHA(typeZ, &bk Z,                            LT1 LT0                       )
-// COMBO_LAYER(typeColn, &lk LA(SEMI) COLON,    RT1 RT3, l_alpha)
-// COMBO_LAYER(typeSemi, &bk SEMI,     RM0 RM1, l_alpha)
-// COMBO_LAYER(typeExcl, &bk EXCL,     RT1 RT2, l_alpha)
-// COMBO_LAYER(typeQues, &bk QMARK,    RT2 RT3, l_alpha)
-// COMBO_LAYER(typeGrav, &bk GRAVE,    RT3 RT4, l_alpha)
-// COMBO_LAYER(typeatMk, &lk LS(LA(SEMI)) AT_SIGN,  RT0 RT1, l_alpha) // @ (№ if held)
-// COMBO_LAYER(typeUnder, &bk UNDER,   RB1 RB3, l_alpha) // _
-// COMBO_LAYER(typeEqual, &lk PRCNT EQUAL,   RB2 RB3, l_alpha) // = (percent if held)
-// COMBO_LAYER(typeNdash, &lk LA(LS(MINUS)) LA(MINUS), RB0 RB1, l_alpha) // N-dash (M-dash if held)
-// COMBO_LAYER(typeMdash, &bk LA(LS(MINUS)), RB0 RB2, l_alpha) // M-dash (minus)
-// COMBO_LAYER(typeTilde, &bk TILDE,   RB1 RB4, l_alpha) // tilde (not dead key)
+//XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX        L_4 L_3 L_2 L_1 L_0   R_0 R_1 R_2 R_3 R_4 )
+COMBO_ALPHA(typeQ, &lk_qu Q U,                      LT3     LT1                           )
+COMBO_ALPHA(typeZ, &bk Z,                                   LT1 LT0                       )
+COMBO_ALPHA(typeColn, &lk LA(SEMI) COLON,                                 RT1     RT3     )
+COMBO_ALPHA(typeSemi, &bk SEMI,                                       RM0 RM1             )
+COMBO_ALPHA(typeExcl, &bk EXCL,                                           RT1 RT2         )
+COMBO_ALPHA(typeQues, &bk QMARK,                                              RT2 RT3     )
+COMBO_ALPHA(typeGrav, &bk GRAVE,                                                  RT3 RT4 )
+COMBO_ALPHA(typeatMk, &lk LS(LA(SEMI)) AT_SIGN,                       RT0 RT1             ) // @ (№ if held)
+COMBO_ALPHA(typeUnder, &bk UNDER,                                         RB1     RB3     ) // _
+COMBO_ALPHA(typeEqual, &lk PRCNT EQUAL,                                       RB2 RB3     ) // = (percent if held)
+COMBO_ALPHA(typeNdash, &lk LA(LS(MINUS)) LA(MINUS),                   RB0 RB1             ) // N-dash (M-dash if held)
+COMBO_ALPHA(typeMdash, &bk LA(LS(MINUS)),                             RB0     RB2         ) // M-dash (minus)
+COMBO_ALPHA(typeTilde, &bk TILDE,                                         RB1         RB4 ) // tilde (not dead key)
 
-// COMBO_LAYER(ligAE, &bk LA(APOS),    RM1 RB1, l_alpha) // ligature æ
-// COMBO_LAYER(ligOE, &bk LA(Q),       RM2 RB2, l_alpha) // ligature œ
+COMBO_ALPHA(ligAE, &bk LA(APOS),                                          RM1             \
+                                                                          RB1             ) // ligature æ
+COMBO_ALPHA(ligOE, &bk LA(Q),                                                 RM2         \
+                                                                              RB2         ) // ligature œ
 
-// COMBO_LAYER(diacAccent, &lk_E_accent E LA(E),  RM1 RM2, l_alpha) // ´ (É if held)
-// COMBO_LAYER(diacGrave, &lk_E_grave E LA(GRAVE), RM2 RM3, l_alpha) // ` (È if held)
-// COMBO_LAYER(diacAcute, &lk_E_acute E LA(N6),  RM1 RM3, l_alpha) // ˆ (Ê if held)
-// COMBO_LAYER(diacMacron, &lk_O_macron E LA(A),  RM2 RM4, l_alpha) // ¯ (ō if held)
-// COMBO_LAYER(diacCirc, &lk_A_ring A LA(K),    RM1 RM4, l_alpha) // ˚ (Å if held)
-// COMBO_LAYER(diacUmlaut, &lk_U_umlaut U LA(U),  RB1 RB2, l_alpha) // ¨ (Ü if held)
-// COMBO_LAYER(diacCedille, &lk_C_cedille C LA(C),  LM4 LM2, l_alpha) // ¸ (ç if held)
+COMBO_ALPHA(diacAccent, &lk_E_accent E LA(E),                             RM1 RM2         ) // ´ (É if held)
+COMBO_ALPHA(diacGrave, &lk_E_grave E LA(GRAVE),                               RM2 RM3     ) // ` (È if held)
+COMBO_ALPHA(diacAcute, &lk_E_acute E LA(N6),                              RM1     RM3     ) // ˆ (Ê if held)
+COMBO_ALPHA(diacMacron, &lk_O_macron E LA(A),                                 RM2     RM4 ) // ¯ (ō if held)
+COMBO_ALPHA(diacCirc, &lk_A_ring A LA(K),                                 RM1         RM4 ) // ˚ (Å if held)
+COMBO_ALPHA(diacUmlaut, &lk_U_umlaut U LA(U),                             RB1 RB2         ) // ¨ (Ü if held)
+COMBO_ALPHA(diacCedille, &lk_C_cedille C LA(C),                               LM2     LM4 ) // ¸ (ç if held)
 
 //
 // H Digraphs REQUIRE macros (defined earlier) to process
@@ -111,30 +113,38 @@ COMBO_ALPHA(sh,  &lk_sh H S,              LM4 LM3                               
 COMBO_ALPHA(gh,  &lk_gh H G,                      LT2 LT1                           ) // Gh/ght
 COMBO_ALPHA(ph,  &Ph,                         LB3 LB2                               ) // Ph
 
-// #ifdef EN_PRONOUN_COMBOS
-// //
-// // Pronoun combos REQUIRE macros to process
-// //
+#ifdef EN_PRONOUN_COMBOS
+//
+// Pronoun combos REQUIRE macros to process
+//
+//XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX  L_4 L_3 L_2 L_1 L_0   R_0 R_1 R_2 R_3 R_4 )
+/***** I  ****/
+COMBO_ALPHA(pnI, &typePnI,                                                  RM3 RM4 ) // "I "
+COMBO_ALPHA(pnIm, &typePnIm,                      LT2                               \
+                                                                            RM3     ) // "I'm "
+COMBO_ALPHA(pnIll, &typePnIll,                                              RM3     \
+                                                  LB2                               ) // "I'll "
+COMBO_ALPHA(pnId, &typePnId,                                                RM3     \
+                                                      LB1                           ) // "I'd "
+COMBO_ALPHA(pnIve, &typePnIve,                                              RM3     \
+                                                                                LB4 ) // "I've "
 
-// COMBO_LAYER(pnI, &typePnI,          RM3 RM4, l_alpha) // "I "
+/***** You  ****/
+COMBO_ALPHA(pnYour,  &typePnYour,                                           RB3     \
+                                                      LH1                           ) // "Your "
+COMBO_ALPHA(pnYoure, &typePnYoure,            LB3                           RB3     ) // "You're "
+COMBO_ALPHA(pnYoull, &typePnYoull,                LB2                       RB3     ) // "You'll "
+COMBO_ALPHA(pnYoud, &typePnYoud,                      LB1                   RB3     ) // "You'd "
+COMBO_ALPHA(pnYouve, &typePnYouve,        LB4                               RB3     ) // "You've "
 
-// COMBO_LAYER(pnIm, &typePnIm,        RM3 LT2, l_alpha) // "I'm "
-// COMBO_LAYER(pnIll, &typePnIll,      RM3 LB2, l_alpha) // "I'll "
-// COMBO_LAYER(pnId, &typePnId,        RM3 LB1, l_alpha) // "I'd "
-// COMBO_LAYER(pnIve, &typePnIve,      RM3 LB4, l_alpha) // "I've "
+/***** We  ****/
+COMBO_ALPHA(pnWere, &typePnWere,          LT4                                       \
+                                                      LH1                           ) // "We're "
+COMBO_ALPHA(pnWell, &typePnWell,          LT4     LT2                               ) // "We'll "
+COMBO_ALPHA(pnWed, &typePnWed,            LT4         LT1                           ) // "We'd "
+COMBO_ALPHA(pnWeve, &typePnWeve,          LT4             LT0                       ) // "We've "
 
-// COMBO_LAYER(pnYour,  &typePnYour,   RB3 LH1, l_alpha) // "Your "
-// COMBO_LAYER(pnYoure, &typePnYoure,  RB3 LB3, l_alpha) // "You're "
-// COMBO_LAYER(pnYoull, &typePnYoull,  RB3 LB2, l_alpha) // "You'll "
-// COMBO_LAYER(pnYoud, &typePnYoud,    RB3 LB1, l_alpha) // "You'd "
-// COMBO_LAYER(pnYouve, &typePnYouve,  RB3 LB4, l_alpha) // "You've "
-
-// COMBO_LAYER(pnWere, &typePnWere,    LT4 LH1, l_alpha) // "We're "
-// COMBO_LAYER(pnWell, &typePnWell,    LT4 LT2, l_alpha) // "We'll "
-// COMBO_LAYER(pnWed, &typePnWed,      LT4 LT1, l_alpha) // "We'd "
-// COMBO_LAYER(pnWeve, &typePnWeve,    LT4 LT0, l_alpha) // "We've "
-
-// #endif // EN_PRONOUN_COMBOS
+#endif
 
 // /* numpad symbol combos */
 
