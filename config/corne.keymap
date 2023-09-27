@@ -17,53 +17,22 @@
     #include "./flo_behaviors.dtsi"
     #include "./flo_combos.dtsi"
 
-/* Debug Combos
-    combos {
-        compatible = "zmk,combos";
-
-        Test1 {
-            bindings = <&kp NUMBER_1>;
-            key-positions = <10 11>;
-            timeout-ms = <20>;
-        };
-        Test2 {
-            bindings = <&kp NUMBER_2>;
-            key-positions = <11 12>;
-            timeout-ms = <20>;
-        };
-        Test3 {
-            bindings = <&kp NUMBER_3>;
-            key-positions = <12 13>;
-            timeout-ms = <20>;
-        };
-        Test4 {
-            bindings = <&kp NUMBER_4>;
-            key-positions = <13 14>;
-            timeout-ms = <20>;
-        };
-        Test5 {
-            bindings = <&kp NUMBER_5>;
-            key-positions = <0 1>;
-            timeout-ms = <20>;
-        };
-    };
-*/
 
     keymap {
         compatible = "zmk,keymap";
 
-        #include "./l_alpha-HD-vv-pf.dtsi"  // base (alpha) layer (& related adaptive layers)
+        #include "./l_alpha-HD-vv-pf.dtsi"  // TODO: rename to non-'pf'
         #include "./l_layers.dtsi"  // all other (common) layers (shouldn't vary)
 
-                APTmak {
-                        label = "APTmak";
-                        bindings = <
+        APTmak {
+            label = "APTmak";
+            bindings = <
 &kp V           &kp W          &kp F          &kp P           &kp B               &kp J       &kp L           &kp U          &kp Y          &kp SINGLE_QUOTE          
 &hml LCTRL R    &hml LALT S    &hml LCMD T    &hml LSHFT H    &kp K               &kp X       &hmr LSHFT N    &hmr LCMD A    &hmr LALT I    &hmr LCTRL O
 &kp SEMICOLON   &kp C          &kp G          &kp D           &kp Q               &kp Z       &kp M           &kp COMMA      &kp DOT        &kp SLASH
                                &kp TAB        &kp RET         &lt 10 SPACE        &kp E       &kp BSPC        &toggle_hdvv_aptmak
-                        >;
-                };
+            >;
+        };
 
 /* Debug Layer
         Debug {

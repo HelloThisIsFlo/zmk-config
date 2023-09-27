@@ -61,23 +61,23 @@
 // my layers
 #define l_any   -1
 #define l_alpha 0
-#define l_akG   1
-#define l_akM   2
-#define l_akX   3
-#define l_akP   4
-#define l_akT   5
-#define l_akK   6
-#define l_akD   7
-#define l_akW   8
-#define l_akF   9
-#define l_akB   10
-#define l_akA   11
-#define l_akU   12
-#define l_akE   13
-#define l_akO   14
-#define l_akI   15
-#define l_akJ   16
-#define l_akDot 17
+#define l_akA   1
+#define l_akB   2
+#define l_akD   3
+#define l_akE   4
+#define l_akF   5
+#define l_akG   6
+#define l_akI   7
+#define l_akK   8
+#define l_akM   9
+#define l_akO   10
+#define l_akP   11
+#define l_akT   12
+#define l_akU   13
+#define l_akW   14
+#define l_akX   15
+#define l_akY   16
+#define l_akDOT 17
 #define l_nav   18
 #define l_sym   19
 #define l_fn    20
@@ -85,16 +85,17 @@
 #define l_cfg   22
 #define APTmak  23
 
-#define alpha_and_ak_layers l_alpha l_akG l_akM l_akX l_akP l_akT l_akK l_akD l_akW l_akF l_akB l_akA l_akU l_akE l_akO l_akI l_akJ l_akDot
-
+#define alpha_and_ak_layers l_alpha l_akA l_akB l_akD l_akE l_akF l_akG l_akI l_akK l_akM l_akO l_akP l_akT l_akU l_akW l_akX l_akY l_akDOT
 
 #define my_tapping_term 170
 
-#define my_ak_window 200 // tmp debug, revert to 85
 
+#define TEMP_macro_tap_time 10 // TODO: Actually there is a setting to configure that already. Use it.
 
-
-#define expected_debug_ak_window 2000
+// #define my_ak_window 200 // tmp debug, revert to 85
+#define my_ak_window my_tapping_term // tmp debug, revert to 85
+// #define expected_debug_ak_window 2000
+#define expected_debug_ak_window my_ak_window
 #define debug_ak_window (expected_debug_ak_window / 2) // This is because the ak_window is doubled in the macro. I may be able to fix this later.
 
 
@@ -107,7 +108,11 @@
 
 // #define my_quick_tapping_term 112 // Unused atm
 // #define my_ak_delay 40 // Unused atm
-#define my_combo_timeout 17
+
+// #define my_combo_timeout 17
+#define my_combo_timeout 30
+
+#define my_global_quick_tap 130
 
 &mt {
     tapping-term-ms = <my_tapping_term>;
