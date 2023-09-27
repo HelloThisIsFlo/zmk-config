@@ -90,7 +90,16 @@
 
 #define my_tapping_term 170
 
-#define my_ak_window 85
+#define my_ak_window 200 // tmp debug, revert to 85
+
+
+
+#define expected_debug_ak_window 2000
+#define debug_ak_window (expected_debug_ak_window / 2) // This is because the ak_window is doubled in the macro. I may be able to fix this later.
+
+
+
+
 // AK Window
 // - Needs to be less than 225ms (min repeat term for Mac OS, larger and it'll repeat the key on some systems)
 // - Ideally small to prevent other keys from being pressed before the AK action, in case the AK action is a macro (like lg, lm, lk, ...)
@@ -104,7 +113,7 @@
     tapping-term-ms = <my_tapping_term>;
 };
 &sl {
-    release-after-ms = <my_ak_window>;
+    release-after-ms = <expected_debug_ak_window>;
 };
 &caps_word {
     continue-list = <UNDER MINUS BSPC DEL LEFT RIGHT>;

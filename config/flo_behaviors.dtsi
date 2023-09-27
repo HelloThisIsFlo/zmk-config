@@ -6,15 +6,10 @@ behaviors {
         compatible = "zmk,behavior-sticky-key";
         label = "adaptive_key_sticky_layer";
         #binding-cells = <1>;
-        release-after-ms = <1000>; // Can be 'infinite', it will be triggered by the macro immediately
+        release-after-ms = <expected_debug_ak_window>;
         bindings = <&mo>;
         // We are NOT using 'quick-release', that way the ak layer won't be deactivated until
-        // the &kp releases.
-        //
-        // PROs of this solution
-        // - Fixes bug: We guarantee that there is no time-window during which a key can be pressed before the previous' key ak layer had time to enable
-        // - We can tune the 'ak_window' by setting it as the 'tap-ms' in the macros
-        // - The &kp is still outputted immediately
+        // the next &kp releases. Which means the next ak_layer will be activated immediately
     };
 
     bkp: bkp {
@@ -30,7 +25,7 @@ behaviors {
         wait-ms = <0>;
         tap-ms = <my_ak_window>;
         bindings = <&macro_param_1to1>,
-                <&kp MACRO_PLACEHOLDER>; \
+                <&kp MACRO_PLACEHOLDER>;
     };
 
 
