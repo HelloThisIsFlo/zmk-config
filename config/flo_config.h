@@ -112,7 +112,7 @@
 // #define my_combo_timeout 17
 #define my_combo_timeout 30
 
-#define my_global_quick_tap 130
+#define my_global_quick_tap_window 130 // Measured w/ logs, 130ms is a comfortable quick double-tap for me
 
 &mt {
     tapping-term-ms = <my_tapping_term>;

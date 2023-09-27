@@ -88,7 +88,8 @@ behaviors {
         label = "homerow_mods";
         #binding-cells = <2>;
         tapping-term-ms = <my_tapping_term>;
-        quick-tap-ms = <0>;
+        quick-tap-ms = <my_global_quick_tap_window>;
+        global-quick-tap;
         flavor = "tap-preferred";
         bindings = <&kp>, <&bk>;
     };
@@ -98,7 +99,8 @@ behaviors {
         label = "homerow_mods_left";
         #binding-cells = <2>;
         tapping-term-ms = <my_tapping_term>;
-        quick-tap-ms = <0>;
+        quick-tap-ms = <my_global_quick_tap_window>;
+        global-quick-tap;
         flavor = "tap-preferred";
         bindings = <&kp>, <&bk>;
         hold-trigger-key-positions = <KEYS_R THUMBS>; // right hand allowed
@@ -109,7 +111,8 @@ behaviors {
         label = "hml_T";
         #binding-cells = <2>;
         tapping-term-ms = <my_tapping_term>;
-        quick-tap-ms = <0>;
+        quick-tap-ms = <my_global_quick_tap_window>;
+        global-quick-tap;
         flavor = "tap-preferred";
         bindings = <&kp>, <&ak_T_macro>;
         hold-trigger-key-positions = <KEYS_R THUMBS>; // right hand allowed
@@ -120,7 +123,8 @@ behaviors {
         label = "homerow_mods_right";
         #binding-cells = <2>;
         tapping-term-ms = <my_tapping_term>;
-        quick-tap-ms = <0>;
+        quick-tap-ms = <my_global_quick_tap_window>;
+        global-quick-tap;
         flavor = "tap-preferred";
         bindings = <&kp>, <&bk>;
         hold-trigger-key-positions = <KEYS_L THUMBS>; // left hand allowed
@@ -131,7 +135,8 @@ behaviors {
         label = "hmr_A";
         #binding-cells = <2>;
         tapping-term-ms = <my_tapping_term>;
-        quick-tap-ms = <0>;
+        quick-tap-ms = <my_global_quick_tap_window>;
+        global-quick-tap;
         flavor = "tap-preferred";
         bindings = <&kp>, <&ak_A_macro>;
         hold-trigger-key-positions = <KEYS_L THUMBS>; // left hand allowed
@@ -142,7 +147,8 @@ behaviors {
         label = "hmr_E";
         #binding-cells = <2>;
         tapping-term-ms = <my_tapping_term>;
-        quick-tap-ms = <0>;
+        quick-tap-ms = <my_global_quick_tap_window>;
+        global-quick-tap;
         flavor = "tap-preferred";
         bindings = <&kp>, <&ak_E_macro>;
         hold-trigger-key-positions = <KEYS_L THUMBS>; // left hand allowed
@@ -153,7 +159,8 @@ behaviors {
         label = "hmr_I";
         #binding-cells = <2>;
         tapping-term-ms = <my_tapping_term>;
-        quick-tap-ms = <0>;
+        quick-tap-ms = <my_global_quick_tap_window>;
+        global-quick-tap;
         flavor = "tap-preferred";
         bindings = <&kp>, <&ak_I_macro>;
         hold-trigger-key-positions = <KEYS_L THUMBS>; // left hand allowed
