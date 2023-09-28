@@ -1,23 +1,9 @@
-#define COMBO_LAYER(NAME, BINDINGS, KEYPOS, LAYERS) \
+#define COMBO(LAYERS, NAME, BINDINGS, KEYPOS) \
   combo_##NAME { \
     bindings = <BINDINGS>; \
-    key-positions = <KEYPOS>; \
+    key-positions = < KEYPOS >; \
     layers = <LAYERS>; \
-    timeout-ms = <my_combo_timeout>; \
-};
-#define COMBO_ANY(NAME, BINDINGS, KEYPOS) \
-  combo_##NAME { \
-    bindings = <BINDINGS>; \
-    key-positions = <KEYPOS>; \
-    timeout-ms = <my_combo_timeout>; \
-};
-// TODO: Migrate ALL COMBO_LAYER(..., ..., ..., l_alpha) to COMBO_ALPHA(..., ..., ...)
-#define COMBO_ALPHA(NAME, BINDINGS, KEYPOS) \
-  combo_##NAME { \
-    bindings = <BINDINGS>; \
-    key-positions = <KEYPOS>; \
-    layers = <alpha_and_ak_layers>; \
-    timeout-ms = <my_combo_timeout>; \
+    timeout-ms = <my_combo_timeout_one_hand>; \
 };
 
 /*    KEY POSITION Names
@@ -36,133 +22,132 @@ combos {
 //
 // control/modes
 //
-//XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX  L_4 L_3 L_2 L_1 L_0   R_0 R_1 R_2 R_3 R_4 )
-COMBO_ANY(settings,  &mo l_cfg,                                     RH1 RH2         ) // get the settings/media layer from anywhere
-COMBO_ANY(appswitch, &AppSwitch,              LM3     LM1                           ) // App switch
-COMBO_ALPHA(docaps,  &caps_word,                  LM2 LM1           RM1 RM2         ) // CAPSWORD
-COMBO_ALPHA(capslk,  &bk CAPS,                LM3 LM2                   RM2 RM3     ) // CAPS LOCK
+//XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX  L_4 L_3 L_2 L_1 L_0   R_0 R_1 R_2 R_3 R_4 )
+COMBO(l_any, settings,  &mo l_cfg,                                         RH1 RH2         ) // get the settings/media layer from anywhere
+COMBO(l_any, appswitch, &AppSwitch,                  LM3     LM1                           ) // App switch
+COMBO(l_alpha_aks, docaps,  &caps_word,                  LM2 LM1           RM1 RM2         ) // CAPSWORD
+COMBO(l_alpha_aks, capslk,  &bk CAPS,                LM3 LM2                   RM2 RM3     ) // CAPS LOCK
 
 //
 // Editing actions (&whitespace)
 //
-//XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX  L_4 L_3 L_2 L_1 L_0   R_0 R_1 R_2 R_3 R_4 )
-COMBO_ANY(Gent, &bk LG(RETURN),                   LB2 LB1 LB0                       )
-COMBO_ANY(entr, &bk RETURN,                           LB1 LB0                       )
-COMBO_ANY(tab,  &bk TAB,                      LB3     LB1                           )
-COMBO_ANY(stab, &bk LS(TAB),                  LB3 LB2 LB1                           )
-COMBO_ANY(spce, &bk SPACE,                            LM1 LM0                       )
-COMBO_ANY(esc,  &bk ESC,                  LM4         LM1                           )
-COMBO_ANY(sall, &bk LG(A),                LB4         LB1                           )
-COMBO_ALPHA(selword, &m_selword,          LB4             LB0                       )
-COMBO_ANY(undo, &bk LG(Z),                    LB3     LB1                           )
-COMBO_ANY(redo, &bk LG(LS(Z)),                LB3 LB2 LB1                           )
-COMBO_ANY(copy, &lk LG(X) LG(C),              LB3 LB2                               )
-COMBO_ANY(pste, &lk LG(LS(LA(V))) LG(V),          LB2 LB1                           )
-COMBO_ALPHA(cloz, &bk LG(W),                  LM3                                   \
-                                              LB3                                   )
-COMBO_ALPHA(new,  &bk LG(N),                      LM2                               \
-                                                  LB2                               )
-COMBO_ALPHA(open, &bk LG(O),                          LM1                           \
-                                                      LB1                           )
-COMBO_ALPHA(quit, &bk LG(Q),                              LM0                       \
-                                                          LB0                       )
-COMBO_ALPHA(findsel, &m_findsel,          LM4                                       \
-                                                          LB0                       )
+//XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX  L_4 L_3 L_2 L_1 L_0   R_0 R_1 R_2 R_3 R_4 )
+COMBO(l_any, Gent, &bk LG(RETURN),                        LB2 LB1 LB0                       )
+COMBO(l_any, entr, &bk RETURN,                                LB1 LB0                       )
+COMBO(l_any, tab,  &bk TAB,                           LB3     LB1                           )
+COMBO(l_any, stab, &bk LS(TAB),                       LB3 LB2 LB1                           )
+COMBO(l_any, spce, &bk SPACE,                                 LM1 LM0                       )
+COMBO(l_any, esc,  &bk ESC,                       LM4         LM1                           )
+COMBO(l_any, sall, &bk LG(A),                     LB4         LB1                           )
+COMBO(l_alpha_aks, selword, &m_selword,           LB4             LB0                       )
+COMBO(l_any, undo, &bk LG(Z),                         LB3     LB1                           )
+COMBO(l_any, redo, &bk LG(LS(Z)),                     LB3 LB2 LB1                           )
+COMBO(l_any, copy, &lk LG(X) LG(C),                   LB3 LB2                               )
+COMBO(l_any, pste, &lk LG(LS(LA(V))) LG(V),               LB2 LB1                           )
+COMBO(l_alpha_aks, cloz, &bk LG(W),                   LM3                                   \
+                                                      LB3                                   )
+COMBO(l_alpha_aks, new,  &bk LG(N),                       LM2                               \
+                                                          LB2                               )
+COMBO(l_alpha_aks, open, &bk LG(O),                           LM1                           \
+                                                              LB1                           )
+COMBO(l_alpha_aks, quit, &bk LG(Q),                               LM0                       \
+                                                                  LB0                       )
+COMBO(l_alpha_aks, findsel, &m_findsel,           LM4                                       \
+                                                                  LB0                       )
 
 //
 // type a glyph (tiny board accommodation)
 //
-//XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX        L_4 L_3 L_2 L_1 L_0   R_0 R_1 R_2 R_3 R_4 )
-COMBO_ALPHA(typeQ, &lk_qu Q U,                      LT3     LT1                           )
-COMBO_ALPHA(typeZ, &bk Z,                                   LT1 LT0                       )
-COMBO_ALPHA(typeColn, &lk LA(SEMI) COLON,                                 RT1     RT3     )
-COMBO_ALPHA(typeSemi, &bk SEMI,                                       RM0 RM1             )
-COMBO_ALPHA(typeExcl, &bk EXCL,                                           RT1 RT2         )
-COMBO_ALPHA(typeQues, &bk QMARK,                                              RT2 RT3     )
-COMBO_ALPHA(typeGrav, &bk GRAVE,                                                  RT3 RT4 )
-COMBO_ALPHA(typeatMk, &lk LS(LA(SEMI)) AT_SIGN,                       RT0 RT1             ) // @ (№ if held)
-COMBO_ALPHA(typeUnder, &bk UNDER,                                         RB1     RB3     ) // _
-COMBO_ALPHA(typeEqual, &lk PRCNT EQUAL,                                       RB2 RB3     ) // = (percent if held)
-COMBO_ALPHA(typeNdash, &lk LA(LS(MINUS)) LA(MINUS),                   RB0 RB1             ) // N-dash (M-dash if held)
-COMBO_ALPHA(typeMdash, &bk LA(LS(MINUS)),                             RB0     RB2         ) // M-dash (minus)
-COMBO_ALPHA(typeTilde, &bk TILDE,                                         RB1         RB4 ) // tilde (not dead key)
+//XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX        L_4 L_3 L_2 L_1 L_0   R_0 R_1 R_2 R_3 R_4 )
+COMBO(l_alpha_aks, typeQ, &lk_qu Q U,                      LT3     LT1                           )
+COMBO(l_alpha_aks, typeZ, &bk Z,                                   LT1 LT0                       )
+COMBO(l_alpha_aks, typeColn, &lk LA(SEMI) COLON,                                 RT1     RT3     )
+COMBO(l_alpha_aks, typeSemi, &bk SEMI,                                       RM0 RM1             )
+COMBO(l_alpha_aks, typeExcl, &bk EXCL,                                           RT1 RT2         )
+COMBO(l_alpha_aks, typeQues, &bk QMARK,                                              RT2 RT3     )
+COMBO(l_alpha_aks, typeGrav, &bk GRAVE,                                                  RT3 RT4 )
+COMBO(l_alpha_aks, typeatMk, &lk LS(LA(SEMI)) AT_SIGN,                       RT0 RT1             ) // @ (№ if held)
+COMBO(l_alpha_aks, typeUnder, &bk UNDER,                                         RB1     RB3     ) // _
+COMBO(l_alpha_aks, typeEqual, &lk PRCNT EQUAL,                                       RB2 RB3     ) // = (percent if held)
+COMBO(l_alpha_aks, typeNdash, &lk LA(LS(MINUS)) LA(MINUS),                   RB0 RB1             ) // N-dash (M-dash if held)
+COMBO(l_alpha_aks, typeMdash, &bk LA(LS(MINUS)),                             RB0     RB2         ) // M-dash (minus)
+COMBO(l_alpha_aks, typeTilde, &bk TILDE,                                         RB1         RB4 ) // tilde (not dead key)
 
-COMBO_ALPHA(ligAE, &bk LA(APOS),                                          RM1             \
-                                                                          RB1             ) // ligature æ
-COMBO_ALPHA(ligOE, &bk LA(Q),                                                 RM2         \
-                                                                              RB2         ) // ligature œ
+COMBO(l_alpha_aks, ligAE, &bk LA(APOS),                                          RM1             \
+                                                                                 RB1             ) // ligature æ
+COMBO(l_alpha_aks, ligOE, &bk LA(Q),                                                 RM2         \
+                                                                                     RB2         ) // ligature œ
 
-COMBO_ALPHA(diacAccent, &lk_E_accent E LA(E),                             RM1 RM2         ) // ´ (É if held)
-COMBO_ALPHA(diacGrave, &lk_E_grave E LA(GRAVE),                               RM2 RM3     ) // ` (È if held)
-COMBO_ALPHA(diacAcute, &lk_E_acute E LA(N6),                              RM1     RM3     ) // ˆ (Ê if held)
-COMBO_ALPHA(diacMacron, &lk_O_macron E LA(A),                                 RM2     RM4 ) // ¯ (ō if held)
-COMBO_ALPHA(diacCirc, &lk_A_ring A LA(K),                                 RM1         RM4 ) // ˚ (Å if held)
-COMBO_ALPHA(diacUmlaut, &lk_U_umlaut U LA(U),                             RB1 RB2         ) // ¨ (Ü if held)
-COMBO_ALPHA(diacCedille, &lk_C_cedille C LA(C),                               LM2     LM4 ) // ¸ (ç if held)
+COMBO(l_alpha_aks, diacAccent, &lk_E_accent E LA(E),                             RM1 RM2         ) // ´ (É if held)
+COMBO(l_alpha_aks, diacGrave, &lk_E_grave E LA(GRAVE),                               RM2 RM3     ) // ` (È if held)
+COMBO(l_alpha_aks, diacAcute, &lk_E_acute E LA(N6),                              RM1     RM3     ) // ˆ (Ê if held)
+COMBO(l_alpha_aks, diacMacron, &lk_O_macron E LA(A),                                 RM2     RM4 ) // ¯ (ō if held)
+COMBO(l_alpha_aks, diacCirc, &lk_A_ring A LA(K),                                 RM1         RM4 ) // ˚ (Å if held)
+COMBO(l_alpha_aks, diacUmlaut, &lk_U_umlaut U LA(U),                             RB1 RB2         ) // ¨ (Ü if held)
+COMBO(l_alpha_aks, diacCedille, &lk_C_cedille C LA(C),                               LM2     LM4 ) // ¸ (ç if held)
 
 //
 // H Digraphs REQUIRE macros (defined earlier) to process
 //
-//XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX  L_4 L_3 L_2 L_1 L_0   R_0 R_1 R_2 R_3 R_4 )
-COMBO_ALPHA(sch, &Sch,                    LM4 LM3 LM2                               ) // Sch
-COMBO_ALPHA(tch, &Tch,                    LM4 LM3 LM1                               ) // Tch
-COMBO_ALPHA(th,  &lk_th H T,                      LM2 LM1                           ) // Th/tion
-COMBO_ALPHA(ch,  &Ch,                         LM3 LM2                               ) // Ch
-COMBO_ALPHA(wh,  &Wh,                         LT3 LT2                               ) // Wh
-COMBO_ALPHA(sh,  &lk_sh H S,              LM4 LM3                                   ) // Sh/sion
-COMBO_ALPHA(gh,  &lk_gh H G,                      LT2 LT1                           ) // Gh/ght
-COMBO_ALPHA(ph,  &Ph,                         LB3 LB2                               ) // Ph
+//XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX  L_4 L_3 L_2 L_1 L_0   R_0 R_1 R_2 R_3 R_4 )
+COMBO(l_alpha_aks, sch, &Sch,                    LM4 LM3 LM2                               ) // Sch
+COMBO(l_alpha_aks, tch, &Tch,                    LM4 LM3 LM1                               ) // Tch
+COMBO(l_alpha_aks, th,  &lk_th H T,                      LM2 LM1                           ) // Th/tion
+COMBO(l_alpha_aks, ch,  &Ch,                         LM3 LM2                               ) // Ch
+COMBO(l_alpha_aks, wh,  &Wh,                         LT3 LT2                               ) // Wh
+COMBO(l_alpha_aks, sh,  &lk_sh H S,              LM4 LM3                                   ) // Sh/sion
+COMBO(l_alpha_aks, gh,  &lk_gh H G,                      LT2 LT1                           ) // Gh/ght
+COMBO(l_alpha_aks, ph,  &Ph,                         LB3 LB2                               ) // Ph
 
 #ifdef EN_PRONOUN_COMBOS
 //
 // Pronoun combos REQUIRE macros to process
 //
-//XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX  L_4 L_3 L_2 L_1 L_0   R_0 R_1 R_2 R_3 R_4 )
+//XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX  L_4 L_3 L_2 L_1 L_0   R_0 R_1 R_2 R_3 R_4 )
 /***** I  ****/
-COMBO_ALPHA(pnI, &typePnI,                                                  RM3 RM4 ) // "I "
-COMBO_ALPHA(pnIm, &typePnIm,                      LT2                               \
-                                                                            RM3     ) // "I'm "
-COMBO_ALPHA(pnIll, &typePnIll,                                              RM3     \
-                                                  LB2                               ) // "I'll "
-COMBO_ALPHA(pnId, &typePnId,                                                RM3     \
-                                                      LB1                           ) // "I'd "
-COMBO_ALPHA(pnIve, &typePnIve,                                              RM3     \
-                                                                                LB4 ) // "I've "
+COMBO(l_alpha_aks, pnI, &typePnI,                                                  RM3 RM4 ) // "I "
+COMBO(l_alpha_aks, pnIm, &typePnIm,                      LT2                               \
+                                                                                   RM3     ) // "I'm "
+COMBO(l_alpha_aks, pnIll, &typePnIll,                                              RM3     \
+                                                         LB2                               ) // "I'll "
+COMBO(l_alpha_aks, pnId, &typePnId,                                                RM3     \
+                                                             LB1                           ) // "I'd "
+COMBO(l_alpha_aks, pnIve, &typePnIve,                                              RM3     \
+                                                                                       LB4 ) // "I've "
 
 /***** You  ****/
-COMBO_ALPHA(pnYour,  &typePnYour,                                           RB3     \
-                                                      LH1                           ) // "Your "
-COMBO_ALPHA(pnYoure, &typePnYoure,            LB3                           RB3     ) // "You're "
-COMBO_ALPHA(pnYoull, &typePnYoull,                LB2                       RB3     ) // "You'll "
-COMBO_ALPHA(pnYoud, &typePnYoud,                      LB1                   RB3     ) // "You'd "
-COMBO_ALPHA(pnYouve, &typePnYouve,        LB4                               RB3     ) // "You've "
+COMBO(l_alpha_aks, pnYour,  &typePnYour,                                           RB3     \
+                                                             LH1                           ) // "Your "
+COMBO(l_alpha_aks, pnYoure, &typePnYoure,            LB3                           RB3     ) // "You're "
+COMBO(l_alpha_aks, pnYoull, &typePnYoull,                LB2                       RB3     ) // "You'll "
+COMBO(l_alpha_aks, pnYoud, &typePnYoud,                      LB1                   RB3     ) // "You'd "
+COMBO(l_alpha_aks, pnYouve, &typePnYouve,        LB4                               RB3     ) // "You've "
 
 /***** We  ****/
-COMBO_ALPHA(pnWere, &typePnWere,          LT4                                       \
-                                                      LH1                           ) // "We're "
-COMBO_ALPHA(pnWell, &typePnWell,          LT4     LT2                               ) // "We'll "
-COMBO_ALPHA(pnWed, &typePnWed,            LT4         LT1                           ) // "We'd "
-COMBO_ALPHA(pnWeve, &typePnWeve,          LT4             LT0                       ) // "We've "
+COMBO(l_alpha_aks, pnWere, &typePnWere,          LT4                                       \
+                                                             LH1                           ) // "We're "
+COMBO(l_alpha_aks, pnWell, &typePnWell,          LT4     LT2                               ) // "We'll "
+COMBO(l_alpha_aks, pnWed, &typePnWed,            LT4         LT1                           ) // "We'd "
+COMBO(l_alpha_aks, pnWeve, &typePnWeve,          LT4             LT0                       ) // "We've "
 
 #endif
 
 // /* numpad symbol combos */
 
-// COMBO_LAYER(numLPRN, &bk LPAR,      RM1 RM2, l_num)
-// COMBO_LAYER(numRPRN, &bk RPAR,      RM2 RM3, l_num)
-// COMBO_LAYER(numEQUAL, &bk EQUAL,    RM3 RM4, l_num)
-// COMBO_LAYER(numCOLN, &bk COLON,     RM1 RM3, l_num)
-// COMBO_LAYER(numPRCNT, &bk PRCNT,    RB3 RB4, l_num)
-// COMBO_LAYER(numLT, &bk LT,          RM0 RM1, l_num)
-// COMBO_LAYER(numGT, &bk GT,          RM0 RM4, l_num)
-// COMBO_LAYER(numDASH, &bk LA(MINUS), RB0 RB1, l_num)
-// COMBO_LAYER(numTILD, &bk TILDE,     RB0 RB4, l_num)
-// COMBO_LAYER(numELIP, &bk LA(SEMI),  RB1 RB4, l_num)
-
-// COMBO_LAYER(numDLLR, &bk DLLR,       RT1 RT2, l_num) // $
-// COMBO_LAYER(numCENT, &bk LA(N4),     RT0 RT1, l_num) // ¢
-// COMBO_LAYER(numEURO, &bk LS(LA(N2)), RT2 RT3, l_num) // €
-// COMBO_LAYER(numYEN, &bk LA(Y),       RT3 RT4, l_num) // ¥
-// COMBO_LAYER(numBPND, &bk LA(N3),     RT1 RT3, l_num) // £
+// COMBO(l_num, numLPRN, &bk LPAR,      RM1 RM2)
+// COMBO(l_num, numRPRN, &bk RPAR,      RM2 RM3)
+// COMBO(l_num, numEQUAL, &bk EQUAL,    RM3 RM4)
+// COMBO(l_num, numCOLN, &bk COLON,     RM1 RM3)
+// COMBO(l_num, numPRCNT, &bk PRCNT,    RB3 RB4)
+// COMBO(l_num, numLT, &bk LT,          RM0 RM1)
+// COMBO(l_num, numGT, &bk GT,          RM0 RM4)
+// COMBO(l_num, numDASH, &bk LA(MINUS), RB0 RB1)
+// COMBO(l_num, numTILD, &bk TILDE,     RB0 RB4)
+// COMBO(l_num, numELIP, &bk LA(SEMI),  RB1 RB4)
+// COMBO(l_num, numDLLR, &bk DLLR,       RT1 RT2) // $
+// COMBO(l_num, numCENT, &bk LA(N4),     RT0 RT1) // ¢
+// COMBO(l_num, numEURO, &bk LS(LA(N2)), RT2 RT3) // €
+// COMBO(l_num, numYEN, &bk LA(Y),       RT3 RT4) // ¥
+// COMBO(l_num, numBPND, &bk LA(N3),     RT1 RT3) // £
 
 };

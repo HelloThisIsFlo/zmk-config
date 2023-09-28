@@ -59,7 +59,7 @@
 #define THUMBS LH0 LH1 LH2 RH0 RH1 RH2                                      // thumb keys
 
 // my layers
-#define l_any   -1
+#define l_any   (-1)
 #define l_alpha 0
 #define l_akA   1
 #define l_akB   2
@@ -85,7 +85,7 @@
 #define l_cfg   22
 #define APTmak  23
 
-#define alpha_and_ak_layers l_alpha l_akA l_akB l_akD l_akE l_akF l_akG l_akI l_akK l_akM l_akO l_akP l_akT l_akU l_akW l_akX l_akY l_akDOT
+#define l_alpha_aks l_alpha l_akA l_akB l_akD l_akE l_akF l_akG l_akI l_akK l_akM l_akO l_akP l_akT l_akU l_akW l_akX l_akY l_akDOT
 
 #define my_tapping_term 170
 
@@ -110,7 +110,7 @@
 // #define my_ak_delay 40 // Unused atm
 
 // #define my_combo_timeout 17
-#define my_combo_timeout 30
+#define my_combo_timeout_one_hand 30
 
 #define my_global_quick_tap_window 130 // Measured w/ logs, 130ms is a comfortable quick double-tap for me
 
