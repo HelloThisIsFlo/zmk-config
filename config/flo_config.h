@@ -101,16 +101,12 @@
 
 
 
-// AK Window
-// - Needs to be less than 225ms (min repeat term for Mac OS, larger and it'll repeat the key on some systems)
-// - Ideally small to prevent other keys from being pressed before the AK action, in case the AK action is a macro (like lg, lm, lk, ...)
-// TODO: Trying to fix this ⤴ at the moment (bullet #2)
 
 // #define my_quick_tapping_term 112 // Unused atm
 // #define my_ak_delay 40 // Unused atm
 
-// #define my_combo_timeout 17
-#define my_combo_timeout_one_hand 30
+#define my_combo_timeout_one_hand 18
+#define my_combo_timeout_two_hands 30
 
 #define my_global_quick_tap_window 130 // Measured w/ logs, 130ms is a comfortable quick double-tap for me
 

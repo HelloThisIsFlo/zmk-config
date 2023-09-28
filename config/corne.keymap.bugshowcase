@@ -1,0 +1,72 @@
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+
+/ {
+    chosen {
+        zmk,matrix_transform = &five_column_transform;
+    };
+
+/*
+
+KEY POSITION 
+╭────────────────────╮ ╭────────────────────╮
+│ __  __  __  __  __ │ │ __  __  __  __  __ │
+│ __  __  __  __  __ │ │ __  __  __  __  __ |
+| 20  21  __  23  24 │ │ __  __  __  28  29 |
+╰───────╮ __  __  __ | | __  __  __ ╭───────╯
+        ╰────────────╯ ╰────────────╯
+
+Expectations: 
+- Holding 20 should not trigger anything for at least 4000ms
+    - The OneHandLeft combo would timeout after 2000ms
+    - But the TwoHands combo should not timeout until 4000ms
+
+What happens:
+- Holding 20 triggers the &kp Z binding after 2000ms
+
+*/
+    combos {
+        compatible = "zmk,combos";
+
+        OneHandRight {
+            bindings = <&kp R>;
+            key-positions = <29 28>;
+            timeout-ms = <1000>;
+        };
+
+        OneHandLeft {
+            bindings = <&kp L>;
+            key-positions = <20 21>;
+            timeout-ms = <20>;
+        };
+
+        OneHandLeftDifferentKeys {
+            bindings = <&kp D>;
+            key-positions = <24 23>;
+            timeout-ms = <3000>;
+        };
+
+        TwoHands {
+            bindings = <&kp T>;
+            key-positions = <20 29>;
+            timeout-ms = <80>;
+        };
+
+
+
+    };
+
+    keymap {
+        compatible = "zmk,keymap";
+
+        QWERTY {
+            label = "QWERTY";
+            bindings = <
+  &kp Q  &kp W  &kp E    &kp R    &kp T        &kp Y      &kp U     &kp I       &kp O    &kp P
+  &kp A  &kp S  &kp D    &kp F    &kp G        &kp H      &kp J     &kp K       &kp L    &kp SEMI
+  &kp Z  &kp X  &kp C    &kp V    &kp B        &kp N      &kp M     &kp COMMA   &kp DOT  &kp FSLH
+                &kp TAB  &kp RET  &kp SPACE    &kp SPACE  &kp BSPC  &kp ESCAPE
+            >;
+        };
+    };
+};
