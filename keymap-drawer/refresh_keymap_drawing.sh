@@ -7,6 +7,9 @@ cd "$DIR"
 CONFIG=./config.yaml
 KEYMAP=../config/corne.keymap
 
+# Using local version until the main project is fixed
+PATH=$PATH:$HOME/Library/Caches/pypoetry/virtualenvs/keymap-drawer-GuFs4spq-py3.10/bin
+
 refresh_drawing() {
     echo "Refreshing drawing"
     keymap -c $CONFIG \
