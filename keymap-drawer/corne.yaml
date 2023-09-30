@@ -1,0 +1,1137 @@
+layout: {qmk_keyboard: corne_rotated, qmk_layout: LAYOUT_split_3x5_3}
+layers:
+  l_alpha:
+  - X⛶
+  - W⛶
+  - M⛶
+  - G⛶
+  - J
+  - {t: '#', s: $}
+  - {t: .⛶, s: ':'}
+  - {t: '''', s: '['}
+  - {t: '"', s: ']'}
+  - B⛶
+  - {t: S, h: '$$mdi:apple-keyboard-control$$'}
+  - {t: C, h: '$$mdi:apple-keyboard-option$$'}
+  - {t: N, h: '$$mdi:apple-keyboard-command$$'}
+  - {t: '&ak_T_macro', h: '$$mdi:apple-keyboard-shift$$'}
+  - K⛶
+  - {t: ',', s: ;}
+  - {t: '&ak_A_macro', h: '$$mdi:apple-keyboard-shift$$'}
+  - {t: '&ak_E_macro', h: '$$mdi:apple-keyboard-command$$'}
+  - {t: '&ak_I_macro', h: '$$mdi:apple-keyboard-option$$'}
+  - {t: H, h: '$$mdi:apple-keyboard-control$$'}
+  - V
+  - P⛶
+  - L
+  - D⛶
+  - {t: /, s: '&bk STAR'}
+  - {t: '-', s: +}
+  - U⛶
+  - O⛶
+  - Y⛶
+  - F⛶
+  - {t: ' ', type: trans}
+  - {t: '&bk RETURN', h: l_nav}
+  - {t: R, h: l_nav}
+  - {t: '&bk SPACE', h: l_sym}
+  - {t: '$$mdi:backspace-outline$$', h: l_fn, s: '$$mdi:backspace-reverse-outline$$'}
+  - ESC
+  l_akA:
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - U
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  l_akB:
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - U
+  - '&ak 2 O'
+  - '&ak 2 Y'
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  l_akD:
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - G
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  l_akE:
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - O
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  l_akF:
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - I
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  l_akG:
+  - T
+  - D
+  - L
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - '&replace_char_with_bigram L K'
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  l_akI:
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - F
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  l_akK:
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - L
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - C
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  l_akM:
+  - P
+  - L
+  - {t: ' ', type: trans}
+  - '&replace_char_with_bigram L G'
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  l_akO:
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - E
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  l_akP:
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - L
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  l_akT:
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - '&replace_char_with_bigram C K'
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  l_akU:
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - A
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  l_akW:
+  - S
+  - {t: ' ', type: trans}
+  - M
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  l_akX:
+  - {t: ' ', type: trans}
+  - P⛶
+  - L
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  l_akY:
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - I
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  l_akDOT:
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - '&dotcom'
+  - '&dotcouk'
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  l_nav:
+  - RG(W)
+  - RG(Q)
+  - LG(LS(4))
+  - LG(LS(LC(4)))
+  - ESC
+  - LG(EQUAL)
+  - $$mdi:pan-left$$
+  - $$mdi:arrow-up-bold$$
+  - $$pg_up$$
+  - {t: '$$mdi:cancel$$', type: none}
+  - $$mdi:apple-keyboard-control$$
+  - $$mdi:apple-keyboard-option$$
+  - $$mdi:apple-keyboard-command$$
+  - $$mdi:apple-keyboard-shift$$
+  - RG(F)
+  - LA(LEFT)
+  - $$mdi:arrow-left-bold$$
+  - $$mdi:arrow-down-bold$$
+  - $$mdi:arrow-right-bold$$
+  - LA(RIGHT)
+  - RG(Z)
+  - RG(X)
+  - RG(C)
+  - RG(V)
+  - RG(G)
+  - LG(MINUS)
+  - $$mdi:pan-right$$
+  - LG(0)
+  - $$pg_dn$$
+  - {t: '$$mdi:cancel$$', type: none}
+  - {t: '$$mdi:cancel$$', type: none}
+  - {t: '&S_AppSwitch', type: held}
+  - {t: '&AppSwitch', type: held}
+  - LG(LBKT)
+  - LG(RBKT)
+  - {t: '$$mdi:cancel$$', type: none}
+  l_sym:
+  - Z
+  - Q
+  - LG(LS(4))
+  - LG(LS(LC(4)))
+  - ESC
+  - RA(4)
+  - $
+  - LA(LS(2))
+  - LA(3)
+  - RA(Y)
+  - {t: '&bk LT', h: '&pairLtGt GT'}
+  - {t: '[', h: '&pairBkt RBKT'}
+  - {t: '&bk LPAR', h: '&pairPar RPAR'}
+  - {t: '&bk LBRC', h: '&pairBrc RBRC'}
+  - $$mdi:keyboard-tab$$
+  - LA(1)
+  - {t: '*', h: '$$mdi:apple-keyboard-shift$$'}
+  - {t: '=', h: '$$mdi:apple-keyboard-command$$'}
+  - {t: +, h: '$$mdi:apple-keyboard-option$$'}
+  - {t: /, h: '$$mdi:apple-keyboard-control$$'}
+  - '>'
+  - ']'
+  - )
+  - '}'
+  - $$mdi:keyboard-return$$
+  - '-'
+  - '|'
+  - '&'
+  - ^
+  - '%'
+  - {t: '$$mdi:cancel$$', type: none}
+  - LA(BSPC)
+  - LA(DEL)
+  - {t: '$$mdi:cancel$$', type: held}
+  - LA(0)
+  - {t: '$$mdi:cancel$$', type: none}
+  l_fn:
+  - F9
+  - F10
+  - F11
+  - F12
+  - F13
+  - '`'
+  - '7'
+  - '8'
+  - '9'
+  - \
+  - {t: F5, h: '$$mdi:apple-keyboard-control$$'}
+  - {t: F6, h: '$$mdi:apple-keyboard-option$$'}
+  - {t: F7, h: '$$mdi:apple-keyboard-command$$'}
+  - {t: F8, h: '$$mdi:apple-keyboard-shift$$'}
+  - F14
+  - ','
+  - {t: '1', h: '$$mdi:apple-keyboard-shift$$'}
+  - {t: '2', h: '$$mdi:apple-keyboard-command$$'}
+  - {t: '3', h: '$$mdi:apple-keyboard-option$$'}
+  - {t: /, h: '$$mdi:apple-keyboard-control$$'}
+  - F1
+  - F2
+  - F3
+  - F4
+  - F15
+  - '-'
+  - '4'
+  - '5'
+  - '6'
+  - '='
+  - {t: '$$mdi:cancel$$', type: none}
+  - $$mdi:backspace-outline$$
+  - $$mdi:backspace-reverse-outline$$
+  - '0'
+  - {t: ., type: held}
+  - {t: '$$mdi:cancel$$', type: none}
+  l_num:
+  - ESC
+  - $$mdi:pan-left$$
+  - $$mdi:arrow-up-bold$$
+  - $$pg_up$$
+  - {t: KP NUM, h: l_cfg}
+  - KP SLASH
+  - '7'
+  - '8'
+  - '9'
+  - '-'
+  - LA(LEFT)
+  - $$mdi:arrow-left-bold$$
+  - $$mdi:arrow-down-bold$$
+  - $$mdi:arrow-right-bold$$
+  - LA(RIGHT)
+  - '*'
+  - {t: '4', h: '$$mdi:apple-keyboard-shift$$'}
+  - {t: '5', h: '$$mdi:apple-keyboard-command$$'}
+  - {t: '6', h: '$$mdi:apple-keyboard-option$$'}
+  - {t: +, h: '$$mdi:apple-keyboard-control$$'}
+  - $$mdi:backspace-reverse-outline$$
+  - $$mdi:pan-right$$
+  - $$mdi:keyboard-tab$$
+  - $$pg_dn$$
+  - SPC
+  - KP COMMA
+  - '1'
+  - '2'
+  - '3'
+  - '='
+  - {t: '$$mdi:cancel$$', type: none}
+  - {t: '$$mdi:backspace-outline$$', h: l_fn}
+  - {t: KP ENTER, h: l_nav}
+  - '0'
+  - KP DOT
+  - {t: '$$mdi:cancel$$', type: none}
+  l_cfg:
+  - {t: '$$mdi:bluetooth-connect$$', h: '3'}
+  - {t: '$$mdi:bluetooth-connect$$', h: '2'}
+  - {t: '$$mdi:bluetooth-connect$$', h: '1'}
+  - {t: '$$mdi:bluetooth-connect$$', h: '0'}
+  - {t: '$$mdi:bluetooth$$', h: clear, type: held}
+  - {t: '$$mdi:cancel$$', type: none}
+  - {t: '$$mdi:cancel$$', type: none}
+  - {t: '$$mdi:cancel$$', type: none}
+  - {t: '$$mdi:cancel$$', type: none}
+  - {t: '$$mdi:cancel$$', type: none}
+  - {t: '$$mdi:cancel$$', type: none}
+  - $$mdi:skip-next$$
+  - $$mdi:play-pause$$
+  - $$mdi:volume-high$$
+  - $$mdi:brightness-5$$
+  - $$mdi:brightness-5$$
+  - $$mdi:volume-high$$
+  - $$mdi:volume-off$$
+  - $$mdi:skip-next$$
+  - {t: '$$mdi:cancel$$', type: none}
+  - '&bootloader'
+  - $$mdi:skip-previous$$
+  - $$mdi:volume-off$$
+  - $$mdi:volume-low$$
+  - $$mdi:brightness-7$$
+  - $$mdi:brightness-7$$
+  - $$mdi:volume-low$$
+  - $$mdi:play-pause$$
+  - $$mdi:skip-previous$$
+  - '&sys_reset'
+  - {t: '$$mdi:cancel$$', type: none}
+  - {t: '$$mdi:cancel$$', type: none}
+  - l_num
+  - {t: '$$mdi:cancel$$', type: none}
+  - {t: '$$mdi:cancel$$', type: held}
+  - {t: '$$mdi:cancel$$', type: held}
+  APTmak:
+  - V
+  - W
+  - F
+  - P
+  - B
+  - J
+  - L
+  - U
+  - Y
+  - ''''
+  - {t: R, h: '$$mdi:apple-keyboard-control$$'}
+  - {t: S, h: '$$mdi:apple-keyboard-option$$'}
+  - {t: T, h: '$$mdi:apple-keyboard-command$$'}
+  - {t: H, h: '$$mdi:apple-keyboard-shift$$'}
+  - K
+  - X
+  - {t: N, h: '$$mdi:apple-keyboard-shift$$'}
+  - {t: A, h: '$$mdi:apple-keyboard-command$$'}
+  - {t: I, h: '$$mdi:apple-keyboard-option$$'}
+  - {t: O, h: '$$mdi:apple-keyboard-control$$'}
+  - ;
+  - C
+  - G
+  - D
+  - Q
+  - Z
+  - M
+  - ','
+  - .
+  - /
+  - $$mdi:keyboard-tab$$
+  - $$mdi:keyboard-return$$
+  - {t: '$$mdi:keyboard-space$$', h: l_akO}
+  - E
+  - $$mdi:backspace-outline$$
+  - {t: '$$mdi:swap-horizontal$$', h: APTmak|HDvv}
+combos:
+- p: [34, 35]
+  k: l_cfg
+- p: [11, 13]
+  k: '&AppSwitch'
+- p: [12, 13, 16, 17]
+  k: $$mdi:caps-lock$$
+  l: [l_alpha, l_akA, l_akB, l_akD, l_akE, l_akF, l_akG, l_akI, l_akK, l_akM, l_akO, l_akP, l_akT, l_akU, l_akW, l_akX, l_akY, l_akDOT]
+  a: top
+  o: -0.2
+- p: [11, 12, 17, 18]
+  k: '&bk CAPS'
+  l: [l_alpha, l_akA, l_akB, l_akD, l_akE, l_akF, l_akG, l_akI, l_akK, l_akM, l_akO, l_akP, l_akT, l_akU, l_akW, l_akX, l_akY, l_akDOT]
+  a: top
+  o: 0.2
+- p: [22, 23, 24]
+  k: '&bk LG(RETURN)'
+- p: [23, 24]
+  k: '&bk RETURN'
+- p: [21, 23]
+  k: '&bk TAB'
+- p: [21, 22, 23]
+  k: '&bk LS(TAB)'
+- p: [13, 14]
+  k: '&bk SPACE'
+- p: [10, 13]
+  k: $$escape$$
+  a: top
+  o: 1.3
+  s: -0.2
+- p: [20, 23]
+  k: '&bk LG(A)'
+- p: [20, 24]
+  k: '&m_selword'
+  l: [l_alpha, l_akA, l_akB, l_akD, l_akE, l_akF, l_akG, l_akI, l_akK, l_akM, l_akO, l_akP, l_akT, l_akU, l_akW, l_akX, l_akY, l_akDOT]
+- p: [21, 23]
+  k: '&bk LG(Z)'
+- p: [21, 22, 23]
+  k: '&bk LG(LS(Z))'
+- p: [21, 22]
+  k: {t: '&bk LG(C)', h: '&bk LG(X)'}
+- p: [22, 23]
+  k: {t: '&bk LG(V)', h: '&bk LG(LS(LA(V)))'}
+- p: [11, 21]
+  k: '&bk LG(W)'
+  l: [l_alpha, l_akA, l_akB, l_akD, l_akE, l_akF, l_akG, l_akI, l_akK, l_akM, l_akO, l_akP, l_akT, l_akU, l_akW, l_akX, l_akY, l_akDOT]
+- p: [12, 22]
+  k: '&bk LG(N)'
+  l: [l_alpha, l_akA, l_akB, l_akD, l_akE, l_akF, l_akG, l_akI, l_akK, l_akM, l_akO, l_akP, l_akT, l_akU, l_akW, l_akX, l_akY, l_akDOT]
+- p: [13, 23]
+  k: '&bk LG(O)'
+  l: [l_alpha, l_akA, l_akB, l_akD, l_akE, l_akF, l_akG, l_akI, l_akK, l_akM, l_akO, l_akP, l_akT, l_akU, l_akW, l_akX, l_akY, l_akDOT]
+- p: [14, 24]
+  k: '&bk LG(Q)'
+  l: [l_alpha, l_akA, l_akB, l_akD, l_akE, l_akF, l_akG, l_akI, l_akK, l_akM, l_akO, l_akP, l_akT, l_akU, l_akW, l_akX, l_akY, l_akDOT]
+- p: [10, 24]
+  k: '&m_findsel'
+  l: [l_alpha, l_akA, l_akB, l_akD, l_akE, l_akF, l_akG, l_akI, l_akK, l_akM, l_akO, l_akP, l_akT, l_akU, l_akW, l_akX, l_akY, l_akDOT]
+- p: [1, 3]
+  k: {t: '&Qu U', h: Q}
+  l: [l_alpha, l_akA, l_akB, l_akD, l_akE, l_akF, l_akG, l_akI, l_akK, l_akM, l_akO, l_akP, l_akT, l_akU, l_akW, l_akX, l_akY, l_akDOT]
+- p: [3, 4]
+  k: Z
+  l: [l_alpha, l_akA, l_akB, l_akD, l_akE, l_akF, l_akG, l_akI, l_akK, l_akM, l_akO, l_akP, l_akT, l_akU, l_akW, l_akX, l_akY, l_akDOT]
+- p: [6, 8]
+  k: {t: ':', h: '&bk LA(SEMI)'}
+  l: [l_alpha, l_akA, l_akB, l_akD, l_akE, l_akF, l_akG, l_akI, l_akK, l_akM, l_akO, l_akP, l_akT, l_akU, l_akW, l_akX, l_akY, l_akDOT]
+- p: [15, 16]
+  k: '&bk SEMI'
+  l: [l_alpha, l_akA, l_akB, l_akD, l_akE, l_akF, l_akG, l_akI, l_akK, l_akM, l_akO, l_akP, l_akT, l_akU, l_akW, l_akX, l_akY, l_akDOT]
+- p: [6, 7]
+  k: '&bk EXCL'
+  l: [l_alpha, l_akA, l_akB, l_akD, l_akE, l_akF, l_akG, l_akI, l_akK, l_akM, l_akO, l_akP, l_akT, l_akU, l_akW, l_akX, l_akY, l_akDOT]
+- p: [7, 8]
+  k: '&bk QMARK'
+  l: [l_alpha, l_akA, l_akB, l_akD, l_akE, l_akF, l_akG, l_akI, l_akK, l_akM, l_akO, l_akP, l_akT, l_akU, l_akW, l_akX, l_akY, l_akDOT]
+- p: [8, 9]
+  k: '&bk GRAVE'
+  l: [l_alpha, l_akA, l_akB, l_akD, l_akE, l_akF, l_akG, l_akI, l_akK, l_akM, l_akO, l_akP, l_akT, l_akU, l_akW, l_akX, l_akY, l_akDOT]
+- p: [5, 6]
+  k: {t: '&bk AT_SIGN', h: '&bk LS(LA(SEMI))'}
+  l: [l_alpha, l_akA, l_akB, l_akD, l_akE, l_akF, l_akG, l_akI, l_akK, l_akM, l_akO, l_akP, l_akT, l_akU, l_akW, l_akX, l_akY, l_akDOT]
+- p: [26, 28]
+  k: '&bk UNDER'
+  l: [l_alpha, l_akA, l_akB, l_akD, l_akE, l_akF, l_akG, l_akI, l_akK, l_akM, l_akO, l_akP, l_akT, l_akU, l_akW, l_akX, l_akY, l_akDOT]
+- p: [27, 28]
+  k: {t: '&bk EQUAL', h: '&bk PRCNT'}
+  l: [l_alpha, l_akA, l_akB, l_akD, l_akE, l_akF, l_akG, l_akI, l_akK, l_akM, l_akO, l_akP, l_akT, l_akU, l_akW, l_akX, l_akY, l_akDOT]
+- p: [25, 26]
+  k: {t: '&bk LA(MINUS)', h: '&bk LA(LS(MINUS))'}
+  l: [l_alpha, l_akA, l_akB, l_akD, l_akE, l_akF, l_akG, l_akI, l_akK, l_akM, l_akO, l_akP, l_akT, l_akU, l_akW, l_akX, l_akY, l_akDOT]
+- p: [25, 27]
+  k: '&bk LA(LS(MINUS))'
+  l: [l_alpha, l_akA, l_akB, l_akD, l_akE, l_akF, l_akG, l_akI, l_akK, l_akM, l_akO, l_akP, l_akT, l_akU, l_akW, l_akX, l_akY, l_akDOT]
+- p: [26, 29]
+  k: '&bk TILDE'
+  l: [l_alpha, l_akA, l_akB, l_akD, l_akE, l_akF, l_akG, l_akI, l_akK, l_akM, l_akO, l_akP, l_akT, l_akU, l_akW, l_akX, l_akY, l_akDOT]
+- p: [16, 26]
+  k: '&bk LA(APOS)'
+  l: [l_alpha, l_akA, l_akB, l_akD, l_akE, l_akF, l_akG, l_akI, l_akK, l_akM, l_akO, l_akP, l_akT, l_akU, l_akW, l_akX, l_akY, l_akDOT]
+- p: [17, 27]
+  k: '&bk LA(Q)'
+  l: [l_alpha, l_akA, l_akB, l_akD, l_akE, l_akF, l_akG, l_akI, l_akK, l_akM, l_akO, l_akP, l_akT, l_akU, l_akW, l_akX, l_akY, l_akDOT]
+- p: [16, 17]
+  k: {t: '&bk LA(E)', h: '&typeEaccent E'}
+  l: [l_alpha, l_akA, l_akB, l_akD, l_akE, l_akF, l_akG, l_akI, l_akK, l_akM, l_akO, l_akP, l_akT, l_akU, l_akW, l_akX, l_akY, l_akDOT]
+- p: [17, 18]
+  k: {t: '&bk LA(GRAVE)', h: '&typeEgrave E'}
+  l: [l_alpha, l_akA, l_akB, l_akD, l_akE, l_akF, l_akG, l_akI, l_akK, l_akM, l_akO, l_akP, l_akT, l_akU, l_akW, l_akX, l_akY, l_akDOT]
+- p: [16, 18]
+  k: {t: '&bk LA(N6)', h: '&typeEacute E'}
+  l: [l_alpha, l_akA, l_akB, l_akD, l_akE, l_akF, l_akG, l_akI, l_akK, l_akM, l_akO, l_akP, l_akT, l_akU, l_akW, l_akX, l_akY, l_akDOT]
+- p: [17, 19]
+  k: {t: '&bk LA(A)', h: '&typeOmacron E'}
+  l: [l_alpha, l_akA, l_akB, l_akD, l_akE, l_akF, l_akG, l_akI, l_akK, l_akM, l_akO, l_akP, l_akT, l_akU, l_akW, l_akX, l_akY, l_akDOT]
+- p: [16, 19]
+  k: {t: '&bk LA(K)', h: '&typeAring A'}
+  l: [l_alpha, l_akA, l_akB, l_akD, l_akE, l_akF, l_akG, l_akI, l_akK, l_akM, l_akO, l_akP, l_akT, l_akU, l_akW, l_akX, l_akY, l_akDOT]
+- p: [26, 27]
+  k: {t: '&bk LA(U)', h: '&typeUumlaut U'}
+  l: [l_alpha, l_akA, l_akB, l_akD, l_akE, l_akF, l_akG, l_akI, l_akK, l_akM, l_akO, l_akP, l_akT, l_akU, l_akW, l_akX, l_akY, l_akDOT]
+- p: [12, 10]
+  k: {t: '&bk LA(C)', h: '&typeCedille C'}
+  l: [l_alpha, l_akA, l_akB, l_akD, l_akE, l_akF, l_akG, l_akI, l_akK, l_akM, l_akO, l_akP, l_akT, l_akU, l_akW, l_akX, l_akY, l_akDOT]
+- p: [10, 11, 12]
+  k: sch
+  l: [l_alpha]
+  a: top
+  o: -0.2
+  type: h-digraph
+- p: [10, 11, 13]
+  k: tch
+  l: [l_alpha]
+  a: bottom
+  o: -0.2
+  type: h-digraph
+- p: [12, 13]
+  k: {t: th, h: tion}
+  l: [l_alpha]
+  type: h-digraph
+- p: [11, 12]
+  k: ch
+  l: [l_alpha]
+  type: h-digraph
+- p: [1, 2]
+  k: wh
+  l: [l_alpha]
+  type: h-digraph
+- p: [10, 11]
+  k: {t: sh, h: sion}
+  l: [l_alpha]
+  type: h-digraph
+- p: [2, 3]
+  k: {t: gh, h: ght}
+  l: [l_alpha]
+  type: h-digraph
+- p: [21, 22]
+  k: ph
+  l: [l_alpha]
+  type: h-digraph
+- p: [18, 19]
+  k: '&typePnI'
+  l: [l_alpha, l_akA, l_akB, l_akD, l_akE, l_akF, l_akG, l_akI, l_akK, l_akM, l_akO, l_akP, l_akT, l_akU, l_akW, l_akX, l_akY, l_akDOT]
+- p: [2, 18]
+  k: '&typePnIm'
+  l: [l_alpha, l_akA, l_akB, l_akD, l_akE, l_akF, l_akG, l_akI, l_akK, l_akM, l_akO, l_akP, l_akT, l_akU, l_akW, l_akX, l_akY, l_akDOT]
+- p: [18, 22]
+  k: '&typePnIll'
+  l: [l_alpha, l_akA, l_akB, l_akD, l_akE, l_akF, l_akG, l_akI, l_akK, l_akM, l_akO, l_akP, l_akT, l_akU, l_akW, l_akX, l_akY, l_akDOT]
+- p: [18, 23]
+  k: '&typePnId'
+  l: [l_alpha, l_akA, l_akB, l_akD, l_akE, l_akF, l_akG, l_akI, l_akK, l_akM, l_akO, l_akP, l_akT, l_akU, l_akW, l_akX, l_akY, l_akDOT]
+- p: [18, 20]
+  k: '&typePnIve'
+  l: [l_alpha, l_akA, l_akB, l_akD, l_akE, l_akF, l_akG, l_akI, l_akK, l_akM, l_akO, l_akP, l_akT, l_akU, l_akW, l_akX, l_akY, l_akDOT]
+- p: [28, 31]
+  k: '&typePnYour'
+  l: [l_alpha, l_akA, l_akB, l_akD, l_akE, l_akF, l_akG, l_akI, l_akK, l_akM, l_akO, l_akP, l_akT, l_akU, l_akW, l_akX, l_akY, l_akDOT]
+- p: [21, 28]
+  k: '&typePnYoure'
+  l: [l_alpha, l_akA, l_akB, l_akD, l_akE, l_akF, l_akG, l_akI, l_akK, l_akM, l_akO, l_akP, l_akT, l_akU, l_akW, l_akX, l_akY, l_akDOT]
+- p: [22, 28]
+  k: '&typePnYoull'
+  l: [l_alpha, l_akA, l_akB, l_akD, l_akE, l_akF, l_akG, l_akI, l_akK, l_akM, l_akO, l_akP, l_akT, l_akU, l_akW, l_akX, l_akY, l_akDOT]
+- p: [23, 28]
+  k: '&typePnYoud'
+  l: [l_alpha, l_akA, l_akB, l_akD, l_akE, l_akF, l_akG, l_akI, l_akK, l_akM, l_akO, l_akP, l_akT, l_akU, l_akW, l_akX, l_akY, l_akDOT]
+- p: [20, 28]
+  k: '&typePnYouve'
+  l: [l_alpha, l_akA, l_akB, l_akD, l_akE, l_akF, l_akG, l_akI, l_akK, l_akM, l_akO, l_akP, l_akT, l_akU, l_akW, l_akX, l_akY, l_akDOT]
+- p: [0, 31]
+  k: '&typePnWere'
+  l: [l_alpha, l_akA, l_akB, l_akD, l_akE, l_akF, l_akG, l_akI, l_akK, l_akM, l_akO, l_akP, l_akT, l_akU, l_akW, l_akX, l_akY, l_akDOT]
+- p: [0, 2]
+  k: '&typePnWell'
+  l: [l_alpha, l_akA, l_akB, l_akD, l_akE, l_akF, l_akG, l_akI, l_akK, l_akM, l_akO, l_akP, l_akT, l_akU, l_akW, l_akX, l_akY, l_akDOT]
+- p: [0, 3]
+  k: '&typePnWed'
+  l: [l_alpha, l_akA, l_akB, l_akD, l_akE, l_akF, l_akG, l_akI, l_akK, l_akM, l_akO, l_akP, l_akT, l_akU, l_akW, l_akX, l_akY, l_akDOT]
+- p: [0, 4]
+  k: '&typePnWeve'
+  l: [l_alpha, l_akA, l_akB, l_akD, l_akE, l_akF, l_akG, l_akI, l_akK, l_akM, l_akO, l_akP, l_akT, l_akU, l_akW, l_akX, l_akY, l_akDOT]
+- p: [16, 17]
+  k: '&bk LPAR'
+  l: [l_num]
+- p: [17, 18]
+  k: '&bk RPAR'
+  l: [l_num]
+- p: [18, 19]
+  k: '&bk EQUAL'
+  l: [l_num]
+- p: [16, 18]
+  k: ':'
+  l: [l_num]
+- p: [28, 29]
+  k: '&bk PRCNT'
+  l: [l_num]
+- p: [15, 16]
+  k: '&bk LT'
+  l: [l_num]
+- p: [15, 19]
+  k: '&bk GT'
+  l: [l_num]
+- p: [25, 26]
+  k: '&bk LA(MINUS)'
+  l: [l_num]
+- p: [25, 29]
+  k: '&bk TILDE'
+  l: [l_num]
+- p: [26, 29]
+  k: '&bk LA(SEMI)'
+  l: [l_num]
+- p: [6, 7]
+  k: $
+  l: [l_num]
+- p: [5, 6]
+  k: '&bk LA(N4)'
+  l: [l_num]
+- p: [7, 8]
+  k: '&bk LS(LA(N2))'
+  l: [l_num]
+- p: [8, 9]
+  k: '&bk LA(Y)'
+  l: [l_num]
+- p: [6, 8]
+  k: '&bk LA(N3)'
+  l: [l_num]
