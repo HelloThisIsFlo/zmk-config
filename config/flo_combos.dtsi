@@ -1,13 +1,13 @@
 #define COMBO_ANY_BASE(NAME, BINDINGS, KEYPOS, TIMEOUT) \
   combo_##NAME { \
     bindings = <BINDINGS>; \
-    key-positions = < KEYPOS >; \
+    key-positions = <KEYPOS>; \
     timeout-ms = <TIMEOUT>; \
 };
 #define COMBO_LAY_BASE(LAYERS, NAME, BINDINGS, KEYPOS, TIMEOUT) \
   combo_##NAME { \
     bindings = <BINDINGS>; \
-    key-positions = < KEYPOS >; \
+    key-positions = <KEYPOS>; \
     layers = <LAYERS>; \
     timeout-ms = <TIMEOUT>; \
 };

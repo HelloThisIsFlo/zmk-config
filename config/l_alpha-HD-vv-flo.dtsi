@@ -33,11 +33,12 @@
 #define TK_to_CK &replace_char_with_bigram C K
 
 
-// Second param is ignored, so using ________
-#define hml_LSHIFT_T &hml_T LSHIFT ________
-#define hmr_LSHIFT_A &hmr_A LSHIFT ________
-#define hmr_LGUI_E &hmr_E LGUI ________
-#define hmr_LALT_I &hmr_I LALT ________
+#define XXX 0
+// Second param is ignored, so using XXX
+#define hml_LSHIFT_T &hml_T LSHIFT XXX
+#define hmr_LSHIFT_A &hmr_A LSHIFT XXX
+#define hmr_LGUI_E &hmr_E LGUI XXX
+#define hmr_LALT_I &hmr_I LALT XXX
 
 
 
