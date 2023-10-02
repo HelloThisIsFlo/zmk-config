@@ -26,8 +26,8 @@
 
         WinPC {
             bindings = <
-  &kp Q           &kp W              &kp E              &kp T                &kp Y                    &kp U       &kp I                &kp O              &kp P              &kp LEFT_BRACKET
-  &hml LCTRL A    &hml LEFT_ALT S    &hml LEFT_GUI D    &hml LEFT_SHIFT F    &kp G                    &kp H       &hmr LEFT_SHIFT J    &hmr LEFT_GUI K    &hmr LEFT_ALT L    &hmr LCTRL SEMI
+  &kp Q           &kp W              &kp E              &kp R                &kp T                    &kp Y       &kp U                &kp I              &kp O              &kp P
+  &hml LEFT_GUI A &hml LEFT_ALT S    &hml LCTRL D    &hml LEFT_SHIFT F    &kp G                    &kp H       &hmr LEFT_SHIFT J    &hmr LCTRL K       &hmr LEFT_ALT L    &hmr LEFT_GUI SEMI
   &kp Z           &kp X              &kp C              &kp V                &kp B                    &kp N       &kp M                &kp COMMA          &kp DOT            &kp SLASH
                                      ________           ________             ________                ________     ________             ________
             >;
