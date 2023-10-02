@@ -70,20 +70,21 @@
 #define l_akI   7
 #define l_akK   8
 #define l_akM   9
-#define l_akO   10
-#define l_akP   11
-#define l_akT   12
-#define l_akU   13
-#define l_akW   14
-#define l_akX   15
-#define l_akY   16
-#define l_akDOT 17
-#define l_nav   18
-#define l_sym   19
-#define l_fn    20
-#define l_num   21
-#define l_cfg   22
-#define APTmak  23
+#define l_akN   10
+#define l_akO   11
+#define l_akP   12
+#define l_akT   13
+#define l_akU   14
+#define l_akW   15
+#define l_akX   16
+#define l_akY   17
+#define l_akDOT 18
+#define l_nav   19
+#define l_sym   20
+#define l_fn    21
+#define l_num   22
+#define l_cfg   23
+#define APTmak  24
 
 #define l_alpha_aks l_alpha l_akA l_akB l_akD l_akE l_akF l_akG l_akI l_akK l_akM l_akO l_akP l_akT l_akU l_akW l_akX l_akY l_akDOT
 

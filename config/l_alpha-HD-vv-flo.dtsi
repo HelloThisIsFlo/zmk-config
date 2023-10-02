@@ -35,10 +35,11 @@
 
 #define XXX 0
 // Second param is ignored, so using XXX
+#define hml_LGUI_N   &hml_N LGUI   XXX
 #define hml_LSHIFT_T &hml_T LSHIFT XXX
 #define hmr_LSHIFT_A &hmr_A LSHIFT XXX
-#define hmr_LGUI_E &hmr_E LGUI XXX
-#define hmr_LALT_I &hmr_I LALT XXX
+#define hmr_LGUI_E   &hmr_E LGUI   XXX
+#define hmr_LALT_I   &hmr_I LALT   XXX
 
 
 
@@ -48,7 +49,7 @@
 
 ak_X          ak_W         ak_M         ak_G            &bk J                          &HashDllr   &DotColn      &SqtLbkt    &DqtRbkt    ak_B
 
-&hml LCTRL S  &hml LALT C  &hml LGUI N  hml_LSHIFT_T    ak_K                           &CmmaSemi   hmr_LSHIFT_A  hmr_LGUI_E  hmr_LALT_I  &hmr LCTRL H
+&hml LCTRL S  &hml LALT C  hml_LGUI_N   hml_LSHIFT_T    ak_K                           &CmmaSemi   hmr_LSHIFT_A  hmr_LGUI_E  hmr_LALT_I  &hmr LCTRL H
 
 &bk V         ak_P         &bk L        ak_D            &SlshStar                      &MinusPlus  ak_U          ak_O        ak_Y        ak_F
 
@@ -143,6 +144,16 @@ ________   ________   ________   ________   ________          ________   _______
 &bk P      &bk L      ___M____   MG_to_LG   ________          ________   ________   ________   ________   ________
 ________   ________   ________   ________   ________          ________   ________   ________   ________   ________
 ________   ________   ________   ________   ________          ________   ________   ________   ________   ________
+                        ________   ________   ________      ________   ________   ________
+                        >;
+                };
+
+                l_akN {
+                        label = "l_akN";
+                        bindings = <
+________   ________   ________   ________   ________          ________   ________   ________   ________   ________
+________   ________   ___N____   ________   ________          ________   ________   ________   ________   ________
+________   &bk L      ________   ________   ________          ________   ________   ________   ________   ________
                         ________   ________   ________      ________   ________   ________
                         >;
                 };

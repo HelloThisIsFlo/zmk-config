@@ -273,6 +273,7 @@ parse_config:
 
         "&ak_A_macro": "A⛶"
         "&ak_E_macro": "E⛶"
+        "&ak_N_macro": "N⛶"
         "&ak_I_macro": "I⛶"
         "&ak_T_macro": "T⛶"
 
