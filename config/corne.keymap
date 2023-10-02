@@ -24,7 +24,7 @@
         #include "./l_alpha-HD-vv-flo.dtsi"
         #include "./l_layers.dtsi"  // all other (common) layers (shouldn't vary)
 
-        TmpPC {
+        WinPC {
             bindings = <
   &kp Q           &kp W              &kp E              &kp T                &kp Y                    &kp U       &kp I                &kp O              &kp P              &kp LEFT_BRACKET
   &hml LCTRL A    &hml LEFT_ALT S    &hml LEFT_GUI D    &hml LEFT_SHIFT F    &kp G                    &kp H       &hmr LEFT_SHIFT J    &hmr LEFT_GUI K    &hmr LEFT_ALT L    &hmr LCTRL SEMI
@@ -32,7 +32,7 @@
                                      ________           ________             ________                ________     ________             ________
             >;
 
-            label = "TmpPC";
+            label = "Kafka"; // "Kafkaesque"
         };
     };
 };

@@ -208,8 +208,8 @@ path.combo {
 }
 /* End Tabler Icons Cleanup */
 </style>
-<g transform="translate(150, 0)" class="layer-l_alpha">
-<text x="0" y="28" class="label">l_alpha:</text>
+<g transform="translate(150, 0)" class="layer-Reality?">
+<text x="0" y="28" class="label">Reality?:</text>
 <g transform="translate(0, 56)">
 <g transform="translate(34, 60)" class="key keypos-0">
 <rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key"/>
@@ -354,24 +354,24 @@ path.combo {
 <text x="0" y="0" class="key tap">
 <tspan x="0" dy="-1.2em">&amp;bk</tspan><tspan x="0" dy="1.2em">RETURN</tspan>
 </text>
-<text x="0" y="30" class="key hold">l_nav</text>
+<text x="0" y="30" class="key hold">&lt;^v&gt;</text>
 </g>
 <g transform="translate(358, 272) rotate(30.0)" class="key keypos-32">
 <rect rx="6" ry="6" x="-32" y="-49" width="64" height="98" class="key"/>
 <text x="0" y="0" class="key tap">R</text>
-<text x="0" y="47" class="key hold">l_nav</text>
+<text x="0" y="47" class="key hold">&lt;^v&gt;</text>
 </g>
 <g transform="translate(526, 272) rotate(-30.0)" class="key keypos-33">
 <rect rx="6" ry="6" x="-32" y="-49" width="64" height="98" class="key"/>
 <text x="0" y="0" class="key tap">
 <tspan x="0" dy="-1.2em">&amp;bk</tspan><tspan x="0" dy="1.2em">SPACE</tspan>
 </text>
-<text x="0" y="47" class="key hold">l_sym</text>
+<text x="0" y="47" class="key hold">=*+/</text>
 </g>
 <g transform="translate(605, 259) rotate(-15.0)" class="key keypos-34">
 <rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key"/>
 <use href="#mdi:backspace-outline" xlink:href="#mdi:backspace-outline" x="-7" y="-7" height="14" width="14.0" class="key tap glyph mdi:backspace-outline"/>
-<text x="0" y="30" class="key hold">l_fn</text>
+<text x="0" y="30" class="key hold">F*</text>
 <use href="#mdi:backspace-reverse-outline" xlink:href="#mdi:backspace-reverse-outline" x="-5" y="-30" height="10" width="10.0" class="key shifted glyph mdi:backspace-reverse-outline"/>
 </g>
 <g transform="translate(680, 249)" class="key keypos-35">
@@ -381,8 +381,8 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(150, 390)" class="layer-l_akA">
-<text x="0" y="28" class="label">l_akA:</text>
+<g transform="translate(150, 390)" class="layer-Raality?">
+<text x="0" y="28" class="label">Raality?:</text>
 <g transform="translate(0, 56)">
 <g transform="translate(34, 60)" class="key trans keypos-0">
 <rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key trans"/>
@@ -495,8 +495,8 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(150, 779)" class="layer-l_akB">
-<text x="0" y="28" class="label">l_akB:</text>
+<g transform="translate(150, 779)" class="layer-Reabity?">
+<text x="0" y="28" class="label">Reabity?:</text>
 <g transform="translate(0, 56)">
 <g transform="translate(34, 60)" class="key trans keypos-0">
 <rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key trans"/>
@@ -617,8 +617,8 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(150, 1169)" class="layer-l_akD">
-<text x="0" y="28" class="label">l_akD:</text>
+<g transform="translate(150, 1169)" class="layer-Deality?">
+<text x="0" y="28" class="label">Deality?:</text>
 <g transform="translate(0, 56)">
 <g transform="translate(34, 60)" class="key trans keypos-0">
 <rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key trans"/>
@@ -731,8 +731,8 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(150, 1558)" class="layer-l_akE">
-<text x="0" y="28" class="label">l_akE:</text>
+<g transform="translate(150, 1558)" class="layer-Reelity?">
+<text x="0" y="28" class="label">Reelity?:</text>
 <g transform="translate(0, 56)">
 <g transform="translate(34, 60)" class="key trans keypos-0">
 <rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key trans"/>
@@ -845,8 +845,8 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(150, 1948)" class="layer-l_akF">
-<text x="0" y="28" class="label">l_akF:</text>
+<g transform="translate(150, 1948)" class="layer-Realify?">
+<text x="0" y="28" class="label">Realify?:</text>
 <g transform="translate(0, 56)">
 <g transform="translate(34, 60)" class="key trans keypos-0">
 <rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key trans"/>
@@ -959,8 +959,8 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(150, 2337)" class="layer-l_akG">
-<text x="0" y="28" class="label">l_akG:</text>
+<g transform="translate(150, 2337)" class="layer-Realitg?">
+<text x="0" y="28" class="label">Realitg?:</text>
 <g transform="translate(0, 56)">
 <g transform="translate(34, 60)" class="key keypos-0">
 <rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key"/>
@@ -1079,8 +1079,8 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(150, 2727)" class="layer-l_akI">
-<text x="0" y="28" class="label">l_akI:</text>
+<g transform="translate(150, 2727)" class="layer-Reaiity?">
+<text x="0" y="28" class="label">Reaiity?:</text>
 <g transform="translate(0, 56)">
 <g transform="translate(34, 60)" class="key trans keypos-0">
 <rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key trans"/>
@@ -1193,8 +1193,8 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(150, 3116)" class="layer-l_akK">
-<text x="0" y="28" class="label">l_akK:</text>
+<g transform="translate(150, 3116)" class="layer-Reakity?">
+<text x="0" y="28" class="label">Reakity?:</text>
 <g transform="translate(0, 56)">
 <g transform="translate(34, 60)" class="key trans keypos-0">
 <rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key trans"/>
@@ -1308,8 +1308,8 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(150, 3506)" class="layer-l_akM">
-<text x="0" y="28" class="label">l_akM:</text>
+<g transform="translate(150, 3506)" class="layer-Meality?">
+<text x="0" y="28" class="label">Meality?:</text>
 <g transform="translate(0, 56)">
 <g transform="translate(34, 60)" class="key keypos-0">
 <rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key"/>
@@ -1427,8 +1427,8 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(150, 3895)" class="layer-l_akN">
-<text x="0" y="28" class="label">l_akN:</text>
+<g transform="translate(150, 3895)" class="layer-Renlity?">
+<text x="0" y="28" class="label">Renlity?:</text>
 <g transform="translate(0, 56)">
 <g transform="translate(34, 60)" class="key trans keypos-0">
 <rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key trans"/>
@@ -1541,8 +1541,8 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(150, 4285)" class="layer-l_akO">
-<text x="0" y="28" class="label">l_akO:</text>
+<g transform="translate(150, 4285)" class="layer-Roality?">
+<text x="0" y="28" class="label">Roality?:</text>
 <g transform="translate(0, 56)">
 <g transform="translate(34, 60)" class="key trans keypos-0">
 <rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key trans"/>
@@ -1655,8 +1655,8 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(150, 4674)" class="layer-l_akP">
-<text x="0" y="28" class="label">l_akP:</text>
+<g transform="translate(150, 4674)" class="layer-Realitp?">
+<text x="0" y="28" class="label">Realitp?:</text>
 <g transform="translate(0, 56)">
 <g transform="translate(34, 60)" class="key trans keypos-0">
 <rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key trans"/>
@@ -1769,8 +1769,8 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(150, 5064)" class="layer-l_akT">
-<text x="0" y="28" class="label">l_akT:</text>
+<g transform="translate(150, 5064)" class="layer-Reatity?">
+<text x="0" y="28" class="label">Reatity?:</text>
 <g transform="translate(0, 56)">
 <g transform="translate(34, 60)" class="key trans keypos-0">
 <rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key trans"/>
@@ -1886,8 +1886,8 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(150, 5453)" class="layer-l_akU">
-<text x="0" y="28" class="label">l_akU:</text>
+<g transform="translate(150, 5453)" class="layer-Realitu?">
+<text x="0" y="28" class="label">Realitu?:</text>
 <g transform="translate(0, 56)">
 <g transform="translate(34, 60)" class="key trans keypos-0">
 <rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key trans"/>
@@ -2000,8 +2000,8 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(150, 5843)" class="layer-l_akW">
-<text x="0" y="28" class="label">l_akW:</text>
+<g transform="translate(150, 5843)" class="layer-Weality?">
+<text x="0" y="28" class="label">Weality?:</text>
 <g transform="translate(0, 56)">
 <g transform="translate(34, 60)" class="key keypos-0">
 <rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key"/>
@@ -2115,8 +2115,8 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(150, 6232)" class="layer-l_akX">
-<text x="0" y="28" class="label">l_akX:</text>
+<g transform="translate(150, 6232)" class="layer-Realitx?">
+<text x="0" y="28" class="label">Realitx?:</text>
 <g transform="translate(0, 56)">
 <g transform="translate(34, 60)" class="key trans keypos-0">
 <rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key trans"/>
@@ -2230,8 +2230,8 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(150, 6622)" class="layer-l_akY">
-<text x="0" y="28" class="label">l_akY:</text>
+<g transform="translate(150, 6622)" class="layer-Yeality?">
+<text x="0" y="28" class="label">Yeality?:</text>
 <g transform="translate(0, 56)">
 <g transform="translate(34, 60)" class="key trans keypos-0">
 <rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key trans"/>
@@ -2344,8 +2344,8 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(150, 7011)" class="layer-l_akDOT">
-<text x="0" y="28" class="label">l_akDOT:</text>
+<g transform="translate(150, 7011)" class="layer-Real.ty?">
+<text x="0" y="28" class="label">Real.ty?:</text>
 <g transform="translate(0, 56)">
 <g transform="translate(34, 60)" class="key trans keypos-0">
 <rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key trans"/>
@@ -2459,8 +2459,8 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(150, 7401)" class="layer-l_nav">
-<text x="0" y="28" class="label">l_nav:</text>
+<g transform="translate(150, 7401)" class="layer-<^v>">
+<text x="0" y="28" class="label">&lt;^v&gt;:</text>
 <g transform="translate(0, 56)">
 <g transform="translate(34, 60)" class="key keypos-0">
 <rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key"/>
@@ -2608,8 +2608,8 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(150, 7790)" class="layer-l_sym">
-<text x="0" y="28" class="label">l_sym:</text>
+<g transform="translate(150, 7790)" class="layer-=*+/">
+<text x="0" y="28" class="label">=*+/:</text>
 <g transform="translate(0, 56)">
 <g transform="translate(34, 60)" class="key keypos-0">
 <rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key"/>
@@ -2771,8 +2771,8 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(150, 8180)" class="layer-l_fn">
-<text x="0" y="28" class="label">l_fn:</text>
+<g transform="translate(150, 8180)" class="layer-F*">
+<text x="0" y="28" class="label">F*:</text>
 <g transform="translate(0, 56)">
 <g transform="translate(34, 60)" class="key keypos-0">
 <rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key"/>
@@ -2928,8 +2928,8 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(150, 8569)" class="layer-l_num">
-<text x="0" y="28" class="label">l_num:</text>
+<g transform="translate(150, 8569)" class="layer-1984">
+<text x="0" y="28" class="label">1984:</text>
 <g transform="translate(0, 56)">
 <g transform="translate(34, 60)" class="key keypos-0">
 <rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key"/>
@@ -2952,7 +2952,7 @@ path.combo {
 <text x="0" y="0" class="key tap">
 <tspan x="0" dy="-1.2em">KP</tspan><tspan x="0" dy="1.2em">NUM</tspan>
 </text>
-<text x="0" y="30" class="key hold">l_cfg</text>
+<text x="0" y="30" class="key hold">BIOS</text>
 </g>
 <g transform="translate(578, 51)" class="key keypos-5">
 <rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key"/>
@@ -3069,14 +3069,14 @@ path.combo {
 <g transform="translate(279, 259) rotate(15.0)" class="key keypos-31">
 <rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key"/>
 <use href="#mdi:backspace-outline" xlink:href="#mdi:backspace-outline" x="-7" y="-7" height="14" width="14.0" class="key tap glyph mdi:backspace-outline"/>
-<text x="0" y="30" class="key hold">l_fn</text>
+<text x="0" y="30" class="key hold">F*</text>
 </g>
 <g transform="translate(358, 272) rotate(30.0)" class="key keypos-32">
 <rect rx="6" ry="6" x="-32" y="-49" width="64" height="98" class="key"/>
 <text x="0" y="0" class="key tap">
 <tspan x="0" dy="-1.2em">KP</tspan><tspan x="0" dy="1.2em">ENTER</tspan>
 </text>
-<text x="0" y="47" class="key hold">l_nav</text>
+<text x="0" y="47" class="key hold">&lt;^v&gt;</text>
 </g>
 <g transform="translate(526, 272) rotate(-30.0)" class="key keypos-33">
 <rect rx="6" ry="6" x="-32" y="-49" width="64" height="98" class="key"/>
@@ -3094,8 +3094,8 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(150, 8959)" class="layer-l_cfg">
-<text x="0" y="28" class="label">l_cfg:</text>
+<g transform="translate(150, 8959)" class="layer-BIOS">
+<text x="0" y="28" class="label">BIOS:</text>
 <g transform="translate(0, 56)">
 <g transform="translate(34, 60)" class="key keypos-0">
 <rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key"/>
@@ -3232,7 +3232,7 @@ path.combo {
 </g>
 <g transform="translate(358, 272) rotate(30.0)" class="key keypos-32">
 <rect rx="6" ry="6" x="-32" y="-49" width="64" height="98" class="key"/>
-<text x="0" y="0" class="key tap">l_num</text>
+<text x="0" y="0" class="key tap">1984</text>
 </g>
 <g transform="translate(526, 272) rotate(-30.0)" class="key none keypos-33">
 <rect rx="6" ry="6" x="-32" y="-49" width="64" height="98" class="key none"/>
@@ -3248,8 +3248,8 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(150, 9348)" class="layer-TmpPC">
-<text x="0" y="28" class="label">TmpPC:</text>
+<g transform="translate(150, 9348)" class="layer-Kafka">
+<text x="0" y="28" class="label">Kafka:</text>
 <g transform="translate(0, 56)">
 <g transform="translate(34, 60)" class="key keypos-0">
 <rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key"/>
@@ -3406,7 +3406,7 @@ path.combo {
 <g transform="translate(0, 56)">
 <g transform="translate(34, 34)" class="key  combo-separate keypos-0">
 <rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key  combo-separate"/>
-<text x="0" y="0" class="key  combo-separate tap">l_cfg</text>
+<text x="0" y="0" class="key  combo-separate tap">BIOS</text>
 </g>
 <g transform="translate(8, 85)" class="key keypos-1">
 <rect rx="6" ry="6" x="-6" y="-6" width="13" height="13" class="key"/>

@@ -84,7 +84,7 @@
 #define l_fn    21
 #define l_num   22
 #define l_cfg   23
-#define l_tmppc  24
+#define l_winpc  24
 
 #define l_alpha_aks l_alpha l_akA l_akB l_akD l_akE l_akF l_akG l_akI l_akK l_akM l_akO l_akP l_akT l_akU l_akW l_akX l_akY l_akDOT
 

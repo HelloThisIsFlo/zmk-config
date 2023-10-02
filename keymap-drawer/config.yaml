@@ -281,7 +281,7 @@ parse_config:
         # Macros
         "&typeSemi": ";"
 
-        "&toggle_hdvv_tmpPC":
+        "&toggle_hdvv_winPC":
             tap: $$mdi:swap-horizontal$$
             hold: "HDvv|QWERTY"
 
@@ -510,45 +510,45 @@ parse_config:
         combo_ch:
             key: "ch"
             type: 'h-digraph'
-            l: ['l_alpha']
+            l: ['Reality?']
         combo_th:
             key:
                 t: "th"
                 h: "tion"
             type: 'h-digraph'
-            l: ['l_alpha']
+            l: ['Reality?']
         combo_sch:
             key: "sch"
             type: 'h-digraph'
             a: top
             o: -0.2
-            l: ['l_alpha']
+            l: ['Reality?']
         combo_tch:
             key: "tch"
             type: 'h-digraph'
             a: bottom
             o: -0.2
-            l: ['l_alpha']
+            l: ['Reality?']
         combo_wh:
             key: "wh"
             type: 'h-digraph'
-            l: ['l_alpha']
+            l: ['Reality?']
         combo_sh:
             key:
                 t: "sh"
                 h: "sion"
             type: 'h-digraph'
-            l: ['l_alpha']
+            l: ['Reality?']
         combo_gh:
             key:
                 t: "gh"
                 h: "ght"
             type: 'h-digraph'
-            l: ['l_alpha']
+            l: ['Reality?']
         combo_ph:
             key: "ph"
             type: 'h-digraph'
-            l: ['l_alpha']
+            l: ['Reality?']
 
         combo_typeQ: {}
         combo_typeZ: {}
