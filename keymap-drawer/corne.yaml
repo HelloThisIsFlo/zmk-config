@@ -892,23 +892,23 @@ layers:
   - Q
   - W
   - E
+  - R
   - T
   - Y
   - U
   - I
   - O
   - P
-  - '['
-  - {t: A, h: '$$mdi:apple-keyboard-control$$'}
+  - {t: A, h: LEFT GUI}
   - {t: S, h: LEFT ALT}
-  - {t: D, h: LEFT GUI}
+  - {t: D, h: '$$mdi:apple-keyboard-control$$'}
   - {t: F, h: LEFT SHIFT}
   - G
   - H
   - {t: J, h: LEFT SHIFT}
-  - {t: K, h: LEFT GUI}
+  - {t: K, h: '$$mdi:apple-keyboard-control$$'}
   - {t: L, h: LEFT ALT}
-  - {t: '&bk SEMI', h: '$$mdi:apple-keyboard-control$$'}
+  - {t: '&bk SEMI', h: LEFT GUI}
   - Z
   - X
   - C
