@@ -36,7 +36,7 @@ layers:
   - {t: R, h: l_nav}
   - {t: '&bk SPACE', h: l_sym}
   - {t: '$$mdi:backspace-outline$$', h: l_fn, s: '$$mdi:backspace-reverse-outline$$'}
-  - ESC
+  - {t: '$$mdi:swap-horizontal$$', h: HDvv|QWERTY}
   l_akA:
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
@@ -888,43 +888,43 @@ layers:
   - {t: '$$mdi:cancel$$', type: none}
   - {t: '$$mdi:cancel$$', type: held}
   - {t: '$$mdi:cancel$$', type: held}
-  APTmak:
-  - V
-  - W
-  - F
-  - P
-  - B
-  - J
-  - L
-  - U
-  - Y
-  - ''''
-  - {t: R, h: '$$mdi:apple-keyboard-control$$'}
-  - {t: S, h: '$$mdi:apple-keyboard-option$$'}
-  - {t: T, h: '$$mdi:apple-keyboard-command$$'}
-  - {t: H, h: '$$mdi:apple-keyboard-shift$$'}
-  - K
-  - X
-  - {t: N, h: '$$mdi:apple-keyboard-shift$$'}
-  - {t: A, h: '$$mdi:apple-keyboard-command$$'}
-  - {t: I, h: '$$mdi:apple-keyboard-option$$'}
-  - {t: O, h: '$$mdi:apple-keyboard-control$$'}
-  - ;
-  - C
-  - G
-  - D
+  TmpPC:
   - Q
+  - W
+  - E
+  - T
+  - Y
+  - U
+  - I
+  - O
+  - P
+  - '['
+  - {t: A, h: '$$mdi:apple-keyboard-control$$'}
+  - {t: S, h: LEFT ALT}
+  - {t: D, h: LEFT GUI}
+  - {t: F, h: LEFT SHIFT}
+  - G
+  - H
+  - {t: J, h: LEFT SHIFT}
+  - {t: K, h: LEFT GUI}
+  - {t: L, h: LEFT ALT}
+  - {t: '&bk SEMI', h: '$$mdi:apple-keyboard-control$$'}
   - Z
+  - X
+  - C
+  - V
+  - B
+  - N
   - M
   - ','
   - .
   - /
-  - $$mdi:keyboard-tab$$
-  - $$mdi:keyboard-return$$
-  - {t: '$$mdi:keyboard-space$$', h: l_akN}
-  - E
-  - $$mdi:backspace-outline$$
-  - {t: '$$mdi:swap-horizontal$$', h: APTmak|HDvv}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
 combos:
 - p: [34, 35]
   k: l_cfg
