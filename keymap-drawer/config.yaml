@@ -281,9 +281,9 @@ parse_config:
         # Macros
         "&typeSemi": ";"
 
-        "&toggle_hdvv_aptmak":
+        "&toggle_hdvv_tmpPC":
             tap: $$mdi:swap-horizontal$$
-            hold: "APTmak|HDvv"
+            hold: "HDvv|QWERTY"
 
         # Empty
         "&none":

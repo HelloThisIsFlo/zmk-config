@@ -58,12 +58,12 @@ behaviors {
     };
 
 
-    toggle_hdvv_aptmak: toggle_hdvv_aptmak {
+    toggle_hdvv_tmpPC: toggle_hdvv_tmpPC {
         compatible = "zmk,behavior-tap-dance";
-        label = "toggle_hdvv_aptmak";
+        label = "toggle_hdvv_tmpPC";
         #binding-cells = <0>;
         tapping-term-ms = <200>;
-        bindings = <&none>, <&to l_alpha>, <&to APTmak>;
+        bindings = <&none>, <&to l_alpha>, <&to l_tmppc>;
     };
 
     skapp: sticky_key_app_switcher {
