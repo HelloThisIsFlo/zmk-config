@@ -1,4 +1,4 @@
-<svg width="1293" height="13183" viewBox="0 0 1293 13183" class="keymap" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="1293" height="13573" viewBox="0 0 1293 13573" class="keymap" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <defs>/* start glyphs */
 <svg id="escape">
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>location-exit</title>
@@ -314,7 +314,7 @@ path.combo {
 </g>
 <g transform="translate(170, 170)" class="key keypos-22">
 <rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key"/>
-<text x="0" y="0" class="key tap">L</text>
+<text x="0" y="0" class="key tap">L⛶</text>
 </g>
 <g transform="translate(238, 178)" class="key keypos-23">
 <rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key"/>
@@ -1308,7 +1308,121 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(150, 3506)" class="layer-Meality?">
+<g transform="translate(150, 3506)" class="layer-Realily?">
+<text x="0" y="28" class="label">Realily?:</text>
+<g transform="translate(0, 56)">
+<g transform="translate(34, 60)" class="key trans keypos-0">
+<rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key trans"/>
+</g>
+<g transform="translate(102, 42)" class="key trans keypos-1">
+<rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key trans"/>
+</g>
+<g transform="translate(170, 34)" class="key trans keypos-2">
+<rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key trans"/>
+</g>
+<g transform="translate(238, 42)" class="key trans keypos-3">
+<rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key trans"/>
+</g>
+<g transform="translate(306, 51)" class="key trans keypos-4">
+<rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key trans"/>
+</g>
+<g transform="translate(578, 51)" class="key trans keypos-5">
+<rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key trans"/>
+</g>
+<g transform="translate(646, 42)" class="key trans keypos-6">
+<rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key trans"/>
+</g>
+<g transform="translate(714, 34)" class="key trans keypos-7">
+<rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key trans"/>
+</g>
+<g transform="translate(782, 42)" class="key trans keypos-8">
+<rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key trans"/>
+</g>
+<g transform="translate(850, 60)" class="key trans keypos-9">
+<rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key trans"/>
+</g>
+<g transform="translate(34, 128)" class="key trans keypos-10">
+<rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key trans"/>
+</g>
+<g transform="translate(102, 110)" class="key keypos-11">
+<rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key"/>
+<text x="0" y="0" class="key tap">M</text>
+</g>
+<g transform="translate(170, 102)" class="key trans keypos-12">
+<rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key trans"/>
+</g>
+<g transform="translate(238, 110)" class="key trans keypos-13">
+<rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key trans"/>
+</g>
+<g transform="translate(306, 119)" class="key trans keypos-14">
+<rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key trans"/>
+</g>
+<g transform="translate(578, 119)" class="key trans keypos-15">
+<rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key trans"/>
+</g>
+<g transform="translate(646, 110)" class="key trans keypos-16">
+<rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key trans"/>
+</g>
+<g transform="translate(714, 102)" class="key trans keypos-17">
+<rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key trans"/>
+</g>
+<g transform="translate(782, 110)" class="key trans keypos-18">
+<rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key trans"/>
+</g>
+<g transform="translate(850, 128)" class="key trans keypos-19">
+<rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key trans"/>
+</g>
+<g transform="translate(34, 196)" class="key trans keypos-20">
+<rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key trans"/>
+</g>
+<g transform="translate(102, 178)" class="key trans keypos-21">
+<rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key trans"/>
+</g>
+<g transform="translate(170, 170)" class="key trans keypos-22">
+<rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key trans"/>
+</g>
+<g transform="translate(238, 178)" class="key trans keypos-23">
+<rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key trans"/>
+</g>
+<g transform="translate(306, 187)" class="key trans keypos-24">
+<rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key trans"/>
+</g>
+<g transform="translate(578, 187)" class="key trans keypos-25">
+<rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key trans"/>
+</g>
+<g transform="translate(646, 178)" class="key trans keypos-26">
+<rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key trans"/>
+</g>
+<g transform="translate(714, 170)" class="key trans keypos-27">
+<rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key trans"/>
+</g>
+<g transform="translate(782, 178)" class="key trans keypos-28">
+<rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key trans"/>
+</g>
+<g transform="translate(850, 196)" class="key trans keypos-29">
+<rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key trans"/>
+</g>
+<g transform="translate(204, 249)" class="key trans keypos-30">
+<rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key trans"/>
+</g>
+<g transform="translate(279, 259) rotate(15.0)" class="key trans keypos-31">
+<rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key trans"/>
+</g>
+<g transform="translate(358, 272) rotate(30.0)" class="key trans keypos-32">
+<rect rx="6" ry="6" x="-32" y="-49" width="64" height="98" class="key trans"/>
+</g>
+<g transform="translate(526, 272) rotate(-30.0)" class="key trans keypos-33">
+<rect rx="6" ry="6" x="-32" y="-49" width="64" height="98" class="key trans"/>
+</g>
+<g transform="translate(605, 259) rotate(-15.0)" class="key trans keypos-34">
+<rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key trans"/>
+</g>
+<g transform="translate(680, 249)" class="key trans keypos-35">
+<rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key trans"/>
+</g>
+</g>
+</g>
+<g transform="translate(150, 3895)" class="layer-Meality?">
 <text x="0" y="28" class="label">Meality?:</text>
 <g transform="translate(0, 56)">
 <g transform="translate(34, 60)" class="key keypos-0">
@@ -1427,7 +1541,7 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(150, 3895)" class="layer-Renlity?">
+<g transform="translate(150, 4285)" class="layer-Renlity?">
 <text x="0" y="28" class="label">Renlity?:</text>
 <g transform="translate(0, 56)">
 <g transform="translate(34, 60)" class="key trans keypos-0">
@@ -1541,7 +1655,7 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(150, 4285)" class="layer-Roality?">
+<g transform="translate(150, 4674)" class="layer-Roality?">
 <text x="0" y="28" class="label">Roality?:</text>
 <g transform="translate(0, 56)">
 <g transform="translate(34, 60)" class="key trans keypos-0">
@@ -1655,7 +1769,7 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(150, 4674)" class="layer-Realitp?">
+<g transform="translate(150, 5064)" class="layer-Realitp?">
 <text x="0" y="28" class="label">Realitp?:</text>
 <g transform="translate(0, 56)">
 <g transform="translate(34, 60)" class="key trans keypos-0">
@@ -1769,7 +1883,7 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(150, 5064)" class="layer-Reatity?">
+<g transform="translate(150, 5453)" class="layer-Reatity?">
 <text x="0" y="28" class="label">Reatity?:</text>
 <g transform="translate(0, 56)">
 <g transform="translate(34, 60)" class="key trans keypos-0">
@@ -1886,7 +2000,7 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(150, 5453)" class="layer-Realitu?">
+<g transform="translate(150, 5843)" class="layer-Realitu?">
 <text x="0" y="28" class="label">Realitu?:</text>
 <g transform="translate(0, 56)">
 <g transform="translate(34, 60)" class="key trans keypos-0">
@@ -2000,7 +2114,7 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(150, 5843)" class="layer-Weality?">
+<g transform="translate(150, 6232)" class="layer-Weality?">
 <text x="0" y="28" class="label">Weality?:</text>
 <g transform="translate(0, 56)">
 <g transform="translate(34, 60)" class="key keypos-0">
@@ -2115,7 +2229,7 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(150, 6232)" class="layer-Realitx?">
+<g transform="translate(150, 6622)" class="layer-Realitx?">
 <text x="0" y="28" class="label">Realitx?:</text>
 <g transform="translate(0, 56)">
 <g transform="translate(34, 60)" class="key trans keypos-0">
@@ -2230,7 +2344,7 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(150, 6622)" class="layer-Yeality?">
+<g transform="translate(150, 7011)" class="layer-Yeality?">
 <text x="0" y="28" class="label">Yeality?:</text>
 <g transform="translate(0, 56)">
 <g transform="translate(34, 60)" class="key trans keypos-0">
@@ -2344,7 +2458,7 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(150, 7011)" class="layer-Real.ty?">
+<g transform="translate(150, 7401)" class="layer-Real.ty?">
 <text x="0" y="28" class="label">Real.ty?:</text>
 <g transform="translate(0, 56)">
 <g transform="translate(34, 60)" class="key trans keypos-0">
@@ -2459,7 +2573,7 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(150, 7401)" class="layer-&lt;^v&gt;">
+<g transform="translate(150, 7790)" class="layer-&lt;^v&gt;">
 <text x="0" y="28" class="label">&lt;^v&gt;:</text>
 <g transform="translate(0, 56)">
 <g transform="translate(34, 60)" class="key keypos-0">
@@ -2608,7 +2722,7 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(150, 7790)" class="layer-=*+/">
+<g transform="translate(150, 8180)" class="layer-=*+/">
 <text x="0" y="28" class="label">=*+/:</text>
 <g transform="translate(0, 56)">
 <g transform="translate(34, 60)" class="key keypos-0">
@@ -2771,7 +2885,7 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(150, 8180)" class="layer-F*">
+<g transform="translate(150, 8569)" class="layer-F*">
 <text x="0" y="28" class="label">F*:</text>
 <g transform="translate(0, 56)">
 <g transform="translate(34, 60)" class="key keypos-0">
@@ -2928,7 +3042,7 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(150, 8569)" class="layer-1984">
+<g transform="translate(150, 8959)" class="layer-1984">
 <text x="0" y="28" class="label">1984:</text>
 <g transform="translate(0, 56)">
 <g transform="translate(34, 60)" class="key keypos-0">
@@ -3094,7 +3208,7 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(150, 8959)" class="layer-BIOS">
+<g transform="translate(150, 9348)" class="layer-BIOS">
 <text x="0" y="28" class="label">BIOS:</text>
 <g transform="translate(0, 56)">
 <g transform="translate(34, 60)" class="key keypos-0">
@@ -3248,7 +3362,7 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(150, 9348)" class="layer-Kafka">
+<g transform="translate(150, 9738)" class="layer-Kafka">
 <text x="0" y="28" class="label">Kafka:</text>
 <g transform="translate(0, 56)">
 <g transform="translate(34, 60)" class="key keypos-0">
@@ -3401,8 +3515,8 @@ path.combo {
 </g>
 </g>
 </g>
-<text x="150" y="9766" class="label">Combos:</text>
-<g transform="translate(150, 9738)" class="layer-combopos-0">
+<text x="150" y="10155" class="label">Combos:</text>
+<g transform="translate(150, 10127)" class="layer-combopos-0">
 <g transform="translate(0, 56)">
 <g transform="translate(34, 34)" class="key  combo-separate keypos-0">
 <rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key  combo-separate"/>
@@ -3518,7 +3632,7 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(445, 9738)" class="layer-combopos-1">
+<g transform="translate(445, 10127)" class="layer-combopos-1">
 <g transform="translate(0, 56)">
 <g transform="translate(34, 34)" class="key  combo-separate keypos-0">
 <rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key  combo-separate"/>
@@ -3634,7 +3748,7 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(740, 9738)" class="layer-combopos-2">
+<g transform="translate(740, 10127)" class="layer-combopos-2">
 <g transform="translate(0, 56)">
 <g transform="translate(34, 34)" class="key  combo-separate keypos-0">
 <rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key  combo-separate"/>
@@ -3750,7 +3864,7 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(1035, 9738)" class="layer-combopos-3">
+<g transform="translate(1035, 10127)" class="layer-combopos-3">
 <g transform="translate(0, 56)">
 <g transform="translate(34, 34)" class="key  combo-separate keypos-0">
 <rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key  combo-separate"/>
@@ -3868,7 +3982,7 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(150, 9947)" class="layer-combopos-4">
+<g transform="translate(150, 10337)" class="layer-combopos-4">
 <g transform="translate(0, 14)">
 <g transform="translate(34, 34)" class="key  combo-separate keypos-0">
 <rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key  combo-separate"/>
@@ -3986,7 +4100,7 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(445, 9947)" class="layer-combopos-5">
+<g transform="translate(445, 10337)" class="layer-combopos-5">
 <g transform="translate(0, 14)">
 <g transform="translate(34, 34)" class="key  combo-separate keypos-0">
 <rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key  combo-separate"/>
@@ -4104,7 +4218,7 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(740, 9947)" class="layer-combopos-6">
+<g transform="translate(740, 10337)" class="layer-combopos-6">
 <g transform="translate(0, 14)">
 <g transform="translate(34, 34)" class="key  combo-separate keypos-0">
 <rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key  combo-separate"/>
@@ -4222,7 +4336,7 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(1035, 9947)" class="layer-combopos-7">
+<g transform="translate(1035, 10337)" class="layer-combopos-7">
 <g transform="translate(0, 14)">
 <g transform="translate(34, 34)" class="key  combo-separate keypos-0">
 <rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key  combo-separate"/>
@@ -4340,7 +4454,7 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(150, 10114)" class="layer-combopos-8">
+<g transform="translate(150, 10504)" class="layer-combopos-8">
 <g transform="translate(0, 14)">
 <g transform="translate(34, 34)" class="key  combo-separate keypos-0">
 <rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key  combo-separate"/>
@@ -4458,7 +4572,7 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(445, 10114)" class="layer-combopos-9">
+<g transform="translate(445, 10504)" class="layer-combopos-9">
 <g transform="translate(0, 14)">
 <g transform="translate(34, 34)" class="key  combo-separate keypos-0">
 <rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key  combo-separate"/>
@@ -4574,7 +4688,7 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(740, 10114)" class="layer-combopos-10">
+<g transform="translate(740, 10504)" class="layer-combopos-10">
 <g transform="translate(0, 14)">
 <g transform="translate(34, 34)" class="key  combo-separate keypos-0">
 <rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key  combo-separate"/>
@@ -4692,7 +4806,7 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(1035, 10114)" class="layer-combopos-11">
+<g transform="translate(1035, 10504)" class="layer-combopos-11">
 <g transform="translate(0, 14)">
 <g transform="translate(34, 34)" class="key  combo-separate keypos-0">
 <rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key  combo-separate"/>
@@ -4808,7 +4922,7 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(150, 10282)" class="layer-combopos-12">
+<g transform="translate(150, 10671)" class="layer-combopos-12">
 <g transform="translate(0, 14)">
 <g transform="translate(34, 34)" class="key  combo-separate keypos-0">
 <rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key  combo-separate"/>
@@ -4926,7 +5040,7 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(445, 10282)" class="layer-combopos-13">
+<g transform="translate(445, 10671)" class="layer-combopos-13">
 <g transform="translate(0, 14)">
 <g transform="translate(34, 34)" class="key  combo-separate keypos-0">
 <rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key  combo-separate"/>
@@ -5044,7 +5158,7 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(740, 10282)" class="layer-combopos-14">
+<g transform="translate(740, 10671)" class="layer-combopos-14">
 <g transform="translate(0, 14)">
 <g transform="translate(34, 34)" class="key  combo-separate keypos-0">
 <rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key  combo-separate"/>
@@ -5163,7 +5277,7 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(1035, 10282)" class="layer-combopos-15">
+<g transform="translate(1035, 10671)" class="layer-combopos-15">
 <g transform="translate(0, 14)">
 <g transform="translate(34, 34)" class="key  combo-separate keypos-0">
 <rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key  combo-separate"/>
@@ -5281,7 +5395,7 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(150, 10449)" class="layer-combopos-16">
+<g transform="translate(150, 10839)" class="layer-combopos-16">
 <g transform="translate(0, 14)">
 <g transform="translate(34, 34)" class="key  combo-separate keypos-0">
 <rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key  combo-separate"/>
@@ -5399,7 +5513,7 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(445, 10449)" class="layer-combopos-17">
+<g transform="translate(445, 10839)" class="layer-combopos-17">
 <g transform="translate(0, 14)">
 <g transform="translate(34, 34)" class="key  combo-separate keypos-0">
 <rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key  combo-separate"/>
@@ -5517,7 +5631,7 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(740, 10449)" class="layer-combopos-18">
+<g transform="translate(740, 10839)" class="layer-combopos-18">
 <g transform="translate(0, 14)">
 <g transform="translate(34, 34)" class="key  combo-separate keypos-0">
 <rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key  combo-separate"/>
@@ -5635,7 +5749,7 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(1035, 10449)" class="layer-combopos-19">
+<g transform="translate(1035, 10839)" class="layer-combopos-19">
 <g transform="translate(0, 14)">
 <g transform="translate(34, 34)" class="key  combo-separate keypos-0">
 <rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key  combo-separate"/>
@@ -5751,7 +5865,7 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(150, 10617)" class="layer-combopos-20">
+<g transform="translate(150, 11006)" class="layer-combopos-20">
 <g transform="translate(0, 14)">
 <g transform="translate(34, 34)" class="key  combo-separate keypos-0">
 <rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key  combo-separate"/>
@@ -5870,7 +5984,7 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(445, 10617)" class="layer-combopos-21">
+<g transform="translate(445, 11006)" class="layer-combopos-21">
 <g transform="translate(0, 14)">
 <g transform="translate(34, 34)" class="key  combo-separate keypos-0">
 <rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key  combo-separate"/>
@@ -5986,7 +6100,7 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(740, 10617)" class="layer-combopos-22">
+<g transform="translate(740, 11006)" class="layer-combopos-22">
 <g transform="translate(0, 14)">
 <g transform="translate(34, 34)" class="key  combo-separate keypos-0">
 <rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key  combo-separate"/>
@@ -6103,7 +6217,7 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(1035, 10617)" class="layer-combopos-23">
+<g transform="translate(1035, 11006)" class="layer-combopos-23">
 <g transform="translate(0, 14)">
 <g transform="translate(34, 34)" class="key  combo-separate keypos-0">
 <rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key  combo-separate"/>
@@ -6221,7 +6335,7 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(150, 10784)" class="layer-combopos-24">
+<g transform="translate(150, 11173)" class="layer-combopos-24">
 <g transform="translate(0, 14)">
 <g transform="translate(34, 34)" class="key  combo-separate keypos-0">
 <rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key  combo-separate"/>
@@ -6339,7 +6453,7 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(445, 10784)" class="layer-combopos-25">
+<g transform="translate(445, 11173)" class="layer-combopos-25">
 <g transform="translate(0, 14)">
 <g transform="translate(34, 34)" class="key  combo-separate keypos-0">
 <rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key  combo-separate"/>
@@ -6457,7 +6571,7 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(740, 10784)" class="layer-combopos-26">
+<g transform="translate(740, 11173)" class="layer-combopos-26">
 <g transform="translate(0, 14)">
 <g transform="translate(34, 34)" class="key  combo-separate keypos-0">
 <rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key  combo-separate"/>
@@ -6575,7 +6689,7 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(1035, 10784)" class="layer-combopos-27">
+<g transform="translate(1035, 11173)" class="layer-combopos-27">
 <g transform="translate(0, 14)">
 <g transform="translate(34, 34)" class="key  combo-separate keypos-0">
 <rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key  combo-separate"/>
@@ -6694,7 +6808,7 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(150, 10951)" class="layer-combopos-28">
+<g transform="translate(150, 11341)" class="layer-combopos-28">
 <g transform="translate(0, 14)">
 <g transform="translate(34, 34)" class="key  combo-separate keypos-0">
 <rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key  combo-separate"/>
@@ -6812,7 +6926,7 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(445, 10951)" class="layer-combopos-29">
+<g transform="translate(445, 11341)" class="layer-combopos-29">
 <g transform="translate(0, 14)">
 <g transform="translate(34, 34)" class="key  combo-separate keypos-0">
 <rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key  combo-separate"/>
@@ -6931,7 +7045,7 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(740, 10951)" class="layer-combopos-30">
+<g transform="translate(740, 11341)" class="layer-combopos-30">
 <g transform="translate(0, 14)">
 <g transform="translate(34, 34)" class="key  combo-separate keypos-0">
 <rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key  combo-separate"/>
@@ -7050,7 +7164,7 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(1035, 10951)" class="layer-combopos-31">
+<g transform="translate(1035, 11341)" class="layer-combopos-31">
 <g transform="translate(0, 14)">
 <g transform="translate(34, 34)" class="key  combo-separate keypos-0">
 <rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key  combo-separate"/>
@@ -7168,7 +7282,7 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(150, 11119)" class="layer-combopos-32">
+<g transform="translate(150, 11508)" class="layer-combopos-32">
 <g transform="translate(0, 14)">
 <g transform="translate(34, 34)" class="key  combo-separate keypos-0">
 <rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key  combo-separate"/>
@@ -7286,7 +7400,7 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(445, 11119)" class="layer-combopos-33">
+<g transform="translate(445, 11508)" class="layer-combopos-33">
 <g transform="translate(0, 14)">
 <g transform="translate(34, 34)" class="key  combo-separate keypos-0">
 <rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key  combo-separate"/>
@@ -7404,7 +7518,7 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(740, 11119)" class="layer-combopos-34">
+<g transform="translate(740, 11508)" class="layer-combopos-34">
 <g transform="translate(0, 14)">
 <g transform="translate(34, 34)" class="key  combo-separate keypos-0">
 <rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key  combo-separate"/>
@@ -7522,7 +7636,7 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(1035, 11119)" class="layer-combopos-35">
+<g transform="translate(1035, 11508)" class="layer-combopos-35">
 <g transform="translate(0, 14)">
 <g transform="translate(34, 34)" class="key  combo-separate keypos-0">
 <rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key  combo-separate"/>
@@ -7641,7 +7755,7 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(150, 11286)" class="layer-combopos-36">
+<g transform="translate(150, 11676)" class="layer-combopos-36">
 <g transform="translate(0, 14)">
 <g transform="translate(34, 34)" class="key  combo-separate keypos-0">
 <rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key  combo-separate"/>
@@ -7760,7 +7874,7 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(445, 11286)" class="layer-combopos-37">
+<g transform="translate(445, 11676)" class="layer-combopos-37">
 <g transform="translate(0, 14)">
 <g transform="translate(34, 34)" class="key  combo-separate keypos-0">
 <rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key  combo-separate"/>
@@ -7879,7 +7993,7 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(740, 11286)" class="layer-combopos-38">
+<g transform="translate(740, 11676)" class="layer-combopos-38">
 <g transform="translate(0, 14)">
 <g transform="translate(34, 34)" class="key  combo-separate keypos-0">
 <rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key  combo-separate"/>
@@ -7998,7 +8112,7 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(1035, 11286)" class="layer-combopos-39">
+<g transform="translate(1035, 11676)" class="layer-combopos-39">
 <g transform="translate(0, 14)">
 <g transform="translate(34, 34)" class="key  combo-separate keypos-0">
 <rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key  combo-separate"/>
@@ -8117,7 +8231,7 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(150, 11453)" class="layer-combopos-40">
+<g transform="translate(150, 11843)" class="layer-combopos-40">
 <g transform="translate(0, 14)">
 <g transform="translate(34, 34)" class="key  combo-separate keypos-0">
 <rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key  combo-separate"/>
@@ -8236,7 +8350,7 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(445, 11453)" class="layer-combopos-41">
+<g transform="translate(445, 11843)" class="layer-combopos-41">
 <g transform="translate(0, 14)">
 <g transform="translate(34, 34)" class="key  combo-separate keypos-0">
 <rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key  combo-separate"/>
@@ -8355,7 +8469,7 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(740, 11453)" class="layer-combopos-42">
+<g transform="translate(740, 11843)" class="layer-combopos-42">
 <g transform="translate(0, 14)">
 <g transform="translate(34, 34)" class="key  combo-separate keypos-0">
 <rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key  combo-separate"/>
@@ -8471,7 +8585,7 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(1035, 11453)" class="layer-combopos-43">
+<g transform="translate(1035, 11843)" class="layer-combopos-43">
 <g transform="translate(0, 14)">
 <g transform="translate(34, 34)" class="key  combo-separate keypos-0">
 <rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key  combo-separate"/>
@@ -8587,7 +8701,7 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(150, 11621)" class="layer-combopos-44">
+<g transform="translate(150, 12010)" class="layer-combopos-44">
 <g transform="translate(0, 14)">
 <g transform="translate(34, 34)" class="key  combo-separate keypos-0">
 <rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key  combo-separate"/>
@@ -8704,7 +8818,7 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(445, 11621)" class="layer-combopos-45">
+<g transform="translate(445, 12010)" class="layer-combopos-45">
 <g transform="translate(0, 14)">
 <g transform="translate(34, 34)" class="key  combo-separate keypos-0">
 <rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key  combo-separate"/>
@@ -8820,7 +8934,7 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(740, 11621)" class="layer-combopos-46">
+<g transform="translate(740, 12010)" class="layer-combopos-46">
 <g transform="translate(0, 14)">
 <g transform="translate(34, 34)" class="key  combo-separate keypos-0">
 <rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key  combo-separate"/>
@@ -8936,7 +9050,7 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(1035, 11621)" class="layer-combopos-47">
+<g transform="translate(1035, 12010)" class="layer-combopos-47">
 <g transform="translate(0, 14)">
 <g transform="translate(34, 34)" class="key  combo-separate keypos-0">
 <rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key  combo-separate"/>
@@ -9053,7 +9167,7 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(150, 11788)" class="layer-combopos-48">
+<g transform="translate(150, 12178)" class="layer-combopos-48">
 <g transform="translate(0, 14)">
 <g transform="translate(34, 34)" class="key  combo-separate keypos-0">
 <rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key  combo-separate"/>
@@ -9170,7 +9284,7 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(445, 11788)" class="layer-combopos-49">
+<g transform="translate(445, 12178)" class="layer-combopos-49">
 <g transform="translate(0, 14)">
 <g transform="translate(34, 34)" class="key  combo-separate keypos-0">
 <rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key  combo-separate"/>
@@ -9286,7 +9400,7 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(740, 11788)" class="layer-combopos-50">
+<g transform="translate(740, 12178)" class="layer-combopos-50">
 <g transform="translate(0, 14)">
 <g transform="translate(34, 34)" class="key  combo-separate keypos-0">
 <rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key  combo-separate"/>
@@ -9402,7 +9516,7 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(1035, 11788)" class="layer-combopos-51">
+<g transform="translate(1035, 12178)" class="layer-combopos-51">
 <g transform="translate(0, 14)">
 <g transform="translate(34, 34)" class="key  combo-separate keypos-0">
 <rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key  combo-separate"/>
@@ -9518,7 +9632,7 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(150, 11956)" class="layer-combopos-52">
+<g transform="translate(150, 12345)" class="layer-combopos-52">
 <g transform="translate(0, 14)">
 <g transform="translate(34, 34)" class="key  combo-separate keypos-0">
 <rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key  combo-separate"/>
@@ -9634,7 +9748,7 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(445, 11956)" class="layer-combopos-53">
+<g transform="translate(445, 12345)" class="layer-combopos-53">
 <g transform="translate(0, 14)">
 <g transform="translate(34, 34)" class="key  combo-separate keypos-0">
 <rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key  combo-separate"/>
@@ -9750,7 +9864,7 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(740, 11956)" class="layer-combopos-54">
+<g transform="translate(740, 12345)" class="layer-combopos-54">
 <g transform="translate(0, 14)">
 <g transform="translate(34, 34)" class="key  combo-separate keypos-0">
 <rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key  combo-separate"/>
@@ -9866,7 +9980,7 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(1035, 11956)" class="layer-combopos-55">
+<g transform="translate(1035, 12345)" class="layer-combopos-55">
 <g transform="translate(0, 14)">
 <g transform="translate(34, 34)" class="key  combo-separate keypos-0">
 <rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key  combo-separate"/>
@@ -9982,7 +10096,7 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(150, 12123)" class="layer-combopos-56">
+<g transform="translate(150, 12512)" class="layer-combopos-56">
 <g transform="translate(0, 14)">
 <g transform="translate(34, 34)" class="key  combo-separate keypos-0">
 <rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key  combo-separate"/>
@@ -10098,7 +10212,7 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(445, 12123)" class="layer-combopos-57">
+<g transform="translate(445, 12512)" class="layer-combopos-57">
 <g transform="translate(0, 14)">
 <g transform="translate(34, 34)" class="key  combo-separate keypos-0">
 <rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key  combo-separate"/>
@@ -10214,7 +10328,7 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(740, 12123)" class="layer-combopos-58">
+<g transform="translate(740, 12512)" class="layer-combopos-58">
 <g transform="translate(0, 14)">
 <g transform="translate(34, 34)" class="key  combo-separate keypos-0">
 <rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key  combo-separate"/>
@@ -10330,7 +10444,7 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(1035, 12123)" class="layer-combopos-59">
+<g transform="translate(1035, 12512)" class="layer-combopos-59">
 <g transform="translate(0, 14)">
 <g transform="translate(34, 34)" class="key  combo-separate keypos-0">
 <rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key  combo-separate"/>
@@ -10446,7 +10560,7 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(150, 12290)" class="layer-combopos-60">
+<g transform="translate(150, 12680)" class="layer-combopos-60">
 <g transform="translate(0, 14)">
 <g transform="translate(34, 34)" class="key  combo-separate keypos-0">
 <rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key  combo-separate"/>
@@ -10562,7 +10676,7 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(445, 12290)" class="layer-combopos-61">
+<g transform="translate(445, 12680)" class="layer-combopos-61">
 <g transform="translate(0, 14)">
 <g transform="translate(34, 34)" class="key  combo-separate keypos-0">
 <rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key  combo-separate"/>
@@ -10678,7 +10792,7 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(740, 12290)" class="layer-combopos-62">
+<g transform="translate(740, 12680)" class="layer-combopos-62">
 <g transform="translate(0, 14)">
 <g transform="translate(34, 34)" class="key  combo-separate keypos-0">
 <rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key  combo-separate"/>
@@ -10794,7 +10908,7 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(1035, 12290)" class="layer-combopos-63">
+<g transform="translate(1035, 12680)" class="layer-combopos-63">
 <g transform="translate(0, 14)">
 <g transform="translate(34, 34)" class="key  combo-separate keypos-0">
 <rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key  combo-separate"/>
@@ -10910,7 +11024,7 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(150, 12458)" class="layer-combopos-64">
+<g transform="translate(150, 12847)" class="layer-combopos-64">
 <g transform="translate(0, 14)">
 <g transform="translate(34, 34)" class="key  combo-separate keypos-0">
 <rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key  combo-separate"/>
@@ -11028,7 +11142,7 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(445, 12458)" class="layer-combopos-65">
+<g transform="translate(445, 12847)" class="layer-combopos-65">
 <g transform="translate(0, 14)">
 <g transform="translate(34, 34)" class="key  combo-separate keypos-0">
 <rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key  combo-separate"/>
@@ -11146,7 +11260,7 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(740, 12458)" class="layer-combopos-66">
+<g transform="translate(740, 12847)" class="layer-combopos-66">
 <g transform="translate(0, 14)">
 <g transform="translate(34, 34)" class="key  combo-separate keypos-0">
 <rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key  combo-separate"/>
@@ -11264,7 +11378,7 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(1035, 12458)" class="layer-combopos-67">
+<g transform="translate(1035, 12847)" class="layer-combopos-67">
 <g transform="translate(0, 14)">
 <g transform="translate(34, 34)" class="key  combo-separate keypos-0">
 <rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key  combo-separate"/>
@@ -11380,7 +11494,7 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(150, 12625)" class="layer-combopos-68">
+<g transform="translate(150, 13015)" class="layer-combopos-68">
 <g transform="translate(0, 14)">
 <g transform="translate(34, 34)" class="key  combo-separate keypos-0">
 <rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key  combo-separate"/>
@@ -11498,7 +11612,7 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(445, 12625)" class="layer-combopos-69">
+<g transform="translate(445, 13015)" class="layer-combopos-69">
 <g transform="translate(0, 14)">
 <g transform="translate(34, 34)" class="key  combo-separate keypos-0">
 <rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key  combo-separate"/>
@@ -11616,7 +11730,7 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(740, 12625)" class="layer-combopos-70">
+<g transform="translate(740, 13015)" class="layer-combopos-70">
 <g transform="translate(0, 14)">
 <g transform="translate(34, 34)" class="key  combo-separate keypos-0">
 <rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key  combo-separate"/>
@@ -11734,7 +11848,7 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(1035, 12625)" class="layer-combopos-71">
+<g transform="translate(1035, 13015)" class="layer-combopos-71">
 <g transform="translate(0, 14)">
 <g transform="translate(34, 34)" class="key  combo-separate keypos-0">
 <rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key  combo-separate"/>
@@ -11852,7 +11966,7 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(150, 12792)" class="layer-combopos-72">
+<g transform="translate(150, 13182)" class="layer-combopos-72">
 <g transform="translate(0, 14)">
 <g transform="translate(34, 34)" class="key  combo-separate keypos-0">
 <rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key  combo-separate"/>
@@ -11970,7 +12084,7 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(445, 12792)" class="layer-combopos-73">
+<g transform="translate(445, 13182)" class="layer-combopos-73">
 <g transform="translate(0, 14)">
 <g transform="translate(34, 34)" class="key  combo-separate keypos-0">
 <rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key  combo-separate"/>
@@ -12088,7 +12202,7 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(740, 12792)" class="layer-combopos-74">
+<g transform="translate(740, 13182)" class="layer-combopos-74">
 <g transform="translate(0, 14)">
 <g transform="translate(34, 34)" class="key  combo-separate keypos-0">
 <rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key  combo-separate"/>
@@ -12204,7 +12318,7 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(1035, 12792)" class="layer-combopos-75">
+<g transform="translate(1035, 13182)" class="layer-combopos-75">
 <g transform="translate(0, 14)">
 <g transform="translate(34, 34)" class="key  combo-separate keypos-0">
 <rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key  combo-separate"/>
@@ -12322,7 +12436,7 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(150, 12960)" class="layer-combopos-76">
+<g transform="translate(150, 13349)" class="layer-combopos-76">
 <g transform="translate(0, 14)">
 <g transform="translate(34, 34)" class="key  combo-separate keypos-0">
 <rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key  combo-separate"/>
@@ -12440,7 +12554,7 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(445, 12960)" class="layer-combopos-77">
+<g transform="translate(445, 13349)" class="layer-combopos-77">
 <g transform="translate(0, 14)">
 <g transform="translate(34, 34)" class="key  combo-separate keypos-0">
 <rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key  combo-separate"/>
@@ -12558,7 +12672,7 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(740, 12960)" class="layer-combopos-78">
+<g transform="translate(740, 13349)" class="layer-combopos-78">
 <g transform="translate(0, 14)">
 <g transform="translate(34, 34)" class="key  combo-separate keypos-0">
 <rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key  combo-separate"/>
