@@ -51,7 +51,7 @@ ak_X          ak_W         ak_M         ak_G            &bk J                   
 
 &hml LCTRL S  &hml LALT C  hml_LGUI_N   hml_LSHIFT_T    ak_K                           &CmmaSemi   hmr_LSHIFT_A  hmr_LGUI_E  hmr_LALT_I  &hmr LCTRL H
 
-&bk V         ak_P         &bk L        ak_D            &SlshStar                      &MinusPlus  ak_U          ak_O        ak_Y        ak_F
+&bk V         ak_P         ak_L         ak_D            &SlshStar                      &MinusPlus  ak_U          ak_O        ak_Y        ak_F
 
                         ________       &blt l_nav RETURN    &blt l_nav R        &blt l_sym SPACE &mm_bspc_del &toggle_hdvv_winPC
                         >;
@@ -136,6 +136,18 @@ ________   ________   ________   ________   ________          ________   _______
                         ________   ________   ________      ________   ________   ________
                         >;
                 };
+
+
+                l_akL {
+                        label = "Realily?";
+                        bindings = <
+________   ________   ________   ________   ________          ________   ________   ________   ________   ________
+________   &bk M      ________   ________   ________          ________   ________   ________   ________   ________
+________   ________   ___L____   ________   ________          ________   ________   ________   ________   ________
+                        ________   ________   ________      ________   ________   ________
+                        >;
+                };
+
 
                 l_akM {
                         label = "Meality?";
