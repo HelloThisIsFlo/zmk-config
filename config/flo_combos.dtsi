@@ -56,7 +56,7 @@ COMBO_ANY_ONE_HAND(             sall,            &bk LG(A),                     
 COMBO_LAY_ONE_HAND(l_alpha_aks, selword,         &m_selword,                        LB4             LB0                       )
 COMBO_ANY_ONE_HAND(             undo,            &bk LG(Z),                             LB3     LB1                           )
 COMBO_ANY_ONE_HAND(             redo,            &bk LG(LS(Z)),                         LB3 LB2 LB1                           )
-COMBO_ANY_ONE_HAND(             copy,            &lk LG(X) LG(C),                       LB3 LB2                               )
+// COMBO_ANY_ONE_HAND(             copy,            &lk LG(X) LG(C),                       LB3 LB2                               )
 COMBO_ANY_ONE_HAND(             pste,            &lk LG(LS(LA(V))) LG(V),                   LB2 LB1                           )
 COMBO_LAY_ONE_HAND(l_alpha_aks, cloz,            &bk LG(W),                             LM3                                   \
                                                                                         LB3                                   )
