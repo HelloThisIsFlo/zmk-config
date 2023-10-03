@@ -967,8 +967,6 @@ combos:
   k: '&bk LG(Z)'
 - p: [21, 22, 23]
   k: '&bk LG(LS(Z))'
-- p: [21, 22]
-  k: {t: '&bk LG(C)', h: '&bk LG(X)'}
 - p: [22, 23]
   k: {t: '&bk LG(V)', h: '&bk LG(LS(LA(V)))'}
 - p: [11, 21]
