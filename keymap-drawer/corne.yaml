@@ -382,7 +382,7 @@ layers:
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
-  - {t: ' ', type: trans}
+  - N
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
@@ -409,7 +409,7 @@ layers:
   - {t: ' ', type: trans}
   Renlity?:
   - {t: ' ', type: trans}
-  - {t: ' ', type: trans}
+  - M
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
@@ -1120,7 +1120,7 @@ combos:
   a: top
   o: -0.2
   type: h-digraph
-- p: [10, 11, 13]
+- p: [11, 12, 13]
   k: tch
   l: ['Reality?']
   a: bottom
