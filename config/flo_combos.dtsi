@@ -69,6 +69,11 @@ COMBO_LAY_ONE_HAND(l_alpha_aks, quit,            &bk LG(Q),                     
 COMBO_LAY_ONE_HAND(l_alpha_aks, findsel,         &m_findsel,                        LM4                                       \
                                                                                                     LB0                       )
 
+COMBO_ANY_ONE_HAND(             bspc,            &bk BSPC,                                                    RT1 RT2         )
+COMBO_ANY_ONE_HAND(             del,             &bk DEL,                                                         RT2 RT3     )
+COMBO_LAY_ONE_HAND(l_alpha_aks, delWord,         &bk LA(BSPC),                                                RT1 RT2 RT3     )
+COMBO_LAY_ONE_HAND(l_nav,       delLine,         &bk LG(BSPC),                                                RT1 RT2 RT3     )
+
 //
 // type a glyph (tiny board accommodation)
 //
@@ -77,8 +82,8 @@ COMBO_LAY_ONE_HAND(l_alpha_aks, typeQ,           &lk_qu Q U,                    
 COMBO_LAY_ONE_HAND(l_alpha_aks, typeZ,           &bk Z,                                         LT1 LT0                       )
 COMBO_LAY_ONE_HAND(l_alpha_aks, typeColn,        &lk LA(SEMI) COLON,                                          RT1     RT3     )
 COMBO_LAY_ONE_HAND(l_alpha_aks, typeSemi,        &bk SEMI,                                                RM0 RM1             )
-COMBO_LAY_ONE_HAND(l_alpha_aks, typeExcl,        &bk EXCL,                                                    RT1 RT2         )
-COMBO_LAY_ONE_HAND(l_alpha_aks, typeQues,        &bk QMARK,                                                       RT2 RT3     )
+// COMBO_LAY_ONE_HAND(l_alpha_aks, typeExcl,        &bk EXCL,                                                    RT1 RT2         )
+// COMBO_LAY_ONE_HAND(l_alpha_aks, typeQues,        &bk QMARK,                                                       RT2 RT3     )
 COMBO_LAY_ONE_HAND(l_alpha_aks, typeGrav,        &bk GRAVE,                                                           RT3 RT4 )
 COMBO_LAY_ONE_HAND(l_alpha_aks, typeatMk,        &lk LS(LA(SEMI)) AT_SIGN,                                RT0 RT1             ) // @ (№ if held)
 COMBO_LAY_ONE_HAND(l_alpha_aks, typeUnder,       &bk UNDER,                                                   RB1     RB3     ) // _
