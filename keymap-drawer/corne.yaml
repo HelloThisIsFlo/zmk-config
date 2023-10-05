@@ -1170,39 +1170,35 @@ combos:
   k: '&typePnIve'
   l: ['Reality?', 'Raality?', 'Reabity?', 'Deality?', 'Reelity?', 'Realify?', 'Realitg?', 'Reaiity?', 'Reakity?', 'Realily?', 'Meality?', 'Renlity?', 'Roality?',
     'Realitp?', 'Reatity?', 'Realitu?', 'Weality?', 'Realitx?', 'Yeality?', 'Real.ty?']
-- p: [28, 31]
-  k: '&typePnYour'
-  l: ['Reality?', 'Raality?', 'Reabity?', 'Deality?', 'Reelity?', 'Realify?', 'Realitg?', 'Reaiity?', 'Reakity?', 'Realily?', 'Meality?', 'Renlity?', 'Roality?',
-    'Realitp?', 'Reatity?', 'Realitu?', 'Weality?', 'Realitx?', 'Yeality?', 'Real.ty?']
-- p: [21, 28]
+- p: [28, 30]
   k: '&typePnYoure'
   l: ['Reality?', 'Raality?', 'Reabity?', 'Deality?', 'Reelity?', 'Realify?', 'Realitg?', 'Reaiity?', 'Reakity?', 'Realily?', 'Meality?', 'Renlity?', 'Roality?',
     'Realitp?', 'Reatity?', 'Realitu?', 'Weality?', 'Realitx?', 'Yeality?', 'Real.ty?']
-- p: [22, 28]
+- p: [28, 22]
   k: '&typePnYoull'
   l: ['Reality?', 'Raality?', 'Reabity?', 'Deality?', 'Reelity?', 'Realify?', 'Realitg?', 'Reaiity?', 'Reakity?', 'Realily?', 'Meality?', 'Renlity?', 'Roality?',
     'Realitp?', 'Reatity?', 'Realitu?', 'Weality?', 'Realitx?', 'Yeality?', 'Real.ty?']
-- p: [23, 28]
+- p: [28, 23]
   k: '&typePnYoud'
   l: ['Reality?', 'Raality?', 'Reabity?', 'Deality?', 'Reelity?', 'Realify?', 'Realitg?', 'Reaiity?', 'Reakity?', 'Realily?', 'Meality?', 'Renlity?', 'Roality?',
     'Realitp?', 'Reatity?', 'Realitu?', 'Weality?', 'Realitx?', 'Yeality?', 'Real.ty?']
-- p: [20, 28]
+- p: [28, 20]
   k: '&typePnYouve'
   l: ['Reality?', 'Raality?', 'Reabity?', 'Deality?', 'Reelity?', 'Realify?', 'Realitg?', 'Reaiity?', 'Reakity?', 'Realily?', 'Meality?', 'Renlity?', 'Roality?',
     'Realitp?', 'Reatity?', 'Realitu?', 'Weality?', 'Realitx?', 'Yeality?', 'Real.ty?']
-- p: [0, 31]
+- p: [1, 30]
   k: '&typePnWere'
   l: ['Reality?', 'Raality?', 'Reabity?', 'Deality?', 'Reelity?', 'Realify?', 'Realitg?', 'Reaiity?', 'Reakity?', 'Realily?', 'Meality?', 'Renlity?', 'Roality?',
     'Realitp?', 'Reatity?', 'Realitu?', 'Weality?', 'Realitx?', 'Yeality?', 'Real.ty?']
-- p: [0, 2]
+- p: [1, 12]
   k: '&typePnWell'
   l: ['Reality?', 'Raality?', 'Reabity?', 'Deality?', 'Reelity?', 'Realify?', 'Realitg?', 'Reaiity?', 'Reakity?', 'Realily?', 'Meality?', 'Renlity?', 'Roality?',
     'Realitp?', 'Reatity?', 'Realitu?', 'Weality?', 'Realitx?', 'Yeality?', 'Real.ty?']
-- p: [0, 3]
+- p: [1, 13]
   k: '&typePnWed'
   l: ['Reality?', 'Raality?', 'Reabity?', 'Deality?', 'Reelity?', 'Realify?', 'Realitg?', 'Reaiity?', 'Reakity?', 'Realily?', 'Meality?', 'Renlity?', 'Roality?',
     'Realitp?', 'Reatity?', 'Realitu?', 'Weality?', 'Realitx?', 'Yeality?', 'Real.ty?']
-- p: [0, 4]
+- p: [0, 1]
   k: '&typePnWeve'
   l: ['Reality?', 'Raality?', 'Reabity?', 'Deality?', 'Reelity?', 'Realify?', 'Realitg?', 'Reaiity?', 'Reakity?', 'Realily?', 'Meality?', 'Renlity?', 'Roality?',
     'Realitp?', 'Reatity?', 'Realitu?', 'Weality?', 'Realitx?', 'Yeality?', 'Real.ty?']
