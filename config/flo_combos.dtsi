@@ -127,22 +127,26 @@ COMBO_LAY_TWO_HAND(l_alpha_aks, pnIll,           &typePnIll,                    
 COMBO_LAY_TWO_HAND(l_alpha_aks, pnId,            &typePnId,                                                           RM3     \
                                                                                                 LB1                           ) // "I'd "
 COMBO_LAY_ONE_HAND(l_alpha_aks, pnIve,           &typePnIve,                                                          RM3     \
-                                                                                                                          LB4 ) // "I've "
+                                                                                    LB4                                       ) // "I've "
 
 /***** You  ****/
-COMBO_LAY_TWO_HAND(l_alpha_aks, pnYour,          &typePnYour,                                                         RB3     \
-                                                                                                LH1                           ) // "Your "
-COMBO_LAY_TWO_HAND(l_alpha_aks, pnYoure,         &typePnYoure,                          LB3                           RB3     ) // "You're "
-COMBO_LAY_TWO_HAND(l_alpha_aks, pnYoull,         &typePnYoull,                              LB2                       RB3     ) // "You'll "
-COMBO_LAY_TWO_HAND(l_alpha_aks, pnYoud,          &typePnYoud,                                   LB1                   RB3     ) // "You'd "
-COMBO_LAY_TWO_HAND(l_alpha_aks, pnYouve,         &typePnYouve,                      LB4                               RB3     ) // "You've "
+COMBO_LAY_TWO_HAND(l_alpha_aks, pnYoure,         &typePnYoure,                                                        RB3     \
+                                                                                                    LH0                       ) // "You're "
+COMBO_LAY_TWO_HAND(l_alpha_aks, pnYoull,         &typePnYoull,                                                        RB3     \
+                                                                                            LB2                               ) // "You'll "
+COMBO_LAY_TWO_HAND(l_alpha_aks, pnYoud,          &typePnYoud,                                                         RB3     \
+                                                                                                LB1                           ) // "You'd "
+COMBO_LAY_TWO_HAND(l_alpha_aks, pnYouve,         &typePnYouve,                                                        RB3     \
+                                                                                    LB4                                       ) // "You've "
 
 /***** We  ****/
-COMBO_LAY_ONE_HAND(l_alpha_aks, pnWere,          &typePnWere,                       LT4                                       \
-                                                                                                LH1                           ) // "We're "
-COMBO_LAY_ONE_HAND(l_alpha_aks, pnWell,          &typePnWell,                       LT4     LT2                               ) // "We'll "
-COMBO_LAY_ONE_HAND(l_alpha_aks, pnWed,           &typePnWed,                        LT4         LT1                           ) // "We'd "
-COMBO_LAY_ONE_HAND(l_alpha_aks, pnWeve,          &typePnWeve,                       LT4             LT0                       ) // "We've "
+COMBO_LAY_ONE_HAND(l_alpha_aks, pnWere,          &typePnWere,                           LT3                                   \
+                                                                                                    LH0                       ) // "We're "
+COMBO_LAY_ONE_HAND(l_alpha_aks, pnWell,          &typePnWell,                           LT3                                   \
+                                                                                            LM2                               ) // "We'll "
+COMBO_LAY_ONE_HAND(l_alpha_aks, pnWed,           &typePnWed,                            LT3                                   \
+                                                                                                LM1                           ) // "We'd "
+COMBO_LAY_ONE_HAND(l_alpha_aks, pnWeve,          &typePnWeve,                       LT4 LT3                                   ) // "We've "
 
 #endif
 
