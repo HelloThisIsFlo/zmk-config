@@ -1026,6 +1026,17 @@ combos:
   k: '&m_findsel'
   l: ['Reality?', 'Raality?', 'Reabity?', 'Deality?', 'Reelity?', 'Realify?', 'Realitg?', 'Reaiity?', 'Reakity?', 'Realily?', 'Meality?', 'Renlity?', 'Roality?',
     'Realitp?', 'Reatity?', 'Realitu?', 'Weality?', 'Realitx?', 'Yeality?', 'Real.ty?']
+- p: [6, 7]
+  k: '&bk BSPC'
+- p: [7, 8]
+  k: '&bk DEL'
+- p: [6, 7, 8]
+  k: '&bk LA(BSPC)'
+  l: ['Reality?', 'Raality?', 'Reabity?', 'Deality?', 'Reelity?', 'Realify?', 'Realitg?', 'Reaiity?', 'Reakity?', 'Realily?', 'Meality?', 'Renlity?', 'Roality?',
+    'Realitp?', 'Reatity?', 'Realitu?', 'Weality?', 'Realitx?', 'Yeality?', 'Real.ty?']
+- p: [6, 7, 8]
+  k: '&bk LG(BSPC)'
+  l: [<^v>]
 - p: [1, 3]
   k: {t: '&Qu U', h: Q}
   l: ['Reality?', 'Raality?', 'Reabity?', 'Deality?', 'Reelity?', 'Realify?', 'Realitg?', 'Reaiity?', 'Reakity?', 'Realily?', 'Meality?', 'Renlity?', 'Roality?',
@@ -1040,14 +1051,6 @@ combos:
     'Realitp?', 'Reatity?', 'Realitu?', 'Weality?', 'Realitx?', 'Yeality?', 'Real.ty?']
 - p: [15, 16]
   k: '&bk SEMI'
-  l: ['Reality?', 'Raality?', 'Reabity?', 'Deality?', 'Reelity?', 'Realify?', 'Realitg?', 'Reaiity?', 'Reakity?', 'Realily?', 'Meality?', 'Renlity?', 'Roality?',
-    'Realitp?', 'Reatity?', 'Realitu?', 'Weality?', 'Realitx?', 'Yeality?', 'Real.ty?']
-- p: [6, 7]
-  k: '&bk EXCL'
-  l: ['Reality?', 'Raality?', 'Reabity?', 'Deality?', 'Reelity?', 'Realify?', 'Realitg?', 'Reaiity?', 'Reakity?', 'Realily?', 'Meality?', 'Renlity?', 'Roality?',
-    'Realitp?', 'Reatity?', 'Realitu?', 'Weality?', 'Realitx?', 'Yeality?', 'Real.ty?']
-- p: [7, 8]
-  k: '&bk QMARK'
   l: ['Reality?', 'Raality?', 'Reabity?', 'Deality?', 'Reelity?', 'Realify?', 'Realitg?', 'Reaiity?', 'Reakity?', 'Realily?', 'Meality?', 'Renlity?', 'Roality?',
     'Realitp?', 'Reatity?', 'Realitu?', 'Weality?', 'Realitx?', 'Yeality?', 'Real.ty?']
 - p: [8, 9]
