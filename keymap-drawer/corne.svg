@@ -1556,8 +1556,9 @@ path.combo {
 <g transform="translate(238, 42)" class="key trans keypos-3">
 <rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key trans"/>
 </g>
-<g transform="translate(306, 51)" class="key trans keypos-4">
-<rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key trans"/>
+<g transform="translate(306, 51)" class="key keypos-4">
+<rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key"/>
+<text x="0" y="0" class="key tap">K</text>
 </g>
 <g transform="translate(578, 51)" class="key trans keypos-5">
 <rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key trans"/>
