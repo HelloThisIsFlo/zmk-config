@@ -40,6 +40,7 @@ macros {
         // If can't figure out, reproduce the setup with 1000, 2000, 3000, 4000 delays to try and undersatnd again how it works.
         // YEEEEEEEEEEES THIS SEEMS TO WORK!!!! (somewhat, need to investigate more tomorrow 😌)
         // mmmm maybe not actually. Need to double check with 1000, 2000, etc..
+#define debug_ak_window (my_ak_window / 2) // This is because the ak_window is doubled in the macro. I may be able to fix this later.
         akmo: akmo {
                 label = "akmo";
                 compatible = "zmk,behavior-macro-two-param";

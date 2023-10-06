@@ -4,7 +4,7 @@ behaviors {
         compatible = "zmk,behavior-sticky-key";
         label = "flo,behavior-adaptive-key-sticky-layer";
         #binding-cells = <1>;
-        release-after-ms = <expected_debug_ak_window>;
+        release-after-ms = <my_ak_window>;
         bindings = <&mo>;
         // We are NOT using 'quick-release', that way the ak layer won't be deactivated until
         // the next &kp releases. Which means the next ak_layer will be activated immediately!

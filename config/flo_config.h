@@ -145,31 +145,30 @@
 /****                 Config                     ****/
 /****************************************************/
 #define my_tapping_term 170
-
-
-#define TEMP_macro_tap_time 10 // TODO: Actually there is a setting to configure that already. Use it.
-
-// #define my_ak_window 200 // tmp debug, revert to 85
-#define my_ak_window my_tapping_term // tmp debug, revert to 85
-// #define expected_debug_ak_window 2000
-#define expected_debug_ak_window my_ak_window
-#define debug_ak_window (expected_debug_ak_window / 2) // This is because the ak_window is doubled in the macro. I may be able to fix this later.
-
-
-// #define my_quick_tapping_term 112 // Unused atm
-// #define my_ak_delay 40 // Unused atm
-
+#define my_ak_window my_tapping_term
 #define my_combo_timeout_one_hand 18
 #define my_combo_timeout_two_hands 30
-
 #define my_global_quick_tap_window 130 // Measured w/ logs, 130ms is a comfortable quick double-tap for me
 
-&mt {
-    tapping-term-ms = <my_tapping_term>;
-};
-&sl {
-    release-after-ms = <expected_debug_ak_window>;
-};
+
+
+
+
+/****************************************************/
+/****             Behavior Config                ****/
+/****************************************************/
 &caps_word {
     continue-list = <UNDER MINUS BSPC DEL LEFT RIGHT>;
+};
+
+
+
+
+
+/****************************************************/
+/****         !! TMP REMOVE / MIGRATE !!         ****/
+/****************************************************/
+#define TEMP_macro_tap_time 10 // TODO: Actually there is a setting to configure that already. Use it.
+&mt {
+    tapping-term-ms = <my_tapping_term>;
 };
