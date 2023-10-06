@@ -1091,19 +1091,19 @@ combos:
   k: '&m_findsel'
   l: ['Reality?', 'Raality?', 'Reabity?', 'Deality?', 'Reelity?', 'Realify?', 'Realitg?', 'Reaiity?', 'Reakity?', 'Realily?', 'Meality?', 'Renlity?', 'Roality?',
     'Realitp?', 'Reatity?', 'Realitu?', 'Weality?', 'Realitx?', 'Yeality?', 'Real.ty?']
-- p: [26, 27]
+- p: [16, 17]
   k: '&bk BSPC'
   l: ['Reality?', 'Raality?', 'Reabity?', 'Deality?', 'Reelity?', 'Realify?', 'Realitg?', 'Reaiity?', 'Reakity?', 'Realily?', 'Meality?', 'Renlity?', 'Roality?',
     'Realitp?', 'Reatity?', 'Realitu?', 'Weality?', 'Realitx?', 'Yeality?', 'Real.ty?', <^v>, =*+/, F*, '1984', BIOS, Kafka]
-- p: [27, 28]
+- p: [17, 18]
   k: '&bk DEL'
   l: ['Reality?', 'Raality?', 'Reabity?', 'Deality?', 'Reelity?', 'Realify?', 'Realitg?', 'Reaiity?', 'Reakity?', 'Realily?', 'Meality?', 'Renlity?', 'Roality?',
     'Realitp?', 'Reatity?', 'Realitu?', 'Weality?', 'Realitx?', 'Yeality?', 'Real.ty?', <^v>, =*+/, F*, '1984', BIOS, Kafka]
-- p: [26, 27, 28]
+- p: [16, 17, 18]
   k: '&bk LA(BSPC)'
   l: ['Reality?', 'Raality?', 'Reabity?', 'Deality?', 'Reelity?', 'Realify?', 'Realitg?', 'Reaiity?', 'Reakity?', 'Realily?', 'Meality?', 'Renlity?', 'Roality?',
     'Realitp?', 'Reatity?', 'Realitu?', 'Weality?', 'Realitx?', 'Yeality?', 'Real.ty?']
-- p: [26, 27, 28]
+- p: [16, 17, 18]
   k: '&bk LG(BSPC)'
   l: [<^v>]
 - p: [1, 3]
@@ -1142,6 +1142,10 @@ combos:
   k: '&bk UNDER'
   l: ['Reality?', 'Raality?', 'Reabity?', 'Deality?', 'Reelity?', 'Realify?', 'Realitg?', 'Reaiity?', 'Reakity?', 'Realily?', 'Meality?', 'Renlity?', 'Roality?',
     'Realitp?', 'Reatity?', 'Realitu?', 'Weality?', 'Realitx?', 'Yeality?', 'Real.ty?']
+- p: [27, 28]
+  k: {t: '&bk EQUAL', h: '&bk PRCNT'}
+  l: ['Reality?', 'Raality?', 'Reabity?', 'Deality?', 'Reelity?', 'Realify?', 'Realitg?', 'Reaiity?', 'Reakity?', 'Realily?', 'Meality?', 'Renlity?', 'Roality?',
+    'Realitp?', 'Reatity?', 'Realitu?', 'Weality?', 'Realitx?', 'Yeality?', 'Real.ty?']
 - p: [25, 26]
   k: {t: '&bk LA(MINUS)', h: '&bk LA(LS(MINUS))'}
   l: ['Reality?', 'Raality?', 'Reabity?', 'Deality?', 'Reelity?', 'Realify?', 'Realitg?', 'Reaiity?', 'Reakity?', 'Realily?', 'Meality?', 'Renlity?', 'Roality?',
@@ -1162,14 +1166,6 @@ combos:
   k: '&bk LA(Q)'
   l: ['Reality?', 'Raality?', 'Reabity?', 'Deality?', 'Reelity?', 'Realify?', 'Realitg?', 'Reaiity?', 'Reakity?', 'Realily?', 'Meality?', 'Renlity?', 'Roality?',
     'Realitp?', 'Reatity?', 'Realitu?', 'Weality?', 'Realitx?', 'Yeality?', 'Real.ty?']
-- p: [16, 17]
-  k: {t: '&bk LA(E)', h: '&typeEaccent E'}
-  l: ['Reality?', 'Raality?', 'Reabity?', 'Deality?', 'Reelity?', 'Realify?', 'Realitg?', 'Reaiity?', 'Reakity?', 'Realily?', 'Meality?', 'Renlity?', 'Roality?',
-    'Realitp?', 'Reatity?', 'Realitu?', 'Weality?', 'Realitx?', 'Yeality?', 'Real.ty?']
-- p: [17, 18]
-  k: {t: '&bk LA(GRAVE)', h: '&typeEgrave E'}
-  l: ['Reality?', 'Raality?', 'Reabity?', 'Deality?', 'Reelity?', 'Realify?', 'Realitg?', 'Reaiity?', 'Reakity?', 'Realily?', 'Meality?', 'Renlity?', 'Roality?',
-    'Realitp?', 'Reatity?', 'Realitu?', 'Weality?', 'Realitx?', 'Yeality?', 'Real.ty?']
 - p: [16, 18]
   k: {t: '&bk LA(N6)', h: '&typeEacute E'}
   l: ['Reality?', 'Raality?', 'Reabity?', 'Deality?', 'Reelity?', 'Realify?', 'Realitg?', 'Reaiity?', 'Reakity?', 'Realily?', 'Meality?', 'Renlity?', 'Roality?',
@@ -1180,6 +1176,10 @@ combos:
     'Realitp?', 'Reatity?', 'Realitu?', 'Weality?', 'Realitx?', 'Yeality?', 'Real.ty?']
 - p: [16, 19]
   k: {t: '&bk LA(K)', h: '&typeAring A'}
+  l: ['Reality?', 'Raality?', 'Reabity?', 'Deality?', 'Reelity?', 'Realify?', 'Realitg?', 'Reaiity?', 'Reakity?', 'Realily?', 'Meality?', 'Renlity?', 'Roality?',
+    'Realitp?', 'Reatity?', 'Realitu?', 'Weality?', 'Realitx?', 'Yeality?', 'Real.ty?']
+- p: [26, 27]
+  k: {t: '&bk LA(U)', h: '&typeUumlaut U'}
   l: ['Reality?', 'Raality?', 'Reabity?', 'Deality?', 'Reelity?', 'Realify?', 'Realitg?', 'Reaiity?', 'Reakity?', 'Realily?', 'Meality?', 'Renlity?', 'Roality?',
     'Realitp?', 'Reatity?', 'Realitu?', 'Weality?', 'Realitx?', 'Yeality?', 'Real.ty?']
 - p: [12, 10]
