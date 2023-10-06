@@ -237,7 +237,7 @@ layers:
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
-  - '&replace_char_with_bigram L K'
+  - '&replace_char_with_bigram_LK'
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
@@ -374,7 +374,7 @@ layers:
   - P
   - L
   - {t: ' ', type: trans}
-  - '&replace_char_with_bigram L G'
+  - '&replace_char_with_bigram_LG'
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
@@ -533,7 +533,7 @@ layers:
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
-  - '&replace_char_with_bigram C K'
+  - '&replace_char_with_bigram_CK'
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
@@ -713,7 +713,7 @@ layers:
   - {t: ' ', type: trans}
   - '&dotcom'
   - '&dotcouk'
-  - '&replace_char_with_bigram U B'
+  - '&replace_char_with_bigram_UB'
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
@@ -750,7 +750,7 @@ layers:
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
-  - '&replace_char_with_bigram O B'
+  - '&replace_char_with_bigram_OB'
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
