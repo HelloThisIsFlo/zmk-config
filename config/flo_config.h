@@ -123,6 +123,3 @@
 &caps_word {
     continue-list = <UNDER MINUS BSPC DEL LEFT RIGHT>;
 };
-
-
-#define EN_PRONOUN_COMBOS //  (I, I'm, I've I'd I'll etc)

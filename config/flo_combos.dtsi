@@ -119,6 +119,7 @@ COMBO_LAY_ONE_HAND(l_alpha_aks, sh,              &lk_sh H S,                    
 COMBO_LAY_ONE_HAND(l_alpha_aks, gh,              &lk_gh H G,                                LT2 LT1                           ) // Gh/ght
 COMBO_LAY_ONE_HAND(l_alpha_aks, ph,              &Ph,                                   LB3 LB2                               ) // Ph
 
+// #define EN_PRONOUN_COMBOS //  (I, I'm, I've I'd I'll etc)
 #ifdef EN_PRONOUN_COMBOS
 //
 // Pronoun combos REQUIRE macros to process
