@@ -34,6 +34,7 @@
 #define TK_to_CK    &replace_char_with_bigram_CK
 #define dotB_to_UB  &replace_char_with_bigram_UB
 #define aposB_to_OB &replace_char_with_bigram_OB
+#define JN_to_KN    &replace_char_with_bigram_KN
 
 
 
@@ -51,7 +52,7 @@
                         label = "Reality?"; // The base layer ... ?
                         bindings = <
 
-ak_X          ak_W         ak_M         ak_G            &bk J                          &HashDllr   &DotColn      &SqtLbkt    &DqtRbkt    ak_B
+ak_X          ak_W         ak_M         ak_G            ak_J                           &HashDllr   &DotColn      &SqtLbkt    &DqtRbkt    ak_B
 
 &hml LCTRL S  &hml LALT C  hml_LGUI_N   hml_LSHIFT_T    ak_K                           &CmmaSemi   hmr_LSHIFT_A  hmr_LGUI_E  hmr_LALT_I  &hmr LCTRL H
 
@@ -126,6 +127,16 @@ ________   ________   ________   ________   ________          ________   _______
                         bindings = <
 ________   ________   ________   ________   ________          ________   ________   ________   ________   ________
 ________   ________   ________   ________   ________          ________   ________   ________   ___I____   &bk F
+________   ________   ________   ________   ________          ________   ________   ________   ________   ________
+                        ________   ________   ________      ________   ________   ________
+                        >;
+                };
+
+                l_akJ {
+                        label = "Realitj?";
+                        bindings = <
+________   ________   ________   ________   ___J____          ________   ________   ________   ________   ________
+________   ________   JN_to_KN   ________   ________          ________   ________   ________   ________   ________  /* JN_to_KN: To have symetry KN <> NK */
 ________   ________   ________   ________   ________          ________   ________   ________   ________   ________
                         ________   ________   ________      ________   ________   ________
                         >;
