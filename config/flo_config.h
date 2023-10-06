@@ -145,7 +145,7 @@
 /****                 Config                     ****/
 /****************************************************/
 #define my_tapping_term 170
-#define my_ak_window my_tapping_term
+#define my_ak_window 220
 #define my_combo_timeout_one_hand 18
 #define my_combo_timeout_two_hands 30
 #define my_global_quick_tap_window 130 // Measured w/ logs, 130ms is a comfortable quick double-tap for me
