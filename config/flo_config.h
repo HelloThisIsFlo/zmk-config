@@ -59,36 +59,37 @@
 #define THUMBS LH0 LH1 LH2 RH0 RH1 RH2                                      // thumb keys
 
 // my layers
-#define l_any   (-1)
-#define l_alpha 0
-#define l_akA   1
-#define l_akB   2
-#define l_akD   3
-#define l_akE   4
-#define l_akF   5
-#define l_akG   6
-#define l_akI   7
-#define l_akK   8
-#define l_akL   9
-#define l_akM   10
-#define l_akN   11
-#define l_akO   12
-#define l_akP   13
-#define l_akT   14
-#define l_akU   15
-#define l_akW   16
-#define l_akX   17
-#define l_akY   18
-#define l_akDOT 19
-#define l_nav   20
-#define l_sym   21
-#define l_fn    22
-#define l_num   23
-#define l_cfg   24
-#define l_winpc 25
-#define l_lock  26
+#define l_any    (-1)
+#define l_alpha  0
+#define l_akA    1
+#define l_akB    2
+#define l_akD    3
+#define l_akE    4
+#define l_akF    5
+#define l_akG    6
+#define l_akI    7
+#define l_akK    8
+#define l_akL    9
+#define l_akM    10
+#define l_akN    11
+#define l_akO    12
+#define l_akP    13
+#define l_akT    14
+#define l_akU    15
+#define l_akW    16
+#define l_akX    17
+#define l_akY    18
+#define l_akDOT  19
+#define l_akAPOS 20
+#define l_nav    21
+#define l_sym    22
+#define l_fn     23
+#define l_num    24
+#define l_cfg    25
+#define l_winpc  26
+#define l_lock   27
 
-#define l_alpha_aks l_alpha l_akA l_akB l_akD l_akE l_akF l_akG l_akI l_akK l_akL l_akM l_akN l_akO l_akP l_akT l_akU l_akW l_akX l_akY l_akDOT
+#define l_alpha_aks l_alpha l_akA l_akB l_akD l_akE l_akF l_akG l_akI l_akK l_akL l_akM l_akN l_akO l_akP l_akT l_akU l_akW l_akX l_akY l_akDOT l_akAPOS
 #define l_all_except_lock l_alpha_aks l_nav l_sym l_fn l_num l_cfg l_winpc
 
 #define my_tapping_term 170

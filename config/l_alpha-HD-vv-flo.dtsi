@@ -26,11 +26,14 @@
 #define ___Y____ ________
 #define ___Z____ ________
 #define _DOT____ ________
+#define _APOS___ ________
 
 
-#define GK_to_LK &replace_char_with_bigram L K
-#define MG_to_LG &replace_char_with_bigram L G
-#define TK_to_CK &replace_char_with_bigram C K
+#define GK_to_LK    &replace_char_with_bigram L K
+#define MG_to_LG    &replace_char_with_bigram L G
+#define TK_to_CK    &replace_char_with_bigram C K
+#define dotB_to_UB  &replace_char_with_bigram U B
+#define aposB_to_OB &replace_char_with_bigram O B
 
 
 #define XXX 0
@@ -242,7 +245,17 @@ ________   ________   ________   ________   ________          ________   _______
                 l_akDOT {
                         label = "Real.ty?";
                         bindings = <
-________   ________   ________   ________   ________          ________   _DOT____   &dotcom    &dotcouk   ________
+________   ________   ________   ________   ________          ________   _DOT____   &dotcom    &dotcouk   dotB_to_UB /* To have symetry BU <> UB */
+________   ________   ________   ________   ________          ________   ________   ________   ________   ________
+________   ________   ________   ________   ________          ________   ________   ________   ________   ________
+                        ________   ________   ________      ________   ________   ________
+                        >;
+                };
+
+                l_akAPOS {
+                        label = "Real'ty?";
+                        bindings = <
+________   ________   ________   ________   ________          ________   ________   _APOS___   ________   aposB_to_OB /* To have symetry BO <> OB */
 ________   ________   ________   ________   ________          ________   ________   ________   ________   ________
 ________   ________   ________   ________   ________          ________   ________   ________   ________   ________
                         ________   ________   ________      ________   ________   ________
