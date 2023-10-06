@@ -35,7 +35,7 @@ layers:
   - {t: '&bk RETURN', h: <^v>}
   - {t: R, h: <^v>}
   - {t: '&bk SPACE', h: =*+/}
-  - {t: '$$mdi:backspace-outline$$', h: F*, s: '$$mdi:backspace-reverse-outline$$'}
+  - F*
   - {t: '$$mdi:swap-horizontal$$', h: HDvv|QWERTY}
   Raality?:
   - {t: ' ', type: trans}
@@ -1156,14 +1156,6 @@ combos:
     'Realitp?', 'Reatity?', 'Realitu?', 'Weality?', 'Realitx?', 'Yeality?', 'Real.ty?']
 - p: [26, 29]
   k: '&bk TILDE'
-  l: ['Reality?', 'Raality?', 'Reabity?', 'Deality?', 'Reelity?', 'Realify?', 'Realitg?', 'Reaiity?', 'Reakity?', 'Realily?', 'Meality?', 'Renlity?', 'Roality?',
-    'Realitp?', 'Reatity?', 'Realitu?', 'Weality?', 'Realitx?', 'Yeality?', 'Real.ty?']
-- p: [16, 26]
-  k: '&bk LA(APOS)'
-  l: ['Reality?', 'Raality?', 'Reabity?', 'Deality?', 'Reelity?', 'Realify?', 'Realitg?', 'Reaiity?', 'Reakity?', 'Realily?', 'Meality?', 'Renlity?', 'Roality?',
-    'Realitp?', 'Reatity?', 'Realitu?', 'Weality?', 'Realitx?', 'Yeality?', 'Real.ty?']
-- p: [17, 27]
-  k: '&bk LA(Q)'
   l: ['Reality?', 'Raality?', 'Reabity?', 'Deality?', 'Reelity?', 'Realify?', 'Realitg?', 'Reaiity?', 'Reakity?', 'Realily?', 'Meality?', 'Renlity?', 'Roality?',
     'Realitp?', 'Reatity?', 'Realitu?', 'Weality?', 'Realitx?', 'Yeality?', 'Real.ty?']
 - p: [16, 18]
