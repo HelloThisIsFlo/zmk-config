@@ -2930,22 +2930,30 @@ path.combo {
 </g>
 <g transform="translate(34, 128)" class="key keypos-10">
 <rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key"/>
-<text x="0" y="0" class="key tap">F5</text>
+<text x="0" y="0" class="key tap">
+<tspan x="0" dy="-1.2em">&amp;bk</tspan><tspan x="0" dy="1.2em">F5</tspan>
+</text>
 <use href="#mdi:apple-keyboard-control" xlink:href="#mdi:apple-keyboard-control" x="-6" y="18" height="12" width="12.0" class="key hold glyph mdi:apple-keyboard-control"/>
 </g>
 <g transform="translate(102, 110)" class="key keypos-11">
 <rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key"/>
-<text x="0" y="0" class="key tap">F6</text>
+<text x="0" y="0" class="key tap">
+<tspan x="0" dy="-1.2em">&amp;bk</tspan><tspan x="0" dy="1.2em">F6</tspan>
+</text>
 <use href="#mdi:apple-keyboard-option" xlink:href="#mdi:apple-keyboard-option" x="-6" y="18" height="12" width="12.0" class="key hold glyph mdi:apple-keyboard-option"/>
 </g>
 <g transform="translate(170, 102)" class="key keypos-12">
 <rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key"/>
-<text x="0" y="0" class="key tap">F7</text>
+<text x="0" y="0" class="key tap">
+<tspan x="0" dy="-1.2em">&amp;bk</tspan><tspan x="0" dy="1.2em">F7</tspan>
+</text>
 <use href="#mdi:apple-keyboard-command" xlink:href="#mdi:apple-keyboard-command" x="-6" y="18" height="12" width="12.0" class="key hold glyph mdi:apple-keyboard-command"/>
 </g>
 <g transform="translate(238, 110)" class="key keypos-13">
 <rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key"/>
-<text x="0" y="0" class="key tap">F8</text>
+<text x="0" y="0" class="key tap">
+<tspan x="0" dy="-1.2em">&amp;bk</tspan><tspan x="0" dy="1.2em">F8</tspan>
+</text>
 <use href="#mdi:apple-keyboard-shift" xlink:href="#mdi:apple-keyboard-shift" x="-6" y="18" height="12" width="12.0" class="key hold glyph mdi:apple-keyboard-shift"/>
 </g>
 <g transform="translate(306, 119)" class="key keypos-14">
@@ -2958,17 +2966,23 @@ path.combo {
 </g>
 <g transform="translate(646, 110)" class="key keypos-16">
 <rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key"/>
-<text x="0" y="0" class="key tap">1</text>
+<text x="0" y="0" class="key tap">
+<tspan x="0" dy="-1.2em">&amp;bk</tspan><tspan x="0" dy="1.2em">N1</tspan>
+</text>
 <use href="#mdi:apple-keyboard-shift" xlink:href="#mdi:apple-keyboard-shift" x="-6" y="18" height="12" width="12.0" class="key hold glyph mdi:apple-keyboard-shift"/>
 </g>
 <g transform="translate(714, 102)" class="key keypos-17">
 <rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key"/>
-<text x="0" y="0" class="key tap">2</text>
+<text x="0" y="0" class="key tap">
+<tspan x="0" dy="-1.2em">&amp;bk</tspan><tspan x="0" dy="1.2em">N2</tspan>
+</text>
 <use href="#mdi:apple-keyboard-command" xlink:href="#mdi:apple-keyboard-command" x="-6" y="18" height="12" width="12.0" class="key hold glyph mdi:apple-keyboard-command"/>
 </g>
 <g transform="translate(782, 110)" class="key keypos-18">
 <rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key"/>
-<text x="0" y="0" class="key tap">3</text>
+<text x="0" y="0" class="key tap">
+<tspan x="0" dy="-1.2em">&amp;bk</tspan><tspan x="0" dy="1.2em">N3</tspan>
+</text>
 <use href="#mdi:apple-keyboard-option" xlink:href="#mdi:apple-keyboard-option" x="-6" y="18" height="12" width="12.0" class="key hold glyph mdi:apple-keyboard-option"/>
 </g>
 <g transform="translate(850, 128)" class="key keypos-19">
@@ -3064,7 +3078,7 @@ path.combo {
 <g transform="translate(306, 51)" class="key keypos-4">
 <rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key"/>
 <text x="0" y="0" class="key tap">
-<tspan x="0" dy="-1.2em">KP</tspan><tspan x="0" dy="1.2em">NUM</tspan>
+<tspan x="0" dy="-1.2em">&amp;bk</tspan><tspan x="0" dy="1.2em">KP_NUM</tspan>
 </text>
 <text x="0" y="30" class="key hold">BIOS</text>
 </g>
@@ -3182,13 +3196,15 @@ path.combo {
 </g>
 <g transform="translate(279, 259) rotate(15.0)" class="key keypos-31">
 <rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key"/>
-<use href="#mdi:backspace-outline" xlink:href="#mdi:backspace-outline" x="-7" y="-7" height="14" width="14.0" class="key tap glyph mdi:backspace-outline"/>
+<text x="0" y="0" class="key tap">
+<tspan x="0" dy="-1.2em">&amp;bk</tspan><tspan x="0" dy="1.2em">BSPC</tspan>
+</text>
 <text x="0" y="30" class="key hold">F*</text>
 </g>
 <g transform="translate(358, 272) rotate(30.0)" class="key keypos-32">
 <rect rx="6" ry="6" x="-32" y="-49" width="64" height="98" class="key"/>
 <text x="0" y="0" class="key tap">
-<tspan x="0" dy="-1.2em">KP</tspan><tspan x="0" dy="1.2em">ENTER</tspan>
+<tspan x="0" dy="-1.2em" style="font-size: 88%">&amp;bk</tspan><tspan x="0" dy="1.2em" style="font-size: 88%">KP_ENTER</tspan>
 </text>
 <text x="0" y="47" class="key hold">&lt;^v&gt;</text>
 </g>

@@ -825,15 +825,15 @@ layers:
   - '8'
   - '9'
   - \
-  - {t: F5, h: '$$mdi:apple-keyboard-control$$'}
-  - {t: F6, h: '$$mdi:apple-keyboard-option$$'}
-  - {t: F7, h: '$$mdi:apple-keyboard-command$$'}
-  - {t: F8, h: '$$mdi:apple-keyboard-shift$$'}
+  - {t: '&bk F5', h: '$$mdi:apple-keyboard-control$$'}
+  - {t: '&bk F6', h: '$$mdi:apple-keyboard-option$$'}
+  - {t: '&bk F7', h: '$$mdi:apple-keyboard-command$$'}
+  - {t: '&bk F8', h: '$$mdi:apple-keyboard-shift$$'}
   - F14
   - ','
-  - {t: '1', h: '$$mdi:apple-keyboard-shift$$'}
-  - {t: '2', h: '$$mdi:apple-keyboard-command$$'}
-  - {t: '3', h: '$$mdi:apple-keyboard-option$$'}
+  - {t: '&bk N1', h: '$$mdi:apple-keyboard-shift$$'}
+  - {t: '&bk N2', h: '$$mdi:apple-keyboard-command$$'}
+  - {t: '&bk N3', h: '$$mdi:apple-keyboard-option$$'}
   - {t: /, h: '$$mdi:apple-keyboard-control$$'}
   - F1
   - F2
@@ -856,7 +856,7 @@ layers:
   - $$mdi:pan-left$$
   - $$mdi:arrow-up-bold$$
   - $$pg_up$$
-  - {t: KP NUM, h: BIOS}
+  - {t: '&bk KP_NUM', h: BIOS}
   - KP SLASH
   - '7'
   - '8'
@@ -883,8 +883,8 @@ layers:
   - '3'
   - '='
   - {t: '$$mdi:cancel$$', type: none}
-  - {t: '$$mdi:backspace-outline$$', h: F*}
-  - {t: KP ENTER, h: <^v>}
+  - {t: '&bk BSPC', h: F*}
+  - {t: '&bk KP_ENTER', h: <^v>}
   - '0'
   - KP DOT
   - {t: '$$mdi:cancel$$', type: none}
