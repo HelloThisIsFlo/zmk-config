@@ -73,13 +73,6 @@ behaviors {
         bindings = <&kp>;
         release-after-ms = <900>;
     };
-    mm_bspc_del: mm_backspace_delete {
-        compatible = "zmk,behavior-mod-morph";
-        label = "MM_BACKSPACE_DELETE";
-        #binding-cells = <0>;
-        bindings = <&lt l_fn BACKSPACE>, <&bk DELETE>;
-        mods = <(MOD_LSFT|MOD_RSFT)>;
-    };
 
 
     /******************** Home Row Mods **********************/
