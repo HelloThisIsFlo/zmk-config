@@ -70,10 +70,10 @@ COMBO_LAY_ONE_HAND(l_alpha_aks, quit,            &bk LG(Q),                     
 COMBO_LAY_ONE_HAND(l_alpha_aks, findsel,         &m_findsel,                        LM4                                       \
                                                                                                     LB0                       )
 
-COMBO_ANY_ONE_HAND(             bspc,            &bk BSPC,                                                    RB1 RB2         )
-COMBO_ANY_ONE_HAND(             del,             &bk DEL,                                                         RB2 RB3     )
-COMBO_LAY_ONE_HAND(l_alpha_aks, delWord,         &bk LA(BSPC),                                                RB1 RB2 RB3     )
-COMBO_LAY_ONE_HAND(l_nav,       delLine,         &bk LG(BSPC),                                                RB1 RB2 RB3     )
+COMBO_ANY_ONE_HAND(             bspc,            &bk BSPC,                                                    RM1 RM2         )
+COMBO_ANY_ONE_HAND(             del,             &bk DEL,                                                         RM2 RM3     )
+COMBO_LAY_ONE_HAND(l_alpha_aks, delWord,         &bk LA(BSPC),                                                RM1 RM2 RM3     )
+COMBO_LAY_ONE_HAND(l_nav,       delLine,         &bk LG(BSPC),                                                RM1 RM2 RM3     )
 
 //
 // type a glyph (tiny board accommodation)
@@ -88,7 +88,7 @@ COMBO_LAY_ONE_HAND(l_alpha_aks, typeQues,        &bk QMARK,                     
 COMBO_LAY_ONE_HAND(l_alpha_aks, typeGrav,        &bk GRAVE,                                                           RT3 RT4 )
 COMBO_LAY_ONE_HAND(l_alpha_aks, typeatMk,        &lk LS(LA(SEMI)) AT_SIGN,                                RT0 RT1             ) // @ (№ if held)
 COMBO_LAY_ONE_HAND(l_alpha_aks, typeUnder,       &bk UNDER,                                                   RB1     RB3     ) // _
-// COMBO_LAY_ONE_HAND(l_alpha_aks, typeEqual,       &lk PRCNT EQUAL,                                                 RB2 RB3     ) // = (percent if held)
+COMBO_LAY_ONE_HAND(l_alpha_aks, typeEqual,       &lk PRCNT EQUAL,                                                 RB2 RB3     ) // = (percent if held)
 COMBO_LAY_ONE_HAND(l_alpha_aks, typeNdash,       &lk LA(LS(MINUS)) LA(MINUS),                             RB0 RB1             ) // N-dash (M-dash if held)
 COMBO_LAY_ONE_HAND(l_alpha_aks, typeMdash,       &bk LA(LS(MINUS)),                                       RB0     RB2         ) // M-dash (minus)
 COMBO_LAY_ONE_HAND(l_alpha_aks, typeTilde,       &bk TILDE,                                                   RB1         RB4 ) // tilde (not dead key)
@@ -98,12 +98,12 @@ COMBO_LAY_ONE_HAND(l_alpha_aks, ligAE,           &bk LA(APOS),                  
 COMBO_LAY_ONE_HAND(l_alpha_aks, ligOE,           &bk LA(Q),                                                       RM2         \
                                                                                                                   RB2         ) // ligature œ
 
-COMBO_LAY_ONE_HAND(l_alpha_aks, diacAccent,      &lk_E_accent E LA(E),                                        RM1 RM2         ) // ´ (É if held)
-COMBO_LAY_ONE_HAND(l_alpha_aks, diacGrave,       &lk_E_grave E LA(GRAVE),                                         RM2 RM3     ) // ` (È if held)
+// COMBO_LAY_ONE_HAND(l_alpha_aks, diacAccent,      &lk_E_accent E LA(E),                                        RM1 RM2         ) // ´ (É if held)
+// COMBO_LAY_ONE_HAND(l_alpha_aks, diacGrave,       &lk_E_grave E LA(GRAVE),                                         RM2 RM3     ) // ` (È if held)
 COMBO_LAY_ONE_HAND(l_alpha_aks, diacAcute,       &lk_E_acute E LA(N6),                                        RM1     RM3     ) // ˆ (Ê if held)
 COMBO_LAY_ONE_HAND(l_alpha_aks, diacMacron,      &lk_O_macron E LA(A),                                            RM2     RM4 ) // ¯ (ō if held)
 COMBO_LAY_ONE_HAND(l_alpha_aks, diacCirc,        &lk_A_ring A LA(K),                                          RM1         RM4 ) // ˚ (Å if held)
-// COMBO_LAY_ONE_HAND(l_alpha_aks, diacUmlaut,      &lk_U_umlaut U LA(U),                                        RB1 RB2         ) // ¨ (Ü if held)
+COMBO_LAY_ONE_HAND(l_alpha_aks, diacUmlaut,      &lk_U_umlaut U LA(U),                                        RB1 RB2         ) // ¨ (Ü if held)
 COMBO_LAY_ONE_HAND(l_alpha_aks, diacCedille,     &lk_C_cedille C LA(C),                                           LM2     LM4 ) // ¸ (ç if held)
 
 //
