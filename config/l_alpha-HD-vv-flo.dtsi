@@ -29,11 +29,12 @@
 #define _APOS___ ________
 
 
-#define GK_to_LK    &replace_char_with_bigram L K
-#define MG_to_LG    &replace_char_with_bigram L G
-#define TK_to_CK    &replace_char_with_bigram C K
-#define dotB_to_UB  &replace_char_with_bigram U B
-#define aposB_to_OB &replace_char_with_bigram O B
+#define MG_to_LG    &replace_char_with_bigram_LG
+#define GK_to_LK    &replace_char_with_bigram_LK
+#define TK_to_CK    &replace_char_with_bigram_CK
+#define dotB_to_UB  &replace_char_with_bigram_UB
+#define aposB_to_OB &replace_char_with_bigram_OB
+
 
 
 #define XXX 0

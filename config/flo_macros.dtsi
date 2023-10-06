@@ -1,5 +1,26 @@
-/* See &aksl behavior for explanation*/
+#define STRINGIFY(ARG) #ARG
+#define REPLACE_CHAR_WITH_BIGRAM(BIGRAM_0, BIGRAM_1) \
+        replace_char_with_bigram_##BIGRAM_0##BIGRAM_1: replace_char_with_bigram##BIGRAM_0##BIGRAM_1 { \
+                label = STRINGIFY(flo-macro-replace-char-with-bigram-##BIGRAM_0##BIGRAM_1); \
+                compatible = "zmk,behavior-macro"; \
+                #binding-cells = <0>; \
+                wait-ms = <0>; \
+                tap-ms = <10>; \
+                bindings = \
+                        <&kp BACKSPACE>, \
+\
+                        <&kp BIGRAM_0>, \
+\
+                        <ak_##BIGRAM_1>; \
+        };
+
 macros {
+
+        REPLACE_CHAR_WITH_BIGRAM(L, G)
+        REPLACE_CHAR_WITH_BIGRAM(L, K)
+        REPLACE_CHAR_WITH_BIGRAM(C, K)
+        REPLACE_CHAR_WITH_BIGRAM(U, B)
+        REPLACE_CHAR_WITH_BIGRAM(O, B)
 
         debug: debug {
                 label = "debug_macro";
@@ -61,23 +82,6 @@ macros {
 
                         <&macro_param_1to1>,
                         <&macro_tap &aksl MACRO_PLACEHOLDER>;
-        };
-
-
-        replace_char_with_bigram: replace_char_with_bigram {
-                label = "flo,macro-replace-char-with-bigram";
-                compatible = "zmk,behavior-macro-two-param";
-                #binding-cells = <2>;
-                wait-ms = <0>; // TODO: Maybe need 10ms between key presses, not sure
-                tap-ms = <10>;
-                bindings =
-                        <&kp BACKSPACE>,
-
-                        <&macro_param_1to1>,
-                        <&kp MACRO_PLACEHOLDER>,
-
-                        <&macro_param_2to1>,
-                        <&kp MACRO_PLACEHOLDER>;
         };
 
 

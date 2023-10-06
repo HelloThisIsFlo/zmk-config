@@ -1,4 +1,4 @@
-/*    KEY POSITION Numbers for Zaphod
+/*    KEY POSITION Numbers for Chocofi
 ╭────────────────────╮ ╭────────────────────╮
 │  0   1   2   3   4 │ │  5   6   7   8   9 │
 │ 10  11  12  13  14 │ │ 15  16  17  18  19 |
@@ -14,6 +14,10 @@
 ╰───────╮ LH2 LH1 LH0 | | RH0 RH1 RH2 ╭───────╯
         ╰─────────────╯ ╰────────────╯
 */
+
+/****************************************************/
+/****              Key Positions                 ****/
+/****************************************************/
 #define LT0 4
 #define LT1 3
 #define LT2 2
@@ -58,7 +62,13 @@
 #define KEYS_R RT0 RT1 RT2 RT3 RT4 RM0 RM1 RM2 RM3 RM4 RB0 RB1 RB2 RB3 RB4  // right-hand keys
 #define THUMBS LH0 LH1 LH2 RH0 RH1 RH2                                      // thumb keys
 
-// my layers
+
+
+
+
+/****************************************************/
+/****                  Layers                    ****/
+/****************************************************/
 #define l_any    (-1)
 #define l_alpha  0
 #define l_akA    1
@@ -92,6 +102,47 @@
 #define l_alpha_aks l_alpha l_akA l_akB l_akD l_akE l_akF l_akG l_akI l_akK l_akL l_akM l_akN l_akO l_akP l_akT l_akU l_akW l_akX l_akY l_akDOT l_akAPOS
 #define l_all_except_lock l_alpha_aks l_nav l_sym l_fn l_num l_cfg l_winpc
 
+
+
+
+
+/****************************************************/
+/****               Adaptive Keys                ****/
+/****************************************************/
+#define ak_A &ak l_akA A
+#define ak_B &ak l_akB B
+#define ak_C &ak l_akC C
+#define ak_D &ak l_akD D
+#define ak_E &ak l_akE E
+#define ak_F &ak l_akF F
+#define ak_G &ak l_akG G
+#define ak_H &ak l_akH H
+#define ak_I &ak l_akI I
+#define ak_J &ak l_akJ J
+#define ak_K &ak l_akK K
+#define ak_L &ak l_akL L
+#define ak_M &ak l_akM M
+#define ak_N &ak l_akN N
+#define ak_O &ak l_akO O
+#define ak_P &ak l_akP P
+#define ak_Q &ak l_akQ Q
+#define ak_R &ak l_akR R
+#define ak_S &ak l_akS S
+#define ak_T &ak l_akT T
+#define ak_U &ak l_akU U
+#define ak_V &ak l_akV V
+#define ak_W &ak l_akW W
+#define ak_X &ak l_akX X
+#define ak_Y &ak l_akY Y
+#define ak_Z &ak l_akZ Z
+
+
+
+
+
+/****************************************************/
+/****                 Config                     ****/
+/****************************************************/
 #define my_tapping_term 170
 
 
@@ -102,9 +153,6 @@
 // #define expected_debug_ak_window 2000
 #define expected_debug_ak_window my_ak_window
 #define debug_ak_window (expected_debug_ak_window / 2) // This is because the ak_window is doubled in the macro. I may be able to fix this later.
-
-
-
 
 
 // #define my_quick_tapping_term 112 // Unused atm
