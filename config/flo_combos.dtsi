@@ -93,10 +93,10 @@ COMBO_LAY_ONE_HAND(l_alpha_aks, typeNdash,       &lk LA(LS(MINUS)) LA(MINUS),   
 COMBO_LAY_ONE_HAND(l_alpha_aks, typeMdash,       &bk LA(LS(MINUS)),                                       RB0     RB2         ) // M-dash (minus)
 COMBO_LAY_ONE_HAND(l_alpha_aks, typeTilde,       &bk TILDE,                                                   RB1         RB4 ) // tilde (not dead key)
 
-COMBO_LAY_ONE_HAND(l_alpha_aks, ligAE,           &bk LA(APOS),                                                RM1             \
-                                                                                                              RB1             ) // ligature æ
-COMBO_LAY_ONE_HAND(l_alpha_aks, ligOE,           &bk LA(Q),                                                       RM2         \
-                                                                                                                  RB2         ) // ligature œ
+// COMBO_LAY_ONE_HAND(l_alpha_aks, ligAE,           &bk LA(APOS),                                                RM1             \
+//                                                                                                               RB1             ) // ligature æ
+// COMBO_LAY_ONE_HAND(l_alpha_aks, ligOE,           &bk LA(Q),                                                       RM2         \
+//                                                                                                                   RB2         ) // ligature œ
 
 // COMBO_LAY_ONE_HAND(l_alpha_aks, diacAccent,      &lk_E_accent E LA(E),                                        RM1 RM2         ) // ´ (É if held)
 // COMBO_LAY_ONE_HAND(l_alpha_aks, diacGrave,       &lk_E_grave E LA(GRAVE),                                         RM2 RM3     ) // ` (È if held)
