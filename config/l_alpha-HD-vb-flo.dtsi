@@ -36,11 +36,13 @@
 #define aposB_to_OB &replace_char_with_bigram_OB /* Symetry on BO(') ✔ */
 #define PB_to_SB    &replace_char_with_bigram_SB /* Symetry on BS(p) ✔ */
 #define YF_to_IF    &replace_char_with_bigram_IF /* Symetry on FI(y) ✔ */
+#define CM_to_NM    &replace_char_with_bigram_NM /* Symetry on MN(c) ✔ */
 
 
 
 #define XXX 0
 // Second param is ignored, so using XXX
+#define hml_LALT_C   &hml_C LALT   XXX
 #define hml_LGUI_N   &hml_N LGUI   XXX
 #define hml_LSHIFT_T &hml_T LSHIFT XXX
 #define hmr_LSHIFT_A &hmr_A LSHIFT XXX
@@ -55,7 +57,7 @@
 
 ak_X          ak_W         ak_M         ak_G            ak_K                           &CmmaSemi   &DotColn      &SlshStar &SqtLbkt    &DqtRbkt
 
-&hml LCTRL S  &hml LALT C  hml_LGUI_N   hml_LSHIFT_T    &bk J                          &HashDllr   hmr_LSHIFT_A  hmr_LGUI_E  hmr_LALT_I  &hmr LCTRL H
+&hml LCTRL S  hml_LALT_C   hml_LGUI_N   hml_LSHIFT_T    &bk J                          &HashDllr   hmr_LSHIFT_A  hmr_LGUI_E  hmr_LALT_I  &hmr LCTRL H
 
 ak_B          ak_P         ak_L         ak_D            &bk V                          &MinusPlus  ak_U          ak_O        ak_Y        ak_F
 
@@ -86,7 +88,7 @@ ___B____   &kp S      ________   ________   ________          ________   _______
                 l_akC {
                         label = "Rcality?";
                         bindings = <
-________   ________   ________   &bk K      ________          ________   ________   ________      ________      ________
+________   ________   CM_to_NM   &bk K      ________          ________   ________   ________      ________      ________
 ________   ___C____   ________   ________   ________          ________   ________   ________      ________      ________
 ________   ________   ________   ________   ________          ________   ________   ________      ________      ________
                         ________   ________   ________      ________   ________   ________
@@ -178,7 +180,7 @@ ________   ________   ________   ________   ________          ________   _______
                 l_akN {
                         label = "Renlity?";
                         bindings = <
-________   &bk M      ________   ________   &bk K             ________   ________   ________   ________   ________
+________   ________   ________   ________   &bk K             ________   ________   ________   ________   ________
 ________   ________   ___N____   ________   ________          ________   ________   ________   ________   ________
 ________   &bk L      ________   ________   ________          ________   ________   ________   ________   ________
                         ________   ________   ________      ________   ________   ________
