@@ -5,8 +5,8 @@ layers:
   - W⛶
   - M⛶
   - G⛶
-  - K⛶
-  - {t: ',', s: ;}
+  - J
+  - {t: '#', s: $}
   - {t: .⛶, s: ':'}
   - {t: /, s: '&bk STAR'}
   - {t: '"', s: ']'}
@@ -15,8 +15,8 @@ layers:
   - {t: '&ak_C_macro', h: '$$mdi:apple-keyboard-option$$'}
   - {t: '&ak_N_macro', h: '$$mdi:apple-keyboard-command$$'}
   - {t: '&ak_T_macro', h: '$$mdi:apple-keyboard-shift$$'}
-  - J
-  - {t: '#', s: $}
+  - K⛶
+  - {t: ',', s: ;}
   - {t: '&ak_A_macro', h: '$$mdi:apple-keyboard-shift$$'}
   - {t: '&ak_E_macro', h: '$$mdi:apple-keyboard-command$$'}
   - {t: '&ak_I_macro', h: '$$mdi:apple-keyboard-option$$'}
@@ -264,17 +264,17 @@ layers:
   - D
   - L
   - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
   - '&replace_char_with_bigram_LK'
-  - {t: ' ', type: trans}
-  - {t: ' ', type: trans}
-  - {t: ' ', type: trans}
-  - {t: ' ', type: trans}
-  - {t: ' ', type: trans}
-  - {t: ' ', type: trans}
-  - {t: ' ', type: trans}
-  - {t: ' ', type: trans}
-  - {t: ' ', type: trans}
-  - {t: ' ', type: trans}
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
@@ -560,17 +560,17 @@ layers:
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
   - '&replace_char_with_bigram_NK'
-  - {t: ' ', type: trans}
-  - {t: ' ', type: trans}
-  - {t: ' ', type: trans}
-  - {t: ' ', type: trans}
-  - {t: ' ', type: trans}
-  - {t: ' ', type: trans}
-  - {t: ' ', type: trans}
-  - {t: ' ', type: trans}
-  - {t: ' ', type: trans}
-  - {t: ' ', type: trans}
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
@@ -669,7 +669,7 @@ layers:
   Realitx?:
   - {t: ' ', type: trans}
   - P⛶
-  - L
+  - '&replace_char_with_bigram_BM'
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
