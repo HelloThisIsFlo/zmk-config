@@ -73,12 +73,12 @@
 #define l_alpha  0
 #define l_akA    1
 #define l_akB    2
-#define l_akD    3
-#define l_akE    4
-#define l_akF    5
-#define l_akG    6
-#define l_akI    7
-#define l_akJ    8
+#define l_akC    3
+#define l_akD    4
+#define l_akE    5
+#define l_akF    6
+#define l_akG    7
+#define l_akI    8
 #define l_akK    9
 #define l_akL    10
 #define l_akM    11
@@ -100,7 +100,7 @@
 #define l_winpc  27
 #define l_lock   28
 
-#define l_alpha_aks l_alpha l_akA l_akB l_akD l_akE l_akF l_akG l_akI l_akJ l_akK l_akL l_akM l_akN l_akO l_akP l_akT l_akU l_akW l_akX l_akY l_akDOT l_akAPOS
+#define l_alpha_aks l_alpha l_akA l_akB l_akC l_akD l_akE l_akF l_akG l_akI l_akK l_akL l_akM l_akN l_akO l_akP l_akT l_akU l_akW l_akX l_akY l_akDOT l_akAPOS
 #define l_all_except_lock l_alpha_aks l_nav l_sym l_fn l_num l_cfg l_winpc
 
 
