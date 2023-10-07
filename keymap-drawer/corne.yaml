@@ -1082,10 +1082,6 @@ combos:
   k: BIOS
   l: ['Reality?', 'Raality?', 'Reabity?', 'Deality?', 'Reelity?', 'Realify?', 'Realitg?', 'Reaiity?', 'Realitj?', 'Reakity?', 'Realily?', 'Meality?', 'Renlity?',
     'Roality?', 'Realitp?', 'Reatity?', 'Realitu?', 'Weality?', 'Realitx?', 'Yeality?', 'Real.ty?', 'Real''ty?', <^v>, =*+/, F*, '1984', BIOS, Kafka]
-- p: [11, 13]
-  k: '&AppSwitch'
-  l: ['Reality?', 'Raality?', 'Reabity?', 'Deality?', 'Reelity?', 'Realify?', 'Realitg?', 'Reaiity?', 'Realitj?', 'Reakity?', 'Realily?', 'Meality?', 'Renlity?',
-    'Roality?', 'Realitp?', 'Reatity?', 'Realitu?', 'Weality?', 'Realitx?', 'Yeality?', 'Real.ty?', 'Real''ty?', <^v>, =*+/, F*, '1984', BIOS, Kafka]
 - p: [12, 13, 16, 17]
   k: $$mdi:caps-lock$$
   l: ['Reality?', 'Raality?', 'Reabity?', 'Deality?', 'Reelity?', 'Realify?', 'Realitg?', 'Reaiity?', 'Realitj?', 'Reakity?', 'Realily?', 'Meality?', 'Renlity?',
@@ -1106,12 +1102,8 @@ combos:
   k: '&bk RETURN'
   l: ['Reality?', 'Raality?', 'Reabity?', 'Deality?', 'Reelity?', 'Realify?', 'Realitg?', 'Reaiity?', 'Realitj?', 'Reakity?', 'Realily?', 'Meality?', 'Renlity?',
     'Roality?', 'Realitp?', 'Reatity?', 'Realitu?', 'Weality?', 'Realitx?', 'Yeality?', 'Real.ty?', 'Real''ty?', <^v>, =*+/, F*, '1984', BIOS, Kafka]
-- p: [21, 23]
+- p: [11, 13]
   k: '&bk TAB'
-  l: ['Reality?', 'Raality?', 'Reabity?', 'Deality?', 'Reelity?', 'Realify?', 'Realitg?', 'Reaiity?', 'Realitj?', 'Reakity?', 'Realily?', 'Meality?', 'Renlity?',
-    'Roality?', 'Realitp?', 'Reatity?', 'Realitu?', 'Weality?', 'Realitx?', 'Yeality?', 'Real.ty?', 'Real''ty?', <^v>, =*+/, F*, '1984', BIOS, Kafka]
-- p: [21, 22, 23]
-  k: '&bk LS(TAB)'
   l: ['Reality?', 'Raality?', 'Reabity?', 'Deality?', 'Reelity?', 'Realify?', 'Realitg?', 'Reaiity?', 'Realitj?', 'Reakity?', 'Realily?', 'Meality?', 'Renlity?',
     'Roality?', 'Realitp?', 'Reatity?', 'Realitu?', 'Weality?', 'Realitx?', 'Yeality?', 'Real.ty?', 'Real''ty?', <^v>, =*+/, F*, '1984', BIOS, Kafka]
 - p: [13, 14]
