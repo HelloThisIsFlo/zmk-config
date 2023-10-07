@@ -53,7 +53,7 @@
                         label = "Reality?"; // The base layer ... ?
                         bindings = <
 
-ak_X          ak_W         ak_M         ak_G            ak_K                           &CmmaSemi   &DotColn      &SlshStar &SqtLbkt    &DqtRbkt
+ak_X          ak_W         ak_M         ak_G            ak_K                           &CmmaSemi   &DotColn      &SlshStar   &DqtRbkt    &SqtLbkt
 
 &hml LCTRL S  hml_LALT_C   hml_LGUI_N   hml_LSHIFT_T    &bk J                          &HashDllr   hmr_LSHIFT_A  hmr_LGUI_E  hmr_LALT_I  &hmr LCTRL H
 
