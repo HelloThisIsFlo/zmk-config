@@ -39,7 +39,7 @@ combos {
 COMBO_LCK_TWO_HAND(             lock,            &tog l_lock,                       LT4                                   RT4 \
                                                                                     LB4                                   RB4 ) // Lock/unlock the keyboard
 COMBO_ANY_ONE_HAND(             settings,        &mo l_cfg,                                                   RH1 RH2         ) // get the settings/media layer from anywhere
-COMBO_ANY_ONE_HAND(             appswitch,       &AppSwitch,                            LM3     LM1                           ) // App switch
+// COMBO_ANY_ONE_HAND(             appswitch,       &AppSwitch,                            LM3     LM1                           ) // App switch
 COMBO_LAY_TWO_HAND(l_alpha_aks, docaps,          &caps_word,                                LM2 LM1           RM1 RM2         ) // CAPSWORD
 COMBO_LAY_TWO_HAND(l_alpha_aks, capslk,          &bk CAPS,                              LM3 LM2                   RM2 RM3     ) // CAPS LOCK
 
@@ -49,8 +49,8 @@ COMBO_LAY_TWO_HAND(l_alpha_aks, capslk,          &bk CAPS,                      
 //XXXXXXXXXXXXXXXXXXXXXXXXXXXXX XXXXXXXXXXXXX    XXXXXXXXXXXXXXXXXXXXXXXXXXXX       L_4 L_3 L_2 L_1 L_0   R_0 R_1 R_2 R_3 R_4 )
 COMBO_ANY_ONE_HAND(             Gent,            &bk LG(RETURN),                            LB2 LB1 LB0                       )
 COMBO_ANY_ONE_HAND(             entr,            &bk RETURN,                                    LB1 LB0                       )
-COMBO_ANY_ONE_HAND(             tab,             &bk TAB,                               LB3     LB1                           )
-COMBO_ANY_ONE_HAND(             stab,            &bk LS(TAB),                           LB3 LB2 LB1                           )
+COMBO_ANY_ONE_HAND(             tab,             &bk TAB,                               LM3     LM1                           )
+// COMBO_ANY_ONE_HAND(             stab,            &bk LS(TAB),                           LB3 LB2 LB1                           )
 COMBO_ANY_ONE_HAND(             spce,            &bk SPACE,                                     LM1 LM0                       )
 COMBO_ANY_ONE_HAND(             esc,             &bk ESC,                           LM4         LM1                           )
 COMBO_ANY_ONE_HAND(             sall,            &bk LG(A),                         LB4         LB1                           )
