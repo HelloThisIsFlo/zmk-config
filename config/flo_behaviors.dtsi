@@ -368,7 +368,7 @@ behaviors {
         compatible = "zmk,behavior-mod-morph";
         label = "SqtLbkt";
         #binding-cells = <0>;
-        bindings = <&ak l_akAPOS SQT>, <&bk LBKT>;
+        bindings = <&bk SQT>, <&bk LBKT>;
         mods = <(MOD_LALT|MOD_RALT)>;
     };
     SqtRbkt: SqtRbkt {

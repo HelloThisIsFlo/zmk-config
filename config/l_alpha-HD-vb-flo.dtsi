@@ -32,8 +32,6 @@
 #define MG_to_LG    &replace_char_with_bigram_LG /* Symetry on GL(m) ✔ */
 #define GK_to_LK    &replace_char_with_bigram_LK /* Symetry on KL(g) ✔ */
 #define TK_to_NK    &replace_char_with_bigram_NK /* Symetry on KN(t) ✔ */
-#define dotB_to_UB  &replace_char_with_bigram_UB /* Symetry on BU(.) ✔ */
-#define aposB_to_OB &replace_char_with_bigram_OB /* Symetry on BO(') ✔ */
 #define PB_to_SB    &replace_char_with_bigram_SB /* Symetry on BS(p) ✔ */
 #define YF_to_IF    &replace_char_with_bigram_IF /* Symetry on FI(y) ✔ */
 #define CM_to_NM    &replace_char_with_bigram_NM /* Symetry on MN(c) ✔ */
@@ -260,17 +258,7 @@ ________   ________   ________   ________   ________          ________   _______
                 l_akDOT {
                         label = "Real.ty?";
                         bindings = <
-________   ________   ________   ________   ________          ________   _DOT____   &dotcom    &dotcouk   dotB_to_UB /* To have symetry BU <> UB */
-________   ________   ________   ________   ________          ________   ________   ________   ________   ________
-________   ________   ________   ________   ________          ________   ________   ________   ________   ________
-                        ________   ________   ________      ________   ________   ________
-                        >;
-                };
-
-                l_akAPOS {
-                        label = "Real'ty?";
-                        bindings = <
-________   ________   ________   ________   ________          ________   ________   _APOS___   ________   aposB_to_OB /* To have symetry BO <> OB */
+________   ________   ________   ________   ________          ________   _DOT____   &dotcom    &dotcouk   ________
 ________   ________   ________   ________   ________          ________   ________   ________   ________   ________
 ________   ________   ________   ________   ________          ________   ________   ________   ________   ________
                         ________   ________   ________      ________   ________   ________

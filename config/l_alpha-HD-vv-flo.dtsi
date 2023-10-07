@@ -264,6 +264,10 @@ ________   ________   ________   ________   ________          ________   _______
                         >;
                 };
 
+                /* NOTE: If using this file
+                  - Define l_akAPOS if using this file, l_akAPOS doesn't exist in the 'vb' version so it's been removed from the config
+                  - Update binding in SqtLbkt with: bindings = <&ak l_akAPOS SQT>, <&bk LBKT>;
+                */
                 l_akAPOS {
                         label = "Real'ty?";
                         bindings = <
