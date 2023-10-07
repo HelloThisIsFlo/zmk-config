@@ -35,6 +35,7 @@
 #define PB_to_SB    &replace_char_with_bigram_SB /* Symetry on BS(p) ✔ */
 #define YF_to_IF    &replace_char_with_bigram_IF /* Symetry on FI(y) ✔ */
 #define CM_to_NM    &replace_char_with_bigram_NM /* Symetry on MN(c) ✔ */
+#define XM_to_BM    &replace_char_with_bigram_BM /* Symetry on MB(x) ✔ */
 
 
 
@@ -238,7 +239,7 @@ ________   ________   ________   ________   ________          ________   _______
                 l_akX {
                         label = "Realitx?";
                         bindings = <
-___X____   ak_P       &bk L      ________   ________          ________   ________   ________   ________   ________
+___X____   ak_P       XM_to_BM   ________   ________          ________   ________   ________   ________   ________
 ________   ________   ________   ________   ________          ________   ________   ________   ________   ________
 ________   ________   ________   ________   ________          ________   ________   ________   ________   ________
                         ________   ________   ________      ________   ________   ________
