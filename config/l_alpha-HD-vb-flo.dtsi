@@ -35,6 +35,7 @@
 #define dotB_to_UB  &replace_char_with_bigram_UB /* Symetry on BU(.) ✔ */
 #define aposB_to_OB &replace_char_with_bigram_OB /* Symetry on BO(') ✔ */
 #define WM_to_LM    &replace_char_with_bigram_LM /* Symetry on ML(w) ✔ */
+#define PB_to_SB    &replace_char_with_bigram_SB /* Symetry on BS(p) ✔ */
 
 
 
@@ -56,7 +57,7 @@ ak_X          ak_W         ak_M         ak_G            ak_K                    
 
 &hml LCTRL S  &hml LALT C  hml_LGUI_N   hml_LSHIFT_T    &bk J                          &HashDllr   hmr_LSHIFT_A  hmr_LGUI_E  hmr_LALT_I  &hmr LCTRL H
 
-ak_B          ak_P         ak_L         ak_D            &bk V                      &MinusPlus  ak_U          ak_O        ak_Y        ak_F
+ak_B          ak_P         ak_L         ak_D            &bk V                          &MinusPlus  ak_U          ak_O        ak_Y        ak_F
 
                         ________       &blt l_nav RETURN    &blt l_nav R        &blt l_sym SPACE  &mo l_fn  &toggle_hdvv_winPC
                         >;
@@ -75,9 +76,9 @@ ________   ________   ________   ________   ________          ________   _______
                 l_akB {
                         label = "Reabity?";
                         bindings = <
-________   ________   ________   ________   ________          ________   &bk U      &ak l_akB O   &ak l_akB Y   ___B____
 ________   ________   ________   ________   ________          ________   ________   ________      ________      ________
 ________   ________   ________   ________   ________          ________   ________   ________      ________      ________
+___B____   &kp S      ________   ________   ________          ________   ________   ________      ________      ________
                         ________   ________   ________      ________   ________   ________
                         >;
                 };
@@ -199,7 +200,7 @@ ________   ________   ________   ________   ________          ________   _______
                         bindings = <
 ________   ________   &bk L      ________   ________          ________   ________   ________   ________   ________
 ________   ________   ________   ________   ________          ________   ________   ________   ________   ________
-________   ___P____   ________   ________   ________          ________   ________   ________   ________   ________
+PB_to_SB   ___P____   ________   ________   ________          ________   ________   ________   ________   ________
                         ________   ________   ________      ________   ________   ________
                         >;
                 };

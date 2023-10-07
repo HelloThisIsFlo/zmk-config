@@ -22,6 +22,7 @@ macros {
         REPLACE_CHAR_WITH_BIGRAM(U, B)
         REPLACE_CHAR_WITH_BIGRAM(O, B)
         REPLACE_CHAR_WITH_BIGRAM(L, M)
+        REPLACE_CHAR_WITH_BIGRAM(S, B)
 
         debug: debug {
                 label = "debug_macro";
