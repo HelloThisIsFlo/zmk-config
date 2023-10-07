@@ -34,7 +34,6 @@
 #define TK_to_NK    &replace_char_with_bigram_NK /* Symetry on KN(t) ✔ */
 #define dotB_to_UB  &replace_char_with_bigram_UB /* Symetry on BU(.) ✔ */
 #define aposB_to_OB &replace_char_with_bigram_OB /* Symetry on BO(') ✔ */
-#define WM_to_LM    &replace_char_with_bigram_LM /* Symetry on ML(w) ✔ */
 #define PB_to_SB    &replace_char_with_bigram_SB /* Symetry on BS(p) ✔ */
 #define YF_to_IF    &replace_char_with_bigram_IF /* Symetry on FI(y) ✔ */
 
@@ -229,7 +228,7 @@ ________   ________   ________   ________   ________          ________   ___U___
                 l_akW {
                         label = "Weality?";
                         bindings = <
-&bk S      ___W____   WM_to_LM   ________   ________          ________   ________   ________   ________   ________
+&bk S      ___W____   ________   ________   ________          ________   ________   ________   ________   ________
 ________   ________   ________   ________   ________          ________   ________   ________   ________   ________
 ________   ________   ________   ________   ________          ________   ________   ________   ________   ________
                         ________   ________   ________      ________   ________   ________
