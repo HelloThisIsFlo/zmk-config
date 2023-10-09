@@ -8,18 +8,18 @@ layers:
   - J
   - {t: '#', s: $}
   - {t: .⛶, s: ':'}
-  - {t: /, s: '&bk STAR'}
+  - {t: /, s: '*'}
   - {t: '"', s: ']'}
   - {t: '''', s: '['}
   - {t: S, h: '$$mdi:apple-keyboard-control$$'}
-  - {t: '&ak_C_macro', h: '$$mdi:apple-keyboard-option$$'}
-  - {t: '&ak_N_macro', h: '$$mdi:apple-keyboard-command$$'}
-  - {t: '&ak_T_macro', h: '$$mdi:apple-keyboard-shift$$'}
+  - {t: C⛶, h: '$$mdi:apple-keyboard-option$$'}
+  - {t: N⛶, h: '$$mdi:apple-keyboard-command$$'}
+  - {t: T⛶, h: '$$mdi:apple-keyboard-shift$$'}
   - K⛶
   - {t: ',', s: ;}
-  - {t: '&ak_A_macro', h: '$$mdi:apple-keyboard-shift$$'}
-  - {t: '&ak_E_macro', h: '$$mdi:apple-keyboard-command$$'}
-  - {t: '&ak_I_macro', h: '$$mdi:apple-keyboard-option$$'}
+  - {t: A⛶, h: '$$mdi:apple-keyboard-shift$$'}
+  - {t: E⛶, h: '$$mdi:apple-keyboard-command$$'}
+  - {t: I⛶, h: '$$mdi:apple-keyboard-option$$'}
   - {t: H, h: '$$mdi:apple-keyboard-control$$'}
   - B⛶
   - P⛶
@@ -32,11 +32,11 @@ layers:
   - Y⛶
   - F⛶
   - {t: ' ', type: trans}
-  - {t: '&bk RETURN', h: <^v>}
+  - {t: '$$mdi:keyboard-return$$', h: <^v>}
   - {t: R, h: <^v>}
-  - {t: '&bk SPACE', h: =*+/}
+  - {t: '$$mdi:keyboard-space$$', h: =*+/}
   - F*
-  - {t: '$$mdi:swap-horizontal$$', h: HDvv|QWERTY}
+  - {t: '$$mdi:swap-horizontal$$', h: 'Reality?|Kafka'}
   Raality?:
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
@@ -54,7 +54,7 @@ layers:
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
-  - {t: ' ', type: trans}
+  - A⛶
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
   - U
@@ -95,7 +95,7 @@ layers:
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
-  - {t: ' ', type: trans}
+  - B⛶
   - S
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
@@ -114,7 +114,7 @@ layers:
   Rcality?:
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
-  - '&replace_char_with_bigram_NM'
+  - {t: NM, s: C̶}
   - K
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
@@ -123,7 +123,7 @@ layers:
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
-  - {t: ' ', type: trans}
+  - C⛶
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
@@ -172,7 +172,7 @@ layers:
   - {t: ' ', type: trans}
   - G
   - {t: ' ', type: trans}
-  - {t: ' ', type: trans}
+  - D⛶
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
@@ -203,7 +203,7 @@ layers:
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
-  - {t: ' ', type: trans}
+  - E⛶
   - {t: ' ', type: trans}
   - O
   - {t: ' ', type: trans}
@@ -252,7 +252,7 @@ layers:
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
   - I
-  - {t: ' ', type: trans}
+  - F⛶
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
@@ -263,6 +263,7 @@ layers:
   - T
   - D
   - L
+  - G⛶
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
@@ -273,8 +274,7 @@ layers:
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
-  - {t: ' ', type: trans}
-  - '&replace_char_with_bigram_LK'
+  - {t: LK, s: G̶}
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
@@ -315,7 +315,7 @@ layers:
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
-  - {t: ' ', type: trans}
+  - I⛶
   - F
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
@@ -348,7 +348,7 @@ layers:
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
   - N
-  - {t: ' ', type: trans}
+  - K⛶
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
@@ -393,7 +393,7 @@ layers:
   - {t: ' ', type: trans}
   - M
   - {t: ' ', type: trans}
-  - {t: ' ', type: trans}
+  - L⛶
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
@@ -410,8 +410,8 @@ layers:
   Meality?:
   - B
   - P
-  - {t: ' ', type: trans}
-  - '&replace_char_with_bigram_LG'
+  - M⛶
+  - {t: LG, s: M̶}
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
@@ -457,7 +457,7 @@ layers:
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
-  - {t: ' ', type: trans}
+  - N⛶
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
@@ -509,7 +509,7 @@ layers:
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
-  - {t: ' ', type: trans}
+  - O⛶
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
@@ -539,8 +539,8 @@ layers:
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
-  - '&replace_char_with_bigram_SB'
-  - {t: ' ', type: trans}
+  - {t: SB, s: P̶}
+  - P⛶
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
@@ -569,8 +569,8 @@ layers:
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
-  - {t: ' ', type: trans}
-  - '&replace_char_with_bigram_NK'
+  - T⛶
+  - {t: NK, s: T̶}
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
@@ -619,7 +619,7 @@ layers:
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
-  - {t: ' ', type: trans}
+  - U⛶
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
@@ -631,7 +631,7 @@ layers:
   - {t: ' ', type: trans}
   Weality?:
   - S
-  - {t: ' ', type: trans}
+  - W⛶
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
@@ -667,9 +667,9 @@ layers:
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
   Realitx?:
-  - {t: ' ', type: trans}
+  - X⛶
   - P⛶
-  - '&replace_char_with_bigram_BM'
+  - {t: BM, s: X̶}
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
@@ -732,8 +732,8 @@ layers:
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
-  - {t: ' ', type: trans}
-  - '&replace_char_with_bigram_IF'
+  - Y⛶
+  - {t: IF, s: Y̶}
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
@@ -747,9 +747,9 @@ layers:
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
-  - {t: ' ', type: trans}
-  - '&dotcom'
-  - '&dotcouk'
+  - .⛶
+  - .com
+  - .co.uk
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
@@ -1062,7 +1062,7 @@ combos:
   l: ['Reality?', 'Raality?', 'Reabity?', 'Rcality?', 'Deality?', 'Reelity?', 'Realify?', 'Realitg?', 'Reaiity?', 'Reakity?', 'Realily?', 'Meality?', 'Renlity?',
     'Roality?', 'Realitp?', 'Reatity?', 'Realitu?', 'Weality?', 'Realitx?', 'Yeality?', 'Real.ty?', <^v>, =*+/, F*, '1984', BIOS, Kafka]
 - p: [23, 24]
-  k: '&bk RETURN'
+  k: $$mdi:keyboard-return$$
   l: ['Reality?', 'Raality?', 'Reabity?', 'Rcality?', 'Deality?', 'Reelity?', 'Realify?', 'Realitg?', 'Reaiity?', 'Reakity?', 'Realily?', 'Meality?', 'Renlity?',
     'Roality?', 'Realitp?', 'Reatity?', 'Realitu?', 'Weality?', 'Realitx?', 'Yeality?', 'Real.ty?', <^v>, =*+/, F*, '1984', BIOS, Kafka]
 - p: [11, 13]
@@ -1070,7 +1070,7 @@ combos:
   l: ['Reality?', 'Raality?', 'Reabity?', 'Rcality?', 'Deality?', 'Reelity?', 'Realify?', 'Realitg?', 'Reaiity?', 'Reakity?', 'Realily?', 'Meality?', 'Renlity?',
     'Roality?', 'Realitp?', 'Reatity?', 'Realitu?', 'Weality?', 'Realitx?', 'Yeality?', 'Real.ty?', <^v>, =*+/, F*, '1984', BIOS, Kafka]
 - p: [13, 14]
-  k: '&bk SPACE'
+  k: $$mdi:keyboard-space$$
   l: ['Reality?', 'Raality?', 'Reabity?', 'Rcality?', 'Deality?', 'Reelity?', 'Realify?', 'Realitg?', 'Reaiity?', 'Reakity?', 'Realily?', 'Meality?', 'Renlity?',
     'Roality?', 'Realitp?', 'Reatity?', 'Realitu?', 'Weality?', 'Realitx?', 'Yeality?', 'Real.ty?', <^v>, =*+/, F*, '1984', BIOS, Kafka]
 - p: [10, 13]

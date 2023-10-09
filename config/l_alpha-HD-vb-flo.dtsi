@@ -1,32 +1,33 @@
 #define ________  &trans
-#define ___A____ ________
-#define ___B____ ________
-#define ___C____ ________
-#define ___D____ ________
-#define ___E____ ________
-#define ___F____ ________
-#define ___G____ ________
-#define ___H____ ________
-#define ___I____ ________
-#define ___J____ ________
-#define ___K____ ________
-#define ___L____ ________
-#define ___M____ ________
-#define ___N____ ________
-#define ___O____ ________
-#define ___P____ ________
-#define ___Q____ ________
-#define ___R____ ________
-#define ___S____ ________
-#define ___T____ ________
-#define ___U____ ________
-#define ___V____ ________
-#define ___W____ ________
-#define ___X____ ________
-#define ___Y____ ________
-#define ___Z____ ________
-#define _DOT____ ________
-#define _APOS___ ________
+
+// For these keys, I could use '________' (&trans) instead of the ak_X macros, but the ak_X macros make the ak key visible on the keymap-drawer, so I went with the ak_X macros.
+#define ___A____ ak_A
+#define ___B____ ak_B
+#define ___C____ ak_C
+#define ___D____ ak_D
+#define ___E____ ak_E
+#define ___F____ ak_F
+#define ___G____ ak_G
+#define ___H____ ak_H
+#define ___I____ ak_I
+#define ___J____ ak_J
+#define ___K____ ak_K
+#define ___L____ ak_L
+#define ___M____ ak_M
+#define ___N____ ak_N
+#define ___O____ ak_O
+#define ___P____ ak_P
+#define ___Q____ ak_Q
+#define ___R____ ak_R
+#define ___S____ ak_S
+#define ___T____ ak_T
+#define ___U____ ak_U
+#define ___V____ ak_V
+#define ___W____ ak_W
+#define ___X____ ak_X
+#define ___Y____ ak_Y
+#define ___Z____ ak_Z
+#define _DOT____ ak_DOT
 
 
 #define MG_to_LG    &replace_char_with_bigram_LG /* Symetry on GL(m) ✔ */

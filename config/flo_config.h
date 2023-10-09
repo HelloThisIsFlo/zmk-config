@@ -135,6 +135,7 @@
 #define ak_X &ak l_akX X
 #define ak_Y &ak l_akY Y
 #define ak_Z &ak l_akZ Z
+#define ak_DOT &ak l_akDOT DOT
 
 
 

@@ -240,7 +240,10 @@ parse_config:
         "&bk COLON": ":"
         "&bk DLLR": "$"
         "&bk PLUS": "+"
+        "&bk STAR": "*"
         "&bk DELETE": $$mdi:backspace-reverse-outline$$
+        "&bk RETURN": $$mdi:keyboard-return$$
+        "&bk SPACE": $$mdi:keyboard-space$$
 
         # Adaptive Keys
         "&ak l_akA A": "A⛶"
@@ -271,19 +274,60 @@ parse_config:
         "&ak l_akZ Z": "Z⛶"
         "&ak l_akDOT DOT": ".⛶"
 
-        "&ak_A_macro": "A⛶"
-        "&ak_E_macro": "E⛶"
-        "&ak_N_macro": "N⛶"
-        "&ak_I_macro": "I⛶"
-        "&ak_T_macro": "T⛶"
+        # Home Row Mods
+        "&hml_C LALT 0":
+            tap: "C⛶"
+            hold: $$mdi:apple-keyboard-option$$
+        "&hml_N LGUI 0":
+            tap: "N⛶"
+            hold: $$mdi:apple-keyboard-command$$
+        "&hml_T LSHIFT 0":
+            tap: "T⛶"
+            hold: $$mdi:apple-keyboard-shift$$
+        "&hmr_A LSHIFT 0":
+            tap: "A⛶"
+            hold: $$mdi:apple-keyboard-shift$$
+        "&hmr_E LGUI 0":
+            tap: "E⛶"
+            hold: $$mdi:apple-keyboard-command$$
+        "&hmr_I LALT 0":
+            tap: "I⛶"
+            hold: $$mdi:apple-keyboard-option$$
+
+
+        # Replace with Bigram
+        "&replace_char_with_bigram_LG":
+            shifted: M̶ 
+            tap: "LG"
+        "&replace_char_with_bigram_LK":
+            shifted: G̶ 
+            tap: LK
+        "&replace_char_with_bigram_NK":
+            shifted: T̶ 
+            tap: NK
+        "&replace_char_with_bigram_SB":
+            shifted: P̶ 
+            tap: SB
+        "&replace_char_with_bigram_IF":
+            shifted: Y̶ 
+            tap: IF
+        "&replace_char_with_bigram_NM":
+            shifted: C̶ 
+            tap: NM
+        "&replace_char_with_bigram_BM":
+            shifted: X̶ 
+            tap: BM
 
 
         # Macros
         "&typeSemi": ";"
+        "&dotcom": ".com"
+        "&dotcouk": ".co.uk"
 
+        # Misc.
         "&toggle_hdvv_winPC":
             tap: $$mdi:swap-horizontal$$
-            hold: "HDvv|QWERTY"
+            hold: "Reality?|Kafka"
 
         # Empty
         "&none":
