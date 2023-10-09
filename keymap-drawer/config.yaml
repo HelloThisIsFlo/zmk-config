@@ -303,7 +303,7 @@ parse_config:
             shifted: M̶ 
             tap: "LG"
         "&replace_char_with_bigram_LK":
-            shifted: G̶ 
+            shifted: D̶ 
             tap: LK
         "&replace_char_with_bigram_NK":
             shifted: T̶ 
