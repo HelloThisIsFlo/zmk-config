@@ -30,13 +30,14 @@
 #define _DOT____ ak_DOT
 
 
+#define XM_to_BM    &replace_char_with_bigram_BM /* Symetry on MB(x) ✔ */
+#define YF_to_IF    &replace_char_with_bigram_IF /* Symetry on FI(y) ✔ */
 #define MG_to_LG    &replace_char_with_bigram_LG /* Symetry on GL(m) ✔ */
 #define GK_to_LK    &replace_char_with_bigram_LK /* Symetry on KL(g) ✔ */
+#define PN_to_LN    &replace_char_with_bigram_LN /* Symetry on NL(p) ✔ */
 #define TK_to_NK    &replace_char_with_bigram_NK /* Symetry on KN(t) ✔ */
-#define PB_to_SB    &replace_char_with_bigram_SB /* Symetry on BS(p) ✔ */
-#define YF_to_IF    &replace_char_with_bigram_IF /* Symetry on FI(y) ✔ */
 #define CM_to_NM    &replace_char_with_bigram_NM /* Symetry on MN(c) ✔ */
-#define XM_to_BM    &replace_char_with_bigram_BM /* Symetry on MB(x) ✔ */
+#define PB_to_SB    &replace_char_with_bigram_SB /* Symetry on BS(p) ✔ */
 
 
 
@@ -201,7 +202,7 @@ ________   ________   ________   ________   ________          ________   _______
                         label = "Realitp?";
                         bindings = <
 ________   ________   &bk L      ________   ________          ________   ________   ________   ________   ________
-________   ________   ________   ________   ________          ________   ________   ________   ________   ________
+________   ________   PN_to_LN   ________   ________   ________          ________   ________   ________   ________   ________
 PB_to_SB   ___P____   ________   ________   ________          ________   ________   ________   ________   ________
                         ________   ________   ________      ________   ________   ________
                         >;

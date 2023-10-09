@@ -308,6 +308,9 @@ parse_config:
         "&replace_char_with_bigram_SB":
             shifted: P̶ 
             tap: SB
+        "&replace_char_with_bigram_LN":
+            shifted: P̶ 
+            tap: LN
         "&replace_char_with_bigram_IF":
             shifted: Y̶ 
             tap: IF

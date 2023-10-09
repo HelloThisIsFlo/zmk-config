@@ -16,16 +16,20 @@
 
 macros {
 
-        REPLACE_CHAR_WITH_BIGRAM(L, G)
-        REPLACE_CHAR_WITH_BIGRAM(L, K)
-        REPLACE_CHAR_WITH_BIGRAM(N, K)
+        // Replace w/ Bigram for Vv only
         REPLACE_CHAR_WITH_BIGRAM(U, B)
         REPLACE_CHAR_WITH_BIGRAM(O, B)
         REPLACE_CHAR_WITH_BIGRAM(L, M)
-        REPLACE_CHAR_WITH_BIGRAM(S, B)
-        REPLACE_CHAR_WITH_BIGRAM(I, F)
-        REPLACE_CHAR_WITH_BIGRAM(N, M)
+
+        // Replace w/ Bigram for Vb
         REPLACE_CHAR_WITH_BIGRAM(B, M)
+        REPLACE_CHAR_WITH_BIGRAM(I, F)
+        REPLACE_CHAR_WITH_BIGRAM(L, G)
+        REPLACE_CHAR_WITH_BIGRAM(L, K)
+        REPLACE_CHAR_WITH_BIGRAM(L, N)
+        REPLACE_CHAR_WITH_BIGRAM(N, K)
+        REPLACE_CHAR_WITH_BIGRAM(N, M)
+        REPLACE_CHAR_WITH_BIGRAM(S, B)
 
         debug: debug {
                 label = "debug_macro";
