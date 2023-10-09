@@ -275,6 +275,9 @@ parse_config:
         "&ak l_akDOT DOT": ".⛶"
 
         # Home Row Mods
+        "&hml_S LCTRL 0":
+            tap: "S⛶"
+            hold: $$mdi:apple-keyboard-control$$
         "&hml_C LALT 0":
             tap: "C⛶"
             hold: $$mdi:apple-keyboard-option$$

@@ -43,6 +43,7 @@
 
 #define XXX 0
 // Second param is ignored, so using XXX
+#define hml_LCTRL_S  &hml_S LCTRL  XXX
 #define hml_LALT_C   &hml_C LALT   XXX
 #define hml_LGUI_N   &hml_N LGUI   XXX
 #define hml_LSHIFT_T &hml_T LSHIFT XXX
@@ -58,7 +59,7 @@
 
 ak_X          ak_W         ak_M         ak_G            &bk J                         &HashDllr   &DotColn      &SlshStar   &DqtRbkt    &SqtLbkt
 
-&hml LCTRL S  hml_LALT_C   hml_LGUI_N   hml_LSHIFT_T    ak_K                          &CmmaSemi   hmr_LSHIFT_A  hmr_LGUI_E  hmr_LALT_I  &hmr LCTRL H
+hml_LCTRL_S   hml_LALT_C   hml_LGUI_N   hml_LSHIFT_T    ak_K                          &CmmaSemi   hmr_LSHIFT_A  hmr_LGUI_E  hmr_LALT_I  &hmr LCTRL H
 
 ak_B          ak_P         ak_L         ak_D            &bk V                          &MinusPlus  ak_U          ak_O        ak_Y        ak_F
 
@@ -204,6 +205,16 @@ ________   ________   ________   ________   ________          ________   _______
 ________   ________   &bk L      ________   ________          ________   ________   ________   ________   ________ /* 'L' is for the M->P->L and X->P->L sequences */
 ________   ________   PN_to_LN   ________   ________          ________   ________   ________   ________   ________
 PB_to_SB   ___P____   ________   ________   ________          ________   ________   ________   ________   ________
+                        ________   ________   ________      ________   ________   ________
+                        >;
+                };
+
+                l_akS {
+                        label = "Reslity?";
+                        bindings = <
+________   ________   ________   &bk W      ________          ________   ________   ________   ________   ________
+___S____   ________   ________   ________   ________          ________   ________   ________   ________   ________
+________   ________   ________   ________   ________          ________   ________   ________   ________   ________
                         ________   ________   ________      ________   ________   ________
                         >;
                 };

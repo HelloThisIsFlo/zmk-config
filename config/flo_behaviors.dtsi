@@ -71,6 +71,18 @@ behaviors {
         bindings = <&kp>, <&bk>;
         hold-trigger-key-positions = <KEYS_R THUMBS>; // right hand allowed
     };
+    ZMK_MACRO(ak_S_macro, wait-ms = <0>; tap-ms = <0>; bindings = <&ak l_akS S>;)
+    hml_S: hml_S {
+        compatible = "zmk,behavior-hold-tap";
+        label = "hml_S";
+        #binding-cells = <2>;
+        tapping-term-ms = <my_tapping_term>;
+        quick-tap-ms = <my_global_quick_tap_window>;
+        global-quick-tap;
+        flavor = "tap-preferred";
+        bindings = <&kp>, <&ak_S_macro>;
+        hold-trigger-key-positions = <KEYS_R THUMBS>; // right hand allowed
+    };
     ZMK_MACRO(ak_C_macro, wait-ms = <0>; tap-ms = <0>; bindings = <&ak l_akC C>;)
     hml_C: hml_C {
         compatible = "zmk,behavior-hold-tap";
