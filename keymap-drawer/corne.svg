@@ -502,8 +502,9 @@ path.combo {
 <g transform="translate(102, 42)" class="key trans keypos-1">
 <rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key trans"/>
 </g>
-<g transform="translate(170, 34)" class="key trans keypos-2">
-<rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key trans"/>
+<g transform="translate(170, 34)" class="key keypos-2">
+<rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key"/>
+<text x="0" y="0" class="key tap">L</text>
 </g>
 <g transform="translate(238, 42)" class="key trans keypos-3">
 <rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key trans"/>
@@ -1540,7 +1541,7 @@ path.combo {
 <g transform="translate(0, 56)">
 <g transform="translate(34, 60)" class="key keypos-0">
 <rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key"/>
-<text x="0" y="0" class="key tap">B</text>
+<text x="0" y="0" class="key tap">B⛶</text>
 </g>
 <g transform="translate(102, 42)" class="key keypos-1">
 <rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key"/>
@@ -1887,9 +1888,8 @@ path.combo {
 <g transform="translate(150, 5453)" class="layer-Realitp?">
 <text x="0" y="28" class="label">Realitp?:</text>
 <g transform="translate(0, 56)">
-<g transform="translate(34, 60)" class="key keypos-0">
-<rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key"/>
-<text x="0" y="0" class="key tap">L</text>
+<g transform="translate(34, 60)" class="key trans keypos-0">
+<rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key trans"/>
 </g>
 <g transform="translate(102, 42)" class="key trans keypos-1">
 <rect rx="6" ry="6" x="-32" y="-32" width="64" height="64" class="key trans"/>
