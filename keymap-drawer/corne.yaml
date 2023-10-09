@@ -409,7 +409,7 @@ layers:
   - {t: ' ', type: trans}
   Meality?:
   - B
-  - P
+  - P⛶
   - M⛶
   - {t: LG, s: M̶}
   - {t: ' ', type: trans}
@@ -519,7 +519,7 @@ layers:
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
   Realitp?:
-  - {t: ' ', type: trans}
+  - L
   - {t: ' ', type: trans}
   - L
   - {t: ' ', type: trans}
