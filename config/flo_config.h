@@ -69,6 +69,18 @@
 /****************************************************/
 /****                  Layers                    ****/
 /****************************************************/
+/* IMPORTANT NOTE
+
+Max layer length is 32 (so max layer idx is 31). 
+
+
+This is because the active layer is stored in a 'uint32_t' bit array. 
+See: keymap.c::set_layer_state (92)
+
+    WRITE_BIT(_zmk_keymap_layer_state, layer, state);
+
+Here, `_zmk_keymap_layer_state` is the 'uint32_t' bit array.
+ */
 #define l_any    (-1)
 #define l_alpha  0
 #define l_akA    1
@@ -79,28 +91,29 @@
 #define l_akF    6
 #define l_akG    7
 #define l_akI    8
-#define l_akK    9
-#define l_akL    10
-#define l_akM    11
-#define l_akN    12
-#define l_akO    13
-#define l_akP    14
-#define l_akS    15
-#define l_akT    16
-#define l_akU    17
-#define l_akW    18
-#define l_akX    19
-#define l_akY    20
-#define l_akDOT  21
-#define l_nav    22
-#define l_sym    23
-#define l_fn     24
-#define l_num    25
-#define l_cfg    26
-#define l_winpc  27
-#define l_lock   28
+#define l_akJ    9
+#define l_akK    10
+#define l_akL    11
+#define l_akM    12
+#define l_akN    13
+#define l_akO    14
+#define l_akP    15
+#define l_akS    16
+#define l_akT    17
+#define l_akU    18
+#define l_akW    19
+#define l_akX    20
+#define l_akY    21
+#define l_akDOT  22
+#define l_nav    23
+#define l_sym    24
+#define l_fn     25
+#define l_num    26
+#define l_cfg    27
+#define l_winpc  28
+#define l_lock   29
 
-#define l_alpha_aks l_alpha l_akA l_akB l_akC l_akD l_akE l_akF l_akG l_akI l_akK l_akL l_akM l_akN l_akO l_akP l_akS l_akT l_akU l_akW l_akX l_akY l_akDOT
+#define l_alpha_aks l_alpha l_akA l_akB l_akC l_akD l_akE l_akF l_akG l_akI l_akJ l_akK l_akL l_akM l_akN l_akO l_akP l_akS l_akT l_akU l_akW l_akX l_akY l_akDOT
 #define l_all_except_lock l_alpha_aks l_nav l_sym l_fn l_num l_cfg l_winpc
 
 

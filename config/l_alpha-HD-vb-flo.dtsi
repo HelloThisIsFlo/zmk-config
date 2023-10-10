@@ -33,6 +33,8 @@
 #define PB_to_SB    &replace_char_with_bigram_SB /* Symetry on BS(p) ✔ */
 #define YF_to_IF    &replace_char_with_bigram_IF /* Symetry on FI(y) ✔ */
 #define MG_to_LG    &replace_char_with_bigram_LG /* Symetry on GL(m) ✔ */
+#define SJ_to_BJ    &replace_char_with_bigram_BJ /* Symetry on JB(s) ✔ <- Not really needed, but kept for consistency */
+#define GJ_to_NJ    &replace_char_with_bigram_NJ /* Symetry on JN(g) ✔ <- Not really needed, but kept for consistency */
 #define DK_to_LK    &replace_char_with_bigram_LK /* Symetry on KL(d) ✔ */
 #define TK_to_NK    &replace_char_with_bigram_NK /* Symetry on KN(t) ✔ */
 #define XM_to_BM    &replace_char_with_bigram_BM /* Symetry on MB(x) ✔ */
@@ -58,11 +60,11 @@
                         label = "Reality?"; // The base layer ... ?
                         bindings = <
 
-ak_X          ak_W         ak_M         ak_G            &bk J                         &HashDllr   &DotColn      &SlshStar   &DqtRbkt    &SqtLbkt
+ak_X          ak_W         ak_M         ak_G            ak_J                          &HashDllr   &DotColn      &SlshStar   &DqtRbkt    &SqtLbkt
 
 hml_LCTRL_S   hml_LALT_C   hml_LGUI_N   hml_LSHIFT_T    ak_K                          &CmmaSemi   hmr_LSHIFT_A  hmr_LGUI_E  hmr_LALT_I  &hmr LCTRL H
 
-ak_B          ak_P         ak_L         ak_D            &bk V                          &MinusPlus  ak_U          ak_O        ak_Y        ak_F
+ak_B          ak_P         ak_L         ak_D            &bk V                         &MinusPlus  ak_U          ak_O        ak_Y        ak_F
 
                         ________       &blt l_nav RETURN    &blt l_nav R        &blt l_sym SPACE  &mo l_fn  &toggle_hdvv_winPC
                         >;
@@ -131,7 +133,7 @@ ________   ________   ________   ________   ________          ________   _______
                 l_akG {
                         label = "Realitg?";
                         bindings = <
-&bk T      &bk D      &bk L      ___G____   ________          ________   ________   ________   ________   ________
+&bk T      &bk D      &bk L      ___G____   GJ_to_NJ          ________   ________   ________   ________   ________
 ________   ________   ________   ________   ________          ________   ________   ________   ________   ________
 ________   ________   ________   ________   ________          ________   ________   ________   ________   ________
                         ________   ________   ________      ________   ________   ________
@@ -143,6 +145,20 @@ ________   ________   ________   ________   ________          ________   _______
                         bindings = <
 ________   ________   ________   ________   ________          ________   ________   ________   ________   ________
 ________   ________   ________   ________   ________          ________   ________   ________   ___I____   &bk F
+________   ________   ________   ________   ________          ________   ________   ________   ________   ________
+                        ________   ________   ________      ________   ________   ________
+                        >;
+                };
+
+                l_akJ {
+                        label = "Realjty?";
+                        bindings = <
+/* NOTE
+This AK layer is not really needed, but it is here for ensuring the symetry of the J key.
+This makes the "replace_char_with_bigram_NJ/BJ" much more intuitive.
+*/
+________   ________   ________   &bk N      ___J____          ________   ________   ________   ________   ________
+&bk B      ________   ________   ________   ________          ________   ________   ________   ________   ________
 ________   ________   ________   ________   ________          ________   ________   ________   ________   ________
                         ________   ________   ________      ________   ________   ________
                         >;
@@ -213,7 +229,7 @@ PB_to_SB   ___P____   ________   ________   ________          ________   _______
                 l_akS {
                         label = "Reslity?";
                         bindings = <
-________   ________   ________   &bk W      ________          ________   ________   ________   ________   ________
+________   ________   ________   &bk W      SJ_to_BJ          ________   ________   ________   ________   ________
 ___S____   ________   ________   ________   ________          ________   ________   ________   ________   ________
 ________   ________   ________   ________   ________          ________   ________   ________   ________   ________
                         ________   ________   ________      ________   ________   ________
