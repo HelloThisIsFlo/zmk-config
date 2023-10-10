@@ -79,8 +79,11 @@ COMBO_LAY_ONE_HAND(l_nav,       delLine,         &bk LG(BSPC),                  
 // type a glyph (tiny board accommodation)
 //
 //XXXXXXXXXXXXXXXXXXXXXXXXXXXXX XXXXXXXXXXXXX    XXXXXXXXXXXXXXXXXXXXXXXXXXXX       L_4 L_3 L_2 L_1 L_0   R_0 R_1 R_2 R_3 R_4 )
-COMBO_LAY_ONE_HAND(l_alpha_aks, typeQ,           &lk_qu Q U,                            LT3     LT1                           )
-COMBO_LAY_ONE_HAND(l_alpha_aks, typeZ,           &bk Z,                                         LT1 LT0                       )
+
+// Missing letters - Sound + Symetry
+COMBO_LAY_TWO_HAND(l_alpha_aks, typeQ,           &lk_qu Q U,                                    LB1           RB1             ) // Think: "qU" (Combo on U)
+COMBO_LAY_TWO_HAND(l_alpha_aks, typeZ,           &bk Z,                                 LM3                           RM3     ) // Think: "zI" (Combo on I)
+
 COMBO_LAY_ONE_HAND(l_alpha_aks, typeColn,        &lk LA(SEMI) COLON,                                          RT1     RT3     )
 COMBO_LAY_ONE_HAND(l_alpha_aks, typeSemi,        &bk SEMI,                                                RM0 RM1             )
 COMBO_LAY_ONE_HAND(l_alpha_aks, typeExcl,        &bk EXCL,                                                    RT1 RT2         )
