@@ -669,7 +669,7 @@ layers:
   Weality?:
   - S
   - W⛶
-  - L
+  - '&replace_char_with_bigram_PM'
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
@@ -1172,11 +1172,11 @@ combos:
 - p: [16, 17, 18]
   k: '&bk LG(BSPC)'
   l: [<^v>]
-- p: [1, 3]
+- p: [23, 26]
   k: {t: '&Qu U', h: Q}
   l: ['Reality?', 'Raality?', 'Reabity?', 'Rcality?', 'Deality?', 'Reelity?', 'Realify?', 'Realitg?', 'Reaiity?', 'Reakity?', 'Realily?', 'Meality?', 'Renlity?',
     'Roality?', 'Realitp?', 'Reslity?', 'Reatity?', 'Realitu?', 'Weality?', 'Realitx?', 'Yeality?', 'Real.ty?']
-- p: [3, 4]
+- p: [11, 18]
   k: Z
   l: ['Reality?', 'Raality?', 'Reabity?', 'Rcality?', 'Deality?', 'Reelity?', 'Realify?', 'Realitg?', 'Reaiity?', 'Reakity?', 'Realily?', 'Meality?', 'Renlity?',
     'Roality?', 'Realitp?', 'Reslity?', 'Reatity?', 'Realitu?', 'Weality?', 'Realitx?', 'Yeality?', 'Real.ty?']
