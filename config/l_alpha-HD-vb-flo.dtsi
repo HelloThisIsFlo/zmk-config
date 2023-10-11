@@ -35,6 +35,7 @@
 #define MG_to_LG    &replace_char_with_bigram_LG /* Symetry on GL(m) ✔ */
 #define SJ_to_BJ    &replace_char_with_bigram_BJ /* Symetry on JB(s) ✔ <- Not really needed, but kept for consistency */
 #define GJ_to_NJ    &replace_char_with_bigram_NJ /* Symetry on JN(g) ✔ <- Not really needed, but kept for consistency */
+#define TJ_to_DJ    &replace_char_with_bigram_DJ /* Symetry on JD(t) ✔ <- Not really needed, but kept for consistency */
 #define DK_to_LK    &replace_char_with_bigram_LK /* Symetry on KL(d) ✔ */
 #define TK_to_NK    &replace_char_with_bigram_NK /* Symetry on KN(t) ✔ */
 #define XM_to_BM    &replace_char_with_bigram_BM /* Symetry on MB(x) ✔ */
@@ -158,7 +159,7 @@ This AK layer is not really needed, but it is here for ensuring the symetry of t
 This makes the "replace_char_with_bigram_NJ/BJ" much more intuitive.
 */
 ________   ________   ________   &bk N      ___J____          ________   ________   ________   ________   ________
-&bk B      ________   ________   ________   ________          ________   ________   ________   ________   ________
+&bk B      ________   ________   &bk D      ________          ________   ________   ________   ________   ________
 ________   ________   ________   ________   ________          ________   ________   ________   ________   ________
                         ________   ________   ________      ________   ________   ________
                         >;
@@ -239,7 +240,7 @@ ________   ________   ________   ________   ________          ________   _______
                 l_akT {
                         label = "Reatity?";
                         bindings = <
-________   ________   ________   ________   ________          ________   ________   ________   ________   ________
+________   ________   ________   ________   TJ_to_DJ          ________   ________   ________   ________   ________
 ________   ________   ________   ___T____   TK_to_NK          ________   ________   ________   ________   ________
 ________   ________   ________   ________   ________          ________   ________   ________   ________   ________
                         ________   ________   ________      ________   ________   ________
