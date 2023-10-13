@@ -51,7 +51,7 @@
 #define RB3 28
 #define RB4 29
 
-#define LH0 33
+#define LH0 32
 #define LH1 31
 #define LH2 30
 #define RH0 33
