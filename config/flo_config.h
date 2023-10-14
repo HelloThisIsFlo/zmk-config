@@ -158,7 +158,7 @@ Here, `_zmk_keymap_layer_state` is the 'uint32_t' bit array.
 /****************************************************/
 /****                 Config                     ****/
 /****************************************************/
-#define linger_term 100
+#define linger_term 100 // Tuned ✅
 #define my_tapping_term 150
 #define my_ak_window 220
 #define my_combo_timeout_one_hand 18
@@ -183,6 +183,11 @@ Here, `_zmk_keymap_layer_state` is the 'uint32_t' bit array.
 /****************************************************/
 &caps_word {
     continue-list = <UNDER MINUS BSPC DEL LEFT RIGHT>;
+};
+
+&sk {
+    release-after-ms = <sticky_key_release_timeout>;
+    quick-release;
 };
 
 
