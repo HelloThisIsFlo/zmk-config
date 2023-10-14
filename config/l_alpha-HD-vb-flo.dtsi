@@ -67,7 +67,7 @@ hml_LCTRL_S   hml_LALT_C   hml_LGUI_N   hml_LSHIFT_T    ak_K                    
 
 ak_B          ak_P         ak_L         ak_D            &bk V                         &MinusPlus  ak_U          ak_O        ak_Y        ak_F
 
-                        ________       &blt l_nav RETURN    &blt l_nav R        &blt l_sym SPACE  &mo l_fn  &toggle_hdvv_winPC
+                        &mo l_sym    &blt l_num RETURN    &blt l_nav R        &bk SPACE  &mo l_fn  &toggle_hdvv_winPC
                         >;
                 };
 
