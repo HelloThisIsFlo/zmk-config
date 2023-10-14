@@ -158,11 +158,21 @@ Here, `_zmk_keymap_layer_state` is the 'uint32_t' bit array.
 /****************************************************/
 /****                 Config                     ****/
 /****************************************************/
-#define my_tapping_term 170
+#define linger_term 100
+#define my_tapping_term 150
 #define my_ak_window 220
 #define my_combo_timeout_one_hand 18
 #define my_combo_timeout_two_hands 40
 #define my_global_quick_tap_window 130 // Measured w/ logs, 130ms is a comfortable quick double-tap for me
+#define sticky_key_release_timeout 1500
+// Calibration Tips
+// ----------------
+// linger_term
+//  => Try 'th' / 'tion' see if it the switch between the 2 is intuitive
+//
+// tapping_term
+//  - To make sure it's not too long  ⇒ ???
+//  - To make sure it's not too short ⇒ Try typing 'sl...'. 's' is on the pinkie so that's as slow as it gets
 
 
 

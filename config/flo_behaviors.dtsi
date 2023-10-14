@@ -177,7 +177,7 @@ behaviors {
         compatible = "zmk,behavior-hold-tap";
         label = "lk";
         #binding-cells = <2>;
-        tapping-term-ms = <my_tapping_term>;
+        tapping-term-ms = <linger_term>;
         flavor = "tap-preferred";
         bindings = <&bk>, <&bk>;
     };
@@ -185,7 +185,7 @@ behaviors {
         compatible = "zmk,behavior-hold-tap";
         label = "lk_qu";
         #binding-cells = <2>;
-        tapping-term-ms = <my_tapping_term>;
+        tapping-term-ms = <linger_term>;
         flavor = "tap-preferred";
         bindings = <&bk>, <&Qu>;
     };
@@ -194,7 +194,7 @@ behaviors {
         compatible = "zmk,behavior-hold-tap";
         label = "lk_E_accent";
         #binding-cells = <2>;
-        tapping-term-ms = <my_tapping_term>;
+        tapping-term-ms = <linger_term>;
         flavor = "tap-preferred";
         bindings = <&typeEaccent>, <&bk>;
     };
@@ -202,7 +202,7 @@ behaviors {
         compatible = "zmk,behavior-hold-tap";
         label = "lk_E_grave";
         #binding-cells = <2>;
-        tapping-term-ms = <my_tapping_term>;
+        tapping-term-ms = <linger_term>;
         flavor = "tap-preferred";
         bindings = <&typeEgrave>, <&bk>;
     };
@@ -210,7 +210,7 @@ behaviors {
         compatible = "zmk,behavior-hold-tap";
         label = "lk_E_acute";
         #binding-cells = <2>;
-        tapping-term-ms = <my_tapping_term>;
+        tapping-term-ms = <linger_term>;
         flavor = "tap-preferred";
         bindings = <&typeEacute>, <&bk>;
     };
@@ -218,7 +218,7 @@ behaviors {
         compatible = "zmk,behavior-hold-tap";
         label = "lk_O_macron";
         #binding-cells = <2>;
-        tapping-term-ms = <my_tapping_term>;
+        tapping-term-ms = <linger_term>;
         flavor = "tap-preferred";
         bindings = <&typeOmacron>, <&bk>;
     };
@@ -226,7 +226,7 @@ behaviors {
         compatible = "zmk,behavior-hold-tap";
         label = "lk_A_ring";
         #binding-cells = <2>;
-        tapping-term-ms = <my_tapping_term>;
+        tapping-term-ms = <linger_term>;
         flavor = "tap-preferred";
         bindings = <&typeAring>, <&bk>;
     };
@@ -234,7 +234,7 @@ behaviors {
         compatible = "zmk,behavior-hold-tap";
         label = "lk_U_umlaut";
         #binding-cells = <2>;
-        tapping-term-ms = <my_tapping_term>;
+        tapping-term-ms = <linger_term>;
         flavor = "tap-preferred";
         bindings = <&typeUumlaut>, <&bk>;
     };
@@ -242,7 +242,7 @@ behaviors {
         compatible = "zmk,behavior-hold-tap";
         label = "lk_C_cedille";
         #binding-cells = <2>;
-        tapping-term-ms = <my_tapping_term>;
+        tapping-term-ms = <linger_term>;
         flavor = "tap-preferred";
         bindings = <&typeCedille>, <&bk>;
     };
@@ -252,7 +252,7 @@ behaviors {
         compatible = "zmk,behavior-hold-tap";
         label = "lk_Japan";
         #binding-cells = <2>;
-        tapping-term-ms = <my_tapping_term>;
+        tapping-term-ms = <linger_term>;
         flavor = "tap-preferred";
         bindings = <&typeJapanese>, <&typeJapan>;
     };
@@ -260,7 +260,7 @@ behaviors {
         compatible = "zmk,behavior-hold-tap";
         label = "lk_th";
         #binding-cells = <2>;
-        tapping-term-ms = <my_tapping_term>;
+        tapping-term-ms = <linger_term>;
         quick-tap-ms = <90>;
 //            global-quick-tap;
         flavor = "tap-preferred";
@@ -270,7 +270,7 @@ behaviors {
         compatible = "zmk,behavior-hold-tap";
         label = "lk_sh";
         #binding-cells = <2>;
-        tapping-term-ms = <my_tapping_term>;
+        tapping-term-ms = <linger_term>;
         quick-tap-ms = <90>;
 //            global-quick-tap;
         flavor = "tap-preferred";
@@ -280,7 +280,7 @@ behaviors {
         compatible = "zmk,behavior-hold-tap";
         label = "lk_gh";
         #binding-cells = <2>;
-        tapping-term-ms = <my_tapping_term>;
+        tapping-term-ms = <linger_term>;
         quick-tap-ms = <90>;
 //            global-quick-tap;
         flavor = "tap-preferred";
@@ -290,7 +290,7 @@ behaviors {
         compatible = "zmk,behavior-hold-tap";
         label = "lk_quote";
         #binding-cells = <2>;
-        tapping-term-ms = <my_tapping_term>;
+        tapping-term-ms = <linger_term>;
         flavor = "tap-preferred";
         bindings = <&pairDquo>, <&bk>;
     };
@@ -298,7 +298,7 @@ behaviors {
         compatible = "zmk,behavior-hold-tap";
         label = "lk_par";
         #binding-cells = <2>;
-        tapping-term-ms = <my_tapping_term>;
+        tapping-term-ms = <linger_term>;
         flavor = "tap-preferred";
         bindings = <&pairPar>, <&bk>;
     };
@@ -306,7 +306,7 @@ behaviors {
         compatible = "zmk,behavior-hold-tap";
         label = "lk_bkt";
         #binding-cells = <2>;
-        tapping-term-ms = <my_tapping_term>;
+        tapping-term-ms = <linger_term>;
         flavor = "tap-preferred";
         bindings = <&pairBkt>, <&bk>;
     };
@@ -314,7 +314,7 @@ behaviors {
         compatible = "zmk,behavior-hold-tap";
         label = "lk_brc";
         #binding-cells = <2>;
-        tapping-term-ms = <my_tapping_term>;
+        tapping-term-ms = <linger_term>;
         flavor = "tap-preferred";
         bindings = <&pairBrc>, <&bk>;
     };
@@ -322,7 +322,7 @@ behaviors {
         compatible = "zmk,behavior-hold-tap";
         label = "lk_ltgt";
         #binding-cells = <2>;
-        tapping-term-ms = <my_tapping_term>;
+        tapping-term-ms = <linger_term>;
         flavor = "tap-preferred";
         bindings = <&pairLtGt>, <&bk>;
     };
