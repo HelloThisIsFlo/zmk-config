@@ -55,6 +55,10 @@
 #define hmr_LGUI_E   &hmr_E LGUI   XXX
 #define hmr_LALT_I   &hmr_I LALT   XXX
 
+#define hml_LGUI_S   &hml_S LGUI   XXX
+#define hml_LCTRL_N  &hml_N LCTRL  XXX
+#define hmr_LCTRL_E  &hmr_E LCTRL  XXX
+
 
 
                 l_alpha {
@@ -67,7 +71,17 @@ hml_LCTRL_S   hml_LALT_C   hml_LGUI_N   hml_LSHIFT_T    ak_K                    
 
 ak_B          ak_P         ak_L         ak_D            &bk V                         &MinusPlus  ak_U          ak_O        ak_Y        ak_F
 
-                        &mo l_sym    &blt l_num RETURN    &blt l_nav R        &bk SPACE  &mo l_fn  &toggle_hdvv_winPC
+                        &mo l_sym  &bsklt l_num LSHIFT  &blt l_nav R        &bk SPACE  &mo l_fn  &toggle_hdvv_winPC
+                        >;
+                };
+
+                l_winpc {
+                        label = "rEALITY¿"; // Windows layer, everything is upside down ⁉️
+                        bindings = <
+________      ________     ________     ________        ________                      ________    ________      ________    ________    ________
+hml_LGUI_S    ________     hml_LCTRL_N  ________        ________                      ________    ________      hmr_LCTRL_E ________    &hmr LGUI H
+________      ________     ________     ________        ________                      ________    ________      ________    ________    ________
+                                        ________   ________   ________      ________   ________   ________
                         >;
                 };
 

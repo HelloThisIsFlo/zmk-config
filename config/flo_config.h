@@ -83,37 +83,37 @@ Here, `_zmk_keymap_layer_state` is the 'uint32_t' bit array.
  */
 #define l_any    (-1)
 #define l_alpha  0
-#define l_akA    1
-#define l_akB    2
-#define l_akC    3
-#define l_akD    4
-#define l_akE    5
-#define l_akF    6
-#define l_akG    7
-#define l_akI    8
-#define l_akJ    9
-#define l_akK    10
-#define l_akL    11
-#define l_akM    12
-#define l_akN    13
-#define l_akO    14
-#define l_akP    15
-#define l_akS    16
-#define l_akT    17
-#define l_akU    18
-#define l_akW    19
-#define l_akX    20
-#define l_akY    21
-#define l_akDOT  22
-#define l_nav    23
-#define l_sym    24
-#define l_fn     25
-#define l_num    26
-#define l_cfg    27
-#define l_winpc  28
-#define l_lock   29
+#define l_winpc  1
+#define l_akA    2
+#define l_akB    3
+#define l_akC    4
+#define l_akD    5
+#define l_akE    6
+#define l_akF    7
+#define l_akG    8
+#define l_akI    9
+#define l_akJ    10
+#define l_akK    11
+#define l_akL    12
+#define l_akM    13
+#define l_akN    14
+#define l_akO    15
+#define l_akP    16
+#define l_akS    17
+#define l_akT    18
+#define l_akU    19
+#define l_akW    20
+#define l_akX    21
+#define l_akY    22
+#define l_akDOT  23
+#define l_nav    24
+#define l_sym    25
+#define l_fn     26
+#define l_num    27
+#define l_cfg    28
+#define l_lock   30
 
-#define l_alpha_aks l_alpha l_akA l_akB l_akC l_akD l_akE l_akF l_akG l_akI l_akJ l_akK l_akL l_akM l_akN l_akO l_akP l_akS l_akT l_akU l_akW l_akX l_akY l_akDOT
+#define l_alpha_aks l_alpha l_winpc l_akA l_akB l_akC l_akD l_akE l_akF l_akG l_akI l_akJ l_akK l_akL l_akM l_akN l_akO l_akP l_akS l_akT l_akU l_akW l_akX l_akY l_akDOT
 #define l_all_except_lock l_alpha_aks l_nav l_sym l_fn l_num l_cfg l_winpc
 
 
