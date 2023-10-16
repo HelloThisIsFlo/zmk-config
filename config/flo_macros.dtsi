@@ -341,6 +341,15 @@ THIS is the version from the drawings on reMarkable!
                         , <&macro_tap &kp H>
                         ;
                 )
+        ZMK_MACRO(Oh,
+                wait-ms = <10>;
+                tap-ms = <10>;
+                bindings = <&macro_tap &kp O>
+                        , <&macro_release &kp LSHFT>
+                        , <&macro_release &kp RSHFT>
+                        , <&macro_tap &kp H>
+                        ;
+                )
 
 
         Sch: Sch {
