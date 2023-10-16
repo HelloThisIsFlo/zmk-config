@@ -161,10 +161,10 @@ Here, `_zmk_keymap_layer_state` is the 'uint32_t' bit array.
 #define linger_term 100 // Tuned ✅
 #define my_tapping_term 150
 #define my_ak_window 220
-#define my_combo_timeout_one_hand 18
-#define my_combo_timeout_two_hands 40
+#define my_combo_timeout_one_hand 20 // Tuned at 18ms, but sometimes missing the combo, so trying a bit higher
+#define my_combo_timeout_two_hands 28
 #define my_global_quick_tap_window 130 // Measured w/ logs, 130ms is a comfortable quick double-tap for me
-#define sticky_key_release_timeout 1500
+#define sticky_key_release_timeout 750
 // Calibration Tips
 // ----------------
 // linger_term

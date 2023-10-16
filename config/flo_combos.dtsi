@@ -43,6 +43,10 @@ COMBO_ANY_ONE_HAND(             settings,        &mo l_cfg,                     
 COMBO_LAY_TWO_HAND(l_alpha_aks, docaps,          &caps_word,                                LM2 LM1           RM1 RM2         ) // CAPSWORD
 COMBO_LAY_TWO_HAND(l_alpha_aks, capslk,          &bk CAPS,                              LM3 LM2                   RM2 RM3     ) // CAPS LOCK
 
+// COMBO_LAY_TWO_HAND(l_alpha_aks, stickyShift,     &sk LSHIFT,                                    LT1           RT1             ) // Sticky Shift
+// COMBO_LAY_TWO_HAND(l_alpha_aks, stickyShift2,    &sk LSHIFT,                        LM4                                   RM4 ) // Sticky Shift
+// COMBO_LAY_TWO_HAND(l_alpha_aks, stickyShift3,    &sk LSHIFT,                                    LM1           RM1             ) // Sticky Shift - Two hand combo, but using one hand timeout because both indexes are quite responsive and two hand timeout causes misfires
+
 //
 // Editing actions (&whitespace)
 //
