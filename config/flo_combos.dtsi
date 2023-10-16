@@ -123,8 +123,8 @@ COMBO_LAY_TWO_HAND(l_alpha_aks, pnIll,           &typePnIll,                    
                                                                                             LB2                               ) // "I'll "
 COMBO_LAY_TWO_HAND(l_alpha_aks, pnId,            &typePnId,                                                           RM3     \
                                                                                                 LB1                           ) // "I'd "
-COMBO_LAY_ONE_HAND(l_alpha_aks, pnIve,           &typePnIve,                                                          RM3     \
-                                                                                    LB4                                       ) // "I've "
+COMBO_LAY_TWO_HAND(l_alpha_aks, pnIve,           &typePnIve,                                                          RM3     \
+                                                                                                    LB0                       ) // "I've "
 
 // /***** You  ****/
 // COMBO_LAY_TWO_HAND(l_alpha_aks, pnYoure,         &typePnYoure,                                                        RB3     \
