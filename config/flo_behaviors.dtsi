@@ -371,6 +371,20 @@ behaviors {
         bindings = <&bk MINUS>, <&bk PLUS>;
         mods = <(MOD_LSFT|MOD_RSFT)>;
     };
+    UnderDash: UnderDash {
+        compatible = "zmk,behavior-mod-morph";
+        label = "UnderDash";
+        #binding-cells = <0>;
+        bindings = <&bk UNDER>, <&bk MINUS>;
+        mods = <(MOD_LSFT|MOD_RSFT)>;
+    };
+    SpaceUnder: SpaceUnder {
+        compatible = "zmk,behavior-mod-morph";
+        label = "SpaceUnder";
+        #binding-cells = <0>;
+        bindings = <&bk SPACE>, <&bk UNDER>;
+        mods = <(MOD_LSFT|MOD_RSFT)>;
+    };
     DqtLbkt: DqtLbkt {
         compatible = "zmk,behavior-mod-morph";
         label = "DqtLbkt";

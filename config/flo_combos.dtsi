@@ -65,7 +65,7 @@ COMBO_LAY_ONE_HAND(l_nav,       delLine,         &bk LG(BSPC),                  
 
 /********************** Special Characters ****************/
 COMBO_LAY_ONE_HAND(l_alpha_aks, typeExcl,        &bk EXCL,                                                    RT1 RT2         )
-COMBO_LAY_ONE_HAND(l_alpha_aks, typeQues,        &bk QMARK,                                                       RT2 RT3     )
+COMBO_LAY_ONE_HAND(l_alpha_aks, typeQues,        &bk QMARK,                                                       RT2 RT3     ) // tODO: Maybe move to RT0 RT1 (or maybe exlamation) (so that they're both aligned with 'dot' key)
 COMBO_LAY_ONE_HAND(l_alpha_aks, typeGrav,        &bk GRAVE,                                                           RT3 RT4 )
 COMBO_LAY_ONE_HAND(l_alpha_aks, typeSemi,        &bk SEMI,                                                    RM1         RM4 ) // For easy vim navigation (also on shifted ',' for normal typing)
 
@@ -166,7 +166,7 @@ COMBO_LAY_TWO_HAND(l_alpha_aks, pnIve,           &typePnIve,                    
 // COMBO_LAY_ONE_HAND(l_alpha_aks, quit,            &bk LG(Q),                                         LM0                       \
 //                                                                                                     LB0                       )
 // COMBO_LAY_ONE_HAND(l_alpha_aks, typeColn,        &lk LA(SEMI) COLON,                                          RT1     RT3     )
-// COMBO_LAY_ONE_HAND(l_alpha_aks, typeUnder,       &bk UNDER,                                                   RB1     RB3     ) // TODO: Make a key: '_' and shifted is '-'
+// COMBO_LAY_ONE_HAND(l_alpha_aks, typeUnder,       &bk UNDER,                                                   RB1     RB3     )
 // COMBO_LAY_ONE_HAND(l_alpha_aks, typeNdash,       &lk LA(LS(MINUS)) LA(MINUS),                             RB0 RB1             ) // N-dash (M-dash if held)
 // COMBO_LAY_ONE_HAND(l_alpha_aks, typeMdash,       &bk LA(LS(MINUS)),                                       RB0     RB2         ) // M-dash (minus)
 // COMBO_LAY_ONE_HAND(l_alpha_aks, typeTilde,       &bk TILDE,                                                   RB1         RB4 ) // tilde (not dead key)

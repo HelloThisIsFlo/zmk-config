@@ -59,19 +59,25 @@
 #define hml_LCTRL_N  &hml_N LCTRL  XXX
 #define hmr_LCTRL_E  &hmr_E LCTRL  XXX
 
+/*
 
+&SlshStar
+&DqtRbk
+&HashDllr
+
+*/
 
                 l_alpha {
                         label = "Reality?"; // The base layer ... ?
                         bindings = <
 
-ak_X          ak_W         ak_M         ak_G            ak_J                          &HashDllr   &DotColn      &SlshStar   &DqtRbkt    &SqtLbkt
+ak_X          ak_W         ak_M         ak_G            ak_J                          ________    &DotColn      &CmmaSemi   &bk SQT     ________
 
-hml_LCTRL_S   hml_LALT_C   hml_LGUI_N   hml_LSHIFT_T    ak_K                          &CmmaSemi   hmr_LSHIFT_A  hmr_LGUI_E  hmr_LALT_I  &hmr LCTRL H
+hml_LCTRL_S   hml_LALT_C   hml_LGUI_N   hml_LSHIFT_T    ak_K                          ________    hmr_LSHIFT_A  hmr_LGUI_E  hmr_LALT_I  &hmr LCTRL H
 
-ak_B          ak_P         ak_L         ak_D            &bk V                         &MinusPlus  ak_U          ak_O        ak_Y        ak_F
+ak_B          ak_P         ak_L         ak_D            &bk V                         &UnderDash  ak_U          ak_O        ak_Y        ak_F
 
-                        &mo l_sym  &bsklt l_num LSHIFT  &blt l_nav R        &bk SPACE  &mo l_fn  &toggle_hdvv_winPC
+                        &mo l_sym  &bsklt l_num LSHIFT  &blt l_nav R        &SpaceUnder  &mo l_fn  &toggle_hdvv_winPC
                         >;
                 };
 
@@ -301,10 +307,12 @@ ________   ________   ________   ________   ________          ________   _______
                         >;
                 };
 
+// TODO: Fix 3 dots, include backspace before
+#define _3_Dots_ &bk LA(SEMI)
                 l_akDOT {
                         label = "Real.ty?";
                         bindings = <
-________   ________   ________   ________   ________          ________   _DOT____   &dotcom    &dotcouk   ________
+________   ________   ________   ________   ________          ________   ________   _3_Dots_   &dotcom    &dotcouk
 ________   ________   ________   ________   ________          ________   ________   ________   ________   ________
 ________   ________   ________   ________   ________          ________   ________   ________   ________   ________
                         ________   ________   ________      ________   ________   ________
