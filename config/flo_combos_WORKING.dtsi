@@ -1,0 +1,182 @@
+#define COMBO_LAY_BASE(LAYERS, NAME, BINDINGS, KEYPOS, TIMEOUT) \
+  combo_##NAME { \
+    bindings = <BINDINGS>; \
+    key-positions = <KEYPOS>; \
+    layers = <LAYERS>; \
+    timeout-ms = <TIMEOUT>; \
+};
+
+#define COMBO_ANY_ONE_HAND(NAME, BINDINGS, KEYPOS) \
+  COMBO_LAY_BASE(l_all_except_lock, NAME, BINDINGS, KEYPOS, my_combo_timeout_one_hand)
+#define COMBO_ANY_TWO_HAND(NAME, BINDINGS, KEYPOS) \
+  COMBO_LAY_BASE(l_all_except_lock, NAME, BINDINGS, KEYPOS, my_combo_timeout_two_hands)
+
+#define COMBO_LAY_ONE_HAND(LAYERS, NAME, BINDINGS, KEYPOS) \
+  COMBO_LAY_BASE(LAYERS, NAME, BINDINGS, KEYPOS, my_combo_timeout_one_hand)
+#define COMBO_LAY_TWO_HAND(LAYERS, NAME, BINDINGS, KEYPOS) \
+  COMBO_LAY_BASE(LAYERS, NAME, BINDINGS, KEYPOS, my_combo_timeout_two_hands)
+
+#define COMBO_LCK_TWO_HAND(NAME, BINDINGS, KEYPOS) \
+  COMBO_LAY_BASE(l_all_except_lock l_lock, NAME, BINDINGS, KEYPOS, my_combo_timeout_two_hands) // These combos work on any layers, EVEN the Lock layer!
+
+/*    KEY POSITION Names
+╭─────────────────────╮ ╭─────────────────────╮
+│ LT4 LT3 LT2 LT1 LT0 │ │ RT0 RT1 RT2 RT3 RT4 │
+│ LM4 LM3 LM2 LM1 LM0 │ │ RM0 RM1 RM2 RM3 RM4 │
+│ LB4 LB3 LB2 LB1 LB0 │ │ RB0 RB1 RB2 RB3 RB4 |
+╰───────╮ LH2 LH1 LH0 | | RH0 RH1 RH2 ╭───────╯
+        ╰─────────────╯ ╰────────────╯
+*/
+
+
+combos {
+    compatible = "zmk,combos";
+
+//
+// control/modes
+//
+//XXXXXXXXXXXXXXXXXXXXXXXXXXXXX XXXXXXXXXXXXX    XXXXXXXXXXXXXXXXXXXXXXXXXXXX       L_4 L_3 L_2 L_1 L_0   R_0 R_1 R_2 R_3 R_4 )
+COMBO_LCK_TWO_HAND(             lock,            &tog l_lock,                       LT4                                   RT4 \
+                                                                                    LB4                                   RB4 ) // Lock/unlock the keyboard
+COMBO_ANY_ONE_HAND(             settings,        &mo l_cfg,                                                   RH1 RH2         ) // get the settings/media layer from anywhere
+// COMBO_ANY_ONE_HAND(             appswitch,       &AppSwitch,                            LM3     LM1                           ) // App switch
+COMBO_LAY_TWO_HAND(l_alpha_aks, docaps,          &caps_word,                                LM2 LM1           RM1 RM2         ) // CAPSWORD
+COMBO_LAY_TWO_HAND(l_alpha_aks, capslk,          &bk CAPS,                              LM3 LM2                   RM2 RM3     ) // CAPS LOCK
+
+// COMBO_LAY_TWO_HAND(l_alpha_aks, stickyShift,     &sk LSHIFT,                                    LT1           RT1             ) // Sticky Shift
+// COMBO_LAY_TWO_HAND(l_alpha_aks, stickyShift2,    &sk LSHIFT,                        LM4                                   RM4 ) // Sticky Shift
+// COMBO_LAY_TWO_HAND(l_alpha_aks, stickyShift3,    &sk LSHIFT,                                    LM1           RM1             ) // Sticky Shift - Two hand combo, but using one hand timeout because both indexes are quite responsive and two hand timeout causes misfires
+
+//
+// Editing actions (&whitespace)
+//
+//XXXXXXXXXXXXXXXXXXXXXXXXXXXXX XXXXXXXXXXXXX    XXXXXXXXXXXXXXXXXXXXXXXXXXXX       L_4 L_3 L_2 L_1 L_0   R_0 R_1 R_2 R_3 R_4 )
+// COMBO_ANY_ONE_HAND(             Gent,            &bk LG(RETURN),                            LB2 LB1 LB0                       )
+COMBO_ANY_ONE_HAND(             entr,            &bk RETURN,                                    LB1 LB0                       )
+COMBO_ANY_ONE_HAND(             tab,             &bk TAB,                               LM3     LM1                           )
+// COMBO_ANY_ONE_HAND(             stab,            &bk LS(TAB),                           LB3 LB2 LB1                           )
+// COMBO_ANY_ONE_HAND(             spce,            &bk SPACE,                                     LM1 LM0                       )
+COMBO_ANY_ONE_HAND(             esc,             &bk ESC,                           LM4         LM1                           )
+// COMBO_ANY_ONE_HAND(             sall,            &bk LG(A),                         LB4         LB1                           )
+// COMBO_LAY_ONE_HAND(l_alpha_aks, selword,         &m_selword,                        LB4             LB0                       )
+COMBO_ANY_ONE_HAND(             undo,            &bk LG(Z),                             LB3     LB1                           )
+COMBO_ANY_ONE_HAND(             redo,            &bk LG(LS(Z)),                         LB3 LB2 LB1                           )
+// COMBO_ANY_ONE_HAND(             copy,            &lk LG(X) LG(C),                       LB3 LB2                               )
+// COMBO_ANY_ONE_HAND(             pste,            &lk LG(LS(LA(V))) LG(V),                   LB2 LB1                           )
+// COMBO_LAY_ONE_HAND(l_alpha_aks, cloz,            &bk LG(W),                             LM3                                   \
+//                                                                                         LB3                                   )
+// COMBO_LAY_ONE_HAND(l_alpha_aks, new,             &bk LG(N),                                 LM2                               \
+//                                                                                             LB2                               )
+// COMBO_LAY_ONE_HAND(l_alpha_aks, open,            &bk LG(O),                                     LM1                           \
+//                                                                                                 LB1                           )
+// COMBO_LAY_ONE_HAND(l_alpha_aks, quit,            &bk LG(Q),                                         LM0                       \
+//                                                                                                     LB0                       )
+// COMBO_LAY_ONE_HAND(l_alpha_aks, findsel,         &m_findsel,                        LM4                                       \
+//                                                                                                     LB0                       )
+
+COMBO_ANY_ONE_HAND(             bspc,            &bk BSPC,                                                    RM1 RM2         )
+COMBO_ANY_ONE_HAND(             del,             &bk DEL,                                                         RM2 RM3     )
+COMBO_LAY_ONE_HAND(l_alpha_aks, delWord,         &bk LA(BSPC),                                                RM1 RM2 RM3     )
+COMBO_LAY_ONE_HAND(l_nav,       delLine,         &bk LG(BSPC),                                                RM1 RM2 RM3     )
+
+//
+// type a glyph (tiny board accommodation)
+//
+//XXXXXXXXXXXXXXXXXXXXXXXXXXXXX XXXXXXXXXXXXX    XXXXXXXXXXXXXXXXXXXXXXXXXXXX       L_4 L_3 L_2 L_1 L_0   R_0 R_1 R_2 R_3 R_4 )
+
+// Missing letters - Sound + Symetry
+COMBO_LAY_TWO_HAND(l_alpha_aks, typeQ,           &lk_qu Q U,                                    LB1           RB1             ) // Think: "qU" (Combo on U)
+COMBO_LAY_TWO_HAND(l_alpha_aks, typeZ,           &bk Z,                                 LM3                           RM3     ) // Think: "zI" (Combo on I)
+
+// COMBO_LAY_ONE_HAND(l_alpha_aks, typeColn,        &lk LA(SEMI) COLON,                                          RT1     RT3     )
+COMBO_LAY_ONE_HAND(l_alpha_aks, typeSemi,        &bk SEMI,                                                RM0 RM1             )
+COMBO_LAY_ONE_HAND(l_alpha_aks, typeExcl,        &bk EXCL,                                                    RT1 RT2         )
+COMBO_LAY_ONE_HAND(l_alpha_aks, typeQues,        &bk QMARK,                                                       RT2 RT3     )
+COMBO_LAY_ONE_HAND(l_alpha_aks, typeGrav,        &bk GRAVE,                                                           RT3 RT4 )
+// COMBO_LAY_ONE_HAND(l_alpha_aks, typeatMk,        &lk LS(LA(SEMI)) AT_SIGN,                                RT0 RT1             ) // @ (№ if held)
+// COMBO_LAY_ONE_HAND(l_alpha_aks, typeUnder,       &bk UNDER,                                                   RB1     RB3     ) // _
+COMBO_LAY_ONE_HAND(l_alpha_aks, typeEqual,       &lk PRCNT EQUAL,                                                 RB2 RB3     ) // = (percent if held)
+// COMBO_LAY_ONE_HAND(l_alpha_aks, typeNdash,       &lk LA(LS(MINUS)) LA(MINUS),                             RB0 RB1             ) // N-dash (M-dash if held)
+// COMBO_LAY_ONE_HAND(l_alpha_aks, typeMdash,       &bk LA(LS(MINUS)),                                       RB0     RB2         ) // M-dash (minus)
+// COMBO_LAY_ONE_HAND(l_alpha_aks, typeTilde,       &bk TILDE,                                                   RB1         RB4 ) // tilde (not dead key)
+
+// COMBO_LAY_ONE_HAND(l_alpha_aks, ligAE,           &bk LA(APOS),                                                RM1             \
+//                                                                                                               RB1             ) // ligature æ
+// COMBO_LAY_ONE_HAND(l_alpha_aks, ligOE,           &bk LA(Q),                                                       RM2         \
+//                                                                                                                   RB2         ) // ligature œ
+
+// COMBO_LAY_ONE_HAND(l_alpha_aks, diacAccent,      &lk_E_accent E LA(E),                                        RM1 RM2         ) // ´ (É if held)
+// COMBO_LAY_ONE_HAND(l_alpha_aks, diacGrave,       &lk_E_grave E LA(GRAVE),                                         RM2 RM3     ) // ` (È if held)
+// COMBO_LAY_ONE_HAND(l_alpha_aks, diacAcute,       &lk_E_acute E LA(N6),                                        RM1     RM3     ) // ˆ (Ê if held)
+// COMBO_LAY_ONE_HAND(l_alpha_aks, diacMacron,      &lk_O_macron E LA(A),                                            RM2     RM4 ) // ¯ (ō if held)
+// COMBO_LAY_ONE_HAND(l_alpha_aks, diacCirc,        &lk_A_ring A LA(K),                                          RM1         RM4 ) // ˚ (Å if held)
+// COMBO_LAY_ONE_HAND(l_alpha_aks, diacUmlaut,      &lk_U_umlaut U LA(U),                                        RB1 RB2         ) // ¨ (Ü if held)
+// COMBO_LAY_ONE_HAND(l_alpha_aks, diacCedille,     &lk_C_cedille C LA(C),                                           LM2     LM4 ) // ¸ (ç if held)
+
+//
+// H Digraphs REQUIRE macros (defined earlier) to process
+//
+//XXXXXXXXXXXXXXXXXXXXXXXXXXXXX XXXXXXXXXXXXX    XXXXXXXXXXXXXXXXXXXXXXXXXXXX       L_4 L_3 L_2 L_1 L_0   R_0 R_1 R_2 R_3 R_4 )
+COMBO_LAY_ONE_HAND(l_alpha_aks, sch,             &Sch,                              LM4 LM3 LM2                               ) // Sch
+COMBO_LAY_ONE_HAND(l_alpha_aks, tch,             &Tch,                                  LM3 LM2 LM1                           ) // Tch
+COMBO_LAY_ONE_HAND(l_alpha_aks, th,              &lk_th H T,                                LM2 LM1                           ) // Th/tion
+COMBO_LAY_ONE_HAND(l_alpha_aks, ch,              &Ch,                                   LM3 LM2                               ) // Ch
+COMBO_LAY_ONE_HAND(l_alpha_aks, wh,              &Wh,                                   LT3 LT2                               ) // Wh
+COMBO_LAY_ONE_HAND(l_alpha_aks, sh,              &lk_sh H S,                        LM4 LM3                                   ) // Sh/sion
+COMBO_LAY_ONE_HAND(l_alpha_aks, gh,              &lk_gh H G,                                LT2 LT1                           ) // Gh/ght
+COMBO_LAY_ONE_HAND(l_alpha_aks, ph,              &Ph,                                   LB3 LB2                               ) // Ph
+
+//
+// Pronoun combos REQUIRE macros to process
+//
+//XXXXXXXXXXXXXXXXXXXXXXXXXXXXX XXXXXXXXXXXXX    XXXXXXXXXXXXXXXXXXXXXXXXXXXX       L_4 L_3 L_2 L_1 L_0   R_0 R_1 R_2 R_3 R_4 )
+/***** I  ****/
+COMBO_LAY_ONE_HAND(l_alpha_aks, pnI,             &typePnI,                                                            RM3 RM4 ) // "I "
+COMBO_LAY_TWO_HAND(l_alpha_aks, pnIm,            &typePnIm,                                 LT2                               \
+                                                                                                                      RM3     ) // "I'm "
+COMBO_LAY_TWO_HAND(l_alpha_aks, pnIll,           &typePnIll,                                                          RM3     \
+                                                                                            LB2                               ) // "I'll "
+COMBO_LAY_TWO_HAND(l_alpha_aks, pnId,            &typePnId,                                                           RM3     \
+                                                                                                LB1                           ) // "I'd "
+COMBO_LAY_ONE_HAND(l_alpha_aks, pnIve,           &typePnIve,                                                          RM3     \
+                                                                                    LB4                                       ) // "I've "
+
+// /***** You  ****/
+// COMBO_LAY_TWO_HAND(l_alpha_aks, pnYoure,         &typePnYoure,                                                        RB3     \
+//                                                                                                     LH0                       ) // "You're "
+// COMBO_LAY_TWO_HAND(l_alpha_aks, pnYoull,         &typePnYoull,                                                        RB3     \
+//                                                                                             LB2                               ) // "You'll "
+// COMBO_LAY_TWO_HAND(l_alpha_aks, pnYoud,          &typePnYoud,                                                         RB3     \
+//                                                                                                 LB1                           ) // "You'd "
+// COMBO_LAY_TWO_HAND(l_alpha_aks, pnYouve,         &typePnYouve,                                                        RB3     \
+//                                                                                     LB4                                       ) // "You've "
+
+// /***** We  ****/
+// COMBO_LAY_ONE_HAND(l_alpha_aks, pnWere,          &typePnWere,                           LT3                                   \
+//                                                                                                     LH0                       ) // "We're "
+// COMBO_LAY_ONE_HAND(l_alpha_aks, pnWell,          &typePnWell,                           LT3                                   \
+//                                                                                             LM2                               ) // "We'll "
+// COMBO_LAY_ONE_HAND(l_alpha_aks, pnWed,           &typePnWed,                            LT3                                   \
+//                                                                                                 LM1                           ) // "We'd "
+// COMBO_LAY_ONE_HAND(l_alpha_aks, pnWeve,          &typePnWeve,                       LT4 LT3                                   ) // "We've "
+
+
+// /* numpad symbol combos */
+//XXXXXXXXXXXXXXXXXXXXXXXXXXXXX XXXXXXXXXXXXX    XXXXXXXXXXXXXXXXXXXXXXXXXXXX       L_4 L_3 L_2 L_1 L_0   R_0 R_1 R_2 R_3 R_4 )
+COMBO_LAY_ONE_HAND(l_num,       numLPRN,         &bk LPAR,                                                    RM1 RM2         )
+COMBO_LAY_ONE_HAND(l_num,       numRPRN,         &bk RPAR,                                                        RM2 RM3     )
+COMBO_LAY_ONE_HAND(l_num,       numEQUAL,        &bk EQUAL,                                                           RM3 RM4 )
+COMBO_LAY_ONE_HAND(l_num,       numCOLN,         &bk COLON,                                                   RM1     RM3     )
+COMBO_LAY_ONE_HAND(l_num,       numPRCNT,        &bk PRCNT,                                                           RB3 RB4 )
+COMBO_LAY_ONE_HAND(l_num,       numLT,           &bk LT,                                                  RM0 RM1             )
+COMBO_LAY_ONE_HAND(l_num,       numGT,           &bk GT,                                                  RM0             RM4 )
+COMBO_LAY_ONE_HAND(l_num,       numDASH,         &bk LA(MINUS),                                           RB0 RB1             )
+COMBO_LAY_ONE_HAND(l_num,       numTILD,         &bk TILDE,                                               RB0             RB4 )
+COMBO_LAY_ONE_HAND(l_num,       numELIP,         &bk LA(SEMI),                                                RB1         RB4 )
+COMBO_LAY_ONE_HAND(l_num,       numDLLR,         &bk DLLR,                                                    RT1 RT2         ) // $
+COMBO_LAY_ONE_HAND(l_num,       numCENT,         &bk LA(N4),                                              RT0 RT1             ) // ¢
+COMBO_LAY_ONE_HAND(l_num,       numEURO,         &bk LS(LA(N2)),                                                  RT2 RT3     ) // €
+COMBO_LAY_ONE_HAND(l_num,       numYEN,          &bk LA(Y),                                                           RT3 RT4 ) // ¥
+COMBO_LAY_ONE_HAND(l_num,       numBPND,         &bk LA(N3),                                                  RT1     RT3     ) // £
+
+};

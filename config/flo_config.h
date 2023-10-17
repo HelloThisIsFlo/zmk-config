@@ -61,6 +61,7 @@
 #define KEYS_L LT0 LT1 LT2 LT3 LT4 LM0 LM1 LM2 LM3 LM4 LB0 LB1 LB2 LB3 LB4  // left-hand keys
 #define KEYS_R RT0 RT1 RT2 RT3 RT4 RM0 RM1 RM2 RM3 RM4 RB0 RB1 RB2 RB3 RB4  // right-hand keys
 #define THUMBS LH0 LH1 LH2 RH0 RH1 RH2                                      // thumb keys
+#define ALL_KEYS KEYS_L KEYS_R THUMBS                                       // all keys
 
 
 
@@ -161,8 +162,8 @@ Here, `_zmk_keymap_layer_state` is the 'uint32_t' bit array.
 #define linger_term 100 // Tuned ✅
 #define my_tapping_term 150
 #define my_ak_window 220
-#define my_combo_timeout_one_hand 20 // Tuned at 18ms, but sometimes missing the combo, so trying a bit higher
-#define my_combo_timeout_two_hands 28
+#define my_combo_timeout_one_hand 2000 // Tuned at 18ms, but sometimes missing the combo, so trying a bit higher
+#define my_combo_timeout_two_hands 3000
 #define my_global_quick_tap_window 130 // Measured w/ logs, 130ms is a comfortable quick double-tap for me
 #define sticky_key_release_timeout 750
 // Calibration Tips
@@ -174,7 +175,8 @@ Here, `_zmk_keymap_layer_state` is the 'uint32_t' bit array.
 //  - To make sure it's not too long  ⇒ ???
 //  - To make sure it's not too short ⇒ Try typing 'sl...'. 's' is on the pinkie so that's as slow as it gets
 
-
+#define ak_tap_time 10
+#define hold_key_event_delay 15 // ak_tap_time + 5ms buffer
 
 
 

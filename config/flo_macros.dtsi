@@ -87,7 +87,7 @@ macros {
                 compatible = "zmk,behavior-macro-two-param";
                 #binding-cells = <2>;
                 wait-ms = <0>;
-                tap-ms = <10>;
+                tap-ms = <ak_tap_time>;
                 bindings =
                         <&macro_param_2to1>,
                         <&macro_tap &kp MACRO_PLACEHOLDER>,
