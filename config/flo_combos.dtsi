@@ -19,6 +19,74 @@
 #define COMBO_LCK_TWO_HAND(NAME, BINDINGS, KEYPOS) \
   COMBO_LAY_BASE(l_all_except_lock l_lock, NAME, BINDINGS, KEYPOS, my_combo_timeout_two_hands) // These combos work on any layers, EVEN the Lock layer!
 
+/*
+ * # This macro is a hack to ensure consistency with the AK layers.
+ *
+ *
+ * Explanation of the problem:
+ * ---------------------------
+ *
+ * When a key is part of a combo, its keypress event is not sent until either: 
+ * a) The combo is complete, all keys are pressed
+ * b) The combo timesout, and the keys are released AT ONCE
+ * c) A key not included in the combo is pressed, 
+ * 
+ * In a), the combo is fired and everything works as expected
+ * 
+ * In b) and c), the key presses that were buffered are all released AT ONCE! This is a problem because,
+ * if we look at how &ak works, we can see the following steps:
+ * 1) First the associated &kp binding is pressed
+ * 2) Then, the associated adative layer is activated
+ * 
+ * The key press in 1) can not be instant ('tap-time = 0' causes missed key presses (on M1 macbook air)),
+ * so it takes  'ak_tap_time' ms to complete. That means, we won't get to 2) until 'ak_tap_time' ms after.
+ * That means the associated adaptive layer will only be activated 'ak_tap_time' ms after the key is pressed.
+ *
+ * THIS, combined with the fact that all the keys are released AT ONCE in scenario b) and c), means that
+ * the second key press will always be triggered BEFORE the adaptive layer is activated. This is what's causing AK inconsistencies! 
+ * 
+ * 
+ * Solution:
+ * ---------
+ * 
+ * So, to prevent the issue, I introduced this COMBO_AK_CONSISTENCY_HACK, which is a combo including ALL the keys. That means, whenever a key is pressed
+ * it will ALWAYS be delayed by the timeout of COMBO_AK_CONSISTENCY_HACK (since there's no real use-case where we'd press all the keys at once)
+ * 
+ * Now, if we set this timeout to 'ak_tap_time' + some buffer, let's call this timeout 'hold_key_event_delay', we GUARANTEE that even if a 
+ * normal combo times out, it won't release all the keys AT ONCE. They will be delayed by 'hold_key_event_delay', which we configured to be
+ * just enough to allow for the activation of the adaptive layer.
+ * 
+ * Here is what happens, step by step:
+ * 1) The first &ak key is pressed
+ * 2) It is captured by the "normal" combo (as well as the COMBO_AK_CONSISTENCY_HACK combo)
+ * 3) Another key, not included in the "normal" combo, is pressed
+ * 4) The new key is captured by COMBO_AK_CONSISTENCY_HACK
+ * 5) The "normal" combo releases the original &ak key
+ * 6) The key is pressed, and then 'ak_tap_time' later, the adaptive layer is activated
+ * 7) After 'hold_key_event_delay', the second key is released. By now, the adaptive layer of the first key is activated, and everything works as expected
+ *    This is because: ak_tap_time < hold_key_event_delay << ak_window
+ * 
+ * Conlusion:
+ * ---------
+ * 
+ * This COMBO_AK_CONSISTENCY_HACK solves the last bit of inconsistency with AK layers and they are now 99.9% reliable! 
+ * (with a minor caveat, see below))
+ * 
+ * 
+ * 
+ * Minor Caveat:
+ * The _only_ scenario where we would get a misfire is if we press 2 keys both within 'hold_key_event_delay' of each other.
+ * In that case, they would be captured by the same COMBO_AK_CONSISTENCY_HACK combo, and still released at the same time.
+ * But this is a false problem, because 'hold_key_event_delay' is lower than anyone would reasonably set their "normal" combo timeout
+ * anyway. So that means, when we press 2 keys so quickly one after the other, we're not actually wanting to use the adaptive key behavior,
+ * but instead we'd like to trigger a "normal" combo. And, in that sceneario, the "normal" combo would be triggered as expected. So there's really no issue.
+ *
+*/ 
+#define COMBO_AK_CONSISTENCY_HACK \
+  COMBO_LAY_BASE(l_alpha_aks, ak_consistency_hack, &none, ALL_KEYS, hold_key_event_delay)
+
+
+
 /*    KEY POSITION Names
 ╭─────────────────────╮ ╭─────────────────────╮
 │ LT4 LT3 LT2 LT1 LT0 │ │ RT0 RT1 RT2 RT3 RT4 │
@@ -33,6 +101,8 @@ combos {
     compatible = "zmk,combos";
 
 //XXXXXXXXXXXXXXXXXXXXXXXXXXXXX XXXXXXXXXXXXX    XXXXXXXXXXXXXXXXXXXXXXXXXXXX       L_4 L_3 L_2 L_1 L_0   R_0 R_1 R_2 R_3 R_4 )
+/********** Support for Adaptive Keys ***********/
+COMBO_AK_CONSISTENCY_HACK
 
 /*********** Missing Alpha Letters **************/
 /* Uses Sound + Symetry */
