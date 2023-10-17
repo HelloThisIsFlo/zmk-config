@@ -49,12 +49,12 @@ behaviors {
     };
 
 
-    toggle_hdvv_winPC: toggle_hdvv_winPC {
+    togMacPc: togMacPc {
         compatible = "zmk,behavior-tap-dance";
-        label = "toggle_hdvv_winPC";
+        label = "togMacPc";
         #binding-cells = <0>;
         tapping-term-ms = <200>;
-        bindings = <&none>, <&to l_alpha>, <&to l_winpc>;
+        bindings = <&toMacbook>, <&toWinPC>;
     };
 
     skapp: sticky_key_app_switcher {

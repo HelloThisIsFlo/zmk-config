@@ -77,7 +77,7 @@ hml_LCTRL_S   hml_LALT_C   hml_LGUI_N   hml_LSHIFT_T    ak_K                    
 
 ak_B          ak_P         ak_L         ak_D            &bk V                         &UnderDash  ak_U          ak_O        ak_Y        ak_F
 
-                        &mo l_sym  &bsklt l_num LSHIFT  &blt l_nav R        &SpaceUnder  &mo l_fn  &toggle_hdvv_winPC
+                        &mo l_sym  &bsklt l_num LSHIFT  &blt l_nav R        &SpaceUnder  &mo l_fn  &togMacPc
                         >;
                 };
 
