@@ -1,0 +1,1121 @@
+layout: {qmk_keyboard: corne_rotated, qmk_layout: LAYOUT_split_3x5_3}
+layers:
+  Reality?:
+  - X⛶
+  - W⛶
+  - M⛶
+  - G⛶
+  - J⛶
+  - {t: '#', s: $}
+  - {t: .⛶, s: ':'}
+  - {t: /, s: '*'}
+  - {t: '"', s: ']'}
+  - {t: '''', s: '['}
+  - {t: S⛶, h: '$$mdi:apple-keyboard-control$$'}
+  - {t: C⛶, h: '$$mdi:apple-keyboard-option$$'}
+  - {t: N⛶, h: '$$mdi:apple-keyboard-command$$'}
+  - {t: T⛶, h: '$$mdi:apple-keyboard-shift$$'}
+  - K⛶
+  - {t: ',', s: ;}
+  - {t: A⛶, h: '$$mdi:apple-keyboard-shift$$'}
+  - {t: E⛶, h: '$$mdi:apple-keyboard-command$$'}
+  - {t: I⛶, h: '$$mdi:apple-keyboard-option$$'}
+  - {t: H, h: '$$mdi:apple-keyboard-control$$'}
+  - B⛶
+  - P⛶
+  - L⛶
+  - D⛶
+  - V
+  - {t: '-', s: +}
+  - U⛶
+  - O⛶
+  - Y⛶
+  - F⛶
+  - =*+/
+  - {t: '&bsk LSHIFT', h: '1984'}
+  - {t: R, h: <^v>}
+  - $$mdi:keyboard-space$$
+  - F*
+  - {t: '$$mdi:swap-horizontal$$', h: 'Reality?|Kafka'}
+  rEALITY¿:
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: '&ak_S_macro', h: '$$mdi:apple-keyboard-command$$'}
+  - {t: ' ', type: trans}
+  - {t: '&ak_N_macro', h: '$$mdi:apple-keyboard-control$$'}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: '&ak_E_macro', h: '$$mdi:apple-keyboard-control$$'}
+  - {t: ' ', type: trans}
+  - {t: H, h: '$$mdi:apple-keyboard-command$$'}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  Raality?:
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - A⛶
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - U
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  Reabity?:
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - L
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - B⛶
+  - S
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  Rcality?:
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: NM, s: C̶}
+  - K
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - C⛶
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  Deality?:
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - G
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: LK, s: D̶}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - D⛶
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  Reelity?:
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - E⛶
+  - {t: ' ', type: trans}
+  - O
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  Realify?:
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - X
+  - I
+  - F⛶
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  Realitg?:
+  - T
+  - D
+  - L
+  - G⛶
+  - '&replace_char_with_bigram_NJ'
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  Reaiity?:
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - I⛶
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  Realjty?:
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - N
+  - J⛶
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - B
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - D
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  Reakity?:
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - N
+  - K⛶
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - L
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  Realily?:
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - M
+  - {t: ' ', type: trans}
+  - L⛶
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  Meality?:
+  - B⛶
+  - P⛶
+  - M⛶
+  - {t: LG, s: M̶}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - N
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  Renlity?:
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - N⛶
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - L
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  Roality?:
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - E
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - O⛶
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  Realitp?:
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - L
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: LN, s: P̶}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: SB, s: P̶}
+  - P⛶
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  Reslity?:
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - W
+  - '&replace_char_with_bigram_BJ'
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - S⛶
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  Reatity?:
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - '&replace_char_with_bigram_DJ'
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - T⛶
+  - {t: NK, s: T̶}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  Realitu?:
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - A
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - U⛶
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  Weality?:
+  - S
+  - W⛶
+  - '&replace_char_with_bigram_PM'
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  Realitx?:
+  - X⛶
+  - P⛶
+  - {t: BM, s: X̶}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  Yeality?:
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - I
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - Y⛶
+  - {t: IF, s: Y̶}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  Real.ty?:
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - .⛶
+  - .com
+  - .co.uk
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  <^v>:
+  - RG(W)
+  - RG(Q)
+  - LG(LS(4))
+  - LG(LS(LC(4)))
+  - ESC
+  - LG(EQUAL)
+  - $$mdi:pan-left$$
+  - $$mdi:arrow-up-bold$$
+  - $$pg_up$$
+  - {t: '$$mdi:cancel$$', type: none}
+  - $$mdi:apple-keyboard-control$$
+  - $$mdi:apple-keyboard-option$$
+  - $$mdi:apple-keyboard-command$$
+  - $$mdi:apple-keyboard-shift$$
+  - RG(F)
+  - LA(LEFT)
+  - $$mdi:arrow-left-bold$$
+  - $$mdi:arrow-down-bold$$
+  - $$mdi:arrow-right-bold$$
+  - LA(RIGHT)
+  - RG(Z)
+  - RG(X)
+  - RG(C)
+  - RG(V)
+  - RG(G)
+  - LG(MINUS)
+  - $$mdi:pan-right$$
+  - LG(0)
+  - $$pg_dn$$
+  - {t: '$$mdi:cancel$$', type: none}
+  - {t: '$$mdi:cancel$$', type: none}
+  - '&S_AppSwitch'
+  - {t: '&AppSwitch', type: held}
+  - LG(LBKT)
+  - LG(RBKT)
+  - {t: '$$mdi:cancel$$', type: none}
+  =*+/:
+  - Z
+  - Q
+  - LG(LS(4))
+  - LG(LS(LC(4)))
+  - ESC
+  - RA(4)
+  - $
+  - LA(LS(2))
+  - LA(3)
+  - RA(Y)
+  - {t: '&bk LT', h: '&pairLtGt GT'}
+  - {t: '[', h: '&pairBkt RBKT'}
+  - {t: '&bk LPAR', h: '&pairPar RPAR'}
+  - {t: '&bk LBRC', h: '&pairBrc RBRC'}
+  - $$mdi:keyboard-tab$$
+  - LA(1)
+  - {t: '*', h: '$$mdi:apple-keyboard-shift$$'}
+  - {t: '=', h: '$$mdi:apple-keyboard-command$$'}
+  - {t: +, h: '$$mdi:apple-keyboard-option$$'}
+  - {t: /, h: '$$mdi:apple-keyboard-control$$'}
+  - '>'
+  - ']'
+  - )
+  - '}'
+  - $$mdi:keyboard-return$$
+  - '-'
+  - '|'
+  - '&'
+  - ^
+  - '%'
+  - {t: '$$mdi:cancel$$', type: held}
+  - LA(BSPC)
+  - LA(DEL)
+  - {t: '$$mdi:cancel$$', type: none}
+  - LA(0)
+  - {t: '$$mdi:cancel$$', type: none}
+  F*:
+  - F9
+  - F10
+  - F11
+  - F12
+  - F13
+  - '`'
+  - '7'
+  - '8'
+  - '9'
+  - \
+  - {t: '&bk F5', h: '$$mdi:apple-keyboard-control$$'}
+  - {t: '&bk F6', h: '$$mdi:apple-keyboard-option$$'}
+  - {t: '&bk F7', h: '$$mdi:apple-keyboard-command$$'}
+  - {t: '&bk F8', h: '$$mdi:apple-keyboard-shift$$'}
+  - F14
+  - ','
+  - {t: '&bk N1', h: '$$mdi:apple-keyboard-shift$$'}
+  - {t: '&bk N2', h: '$$mdi:apple-keyboard-command$$'}
+  - {t: '&bk N3', h: '$$mdi:apple-keyboard-option$$'}
+  - {t: /, h: '$$mdi:apple-keyboard-control$$'}
+  - F1
+  - F2
+  - F3
+  - F4
+  - F15
+  - '-'
+  - '4'
+  - '5'
+  - '6'
+  - '='
+  - {t: '$$mdi:cancel$$', type: none}
+  - $$mdi:backspace-outline$$
+  - $$mdi:backspace-reverse-outline$$
+  - '0'
+  - {t: ., type: held}
+  - {t: '$$mdi:cancel$$', type: none}
+  '1984':
+  - ESC
+  - $$mdi:pan-left$$
+  - $$mdi:arrow-up-bold$$
+  - $$pg_up$$
+  - {t: '&bk KP_NUM', h: BIOS}
+  - KP SLASH
+  - '7'
+  - '8'
+  - '9'
+  - '-'
+  - LA(LEFT)
+  - $$mdi:arrow-left-bold$$
+  - $$mdi:arrow-down-bold$$
+  - $$mdi:arrow-right-bold$$
+  - LA(RIGHT)
+  - '*'
+  - {t: '4', h: '$$mdi:apple-keyboard-shift$$'}
+  - {t: '5', h: '$$mdi:apple-keyboard-command$$'}
+  - {t: '6', h: '$$mdi:apple-keyboard-option$$'}
+  - {t: +, h: '$$mdi:apple-keyboard-control$$'}
+  - $$mdi:backspace-reverse-outline$$
+  - $$mdi:pan-right$$
+  - $$mdi:keyboard-tab$$
+  - $$pg_dn$$
+  - SPC
+  - KP COMMA
+  - '1'
+  - '2'
+  - '3'
+  - '='
+  - {t: '$$mdi:cancel$$', type: none}
+  - {t: '&bk BSPC', h: F*, type: held}
+  - {t: '&bk KP_ENTER', h: <^v>}
+  - '0'
+  - KP DOT
+  - {t: '$$mdi:cancel$$', type: none}
+  BIOS:
+  - {t: '$$mdi:bluetooth-connect$$', h: '3'}
+  - {t: '$$mdi:bluetooth-connect$$', h: '2'}
+  - {t: '$$mdi:bluetooth-connect$$', h: '1'}
+  - {t: '$$mdi:bluetooth-connect$$', h: '0'}
+  - {t: '$$mdi:bluetooth$$', h: clear, type: held}
+  - {t: '$$mdi:cancel$$', type: none}
+  - {t: '$$mdi:cancel$$', type: none}
+  - {t: '$$mdi:cancel$$', type: none}
+  - {t: '$$mdi:cancel$$', type: none}
+  - {t: '$$mdi:cancel$$', type: none}
+  - {t: '$$mdi:cancel$$', type: none}
+  - $$mdi:skip-next$$
+  - $$mdi:play-pause$$
+  - $$mdi:volume-high$$
+  - $$mdi:brightness-5$$
+  - $$mdi:brightness-5$$
+  - $$mdi:volume-high$$
+  - $$mdi:volume-off$$
+  - $$mdi:skip-next$$
+  - {t: '$$mdi:cancel$$', type: none}
+  - '&bootloader'
+  - $$mdi:skip-previous$$
+  - $$mdi:volume-off$$
+  - $$mdi:volume-low$$
+  - $$mdi:brightness-7$$
+  - $$mdi:brightness-7$$
+  - $$mdi:volume-low$$
+  - $$mdi:play-pause$$
+  - $$mdi:skip-previous$$
+  - '&sys_reset'
+  - {t: '$$mdi:cancel$$', type: none}
+  - {t: '$$mdi:cancel$$', type: held}
+  - '1984'
+  - {t: '$$mdi:cancel$$', type: none}
+  - {t: '$$mdi:cancel$$', type: none}
+  - {t: '$$mdi:cancel$$', type: none}
+  XXXX:
+  - {t: '$$mdi:cancel$$', type: none}
+  - {t: '$$mdi:cancel$$', type: none}
+  - {t: '$$mdi:cancel$$', type: none}
+  - {t: '$$mdi:cancel$$', type: none}
+  - {t: '$$mdi:cancel$$', type: none}
+  - {t: '$$mdi:cancel$$', type: none}
+  - {t: '$$mdi:cancel$$', type: none}
+  - {t: '$$mdi:cancel$$', type: none}
+  - {t: '$$mdi:cancel$$', type: none}
+  - {t: '$$mdi:cancel$$', type: none}
+  - {t: '$$mdi:cancel$$', type: none}
+  - {t: '$$mdi:cancel$$', type: none}
+  - {t: '$$mdi:cancel$$', type: none}
+  - {t: '$$mdi:cancel$$', type: none}
+  - {t: '$$mdi:cancel$$', type: none}
+  - {t: '$$mdi:cancel$$', type: none}
+  - {t: '$$mdi:cancel$$', type: none}
+  - {t: '$$mdi:cancel$$', type: none}
+  - {t: '$$mdi:cancel$$', type: none}
+  - {t: '$$mdi:cancel$$', type: none}
+  - {t: '$$mdi:cancel$$', type: none}
+  - {t: '$$mdi:cancel$$', type: none}
+  - {t: '$$mdi:cancel$$', type: none}
+  - {t: '$$mdi:cancel$$', type: none}
+  - {t: '$$mdi:cancel$$', type: none}
+  - {t: '$$mdi:cancel$$', type: none}
+  - {t: '$$mdi:cancel$$', type: none}
+  - {t: '$$mdi:cancel$$', type: none}
+  - {t: '$$mdi:cancel$$', type: none}
+  - {t: '$$mdi:cancel$$', type: none}
+  - {t: '$$mdi:cancel$$', type: none}
+  - {t: '$$mdi:cancel$$', type: none}
+  - {t: '$$mdi:cancel$$', type: none}
+  - {t: '$$mdi:cancel$$', type: none}
+  - {t: '$$mdi:cancel$$', type: none}
+  - {t: '$$mdi:cancel$$', type: none}
+combos:
+- p: [19, 29]
+  k: D
+  l: ['Reality?', rEALITY¿, 'Raality?', 'Reabity?', 'Rcality?', 'Deality?', 'Reelity?', 'Realify?', 'Realitg?', 'Reaiity?', 'Realjty?', 'Reakity?', 'Realily?', 'Meality?',
+    'Renlity?', 'Roality?', 'Realitp?', 'Reslity?', 'Reatity?', 'Realitu?', 'Weality?', 'Realitx?', 'Yeality?', 'Real.ty?', <^v>, =*+/, F*, '1984', BIOS, rEALITY¿]
+- p: [4, 3, 2, 1, 0, 14, 13, 12, 11, 10, 24, 23, 22, 21, 20, 5, 6, 7, 8, 9, 15, 16, 17, 18, 19, 25, 26, 27, 28, 29, 32, 31, 30, 33, 34, 35]
+  k: {t: '$$mdi:cancel$$', type: none}
+  l: ['Reality?', rEALITY¿, 'Raality?', 'Reabity?', 'Rcality?', 'Deality?', 'Reelity?', 'Realify?', 'Realitg?', 'Reaiity?', 'Realjty?', 'Reakity?', 'Realily?', 'Meality?',
+    'Renlity?', 'Roality?', 'Realitp?', 'Reslity?', 'Reatity?', 'Realitu?', 'Weality?', 'Realitx?', 'Yeality?', 'Real.ty?']
