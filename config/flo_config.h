@@ -103,19 +103,20 @@ Here, `_zmk_keymap_layer_state` is the 'uint32_t' bit array.
 #define l_akS    17
 #define l_akT    18
 #define l_akU    19
-#define l_akW    20
-#define l_akX    21
-#define l_akY    22
-#define l_akDOT  23
-#define l_nav    24
-#define l_sym    25
-#define l_fn     26
-#define l_num    27
-#define l_cfg    28
-#define l_lock   30
+#define l_akV    20
+#define l_akW    21
+#define l_akX    22
+#define l_akY    23
+#define l_akDOT  24
+#define l_nav    25
+#define l_sym    26
+#define l_fn     27
+#define l_num    28
+#define l_cfg    29
+#define l_lock   31
 
 // Note: 'l_alpha_aks' does NOT include l_winpc
-#define l_alpha_aks l_alpha l_akA l_akB l_akC l_akD l_akE l_akF l_akG l_akI l_akJ l_akK l_akL l_akM l_akN l_akO l_akP l_akS l_akT l_akU l_akW l_akX l_akY l_akDOT
+#define l_alpha_aks l_alpha l_akA l_akB l_akC l_akD l_akE l_akF l_akG l_akI l_akJ l_akK l_akL l_akM l_akN l_akO l_akP l_akS l_akT l_akU l_akV l_akW l_akX l_akY l_akDOT
 #define l_all_except_winpc_lock l_alpha_aks l_winpc l_nav l_sym l_fn l_num l_cfg
 
 

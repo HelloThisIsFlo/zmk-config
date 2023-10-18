@@ -42,6 +42,7 @@ macros {
         REPLACE_CHAR_WITH_BIGRAM(L, N)
         REPLACE_CHAR_WITH_BIGRAM(N, M)
         REPLACE_CHAR_WITH_BIGRAM(P, M)
+        REPLACE_CHAR_WITH_BIGRAM(N, V)
 
         // Switch device macros
         SWITCH_DEVICE_MACRO(Macbook, 0, l_alpha)
