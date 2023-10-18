@@ -32,7 +32,6 @@ macros {
 
         // Replace w/ Bigram for Vb
         REPLACE_CHAR_WITH_BIGRAM(S, B)
-        REPLACE_CHAR_WITH_BIGRAM(I, F)
         REPLACE_CHAR_WITH_BIGRAM(L, G)
         REPLACE_CHAR_WITH_BIGRAM(B, J)
         REPLACE_CHAR_WITH_BIGRAM(D, J)
