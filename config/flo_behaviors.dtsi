@@ -30,6 +30,16 @@ behaviors {
                 <&sk MACRO_PLACEHOLDER>;
     };
 
+    bskL: bskL {
+        label = "flo,behavior-buffered-sticky-key-long-release";
+        compatible = "zmk,behavior-macro-one-param";
+        #binding-cells = <1>;
+        wait-ms = <0>;
+        tap-ms = <10>;
+        bindings = <&macro_param_1to1>,
+                <&skL MACRO_PLACEHOLDER>;
+    };
+
 
     blt: blt {
         compatible = "zmk,behavior-hold-tap";
@@ -178,6 +188,32 @@ behaviors {
     };
 
 
+
+
+    // TMP Experiment
+    // TODO: Make macro
+    // TODO: Trigger sticky shift as well, after dot
+    // TODO: Build complex keys with mod-morph. Like: lk_DOT_SPACE, but then lk_SEMI_SPACE when shifted. Also same on combos for '!' or '?'.
+    ZMK_MACRO(type_dot_space, wait-ms = <10>; tap-ms = <10>; bindings = <&kp DOT>, <&kp SPACE>, <&skL LSHIFT>;)
+    lk_DOT_SPACE: lk_DOT_SPACE {
+        compatible = "zmk,behavior-hold-tap";
+        label = "lk_DOT_SPACE";
+        #binding-cells = <2>;
+        tapping-term-ms = <linger_term>;
+        flavor = "tap-preferred";
+        bindings = <&bk>, <&type_dot_space>;
+    };
+
+    skL: skL {
+        compatible = "zmk,behavior-sticky-key";
+        label = "sticky-key-long-release";
+        #binding-cells = <1>;
+        bindings = <&kp>;
+        release-after-ms = <sticky_key_release_timeout_long>;
+        quick-release;
+    };
+
+    // TODO: Make regular SPACE trigger a sticky Shift afterwards
 
 
 
