@@ -120,8 +120,8 @@ COMBO_LAY_TWO_HAND(l_alpha_aks, typeZ,           &bk Z,                         
 
 
 /********************** Special Keys ***********************/
-COMBO_ANY_ONE_HAND(             entr,            &bk RETURN,                                    LB1 LB0                       )
-COMBO_ANY_ONE_HAND(             tab,             &bk TAB,                                       LM1 LM0                       )
+COMBO_ANY_ONE_HAND(             entr,            &bk RETURN,                                    LM1 LM0                       )
+COMBO_ANY_ONE_HAND(             tab,             &bk TAB,                                       LB1 LB0                       )
 COMBO_ANY_ONE_HAND(             esc,             &bk ESC,                           LM4         LM1                           )
 COMBO_ANY_ONE_HAND(             undo,            &bk LG(Z),                         LT4 LT3                                   ) // TODO: Do redo as Linger Key
 
