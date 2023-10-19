@@ -97,9 +97,6 @@
 */
 
 
-combos {
-    compatible = "zmk,combos";
-
 //XXXXXXXXXXXXXXXXXXXXXXXXXXXXX XXXXXXXXXXXXX    XXXXXXXXXXXXXXXXXXXXXXXXXXXX       L_4 L_3 L_2 L_1 L_0   R_0 R_1 R_2 R_3 R_4 )
 /********** Support for Adaptive Keys ***********/
 COMBO_AK_CONSISTENCY_HACK
@@ -261,10 +258,3 @@ COMBO_LAY_ONE_HAND(l_num,       numCENT,         &bk LA(N4),                    
 COMBO_LAY_ONE_HAND(l_num,       numEURO,         &bk LS(LA(N2)),                                                  RT2 RT3     ) // €
 COMBO_LAY_ONE_HAND(l_num,       numYEN,          &bk LA(Y),                                                           RT3 RT4 ) // ¥
 COMBO_LAY_ONE_HAND(l_num,       numBPND,         &bk LA(N3),                                                  RT1     RT3     ) // £
-
-
-
-/********** Windows Combos - GENERATED WITH SCRIPT **************/
-#include "./flo_combos_winpc_GENERATED.dtsi"
-
-};
