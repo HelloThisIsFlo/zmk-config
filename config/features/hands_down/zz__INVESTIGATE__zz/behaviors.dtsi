@@ -1,0 +1,7 @@
+skapp: sticky_key_app_switcher {
+    compatible = "zmk,behavior-sticky-key";
+    label = "SK_APP_SWITCHER";
+    #binding-cells = <1>;
+    bindings = <&kp>;
+    release-after-ms = <900>;
+};

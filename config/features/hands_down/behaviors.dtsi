@@ -1,0 +1,8 @@
+skL: skL {
+    compatible = "zmk,behavior-sticky-key";
+    label = "sticky-key-long-release";
+    #binding-cells = <1>;
+    bindings = <&kp>;
+    release-after-ms = <sticky_key_release_timeout_long>;
+    quick-release;
+};

@@ -1,0 +1,14 @@
+#define SWITCH_DEVICE_MACRO(DEVICE_NAME, DEVICE_IDX, LAYER) \
+        ZMK_MACRO(to##DEVICE_NAME, \
+                wait-ms = <0>; \
+                tap-ms = <0>; \
+                bindings = <&bt BT_SEL DEVICE_IDX>, \
+                        <&to LAYER>; \
+        )
+
+
+
+// Switch device macros
+SWITCH_DEVICE_MACRO(Macbook, 0, l_alpha)
+SWITCH_DEVICE_MACRO(iPad,    1, l_alpha)
+SWITCH_DEVICE_MACRO(WinPC,   2, l_winpc)

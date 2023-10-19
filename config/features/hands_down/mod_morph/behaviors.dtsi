@@ -1,0 +1,84 @@
+CmmaSemi: CmmaSemi {
+    compatible = "zmk,behavior-mod-morph";
+    label = "comma_semi";
+    #binding-cells = <0>;
+    bindings = <&bk CMMA>, <&typeSemi>;
+    mods = <(MOD_LSFT|MOD_RSFT)>;
+};
+DotColn: DotColn {
+    compatible = "zmk,behavior-mod-morph";
+    label = "DotColn";
+    #binding-cells = <0>;
+    bindings = <&ak l_akDOT DOT>, <&bk COLON>;
+    mods = <(MOD_LSFT|MOD_RSFT)>;
+};
+SlshStar: SlshStar {
+    compatible = "zmk,behavior-mod-morph";
+    label = "SlshStar";
+    #binding-cells = <0>;
+    bindings = <&bk FSLH>, <&bk STAR>;
+    mods = <(MOD_LSFT|MOD_RSFT)>;
+};
+HashDllr: HashDllr {
+    compatible = "zmk,behavior-mod-morph";
+    label = "HashDllr";
+    #binding-cells = <0>;
+    bindings = <&bk HASH>, <&bk DLLR>;
+    mods = <(MOD_LSFT|MOD_RSFT)>;
+};
+MinusPlus: MinusPlus {
+    compatible = "zmk,behavior-mod-morph";
+    label = "MinusPlus";
+    #binding-cells = <0>;
+    bindings = <&bk MINUS>, <&bk PLUS>;
+    mods = <(MOD_LSFT|MOD_RSFT)>;
+};
+UnderDash: UnderDash {
+    compatible = "zmk,behavior-mod-morph";
+    label = "UnderDash";
+    #binding-cells = <0>;
+    bindings = <&bk UNDER>, <&bk MINUS>;
+    mods = <(MOD_LSFT|MOD_RSFT)>;
+};
+SpaceUnder: SpaceUnder {
+    compatible = "zmk,behavior-mod-morph";
+    label = "SpaceUnder";
+    #binding-cells = <0>;
+    bindings = <&bk SPACE>, <&bk UNDER>;
+    mods = <(MOD_LSFT|MOD_RSFT)>;
+};
+DqtLbkt: DqtLbkt {
+    compatible = "zmk,behavior-mod-morph";
+    label = "DqtLbkt";
+    #binding-cells = <0>;
+    bindings = <&bk DQT>, <&bk LBKT>;
+    mods = <(MOD_LALT|MOD_RALT)>;
+};
+DqtRbkt: DqtRbkt {
+    compatible = "zmk,behavior-mod-morph";
+    label = "DqtRbkt";
+    #binding-cells = <0>;
+    bindings = <&bk DQT>, <&bk RBKT>;
+    mods = <(MOD_LALT|MOD_RALT)>;
+};
+SqtLbkt: SqtLbkt {
+    compatible = "zmk,behavior-mod-morph";
+    label = "SqtLbkt";
+    #binding-cells = <0>;
+    bindings = <&bk SQT>, <&bk LBKT>;
+    mods = <(MOD_LALT|MOD_RALT)>;
+};
+SqtRbkt: SqtRbkt {
+    compatible = "zmk,behavior-mod-morph";
+    label = "SqtRbkt";
+    #binding-cells = <0>;
+    bindings = <&bk SQT>, <&bk RBKT>;
+    mods = <(MOD_LALT|MOD_RALT)>;
+};
+BspcDel: Bspc_Del {
+    compatible = "zmk,behavior-mod-morph";
+    label = "Bspc_Del";
+    #binding-cells = <0>;
+    bindings = <&bk BSPC>, <&bk DEL>;
+    mods = <(MOD_LSFT|MOD_RSFT)>;
+};

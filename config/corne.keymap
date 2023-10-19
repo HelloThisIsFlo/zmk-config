@@ -9,12 +9,12 @@
 #include "./CONFIG.h"
 
 
-#include "./features/_base/aliases_key_positions.dtsi"
-#include "./features/_base/aliases_layers.dtsi"
+#include "./features/__BASE__/aliases_key_positions.dtsi"
+#include "./features/__BASE__/aliases_layers.dtsi"
 #include "./features/hands_down/aliases.dtsi"
 #include "./features/hands_down/adaptive_keys/aliases.dtsi"
 
-#include "./features/_base/behaviors_config.dtsi"
+#include "./features/__BASE__/default_behaviors_config.dtsi"
 
 / {
     chosen {
@@ -23,20 +23,31 @@
 
 
     macros {
-        #include "./features/_base/macros.dtsi"
-
         #include "./features/TODO_SORT/macros.dtsi"
+
+        #include "./features/hands_down/adaptive_keys/macros.dtsi"
+
+        #include "./features/switch_device/macros.dtsi"
     };
 
 
     behaviors {
-        #include "./features/TODO_SORT/behaviors.dtsi"
+        #include "./features/__EXPERIMENT__/behaviors.dtsi"
+
+        #include "./features/hands_down/behaviors.dtsi"
+        #include "./features/hands_down/adaptive_keys/behaviors.dtsi"
+        #include "./features/hands_down/home_row/behaviors.dtsi"
+        #include "./features/hands_down/linger_keys/behaviors.dtsi"
+        #include "./features/hands_down/mod_morph/behaviors.dtsi"
+        #include "./features/hands_down/zz__INVESTIGATE__zz/behaviors.dtsi"
+
+        #include "./features/switch_device/behaviors.dtsi"
     };
 
 
     combos {
         compatible = "zmk,combos";
-        #include "./features/_base/combos.dtsi"
+        #include "./features/__BASE__/combos.dtsi"
 
         #include "./features/hands_down/combos.dtsi"
         #include "./features/hands_down/adaptive_keys/combos.dtsi"
