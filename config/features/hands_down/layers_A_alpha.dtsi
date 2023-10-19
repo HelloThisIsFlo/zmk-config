@@ -1,0 +1,27 @@
+/*
+Removed from keymap (for now ?)
+
+&SlshStar
+&DqtRbk
+&HashDllr
+
+*/
+
+/*
+Based on: Hands-Down Neu Vibranium B 
+*/
+                l_alpha {
+                        label = "Reality?"; // The base layer ... ?
+                        bindings = <
+
+ak_X          ak_W         ak_M         ak_G            ak_J                          ________    &DotColn      &CmmaSemi   &bk SQT     &lk_DOT_SPACE DOT XXX
+
+hml_LCTRL_S   hml_LALT_C   hml_LGUI_N   hml_LSHIFT_T    ak_K                          ________    hmr_LSHIFT_A  hmr_LGUI_E  hmr_LALT_I  &hmr LCTRL H
+
+ak_B          ak_P         ak_L         ak_D            ak_V                          &UnderDash  ak_U          ak_O        ak_Y        ak_F
+
+                     // &mo l_num   &bk LSHIFT          &hrmSk LSHIFT R        &hrmSk RSHIFT SPACE  &bskL RSHIFT  &togMacPc
+                        &mo l_num   &skL LSHIFT          &hrmSk LSHIFT R        &hrmSk RSHIFT SPACE  &skL RSHIFT  &togMacPc
+                     // &mo l_sym  &bsklt l_num LSHIFT  &blt l_nav R        &SpaceUnder       &mo l_fn     &togMacPc
+                        >;
+                };
