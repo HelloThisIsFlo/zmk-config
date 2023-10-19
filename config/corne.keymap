@@ -23,8 +23,6 @@
 
 
     macros {
-        #include "./features/TODO_SORT/DELETE.dtsi"
-
         #include "./features/hands_down/macros.dtsi"
         #include "./features/hands_down/adaptive_keys/macros.dtsi"
         #include "./features/hands_down/h_digraphs/macros.dtsi"
