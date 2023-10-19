@@ -37,6 +37,21 @@ REPLACE_CHAR_WITH_BIGRAM(P, M)
 REPLACE_CHAR_WITH_BIGRAM(N, V)
 
 
+ak: ak {
+        label = "flo,behavior-adaptive-key";
+        compatible = "zmk,behavior-macro-two-param";
+        #binding-cells = <2>;
+        wait-ms = <0>;
+        tap-ms = <ak_tap_time>;
+        bindings =
+                <&macro_param_2to1>,
+                <&macro_tap &kp MACRO_PLACEHOLDER>,
+
+                <&macro_tap_time 0>,
+
+                <&macro_param_1to1>,
+                <&macro_tap &aksl MACRO_PLACEHOLDER>;
+};
 
 
 bk: bk {
@@ -92,4 +107,22 @@ bskL: bskL {
     tap-ms = <10>;
     bindings = <&macro_param_1to1>,
             <&skL MACRO_PLACEHOLDER>;
+};
+
+
+
+
+dotcom: dotcom {
+        label = "dotcom";
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        wait-ms = <50>; // need to slow this down for some systems.
+        bindings = <&kp C &kp O &kp M> ;
+};
+dotcouk: dotcouk {
+        label = "dotcouk";
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        wait-ms = <50>; // need to slow this down for some systems.
+        bindings = <&kp C &kp O &kp DOT &kp U &kp K>;
 };

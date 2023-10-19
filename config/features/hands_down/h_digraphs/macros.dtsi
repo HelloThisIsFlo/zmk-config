@@ -1,0 +1,107 @@
+// TODO: Rework all digraphs with a 2 param macro
+Th: Th {
+        label = "Th";
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        wait-ms = <10>;
+        tap-ms = <10>;
+        bindings = <&macro_tap &kp T>
+        , <&macro_release &kp LSHFT>
+        , <&macro_release &kp RSHFT>
+        , <&macro_tap &kp H>;
+};
+ZMK_MACRO(tion,
+        wait-ms = <10>;
+        tap-ms = <10>;
+        bindings = <&kp T &kp I &kp O &kp N>;
+)
+ZMK_MACRO(Ch,
+        wait-ms = <10>;
+        tap-ms = <10>;
+        bindings = <&macro_tap &kp C>
+                , <&macro_release &kp LSHFT>
+                , <&macro_release &kp RSHFT>
+                , <&macro_tap &kp H>;
+)
+ZMK_MACRO(Wh,
+        wait-ms = <10>;
+        tap-ms = <10>;
+        bindings = <&macro_tap &kp W>
+                , <&macro_release &kp LSHFT>
+                , <&macro_release &kp RSHFT>
+                , <&macro_tap &kp H>;
+)
+ZMK_MACRO(Sh,
+        wait-ms = <10>;
+        tap-ms = <10>;
+        bindings = <&macro_tap &kp S>
+                , <&macro_release &kp LSHFT>
+                , <&macro_release &kp RSHFT>
+                , <&macro_tap &kp H>
+                ;
+        )
+ZMK_MACRO(sion,
+        wait-ms = <10>;
+        tap-ms = <10>;
+        bindings = <&kp S &kp I &kp O &kp N>
+                ;
+        )
+ZMK_MACRO(Gh,
+        wait-ms = <10>;
+        tap-ms = <10>;
+        bindings = <&macro_tap &kp G>
+                , <&macro_release &kp LSHFT>
+                , <&macro_release &kp RSHFT>
+                , <&macro_tap &kp H>
+                ;
+        )
+ZMK_MACRO(ght,
+        wait-ms = <10>;
+        tap-ms = <10>;
+        bindings = <&kp G &kp H &kp T>
+                ;
+        )
+ZMK_MACRO(Ph,
+        wait-ms = <10>;
+        tap-ms = <10>;
+        bindings = <&macro_tap &kp P>
+                , <&macro_release &kp LSHFT>
+                , <&macro_release &kp RSHFT>
+                , <&macro_tap &kp H>
+                ;
+        )
+ZMK_MACRO(Oh,
+        wait-ms = <10>;
+        tap-ms = <10>;
+        bindings = <&macro_tap &kp O>
+                , <&macro_release &kp LSHFT>
+                , <&macro_release &kp RSHFT>
+                , <&macro_tap &kp H>
+                ;
+        )
+
+
+Sch: Sch {
+        label = "Sch";
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        wait-ms = <10>;
+        tap-ms = <10>;
+        bindings = <&macro_tap &kp S>
+                , <&macro_release &kp LSHFT>
+                , <&macro_release &kp RSHFT>
+                , <&macro_tap &kp C &kp H>
+                ;
+};
+Tch: Tch {
+        label = "Tch";
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        wait-ms = <10>;
+        tap-ms = <10>;
+        bindings = <&macro_tap &kp T>
+                , <&macro_release &kp LSHFT>
+                , <&macro_release &kp RSHFT>
+                , <&macro_tap &kp C &kp H>
+                ;
+};

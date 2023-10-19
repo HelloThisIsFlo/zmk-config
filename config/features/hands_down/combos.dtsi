@@ -71,13 +71,6 @@ COMBO_LAY_ONE_HAND(l_num,       numBPND,         &bk LA(N3),                    
 
 
 
-/*********** TODO: Try and (maybe) integrate later **************/
-// COMBO_LAY_ONE_HAND(l_alpha_aks, selword,         &m_selword,                        LB4             LB0                       )
-// COMBO_LAY_ONE_HAND(l_alpha_aks, findsel,         &m_findsel,                        LM4                                       \
-//                                                                                                     LB0                       )
-
-
-
 /**************** Unused **************/
 // COMBO_ANY_ONE_HAND(             appswitch,       &AppSwitch,                            LM3     LM1                           ) // App switch
 // COMBO_ANY_ONE_HAND(             Gent,            &bk LG(RETURN),                            LB2 LB1 LB0                       )

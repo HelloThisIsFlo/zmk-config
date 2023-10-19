@@ -23,9 +23,15 @@
 
 
     macros {
-        #include "./features/TODO_SORT/macros.dtsi"
+        #include "./features/TODO_SORT/DELETE.dtsi"
 
+        #include "./features/hands_down/macros.dtsi"
         #include "./features/hands_down/adaptive_keys/macros.dtsi"
+        #include "./features/hands_down/h_digraphs/macros.dtsi"
+        #include "./features/hands_down/pronouns/macros.dtsi"
+        #include "./features/hands_down/zz__INVESTIGATE__zz/app_switcher/macros.dtsi"
+        #include "./features/hands_down/zz__INVESTIGATE__zz/brackets/macros.dtsi"
+        #include "./features/hands_down/zz__INVESTIGATE__zz/diacritic/macros.dtsi"
 
         #include "./features/switch_device/macros.dtsi"
     };
@@ -39,7 +45,7 @@
         #include "./features/hands_down/home_row/behaviors.dtsi"
         #include "./features/hands_down/linger_keys/behaviors.dtsi"
         #include "./features/hands_down/mod_morph/behaviors.dtsi"
-        #include "./features/hands_down/zz__INVESTIGATE__zz/behaviors.dtsi"
+        #include "./features/hands_down/zz__INVESTIGATE__zz/app_switcher/behaviors.dtsi"
 
         #include "./features/switch_device/behaviors.dtsi"
     };
@@ -54,14 +60,12 @@
 
         #include "./features/hands_down/combos.dtsi"
         #include "./features/hands_down/adaptive_keys/combos.dtsi"
-        #include "./features/hands_down/diacritic/combos.dtsi"
         #include "./features/hands_down/h_digraphs/combos.dtsi"
         #include "./features/hands_down/pronouns/combos.dtsi"
+        #include "./features/hands_down/zz__INVESTIGATE__zz/diacritic/combos.dtsi"
+        #include "./features/hands_down/zz__INVESTIGATE__zz/selection/combos.dtsi"
 
         #include "./features/lock/combos.dtsi"
-
-        #include "./features/TODO_SORT/combos.dtsi"
-        #include "./features/TODO_SORT/combos_winpc_GENERATED.dtsi"
     };
 
 

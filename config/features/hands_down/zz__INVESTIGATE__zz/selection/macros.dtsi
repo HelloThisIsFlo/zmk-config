@@ -1,0 +1,22 @@
+m_findsel: m_findsel {
+        label = "Find Selection";
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        wait-ms = <10>;
+        tap-ms = <10>;
+        bindings = <&macro_tap &kp LG(C)>
+                , <&macro_tap &kp LG(F)>
+                , <&macro_tap &kp LG(V)>
+                , <&macro_tap &kp RETURN>
+                , <&macro_tap &kp LG(G)>;
+};
+
+m_selword: m_selword {
+        label = "m_select word";
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        wait-ms = <10>;
+        tap-ms = <10>;
+        bindings = <&macro_tap &kp LA(LEFT)>
+                , <&macro_tap &kp LS(LA(RIGHT))>;
+};

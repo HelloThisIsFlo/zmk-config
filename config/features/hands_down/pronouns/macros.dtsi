@@ -1,0 +1,159 @@
+// I
+typePnI: pnI {
+        label = "pnI";
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        wait-ms = <10>;
+        tap-ms = <10>;
+        bindings = <&macro_tap &kp LS(I)>
+                , <&macro_tap &kp SPACE>
+                ;
+};
+typePnIm: pnIm {
+        label = "pnIM";
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        wait-ms = <10>;
+        tap-ms = <10>;
+        bindings = <&macro_tap &kp LS(I)>
+                , <&macro_release &kp LSHFT>
+                , <&macro_release &kp RSHFT>
+                , <&macro_tap &kp APOS &kp M &kp SPACE>
+                ;
+};
+typePnId: pnId {
+        label = "pnID";
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        wait-ms = <10>;
+        tap-ms = <10>;
+        bindings = <&macro_tap &kp LS(I)>
+                , <&macro_release &kp LSHFT>
+                , <&macro_release &kp RSHFT>
+                , <&macro_tap &kp APOS &kp D &kp SPACE>
+                ;
+};
+typePnIll: pnIll {
+        label = "pnIL";
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        wait-ms = <10>;
+        tap-ms = <10>;
+        bindings = <&macro_tap &kp LS(I)>
+                , <&macro_release &kp LSHFT>
+                , <&macro_release &kp RSHFT>
+                , <&macro_tap &kp APOS &kp L &kp L &kp SPACE>
+                ;
+};
+typePnIve: pnIve {
+        label = "pnIVE";
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        wait-ms = <10>;
+        tap-ms = <10>;
+        bindings = <&macro_tap &kp LS(I)>
+                , <&macro_release &kp LSHFT>
+                , <&macro_release &kp RSHFT>
+                , <&macro_tap &kp APOS &kp V &kp E &kp SPACE>
+                ;
+};
+
+// // YOU
+// typePnYoure: pnYoure {
+//         label = "pnYoure";
+//         compatible = "zmk,behavior-macro";
+//         #binding-cells = <0>;
+//         wait-ms = <10>;
+//         tap-ms = <10>;
+//         bindings = <&macro_tap &kp Y>
+//                 , <&macro_release &kp LSHFT>
+//                 , <&macro_release &kp RSHFT>
+//                 , <&macro_tap &kp O &kp U &kp APOS &kp R &kp E &kp SPACE>
+//                 ;
+// };
+// typePnYoud: pnYoud {
+//         label = "pnYou'd";
+//         compatible = "zmk,behavior-macro";
+//         #binding-cells = <0>;
+//         wait-ms = <10>;
+//         tap-ms = <10>;
+//         bindings = <&macro_tap &kp Y>
+//                 , <&macro_release &kp LSHFT>
+//                 , <&macro_release &kp RSHFT>
+//                 , <&macro_tap &kp O &kp U &kp APOS &kp D &kp SPACE>
+//                 ;
+// };
+// typePnYoull: pnYoull {
+//         label = "pnYou'll";
+//         compatible = "zmk,behavior-macro";
+//         #binding-cells = <0>;
+//         wait-ms = <10>;
+//         tap-ms = <10>;
+//         bindings = <&macro_tap &kp Y>
+//                 , <&macro_release &kp LSHFT>
+//                 , <&macro_release &kp RSHFT>
+//                 , <&macro_tap &kp O &kp U &kp APOS &kp L &kp L &kp SPACE>
+//                 ;
+//         };
+// typePnYouve: pnYouve {
+// label = "pnYou've";
+//         compatible = "zmk,behavior-macro";
+//         #binding-cells = <0>;
+//         wait-ms = <10>;
+//         tap-ms = <10>;
+//         bindings = <&macro_tap &kp Y>
+//                 , <&macro_release &kp LSHFT>
+//                 , <&macro_release &kp RSHFT>
+//                 , <&macro_tap &kp O &kp U &kp APOS &kp V &kp E &kp SPACE>
+//                 ;
+//         };
+
+// // WE
+// typePnWere: pnWere {
+//         label = "pnWere";
+//         compatible = "zmk,behavior-macro";
+//         #binding-cells = <0>;
+//         wait-ms = <10>;
+//         tap-ms = <10>;
+//         bindings = <&macro_tap &kp W>
+//                 , <&macro_release &kp LSHFT>
+//                 , <&macro_release &kp RSHFT>
+//                 , <&macro_tap &kp E &kp APOS &kp R &kp E &kp SPACE>
+//                 ;
+// };
+// typePnWed: pnWed {
+//         label = "pnWe'd";
+//         compatible = "zmk,behavior-macro";
+//         #binding-cells = <0>;
+//         wait-ms = <10>;
+//         tap-ms = <10>;
+//         bindings = <&macro_tap &kp W>
+//                 , <&macro_release &kp LSHFT>
+//                 , <&macro_release &kp RSHFT>
+//                 , <&macro_tap &kp E &kp APOS &kp D &kp SPACE>
+//                 ;
+// };
+// typePnWell: pnWell {
+//         label = "pnWe'll";
+//         compatible = "zmk,behavior-macro";
+//         #binding-cells = <0>;
+//         wait-ms = <10>;
+//         tap-ms = <10>;
+//         bindings = <&macro_tap &kp W>
+//                 , <&macro_release &kp LSHFT>
+//                 , <&macro_release &kp RSHFT>
+//                 , <&macro_tap &kp E &kp APOS &kp L &kp L &kp SPACE>
+//                 ;
+// };
+// typePnWeve: pnWeve {
+//         label = "pnWe've";
+//         compatible = "zmk,behavior-macro";
+//         #binding-cells = <0>;
+//         wait-ms = <10>;
+//         tap-ms = <10>;
+//         bindings = <&macro_tap &kp W>
+//                 , <&macro_release &kp LSHFT>
+//                 , <&macro_release &kp RSHFT>
+//                 , <&macro_tap &kp E &kp APOS &kp V &kp E &kp SPACE>
+//                 ;
+// };
