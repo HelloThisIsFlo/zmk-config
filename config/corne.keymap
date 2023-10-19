@@ -6,15 +6,23 @@
 
 
 
+
+
 #include "./CONFIG.h"
+
 
 
 #include "./features/__BASE__/aliases_key_positions.dtsi"
 #include "./features/__BASE__/aliases_layers.dtsi"
+
 #include "./features/hands_down/aliases.dtsi"
 #include "./features/hands_down/adaptive_keys/aliases.dtsi"
 
+
+
 #include "./features/__BASE__/default_behaviors_config.dtsi"
+
+
 
 / {
     chosen {
@@ -22,17 +30,20 @@
     };
 
 
+
     macros {
         #include "./features/hands_down/macros.dtsi"
         #include "./features/hands_down/adaptive_keys/macros.dtsi"
         #include "./features/hands_down/h_digraphs/macros.dtsi"
         #include "./features/hands_down/pronouns/macros.dtsi"
+
         #include "./features/hands_down/zz__INVESTIGATE__zz/app_switcher/macros.dtsi"
         #include "./features/hands_down/zz__INVESTIGATE__zz/brackets/macros.dtsi"
         #include "./features/hands_down/zz__INVESTIGATE__zz/diacritic/macros.dtsi"
 
         #include "./features/switch_device/macros.dtsi"
     };
+
 
 
     behaviors {
@@ -43,14 +54,17 @@
         #include "./features/hands_down/home_row/behaviors.dtsi"
         #include "./features/hands_down/linger_keys/behaviors.dtsi"
         #include "./features/hands_down/mod_morph/behaviors.dtsi"
+
         #include "./features/hands_down/zz__INVESTIGATE__zz/app_switcher/behaviors.dtsi"
 
         #include "./features/switch_device/behaviors.dtsi"
     };
 
 
+
     combos {
         compatible = "zmk,combos";
+
         #include "./features/__BASE__/combos.dtsi"
 
         #include "./features/__EXPERIMENT__/combos.dtsi"
@@ -60,11 +74,13 @@
         #include "./features/hands_down/adaptive_keys/combos.dtsi"
         #include "./features/hands_down/h_digraphs/combos.dtsi"
         #include "./features/hands_down/pronouns/combos.dtsi"
+
         #include "./features/hands_down/zz__INVESTIGATE__zz/diacritic/combos.dtsi"
         #include "./features/hands_down/zz__INVESTIGATE__zz/selection/combos.dtsi"
 
         #include "./features/lock/combos.dtsi"
     };
+
 
 
     keymap {
@@ -73,6 +89,5 @@
         #include "./features/hands_down/layers_alpha_ak_winpc.dtsi"
         #include "./features/hands_down/layers_extra.dtsi"
         #include "./features/lock/layers.dtsi"
-
     };
 };
