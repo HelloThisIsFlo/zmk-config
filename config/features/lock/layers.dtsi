@@ -1,0 +1,10 @@
+        Lock {
+            bindings = <
+&none   &none   &none   &none   &none              &none   &none   &none   &none   &none
+&none   &none   &none   &none   &none              &none   &none   &none   &none   &none
+&none   &none   &none   &none   &none              &none   &none   &none   &none   &none
+                    &none   &none   &none      &none   &none   &none
+            >;
+
+            label = "XXXX"; // Pin code
+        };

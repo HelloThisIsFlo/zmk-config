@@ -1,0 +1,30 @@
+/**************** Pronoun combos REQUIRE macros to process **********************/
+/***** I  ****/
+COMBO_LAY_ONE_HAND(l_alpha_aks, pnI,             &typePnI,                                                            RM3 RM4 ) // "I "
+COMBO_LAY_TWO_HAND(l_alpha_aks, pnIm,            &typePnIm,                                 LT2                               \
+                                                                                                                      RM3     ) // "I'm "
+COMBO_LAY_TWO_HAND(l_alpha_aks, pnIll,           &typePnIll,                                                          RM3     \
+                                                                                            LB2                               ) // "I'll "
+COMBO_LAY_TWO_HAND(l_alpha_aks, pnId,            &typePnId,                                                           RM3     \
+                                                                                                LB1                           ) // "I'd "
+COMBO_LAY_TWO_HAND(l_alpha_aks, pnIve,           &typePnIve,                                                          RM3     \
+                                                                                                    LB0                       ) // "I've "
+
+// /***** You  ****/
+// COMBO_LAY_TWO_HAND(l_alpha_aks, pnYoure,         &typePnYoure,                                                        RB3     \
+//                                                                                                     LH0                       ) // "You're "
+// COMBO_LAY_TWO_HAND(l_alpha_aks, pnYoull,         &typePnYoull,                                                        RB3     \
+//                                                                                             LB2                               ) // "You'll "
+// COMBO_LAY_TWO_HAND(l_alpha_aks, pnYoud,          &typePnYoud,                                                         RB3     \
+//                                                                                                 LB1                           ) // "You'd "
+// COMBO_LAY_TWO_HAND(l_alpha_aks, pnYouve,         &typePnYouve,                                                        RB3     \
+//                                                                                     LB4                                       ) // "You've "
+
+// /***** We  ****/
+// COMBO_LAY_ONE_HAND(l_alpha_aks, pnWere,          &typePnWere,                           LT3                                   \
+//                                                                                                     LH0                       ) // "We're "
+// COMBO_LAY_ONE_HAND(l_alpha_aks, pnWell,          &typePnWell,                           LT3                                   \
+//                                                                                             LM2                               ) // "We'll "
+// COMBO_LAY_ONE_HAND(l_alpha_aks, pnWed,           &typePnWed,                            LT3                                   \
+//                                                                                                 LM1                           ) // "We'd "
+// COMBO_LAY_ONE_HAND(l_alpha_aks, pnWeve,          &typePnWeve,                       LT4 LT3                                   ) // "We've "

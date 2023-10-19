@@ -1,0 +1,30 @@
+/****************************************************/
+/****               Adaptive Keys                ****/
+/****************************************************/
+#define ak_A &ak l_akA A
+#define ak_B &ak l_akB B
+#define ak_C &ak l_akC C
+#define ak_D &ak l_akD D
+#define ak_E &ak l_akE E
+#define ak_F &ak l_akF F
+#define ak_G &ak l_akG G
+#define ak_H &ak l_akH H
+#define ak_I &ak l_akI I
+#define ak_J &ak l_akJ J
+#define ak_K &ak l_akK K
+#define ak_L &ak l_akL L
+#define ak_M &ak l_akM M
+#define ak_N &ak l_akN N
+#define ak_O &ak l_akO O
+#define ak_P &ak l_akP P
+#define ak_Q &ak l_akQ Q
+#define ak_R &ak l_akR R
+#define ak_S &ak l_akS S
+#define ak_T &ak l_akT T
+#define ak_U &ak l_akU U
+#define ak_V &ak l_akV V
+#define ak_W &ak l_akW W
+#define ak_X &ak l_akX X
+#define ak_Y &ak l_akY Y
+#define ak_Z &ak l_akZ Z
+#define ak_DOT &ak l_akDOT DOT

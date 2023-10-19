@@ -1,0 +1,103 @@
+/*    KEY POSITION Names
+╭─────────────────────╮ ╭─────────────────────╮
+│ LT4 LT3 LT2 LT1 LT0 │ │ RT0 RT1 RT2 RT3 RT4 │
+│ LM4 LM3 LM2 LM1 LM0 │ │ RM0 RM1 RM2 RM3 RM4 │
+│ LB4 LB3 LB2 LB1 LB0 │ │ RB0 RB1 RB2 RB3 RB4 |
+╰───────╮ LH2 LH1 LH0 | | RH0 RH1 RH2 ╭───────╯
+        ╰─────────────╯ ╰────────────╯
+*/
+
+//XXXXXXXXXXXXXXXXXXXXXXXXXXXXX XXXXXXXXXXXXX    XXXXXXXXXXXXXXXXXXXXXXXXXXXX       L_4 L_3 L_2 L_1 L_0   R_0 R_1 R_2 R_3 R_4 )
+
+
+
+/*********** Missing Alpha Letters **************/
+/* Uses Sound + Symetry */
+COMBO_LAY_TWO_HAND(l_alpha_aks, typeQ,           &lk_qu Q U,                                    LB1           RB1             ) // Think: "qU" (Combo on U)
+COMBO_LAY_TWO_HAND(l_alpha_aks, typeZ,           &bk Z,                                 LM3                           RM3     ) // Think: "zI" (Combo on I)
+
+
+
+/********************** Special Keys ***********************/
+COMBO_ANY_ONE_HAND(             entr,            &bk RETURN,                                    LM1 LM0                       )
+COMBO_ANY_ONE_HAND(             tab,             &bk TAB,                                       LB1 LB0                       )
+COMBO_ANY_ONE_HAND(             esc,             &bk ESC,                           LM4         LM1                           )
+COMBO_ANY_ONE_HAND(             undo,            &bk LG(Z),                         LT4 LT3                                   ) // TODO: Do 'redo' as Linger Key
+
+
+
+/********************** Delete actions ********************/
+COMBO_ANY_ONE_HAND(             bspc,            &bk BSPC,                                                    RM1 RM2         )
+COMBO_ANY_ONE_HAND(             del,             &bk DEL,                                                         RM2 RM3     )
+COMBO_LAY_ONE_HAND(l_alpha_aks, delWord,         &bk LA(BSPC),                                                RM1 RM2 RM3     )
+COMBO_LAY_ONE_HAND(l_nav,       delLine,         &bk LG(BSPC),                                                RM1 RM2 RM3     )
+
+
+
+/********************** Special Characters ****************/
+COMBO_LAY_ONE_HAND(l_alpha_aks, typeExcl,        &bk EXCL,                                                    RT1 RT2         )
+COMBO_LAY_ONE_HAND(l_alpha_aks, typeQues,        &bk QMARK,                                                       RT2 RT3     ) // tODO: Maybe move to RT0 RT1 (or maybe exlamation) (so that they're both aligned with 'dot' key)
+COMBO_LAY_ONE_HAND(l_alpha_aks, typeGrav,        &bk GRAVE,                                                           RT3 RT4 )
+COMBO_LAY_ONE_HAND(l_alpha_aks, typeSemi,        &bk SEMI,                                                    RM1         RM4 ) // For easy vim navigation (also on shifted ',' for normal typing)
+
+
+
+/*************** Special Behaviors *******************/
+COMBO_LAY_TWO_HAND(l_alpha_aks, docaps,          &caps_word,                                LM2 LM1           RM1 RM2         ) // CAPSWORD
+
+
+
+/********* Misc. *******************/
+COMBO_ANY_ONE_HAND(             settings,        &mo l_cfg,                                                   RH1 RH2         ) // get the settings/media layer from anywhere
+
+
+
+/********** Number Layer Combos **************/
+COMBO_LAY_ONE_HAND(l_num,       numLPRN,         &bk LPAR,                                                    RM1 RM2         )
+COMBO_LAY_ONE_HAND(l_num,       numRPRN,         &bk RPAR,                                                        RM2 RM3     )
+COMBO_LAY_ONE_HAND(l_num,       numEQUAL,        &bk EQUAL,                                                           RM3 RM4 )
+COMBO_LAY_ONE_HAND(l_num,       numCOLN,         &bk COLON,                                                   RM1     RM3     )
+COMBO_LAY_ONE_HAND(l_num,       numPRCNT,        &bk PRCNT,                                                           RB3 RB4 )
+COMBO_LAY_ONE_HAND(l_num,       numLT,           &bk LT,                                                  RM0 RM1             )
+COMBO_LAY_ONE_HAND(l_num,       numGT,           &bk GT,                                                  RM0             RM4 )
+COMBO_LAY_ONE_HAND(l_num,       numDASH,         &bk LA(MINUS),                                           RB0 RB1             )
+COMBO_LAY_ONE_HAND(l_num,       numTILD,         &bk TILDE,                                               RB0             RB4 )
+COMBO_LAY_ONE_HAND(l_num,       numELIP,         &bk LA(SEMI),                                                RB1         RB4 )
+COMBO_LAY_ONE_HAND(l_num,       numDLLR,         &bk DLLR,                                                    RT1 RT2         ) // $
+COMBO_LAY_ONE_HAND(l_num,       numCENT,         &bk LA(N4),                                              RT0 RT1             ) // ¢
+COMBO_LAY_ONE_HAND(l_num,       numEURO,         &bk LS(LA(N2)),                                                  RT2 RT3     ) // €
+COMBO_LAY_ONE_HAND(l_num,       numYEN,          &bk LA(Y),                                                           RT3 RT4 ) // ¥
+COMBO_LAY_ONE_HAND(l_num,       numBPND,         &bk LA(N3),                                                  RT1     RT3     ) // £
+
+
+
+/*********** TODO: Try and (maybe) integrate later **************/
+// COMBO_LAY_ONE_HAND(l_alpha_aks, selword,         &m_selword,                        LB4             LB0                       )
+// COMBO_LAY_ONE_HAND(l_alpha_aks, findsel,         &m_findsel,                        LM4                                       \
+//                                                                                                     LB0                       )
+
+
+
+/**************** Unused **************/
+// COMBO_ANY_ONE_HAND(             appswitch,       &AppSwitch,                            LM3     LM1                           ) // App switch
+// COMBO_ANY_ONE_HAND(             Gent,            &bk LG(RETURN),                            LB2 LB1 LB0                       )
+// COMBO_ANY_ONE_HAND(             sall,            &bk LG(A),                         LB4         LB1                           )
+// COMBO_ANY_ONE_HAND(             spce,            &bk SPACE,                                     LM1 LM0                       )
+// COMBO_ANY_ONE_HAND(             stab,            &bk LS(TAB),                           LB3 LB2 LB1                           )
+// COMBO_LAY_ONE_HAND(l_alpha_aks, typeatMk,        &lk LS(LA(SEMI)) AT_SIGN,                                RT0 RT1             ) // @ (№ if held)
+// COMBO_LAY_ONE_HAND(l_alpha_aks, typeEqual,       &lk PRCNT EQUAL,                                                 RB2 RB3     ) // = (percent if held)
+// COMBO_ANY_ONE_HAND(             copy,            &lk LG(X) LG(C),                       LB3 LB2                               )
+// COMBO_ANY_ONE_HAND(             pste,            &lk LG(LS(LA(V))) LG(V),                   LB2 LB1                           )
+// COMBO_LAY_ONE_HAND(l_alpha_aks, cloz,            &bk LG(W),                             LM3                                   \
+//                                                                                         LB3                                   )
+// COMBO_LAY_ONE_HAND(l_alpha_aks, new,             &bk LG(N),                                 LM2                               \
+//                                                                                             LB2                               )
+// COMBO_LAY_ONE_HAND(l_alpha_aks, open,            &bk LG(O),                                     LM1                           \
+//                                                                                                 LB1                           )
+// COMBO_LAY_ONE_HAND(l_alpha_aks, quit,            &bk LG(Q),                                         LM0                       \
+//                                                                                                     LB0                       )
+// COMBO_LAY_ONE_HAND(l_alpha_aks, typeColn,        &lk LA(SEMI) COLON,                                          RT1     RT3     )
+// COMBO_LAY_ONE_HAND(l_alpha_aks, typeUnder,       &bk UNDER,                                                   RB1     RB3     )
+// COMBO_LAY_ONE_HAND(l_alpha_aks, typeNdash,       &lk LA(LS(MINUS)) LA(MINUS),                             RB0 RB1             ) // N-dash (M-dash if held)
+// COMBO_LAY_ONE_HAND(l_alpha_aks, typeMdash,       &bk LA(LS(MINUS)),                                       RB0     RB2         ) // M-dash (minus)
+// COMBO_LAY_ONE_HAND(l_alpha_aks, typeTilde,       &bk TILDE,                                                   RB1         RB4 ) // tilde (not dead key)

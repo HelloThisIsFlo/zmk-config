@@ -4,16 +4,17 @@
 #include <dt-bindings/zmk/ext_power.h>
 
 
-#include "./features/_base/aliases_key_positions.h"
-#include "./features/_base/aliases_layers.h"
 
 
 #include "./CONFIG.h"
 
 
-#include "./features/_base/behaviors_config.h"
+#include "./features/_base/aliases_key_positions.dtsi"
+#include "./features/_base/aliases_layers.dtsi"
+#include "./features/hands_down/aliases.dtsi"
+#include "./features/hands_down/adaptive_keys/aliases.dtsi"
 
-
+#include "./features/_base/behaviors_config.dtsi"
 
 / {
     chosen {
@@ -22,6 +23,8 @@
 
 
     macros {
+        #include "./features/_base/macros.dtsi"
+
         #include "./features/TODO_SORT/macros.dtsi"
     };
 
@@ -33,6 +36,15 @@
 
     combos {
         compatible = "zmk,combos";
+        #include "./features/_base/combos.dtsi"
+
+        #include "./features/hands_down/combos.dtsi"
+        #include "./features/hands_down/adaptive_keys/combos.dtsi"
+        #include "./features/hands_down/diacritic/combos.dtsi"
+        #include "./features/hands_down/h_digraphs/combos.dtsi"
+        #include "./features/hands_down/pronouns/combos.dtsi"
+
+        #include "./features/lock/combos.dtsi"
 
         #include "./features/TODO_SORT/combos.dtsi"
         #include "./features/TODO_SORT/combos_winpc_GENERATED.dtsi"
@@ -42,18 +54,9 @@
     keymap {
         compatible = "zmk,keymap";
 
-        #include "./features/TODO_SORT/l_alpha-HD-vb-flo.dtsi"
-        #include "./features/TODO_SORT/l_layers.dtsi"
+        #include "./features/hands_down/layers_alpha_ak_winpc.dtsi"
+        #include "./features/hands_down/layers_extra.dtsi"
+        #include "./features/lock/layers.dtsi"
 
-        Lock {
-            bindings = <
-&none   &none   &none   &none   &none              &none   &none   &none   &none   &none
-&none   &none   &none   &none   &none              &none   &none   &none   &none   &none
-&none   &none   &none   &none   &none              &none   &none   &none   &none   &none
-                    &none   &none   &none      &none   &none   &none
-            >;
-
-            label = "XXXX"; // Pin code
-        };
     };
 };

@@ -1,0 +1,60 @@
+#define ________  &trans
+
+// For these keys, I could use '________' (&trans) instead of the ak_X macros, but the ak_X macros make the ak key visible on the keymap-drawer, so I went with the ak_X macros.
+#define ___A____ ak_A
+#define ___B____ ak_B
+#define ___C____ ak_C
+#define ___D____ ak_D
+#define ___E____ ak_E
+#define ___F____ ak_F
+#define ___G____ ak_G
+#define ___H____ ak_H
+#define ___I____ ak_I
+#define ___J____ ak_J
+#define ___K____ ak_K
+#define ___L____ ak_L
+#define ___M____ ak_M
+#define ___N____ ak_N
+#define ___O____ ak_O
+#define ___P____ ak_P
+#define ___Q____ ak_Q
+#define ___R____ ak_R
+#define ___S____ ak_S
+#define ___T____ ak_T
+#define ___U____ ak_U
+#define ___V____ ak_V
+#define ___W____ ak_W
+#define ___X____ ak_X
+#define ___Y____ ak_Y
+#define ___Z____ ak_Z
+#define _DOT____ ak_DOT
+
+
+#define PB_to_SB    &replace_char_with_bigram_SB /* Symetry on BS(p) ✔ */
+#define MG_to_LG    &replace_char_with_bigram_LG /* Symetry on GL(m) ✔ */
+#define SJ_to_BJ    &replace_char_with_bigram_BJ /* Symetry on JB(s) ✔ <- Not really needed, but kept for consistency */
+#define GJ_to_NJ    &replace_char_with_bigram_NJ /* Symetry on JN(g) ✔ <- Not really needed, but kept for consistency */
+#define TJ_to_DJ    &replace_char_with_bigram_DJ /* Symetry on JD(t) ✔ <- Not really needed, but kept for consistency */
+#define DK_to_LK    &replace_char_with_bigram_LK /* Symetry on KL(d) ✔ */
+#define TK_to_NK    &replace_char_with_bigram_NK /* Symetry on KN(t) ✔ */
+#define XM_to_BM    &replace_char_with_bigram_BM /* Symetry on MB(x) ✔ */
+#define PN_to_LN    &replace_char_with_bigram_LN /* Symetry on NL(p) ✔ */
+#define CM_to_NM    &replace_char_with_bigram_NM /* Symetry on MN(c) ✔ */
+#define WM_to_PM    &replace_char_with_bigram_PM /* Symetry on MP(w) ✔ */
+#define TV_to_NV    &replace_char_with_bigram_NV /* Symetry on VN(t) ✔ */
+
+
+
+#define XXX 0
+// Second param is ignored, so using XXX
+#define hml_LCTRL_S  &hml_S LCTRL  XXX
+#define hml_LALT_C   &hml_C LALT   XXX
+#define hml_LGUI_N   &hml_N LGUI   XXX
+#define hml_LSHIFT_T &hml_T LSHIFT XXX
+#define hmr_LSHIFT_A &hmr_A LSHIFT XXX
+#define hmr_LGUI_E   &hmr_E LGUI   XXX
+#define hmr_LALT_I   &hmr_I LALT   XXX
+
+#define hml_LGUI_S   &hml_S LGUI   XXX
+#define hml_LCTRL_N  &hml_N LCTRL  XXX
+#define hmr_LCTRL_E  &hmr_E LCTRL  XXX

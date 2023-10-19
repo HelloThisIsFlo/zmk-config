@@ -1,0 +1,8 @@
+/**************** Diacritic **************/ // Disabled for now
+// COMBO_LAY_ONE_HAND(l_alpha_aks, diacAccent,      &lk_E_accent E LA(E),                                        RM1 RM2         ) // ´ (É if held)
+// COMBO_LAY_ONE_HAND(l_alpha_aks, diacGrave,       &lk_E_grave E LA(GRAVE),                                         RM2 RM3     ) // ` (È if held)
+// COMBO_LAY_ONE_HAND(l_alpha_aks, diacAcute,       &lk_E_acute E LA(N6),                                        RM1     RM3     ) // ˆ (Ê if held)
+// COMBO_LAY_ONE_HAND(l_alpha_aks, diacMacron,      &lk_O_macron E LA(A),                                            RM2     RM4 ) // ¯ (ō if held)
+// COMBO_LAY_ONE_HAND(l_alpha_aks, diacCirc,        &lk_A_ring A LA(K),                                          RM1         RM4 ) // ˚ (Å if held)
+// COMBO_LAY_ONE_HAND(l_alpha_aks, diacUmlaut,      &lk_U_umlaut U LA(U),                                        RB1 RB2         ) // ¨ (Ü if held)
+// COMBO_LAY_ONE_HAND(l_alpha_aks, diacCedille,     &lk_C_cedille C LA(C),                                           LM2     LM4 ) // ¸ (ç if held)

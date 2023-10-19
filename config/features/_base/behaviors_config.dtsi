@@ -1,0 +1,11 @@
+/****************************************************/
+/****             Behavior Config                ****/
+/****************************************************/
+&caps_word {
+    continue-list = <UNDER MINUS BSPC DEL LEFT RIGHT>;
+};
+
+&sk {
+    release-after-ms = <sticky_key_release_timeout>;
+    quick-release;
+};
