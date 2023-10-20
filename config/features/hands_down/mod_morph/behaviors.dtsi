@@ -2,9 +2,26 @@ CmmaSemi: CmmaSemi {
     compatible = "zmk,behavior-mod-morph";
     label = "comma_semi";
     #binding-cells = <0>;
-    bindings = <&bk CMMA>, <&typeSemi>;
+    bindings = <&bk CMMA>, <&bk SEMI>;
     mods = <(MOD_LSFT|MOD_RSFT)>;
 };
+
+ExclQues: ExclQues {
+    compatible = "zmk,behavior-mod-morph";
+    label = "exclamation_question";
+    #binding-cells = <0>;
+    bindings = <&bk EXCL>, <&bk QMARK>;
+    mods = <(MOD_LSFT|MOD_RSFT)>;
+};
+
+DashEqual: DashEqual {
+    compatible = "zmk,behavior-mod-morph";
+    label = "dash_equal";
+    #binding-cells = <0>;
+    bindings = <&bk MINUS>, <&bk EQUAL>;
+    mods = <(MOD_LSFT|MOD_RSFT)>;
+};
+
 DotColn: DotColn {
     compatible = "zmk,behavior-mod-morph";
     label = "DotColn";
