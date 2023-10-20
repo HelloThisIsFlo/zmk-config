@@ -12,3 +12,29 @@ lk_DOT_SPACE: lk_DOT_SPACE {
     flavor = "tap-preferred";
     bindings = <&bk>, <&type_dot_space>;
 };
+
+aB_cD: aB_cD {
+    compatible = "zmk,behavior-mod-morph";
+    label = "aB_cD";
+    #binding-cells = <0>;
+    bindings = <&lk C A>, <&lk D B>;
+    mods = <(MOD_LSFT|MOD_RSFT)>;
+};
+
+aB: aB {
+    compatible = "zmk,behavior-mod-morph";
+    label = "aB";
+    #binding-cells = <0>;
+    bindings = <&kp A>, <&kp B>;
+    mods = <(MOD_LSFT|MOD_RSFT)>;
+};
+
+
+// lk_qu: lk_qu {
+//     compatible = "zmk,behavior-hold-tap";
+//     label = "lk_qu";
+//     #binding-cells = <2>;
+//     tapping-term-ms = <linger_term>;
+//     flavor = "tap-preferred";
+//     bindings = <&bk>, <&Qu>;
+// };
