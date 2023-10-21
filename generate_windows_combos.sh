@@ -33,6 +33,7 @@ function generate_winpc_combo_for {
   ###### Migrate Combos to WinPC layer ######
   sed -e 's/l_alpha_aks,/l_winpc,    /g' |
   sed -e 's/COMBO_ANY_ONE_HAND(           /COMBO_LAY_ONE_HAND(l_winpc,   /g' | 
+  sed -e 's/COMBO_ANY_TWO_HAND(           /COMBO_LAY_TWO_HAND(l_winpc,   /g' | 
 
   ###### Migrate CMD to CTRL ################
   sed -e 's/LG(/LC(/g' |
