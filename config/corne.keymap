@@ -68,7 +68,8 @@
         #include "./features/__BASE__/combos.dtsi"
 
         #include "./features/__EXPERIMENT__/combos.dtsi"
-        #include "./features/__EXPERIMENT__/combos_winpc_GENERATED.dtsi"
+
+        #include "./features/__GENERATED__/combos_winpc_GENERATED.dtsi"
 
         #include "./features/hands_down/combos.dtsi"
         #include "./features/hands_down/adaptive_keys/combos.dtsi"
