@@ -29,5 +29,5 @@ COMBO_LAY_ONE_HAND(l_winpc,     ch_win,              &Ch,                       
 COMBO_LAY_ONE_HAND(l_winpc,     wh_win,              &Wh,                                   LT3 LT2                               )
 COMBO_LAY_ONE_HAND(l_winpc,     sh_win,              &lk_sh H S,                        LM4 LM3                                   )
 COMBO_LAY_ONE_HAND(l_winpc,     gh_win,              &lk_gh H G,                                LT2 LT1                           )
-COMBO_LAY_ONE_HAND(l_winpc,     ph_win,              &Ph,                               LB4 LB3                                   )
+COMBO_LAY_ONE_HAND(l_winpc,     ph_win,              &Ph,                                   LB3 LB2                               )
 COMBO_LAY_ONE_HAND(l_winpc,     oh_win,              &Oh,                                                         RB1 RB2         )
