@@ -16,6 +16,16 @@ blt: blt {
     tapping-term-ms = <my_tapping_term>;
     bindings = <&mo>, <&bk>;
 };
+
+bksl: bksl {
+    compatible = "zmk,behavior-hold-tap";
+    label = "flo,behavior-buffered-key-sticky-layer";
+    #binding-cells = <2>;
+    flavor = "tap-preferred";
+    tapping-term-ms = <my_tapping_term>;
+    bindings = <&sl>, <&bk>;
+};
+
 bsklt: bsklt {
     compatible = "zmk,behavior-hold-tap";
     label = "flo,behavior-buffered-sticky-key-layer-tap";

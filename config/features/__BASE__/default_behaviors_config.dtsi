@@ -9,3 +9,8 @@
     release-after-ms = <sticky_key_release_timeout>;
     quick-release;
 };
+
+&sl {
+    release-after-ms = <sticky_key_release_timeout>;
+    // &sl are 'quick-release' by default
+};
