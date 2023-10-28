@@ -34,6 +34,8 @@ ________      &kp PG_DN  &kp LG(N0)  &kp END    &none                   &kp LG(M
                         label = "=*+/";
                         bindings = <
 
+// Maybe put l_sym next to SHIFT on both sides, and keep thum for navigation and/or shortcut layer(s)
+
 ________      ________      ________      ________      ________                   ________      ________      ________      ________      &bk PLUS
 ________      ________      ________      ________      ________                   ________      ________      ________      ________      ________
 ________      ________      ________      ________      ________                   ________      ________      ________      ________      ________
@@ -82,10 +84,10 @@ ________      ________      ________      ________      ________                
                         label = "1984"; //
                         bindings = <
 
-&kp ESC       &kp HOME     &kp UP        &kp PG_UP     &blt l_cfg KP_NUM                          &kp KP_SLASH    &kp KP_N7       &kp KP_N8      &kp KP_N9      &kp KP_MINUS
-&kp LA(LEFT)  &kp LEFT     &kp DOWN      &kp RIGHT     &kp LA(RIGHT)                              &kp KP_MULTIPLY &mt RSHFT KP_N4 &mt RGUI KP_N5 &mt RALT KP_N6 &mt LCTRL KP_PLUS
-&kp DEL       &kp END      &kp TAB       &kp PG_DN     &kp SPC                                    &kp KP_COMMA    &kp KP_N1       &kp KP_N2      &kp KP_N3      &kp KP_EQUAL
-                                        &none  &blt l_fn BSPC  &blt l_nav KP_ENTER      &kp KP_N0    &kp KP_DOT     &none
+&kp ESC       &kp HOME     &kp UP        &kp PG_UP     &blt l_cfg KP_NUM                          &kp KP_SLASH    &kp N7       &kp N8      &kp N9      &kp KP_MINUS
+&kp LA(LEFT)  &kp LEFT     &kp DOWN      &kp RIGHT     &kp LA(RIGHT)                              &kp KP_MULTIPLY &mt RSHFT N4 &mt RGUI N5 &mt RALT N6 &mt LCTRL KP_PLUS
+&kp DEL       &kp END      &kp TAB       &kp PG_DN     &kp SPC                                    &kp KP_COMMA    &kp N1       &kp N2      &kp N3      &kp KP_EQUAL
+                                        &none  &blt l_fn BSPC  &blt l_nav KP_ENTER      &kp N0    &kp KP_DOT     &none
 
                         >;
                 };
