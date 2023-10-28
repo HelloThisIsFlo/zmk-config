@@ -71,4 +71,5 @@
 #define PN_to_LN    &replace_char_with_bigram_LN /* Symetry on NL(p) ✔ */
 #define CM_to_NM    &replace_char_with_bigram_NM /* Symetry on MN(c) ✔ */
 #define WM_to_PM    &replace_char_with_bigram_PM /* Symetry on MP(w) ✔ */
+#define DV_to_LV    &replace_char_with_bigram_LV /* Symetry on VL(d) ✔ */
 #define TV_to_NV    &replace_char_with_bigram_NV /* Symetry on VN(t) ✔ */
