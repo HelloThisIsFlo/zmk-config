@@ -3,5 +3,5 @@ togMacPc: togMacPc {
     label = "togMacPc";
     #binding-cells = <0>;
     tapping-term-ms = <200>;
-    bindings = <&toMacbook>, <&toWinPC>;
+    bindings = <&toMacbook>, <&toWinPC>, <&toiPad>;
 };
