@@ -99,3 +99,10 @@ BspcDel: Bspc_Del {
     bindings = <&bk BSPC>, <&bk DEL>;
     mods = <(MOD_LSFT|MOD_RSFT)>;
 };
+SqtDqt: SqtDqt {
+    compatible = "zmk,behavior-mod-morph";
+    label = "SqtDqt";
+    #binding-cells = <0>;
+    bindings = <&bk SQT>, <&bk DQT>;
+    mods = <(MOD_LSFT|MOD_RSFT)>;
+};
