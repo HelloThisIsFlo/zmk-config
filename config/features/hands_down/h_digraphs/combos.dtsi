@@ -7,4 +7,5 @@ COMBO_LAY_ONE_HAND(l_alpha_aks, wh,              &Wh,                           
 COMBO_LAY_ONE_HAND(l_alpha_aks, sh,              &lk_sh H S,                        LM4 LM3                                   ) // Sh/sion
 COMBO_LAY_ONE_HAND(l_alpha_aks, gh,              &lk_gh H G,                                LT2 LT1                           ) // Gh/ght
 COMBO_LAY_ONE_HAND(l_alpha_aks, ph,              &Ph,                                   LB3 LB2                               ) // Ph
-COMBO_LAY_ONE_HAND(l_alpha_aks, oh,              &Oh,                                                         RB1 RB2         ) // Oh
+// Disabled to experiment with parenthesis combos
+// COMBO_LAY_ONE_HAND(l_alpha_aks, oh,              &Oh,                                                         RB1 RB2         ) // Oh

@@ -39,6 +39,8 @@ COMBO_LAY_ONE_HAND(l_alpha_aks, typeExcl,        &bk EXCL,                      
 COMBO_LAY_ONE_HAND(l_alpha_aks, typeQues,        &bk QMARK,                                                       RT2 RT3     ) // tODO: Maybe move to RT0 RT1 (or maybe exlamation) (so that they're both aligned with 'dot' key)
 COMBO_LAY_ONE_HAND(l_alpha_aks, typeGrav,        &bk GRAVE,                                                           RT3 RT4 )
 COMBO_LAY_ONE_HAND(l_alpha_aks, typeSemi,        &bk SEMI,                                                    RM1         RM4 ) // For easy vim navigation (also on shifted ',' for normal typing)
+COMBO_LAY_ONE_HAND(l_alpha_aks, typeLPAR,        &bk LPAR,                                                    RB1 RB2         )
+COMBO_LAY_ONE_HAND(l_alpha_aks, typeRPAR,        &bk RPAR,                                                        RB2 RB3     )
 
 
 
