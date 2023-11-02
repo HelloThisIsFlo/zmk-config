@@ -9,9 +9,9 @@
                         label = "<^v>";
                         bindings = <
 
-________      &kp PG_UP  &kp UP      &kp HOME   &none                   &kp LG(EQUAL)  &kp HOME  &kp UP      &kp PG_UP  ________
-&kp LA(LEFT)  &kp LEFT   &kp DOWN    &kp RIGHT  &kp LA(RIGHT)           &kp LA(LEFT)   &kp LEFT  &kp DOWN    &kp RIGHT  &kp LA(RIGHT)
-________      &kp PG_DN  &kp LG(N0)  &kp END    &none                   &kp LG(MINUS)  &kp END   &kp LG(N0)  &kp PG_DN  ________
+________      &kp PG_UP  ________    &kp HOME   &none                   &kp LG(EQUAL)  &kp HOME  ________    &kp PG_UP  ________
+&kp LA(LEFT)  &kp LEFT   &kp UP      &kp RIGHT  &kp LA(RIGHT)           &kp LA(LEFT)   &kp LEFT  &kp UP      &kp RIGHT  &kp LA(RIGHT)
+________      &kp PG_DN  &kp DOWN    &kp END    &none                   &kp LG(MINUS)  &kp END   &kp DOWN    &kp PG_DN  ________
                                 ________   ________   ________      ________   ________   ________
 /*
 &kp RG(W)       &kp RG(Q)       &kp LG(LS(N4))     &kp LG(LS(LC(N4)))  &kp ESC                         &kp LG(EQUAL)  &kp HOME  &kp UP      &kp PG_UP  &none
