@@ -106,3 +106,10 @@ SqtDqt: SqtDqt {
     bindings = <&bk SQT>, <&bk DQT>;
     mods = <(MOD_LSFT|MOD_RSFT)>;
 };
+EqualSlash: EqualSlash {
+    compatible = "zmk,behavior-mod-morph";
+    label = "EqualSlash";
+    #binding-cells = <0>;
+    bindings = <&bk EQUAL>, <&bk FSLH>;
+    mods = <(MOD_LSFT|MOD_RSFT)>;
+};
