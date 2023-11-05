@@ -37,7 +37,7 @@ COMBO_LAY_ONE_HAND(l_nav,       delLine,         &bk LG(BSPC),                  
 /********************** Special Characters ****************/
 COMBO_LAY_ONE_HAND(l_alpha_aks, typeExcl,        &bk EXCL,                                                    RT1 RT2         )
 COMBO_LAY_ONE_HAND(l_alpha_aks, typeQues,        &bk QMARK,                                                       RT2 RT3     ) // tODO: Maybe move to RT0 RT1 (or maybe exlamation) (so that they're both aligned with 'dot' key)
-COMBO_LAY_ONE_HAND(l_alpha_aks, typeGrav,        &bk GRAVE,                                                           RT3 RT4 )
+COMBO_LAY_ONE_HAND(l_alpha_aks, typeGrav,        &bk GRAVE,                                               RT0 RT1             )
 // COMBO_LAY_ONE_HAND(l_alpha_aks, typeTilde,       &bk GRAVE,                                                           RT3 RT4 ) // Originally wanted to put Tilde here, but it's actually on shifted 'GRAVE'. So let's try to use it there first. 
 COMBO_LAY_ONE_HAND(l_alpha_aks, typeSemi,        &bk SEMI,                                                    RM1         RM4 ) // For easy vim navigation (also on shifted ',' for normal typing)
 COMBO_LAY_ONE_HAND(l_alpha_aks, typeLPAR,        &lk LBKT LPAR,                                               RB1 RB2         )
