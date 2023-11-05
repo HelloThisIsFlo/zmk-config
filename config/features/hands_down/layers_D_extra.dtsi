@@ -83,10 +83,11 @@ ________      ________      ________      ________      ________                
                 l_num {
                         label = "1984"; //
                         bindings = <
+/* TODO: Add symbols on this layer */
 
 &kp ESC       &kp HOME     &kp UP        &kp PG_UP     &blt l_cfg KP_NUM                          &kp KP_SLASH    &kp N7       &kp N8      &kp N9      &kp KP_MINUS
-&kp LA(LEFT)  &kp LEFT     &kp DOWN      &kp RIGHT     &kp LA(RIGHT)                              &kp KP_MULTIPLY &mt RSHFT N4 &mt RGUI N5 &mt RALT N6 &mt LCTRL KP_PLUS
-&kp DEL       &kp END      &kp TAB       &kp PG_DN     &kp SPC                                    &kp KP_COMMA    &kp N1       &kp N2      &kp N3      &kp KP_EQUAL
+&kp LA(LEFT)  &kp LEFT     &kp DOWN      &kp RIGHT     &kp LA(RIGHT)                              &bk MINUS       &mt RSHFT N1 &mt RGUI N2 &mt RALT N3 &mt LCTRL KP_PLUS
+&kp DEL       &kp END      &kp TAB       &kp PG_DN     &kp SPC                                    &bk PLUS        &kp N4       &kp N5      &kp N6      &kp KP_EQUAL
                                         &none  &blt l_fn BSPC  &blt l_nav KP_ENTER      &kp N0    &kp KP_DOT     &none
 
                         >;
