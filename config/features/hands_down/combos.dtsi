@@ -19,6 +19,7 @@ COMBO_LAY_TWO_HAND(l_alpha_aks, typeZ,           &bk Z,                         
 
 
 /********************** Special Keys ***********************/
+COMBO_ANY_ONE_HAND(             space,           &bk SPACE,                                     LT1 LT0                       )
 COMBO_ANY_ONE_HAND(             entr,            &bk RETURN,                                    LM1 LM0                       )
 COMBO_ANY_ONE_HAND(             tab,             &bk TAB,                                       LB1 LB0                       )
 COMBO_ANY_ONE_HAND(             esc,             &bk ESC,                           LM4         LM1                           )
