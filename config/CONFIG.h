@@ -3,9 +3,9 @@
 /****************************************************/
 #define linger_term 100 // Tuned ✅
 #define my_tapping_term 150
-#define my_ak_window 220
-#define my_combo_timeout_one_hand 20 // Tuned at 18ms, but sometimes missing the combo, so trying a bit higher
-#define my_combo_timeout_two_hands 40
+#define my_ak_window 150 // 220 was good but when needing the non-ak version, it was too long.
+#define my_combo_timeout_one_hand 18 // Tuned at 18ms, but sometimes missing the combo, so trying a bit higher. 20ms was too long, so trying again at 18ms
+#define my_combo_timeout_two_hands 30 // 40ms was good but sometimes it would trigger when I didn't want it to
 #define my_global_quick_tap_window 130 // Measured w/ logs, 130ms is a comfortable quick double-tap for me
 #define sticky_key_release_timeout 1000
 #define sticky_key_release_timeout_long 3000
