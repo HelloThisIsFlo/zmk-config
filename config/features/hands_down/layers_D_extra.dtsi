@@ -86,9 +86,9 @@ ________      ________      ________      ________      ________                
 /* TODO: Add symbols on this layer */
 
 &kp ESC       &kp HOME     &kp UP        &kp PG_UP     &blt l_cfg KP_NUM                          &kp KP_SLASH    &kp N7       &kp N8      &kp N9      &kp KP_MINUS
-&kp LA(LEFT)  &kp LEFT     &kp DOWN      &kp RIGHT     &kp LA(RIGHT)                              &bk MINUS       &hm RSHFT N4 &hm RGUI N5 &hm RALT N6 &hm LCTRL N0
-&kp DEL       &kp END      &kp TAB       &kp PG_DN     &kp SPC                                    &bk PLUS        &kp N1       &kp N2      &kp N3      &kp KP_EQUAL
-                                        &none  &blt l_fn BSPC  &blt l_nav KP_ENTER      ________    &kp KP_DOT     &none
+&kp LA(LEFT)  &kp LEFT     &kp DOWN      &kp RIGHT     &kp LA(RIGHT)                              &bk COLON       &hm RSHFT N4 &hm RGUI N5 &hm RALT N6 &hm LCTRL N0
+&kp DEL       &kp END      &kp TAB       &kp PG_DN     &kp SPC                                    &bk DOT         &kp N1       &kp N2      &kp N3      &kp KP_EQUAL
+                                        &none  &blt l_fn BSPC  &blt l_nav KP_ENTER      ________    ________     &none
 
                         >;
                 };
