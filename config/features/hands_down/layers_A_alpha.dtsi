@@ -21,7 +21,7 @@ hml_LCTRL_S   hml_LALT_C   hml_LGUI_N   hml_LSHIFT_T    ak_K                    
 ak_B          ak_P         ak_L         ak_D            ak_V                          &lk RBKT RPAR   ak_U          ak_O        ak_Y        ak_F
 
                      // &mo l_num   &bk LSHIFT          &hrmSk LSHIFT R        &hrmSk RSHIFT SPACE  &bskL RSHIFT  &togMacPc
-                        &mo l_num   &mo l_sym           &blt l_nav R          &blt l_num SPACE  &skL RSHIFT  &togMacPc
+                        &mo l_num   &mo l_num           &blt l_nav R           &blt l_nav SPACE     &mo l_num     &togMacPc
                      // &mo l_num   &mo l_sym           &bksl l_nav R          &SpaceUnder  &skL RSHIFT  &togMacPc
                      // &mo l_sym  &bsklt l_num LSHIFT  &blt l_nav R           &SpaceUnder       &mo l_fn     &togMacPc
                         >;
