@@ -1,5 +1,6 @@
 #define ________  &trans
 #define xxxxxxxx  &none
+#define TODO      &trans
 
 
 #define XXX 0

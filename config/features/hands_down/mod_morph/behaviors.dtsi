@@ -110,7 +110,14 @@ EqualSlash: EqualSlash {
     compatible = "zmk,behavior-mod-morph";
     label = "EqualSlash";
     #binding-cells = <0>;
-    bindings = <&bk EQUAL>, <&bk FSLH>;
+    bindings = <&bk EQUAL>, <&none>; // Disabling shifted behavior for now, to make sure I don't use it and weaken the muscle memory on the new position.
+    mods = <(MOD_LSFT|MOD_RSFT)>;
+};
+SlashHash: SlashHash {
+    compatible = "zmk,behavior-mod-morph";
+    label = "SlashHash";
+    #binding-cells = <0>;
+    bindings = <&bk FSLH>, <&bk HASH>;
     mods = <(MOD_LSFT|MOD_RSFT)>;
 };
 
