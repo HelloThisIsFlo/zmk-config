@@ -113,3 +113,31 @@ EqualSlash: EqualSlash {
     bindings = <&bk EQUAL>, <&bk FSLH>;
     mods = <(MOD_LSFT|MOD_RSFT)>;
 };
+
+
+/*
+Magic Brackets Behavior
+
+S L => Output (L = Linger, S = Shifted)
+-------------
+_ _ => (
+_ X => [
+X _ => {
+X X => <
+
+*/
+MagicBracketsL: MagicBracketsL {
+    compatible = "zmk,behavior-mod-morph";
+    label = "MagicBracketsL";
+    #binding-cells = <0>;
+    bindings = <&lk LEFT_BRACKET LEFT_PARENTHESIS>, <&lk LEFT_BRACE LESS_THAN>;
+    mods = <(MOD_LSFT|MOD_RSFT)>;
+};
+
+MagicBracketsR: MagicBracketsR {
+    compatible = "zmk,behavior-mod-morph";
+    label = "MagicBracketsR";
+    #binding-cells = <0>;
+    bindings = <&lk RIGHT_BRACKET RIGHT_PARENTHESIS>, <&lk RIGHT_BRACE GREATER_THAN>;
+    mods = <(MOD_LSFT|MOD_RSFT)>;
+};
