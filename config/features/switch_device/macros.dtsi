@@ -7,8 +7,14 @@
         )
 
 
+// TODO: Add a BT_DISC to disconnect from both iPhone and iPad 
+// pass a disconnect command to the C macro
+// mac and windows, disconnect both iphone and ipad
+// iphone: disconnect ipad only
+// ipad: disconnect iphone only
 
 // Switch device macros
 SWITCH_DEVICE_MACRO(Macbook, 0, l_alpha)
 SWITCH_DEVICE_MACRO(iPad,    1, l_alpha)
 SWITCH_DEVICE_MACRO(WinPC,   2, l_winpc)
+SWITCH_DEVICE_MACRO(iPhone,  3, l_alpha)
