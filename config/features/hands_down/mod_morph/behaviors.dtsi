@@ -120,6 +120,20 @@ SlashHash: SlashHash {
     bindings = <&bk FSLH>, <&bk HASH>;
     mods = <(MOD_LSFT|MOD_RSFT)>;
 };
+UnderStar: UnderStar {
+    compatible = "zmk,behavior-mod-morph";
+    label = "UnderStar";
+    #binding-cells = <0>;
+    bindings = <&bk UNDER>, <&bk STAR>;
+    mods = <(MOD_LSFT|MOD_RSFT)>;
+};
+EqualAt: EqualAt {
+    compatible = "zmk,behavior-mod-morph";
+    label = "EqualAt";
+    #binding-cells = <0>;
+    bindings = <&bk EQUAL>, <&bk AT>;
+    mods = <(MOD_LSFT|MOD_RSFT)>;
+};
 
 
 /*
