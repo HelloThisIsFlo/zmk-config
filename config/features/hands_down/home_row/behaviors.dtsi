@@ -4,8 +4,6 @@ hm: homerow_mods { // use on either hand
     label = "homerow_mods";
     #binding-cells = <2>;
     tapping-term-ms = <my_tapping_term>;
-    quick-tap-ms = <my_global_quick_tap_window>;
-    global-quick-tap;
     flavor = "tap-preferred";
     bindings = <&kp>, <&bk>;
 };
@@ -16,8 +14,6 @@ hrmSk: hrmSk {
     label = "homerow_mods_sk";
     #binding-cells = <2>;
     tapping-term-ms = <my_tapping_term>;
-    quick-tap-ms = <my_global_quick_tap_window>;
-    global-quick-tap;
     flavor = "tap-preferred";
     bindings = <&sk>, <&bk>;
 };
@@ -27,8 +23,6 @@ hml: homerow_mods_left { // use on left hand to mod right
     label = "homerow_mods_left";
     #binding-cells = <2>;
     tapping-term-ms = <my_tapping_term>;
-    quick-tap-ms = <my_global_quick_tap_window>;
-    global-quick-tap;
     flavor = "tap-preferred";
     bindings = <&kp>, <&bk>;
 };
@@ -38,8 +32,6 @@ hml_S: hml_S {
     label = "hml_S";
     #binding-cells = <2>;
     tapping-term-ms = <my_tapping_term>;
-    quick-tap-ms = <my_global_quick_tap_window>;
-    global-quick-tap;
     flavor = "tap-preferred";
     bindings = <&kp>, <&ak_S_macro>;
 };
@@ -49,8 +41,6 @@ hml_C: hml_C {
     label = "hml_C";
     #binding-cells = <2>;
     tapping-term-ms = <my_tapping_term>;
-    quick-tap-ms = <my_global_quick_tap_window>;
-    global-quick-tap;
     flavor = "tap-preferred";
     bindings = <&kp>, <&ak_C_macro>;
 };
@@ -60,8 +50,6 @@ hml_N: hml_N {
     label = "hml_N";
     #binding-cells = <2>;
     tapping-term-ms = <my_tapping_term>;
-    quick-tap-ms = <my_global_quick_tap_window>;
-    global-quick-tap;
     flavor = "tap-preferred";
     bindings = <&kp>, <&ak_N_macro>;
 };
@@ -71,8 +59,6 @@ hml_T: hml_T {
     label = "hml_T";
     #binding-cells = <2>;
     tapping-term-ms = <my_tapping_term>;
-    quick-tap-ms = <my_global_quick_tap_window>;
-    global-quick-tap;
     flavor = "tap-preferred";
     bindings = <&sk>, <&ak_T_macro>;
 };// TODO add macros for all these hml_X and make it clear that A and T and using &sk for the mod instead of &kp
@@ -82,8 +68,6 @@ hmr: homerow_mods_right { // use on right hand to mod left
     label = "homerow_mods_right";
     #binding-cells = <2>;
     tapping-term-ms = <my_tapping_term>;
-    quick-tap-ms = <my_global_quick_tap_window>;
-    global-quick-tap;
     flavor = "tap-preferred";
     bindings = <&kp>, <&bk>;
 };
@@ -93,8 +77,6 @@ hmr_A: hmr_A {
     label = "hmr_A";
     #binding-cells = <2>;
     tapping-term-ms = <my_tapping_term>;
-    quick-tap-ms = <my_global_quick_tap_window>;
-    global-quick-tap;
     flavor = "tap-preferred";
     bindings = <&sk>, <&ak_A_macro>;
 };
@@ -104,8 +86,6 @@ hmr_E: hmr_E {
     label = "hmr_E";
     #binding-cells = <2>;
     tapping-term-ms = <my_tapping_term>;
-    quick-tap-ms = <my_global_quick_tap_window>;
-    global-quick-tap;
     flavor = "tap-preferred";
     bindings = <&kp>, <&ak_E_macro>;
 };
@@ -115,8 +95,6 @@ hmr_I: hmr_I {
     label = "hmr_I";
     #binding-cells = <2>;
     tapping-term-ms = <my_tapping_term>;
-    quick-tap-ms = <my_global_quick_tap_window>;
-    global-quick-tap;
     flavor = "tap-preferred";
     bindings = <&kp>, <&ak_I_macro>;
 };
