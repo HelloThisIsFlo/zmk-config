@@ -84,10 +84,10 @@ ________      ________      ________      ________      ________                
                         label = "1984"; //
                         bindings = <
 /* TODO: Add symbols on this layer */
-&kp KP_MINUS &kp N7       &kp N8      &kp N9       &bk COLON                        &bk COLON    &kp N7       &kp N8      &kp N9      &kp KP_MINUS
-&hm LCTRL N0 &hm RALT N4  &hm RGUI N5 &hm RSHFT N6 &bk DOT                          &bk DOT      &hm RSHFT N4 &hm RGUI N5 &hm RALT N6 &hm LCTRL N0
-&kp KP_EQUAL &kp N1       &kp N2      &kp N3       xxxxxxxx                         xxxxxxxx     &kp N1       &kp N2      &kp N3      &kp KP_EQUAL
-                        xxxxxxxx  ________  ________        ________  ________  xxxxxxxx
+&kp KP_MINUS &kp N7       &kp N8      &kp N9       &bk COLON                        &bk COLON    &kp N7       &kp N8      &kp N9      &MinusPlus
+&hm LCTRL N0 &hm RALT N4  &hm RGUI N5 &hm RSHFT N6 &bk DOT                          &bk FSLH     &hm RSHFT N4 &hm RGUI N5 &hm RALT N6 &hm LCTRL N0
+&kp KP_EQUAL &kp N1       &kp N2      &kp N3       xxxxxxxx                         &bk STAR     &kp N1       &kp N2      &kp N3      &bk DOT
+                                        xxxxxxxx  ________  ________      ________  ________  xxxxxxxx
                         >;
                 };
 
