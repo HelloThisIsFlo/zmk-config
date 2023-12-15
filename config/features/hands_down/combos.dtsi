@@ -60,21 +60,21 @@ COMBO_ANY_ONE_HAND(             settings,        &mo l_cfg,                     
 
 
 /********** Number Layer Combos **************/
-COMBO_LAY_ONE_HAND(l_num,       numLPRN,         &lk LBKT LPAR,                                               RM1 RM2         )
-COMBO_LAY_ONE_HAND(l_num,       numRPRN,         &lk RBKT RPAR,                                                   RM2 RM3     )
-COMBO_LAY_ONE_HAND(l_num,       numEQUAL,        &bk EQUAL,                                                           RM3 RM4 )
-COMBO_LAY_ONE_HAND(l_num,       numCOLN,         &bk COLON,                                                   RM1     RM3     )
-COMBO_LAY_ONE_HAND(l_num,       numPRCNT,        &bk PRCNT,                                                           RB3 RB4 )
-COMBO_LAY_ONE_HAND(l_num,       numLT,           &bk LT,                                                  RM0 RM1             )
-COMBO_LAY_ONE_HAND(l_num,       numGT,           &bk GT,                                                  RM0             RM4 )
-COMBO_LAY_ONE_HAND(l_num,       numDASH,         &bk LA(MINUS),                                           RB0 RB1             )
-COMBO_LAY_ONE_HAND(l_num,       numTILD,         &bk TILDE,                                               RB0             RB4 )
-COMBO_LAY_ONE_HAND(l_num,       numELIP,         &bk LA(SEMI),                                                RB1         RB4 )
-COMBO_LAY_ONE_HAND(l_num,       numDLLR,         &bk DLLR,                                                    RT1 RT2         ) // $
-COMBO_LAY_ONE_HAND(l_num,       numCENT,         &bk LA(N4),                                              RT0 RT1             ) // ¢
-COMBO_LAY_ONE_HAND(l_num,       numEURO,         &bk LS(LA(N2)),                                                  RT2 RT3     ) // €
-COMBO_LAY_ONE_HAND(l_num,       numYEN,          &bk LA(Y),                                                           RT3 RT4 ) // ¥
-COMBO_LAY_ONE_HAND(l_num,       numBPND,         &bk LA(N3),                                                  RT1     RT3     ) // £
+// COMBO_LAY_ONE_HAND(l_num,       numLPRN,         &lk LBKT LPAR,                                               RM1 RM2         )
+// COMBO_LAY_ONE_HAND(l_num,       numRPRN,         &lk RBKT RPAR,                                                   RM2 RM3     )
+// COMBO_LAY_ONE_HAND(l_num,       numEQUAL,        &bk EQUAL,                                                           RM3 RM4 )
+// COMBO_LAY_ONE_HAND(l_num,       numCOLN,         &bk COLON,                                                   RM1     RM3     )
+// COMBO_LAY_ONE_HAND(l_num,       numPRCNT,        &bk PRCNT,                                                           RB3 RB4 )
+// COMBO_LAY_ONE_HAND(l_num,       numLT,           &bk LT,                                                  RM0 RM1             )
+// COMBO_LAY_ONE_HAND(l_num,       numGT,           &bk GT,                                                  RM0             RM4 )
+// COMBO_LAY_ONE_HAND(l_num,       numDASH,         &bk LA(MINUS),                                           RB0 RB1             )
+// COMBO_LAY_ONE_HAND(l_num,       numTILD,         &bk TILDE,                                               RB0             RB4 )
+// COMBO_LAY_ONE_HAND(l_num,       numELIP,         &bk LA(SEMI),                                                RB1         RB4 )
+// COMBO_LAY_ONE_HAND(l_num,       numDLLR,         &bk DLLR,                                                    RT1 RT2         ) // $
+// COMBO_LAY_ONE_HAND(l_num,       numCENT,         &bk LA(N4),                                              RT0 RT1             ) // ¢
+// COMBO_LAY_ONE_HAND(l_num,       numEURO,         &bk LS(LA(N2)),                                                  RT2 RT3     ) // €
+// COMBO_LAY_ONE_HAND(l_num,       numYEN,          &bk LA(Y),                                                           RT3 RT4 ) // ¥
+// COMBO_LAY_ONE_HAND(l_num,       numBPND,         &bk LA(N3),                                                  RT1     RT3     ) // £
 
 
 
