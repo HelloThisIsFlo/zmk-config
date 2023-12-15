@@ -2,7 +2,7 @@
 /****                 Config                     ****/
 /****************************************************/
 #define linger_term 100 // Tuned ✅
-#define my_tapping_term 150
+#define my_tapping_term 100 // Now trying the tapping term to be the same as the linger term.
 #define my_ak_window 100 // I think it makes sense to have it equal to the linger term, it's the same sort of "feeling"
 #define my_combo_timeout_adjacent 15
 #define my_combo_timeout_non_adjc 20 // Tuned at 18ms, but sometimes missing the combo, so trying a bit higher. 20ms was too long, so trying again at 18ms
