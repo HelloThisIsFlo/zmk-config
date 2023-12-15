@@ -6,15 +6,24 @@
     timeout-ms = <TIMEOUT>; \
 };
 
+// TODO: Rename to COMBO_ANY_ADJACENT
 #define COMBO_ANY_ONE_HAND(NAME, BINDINGS, KEYPOS) \
-  COMBO_LAY_BASE(l_all_except_winpc_lock, NAME, BINDINGS, KEYPOS, my_combo_timeout_one_hand)
+  COMBO_LAY_BASE(l_all_except_winpc_lock, NAME, BINDINGS, KEYPOS, my_combo_timeout_adjacent)
+#define COMBO_ANY_NON_ADJC(NAME, BINDINGS, KEYPOS) \
+  COMBO_LAY_BASE(l_all_except_winpc_lock, NAME, BINDINGS, KEYPOS, my_combo_timeout_non_adjc)
+// TODO: Rename to COMBO_ANY_TWO_HNDS
 #define COMBO_ANY_TWO_HAND(NAME, BINDINGS, KEYPOS) \
-  COMBO_LAY_BASE(l_all_except_winpc_lock, NAME, BINDINGS, KEYPOS, my_combo_timeout_two_hands)
+  COMBO_LAY_BASE(l_all_except_winpc_lock, NAME, BINDINGS, KEYPOS, my_combo_timeout_two_hnds)
 
+// TODO: Rename to COMBO_LAY_ADJACENT
 #define COMBO_LAY_ONE_HAND(LAYERS, NAME, BINDINGS, KEYPOS) \
-  COMBO_LAY_BASE(LAYERS, NAME, BINDINGS, KEYPOS, my_combo_timeout_one_hand)
+  COMBO_LAY_BASE(LAYERS, NAME, BINDINGS, KEYPOS, my_combo_timeout_adjacent)
+#define COMBO_LAY_NON_ADJC(LAYERS, NAME, BINDINGS, KEYPOS) \
+  COMBO_LAY_BASE(LAYERS, NAME, BINDINGS, KEYPOS, my_combo_timeout_non_adjc)
+// TODO: Rename to COMBO_LAY_TWO_HNDS
 #define COMBO_LAY_TWO_HAND(LAYERS, NAME, BINDINGS, KEYPOS) \
-  COMBO_LAY_BASE(LAYERS, NAME, BINDINGS, KEYPOS, my_combo_timeout_two_hands)
+  COMBO_LAY_BASE(LAYERS, NAME, BINDINGS, KEYPOS, my_combo_timeout_two_hnds)
 
+// TODO: Rename to COMBO_LCK_TWO_HNDS
 #define COMBO_LCK_TWO_HAND(NAME, BINDINGS, KEYPOS) \
-  COMBO_LAY_BASE(l_all_except_winpc_lock l_winpc l_lock, NAME, BINDINGS, KEYPOS, my_combo_timeout_two_hands) // These combos work on any layers, EVEN the Lock layer!
+  COMBO_LAY_BASE(l_all_except_winpc_lock l_winpc l_lock, NAME, BINDINGS, KEYPOS, my_combo_timeout_two_hnds) // These combos work on any layers, EVEN the Lock layer!

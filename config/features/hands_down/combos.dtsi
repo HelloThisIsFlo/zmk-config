@@ -22,7 +22,7 @@ COMBO_LAY_TWO_HAND(l_alpha_aks, typeZ,           &bk Z,                         
 COMBO_ANY_ONE_HAND(             space,           &bk SPACE,                                     LT1 LT0                       )
 COMBO_ANY_ONE_HAND(             entr,            &bk RETURN,                                    LM1 LM0                       )
 COMBO_ANY_ONE_HAND(             tab,             &bk TAB,                                       LB1 LB0                       )
-COMBO_ANY_ONE_HAND(             esc,             &bk ESC,                               LM3     LM1                           )
+COMBO_ANY_NON_ADJC(             esc,             &bk ESC,                               LM3     LM1                           )
 COMBO_ANY_ONE_HAND(             undo,            &bk LG(Z),                         LB4 LB3                                   ) // TODO: Do 'redo' as Linger Key
 
 
@@ -30,11 +30,11 @@ COMBO_ANY_ONE_HAND(             undo,            &bk LG(Z),                     
 /********************** Delete actions ********************/
 COMBO_ANY_ONE_HAND(             bspc,            &bk BSPC,                                                    RM1 RM2         )
 COMBO_ANY_ONE_HAND(             del,             &bk DEL,                                                         RM2 RM3     )
-COMBO_LAY_ONE_HAND(l_alpha_aks, delWord,         &bk LA(BSPC),                                                RM1 RM2 RM3     )
+COMBO_LAY_NON_ADJC(l_alpha_aks, delWord,         &bk LA(BSPC),                                                RM1 RM2 RM3     )
 // COMBO_LAY_ONE_HAND(l_nav,       delLine,         &bk LG(BSPC),                                                RM1 RM2 RM3     )
 COMBO_LAY_ONE_HAND(l_nav,       bspcTrans,       &bk BSPC,                              LM3 LM2                               ) // Transposed for one-hand use (not symetry because that would reverse the 'delete' direction)
 COMBO_LAY_ONE_HAND(l_nav,       delTrans,        &bk DEL,                                   LM2 LM1                           ) // Transposed for one-hand use (not symetry because that would reverse the 'delete' direction)
-COMBO_LAY_ONE_HAND(l_nav,       delWordTrans,    &bk LA(BSPC),                          LM3 LM2 LM1                           ) // Transposed for one-hand use (not symetry because that would reverse the 'delete' direction)
+COMBO_LAY_NON_ADJC(l_nav,       delWordTrans,    &bk LA(BSPC),                          LM3 LM2 LM1                           ) // Transposed for one-hand use (not symetry because that would reverse the 'delete' direction)
 
 
 
