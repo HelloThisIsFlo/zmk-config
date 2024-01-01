@@ -50,7 +50,7 @@ COMBO_LAY_ONE_HAND(l_alpha_aks, magicBracketsR,  &MagicBracketsR,               
 
 
 /*************** Special Behaviors *******************/
-COMBO_LAY_TWO_HAND(l_alpha_aks, docaps,          &caps_word,                                LM2 LM1           RM1 RM2         ) // CAPSWORD
+COMBO_LAY_TWO_HAND(l_alpha_aks, docaps,          &caps_word,                                    LH1           RH1             ) // CAPSWORD
 
 
 
