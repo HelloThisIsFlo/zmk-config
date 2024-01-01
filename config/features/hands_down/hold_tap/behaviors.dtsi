@@ -71,8 +71,8 @@ hml_T: hml_T {
     #binding-cells = <2>;
     tapping-term-ms = <my_tapping_term>;
     flavor = "tap-preferred";
-    bindings = <&sk>, <&ak_T_macro>;
-};// TODO add macros for all these hml_X and make it clear that A and T and using &sk for the mod instead of &kp
+    bindings = <&kp>, <&ak_T_macro>;
+};
 
 hmr: homerow_mods_right { // use on right hand to mod left
     compatible = "zmk,behavior-hold-tap";
@@ -89,7 +89,7 @@ hmr_A: hmr_A {
     #binding-cells = <2>;
     tapping-term-ms = <my_tapping_term>;
     flavor = "tap-preferred";
-    bindings = <&sk>, <&ak_A_macro>;
+    bindings = <&kp>, <&ak_A_macro>;
 };
 ZMK_MACRO(ak_E_macro, wait-ms = <0>; tap-ms = <0>; bindings = <&ak l_akE E>;)
 hmr_E: hmr_E {
