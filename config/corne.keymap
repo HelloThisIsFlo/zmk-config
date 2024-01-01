@@ -51,7 +51,7 @@
 
         #include "./features/hands_down/behaviors.dtsi"
         #include "./features/hands_down/adaptive_keys/behaviors.dtsi"
-        #include "./features/hands_down/home_row/behaviors.dtsi"
+        #include "./features/hands_down/hold_tap/behaviors.dtsi"
         #include "./features/hands_down/linger_keys/behaviors.dtsi"
         #include "./features/hands_down/mod_morph/behaviors.dtsi"
 

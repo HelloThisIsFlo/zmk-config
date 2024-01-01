@@ -1,3 +1,14 @@
+
+// Using balanced because the thumb won't be included in a rolling combo, and 'balanced' has the advantage to make the 'mo' layer feel more responsive. Also, the tap (sk) is the 'dangerous' action, as opposed to the home-row-mods (where tap is the 'safe' action).
+bsklt: bsklt {
+    compatible = "zmk,behavior-hold-tap";
+    label = "flo,behavior-buffered-sticky-key-layer-tap";
+    #binding-cells = <2>;
+    flavor = "balanced";
+    tapping-term-ms = <my_tapping_term>;
+    bindings = <&mo>, <&bsk>;
+};
+
 /******************** Home Row Mods **********************/
 hm: homerow_mods { // use on either hand
     compatible = "zmk,behavior-hold-tap";
