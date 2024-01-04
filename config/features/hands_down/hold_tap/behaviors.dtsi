@@ -5,6 +5,7 @@ bsklt: bsklt {
     label = "flo,behavior-buffered-sticky-key-layer-tap";
     #binding-cells = <2>;
     flavor = "balanced";
+    require-prior-idle-ms = <require_prior_idle_ms>;
     tapping-term-ms = <my_tapping_term>;
     bindings = <&mo>, <&bsk>;
 };
@@ -15,6 +16,7 @@ hm: homerow_mods { // use on either hand
     label = "homerow_mods";
     #binding-cells = <2>;
     tapping-term-ms = <my_tapping_term>;
+    require-prior-idle-ms = <require_prior_idle_ms>;
     flavor = "tap-preferred";
     bindings = <&kp>, <&bk>;
 };
@@ -25,6 +27,7 @@ hrmSk: hrmSk {
     label = "homerow_mods_sk";
     #binding-cells = <2>;
     tapping-term-ms = <my_tapping_term>;
+    require-prior-idle-ms = <require_prior_idle_ms>;
     flavor = "tap-preferred";
     bindings = <&sk>, <&bk>;
 };
@@ -34,6 +37,7 @@ hml: homerow_mods_left { // use on left hand to mod right
     label = "homerow_mods_left";
     #binding-cells = <2>;
     tapping-term-ms = <my_tapping_term>;
+    require-prior-idle-ms = <require_prior_idle_ms>;
     flavor = "tap-preferred";
     bindings = <&kp>, <&bk>;
 };
@@ -43,6 +47,7 @@ hml_S: hml_S {
     label = "hml_S";
     #binding-cells = <2>;
     tapping-term-ms = <my_tapping_term>;
+    require-prior-idle-ms = <require_prior_idle_ms>;
     flavor = "tap-preferred";
     bindings = <&kp>, <&ak_S_macro>;
 };
@@ -52,6 +57,7 @@ hml_C: hml_C {
     label = "hml_C";
     #binding-cells = <2>;
     tapping-term-ms = <my_tapping_term>;
+    require-prior-idle-ms = <require_prior_idle_ms>;
     flavor = "tap-preferred";
     bindings = <&kp>, <&ak_C_macro>;
 };
@@ -61,6 +67,7 @@ hml_N: hml_N {
     label = "hml_N";
     #binding-cells = <2>;
     tapping-term-ms = <my_tapping_term>;
+    require-prior-idle-ms = <require_prior_idle_ms>;
     flavor = "tap-preferred";
     bindings = <&kp>, <&ak_N_macro>;
 };
@@ -70,6 +77,7 @@ hml_T: hml_T {
     label = "hml_T";
     #binding-cells = <2>;
     tapping-term-ms = <my_tapping_term>;
+    require-prior-idle-ms = <require_prior_idle_ms>;
     flavor = "tap-preferred";
     bindings = <&kp>, <&ak_T_macro>;
 };
@@ -79,6 +87,7 @@ hmr: homerow_mods_right { // use on right hand to mod left
     label = "homerow_mods_right";
     #binding-cells = <2>;
     tapping-term-ms = <my_tapping_term>;
+    require-prior-idle-ms = <require_prior_idle_ms>;
     flavor = "tap-preferred";
     bindings = <&kp>, <&bk>;
 };
@@ -88,6 +97,7 @@ hmr_A: hmr_A {
     label = "hmr_A";
     #binding-cells = <2>;
     tapping-term-ms = <my_tapping_term>;
+    require-prior-idle-ms = <require_prior_idle_ms>;
     flavor = "tap-preferred";
     bindings = <&kp>, <&ak_A_macro>;
 };
@@ -97,6 +107,7 @@ hmr_E: hmr_E {
     label = "hmr_E";
     #binding-cells = <2>;
     tapping-term-ms = <my_tapping_term>;
+    require-prior-idle-ms = <require_prior_idle_ms>;
     flavor = "tap-preferred";
     bindings = <&kp>, <&ak_E_macro>;
 };
@@ -106,6 +117,7 @@ hmr_I: hmr_I {
     label = "hmr_I";
     #binding-cells = <2>;
     tapping-term-ms = <my_tapping_term>;
+    require-prior-idle-ms = <require_prior_idle_ms>;
     flavor = "tap-preferred";
     bindings = <&kp>, <&ak_I_macro>;
 };
