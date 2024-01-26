@@ -46,6 +46,7 @@ COMBO_LAY_ONE_HAND(l_alpha_aks, typeGrav,        &bk GRAVE,                     
 // COMBO_LAY_ONE_HAND(l_alpha_aks, typeTilde,       &bk GRAVE,                                                           RT3 RT4 ) // Originally wanted to put Tilde here, but it's actually on shifted 'GRAVE'. So let's try to use it there first. 
 COMBO_LAY_ONE_HAND(l_alpha_aks, magicBracketsL,  &MagicBracketsL,                                             RB1 RB2         )
 COMBO_LAY_ONE_HAND(l_alpha_aks, magicBracketsR,  &MagicBracketsR,                                                 RB2 RB3     )
+COMBO_LAY_ONE_HAND(l_alpha_aks, logseqPageRef,   &logseqPageRef,                                              RB1 RB2 RB3     )
 
 
 
