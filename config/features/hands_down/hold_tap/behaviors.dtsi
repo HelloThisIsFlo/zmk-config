@@ -111,13 +111,13 @@ hmr_E: hmr_E {
     flavor = "tap-preferred";
     bindings = <&kp>, <&ak_E_macro>;
 };
-ZMK_MACRO(ak_I_macro, wait-ms = <0>; tap-ms = <0>; bindings = <&ak l_akI I>;)
-hmr_I: hmr_I {
-    compatible = "zmk,behavior-hold-tap";
-    label = "hmr_I";
-    #binding-cells = <2>;
-    tapping-term-ms = <my_tapping_term>;
-    require-prior-idle-ms = <require_prior_idle_ms>;
-    flavor = "tap-preferred";
-    bindings = <&kp>, <&ak_I_macro>;
-};
+// ZMK_MACRO(ak_I_macro, wait-ms = <0>; tap-ms = <0>; bindings = <&ak l_akI I>;)
+// hmr_I: hmr_I {
+//     compatible = "zmk,behavior-hold-tap";
+//     label = "hmr_I";
+//     #binding-cells = <2>;
+//     tapping-term-ms = <my_tapping_term>;
+//     require-prior-idle-ms = <require_prior_idle_ms>;
+//     flavor = "tap-preferred";
+//     bindings = <&kp>, <&ak_I_macro>;
+// };

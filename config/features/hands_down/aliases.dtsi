@@ -11,7 +11,7 @@
 #define hml_LSHIFT_T &hml_T LSHIFT XXX
 #define hmr_LSHIFT_A &hmr_A LSHIFT XXX
 #define hmr_LGUI_E   &hmr_E LGUI   XXX
-#define hmr_LALT_I   &hmr_I LALT   XXX
+// #define hmr_LALT_I   &hmr_I LALT   XXX
 
 #define hml_LGUI_S   &hml_S LGUI   XXX
 #define hml_LCTRL_N  &hml_N LCTRL  XXX
