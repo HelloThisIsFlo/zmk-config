@@ -16,3 +16,6 @@
 #define hml_LGUI_S   &hml_S LGUI   XXX
 #define hml_LCTRL_N  &hml_N LCTRL  XXX
 #define hmr_LCTRL_E  &hmr_E LCTRL  XXX
+
+#define dotcol  &lk COLON DOT
+#define comsemi &lk SEMI CMMA
