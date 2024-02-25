@@ -31,7 +31,7 @@ COMBO_ANY_ONE_HAND(             undo,            &bk LG(Z),                     
 /********************** Delete actions ********************/
 COMBO_ANY_ONE_HAND(             bspc,            &bk BSPC,                                                    RM1 RM2         )
 COMBO_ANY_ONE_HAND(             del,             &bk DEL,                                                         RM2 RM3     )
-COMBO_LAY_NON_ADJC(l_alpha_aks, delWord,         &bk LA(BSPC),                                                RM1 RM2 RM3     )
+COMBO_ANY_NON_ADJC(             delWord,         &bk LA(BSPC),                                                RM1 RM2 RM3     )
 // COMBO_LAY_ONE_HAND(l_nav,       delLine,         &bk LG(BSPC),                                                RM1 RM2 RM3     )
 COMBO_LAY_ONE_HAND(l_nav l_num, bspcTrans,       &bk BSPC,                              LM3 LM2                               ) // Transposed for one-hand use (not symetry because that would reverse the 'delete' direction)
 COMBO_LAY_ONE_HAND(l_nav l_num, delTrans,        &bk DEL,                                   LM2 LM1                           ) // Transposed for one-hand use (not symetry because that would reverse the 'delete' direction)

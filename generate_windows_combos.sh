@@ -14,7 +14,7 @@ function generate_winpc_combo_for {
   combo_file=$1
 
 
-  keep_combo_any=.'*COMBO_ANY_..._HAND.*'
+  keep_combo_any=.'*COMBO_ANY_..._....\(.*'
   keep_combo_alpha_aks='.*COMBO_LAY_..._HAND\(l_alpha_aks.*'
   keep_2nd_line_of_2_lines_combos='^                   .*\)'
 
@@ -34,6 +34,7 @@ function generate_winpc_combo_for {
   sed -e 's/l_alpha_aks,/l_winpc,    /g' |
   sed -e 's/COMBO_ANY_ONE_HAND(           /COMBO_LAY_ONE_HAND(l_winpc,   /g' | 
   sed -e 's/COMBO_ANY_TWO_HAND(           /COMBO_LAY_TWO_HAND(l_winpc,   /g' | 
+  sed -e 's/COMBO_ANY_NON_ADJC(           /COMBO_LAY_NON_ADJC(l_winpc,   /g' | 
 
   ###### Migrate CMD to CTRL ################
   sed -e 's/LG(/LC(/g' |
