@@ -2,6 +2,7 @@ COMBO_LAY_TWO_HAND(l_winpc,     typeQ_win,           &lk_qu Q U,                
 COMBO_LAY_TWO_HAND(l_winpc,     typeZ_win,           &bk Z,                                 LM3                           RM3     )
 COMBO_LAY_ONE_HAND(l_winpc,     space_win,           &bk SPACE,                                     LT1 LT0                       )
 COMBO_LAY_ONE_HAND(l_winpc,     entr_win,            &bk RETURN,                                    LM1 LM0                       )
+COMBO_LAY_ONE_HAND(l_winpc,     entr_win2,           &bk RETURN,                                              RM0 RM1             )
 COMBO_LAY_ONE_HAND(l_winpc,     tab_win,             &bk TAB,                                       LB1 LB0                       )
 COMBO_LAY_NON_ADJC(l_winpc,     esc_win,             &bk ESC,                               LM3     LM1                           )
 COMBO_LAY_ONE_HAND(l_winpc,     esc_win2,            &bk ESC,                                   LB2 LB1                           )
