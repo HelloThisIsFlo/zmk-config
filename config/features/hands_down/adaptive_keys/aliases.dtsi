@@ -60,17 +60,17 @@
 #define _DOT____ ak_DOT
 
 
+/* Sorted by BIGRAM_1 */
 #define PB_to_SB    &replace_char_with_bigram_SB /* Symetry on BS(p) ✔ */
+#define JD_to_GD    &replace_char_with_bigram_GD /* Symetry on DG(j) ✔ <- Useful for git shortcuts (gd, gdca)*/
 #define YF_to_IF    &replace_char_with_bigram_IF /* Symetry on FI(y) ✔ */
 #define MG_to_LG    &replace_char_with_bigram_LG /* Symetry on GL(m) ✔ */
-#define SJ_to_BJ    &replace_char_with_bigram_BJ /* Symetry on JB(s) ✔ <- Not really needed, but kept for consistency */
-#define GJ_to_DJ    &replace_char_with_bigram_DJ /* Symetry on JD(g) ✔ <- Not really needed, but kept for consistency */
 #define TJ_to_NJ    &replace_char_with_bigram_NJ /* Symetry on JN(t) ✔ <- Not really needed, but kept for consistency */
 #define DK_to_LK    &replace_char_with_bigram_LK /* Symetry on KL(d) ✔ */
 #define TK_to_NK    &replace_char_with_bigram_NK /* Symetry on KN(t) ✔ */
 #define XM_to_BM    &replace_char_with_bigram_BM /* Symetry on MB(x) ✔ */
-#define PN_to_LN    &replace_char_with_bigram_LN /* Symetry on NL(p) ✔ */
 #define CM_to_NM    &replace_char_with_bigram_NM /* Symetry on MN(c) ✔ */
 #define WM_to_PM    &replace_char_with_bigram_PM /* Symetry on MP(w) ✔ */
-#define DV_to_LV    &replace_char_with_bigram_LV /* Symetry on VL(d) ✔ */
-#define TV_to_NV    &replace_char_with_bigram_NV /* Symetry on VN(t) ✔ */
+#define PN_to_LN    &replace_char_with_bigram_LN /* Symetry on NL(p) ✔ */
+#define GV_to_LV    &replace_char_with_bigram_LV /* Symetry on VN(t) ✔ <- Not really needed, but kept for consistency */
+#define TV_to_NV    &replace_char_with_bigram_NV /* Symetry on VN(t) ✔ <- Not really needed, but kept for consistency */
