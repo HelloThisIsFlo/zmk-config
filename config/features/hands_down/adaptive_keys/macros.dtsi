@@ -8,11 +8,14 @@
                 wait-ms = <0>; \
                 tap-ms = <10>; \
                 bindings = \
-                        <&kp BACKSPACE>, \
+                        <&macro_tap &kp BACKSPACE>, \
 \
-                        <&kp BIGRAM_0>, \
+                        <&macro_tap &kp BIGRAM_0>, \
 \
-                        <ak_##BIGRAM_1>; \
+                        <&macro_release &kp LSHFT>, \
+                        <&macro_release &kp RSHFT>, \
+\
+                        <&macro_tap ak_##BIGRAM_1>; \
         };
 
 
