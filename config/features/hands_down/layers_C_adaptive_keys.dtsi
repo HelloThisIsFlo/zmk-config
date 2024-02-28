@@ -177,14 +177,12 @@ ________   ________   ________   ________   ________          &bk A      ___U___
                         label = "Realitv?";
                         bindings = <
 /* NOTE
-This AK layer is not really needed, but it is here for ensuring the symetry of the V key.
-This makes the following much more intuitive.
-- TV_to_NV
-- DV_to_LV
+VT -> VN is not really needed, but it is here for ensuring the symetry
+VD -> VL is not really needed, but it is here for ensuring the symetry
 */
 ________   ________   ________   ________   ________          ________   ________   ________   ________   ________
 ________   ________   ________   &bk N      ________          ________   ________   ________   ________   ________
-________   ________   ________   &bk L      ___V____          ________   ________   ________   ________   ________
+________   &bk B      ________   &bk L      ___V____          ________   ________   ________   ________   ________
                         ________   ________   ________      ________   ________   ________
                         >;
                 };
