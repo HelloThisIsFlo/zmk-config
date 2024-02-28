@@ -14,7 +14,7 @@ Based on: Hands-Down Neu Vibranium B
                         label = "Reality?"; // The base layer ... ?
                         bindings = <
 
-ak_X          ak_W         ak_M         ak_G            ak_V                          comsemi         dotcol        &MinusPlus  &SqtDqt     &EqualAt      // Also try: &lk_DOT_SPACE DOT XXX
+ak_X          ak_W         ak_M         ak_G            ak_V                          &MinusPlus      comsemi       sqtdqt      dotcol      &EqualAt      // Also try: &lk_DOT_SPACE DOT XXX
 
 hml_LCTRL_S   hml_LALT_C   hml_LGUI_N   hml_LSHIFT_T    ak_K                          &SlashHash      hmr_LSHIFT_A  hmr_LGUI_E  &hmr LALT I &hmr LCTRL H
 

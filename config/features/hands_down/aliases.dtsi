@@ -19,3 +19,4 @@
 
 #define dotcol  &lk COLON DOT
 #define comsemi &lk SEMI CMMA
+#define sqtdqt  &lk DQT SQT
