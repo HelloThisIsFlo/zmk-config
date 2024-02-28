@@ -5,7 +5,6 @@ bsklt: bsklt {
     label = "flo,behavior-buffered-sticky-key-layer-tap";
     #binding-cells = <2>;
     flavor = "balanced";
-    require-prior-idle-ms = <require_prior_idle_ms>;
     tapping-term-ms = <my_tapping_term>;
     bindings = <&mo>, <&bsk>;
 };
