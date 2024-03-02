@@ -2,7 +2,7 @@
 /****                 Config                     ****/
 /****************************************************/
 #define linger_term 100 // Tuned ✅
-#define my_tapping_term 160 // Now trying the tapping term to be the same as the linger term. UPDATE: It was too short, so trying 120ms. UPDATE: 120ms was still too short, trying 200ms. 200 was too long
+#define my_tapping_term 130 // Now trying the tapping term to be the same as the linger term. UPDATE: It was too short, so trying 120ms. UPDATE: 120ms was still too short, trying 200ms. 200 was too long
 #define require_prior_idle_ms 100 // NOT USED ANYMORE!! When typing at 50wpm, there is on average 240ms between keys: 1/(50*5/60000). But that was too long, so I'm trying the same as the linger_term
 #define my_ak_window 100 // I think it makes sense to have it equal to the linger term, it's the same sort of "feeling"
 #define my_combo_timeout_adjacent 17
