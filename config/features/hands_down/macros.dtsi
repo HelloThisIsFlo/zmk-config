@@ -8,7 +8,7 @@ ZMK_MACRO(Qu,
                 ;
 )
 ZMK_MACRO(logseqPageRef,
-        wait-ms = <75>;
+        wait-ms = <100>;
         tap-ms = <10>;
         bindings = 
         <&kp LEFT_BRACKET>,
