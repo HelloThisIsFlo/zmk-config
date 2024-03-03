@@ -16,6 +16,8 @@ COMBO_LAY_ONE_HAND(l_winpc,     typeGrav_win,        &bk GRAVE,                 
 COMBO_LAY_ONE_HAND(l_winpc,     magicBracketsL_win,  &MagicBracketsL,                                             RB1 RB2         )
 COMBO_LAY_ONE_HAND(l_winpc,     magicBracketsR_win,  &MagicBracketsR,                                                 RB2 RB3     )
 COMBO_LAY_ONE_HAND(l_winpc,     logseqPageRef_win,   &logseqPageRef,                                              RB1 RB2 RB3     )
+COMBO_LAY_ONE_HAND(l_winpc,     magicArrowLCb_win,   magicArrowL,                                             RB0 RB1             )
+COMBO_LAY_ONE_HAND(l_winpc,     magicArrowRCb_win,   magicArrowR,                                                         RB3 RB4 )
 COMBO_LAY_TWO_HAND(l_winpc,     docaps_win,          &caps_word,                                    LH1           RH1             )
 COMBO_LAY_ONE_HAND(l_winpc,     settings_win,        &mo l_cfg,                                                   RH1 RH2         )
 COMBO_LAY_ONE_HAND(l_winpc,     pnI_win,             &typePnI,                                                            RM3 RM4 )
