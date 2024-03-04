@@ -19,26 +19,30 @@ ZMK_MACRO(arrowLeftSingle,
         tap-ms = <10>;
         bindings = 
         <&kp LESS_THAN>,
-        <&kp MINUS>;
+        <&kp MINUS>,
+        <&kp SPACE>;
 )
 ZMK_MACRO(arrowRightSingle,
         wait-ms = <10>;
         tap-ms = <10>;
         bindings = 
         <&kp MINUS>,
-        <&kp GREATER_THAN>;
+        <&kp GREATER_THAN>,
+        <&kp SPACE>;
 )
 ZMK_MACRO(arrowLeftDouble,
         wait-ms = <10>;
         tap-ms = <10>;
         bindings = 
         <&kp LESS_THAN>,
-        <&kp EQUAL>;
+        <&kp EQUAL>,
+        <&kp SPACE>;
 )
 ZMK_MACRO(arrowRightDouble,
         wait-ms = <10>;
         tap-ms = <10>;
         bindings = 
         <&kp EQUAL>,
-        <&kp GREATER_THAN>;
+        <&kp GREATER_THAN>,
+        <&kp SPACE>;
 )
