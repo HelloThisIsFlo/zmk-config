@@ -11,6 +11,8 @@
 #include "./CONFIG.h"
 
 
+#include "./features/__BASE__/preprocessor_macros.c"
+
 
 #include "./features/__BASE__/aliases_key_positions.dtsi"
 #include "./features/__BASE__/aliases_layers.dtsi"
@@ -64,8 +66,6 @@
 
     combos {
         compatible = "zmk,combos";
-
-        #include "./features/__BASE__/combos.dtsi"
 
         #include "./features/__EXPERIMENT__/combos.dtsi"
 
