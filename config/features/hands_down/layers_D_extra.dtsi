@@ -9,9 +9,9 @@
                         label = "<^v>";
                         bindings = <
 
-&kp PG_UP     &kp LC(LEFT)  ________    &kp LC(RIGHT)  &kp PG_UP               &kp PG_UP      &kp LC(LEFT)  ________    &kp LC(RIGHT)  &kp PG_UP
-&kp LA(LEFT)  &kp LEFT      &kp UP      &kp RIGHT      &kp LA(RIGHT)           &kp LA(LEFT)   &kp LEFT      &kp UP      &kp RIGHT      &kp LA(RIGHT)
-&kp PG_DN     &kp LC(A)     &kp DOWN    &kp LC(E)      &kp PG_DN               &kp PG_DN      &kp LC(A)     &kp DOWN    &kp LC(E)      &kp PG_DN
+&previous     &switchSpaceL ________    &switchSpaceR  &next                   &previous      &switchSpaceL  ________   &switchSpaceR  &next
+&startLine    &kp LEFT      &kp UP      &kp RIGHT      &endLine                &startLine     &kp LEFT      &kp UP      &kp RIGHT      &endLine
+________      leftWord      &kp DOWN    rightWord      ________                ________       leftWord      &kp DOWN    rightWord      ________
                                 ________   ________   ________      ________   ________   ________
 /*
 &kp RG(W)       &kp RG(Q)       &kp LG(LS(N4))     &kp LG(LS(LC(N4)))  &kp ESC                         &kp LG(EQUAL)  &kp HOME  &kp UP      &kp PG_UP  &none
