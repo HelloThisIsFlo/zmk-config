@@ -66,7 +66,7 @@ ZMK_MACRO(NAME, \
 #define LK(NAME, TAP_BINDING, LINGER_BINDING) \
     lk_##NAME: lk_##NAME { \
         compatible = "zmk,behavior-hold-tap"; \
-        label = "lk_##NAME"; \
+        label = STRINGIFY(lk_##NAME); \
         #binding-cells = <2>; \
         tapping-term-ms = <linger_term>; \
         flavor = "tap-preferred"; \

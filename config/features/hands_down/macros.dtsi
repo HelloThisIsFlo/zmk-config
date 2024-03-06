@@ -7,6 +7,8 @@ ZMK_MACRO(Qu,
                 , <&macro_tap &kp U>
                 ;
 )
+
+// Can't be a TYPING_MACRO because it needs a custom 'wait-ms' (otherwise LogSeq doesn't start auto-complete)
 ZMK_MACRO(logseqPageRef,
         wait-ms = <100>;
         tap-ms = <10>;
@@ -14,35 +16,21 @@ ZMK_MACRO(logseqPageRef,
         <&kp LEFT_BRACKET>,
         <&kp LEFT_BRACKET>;
 )
-ZMK_MACRO(arrowLeftSingle,
-        wait-ms = <10>;
-        tap-ms = <10>;
-        bindings = 
-        <&kp LESS_THAN>,
-        <&kp MINUS>,
-        <&kp SPACE>;
-)
-ZMK_MACRO(arrowRightSingle,
-        wait-ms = <10>;
-        tap-ms = <10>;
-        bindings = 
-        <&kp MINUS>,
-        <&kp GREATER_THAN>,
-        <&kp SPACE>;
-)
-ZMK_MACRO(arrowLeftDouble,
-        wait-ms = <10>;
-        tap-ms = <10>;
-        bindings = 
-        <&kp LESS_THAN>,
-        <&kp EQUAL>,
-        <&kp SPACE>;
-)
-ZMK_MACRO(arrowRightDouble,
-        wait-ms = <10>;
-        tap-ms = <10>;
-        bindings = 
-        <&kp EQUAL>,
-        <&kp GREATER_THAN>,
-        <&kp SPACE>;
-)
+
+
+TYPING_MACRO(arrowLeftSingle, &kp LESS_THAN &kp MINUS &kp SPACE)
+TYPING_MACRO(arrowRightSingle, &kp MINUS &kp GREATER_THAN &kp SPACE)
+TYPING_MACRO(arrowLeftDouble, &kp LESS_THAN &kp EQUAL &kp SPACE)
+TYPING_MACRO(arrowRightDouble, &kp EQUAL &kp GREATER_THAN &kp SPACE)
+
+TYPING_MACRO(previous,  &kp LG(LEFT_BRACKET))
+TYPING_MACRO(next,      &kp LG(RIGHT_BRACKET))
+// TYPING_MACRO(leftWord,  &kp LA(LEFT)) // problem, this doesn't support holding in this current form
+// TYPING_MACRO(rightWord, &kp LA(RIGHT))
+#define rightWord &kp LA(RIGHT)
+#define leftWord &kp LA(LEFT)
+TYPING_MACRO(startLine, &kp LC(A))
+TYPING_MACRO(endLine,   &kp LC(E))
+
+TYPING_MACRO(switchSpaceL, &kp LC(LEFT))
+TYPING_MACRO(switchSpaceR, &kp LC(RIGHT))
