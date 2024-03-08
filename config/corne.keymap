@@ -91,7 +91,7 @@
             #include "./features/__EXPERIMENT__/EXPERIMENT_LAYER.dtsi"
         #else
             #include "./features/hands_down/layers_A_alpha.dtsi"
-            #include "./features/hands_down/layers_B_winpc.dtsi"
+            #include "./features/hands_down/layers_B_linwin.dtsi"
             #include "./features/hands_down/layers_C_adaptive_keys.dtsi"
             #include "./features/hands_down/layers_D_extra.dtsi"
             #include "./features/lock/layers.dtsi"
