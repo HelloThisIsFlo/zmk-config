@@ -22,13 +22,6 @@ DashEqual: DashEqual {
     mods = <(MOD_LSFT|MOD_RSFT)>;
 };
 
-DotColn: DotColn {
-    compatible = "zmk,behavior-mod-morph";
-    label = "DotColn";
-    #binding-cells = <0>;
-    bindings = <&ak l_akDOT DOT>, <&bk COLON>;
-    mods = <(MOD_LSFT|MOD_RSFT)>;
-};
 SlshStar: SlshStar {
     compatible = "zmk,behavior-mod-morph";
     label = "SlshStar";

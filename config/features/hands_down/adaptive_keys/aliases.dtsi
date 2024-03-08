@@ -27,7 +27,6 @@
 #define ak_X &ak l_akX X
 #define ak_Y &ak l_akY Y
 #define ak_Z &ak l_akZ Z
-#define ak_DOT &ak l_akDOT DOT
 
 
 // For these keys, I could use '________' (&trans) instead of the ak_X macros, but the ak_X macros make the ak key visible on the keymap-drawer, so I went with the ak_X macros.
@@ -57,7 +56,6 @@
 #define ___X____ ak_X
 #define ___Y____ ak_Y
 #define ___Z____ ak_Z
-#define _DOT____ ak_DOT
 
 
 /* Sorted by BIGRAM_1 */
