@@ -48,10 +48,6 @@
 #define COMBO_LAY_TWO_HAND(LAYERS, NAME, BINDINGS, KEYPOS) \
   COMBO_LAY_BASE(LAYERS, NAME, BINDINGS, KEYPOS, my_combo_timeout_two_hnds)
 
-// TODO: Rename to COMBO_LCK_TWO_HNDS
-#define COMBO_LCK_TWO_HAND(NAME, BINDINGS, KEYPOS) \
-  COMBO_LAY_BASE(l_all_except_winpc_lock l_winpc l_lock, NAME, BINDINGS, KEYPOS, my_combo_timeout_two_hnds) // These combos work on any layers, EVEN the Lock layer!
-
 
 
 #define TYPING_MACRO(NAME, KP_BINDINGS) \

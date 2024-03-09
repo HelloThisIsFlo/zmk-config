@@ -1,2 +1,0 @@
-COMBO_LCK_TWO_HAND(             lock,            &tog l_lock,                       LT4                                   RT4 \
-                                                                                    LB4                                   RB4 ) // Lock/unlock the keyboard

@@ -78,8 +78,6 @@
 
         #include "./features/hands_down/zz__INVESTIGATE__zz/diacritic/combos.dtsi"
         #include "./features/hands_down/zz__INVESTIGATE__zz/selection/combos.dtsi"
-
-        #include "./features/lock/combos.dtsi"
     };
 
 
@@ -95,7 +93,6 @@
             #include "./features/hands_down/layers_B_adaptive_keys.dtsi"
             #include "./features/hands_down/layers_C_extra.dtsi"
             #include "./features/hands_down/layers_C_extra_linwin.dtsi"
-            #include "./features/lock/layers.dtsi"
         #endif
     };
 };
