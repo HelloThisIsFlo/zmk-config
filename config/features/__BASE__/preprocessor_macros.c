@@ -32,12 +32,12 @@
 
 // TODO: Rename to COMBO_ANY_ADJACENT
 #define COMBO_ANY_ONE_HAND(NAME, BINDINGS, KEYPOS) \
-  COMBO_LAY_BASE(l_all_except_winpc_lock, NAME, BINDINGS, KEYPOS, my_combo_timeout_adjacent)
+  COMBO_LAY_BASE(l_all, NAME, BINDINGS, KEYPOS, my_combo_timeout_adjacent)
 #define COMBO_ANY_NON_ADJC(NAME, BINDINGS, KEYPOS) \
-  COMBO_LAY_BASE(l_all_except_winpc_lock, NAME, BINDINGS, KEYPOS, my_combo_timeout_non_adjc)
+  COMBO_LAY_BASE(l_all, NAME, BINDINGS, KEYPOS, my_combo_timeout_non_adjc)
 // TODO: Rename to COMBO_ANY_TWO_HNDS
 #define COMBO_ANY_TWO_HAND(NAME, BINDINGS, KEYPOS) \
-  COMBO_LAY_BASE(l_all_except_winpc_lock, NAME, BINDINGS, KEYPOS, my_combo_timeout_two_hnds)
+  COMBO_LAY_BASE(l_all, NAME, BINDINGS, KEYPOS, my_combo_timeout_two_hnds)
 
 // TODO: Rename to COMBO_LAY_ADJACENT
 #define COMBO_LAY_ONE_HAND(LAYERS, NAME, BINDINGS, KEYPOS) \

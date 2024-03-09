@@ -62,7 +62,7 @@
  *
 */ 
 #define COMBO_AK_CONSISTENCY_HACK \
-  COMBO_LAY_BASE(l_alpha_aks l_winpc, ak_consistency_hack, &none, ALL_KEYS, hold_key_event_delay)
+  COMBO_LAY_BASE(l_alpha_aks, ak_consistency_hack, &none, ALL_KEYS, hold_key_event_delay)
 
 
 COMBO_AK_CONSISTENCY_HACK

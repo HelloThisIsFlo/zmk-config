@@ -16,5 +16,5 @@
 // Switch device macros
 SWITCH_DEVICE_MACRO(Macbook, 0, l_alpha)
 SWITCH_DEVICE_MACRO(iPad,    1, l_alpha)
-SWITCH_DEVICE_MACRO(WinPC,   2, l_winpc)
+SWITCH_DEVICE_MACRO(WinPC,   2, l_alpha_linwin)
 SWITCH_DEVICE_MACRO(iPhone,  3, l_alpha)

@@ -31,10 +31,10 @@ function generate_winpc_combo_for {
   tr '\n' '\t' | sed -e 's/^[ A-Z0-4]*)\t/\t/g'  | tr '\t' '\n' | # Remove 2nd Line of 2-line combos that related to a filtered out combo
 
   ###### Migrate Combos to WinPC layer ######
-  sed -e 's/l_alpha_aks,/l_winpc,    /g' |
-  sed -e 's/COMBO_ANY_ONE_HAND(           /COMBO_LAY_ONE_HAND(l_winpc,   /g' | 
-  sed -e 's/COMBO_ANY_TWO_HAND(           /COMBO_LAY_TWO_HAND(l_winpc,   /g' | 
-  sed -e 's/COMBO_ANY_NON_ADJC(           /COMBO_LAY_NON_ADJC(l_winpc,   /g' | 
+  sed -e 's/l_alpha_aks,/l_alpha_linwin,    /g' |
+  sed -e 's/COMBO_ANY_ONE_HAND(           /COMBO_LAY_ONE_HAND(l_alpha_linwin,   /g' | 
+  sed -e 's/COMBO_ANY_TWO_HAND(           /COMBO_LAY_TWO_HAND(l_alpha_linwin,   /g' | 
+  sed -e 's/COMBO_ANY_NON_ADJC(           /COMBO_LAY_NON_ADJC(l_alpha_linwin,   /g' | 
 
   ###### Migrate CMD to CTRL ################
   sed -e 's/LG(/LC(/g' |
@@ -43,7 +43,7 @@ function generate_winpc_combo_for {
   sed -e 's/bk LA(BSPC)/bk LC(BSPC)/g' | # Special Case: Delete Word
 
   ###### Prevent duplicate combo name #######
-  sed -E 's/.*l_winpc,     [a-zA-Z]*/&\_win/g' | # Add suffix to combo name
+  sed -E 's/.*l_alpha_linwin,     [a-zA-Z]*/&\_linwin/g' | # Add suffix to combo name
   sed -E 's/^    .*\)/    &/g' | # Re-align line 2 of multi-line combos
 
 
