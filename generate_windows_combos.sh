@@ -4,6 +4,9 @@ DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)"
 
 cd "$DIR"
 
+echo "This is not used anymore. Just add combo overrides to the 'combos_linwin.dtsi' file instead."
+exit 1
+
 
 cd ./config
 GENERATED_FILENAME=combos_winpc_GENERATED.dtsi

@@ -1,0 +1,13 @@
+/*
+
+This file contains combos that override the base combos with a version that's designed to work on Linux and Windows.
+
+
+Maybe in the future I'll separate Linux and Windows, but for now, let's keep it simple.
+If I do end up separating them, make sure to create one alpha layer for each, probably one nav layer as well, and maybe more
+
+*/
+
+//XXXXXXXXXXXXXXXXXXXXXXXXXXXXX     XXXXXXXXXXXXX    XXXXXXXXXXXXXXXXXXXXXXXXXXXX       L_4 L_3 L_2 L_1 L_0   R_0 R_1 R_2 R_3 R_4 )
+COMBO_LAY_ONE_HAND(l_alpha_linwin,  undo_linwin,     &bk LC(Z),                         LB4 LB3                                   )
+COMBO_LAY_NON_ADJC(l_alpha_linwin,  delWord_linwin,  &bk LC(BSPC),                                                RM1 RM2 RM3     )

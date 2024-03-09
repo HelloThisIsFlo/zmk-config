@@ -69,7 +69,8 @@
 
         #include "./features/__EXPERIMENT__/combos.dtsi"
 
-        #include "./features/__GENERATED__/combos_winpc_GENERATED.dtsi"
+        // This file needs to be before the other combos files, to ensure the overrides are applied.
+        #include "./features/hands_down/combos_linwin.dtsi"
 
         #include "./features/hands_down/combos.dtsi"
         #include "./features/hands_down/adaptive_keys/combos.dtsi"
