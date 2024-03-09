@@ -34,3 +34,11 @@ TYPING_MACRO(endLine,   &kp LC(E))
 
 TYPING_MACRO(switchSpaceL, &kp LC(LEFT))
 TYPING_MACRO(switchSpaceR, &kp LC(RIGHT))
+
+
+TYPING_MACRO(previousLinwin,  &kp LC(LEFT_BRACKET))
+TYPING_MACRO(nextLinwin,      &kp LC(RIGHT_BRACKET))
+#define rightWordLinwin &kp LC(RIGHT)
+#define leftWordLinwin &kp LC(LEFT)
+TYPING_MACRO(startLineLinwin, &kp HOME)
+TYPING_MACRO(endLineLinwin,   &kp END)
