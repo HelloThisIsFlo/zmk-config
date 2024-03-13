@@ -18,10 +18,10 @@ ZMK_MACRO(logseqPageRef,
 )
 
 
-TYPING_MACRO(arrowLeftSingle, &kp LESS_THAN &kp MINUS &kp SPACE)
-TYPING_MACRO(arrowRightSingle, &kp MINUS &kp GREATER_THAN &kp SPACE)
-TYPING_MACRO(arrowLeftDouble, &kp LESS_THAN &kp EQUAL &kp SPACE)
-TYPING_MACRO(arrowRightDouble, &kp EQUAL &kp GREATER_THAN &kp SPACE)
+TYPING_MACRO(arrowLeftSingle,  &kp SPACE &kp LESS_THAN &kp MINUS &kp SPACE)
+TYPING_MACRO(arrowRightSingle, &kp SPACE &kp MINUS &kp GREATER_THAN &kp SPACE)
+TYPING_MACRO(arrowLeftDouble,  &kp SPACE &kp LESS_THAN &kp EQUAL &kp SPACE)
+TYPING_MACRO(arrowRightDouble, &kp SPACE &kp EQUAL &kp GREATER_THAN &kp SPACE)
 
 TYPING_MACRO(previous,  &kp LG(LEFT_BRACKET))
 TYPING_MACRO(next,      &kp LG(RIGHT_BRACKET))
