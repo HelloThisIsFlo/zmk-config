@@ -2,9 +2,9 @@
                         label = "><v^";
                         bindings = <
 
-&previousLinwin     &switchSpaceL   ________    &switchSpaceR     &nextLinwin                              &previousLinwin      &switchSpaceL     ________   &switchSpaceR     &nextLinwin
-&startLineLinwin    &kp LEFT        &kp UP      &kp RIGHT         &endLineLinwin                           &startLineLinwin     &kp LEFT         &kp UP      &kp RIGHT         &endLineLinwin
-________            leftWordLinwin  &kp DOWN    rightWordLinwin   ________                                 ________             leftWordLinwin   &kp DOWN    rightWordLinwin   ________
+&previousLinwin     &switchSpaceLinwinL   ________    &switchSpaceLinwinR    &nextLinwin                              &previousLinwin      &switchSpaceLinwinL     ________    &switchSpaceLinwinR    &nextLinwin
+&startLineLinwin    &kp LEFT              &kp UP      &kp RIGHT              &endLineLinwin                           &startLineLinwin     &kp LEFT                &kp UP      &kp RIGHT              &endLineLinwin
+________            leftWordLinwin        &kp DOWN    rightWordLinwin        ________                                 ________             leftWordLinwin          &kp DOWN    rightWordLinwin        ________
                                                         ________   ________   ________            ________   ________   ________
 
                         >;

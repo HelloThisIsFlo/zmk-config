@@ -34,6 +34,8 @@ TYPING_MACRO(endLine,   &kp LC(E))
 
 TYPING_MACRO(switchSpaceL, &kp LC(LEFT))
 TYPING_MACRO(switchSpaceR, &kp LC(RIGHT))
+TYPING_MACRO(switchSpaceLinwinL, &kp LG(LC(LEFT)))
+TYPING_MACRO(switchSpaceLinwinR, &kp LG(LC(RIGHT)))
 
 
 TYPING_MACRO(previousLinwin,  &kp LC(LEFT_BRACKET))
