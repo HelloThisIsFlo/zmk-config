@@ -15,6 +15,27 @@ LK(gh, &Gh, &ght)
 
 LK(magicArrowL, &arrowLeftSingle, &arrowLeftDouble)
 LK(magicArrowR, &arrowRightSingle, &arrowRightDouble)
+#define magicArrowL  &lk_magicArrowL XXX XXX
+#define magicArrowR  &lk_magicArrowR XXX XXX
+
+LK(magicSwitchSpaceL, &switchSpaceLinwinL, &switchSpaceL_toBase)
+LK(magicSwitchSpaceR, &switchSpaceR,       &switchSpaceR_toLinwin)
+#define magicSwitchSpaceL  &lk_magicSwitchSpaceL XXX XXX
+#define magicSwitchSpaceR  &lk_magicSwitchSpaceR XXX XXX
+/*
+Behavior of magicSwitchSpace
+============================
+
+SwitchSpaceL: <- That's the 'reset' logic
+- on tap: switch to space left
+- on linger: switch to space left AND '&to l_alpha'
+
+SwitchSpaceR: <- That's the 'switch to linwin' logic
+- on tap: switch to space right
+- on linger: switch to space right AND '&to l_alpha_linwin'
+
+*/
+
 
 
 

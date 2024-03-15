@@ -1,6 +1,13 @@
 #define STRINGIFY(ARG) #ARG
 
 
+#define ________  &trans
+#define xxxxxxxx  &none
+#define TODO      &trans
+
+
+#define XXX 0
+
 
 #define REPLACE_CHAR_WITH_BIGRAM(BIGRAM_0, BIGRAM_1) \
         replace_char_with_bigram_##BIGRAM_0##BIGRAM_1: replace_char_with_bigram##BIGRAM_0##BIGRAM_1 { \

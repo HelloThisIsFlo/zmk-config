@@ -25,8 +25,7 @@ TYPING_MACRO(arrowRightDouble, &kp SPACE &kp EQUAL &kp GREATER_THAN &kp SPACE)
 
 TYPING_MACRO(previous,  &kp LG(LEFT_BRACKET))
 TYPING_MACRO(next,      &kp LG(RIGHT_BRACKET))
-// TYPING_MACRO(leftWord,  &kp LA(LEFT)) // problem, this doesn't support holding in this current form
-// TYPING_MACRO(rightWord, &kp LA(RIGHT))
+// These two are set as an alias instead of a macro, so it can be held for key-repeat
 #define rightWord &kp LA(RIGHT)
 #define leftWord &kp LA(LEFT)
 TYPING_MACRO(startLine, &kp LC(A))
@@ -34,8 +33,15 @@ TYPING_MACRO(endLine,   &kp LC(E))
 
 TYPING_MACRO(switchSpaceL, &kp LC(LEFT))
 TYPING_MACRO(switchSpaceR, &kp LC(RIGHT))
+TYPING_MACRO(showSpaces,   &kp LC(UP))
 TYPING_MACRO(switchSpaceLinwinL, &kp LG(LC(LEFT)))
 TYPING_MACRO(switchSpaceLinwinR, &kp LG(LC(RIGHT)))
+TYPING_MACRO(showSpacesLinwin,   &kp LG(LC(UP)))
+
+TYPING_MACRO(switchSpaceR_toLinwin,  &kp LC(RIGHT) &to l_alpha_linwin)
+TYPING_MACRO(switchSpaceL_toBase,    &kp LC(LEFT)  &to l_alpha)
+// TYPING_MACRO(switchSpaceR_toLinwin,      &kp LC(RIGHT))
+// TYPING_MACRO(switchSpaceLinwinL_toBase,  &kp LG(LC(LEFT)))
 
 
 TYPING_MACRO(previousLinwin,  &kp LC(LEFT_BRACKET))
