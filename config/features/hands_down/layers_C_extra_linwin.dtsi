@@ -1,11 +1,9 @@
                 l_nav_linwin {
                         label = "><v^";
                         bindings = <
-
-&previousLinwin     magicSwitchSpaceL   ________    &switchSpaceLinwinR    &nextLinwin                              &previousLinwin      magicSwitchSpaceL     ________    &switchSpaceLinwinR    &nextLinwin
-&startLineLinwin    &kp LEFT            &kp UP      &kp RIGHT              &endLineLinwin                           &startLineLinwin     &kp LEFT              &kp UP      &kp RIGHT              &endLineLinwin
-________            leftWordLinwin      &kp DOWN    rightWordLinwin        ________                                 ________             leftWordLinwin        &kp DOWN    rightWordLinwin        ________
-                                                        ________   ________   ________            ________   ________   ________
-
+magicSwitchSpaceL  &previousLinwin    ________    &nextLinwin      &switchSpaceLinwinR              magicSwitchSpaceL  &previousLinwin   ________    &nextLinwin      &switchSpaceLinwinR
+&startLineLinwin   &kp LEFT           &kp UP      &kp RIGHT        &endLineLinwin                   &startLineLinwin   &kp LEFT          &kp UP      &kp RIGHT        &endLineLinwin
+________           leftWordLinwin     &kp DOWN    rightWordLinwin  ________                         ________           leftWordLinwin    &kp DOWN    rightWordLinwin  ________
+                                                                                ________   ________       ________                          ________   ________   ________
                         >;
                 };

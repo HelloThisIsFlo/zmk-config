@@ -15,11 +15,10 @@
                 l_nav {
                         label = "<^v>";
                         bindings = <
-
-&previous     &switchSpaceL ________    magicSwitchSpaceR  &next                   &previous      &switchSpaceL  ________   magicSwitchSpaceR  &next
-&startLine    &kp LEFT      &kp UP      &kp RIGHT          &endLine                &startLine     &kp LEFT      &kp UP      &kp RIGHT          &endLine
-________      leftWord      &kp DOWN    rightWord          ________                ________       leftWord      &kp DOWN    rightWord          ________
-                                ________   ________   ________      ________   ________   ________
+&switchSpaceL  &previous    ________    &next      magicSwitchSpaceR              &switchSpaceL  &previous   ________    &next      magicSwitchSpaceR
+&startLine     &kp LEFT     &kp UP      &kp RIGHT  &endLine                       &startLine     &kp LEFT    &kp UP      &kp RIGHT  &endLine
+________       leftWord     &kp DOWN    rightWord  ________                       ________       leftWord    &kp DOWN    rightWord  ________
+                                        ________   ________   ________      ________   ________   ________
                         >;
                 };
 
