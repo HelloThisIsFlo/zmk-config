@@ -13,6 +13,9 @@ LK(th, &Th, &tion)
 LK(sh, &Sh, &sion)
 LK(gh, &Gh, &ght)
 
+#define tabAlttab &lk LA(TAB) TAB
+#define tabCmdtab &lk LG(TAB) TAB
+
 LK(magicArrowL, &arrowLeftSingle, &arrowLeftDouble)
 LK(magicArrowR, &arrowRightSingle, &arrowRightDouble)
 #define magicArrowL  &lk_magicArrowL XXX XXX

@@ -22,7 +22,7 @@ COMBO_LAY_TWO_HAND(l_alpha_aks, typeZ,           &bk Z,                         
 COMBO_ANY_ONE_HAND(             space,           &bk SPACE,                                     LT1 LT0                       )
 COMBO_ANY_ONE_HAND(             entr,            &bk RETURN,                                    LM1 LM0                       )
 COMBO_ANY_ONE_HAND(             entr2,           &bk RETURN,                                              RM0 RM1             )
-COMBO_ANY_ONE_HAND(             tab,             &bk TAB,                                       LB1 LB0                       )
+COMBO_ANY_ONE_HAND(             tab,             tabCmdtab,                                     LB1 LB0                       )
 COMBO_ANY_NON_ADJC(             esc,             &bk ESC,                               LM3     LM1                           )
 COMBO_ANY_ONE_HAND(             esc2,            &bk ESC,                                   LB2 LB1                           )
 COMBO_ANY_ONE_HAND(             undo,            &bk LG(Z),                         LB4 LB3                                   ) // TODO: Do 'redo' as Linger Key
