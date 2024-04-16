@@ -1,7 +1,7 @@
                 l_nav_linwin {
                         label = "><v^";
                         bindings = <
-magicSwitchSpaceL  &previousLinwin    ________    &nextLinwin      &switchSpaceLinwinR              magicSwitchSpaceL  &previousLinwin   ________    &nextLinwin      &switchSpaceLinwinR
+magicSwitchSpaceL  &previousLinwin    &to l_alpha    &nextLinwin      &switchSpaceLinwinR              magicSwitchSpaceL  &previousLinwin   ________    &nextLinwin      &switchSpaceLinwinR
 &startLineLinwin   &kp LEFT           &kp UP      &kp RIGHT        &endLineLinwin                   &startLineLinwin   &kp LEFT          &kp UP      &kp RIGHT        &endLineLinwin
 ________           leftWordLinwin     &kp DOWN    rightWordLinwin  ________                         ________           leftWordLinwin    &kp DOWN    rightWordLinwin  ________
                                                                                 ________   ________       ________                          ________   ________   ________

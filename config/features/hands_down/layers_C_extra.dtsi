@@ -15,7 +15,8 @@
                 l_nav {
                         label = "<^v>";
                         bindings = <
-&switchSpaceL  &previous    ________    &next      magicSwitchSpaceR              &switchSpaceL  &previous   ________    &next      magicSwitchSpaceR
+// The key in the middle is temporary, I think eventually I'd like to have "show spaces" there
+&switchSpaceL  &previous    &to l_alpha_linwin    &next      magicSwitchSpaceR              &switchSpaceL  &previous   ________    &next      magicSwitchSpaceR
 &startLine     &kp LEFT     &kp UP      &kp RIGHT  &endLine                       &startLine     &kp LEFT    &kp UP      &kp RIGHT  &endLine
 ________       leftWord     &kp DOWN    rightWord  ________                       ________       leftWord    &kp DOWN    rightWord  ________
                                         ________   ________   ________      ________   ________   ________
