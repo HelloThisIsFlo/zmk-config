@@ -1,6 +1,6 @@
 ZMK_MACRO(AppSwitch,
         wait-ms = <50>;
-        tap-ms = <20>;
+        tap-ms = <TEMP_macro_tap_time>;
         bindings =
                 <&macro_press &kp RGUI>    // leave GUI down to keep menu up
                 , <&macro_tap &kp TAB>       // (use press for repeat)
@@ -13,7 +13,7 @@ ZMK_MACRO(AppSwitch,
 )
 ZMK_MACRO(S_AppSwitch,
         wait-ms = <50>;
-        tap-ms = <20>;
+        tap-ms = <TEMP_macro_tap_time>;
         bindings =
                 <&macro_press &sk RGUI> // leave GUI down to keep menu up
                 , <&macro_press &kp LSHFT> //

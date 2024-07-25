@@ -63,7 +63,7 @@ bk: bk {
         compatible = "zmk,behavior-macro-one-param";
         #binding-cells = <1>;
         wait-ms = <0>;
-        tap-ms = <10>;
+        tap-ms = <TEMP_macro_tap_time>;
         bindings = 
                 <&macro_param_1to1>,
                 <&macro_tap &kp MACRO_PLACEHOLDER>
@@ -92,7 +92,7 @@ bskL: bskL {
         compatible = "zmk,behavior-macro-one-param";
         #binding-cells = <1>;
         wait-ms = <0>;
-        tap-ms = <10>;
+        tap-ms = <TEMP_macro_tap_time>;
         bindings = <&macro_param_1to1>,
                 <&skL MACRO_PLACEHOLDER>;
 };

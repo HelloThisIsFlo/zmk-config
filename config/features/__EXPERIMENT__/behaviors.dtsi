@@ -3,7 +3,7 @@
 // TODO: Make macro
 // TODO: Trigger sticky shift as well, after dot
 // TODO: Build complex keys with mod-morph. Like: lk_DOT_SPACE, but then lk_SEMI_SPACE when shifted. Also same on combos for '!' or '?'.
-ZMK_MACRO(type_dot_space, wait-ms = <10>; tap-ms = <10>; bindings = <&kp DOT>, <&kp SPACE>, <&skL LSHIFT>;)
+ZMK_MACRO(type_dot_space, wait-ms = <10>; tap-ms = <TEMP_macro_tap_time>; bindings = <&kp DOT>, <&kp SPACE>, <&skL LSHIFT>;)
 lk_DOT_SPACE: lk_DOT_SPACE {
     compatible = "zmk,behavior-hold-tap";
     label = "lk_DOT_SPACE";

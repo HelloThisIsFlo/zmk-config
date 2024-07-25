@@ -1,6 +1,6 @@
 ZMK_MACRO(Qu,
         wait-ms = <10>;
-        tap-ms = <10>;
+        tap-ms = <TEMP_macro_tap_time>;
         bindings = <&macro_tap &kp Q>
                 , <&macro_release &kp LSHFT>
                 , <&macro_release &kp RSHFT>
@@ -11,7 +11,7 @@ ZMK_MACRO(Qu,
 // Can't be a TYPING_MACRO because it needs a custom 'wait-ms' (otherwise LogSeq doesn't start auto-complete)
 ZMK_MACRO(logseqPageRef,
         wait-ms = <100>;
-        tap-ms = <10>;
+        tap-ms = <TEMP_macro_tap_time>;
         bindings = 
         <&kp LEFT_BRACKET>,
         <&kp LEFT_BRACKET>;

@@ -15,7 +15,7 @@
                 compatible = "zmk,behavior-macro"; \
                 #binding-cells = <0>; \
                 wait-ms = <0>; \
-                tap-ms = <10>; \
+                tap-ms = <TEMP_macro_tap_time>; \
                 bindings = \
                         <&macro_tap &kp BACKSPACE>, \
 \
@@ -60,7 +60,7 @@
 #define TYPING_MACRO(NAME, KP_BINDINGS) \
 ZMK_MACRO(NAME, \
         wait-ms = <10>; \
-        tap-ms = <10>; \
+        tap-ms = <TEMP_macro_tap_time>; \
         bindings = <KP_BINDINGS>; \
 )
 

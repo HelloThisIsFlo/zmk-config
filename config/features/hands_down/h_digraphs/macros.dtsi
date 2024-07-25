@@ -4,7 +4,7 @@ Th: Th {
         compatible = "zmk,behavior-macro";
         #binding-cells = <0>;
         wait-ms = <10>;
-        tap-ms = <10>;
+        tap-ms = <TEMP_macro_tap_time>;
         bindings = <&macro_tap &kp T>
         , <&macro_release &kp LSHFT>
         , <&macro_release &kp RSHFT>
@@ -12,12 +12,12 @@ Th: Th {
 };
 ZMK_MACRO(tion,
         wait-ms = <10>;
-        tap-ms = <10>;
+        tap-ms = <TEMP_macro_tap_time>;
         bindings = <&kp T &kp I &kp O &kp N>;
 )
 ZMK_MACRO(Ch,
         wait-ms = <10>;
-        tap-ms = <10>;
+        tap-ms = <TEMP_macro_tap_time>;
         bindings = <&macro_tap &kp C>
                 , <&macro_release &kp LSHFT>
                 , <&macro_release &kp RSHFT>
@@ -25,7 +25,7 @@ ZMK_MACRO(Ch,
 )
 ZMK_MACRO(Wh,
         wait-ms = <10>;
-        tap-ms = <10>;
+        tap-ms = <TEMP_macro_tap_time>;
         bindings = <&macro_tap &kp W>
                 , <&macro_release &kp LSHFT>
                 , <&macro_release &kp RSHFT>
@@ -33,7 +33,7 @@ ZMK_MACRO(Wh,
 )
 ZMK_MACRO(Sh,
         wait-ms = <10>;
-        tap-ms = <10>;
+        tap-ms = <TEMP_macro_tap_time>;
         bindings = <&macro_tap &kp S>
                 , <&macro_release &kp LSHFT>
                 , <&macro_release &kp RSHFT>
@@ -42,13 +42,13 @@ ZMK_MACRO(Sh,
         )
 ZMK_MACRO(sion,
         wait-ms = <10>;
-        tap-ms = <10>;
+        tap-ms = <TEMP_macro_tap_time>;
         bindings = <&kp S &kp I &kp O &kp N>
                 ;
         )
 ZMK_MACRO(Gh,
         wait-ms = <10>;
-        tap-ms = <10>;
+        tap-ms = <TEMP_macro_tap_time>;
         bindings = <&macro_tap &kp G>
                 , <&macro_release &kp LSHFT>
                 , <&macro_release &kp RSHFT>
@@ -57,13 +57,13 @@ ZMK_MACRO(Gh,
         )
 ZMK_MACRO(ght,
         wait-ms = <10>;
-        tap-ms = <10>;
+        tap-ms = <TEMP_macro_tap_time>;
         bindings = <&kp G &kp H &kp T>
                 ;
         )
 ZMK_MACRO(Ph,
         wait-ms = <10>;
-        tap-ms = <10>;
+        tap-ms = <TEMP_macro_tap_time>;
         bindings = <&macro_tap &kp P>
                 , <&macro_release &kp LSHFT>
                 , <&macro_release &kp RSHFT>
@@ -72,7 +72,7 @@ ZMK_MACRO(Ph,
         )
 ZMK_MACRO(Oh,
         wait-ms = <10>;
-        tap-ms = <10>;
+        tap-ms = <TEMP_macro_tap_time>;
         bindings = <&macro_tap &kp O>
                 , <&macro_release &kp LSHFT>
                 , <&macro_release &kp RSHFT>
@@ -86,7 +86,7 @@ Sch: Sch {
         compatible = "zmk,behavior-macro";
         #binding-cells = <0>;
         wait-ms = <10>;
-        tap-ms = <10>;
+        tap-ms = <TEMP_macro_tap_time>;
         bindings = <&macro_tap &kp S>
                 , <&macro_release &kp LSHFT>
                 , <&macro_release &kp RSHFT>
@@ -98,7 +98,7 @@ Tch: Tch {
         compatible = "zmk,behavior-macro";
         #binding-cells = <0>;
         wait-ms = <10>;
-        tap-ms = <10>;
+        tap-ms = <TEMP_macro_tap_time>;
         bindings = <&macro_tap &kp T>
                 , <&macro_release &kp LSHFT>
                 , <&macro_release &kp RSHFT>
