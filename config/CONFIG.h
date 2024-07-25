@@ -20,9 +20,9 @@
 //  - To make sure it's not too long  ⇒ ???
 //  - To make sure it's not too short ⇒ Try typing 'sl...'. 's' is on the pinkie so that's as slow as it gets
 
-// See explanation in flo_combos.dtsi
+// See explanation in 'adaptive_keys/combos.dtsi'
 #define ak_tap_time 10
-#define hold_key_event_delay 15 // ak_tap_time + 5ms buffer
+#define hold_key_event_delay 11 // ak_tap_time + 5ms buffer
 
 
 
