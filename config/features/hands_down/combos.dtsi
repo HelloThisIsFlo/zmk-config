@@ -48,8 +48,10 @@ COMBO_LAY_ONE_HAND(l_alpha_aks, typeGrav,        &bk GRAVE,                     
 COMBO_LAY_ONE_HAND(l_alpha_aks, magicBracketsL,  &MagicBracketsL,                                             RB1 RB2         )
 COMBO_LAY_ONE_HAND(l_alpha_aks, magicBracketsR,  &MagicBracketsR,                                                 RB2 RB3     )
 COMBO_LAY_ONE_HAND(l_alpha_aks, logseqPageRef,   &logseqPageRef,                                              RB1 RB2 RB3     )
-COMBO_LAY_ONE_HAND(l_alpha_aks, magicArrowLCb,   magicArrowL,                                             RB0 RB1             )
-COMBO_LAY_ONE_HAND(l_alpha_aks, magicArrowRCb,   magicArrowR,                                                         RB3 RB4 )
+
+// MagicArrow: Disabled because it was causing a lot of mistypes
+// COMBO_LAY_ONE_HAND(l_alpha_aks, magicArrowLCb,   magicArrowL,                                             RB0 RB1             )
+// COMBO_LAY_ONE_HAND(l_alpha_aks, magicArrowRCb,   magicArrowR,                                                         RB3 RB4 )
 
 
 
