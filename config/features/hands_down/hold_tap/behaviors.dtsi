@@ -5,7 +5,7 @@ bsklt: bsklt {
     label = "flo,behavior-buffered-sticky-key-layer-tap";
     #binding-cells = <2>;
     flavor = "balanced";
-    tapping-term-ms = <my_tapping_term>;
+    tapping-term-ms = <my_tapping_term_thumb>;
     bindings = <&mo>, <&bsk>;
 };
 
@@ -14,7 +14,7 @@ hm: homerow_mods { // use on either hand
     compatible = "zmk,behavior-hold-tap";
     label = "homerow_mods";
     #binding-cells = <2>;
-    tapping-term-ms = <my_tapping_term>;
+    tapping-term-ms = <my_tapping_term_main>;
     flavor = "tap-preferred";
     bindings = <&kp>, <&bk>;
 };
@@ -24,7 +24,7 @@ hrmSk: hrmSk {
     compatible = "zmk,behavior-hold-tap";
     label = "homerow_mods_sk";
     #binding-cells = <2>;
-    tapping-term-ms = <my_tapping_term>;
+    tapping-term-ms = <my_tapping_term_main>;
     flavor = "tap-preferred";
     bindings = <&sk>, <&bk>;
 };
@@ -33,7 +33,7 @@ hml: homerow_mods_left { // use on left hand to mod right
     compatible = "zmk,behavior-hold-tap";
     label = "homerow_mods_left";
     #binding-cells = <2>;
-    tapping-term-ms = <my_tapping_term>;
+    tapping-term-ms = <my_tapping_term_main>;
     flavor = "tap-preferred";
     bindings = <&kp>, <&bk>;
 };
@@ -42,7 +42,7 @@ hml_S: hml_S {
     compatible = "zmk,behavior-hold-tap";
     label = "hml_S";
     #binding-cells = <2>;
-    tapping-term-ms = <my_tapping_term>;
+    tapping-term-ms = <my_tapping_term_main>;
     flavor = "tap-preferred";
     bindings = <&kp>, <&ak_S_macro>;
 };
@@ -51,7 +51,7 @@ hml_C: hml_C {
     compatible = "zmk,behavior-hold-tap";
     label = "hml_C";
     #binding-cells = <2>;
-    tapping-term-ms = <my_tapping_term>;
+    tapping-term-ms = <my_tapping_term_main>;
     flavor = "tap-preferred";
     bindings = <&kp>, <&ak_C_macro>;
 };
@@ -60,7 +60,7 @@ hml_N: hml_N {
     compatible = "zmk,behavior-hold-tap";
     label = "hml_N";
     #binding-cells = <2>;
-    tapping-term-ms = <my_tapping_term>;
+    tapping-term-ms = <my_tapping_term_main>;
     flavor = "tap-preferred";
     bindings = <&kp>, <&ak_N_macro>;
 };
@@ -69,7 +69,7 @@ hml_T: hml_T {
     compatible = "zmk,behavior-hold-tap";
     label = "hml_T";
     #binding-cells = <2>;
-    tapping-term-ms = <my_tapping_term>;
+    tapping-term-ms = <my_tapping_term_main>;
     flavor = "tap-preferred";
     bindings = <&kp>, <&ak_T_macro>;
 };
@@ -78,7 +78,7 @@ hmr: homerow_mods_right { // use on right hand to mod left
     compatible = "zmk,behavior-hold-tap";
     label = "homerow_mods_right";
     #binding-cells = <2>;
-    tapping-term-ms = <my_tapping_term>;
+    tapping-term-ms = <my_tapping_term_main>;
     flavor = "tap-preferred";
     bindings = <&kp>, <&bk>;
 };
@@ -87,7 +87,7 @@ hmr_A: hmr_A {
     compatible = "zmk,behavior-hold-tap";
     label = "hmr_A";
     #binding-cells = <2>;
-    tapping-term-ms = <my_tapping_term>;
+    tapping-term-ms = <my_tapping_term_main>;
     flavor = "tap-preferred";
     bindings = <&kp>, <&ak_A_macro>;
 };
@@ -96,7 +96,7 @@ hmr_E: hmr_E {
     compatible = "zmk,behavior-hold-tap";
     label = "hmr_E";
     #binding-cells = <2>;
-    tapping-term-ms = <my_tapping_term>;
+    tapping-term-ms = <my_tapping_term_main>;
     flavor = "tap-preferred";
     bindings = <&kp>, <&ak_E_macro>;
 };
@@ -105,7 +105,7 @@ hmr_E: hmr_E {
 //     compatible = "zmk,behavior-hold-tap";
 //     label = "hmr_I";
 //     #binding-cells = <2>;
-//     tapping-term-ms = <my_tapping_term>;
+//     tapping-term-ms = <my_tapping_term_main>;
 //     flavor = "tap-preferred";
 //     bindings = <&kp>, <&ak_I_macro>;
 // };

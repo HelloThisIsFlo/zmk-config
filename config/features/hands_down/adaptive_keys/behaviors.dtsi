@@ -13,7 +13,7 @@ blt: blt {
     label = "flo,behavior-buffered-layer-tap";
     #binding-cells = <2>;
     flavor = "tap-preferred";
-    tapping-term-ms = <my_tapping_term>;
+    tapping-term-ms = <my_tapping_term_thumb>;
     bindings = <&mo>, <&bk>;
 };
 
@@ -22,6 +22,6 @@ bksl: bksl {
     label = "flo,behavior-buffered-key-sticky-layer";
     #binding-cells = <2>;
     flavor = "tap-preferred";
-    tapping-term-ms = <my_tapping_term>;
+    tapping-term-ms = <my_tapping_term_thumb>;
     bindings = <&sl>, <&bk>;
 };
