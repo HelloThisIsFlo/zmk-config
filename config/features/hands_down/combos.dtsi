@@ -12,9 +12,11 @@
 
 
 /*********** Missing Alpha Letters **************/
-/* Uses Sound + Symetry */
-COMBO_LAY_TWO_HAND(l_alpha_aks, typeQ,           &lk_qu Q U,                                    LB1           RB1             ) // Think: "qU" (Combo on U)
-COMBO_LAY_TWO_HAND(l_alpha_aks, typeZ,           &bk Z,                                 LM3                           RM3     ) // Think: "zI" (Combo on I)
+COMBO_LAY_TWO_HAND(l_alpha_aks, typeQ,           &bk Q,                             LT4 LT3                                   ) // Works well with 'cmd + q', and it's quite close to 'cmd + w'
+COMBO_LAY_TWO_HAND(l_alpha_aks, typeZ,           &bk Z,                                 LT3 LT2 LT1                           ) // Works well for typing 'zoom'
+// /* Uses Sound + Symetry */
+// COMBO_LAY_TWO_HAND(l_alpha_aks, typeQ,           &lk_qu Q U,                                    LB1           RB1             ) // Think: "qU" (Combo on U)
+// COMBO_LAY_TWO_HAND(l_alpha_aks, typeZ,           &bk Z,                                 LM3                           RM3     ) // Think: "zI" (Combo on I)
 
 
 
@@ -56,7 +58,8 @@ COMBO_LAY_ONE_HAND(l_alpha_aks, logseqPageRef,   &logseqPageRef,                
 
 
 /*************** Special Behaviors *******************/
-COMBO_LAY_TWO_HAND(l_alpha_aks, docaps,          &caps_word,                                    LH1           RH1             ) // CAPSWORD
+// Note: Using the simple CAPS, doesn't work because most my computers are configured to remap CAPS to ESC
+COMBO_LAY_TWO_HAND(l_alpha_aks, capsWord,          &caps_word,                                                  RM1 RM2 RM3 RM4 )
 
 
 
