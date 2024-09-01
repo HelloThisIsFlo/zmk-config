@@ -14,11 +14,11 @@ Based on: Hands-Down Neu Vibranium B
                         label = "Reality?"; // The base layer ... ?
                         bindings = <
 
-ak_X          ak_W         ak_M         ak_G            ak_J                          &SlashHash   dotcol        &DashEqual  sqtdqt      &bk EQUAL      // Also try: &lk_DOT_SPACE DOT XXX
+sqtdqt        ak_B         &bk H        ak_G            ________                      &SlashHash   dotcol        &DashEqual  ak_J        ak_X
 
-hml_LCTRL_S   hml_LALT_C   hml_LGUI_N   hml_LSHIFT_T    ak_K                          comsemi      hmr_LSHIFT_A  hmr_LGUI_E  &hmr LALT I &hmr LCTRL H
+hml_LCTRL_C   hml_LALT_S   hml_LGUI_N   hml_LSHIFT_T    ak_K                          comsemi      hmr_LSHIFT_A  hmr_LGUI_E  &hmr LALT I &hmr LCTRL M
 
-ak_B          ak_P         ak_L         ak_D            ak_V                          &UnderStar      ak_U          ak_O        ak_Y        ak_F
+ak_P          ak_F         ak_L         ak_D            ak_V                          &UnderStar      ak_U          ak_O        ak_Y        ak_W
 
                      // &mo l_num   &bk LSHIFT          &hrmSk LSHIFT R        &hrmSk RSHIFT SPACE  &bskL RSHIFT  &togMacPc
 
