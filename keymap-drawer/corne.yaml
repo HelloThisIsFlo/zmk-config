@@ -1,18 +1,18 @@
 layout: {qmk_keyboard: corne_rotated, qmk_layout: LAYOUT_split_3x5_3}
 layers:
   Reality?:
-  - X⛶
-  - W⛶
-  - M⛶
+  - {t: '''', h: '"'}
+  - B⛶
+  - H
   - G⛶
-  - J⛶
-  - {t: '&bk UNDER', s: '*'}
+  - {t: ' ', type: trans}
+  - {t: /, s: '#'}
   - {t: '&bk DOT', h: ':'}
   - {t: '-', s: '&bk EQUAL'}
-  - {t: '''', h: '"'}
-  - '&bk EQUAL'
-  - {t: S⛶, h: '$$mdi:apple-keyboard-control$$'}
-  - {t: C⛶, h: '$$mdi:apple-keyboard-option$$'}
+  - J⛶
+  - X⛶
+  - {t: '&ak_C_macro', h: '$$mdi:apple-keyboard-control$$'}
+  - {t: '&ak_S_macro', h: '$$mdi:apple-keyboard-option$$'}
   - {t: N⛶, h: '$$mdi:apple-keyboard-command$$'}
   - {t: T⛶, h: '$$mdi:apple-keyboard-shift$$'}
   - K⛶
@@ -20,17 +20,17 @@ layers:
   - {t: A⛶, h: '$$mdi:apple-keyboard-shift$$'}
   - {t: E⛶, h: '$$mdi:apple-keyboard-command$$'}
   - {t: I, h: '$$mdi:apple-keyboard-option$$'}
-  - {t: H, h: '$$mdi:apple-keyboard-control$$'}
-  - B⛶
+  - {t: M, h: '$$mdi:apple-keyboard-control$$'}
   - P⛶
+  - F⛶
   - L⛶
   - D⛶
   - V⛶
-  - {t: /, s: '#'}
+  - {t: '&bk UNDER', s: '*'}
   - U⛶
   - O⛶
   - Y⛶
-  - F⛶
+  - W⛶
   - =*+/
   - {t: '&bsk LSHIFT', h: '1984'}
   - {t: R, h: <^v>}
@@ -48,7 +48,7 @@ layers:
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
-  - {t: '&ak_S_macro', h: '$$mdi:apple-keyboard-command$$'}
+  - {t: '&ak_C_macro', h: '$$mdi:apple-keyboard-command$$'}
   - {t: ' ', type: trans}
   - {t: '&ak_N_macro', h: '$$mdi:apple-keyboard-control$$'}
   - {t: ' ', type: trans}
@@ -57,7 +57,7 @@ layers:
   - {t: ' ', type: trans}
   - {t: '&ak_E_macro', h: '$$mdi:apple-keyboard-control$$'}
   - {t: ' ', type: trans}
-  - {t: H, h: '$$mdi:apple-keyboard-command$$'}
+  - {t: M, h: '$$mdi:apple-keyboard-command$$'}
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
@@ -70,8 +70,8 @@ layers:
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
-  - {t: ' ', type: trans}
-  - {t: ' ', type: trans}
+  - {t: R, h: '><v^'}
+  - {t: '$$mdi:keyboard-space$$', h: '><v^'}
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
   Raality?:
@@ -852,16 +852,16 @@ layers:
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
   <^v>:
-  - '&previous'
   - '&switchSpaceL'
-  - {t: ' ', type: trans}
-  - '&switchSpaceR'
-  - '&next'
   - '&previous'
-  - '&switchSpaceL'
-  - {t: ' ', type: trans}
-  - '&switchSpaceR'
+  - rEALITY¿
   - '&next'
+  - {t: '&switchSpaceR', h: '&switchSpaceR_toLinwin'}
+  - '&switchSpaceL'
+  - '&previous'
+  - {t: ' ', type: trans}
+  - '&next'
+  - {t: '&switchSpaceR', h: '&switchSpaceR_toLinwin'}
   - '&startLine'
   - $$mdi:arrow-left-bold$$
   - $$mdi:arrow-up-bold$$
@@ -973,7 +973,7 @@ layers:
   - '8'
   - '9'
   - {t: '-', s: +}
-  - {t: '&bk DOT', h: '$$mdi:apple-keyboard-control$$'}
+  - {t: '&bk N0', h: '$$mdi:apple-keyboard-control$$'}
   - {t: '&bk N6', h: '$$mdi:apple-keyboard-option$$'}
   - {t: '&bk N5', h: '$$mdi:apple-keyboard-command$$'}
   - {t: '&bk N4', h: '$$mdi:apple-keyboard-shift$$'}
@@ -982,8 +982,8 @@ layers:
   - {t: '&bk N4', h: '$$mdi:apple-keyboard-shift$$'}
   - {t: '&bk N5', h: '$$mdi:apple-keyboard-command$$'}
   - {t: '&bk N6', h: '$$mdi:apple-keyboard-option$$'}
-  - {t: '&bk DOT', h: '$$mdi:apple-keyboard-control$$'}
-  - '&bk N0'
+  - {t: '&bk N0', h: '$$mdi:apple-keyboard-control$$'}
+  - '&bk DOT'
   - '3'
   - '2'
   - '1'
@@ -992,7 +992,7 @@ layers:
   - '1'
   - '2'
   - '3'
-  - '&bk N0'
+  - '&bk DOT'
   - {t: '$$mdi:cancel$$', type: none}
   - {type: held}
   - {t: ' ', type: trans}
@@ -1037,40 +1037,40 @@ layers:
   - {t: '$$mdi:cancel$$', type: held}
   - {t: '$$mdi:cancel$$', type: held}
   '><v^':
-  - A
-  - '&switchSpaceL'
+  - {t: '&switchSpaceLinwinL', h: '&switchSpaceL_toBase'}
+  - '&previousLinwin'
+  - Reality?
+  - '&nextLinwin'
+  - '&switchSpaceLinwinR'
+  - {t: '&switchSpaceLinwinL', h: '&switchSpaceL_toBase'}
+  - '&previousLinwin'
   - {t: ' ', type: trans}
-  - '&switchSpaceR'
-  - '&next'
-  - '&previous'
-  - '&switchSpaceL'
-  - {t: ' ', type: trans}
-  - '&switchSpaceR'
-  - '&next'
-  - '&startLine'
+  - '&nextLinwin'
+  - '&switchSpaceLinwinR'
+  - '&startLineLinwin'
   - $$mdi:arrow-left-bold$$
   - $$mdi:arrow-up-bold$$
   - $$mdi:arrow-right-bold$$
-  - '&endLine'
-  - '&startLine'
+  - '&endLineLinwin'
+  - '&startLineLinwin'
   - $$mdi:arrow-left-bold$$
   - $$mdi:arrow-up-bold$$
   - $$mdi:arrow-right-bold$$
-  - '&endLine'
+  - '&endLineLinwin'
   - {t: ' ', type: trans}
-  - LA(LEFT)
+  - $$screen-prev$$
   - $$mdi:arrow-down-bold$$
-  - LA(RIGHT)
+  - $$tabler:screen-share$$
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
-  - LA(LEFT)
+  - $$screen-prev$$
   - $$mdi:arrow-down-bold$$
-  - LA(RIGHT)
+  - $$tabler:screen-share$$
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
-  - {t: ' ', type: trans}
-  - {t: ' ', type: trans}
+  - {type: held}
+  - {type: held}
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
 combos:
@@ -1080,11 +1080,17 @@ combos:
 - p: [16, 17, 18]
   k: '&bk LC(BSPC)'
   l: [rEALITY¿]
-- p: [23, 26]
-  k: {t: '&Qu U', h: Q}
+- p: [11, 12, 13]
+  k: '&bk LC(BSPC)'
+  l: ['><v^']
+- p: [23, 24]
+  k: {t: '&bk TAB', h: '&bk LA(TAB)'}
+  l: [rEALITY¿]
+- p: [0, 1]
+  k: Q
   l: ['Reality?', rEALITY¿, 'Raality?', 'Reabity?', 'Rcality?', 'Deality?', 'Reelity?', 'Realify?', 'Realitg?', 'Realjty?', 'Reakity?', 'Realily?', 'Meality?', 'Renlity?',
     'Roality?', 'Realitp?', 'Reslity?', 'Reatity?', 'Realitu?', 'Realitv?', 'Weality?', 'Realitx?', 'Yeality?']
-- p: [11, 18]
+- p: [1, 2, 3]
   k: Z
   l: ['Reality?', rEALITY¿, 'Raality?', 'Reabity?', 'Rcality?', 'Deality?', 'Reelity?', 'Realify?', 'Realitg?', 'Realjty?', 'Reakity?', 'Realily?', 'Meality?', 'Renlity?',
     'Roality?', 'Realitp?', 'Reslity?', 'Reatity?', 'Realitu?', 'Realitv?', 'Weality?', 'Realitx?', 'Yeality?']
@@ -1101,7 +1107,7 @@ combos:
   l: ['Reality?', rEALITY¿, 'Raality?', 'Reabity?', 'Rcality?', 'Deality?', 'Reelity?', 'Realify?', 'Realitg?', 'Realjty?', 'Reakity?', 'Realily?', 'Meality?', 'Renlity?',
     'Roality?', 'Realitp?', 'Reslity?', 'Reatity?', 'Realitu?', 'Realitv?', 'Weality?', 'Realitx?', 'Yeality?', <^v>, =*+/, F*, '1984', BIOS, '><v^']
 - p: [23, 24]
-  k: '&bk TAB'
+  k: {t: '&bk TAB', h: '&bk LG(TAB)'}
   l: ['Reality?', rEALITY¿, 'Raality?', 'Reabity?', 'Rcality?', 'Deality?', 'Reelity?', 'Realify?', 'Realitg?', 'Realjty?', 'Reakity?', 'Realily?', 'Meality?', 'Renlity?',
     'Roality?', 'Realitp?', 'Reslity?', 'Reatity?', 'Realitu?', 'Realitv?', 'Weality?', 'Realitx?', 'Yeality?', <^v>, =*+/, F*, '1984', BIOS, '><v^']
 - p: [11, 13]
@@ -1133,13 +1139,13 @@ combos:
     'Roality?', 'Realitp?', 'Reslity?', 'Reatity?', 'Realitu?', 'Realitv?', 'Weality?', 'Realitx?', 'Yeality?', <^v>, =*+/, F*, '1984', BIOS, '><v^']
 - p: [11, 12]
   k: '&bk BSPC'
-  l: [<^v>, '1984']
+  l: [<^v>, '1984', '><v^']
 - p: [12, 13]
   k: '&bk DEL'
-  l: [<^v>, '1984']
+  l: [<^v>, '1984', '><v^']
 - p: [11, 12, 13]
   k: '&bk LA(BSPC)'
-  l: [<^v>, '1984']
+  l: [<^v>, '1984', '><v^']
 - p: [6, 7]
   k: '&bk EXCL'
   l: ['Reality?', rEALITY¿, 'Raality?', 'Reabity?', 'Rcality?', 'Deality?', 'Reelity?', 'Realify?', 'Realitg?', 'Realjty?', 'Reakity?', 'Realily?', 'Meality?', 'Renlity?',
@@ -1164,20 +1170,10 @@ combos:
   k: '&logseqPageRef'
   l: ['Reality?', rEALITY¿, 'Raality?', 'Reabity?', 'Rcality?', 'Deality?', 'Reelity?', 'Realify?', 'Realitg?', 'Realjty?', 'Reakity?', 'Realily?', 'Meality?', 'Renlity?',
     'Roality?', 'Realitp?', 'Reslity?', 'Reatity?', 'Realitu?', 'Realitv?', 'Weality?', 'Realitx?', 'Yeality?']
-- p: [25, 26]
-  k: {t: '&arrowLeftSingle', h: '&arrowLeftDouble'}
-  l: ['Reality?', rEALITY¿, 'Raality?', 'Reabity?', 'Rcality?', 'Deality?', 'Reelity?', 'Realify?', 'Realitg?', 'Realjty?', 'Reakity?', 'Realily?', 'Meality?', 'Renlity?',
-    'Roality?', 'Realitp?', 'Reslity?', 'Reatity?', 'Realitu?', 'Realitv?', 'Weality?', 'Realitx?', 'Yeality?']
-- p: [28, 29]
-  k: {t: '&arrowRightSingle', h: '&arrowRightDouble'}
-  l: ['Reality?', rEALITY¿, 'Raality?', 'Reabity?', 'Rcality?', 'Deality?', 'Reelity?', 'Realify?', 'Realitg?', 'Realjty?', 'Reakity?', 'Realily?', 'Meality?', 'Renlity?',
-    'Roality?', 'Realitp?', 'Reslity?', 'Reatity?', 'Realitu?', 'Realitv?', 'Weality?', 'Realitx?', 'Yeality?']
-- p: [31, 34]
+- p: [16, 17, 18, 19]
   k: $$mdi:caps-lock$$
   l: ['Reality?', rEALITY¿, 'Raality?', 'Reabity?', 'Rcality?', 'Deality?', 'Reelity?', 'Realify?', 'Realitg?', 'Realjty?', 'Reakity?', 'Realily?', 'Meality?', 'Renlity?',
     'Roality?', 'Realitp?', 'Reslity?', 'Reatity?', 'Realitu?', 'Realitv?', 'Weality?', 'Realitx?', 'Yeality?']
-  a: top
-  o: -0.2
 - p: [34, 35]
   k: BIOS
   l: ['Reality?', rEALITY¿, 'Raality?', 'Reabity?', 'Rcality?', 'Deality?', 'Reelity?', 'Realify?', 'Realitg?', 'Realjty?', 'Reakity?', 'Realily?', 'Meality?', 'Renlity?',
