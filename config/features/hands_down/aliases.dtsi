@@ -11,6 +11,17 @@
 #define hml_LCTRL_N  &hml_N LCTRL  XXX
 #define hmr_LCTRL_E  &hmr_E LCTRL  XXX
 
+
+// Extra for RHODIUM
+#define hml_LCTRL_C  &hml_C LCTRL  XXX
+#define hml_LALT_S   &hml_S LALT   XXX
+#define hmr_LCTRL_M  &hmr_M LCTRL  XXX
+
+#define hml_LGUI_C   &hml_C LGUI   XXX
+#define hmr_LGUI_M   &hmr_M LGUI   XXX
+
+
+
 #define dotcol  &lk COLON DOT
 #define comsemi &lk SEMI CMMA
 #define sqtdqt  &lk DQT SQT

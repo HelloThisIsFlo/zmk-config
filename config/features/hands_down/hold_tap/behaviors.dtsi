@@ -100,6 +100,15 @@ hmr_E: hmr_E {
     flavor = "tap-preferred";
     bindings = <&kp>, <&ak_E_macro>;
 };
+ZMK_MACRO(ak_M_macro, wait-ms = <0>; tap-ms = <0>; bindings = <&ak l_akM M>;)
+hmr_M: hmr_M {
+    compatible = "zmk,behavior-hold-tap";
+    label = "hmr_M";
+    #binding-cells = <2>;
+    tapping-term-ms = <my_tapping_term_main>;
+    flavor = "tap-preferred";
+    bindings = <&kp>, <&ak_M_macro>;
+};
 // ZMK_MACRO(ak_I_macro, wait-ms = <0>; tap-ms = <0>; bindings = <&ak l_akI I>;)
 // hmr_I: hmr_I {
 //     compatible = "zmk,behavior-hold-tap";
