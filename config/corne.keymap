@@ -89,9 +89,15 @@
         #if defined EXPERIMENT
             #include "./features/__EXPERIMENT__/EXPERIMENT_LAYER.dtsi"
         #else
-            #include "./features/hands_down/layers_A_alpha.dtsi"
-            #include "./features/hands_down/layers_A_alpha_linwin.dtsi"
-            #include "./features/hands_down/layers_B_adaptive_keys.dtsi"
+            #if defined RHODIUM
+                #include "./features/hands_down/layers_A_RHODIUM_alpha.dtsi"
+                #include "./features/hands_down/layers_A_RHODIUM_alpha_linwin.dtsi"
+                #include "./features/hands_down/layers_B_RHODIUM_adaptive_keys.dtsi"
+            #else
+                #include "./features/hands_down/layers_A_alpha.dtsi"
+                #include "./features/hands_down/layers_A_alpha_linwin.dtsi"
+                #include "./features/hands_down/layers_B_adaptive_keys.dtsi"
+            #endif
             #include "./features/hands_down/layers_C_extra.dtsi"
             #include "./features/hands_down/layers_C_extra_linwin.dtsi"
         #endif

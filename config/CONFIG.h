@@ -39,3 +39,6 @@
 
 /* Uncoment to enable the experiment layer */
 // #define EXPERIMENT
+
+/* Uncoment to enable the rhodium variant */
+// #define RHODIUM
