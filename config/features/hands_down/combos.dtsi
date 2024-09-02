@@ -12,8 +12,8 @@
 
 
 /*********** Missing Alpha Letters **************/
-COMBO_LAY_TWO_HAND(l_alpha_aks, typeQ,           &bk Q,                             LT4 LT3                                   ) // Works well with 'cmd + q', and it's quite close to 'cmd + w'
-COMBO_LAY_TWO_HAND(l_alpha_aks, typeZ,           &bk Z,                                 LT3 LT2 LT1                           ) // Works well for typing 'zoom'
+COMBO_LAY_TWO_HAND(l_alpha_aks, typeQ,           &bk Q,                                 LT3 LT2                               ) // Works well with 'cmd + q', and it's quite close to 'cmd + w'
+COMBO_LAY_TWO_HAND(l_alpha_aks, typeZ,           &bk Z,                                     LT2 LT1                           ) // Works well for typing 'zoom'
 // /* Uses Sound + Symetry */
 // COMBO_LAY_TWO_HAND(l_alpha_aks, typeQ,           &lk_qu Q U,                                    LB1           RB1             ) // Think: "qU" (Combo on U)
 // COMBO_LAY_TWO_HAND(l_alpha_aks, typeZ,           &bk Z,                                 LM3                           RM3     ) // Think: "zI" (Combo on I)
