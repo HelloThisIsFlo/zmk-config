@@ -27,7 +27,6 @@ COMBO_ANY_ONE_HAND(             entr2,           &bk RETURN,                    
 COMBO_ANY_ONE_HAND(             tab,             tabCmdtab,                                     LB1 LB0                       )
 COMBO_ANY_NON_ADJC(             esc,             &bk ESC,                               LM3     LM1                           )
 COMBO_ANY_ONE_HAND(             esc2,            &bk ESC,                                   LB2 LB1                           )
-COMBO_ANY_ONE_HAND(             undo,            &bk LG(Z),                         LB4 LB3                                   ) // TODO: Do 'redo' as Linger Key
 
 
 
@@ -39,6 +38,12 @@ COMBO_ANY_NON_ADJC(                         delWord,         &bk LA(BSPC),      
 COMBO_LAY_ONE_HAND(l_nav l_num l_nav_linwin, bspcTrans,       &bk BSPC,                              LM3 LM2                               ) // Transposed for one-hand use (not symetry because that would reverse the 'delete' direction)
 COMBO_LAY_ONE_HAND(l_nav l_num l_nav_linwin, delTrans,        &bk DEL,                                   LM2 LM1                           ) // Transposed for one-hand use (not symetry because that would reverse the 'delete' direction)
 COMBO_LAY_NON_ADJC(l_nav l_num l_nav_linwin, delWordTrans,    &bk LA(BSPC),                          LM3 LM2 LM1                           ) // Transposed for one-hand use (not symetry because that would reverse the 'delete' direction)
+
+
+
+/********************** UI actions ************************/
+COMBO_ANY_ONE_HAND(             undo,            &bk LG(Z),                         LB4 LB3                                   ) // TODO: Do 'redo' as Linger Key
+COMBO_ANY_ONE_HAND( magicCloseQuitCb,       magicCloseQuit,                             LB3 LB2 LB1                           )
 
 
 

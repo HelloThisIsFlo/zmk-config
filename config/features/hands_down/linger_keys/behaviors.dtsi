@@ -21,6 +21,11 @@ LK(magicArrowR, &arrowRightSingle, &arrowRightDouble)
 #define magicArrowL  &lk_magicArrowL XXX XXX
 #define magicArrowR  &lk_magicArrowR XXX XXX
 
+LK(magicCloseQuit, &closeTab, &quitApp)
+LK(magicCloseQuitLinWin, &closeTabLinWin, &quitAppLinWin)
+#define magicCloseQuit  &lk_magicCloseQuit XXX XXX
+#define magicCloseQuitLinWin  &lk_magicCloseQuitLinWin XXX XXX
+
 LK(magicSwitchSpaceL, &switchSpaceLinwinL, &switchSpaceL_toBase)
 LK(magicSwitchSpaceR, &switchSpaceR,       &switchSpaceR_toLinwin)
 #define magicSwitchSpaceL  &lk_magicSwitchSpaceL XXX XXX

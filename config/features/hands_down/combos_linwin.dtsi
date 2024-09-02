@@ -8,8 +8,9 @@ If I do end up separating them, make sure to create one alpha layer for each, pr
 
 */
 
-//XXXXXXXXXXXXXXXXXXXXXXXXXXXXX     XXXXXXXXXXXXX          XXXXXXXXXXXXXXXXXXXXXXXXXXXX       L_4 L_3 L_2 L_1 L_0   R_0 R_1 R_2 R_3 R_4 )
-COMBO_LAY_ONE_HAND(l_alpha_linwin,  undo_linwin,           &bk LC(Z),                         LB4 LB3                                   )
-COMBO_LAY_NON_ADJC(l_alpha_linwin,  delWord_linwin,        &bk LC(BSPC),                                                RM1 RM2 RM3     )
-COMBO_LAY_NON_ADJC(l_nav_linwin,    delWordTrans_linwin,   &bk LC(BSPC),                          LM3 LM2 LM1                           ) // Transposed for one-hand use (not symetry because that would reverse the 'delete' direction)
-COMBO_LAY_ONE_HAND(l_alpha_linwin,  tab_linwin,            tabAlttab,                                     LB1 LB0                       )
+//XXXXXXXXXXXXXXXXXXXXXXXXXXXXX     XXXXXXXXXXXXX             XXXXXXXXXXXXXXXXXXXXXXXXXXXX       L_4 L_3 L_2 L_1 L_0   R_0 R_1 R_2 R_3 R_4 )
+COMBO_LAY_ONE_HAND(l_alpha_linwin,  undo_linwin,              &bk LC(Z),                         LB4 LB3                                   )
+COMBO_LAY_NON_ADJC(l_alpha_linwin,  delWord_linwin,           &bk LC(BSPC),                                                RM1 RM2 RM3     )
+COMBO_LAY_NON_ADJC(l_nav_linwin,    delWordTrans_linwin,      &bk LC(BSPC),                          LM3 LM2 LM1                           ) // Transposed for one-hand use (not symetry because that would reverse the 'delete' direction)
+COMBO_LAY_ONE_HAND(l_alpha_linwin,  tab_linwin,               tabAlttab,                                     LB1 LB0                       )
+COMBO_LAY_ONE_HAND(l_alpha_linwin,  magicCloseQuitCb_linwin,  magicCloseQuitLinWin,                  LB3 LB2 LB1                           )

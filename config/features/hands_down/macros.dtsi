@@ -23,6 +23,11 @@ TYPING_MACRO(arrowRightSingle, &kp SPACE &kp MINUS &kp GREATER_THAN &kp SPACE)
 TYPING_MACRO(arrowLeftDouble,  &kp SPACE &kp LESS_THAN &kp EQUAL &kp SPACE)
 TYPING_MACRO(arrowRightDouble, &kp SPACE &kp EQUAL &kp GREATER_THAN &kp SPACE)
 
+TYPING_MACRO(closeTab, &kp LG(W))
+TYPING_MACRO(quitApp,  &kp LG(Q))
+TYPING_MACRO(closeTabLinWin, &kp LC(W))
+TYPING_MACRO(quitAppLinWin,  &kp LC(Q))
+
 TYPING_MACRO(previous,  &kp LG(LEFT_BRACKET))
 TYPING_MACRO(next,      &kp LG(RIGHT_BRACKET))
 // These two are set as an alias instead of a macro, so it can be held for key-repeat
