@@ -36,6 +36,7 @@ hml: homerow_mods_left { // use on left hand to mod right
     tapping-term-ms = <my_tapping_term_main>;
     hold-trigger-key-positions = <THUMBS KEYS_R>;
     hold-trigger-on-release;
+    hold-while-undecided;
     flavor = "balanced";
     bindings = <&kp>, <&bk>;
 };
@@ -47,6 +48,7 @@ hml_S: hml_S {
     tapping-term-ms = <my_tapping_term_main>;
     hold-trigger-key-positions = <THUMBS KEYS_R>;
     hold-trigger-on-release;
+    hold-while-undecided;
     flavor = "balanced";
     bindings = <&kp>, <&ak_S_macro>;
 };
@@ -58,6 +60,7 @@ hml_C: hml_C {
     tapping-term-ms = <my_tapping_term_main>;
     hold-trigger-key-positions = <THUMBS KEYS_R>;
     hold-trigger-on-release;
+    hold-while-undecided;
     flavor = "balanced";
     bindings = <&kp>, <&ak_C_macro>;
 };
@@ -69,6 +72,7 @@ hml_N: hml_N {
     tapping-term-ms = <my_tapping_term_main>;
     hold-trigger-key-positions = <THUMBS KEYS_R>;
     hold-trigger-on-release;
+    hold-while-undecided;
     flavor = "balanced";
     bindings = <&kp>, <&ak_N_macro>;
 };
@@ -80,6 +84,7 @@ hml_T: hml_T {
     tapping-term-ms = <my_tapping_term_main>;
     hold-trigger-key-positions = <THUMBS KEYS_R>;
     hold-trigger-on-release;
+    hold-while-undecided;
     flavor = "balanced";
     bindings = <&kp>, <&ak_T_macro>;
 };
@@ -91,6 +96,7 @@ hmr: homerow_mods_right { // use on right hand to mod left
     tapping-term-ms = <my_tapping_term_main>;
     hold-trigger-key-positions = <THUMBS KEYS_L>;
     hold-trigger-on-release;
+    hold-while-undecided;
     flavor = "balanced";
     bindings = <&kp>, <&bk>;
 };
@@ -102,6 +108,7 @@ hmr_A: hmr_A {
     tapping-term-ms = <my_tapping_term_main>;
     hold-trigger-key-positions = <THUMBS KEYS_L>;
     hold-trigger-on-release;
+    hold-while-undecided;
     flavor = "balanced";
     bindings = <&kp>, <&ak_A_macro>;
 };
@@ -113,6 +120,7 @@ hmr_E: hmr_E {
     tapping-term-ms = <my_tapping_term_main>;
     hold-trigger-key-positions = <THUMBS KEYS_L>;
     hold-trigger-on-release;
+    hold-while-undecided;
     flavor = "balanced";
     bindings = <&kp>, <&ak_E_macro>;
 };
@@ -124,6 +132,7 @@ hmr_M: hmr_M {
     tapping-term-ms = <my_tapping_term_main>;
     hold-trigger-key-positions = <THUMBS KEYS_L>;
     hold-trigger-on-release;
+    hold-while-undecided;
     flavor = "balanced";
     bindings = <&kp>, <&ak_M_macro>;
 };
@@ -135,6 +144,7 @@ hmr_M: hmr_M {
 //     tapping-term-ms = <my_tapping_term_main>;
 //     hold-trigger-key-positions = <THUMBS KEYS_L>;
 //     hold-trigger-on-release;
+//     hold-while-undecided;
 //     flavor = "balanced";
 //     bindings = <&kp>, <&ak_I_macro>;
 // };
