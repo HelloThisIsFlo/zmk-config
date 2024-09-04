@@ -16,7 +16,7 @@ bsklt: bsklt {
 //     #binding-cells = <2>;
 //     tapping-term-ms = <my_tapping_term_main>;
 //     flavor = "tap-preferred";
-//     bindings = <&kp>, <&bk>;
+//     bindings = <&bm>, <&bk>;
 // };
 
 // TODO: Use Bsk here (after doing supporting 'hold' in bk and bsk macros). Actually maybe it doesn't matter, I don't think the out of order issue would be a problem with modifiers (but why not, let's make it consistent with the rest)
@@ -38,7 +38,7 @@ hml: homerow_mods_left { // use on left hand to mod right
     hold-trigger-on-release;
     hold-while-undecided;
     flavor = "balanced";
-    bindings = <&kp>, <&bk>;
+    bindings = <&bm>, <&bk>;
 };
 ZMK_MACRO(ak_S_macro, wait-ms = <0>; tap-ms = <0>; bindings = <&ak l_akS S>;)
 hml_S: hml_S {
@@ -50,7 +50,7 @@ hml_S: hml_S {
     hold-trigger-on-release;
     hold-while-undecided;
     flavor = "balanced";
-    bindings = <&kp>, <&ak_S_macro>;
+    bindings = <&bm>, <&ak_S_macro>;
 };
 ZMK_MACRO(ak_C_macro, wait-ms = <0>; tap-ms = <0>; bindings = <&ak l_akC C>;)
 hml_C: hml_C {
@@ -62,7 +62,7 @@ hml_C: hml_C {
     hold-trigger-on-release;
     hold-while-undecided;
     flavor = "balanced";
-    bindings = <&kp>, <&ak_C_macro>;
+    bindings = <&bm>, <&ak_C_macro>;
 };
 ZMK_MACRO(ak_N_macro, wait-ms = <0>; tap-ms = <0>; bindings = <&ak l_akN N>;)
 hml_N: hml_N {
@@ -74,7 +74,7 @@ hml_N: hml_N {
     hold-trigger-on-release;
     hold-while-undecided;
     flavor = "balanced";
-    bindings = <&kp>, <&ak_N_macro>;
+    bindings = <&bm>, <&ak_N_macro>;
 };
 ZMK_MACRO(ak_T_macro, wait-ms = <0>; tap-ms = <0>; bindings = <&ak l_akT T>;)
 hml_T: hml_T {
@@ -86,7 +86,7 @@ hml_T: hml_T {
     hold-trigger-on-release;
     hold-while-undecided;
     flavor = "balanced";
-    bindings = <&kp>, <&ak_T_macro>;
+    bindings = <&bm>, <&ak_T_macro>;
 };
 
 hmr: homerow_mods_right { // use on right hand to mod left
@@ -98,7 +98,7 @@ hmr: homerow_mods_right { // use on right hand to mod left
     hold-trigger-on-release;
     hold-while-undecided;
     flavor = "balanced";
-    bindings = <&kp>, <&bk>;
+    bindings = <&bm>, <&bk>;
 };
 ZMK_MACRO(ak_A_macro, wait-ms = <0>; tap-ms = <0>; bindings = <&ak l_akA A>;)
 hmr_A: hmr_A {
@@ -110,7 +110,7 @@ hmr_A: hmr_A {
     hold-trigger-on-release;
     hold-while-undecided;
     flavor = "balanced";
-    bindings = <&kp>, <&ak_A_macro>;
+    bindings = <&bm>, <&ak_A_macro>;
 };
 ZMK_MACRO(ak_E_macro, wait-ms = <0>; tap-ms = <0>; bindings = <&ak l_akE E>;)
 hmr_E: hmr_E {
@@ -122,7 +122,7 @@ hmr_E: hmr_E {
     hold-trigger-on-release;
     hold-while-undecided;
     flavor = "balanced";
-    bindings = <&kp>, <&ak_E_macro>;
+    bindings = <&bm>, <&ak_E_macro>;
 };
 ZMK_MACRO(ak_M_macro, wait-ms = <0>; tap-ms = <0>; bindings = <&ak l_akM M>;)
 hmr_M: hmr_M {
@@ -134,7 +134,7 @@ hmr_M: hmr_M {
     hold-trigger-on-release;
     hold-while-undecided;
     flavor = "balanced";
-    bindings = <&kp>, <&ak_M_macro>;
+    bindings = <&bm>, <&ak_M_macro>;
 };
 // ZMK_MACRO(ak_I_macro, wait-ms = <0>; tap-ms = <0>; bindings = <&ak l_akI I>;)
 // hmr_I: hmr_I {
@@ -146,5 +146,5 @@ hmr_M: hmr_M {
 //     hold-trigger-on-release;
 //     hold-while-undecided;
 //     flavor = "balanced";
-//     bindings = <&kp>, <&ak_I_macro>;
+//     bindings = <&bm>, <&ak_I_macro>;
 // };
