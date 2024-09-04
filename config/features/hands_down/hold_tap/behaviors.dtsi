@@ -34,7 +34,7 @@ hml: homerow_mods_left { // use on left hand to mod right
     label = "homerow_mods_left";
     #binding-cells = <2>;
     tapping-term-ms = <my_tapping_term_main>;
-    hold-trigger-key-positions = <THUMBS KEYS_R>;
+    hold-trigger-key-positions = <THUMBS_R KEYS_R>;
     hold-trigger-on-release;
     hold-while-undecided;
     flavor = "balanced";
@@ -46,7 +46,7 @@ hml_S: hml_S {
     label = "hml_S";
     #binding-cells = <2>;
     tapping-term-ms = <my_tapping_term_main>;
-    hold-trigger-key-positions = <THUMBS KEYS_R>;
+    hold-trigger-key-positions = <THUMBS_R KEYS_R>;
     hold-trigger-on-release;
     hold-while-undecided;
     flavor = "balanced";
@@ -58,7 +58,7 @@ hml_C: hml_C {
     label = "hml_C";
     #binding-cells = <2>;
     tapping-term-ms = <my_tapping_term_main>;
-    hold-trigger-key-positions = <THUMBS KEYS_R>;
+    hold-trigger-key-positions = <THUMBS_R KEYS_R>;
     hold-trigger-on-release;
     hold-while-undecided;
     flavor = "balanced";
@@ -70,7 +70,7 @@ hml_N: hml_N {
     label = "hml_N";
     #binding-cells = <2>;
     tapping-term-ms = <my_tapping_term_main>;
-    hold-trigger-key-positions = <THUMBS KEYS_R>;
+    hold-trigger-key-positions = <THUMBS_R KEYS_R>;
     hold-trigger-on-release;
     hold-while-undecided;
     flavor = "balanced";
@@ -82,7 +82,7 @@ hml_T: hml_T {
     label = "hml_T";
     #binding-cells = <2>;
     tapping-term-ms = <my_tapping_term_main>;
-    hold-trigger-key-positions = <THUMBS KEYS_R>;
+    hold-trigger-key-positions = <THUMBS_R KEYS_R>;
     hold-trigger-on-release;
     hold-while-undecided;
     flavor = "balanced";
@@ -94,7 +94,7 @@ hmr: homerow_mods_right { // use on right hand to mod left
     label = "homerow_mods_right";
     #binding-cells = <2>;
     tapping-term-ms = <my_tapping_term_main>;
-    hold-trigger-key-positions = <THUMBS KEYS_L>;
+    hold-trigger-key-positions = <THUMBS_L KEYS_L>;
     hold-trigger-on-release;
     hold-while-undecided;
     flavor = "balanced";
@@ -106,7 +106,7 @@ hmr_A: hmr_A {
     label = "hmr_A";
     #binding-cells = <2>;
     tapping-term-ms = <my_tapping_term_main>;
-    hold-trigger-key-positions = <THUMBS KEYS_L>;
+    hold-trigger-key-positions = <THUMBS_L KEYS_L>;
     hold-trigger-on-release;
     hold-while-undecided;
     flavor = "balanced";
@@ -118,7 +118,7 @@ hmr_E: hmr_E {
     label = "hmr_E";
     #binding-cells = <2>;
     tapping-term-ms = <my_tapping_term_main>;
-    hold-trigger-key-positions = <THUMBS KEYS_L>;
+    hold-trigger-key-positions = <THUMBS_L KEYS_L>;
     hold-trigger-on-release;
     hold-while-undecided;
     flavor = "balanced";
@@ -130,7 +130,7 @@ hmr_M: hmr_M {
     label = "hmr_M";
     #binding-cells = <2>;
     tapping-term-ms = <my_tapping_term_main>;
-    hold-trigger-key-positions = <THUMBS KEYS_L>;
+    hold-trigger-key-positions = <THUMBS_L KEYS_L>;
     hold-trigger-on-release;
     hold-while-undecided;
     flavor = "balanced";
@@ -142,7 +142,7 @@ hmr_M: hmr_M {
 //     label = "hmr_I";
 //     #binding-cells = <2>;
 //     tapping-term-ms = <my_tapping_term_main>;
-//     hold-trigger-key-positions = <THUMBS KEYS_L>;
+//     hold-trigger-key-positions = <THUMBS_L KEYS_L>;
 //     hold-trigger-on-release;
 //     hold-while-undecided;
 //     flavor = "balanced";
