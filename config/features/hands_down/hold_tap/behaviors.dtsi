@@ -10,14 +10,14 @@ bsklt: bsklt {
 };
 
 /******************** Home Row Mods **********************/
-hm: homerow_mods { // use on either hand
-    compatible = "zmk,behavior-hold-tap";
-    label = "homerow_mods";
-    #binding-cells = <2>;
-    tapping-term-ms = <my_tapping_term_main>;
-    flavor = "tap-preferred";
-    bindings = <&kp>, <&bk>;
-};
+// hm: homerow_mods { // use on either hand
+//     compatible = "zmk,behavior-hold-tap";
+//     label = "homerow_mods";
+//     #binding-cells = <2>;
+//     tapping-term-ms = <my_tapping_term_main>;
+//     flavor = "tap-preferred";
+//     bindings = <&kp>, <&bk>;
+// };
 
 // TODO: Use Bsk here (after doing supporting 'hold' in bk and bsk macros). Actually maybe it doesn't matter, I don't think the out of order issue would be a problem with modifiers (but why not, let's make it consistent with the rest)
 hrmSk: hrmSk {
@@ -25,7 +25,7 @@ hrmSk: hrmSk {
     label = "homerow_mods_sk";
     #binding-cells = <2>;
     tapping-term-ms = <my_tapping_term_main>;
-    flavor = "tap-preferred";
+    flavor = "balanced";
     bindings = <&sk>, <&bk>;
 };
 
@@ -34,7 +34,9 @@ hml: homerow_mods_left { // use on left hand to mod right
     label = "homerow_mods_left";
     #binding-cells = <2>;
     tapping-term-ms = <my_tapping_term_main>;
-    flavor = "tap-preferred";
+    hold-trigger-key-positions = <THUMBS KEYS_R>;
+    hold-trigger-on-release;
+    flavor = "balanced";
     bindings = <&kp>, <&bk>;
 };
 ZMK_MACRO(ak_S_macro, wait-ms = <0>; tap-ms = <0>; bindings = <&ak l_akS S>;)
@@ -43,7 +45,9 @@ hml_S: hml_S {
     label = "hml_S";
     #binding-cells = <2>;
     tapping-term-ms = <my_tapping_term_main>;
-    flavor = "tap-preferred";
+    hold-trigger-key-positions = <THUMBS KEYS_R>;
+    hold-trigger-on-release;
+    flavor = "balanced";
     bindings = <&kp>, <&ak_S_macro>;
 };
 ZMK_MACRO(ak_C_macro, wait-ms = <0>; tap-ms = <0>; bindings = <&ak l_akC C>;)
@@ -52,7 +56,9 @@ hml_C: hml_C {
     label = "hml_C";
     #binding-cells = <2>;
     tapping-term-ms = <my_tapping_term_main>;
-    flavor = "tap-preferred";
+    hold-trigger-key-positions = <THUMBS KEYS_R>;
+    hold-trigger-on-release;
+    flavor = "balanced";
     bindings = <&kp>, <&ak_C_macro>;
 };
 ZMK_MACRO(ak_N_macro, wait-ms = <0>; tap-ms = <0>; bindings = <&ak l_akN N>;)
@@ -61,7 +67,9 @@ hml_N: hml_N {
     label = "hml_N";
     #binding-cells = <2>;
     tapping-term-ms = <my_tapping_term_main>;
-    flavor = "tap-preferred";
+    hold-trigger-key-positions = <THUMBS KEYS_R>;
+    hold-trigger-on-release;
+    flavor = "balanced";
     bindings = <&kp>, <&ak_N_macro>;
 };
 ZMK_MACRO(ak_T_macro, wait-ms = <0>; tap-ms = <0>; bindings = <&ak l_akT T>;)
@@ -70,7 +78,9 @@ hml_T: hml_T {
     label = "hml_T";
     #binding-cells = <2>;
     tapping-term-ms = <my_tapping_term_main>;
-    flavor = "tap-preferred";
+    hold-trigger-key-positions = <THUMBS KEYS_R>;
+    hold-trigger-on-release;
+    flavor = "balanced";
     bindings = <&kp>, <&ak_T_macro>;
 };
 
@@ -79,7 +89,9 @@ hmr: homerow_mods_right { // use on right hand to mod left
     label = "homerow_mods_right";
     #binding-cells = <2>;
     tapping-term-ms = <my_tapping_term_main>;
-    flavor = "tap-preferred";
+    hold-trigger-key-positions = <THUMBS KEYS_L>;
+    hold-trigger-on-release;
+    flavor = "balanced";
     bindings = <&kp>, <&bk>;
 };
 ZMK_MACRO(ak_A_macro, wait-ms = <0>; tap-ms = <0>; bindings = <&ak l_akA A>;)
@@ -88,7 +100,9 @@ hmr_A: hmr_A {
     label = "hmr_A";
     #binding-cells = <2>;
     tapping-term-ms = <my_tapping_term_main>;
-    flavor = "tap-preferred";
+    hold-trigger-key-positions = <THUMBS KEYS_L>;
+    hold-trigger-on-release;
+    flavor = "balanced";
     bindings = <&kp>, <&ak_A_macro>;
 };
 ZMK_MACRO(ak_E_macro, wait-ms = <0>; tap-ms = <0>; bindings = <&ak l_akE E>;)
@@ -97,7 +111,9 @@ hmr_E: hmr_E {
     label = "hmr_E";
     #binding-cells = <2>;
     tapping-term-ms = <my_tapping_term_main>;
-    flavor = "tap-preferred";
+    hold-trigger-key-positions = <THUMBS KEYS_L>;
+    hold-trigger-on-release;
+    flavor = "balanced";
     bindings = <&kp>, <&ak_E_macro>;
 };
 ZMK_MACRO(ak_M_macro, wait-ms = <0>; tap-ms = <0>; bindings = <&ak l_akM M>;)
@@ -106,7 +122,9 @@ hmr_M: hmr_M {
     label = "hmr_M";
     #binding-cells = <2>;
     tapping-term-ms = <my_tapping_term_main>;
-    flavor = "tap-preferred";
+    hold-trigger-key-positions = <THUMBS KEYS_L>;
+    hold-trigger-on-release;
+    flavor = "balanced";
     bindings = <&kp>, <&ak_M_macro>;
 };
 // ZMK_MACRO(ak_I_macro, wait-ms = <0>; tap-ms = <0>; bindings = <&ak l_akI I>;)
@@ -115,6 +133,8 @@ hmr_M: hmr_M {
 //     label = "hmr_I";
 //     #binding-cells = <2>;
 //     tapping-term-ms = <my_tapping_term_main>;
-//     flavor = "tap-preferred";
+//     hold-trigger-key-positions = <THUMBS KEYS_L>;
+//     hold-trigger-on-release;
+//     flavor = "balanced";
 //     bindings = <&kp>, <&ak_I_macro>;
 // };
