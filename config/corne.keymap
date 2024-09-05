@@ -36,6 +36,7 @@
     macros {
         #include "./features/hands_down/macros.dtsi"
         #include "./features/hands_down/adaptive_keys/macros.dtsi"
+        #include "./features/hands_down/hold_tap/macros.dtsi"
         #include "./features/hands_down/h_digraphs/macros.dtsi"
         #include "./features/hands_down/pronouns/macros.dtsi"
 

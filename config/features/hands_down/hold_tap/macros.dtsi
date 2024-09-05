@@ -1,0 +1,11 @@
+// Make SHIFT disable the mods layer, so it doens't break the flow when needing to capitalize a letter.
+// It works because shift is always the last modifier pressed (when rolling inwards)
+shiftAndDisableModsLayer: shiftAndDisableModsLayer {
+        compatible = "zmk,behavior-macro-one-param";
+        #binding-cells = <1>;
+        wait-ms = <0>;
+        tap-ms = <TEMP_macro_tap_time>;
+        bindings =
+                <&macro_tap &skm LSHIFT>,
+                <&macro_release &mo l_sym>; // TODO: Update layer here
+};

@@ -37,9 +37,12 @@ ________       leftWord     &kp DOWN    rightWord  ________                     
                         bindings = <
 
 // Maybe put l_sym next to SHIFT on both sides, and keep thum for navigation and/or shortcut layer(s)
+// TODO: Add for linwin (and need extra mod layer for linwin, and changing the layer switch on the base layer)
 
-________      ________      ________      ________      ________                   ________      ________      ________      ________      &bk PLUS
 ________      ________      ________      ________      ________                   ________      ________      ________      ________      ________
+// &htm LCTRL    &htm LALT     &htm LGUI     &htm LSHIFT   ________                   ________      &htm LSHIFT   &htm LGUI     &htm LALT     &htm LCTRL
+&htm LCTRL LCTRL    &htm LALT LALT    &htm LGUI LGUI    &htms LSHIFT LSHIFT  ________                   ________      &htms LSHIFT LSHIFT  &htm LGUI LGUI    &htm LALT LALT    &htm LCTRL LCTRL
+
 ________      ________      ________      ________      ________                   ________      ________      ________      ________      ________
                                 ________      ________      ________            ________      ________      ________
 

@@ -1,4 +1,59 @@
 
+skm: sticky_key_mod {
+        compatible = "zmk,behavior-sticky-key";
+        #binding-cells = <1>;
+        bindings = <&kp>;
+        // release-after-ms = <sticky_key_release_timeout_long>;
+        release-after-ms = <1500>;
+        // quick-release;
+        // lazy;
+        ignore-modifiers;
+};
+
+skms: sticky_key_mod_shift { 
+        compatible = "zmk,behavior-sticky-key";
+        #binding-cells = <1>;
+        bindings = <&kp>;
+        // release-after-ms = <sticky_key_release_timeout_long>;
+        release-after-ms = <1500>;
+        // quick-release;
+        // lazy;
+        /delete-property/ ignore-modifiers;
+};
+
+slm: sticky_layer_mods {
+        compatible = "zmk,behavior-sticky-key";
+        #binding-cells = <1>;
+        bindings = <&mo>;
+        release-after-ms = <200>;
+        // quick-release;
+        // lazy;
+        ignore-modifiers;
+};
+
+
+htm: hold_tap_mod {
+    compatible = "zmk,behavior-hold-tap";
+    #binding-cells = <2>;
+    tapping-term-ms = <500>;
+    flavor = "tap-preferred";
+    bindings = <&bm>, <&skm>; // I tried to use 'modAndExtendTimeout' here, but didn't work. BEFORE CONTINUING => Create a clean commit!!
+    hold-while-undecided;
+    hold-while-undecided-linger;
+};
+
+htms: hold_tap_mod_shift {
+    compatible = "zmk,behavior-hold-tap";
+    #binding-cells = <2>;
+    tapping-term-ms = <500>;
+    flavor = "tap-preferred";
+    bindings = <&bm>, <&shiftAndDisableModsLayer>;
+    hold-while-undecided;
+    hold-while-undecided-linger;
+};
+
+
+
 // Using balanced because the thumb won't be included in a rolling combo, and 'balanced' has the advantage to make the 'mo' layer feel more responsive. Also, the tap (sk) is the 'dangerous' action, as opposed to the home-row-mods (where tap is the 'safe' action).
 bsklt: bsklt {
     compatible = "zmk,behavior-hold-tap";

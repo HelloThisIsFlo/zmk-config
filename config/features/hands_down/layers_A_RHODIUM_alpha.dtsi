@@ -16,7 +16,8 @@ Based on: Hands-Down Neu Vibranium B
 
 sqtdqt        ak_B         ak_H         ak_G            ________                      &SlashHash   dotcol        &DashEqual  ak_J        ak_X
 
-hml_LCTRL_C   hml_LALT_S   hml_LGUI_N   hml_LSHIFT_T    ak_K                          comsemi      hmr_LSHIFT_A  hmr_LGUI_E  &hmr LALT I &hmr LCTRL M
+// hml_LCTRL_C   hml_LALT_S   hml_LGUI_N   hml_LSHIFT_T    ak_K                          comsemi      hmr_LSHIFT_A  hmr_LGUI_E  &hmr LALT I &hmr LCTRL M
+ak_C          ak_S         ak_N         ak_T            ak_K                             comsemi      ak_A          ak_E        &bk I    &bk M
 
 ak_P          ak_F         ak_L         ak_D            ak_V                          &UnderStar      ak_U          ak_O        ak_Y        ak_W
 
@@ -25,7 +26,8 @@ ak_P          ak_F         ak_L         ak_D            ak_V                    
 
                      // - Removed the number layer mo from the right hand, as I was never using it.
                      // - Also removed sticky shift from the right hand, I think left hand is enough, but we'll see.
-                        &mo l_sym  &bsklt l_num LSHIFT  &blt l_nav R           &blt l_nav SPACE     &bsk RSHIFT     &togMacPc
+                        // &hrr l_sym l_sym &bsklt l_num LSHIFT  &blt l_nav R           &blt l_nav SPACE     &bsk RSHIFT     &togMacPc
+                        &slm l_sym &slm l_sym  &blt l_nav R           &blt l_nav SPACE     &bsk RSHIFT     &togMacPc
 
 
 
