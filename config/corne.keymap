@@ -74,11 +74,11 @@
 
         #include "./features/hands_down/combos.dtsi"
         #include "./features/hands_down/adaptive_keys/combos.dtsi"
-        #include "./features/hands_down/h_digraphs/combos.dtsi"
-        #include "./features/hands_down/pronouns/combos.dtsi"
+        // #include "./features/hands_down/h_digraphs/combos.dtsi"
+        // #include "./features/hands_down/pronouns/combos.dtsi"
 
-        #include "./features/hands_down/zz__INVESTIGATE__zz/diacritic/combos.dtsi"
-        #include "./features/hands_down/zz__INVESTIGATE__zz/selection/combos.dtsi"
+        // #include "./features/hands_down/zz__INVESTIGATE__zz/diacritic/combos.dtsi"
+        // #include "./features/hands_down/zz__INVESTIGATE__zz/selection/combos.dtsi"
     };
 
 
