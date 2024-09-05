@@ -10,7 +10,8 @@
     quick-release;
 };
 
-&sl {
-    release-after-ms = <sticky_key_release_timeout>;
-    // &sl are 'quick-release' by default
-};
+// // Not used at the moment
+// &sl {
+//     release-after-ms = <sticky_key_release_timeout>;
+//     // &sl are 'quick-release' by default
+// };
