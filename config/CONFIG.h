@@ -22,7 +22,7 @@
 
 // See explanation in 'adaptive_keys/combos.dtsi'
 #define ak_tap_time 10
-#define hold_key_event_delay 11 // ak_tap_time + 5ms buffer
+#define hold_key_event_delay 11 // ak_tap_time + 1ms buffer
 
 
 
