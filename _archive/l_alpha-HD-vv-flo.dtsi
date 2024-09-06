@@ -58,7 +58,7 @@ ak_X          ak_W         ak_M         ak_G            ak_K                    
 
 &bk V         ak_P         ak_L         ak_D            &SlshStar                      &MinusPlus  ak_U          ak_O        ak_Y        ak_F
 
-                        ________       &blt l_nav RETURN    &blt l_nav R        &blt l_sym SPACE  &mo l_fn  &toggle_hdvv_winPC
+                        ________       &blt l_nav RETURN    &blt l_nav R        &blt l_mod SPACE  &mo l_fn  &toggle_hdvv_winPC
                         >;
                 };
 

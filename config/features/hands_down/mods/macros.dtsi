@@ -7,5 +7,5 @@ shiftAndDisableModsLayer: shiftAndDisableModsLayer {
         tap-ms = <TEMP_macro_tap_time>;
         bindings =
                 <&macro_tap &skm LSHIFT>,
-                <&macro_release &mo l_sym>; // TODO: Update layer here
+                <&macro_release &mo l_mod>;
 };

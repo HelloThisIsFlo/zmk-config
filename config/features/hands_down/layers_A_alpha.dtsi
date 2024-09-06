@@ -25,11 +25,11 @@ ak_B          ak_P         ak_L         ak_D            ak_V                    
 
                      // - Removed the number layer mo from the right hand, as I was never using it.
                      // - Also removed sticky shift from the right hand, I think left hand is enough, but we'll see.
-                        &mo l_sym  &bsklt l_num LSHIFT  &blt l_nav R           &blt l_nav SPACE     &bsk RSHIFT     &togMacPc
+                        &mo l_mod  &bsklt l_num LSHIFT  &blt l_nav R           &blt l_nav SPACE     &bsk RSHIFT     &togMacPc
 
 
 
-                     // &mo l_num   &mo l_sym           &bksl l_nav R          &SpaceUnder  &skL RSHIFT  &togMacPc
-                     // &mo l_sym  &bsklt l_num LSHIFT  &blt l_nav R           &SpaceUnder       &mo l_fn     &togMacPc
+                     // &mo l_num   &mo l_mod           &bksl l_nav R          &SpaceUnder  &skL RSHIFT  &togMacPc
+                     // &mo l_mod  &bsklt l_num LSHIFT  &blt l_nav R           &SpaceUnder       &mo l_fn     &togMacPc
                         >;
                 };
