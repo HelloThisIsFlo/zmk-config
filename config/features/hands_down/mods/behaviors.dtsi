@@ -18,7 +18,7 @@ skms: sticky_key_mod_shift {
         release-after-ms = <1500>;
         // quick-release;
         lazy; // This is important, so it doesn't affect the mouse clicks
-        /delete-property/ ignore-modifiers;
+        // /delete-property/ ignore-modifiers; // I thought this would be a good idea, but it's not. It prevents custom shifted keys from working properly (e.g. MagicBrackets)
 };
 
 slm: sticky_layer_mods {
@@ -46,7 +46,7 @@ htls: hold_tap_layer_sticky_shift {
     compatible = "zmk,behavior-hold-tap";
     #binding-cells = <2>;
     tapping-term-ms = <90>; // Tuned: Using https://genuine-sorbet-66e2f8.netlify.app   ACTUALLY, I could use the same as the linger key timeout. But for now, let's keep it separate.
-    flavor = "tap-preferred"; // Tuned: When using shift, we may have situations where the next letter interrupts the shift. So, we want to make sure this doesn't trigger a hold.
+    flavor = "hold-preferred"; // In 99% of scenarios, when using the key as a shift, the next key is not going to interrupt. The only exception could potentially be with 'I', since it's used within a sentence, but with the current timings it hasn't been an issue so far :)
     bindings = <&mo>, <&skms>;
     hold-while-undecided;
     hold-while-undecided-linger;
