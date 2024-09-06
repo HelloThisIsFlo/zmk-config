@@ -29,7 +29,8 @@ ak_P          ak_F         ak_L         ak_D            ak_V                    
                      // - Removed the number layer mo from the right hand, as I was never using it.
                      // - Also removed sticky shift from the right hand, I think left hand is enough, but we'll see.
                         // &hrr l_mod l_mod &bsklt l_num LSHIFT  &blt l_nav R           &blt l_nav SPACE     &bsk RSHIFT     &togMacPc
-                        &slm l_mod &slm l_mod  &blt l_nav R           &blt l_nav SPACE     &bsk RSHIFT     &togMacPc
+
+                        &kp SQT      tapStickyShiftHoldModsLayer     &blt l_nav R                 &blt l_nav SPACE     &bsk RSHIFT     &togMacPc
 
 
 

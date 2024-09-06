@@ -17,7 +17,7 @@ skms: sticky_key_mod_shift {
         // release-after-ms = <sticky_key_release_timeout_long>;
         release-after-ms = <1500>;
         // quick-release;
-        // lazy;
+        lazy; // This is important, so it doesn't affect the mouse clicks
         /delete-property/ ignore-modifiers;
 };
 
@@ -42,15 +42,16 @@ htm: hold_tap_mod {
     hold-while-undecided-linger;
 };
 
-htms: hold_tap_mod_shift {
+htls: hold_tap_layer_sticky_shift {
     compatible = "zmk,behavior-hold-tap";
     #binding-cells = <2>;
-    tapping-term-ms = <500>;
-    flavor = "tap-preferred";
-    bindings = <&bm>, <&shiftAndDisableModsLayer>;
+    tapping-term-ms = <90>; // Tuned: Using https://genuine-sorbet-66e2f8.netlify.app   ACTUALLY, I could use the same as the linger key timeout. But for now, let's keep it separate.
+    flavor = "tap-preferred"; // Tuned: When using shift, we may have situations where the next letter interrupts the shift. So, we want to make sure this doesn't trigger a hold.
+    bindings = <&mo>, <&skms>;
     hold-while-undecided;
     hold-while-undecided-linger;
 };
+#define tapStickyShiftHoldModsLayer &htls l_mod LSHIFT
 
 
 

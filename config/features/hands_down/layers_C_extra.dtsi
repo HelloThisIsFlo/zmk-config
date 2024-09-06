@@ -36,11 +36,10 @@ ________       leftWord     &kp DOWN    rightWord  ________                     
                         label = "Action!";
                         bindings = <
 
-// Maybe put l_mod next to SHIFT on both sides, and keep thum for navigation and/or shortcut layer(s)
 // TODO: Add for linwin (and need extra mod layer for linwin, and changing the layer switch on the base layer)
 
 &kp LG(Q)           &kp LG(W)         ________          ________               ________                   ________      ________               ________          ________          ________
-&htm LCTRL LCTRL    &htm LALT LALT    &htm LGUI LGUI    &htms LSHIFT LSHIFT    ________                   ________      &htms LSHIFT LSHIFT    &htm LGUI LGUI    &htm LALT LALT    &htm LCTRL LCTRL
+&htm LCTRL LCTRL    &htm LALT LALT    &htm LGUI LGUI    &htm LSHIFT LSHIFT     ________                   ________      &htm LSHIFT LSHIFT     &htm LGUI LGUI    &htm LALT LALT    &htm LCTRL LCTRL
 ________            ________          ________          ________               ________                   ________      ________               ________          ________          ________
                                                         ________      ________      ________            ________      ________      ________
 
