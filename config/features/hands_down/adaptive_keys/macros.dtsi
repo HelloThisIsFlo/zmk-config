@@ -21,6 +21,8 @@ REPLACE_CHAR_WITH_BIGRAM(L, N)
 REPLACE_CHAR_WITH_BIGRAM(L, V)
 REPLACE_CHAR_WITH_BIGRAM(N, V)
 
+REPLACE_CHAR_WITH_BIGRAM(S, P)
+
 
 ak: ak {
         label = "flo,behavior-adaptive-key";
