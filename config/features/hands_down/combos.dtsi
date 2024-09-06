@@ -42,7 +42,7 @@ COMBO_LAY_NON_ADJC(l_nav l_num l_nav_linwin, delWordTrans,    &bk LA(BSPC),     
 
 
 /********************** UI actions ************************/
-COMBO_ANY_ONE_HAND(             undo,            &bk LG(Z),                         LB4 LB3                                   ) // TODO: Do 'redo' as Linger Key
+// COMBO_ANY_ONE_HAND(             undo,            &bk LG(Z),                         LB4 LB3                                   ) // TODO: Do 'redo' as Linger Key
 COMBO_ANY_ONE_HAND( magicCloseQuitCb,       magicCloseQuit,                             LB3 LB2 LB1                           )
 
 
