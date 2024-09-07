@@ -17,8 +17,8 @@ skms: sticky_key_mod_shift {
         // release-after-ms = <sticky_key_release_timeout_long>;
         release-after-ms = <1500>;
         // quick-release;
-        lazy; // This is important, so it doesn't affect the mouse clicks
-        // /delete-property/ ignore-modifiers; // I thought this would be a good idea, but it's not. It prevents custom shifted keys from working properly (e.g. MagicBrackets)
+        // lazy; // This is important, so it doesn't affect the mouse clicks UPDATE: There's a bug with the lazy feature when using mod-morph (so, disabling for now). I already created a failing test for this issue on the ZMK repo.
+        // /delete-property/ ignore-modifiers;
 };
 
 slm: sticky_layer_mods {
