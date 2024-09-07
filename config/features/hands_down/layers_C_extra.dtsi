@@ -94,6 +94,18 @@ ________       leftWord     &kp DOWN    rightWord  ________                     
                         >;
                 };
 
+                l_numsym {
+                        label = "!33+"; //
+                        bindings = <
+/* TODO: Add symbols on this layer */
+________       ________      ________     ________      ________                         ________     ________      ________     ________     ________
+&bk N1         &bk N2        &bk N3       &bk N4        &bk N5                           &bk N6       &bk N7        &bk N8       &bk N9       &bk N0 
+&bk LS(N1)     &bk LS(N2)    &bk LS(N3)   &bk LS(N4)    &bk LS(N5)                       &bk LS(N6)   &bk LS(N7)    &bk LS(N8)   &bk LS(N9)   &bk LS(N0) 
+                                        xxxxxxxx  ________  ________      ________  ________  xxxxxxxx
+                        >;
+                };
+
+
                 l_cfg {
                         label = "BIOS";
                         bindings = <
