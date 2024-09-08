@@ -12,8 +12,8 @@
 
 
 /*********** Missing Alpha Letters **************/
-COMBO_LAY_TWO_HAND(l_alpha_aks, typeQ,           &bk Q,                                 LT3 LT2                               ) // Works well with 'cmd + q', and it's quite close to 'cmd + w'
-COMBO_LAY_TWO_HAND(l_alpha_aks, typeZ,           &bk Z,                                     LT2 LT1                           ) // Works well for typing 'zoom'
+COMBO_LAY_ONE_HAND(l_alpha_aks, typeQ,           &bk Q,                                 LT3 LT2                               ) // Works well with 'cmd + q', and it's quite close to 'cmd + w'
+COMBO_LAY_ONE_HAND(l_alpha_aks, typeZ,           &bk Z,                                     LT2 LT1                           ) // Works well for typing 'zoom'
 // /* Uses Sound + Symetry */
 // COMBO_LAY_TWO_HAND(l_alpha_aks, typeQ,           &lk_qu Q U,                                    LB1           RB1             ) // Think: "qU" (Combo on U)
 // COMBO_LAY_TWO_HAND(l_alpha_aks, typeZ,           &bk Z,                                 LM3                           RM3     ) // Think: "zI" (Combo on I)
@@ -25,7 +25,7 @@ COMBO_ANY_ONE_HAND(             space,           &bk SPACE,                     
 COMBO_ANY_ONE_HAND(             entr,            &bk RETURN,                                    LM1 LM0                       )
 COMBO_ANY_ONE_HAND(             entr2,           &bk RETURN,                                              RM0 RM1             )
 COMBO_ANY_ONE_HAND(             tab,             tabCmdtab,                                     LB1 LB0                       )
-COMBO_ANY_NON_ADJC(             esc,             &bk ESC,                               LM3     LM1                           )
+// COMBO_ANY_NON_ADJC(             esc,             &bk ESC,                               LM3     LM1                           )
 COMBO_ANY_ONE_HAND(             esc2,            &bk ESC,                                   LB2 LB1                           )
 
 
@@ -64,7 +64,7 @@ COMBO_LAY_ONE_HAND(l_alpha_aks, logseqPageRef,   &logseqPageRef,                
 
 /*************** Special Behaviors *******************/
 // Note: Using the simple CAPS, doesn't work because most my computers are configured to remap CAPS to ESC
-COMBO_LAY_TWO_HAND(l_alpha_aks, capsWord,          &caps_word,                                                  RM1 RM2 RM3 RM4 )
+COMBO_LAY_NON_ADJC(l_alpha_aks, capsWord,          &caps_word,                                                  RM1 RM2 RM3 RM4 )
 
 
 

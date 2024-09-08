@@ -7,7 +7,7 @@
 #define require_prior_idle_ms 100 // NOT USED ANYMORE!! When typing at 50wpm, there is on average 240ms between keys: 1/(50*5/60000). But that was too long, so I'm trying the same as the linger_term
 #define my_ak_window 100 // I think it makes sense to have it equal to the linger term, it's the same sort of "feeling"
 #define my_combo_timeout_adjacent 14
-#define my_combo_timeout_non_adjc 20 // Tuned at 18ms, but sometimes missing the combo, so trying a bit higher. 20ms was too long, so trying again at 18ms
+#define my_combo_timeout_non_adjc 18 // Tuned at 18ms, but sometimes missing the combo, so trying a bit higher. 20ms was too long, so trying again at 18ms
 #define my_combo_timeout_two_hnds 30 // 30ms was good but sometimes it would trigger when I didn't want it to
 #define sticky_key_release_timeout 1000
 #define sticky_key_release_timeout_long 3000
