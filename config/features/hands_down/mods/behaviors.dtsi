@@ -52,6 +52,7 @@ htls: hold_tap_layer_sticky_shift {
     hold-while-undecided-linger;
 };
 #define tapStickyShiftHoldModsLayer &htls l_mod LSHIFT
+#define tapStickyShiftHoldNumsymLayer &htls l_numsym LSHIFT
 
 
 
