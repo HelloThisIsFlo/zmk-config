@@ -38,8 +38,8 @@ ________       leftWord     &kp DOWN    rightWord  ________                     
 
 // TODO: Add for linwin (and need extra mod layer for linwin, and changing the layer switch on the base layer)
 
-&kp LG(X)           &kp LG(C)         &kp LG(T)         &kp LG(V)              &kp LG(A)                  ________      ________               ________          ________          ________
-&htm LCTRL LCTRL    &htm LALT LALT    &htm LGUI LGUI    &htm LSHIFT LSHIFT     &kp LG(K)                  ________      &htm LSHIFT LSHIFT     &htm LGUI LGUI    &htm LALT LALT    &htm LCTRL LCTRL
+&kp LG(X)           &kp LG(C)         &kp LG(T)         &kp LG(V)              &kp LG(K)                  ________      ________               ________          ________          ________
+&htm LCTRL LCTRL    &htm LALT LALT    &htm LGUI LGUI    &htm LSHIFT LSHIFT     &kp LG(A)                  ________      &htm LSHIFT LSHIFT     &htm LGUI LGUI    &htm LALT LALT    &htm LCTRL LCTRL
 &kp LG(Z)           &kp LS(LG(Z))     &kp LG(W)         &kp LG(R)              &kp LG(S)                  ________      ________               ________          ________          ________
 // undo             redo
                                                         ________      ________      ________            ________      ________      ________
