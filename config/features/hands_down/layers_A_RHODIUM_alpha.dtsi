@@ -18,7 +18,9 @@ Based on: Hands-Down Neu Vibranium B
 &bk SQT       ak_B         ak_H         ak_G            ak_K                             &SlashHash   dotcol        &DashEqual  ak_J        ak_X
 
 // hml_LCTRL_C   hml_LALT_S   hml_LGUI_N   hml_LSHIFT_T    ak_K                          comsemi      hmr_LSHIFT_A  hmr_LGUI_E  &hmr LALT I &hmr LCTRL M
-ak_C          ak_S         ak_N         ak_T            ________                         comsemi      ak_A          ak_E        &bk I    &bk M
+
+//                                                      FIXME: This is temporary, until I figure out what key I want to put here (then to a ?D_to_GD)
+ak_C          ak_S         ak_N         ak_T            ak_G                             comsemi      ak_A          ak_E        &bk I    &bk M
 
 ak_P          ak_F         ak_L         ak_D            ak_V                          &UnderStar      ak_U          ak_O        ak_Y        ak_W
 
