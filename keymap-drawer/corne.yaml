@@ -1,11 +1,11 @@
-layout: {qmk_keyboard: corne_rotated, qmk_layout: LAYOUT_split_3x5_3}
+layout: {qmk_keyboard: corne_rotated, qmk_layout: LAYOUT_split_3x6_3}
 layers:
   Reality?:
-  - {t: '''', h: '"'}
+  - ''''
   - B⛶
   - H⛶
   - G⛶
-  - {t: ' ', type: trans}
+  - K⛶
   - {t: /, s: '#'}
   - {t: '&bk DOT', h: ':'}
   - {t: '-', s: '&bk EQUAL'}
@@ -15,7 +15,7 @@ layers:
   - S⛶
   - N⛶
   - T⛶
-  - K⛶
+  - G⛶
   - {t: ',', h: '&bk SEMI'}
   - A⛶
   - E⛶
@@ -31,11 +31,11 @@ layers:
   - O⛶
   - Y⛶
   - W⛶
-  - {t: =*+/, h: sticky}
-  - {t: =*+/, h: sticky}
+  - '!33+'
+  - {t: '$$mdi:apple-keyboard-shift$$', h: '&moAndBuffer 25'}
   - {t: R, h: <^v>}
-  - {t: '$$mdi:keyboard-space$$', h: <^v>}
-  - '&bsk RSHIFT'
+  - {t: '$$mdi:keyboard-space$$', h: '!33+'}
+  - Action!
   - '&togMacPc'
   rEALITY¿:
   - {t: ' ', type: trans}
@@ -82,15 +82,15 @@ layers:
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
-  - {t: ' ', type: trans}
-  - {t: ' ', type: trans}
-  - {t: ' ', type: trans}
-  - {t: ' ', type: trans}
-  - {t: ' ', type: trans}
-  - {t: ' ', type: trans}
-  - {t: ' ', type: trans}
-  - {t: ' ', type: trans}
   - U
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
   - A⛶
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
@@ -112,7 +112,7 @@ layers:
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
   Reabity?:
-  - {t: ' ', type: trans}
+  - S
   - B⛶
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
@@ -200,7 +200,7 @@ layers:
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
-  - {t: LK, s: D̶}
+  - G
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
@@ -421,7 +421,7 @@ layers:
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
-  - N
+  - {t: ' ', type: trans}
   - K⛶
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
@@ -431,7 +431,7 @@ layers:
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
-  - L
+  - {t: ' ', type: trans}
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
@@ -630,11 +630,11 @@ layers:
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
   Reslity?:
+  - F
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
   - P
   - {t: ' ', type: trans}
-  - {t: ' ', type: trans}
-  - {t: ' ', type: trans}
-  - K
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
@@ -681,7 +681,7 @@ layers:
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
   - T⛶
-  - {t: NK, s: T̶}
+  - {t: ' ', type: trans}
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
@@ -711,25 +711,25 @@ layers:
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
-  - {t: ' ', type: trans}
-  - {t: ' ', type: trans}
-  - {t: ' ', type: trans}
-  - {t: ' ', type: trans}
-  - {t: ' ', type: trans}
-  - {t: ' ', type: trans}
-  - {t: ' ', type: trans}
-  - {t: ' ', type: trans}
-  - {t: ' ', type: trans}
-  - {t: ' ', type: trans}
-  - {t: ' ', type: trans}
-  - {t: ' ', type: trans}
-  - {t: ' ', type: trans}
-  - {t: ' ', type: trans}
-  - {t: ' ', type: trans}
-  - {t: ' ', type: trans}
-  - {t: ' ', type: trans}
-  - {t: ' ', type: trans}
   - A
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
   - U⛶
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
@@ -922,45 +922,45 @@ layers:
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
   - {type: held}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  Action!:
+  - $$mdi:content-cut$$
+  - $$mdi:content-copy$$
+  - LG(T)
+  - $$mdi:content-paste$$
+  - LG(K)
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: '$$mdi:apple-keyboard-control$$', h: '$$mdi:apple-keyboard-control$$'}
+  - {t: '$$mdi:apple-keyboard-option$$', h: '$$mdi:apple-keyboard-option$$'}
+  - {t: '$$mdi:apple-keyboard-command$$', h: '$$mdi:apple-keyboard-command$$'}
+  - {t: '$$mdi:apple-keyboard-shift$$', h: '$$mdi:apple-keyboard-shift$$'}
+  - LG(A)
+  - {t: ' ', type: trans}
+  - {t: '$$mdi:apple-keyboard-shift$$', h: '$$mdi:apple-keyboard-shift$$'}
+  - {t: '$$mdi:apple-keyboard-command$$', h: '$$mdi:apple-keyboard-command$$'}
+  - {t: '$$mdi:apple-keyboard-option$$', h: '$$mdi:apple-keyboard-option$$'}
+  - {t: '$$mdi:apple-keyboard-control$$', h: '$$mdi:apple-keyboard-control$$'}
+  - $$mdi:undo$$
+  - LS(LG(Z))
+  - $$tabler:browser-x$$
+  - LG(R)
+  - LG(S)
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
   - {type: held}
-  - {t: ' ', type: trans}
-  - {t: ' ', type: trans}
-  =*+/:
-  - {t: ' ', type: trans}
-  - {t: ' ', type: trans}
-  - {t: ' ', type: trans}
-  - {t: ' ', type: trans}
-  - {t: ' ', type: trans}
-  - {t: ' ', type: trans}
-  - {t: ' ', type: trans}
-  - {t: ' ', type: trans}
-  - {t: ' ', type: trans}
-  - {t: ' ', type: trans}
-  - {t: '$$mdi:apple-keyboard-control$$', h: '&bm LCTRL'}
-  - {t: '$$mdi:apple-keyboard-option$$', h: '&bm LALT'}
-  - {t: '$$mdi:apple-keyboard-command$$', h: '&bm LGUI'}
-  - {t: '&shiftAndDisableModsLayer LSHIFT', h: '&bm LSHIFT'}
-  - {t: ' ', type: trans}
-  - {t: ' ', type: trans}
-  - {t: '&shiftAndDisableModsLayer LSHIFT', h: '&bm LSHIFT'}
-  - {t: '$$mdi:apple-keyboard-command$$', h: '&bm LGUI'}
-  - {t: '$$mdi:apple-keyboard-option$$', h: '&bm LALT'}
-  - {t: '$$mdi:apple-keyboard-control$$', h: '&bm LCTRL'}
-  - {t: ' ', type: trans}
-  - {t: ' ', type: trans}
-  - {t: ' ', type: trans}
-  - {t: ' ', type: trans}
-  - {t: ' ', type: trans}
-  - {t: ' ', type: trans}
-  - {t: ' ', type: trans}
-  - {t: ' ', type: trans}
-  - {t: ' ', type: trans}
-  - {t: ' ', type: trans}
-  - {type: held}
-  - {type: held}
-  - {t: ' ', type: trans}
-  - {t: ' ', type: trans}
-  - {t: ' ', type: trans}
   - {t: ' ', type: trans}
   F*:
   - F9
@@ -1034,6 +1034,43 @@ layers:
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: '$$mdi:cancel$$', type: none}
+  '!33+':
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - '&bk N1'
+  - '&bk N2'
+  - '&bk N3'
+  - '&bk N4'
+  - '&bk N5'
+  - '&bk N6'
+  - '&bk N7'
+  - '&bk N8'
+  - '&bk N9'
+  - '&bk N0'
+  - '&bk LS(N1)'
+  - '&bk LS(N2)'
+  - '&bk LS(N3)'
+  - '&bk LS(N4)'
+  - '&bk LS(N5)'
+  - '&bk LS(N6)'
+  - '&bk LS(N7)'
+  - '&bk LS(N8)'
+  - '&bk LS(N9)'
+  - '&bk LS(N0)'
+  - {t: '$$mdi:cancel$$', type: held}
+  - {t: ' ', type: trans}
+  - {t: ' ', type: trans}
+  - {type: held}
   - {t: ' ', type: trans}
   - {t: '$$mdi:cancel$$', type: none}
   BIOS:
@@ -1111,9 +1148,6 @@ layers:
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
 combos:
-- p: [20, 21]
-  k: '&bk LC(Z)'
-  l: [rEALITY¿]
 - p: [16, 17, 18]
   k: '&bk LC(BSPC)'
   l: [rEALITY¿]
@@ -1137,42 +1171,35 @@ combos:
 - p: [3, 4]
   k: $$mdi:keyboard-space$$
   l: ['Reality?', rEALITY¿, 'Raality?', 'Reabity?', 'Rcality?', 'Deality?', 'Reelity?', 'Realify?', 'Realitg?', 'Realjty?', 'Reakity?', 'Realily?', 'Meality?', 'Renlity?',
-    'Roality?', 'Realitp?', 'Reslity?', 'Reatity?', 'Realitu?', 'Realitv?', 'Weality?', 'Realitx?', 'Yeality?', <^v>, =*+/, F*, '1984', BIOS, '><v^']
+    'Roality?', 'Realitp?', 'Reslity?', 'Reatity?', 'Realitu?', 'Realitv?', 'Weality?', 'Realitx?', 'Yeality?', <^v>, Action!, F*, '1984', '!33+', BIOS, '><v^']
 - p: [13, 14]
   k: $$mdi:keyboard-return$$
   l: ['Reality?', rEALITY¿, 'Raality?', 'Reabity?', 'Rcality?', 'Deality?', 'Reelity?', 'Realify?', 'Realitg?', 'Realjty?', 'Reakity?', 'Realily?', 'Meality?', 'Renlity?',
-    'Roality?', 'Realitp?', 'Reslity?', 'Reatity?', 'Realitu?', 'Realitv?', 'Weality?', 'Realitx?', 'Yeality?', <^v>, =*+/, F*, '1984', BIOS, '><v^']
+    'Roality?', 'Realitp?', 'Reslity?', 'Reatity?', 'Realitu?', 'Realitv?', 'Weality?', 'Realitx?', 'Yeality?', <^v>, Action!, F*, '1984', '!33+', BIOS, '><v^']
 - p: [15, 16]
   k: $$mdi:keyboard-return$$
   l: ['Reality?', rEALITY¿, 'Raality?', 'Reabity?', 'Rcality?', 'Deality?', 'Reelity?', 'Realify?', 'Realitg?', 'Realjty?', 'Reakity?', 'Realily?', 'Meality?', 'Renlity?',
-    'Roality?', 'Realitp?', 'Reslity?', 'Reatity?', 'Realitu?', 'Realitv?', 'Weality?', 'Realitx?', 'Yeality?', <^v>, =*+/, F*, '1984', BIOS, '><v^']
+    'Roality?', 'Realitp?', 'Reslity?', 'Reatity?', 'Realitu?', 'Realitv?', 'Weality?', 'Realitx?', 'Yeality?', <^v>, Action!, F*, '1984', '!33+', BIOS, '><v^']
 - p: [23, 24]
   k: {t: '&bk TAB', h: '&bk LG(TAB)'}
   l: ['Reality?', rEALITY¿, 'Raality?', 'Reabity?', 'Rcality?', 'Deality?', 'Reelity?', 'Realify?', 'Realitg?', 'Realjty?', 'Reakity?', 'Realily?', 'Meality?', 'Renlity?',
-    'Roality?', 'Realitp?', 'Reslity?', 'Reatity?', 'Realitu?', 'Realitv?', 'Weality?', 'Realitx?', 'Yeality?', <^v>, =*+/, F*, '1984', BIOS, '><v^']
-- p: [11, 13]
-  k: $$escape$$
-  l: ['Reality?', rEALITY¿, 'Raality?', 'Reabity?', 'Rcality?', 'Deality?', 'Reelity?', 'Realify?', 'Realitg?', 'Realjty?', 'Reakity?', 'Realily?', 'Meality?', 'Renlity?',
-    'Roality?', 'Realitp?', 'Reslity?', 'Reatity?', 'Realitu?', 'Realitv?', 'Weality?', 'Realitx?', 'Yeality?', <^v>, =*+/, F*, '1984', BIOS, '><v^']
-  a: top
-  o: 1.3
-  s: -0.2
+    'Roality?', 'Realitp?', 'Reslity?', 'Reatity?', 'Realitu?', 'Realitv?', 'Weality?', 'Realitx?', 'Yeality?', <^v>, Action!, F*, '1984', '!33+', BIOS, '><v^']
 - p: [22, 23]
   k: '&bk ESC'
   l: ['Reality?', rEALITY¿, 'Raality?', 'Reabity?', 'Rcality?', 'Deality?', 'Reelity?', 'Realify?', 'Realitg?', 'Realjty?', 'Reakity?', 'Realily?', 'Meality?', 'Renlity?',
-    'Roality?', 'Realitp?', 'Reslity?', 'Reatity?', 'Realitu?', 'Realitv?', 'Weality?', 'Realitx?', 'Yeality?', <^v>, =*+/, F*, '1984', BIOS, '><v^']
+    'Roality?', 'Realitp?', 'Reslity?', 'Reatity?', 'Realitu?', 'Realitv?', 'Weality?', 'Realitx?', 'Yeality?', <^v>, Action!, F*, '1984', '!33+', BIOS, '><v^']
 - p: [16, 17]
   k: '&bk BSPC'
   l: ['Reality?', rEALITY¿, 'Raality?', 'Reabity?', 'Rcality?', 'Deality?', 'Reelity?', 'Realify?', 'Realitg?', 'Realjty?', 'Reakity?', 'Realily?', 'Meality?', 'Renlity?',
-    'Roality?', 'Realitp?', 'Reslity?', 'Reatity?', 'Realitu?', 'Realitv?', 'Weality?', 'Realitx?', 'Yeality?', <^v>, =*+/, F*, '1984', BIOS, '><v^']
+    'Roality?', 'Realitp?', 'Reslity?', 'Reatity?', 'Realitu?', 'Realitv?', 'Weality?', 'Realitx?', 'Yeality?', <^v>, Action!, F*, '1984', '!33+', BIOS, '><v^']
 - p: [17, 18]
   k: '&bk DEL'
   l: ['Reality?', rEALITY¿, 'Raality?', 'Reabity?', 'Rcality?', 'Deality?', 'Reelity?', 'Realify?', 'Realitg?', 'Realjty?', 'Reakity?', 'Realily?', 'Meality?', 'Renlity?',
-    'Roality?', 'Realitp?', 'Reslity?', 'Reatity?', 'Realitu?', 'Realitv?', 'Weality?', 'Realitx?', 'Yeality?', <^v>, =*+/, F*, '1984', BIOS, '><v^']
+    'Roality?', 'Realitp?', 'Reslity?', 'Reatity?', 'Realitu?', 'Realitv?', 'Weality?', 'Realitx?', 'Yeality?', <^v>, Action!, F*, '1984', '!33+', BIOS, '><v^']
 - p: [16, 17, 18]
   k: '&bk LA(BSPC)'
   l: ['Reality?', rEALITY¿, 'Raality?', 'Reabity?', 'Rcality?', 'Deality?', 'Reelity?', 'Realify?', 'Realitg?', 'Realjty?', 'Reakity?', 'Realily?', 'Meality?', 'Renlity?',
-    'Roality?', 'Realitp?', 'Reslity?', 'Reatity?', 'Realitu?', 'Realitv?', 'Weality?', 'Realitx?', 'Yeality?', <^v>, =*+/, F*, '1984', BIOS, '><v^']
+    'Roality?', 'Realitp?', 'Reslity?', 'Reatity?', 'Realitu?', 'Realitv?', 'Weality?', 'Realitx?', 'Yeality?', <^v>, Action!, F*, '1984', '!33+', BIOS, '><v^']
 - p: [11, 12]
   k: '&bk BSPC'
   l: [<^v>, '1984', '><v^']
@@ -1182,14 +1209,10 @@ combos:
 - p: [11, 12, 13]
   k: '&bk LA(BSPC)'
   l: [<^v>, '1984', '><v^']
-- p: [20, 21]
-  k: '&bk LG(Z)'
-  l: ['Reality?', rEALITY¿, 'Raality?', 'Reabity?', 'Rcality?', 'Deality?', 'Reelity?', 'Realify?', 'Realitg?', 'Realjty?', 'Reakity?', 'Realily?', 'Meality?', 'Renlity?',
-    'Roality?', 'Realitp?', 'Reslity?', 'Reatity?', 'Realitu?', 'Realitv?', 'Weality?', 'Realitx?', 'Yeality?', <^v>, =*+/, F*, '1984', BIOS, '><v^']
 - p: [21, 22, 23]
   k: {t: '&closeTab', h: '&quitApp'}
   l: ['Reality?', rEALITY¿, 'Raality?', 'Reabity?', 'Rcality?', 'Deality?', 'Reelity?', 'Realify?', 'Realitg?', 'Realjty?', 'Reakity?', 'Realily?', 'Meality?', 'Renlity?',
-    'Roality?', 'Realitp?', 'Reslity?', 'Reatity?', 'Realitu?', 'Realitv?', 'Weality?', 'Realitx?', 'Yeality?', <^v>, =*+/, F*, '1984', BIOS, '><v^']
+    'Roality?', 'Realitp?', 'Reslity?', 'Reatity?', 'Realitu?', 'Realitv?', 'Weality?', 'Realitx?', 'Yeality?', <^v>, Action!, F*, '1984', '!33+', BIOS, '><v^']
 - p: [6, 7]
   k: '&bk EXCL'
   l: ['Reality?', rEALITY¿, 'Raality?', 'Reabity?', 'Rcality?', 'Deality?', 'Reelity?', 'Realify?', 'Realitg?', 'Realjty?', 'Reakity?', 'Realily?', 'Meality?', 'Renlity?',
@@ -1221,7 +1244,7 @@ combos:
 - p: [34, 35]
   k: BIOS
   l: ['Reality?', rEALITY¿, 'Raality?', 'Reabity?', 'Rcality?', 'Deality?', 'Reelity?', 'Realify?', 'Realitg?', 'Realjty?', 'Reakity?', 'Realily?', 'Meality?', 'Renlity?',
-    'Roality?', 'Realitp?', 'Reslity?', 'Reatity?', 'Realitu?', 'Realitv?', 'Weality?', 'Realitx?', 'Yeality?', <^v>, =*+/, F*, '1984', BIOS, '><v^']
+    'Roality?', 'Realitp?', 'Reslity?', 'Reatity?', 'Realitu?', 'Realitv?', 'Weality?', 'Realitx?', 'Yeality?', <^v>, Action!, F*, '1984', '!33+', BIOS, '><v^']
 - p: [4, 3, 2, 1, 0, 14, 13, 12, 11, 10, 24, 23, 22, 21, 20, 5, 6, 7, 8, 9, 15, 16, 17, 18, 19, 25, 26, 27, 28, 29, 32, 31, 30, 33, 34, 35]
   k: {t: '$$mdi:cancel$$', type: none}
   l: ['Reality?', rEALITY¿, 'Raality?', 'Reabity?', 'Rcality?', 'Deality?', 'Reelity?', 'Realify?', 'Realitg?', 'Realjty?', 'Reakity?', 'Realily?', 'Meality?', 'Renlity?',
