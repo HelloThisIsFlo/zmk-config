@@ -11,6 +11,9 @@
 #define my_combo_timeout_two_hnds 30 // 30ms was good but sometimes it would trigger when I didn't want it to
 #define sticky_key_release_timeout 1000
 #define sticky_key_release_timeout_long 3000
+#define action_mod_tapping_term 130 // Slightly longer than htls, to allow for rolls
+#define action_lay_tapping_term 90 // See explanation in 'htls'
+
 // Calibration Tips
 // ----------------
 // linger_term
