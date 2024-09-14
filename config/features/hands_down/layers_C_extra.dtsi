@@ -88,7 +88,7 @@ ________       leftWord     &kp DOWN    rightWord  ________                     
                         bindings = <
 /* TODO: Add symbols on this layer */
 &MinusPlus     &kp N9        &kp N8       &kp N7        &bk COLON                        &bk COLON    &kp N7        &kp N8       &kp N9       &MinusPlus
-&hml LCTRL N0  &hml RALT N6  &hml RGUI N5 &hml RSHFT N4 &bk FSLH                         &bk FSLH     &hmr RSHFT N4 &hmr RGUI N5 &hmr RALT N6 &hmr LCTRL N0
+&kp N0         &kp N6        &kp N5       &kp N4        &bk FSLH                         &bk FSLH     &kp N4        &kp N5       &kp N6       &kp N0
 &bk DOT        &kp N3        &kp N2       &kp N1        &bk STAR                         &bk STAR     &kp N1        &kp N2       &kp N3       &bk DOT
                                         xxxxxxxx  ________  ________      ________  ________  xxxxxxxx
                         >;

@@ -32,7 +32,7 @@ ak_P          ak_F         ak_L         ak_D            ak_V                    
                         // &hrr l_mod l_mod &bsklt l_num LSHIFT  &blt l_nav R           &blt l_nav SPACE     &bsk RSHIFT     &togMacPc
 
                         // &kp SQT      tapStickyShiftHoldModsLayer     &blt l_nav R                 &blt l_numsym SPACE     &mo l_numsym     &togMacPc
-                        &mo l_numsym tapStickyShiftHoldModsLayer     &blt l_nav R                 &blt l_numsym SPACE     &mo l_mod     &togMacPc
+                        &mo l_num tapStickyShiftHoldModsLayer     &blt l_nav R                 &blt l_numsym SPACE     &mo l_numsym     &togMacPc
 
 
 
