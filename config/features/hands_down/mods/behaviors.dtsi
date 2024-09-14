@@ -25,7 +25,7 @@ slm: sticky_layer_mods {
         compatible = "zmk,behavior-sticky-key";
         #binding-cells = <1>;
         bindings = <&mo>;
-        release-after-ms = <200>;
+        release-after-ms = <130>; // SAME AS htm
         // quick-release;
         // lazy;
         ignore-modifiers;
@@ -35,9 +35,9 @@ slm: sticky_layer_mods {
 htm: hold_tap_mod {
     compatible = "zmk,behavior-hold-tap";
     #binding-cells = <2>;
-    tapping-term-ms = <500>;
+    tapping-term-ms = <130>; // Slightly longer than htls, to allow for rolls
     flavor = "tap-preferred";
-    bindings = <&bm>, <&skm>; // I tried to use 'modAndExtendTimeout' here, but didn't work. BEFORE CONTINUING => Create a clean commit!!
+    bindings = <&kp>, <&skm>; // I tried to use 'modAndExtendTimeout' here, but didn't work. BEFORE CONTINUING => Create a clean commit!!
     hold-while-undecided;
     hold-while-undecided-linger;
 };
@@ -47,9 +47,10 @@ htls: hold_tap_layer_sticky_shift {
     #binding-cells = <2>;
     tapping-term-ms = <90>; // Tuned: Using https://genuine-sorbet-66e2f8.netlify.app   ACTUALLY, I could use the same as the linger key timeout. But for now, let's keep it separate.
     flavor = "hold-preferred"; // In 99% of scenarios, when using the key as a shift, the next key is not going to interrupt. The only exception could potentially be with 'I', since it's used within a sentence, but with the current timings it hasn't been an issue so far :)
-    bindings = <&mo>, <&skms>;
+    bindings = <&moAndBuffer>, <&skms>;
+    // bindings = <&mo>, <&skms>;
     hold-while-undecided;
-    hold-while-undecided-linger;
+    hold-while-undecided-linger; // FIXME: This seems to STILL call moAndBuffer twice ... but it's working for now, so let's keep it as is.
 };
 #define tapStickyShiftHoldModsLayer &htls l_mod LSHIFT
 #define tapStickyShiftHoldNumsymLayer &htls l_numsym LSHIFT
