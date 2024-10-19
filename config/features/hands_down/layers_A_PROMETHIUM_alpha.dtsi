@@ -14,9 +14,9 @@ Based on: Hands-Down Neu Vibranium B
                         label = "Reality?"; // The base layer ... ?
                         bindings = <
 
-ak_V          ak_W         ak_G         &bk M           ak_J                             &SlashHash   dotcol        &bk SQT     &DashEqual   ak_A
-ak_S          ak_N         ak_T         ak_H            ak_K                             comsemi      ak_A          ak_E        &bk I        ak_C
-ak_P          ak_F         ak_D         ak_L            ak_X                          &UnderStar      ak_U          ak_O        ak_Y         ak_B
+ak_X          ak_W         ak_G         &bk M           ak_K                             &SlashHash   dotcol        &bk SQT     &DashEqual   ak_A
+ak_S          ak_N         ak_T         ak_H            ak_J                             comsemi      ak_A          ak_E        &bk I        ak_C
+ak_P          ak_F         ak_D         ak_L            ak_V                          &UnderStar      ak_U          ak_O        ak_Y         ak_B
 
                         &mo l_num tapStickyShiftHoldModsLayer     &blt l_nav R                 &blt l_numsym SPACE     &mo l_numsym     &togMacPc
                         >;
