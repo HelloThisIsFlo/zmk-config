@@ -1,5 +1,5 @@
 
-# Flo's ZMK
+# Flo's Magic ZMK Config
 
 ## Structure
 - **`config`**: Contains almost everything
