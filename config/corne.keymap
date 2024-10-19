@@ -90,14 +90,14 @@
         #if defined EXPERIMENT
             #include "./features/__EXPERIMENT__/EXPERIMENT_LAYER.dtsi"
         #else
-            #if defined RHODIUM
-                #include "./features/hands_down/layers_A_RHODIUM_alpha.dtsi"
-                #include "./features/hands_down/layers_A_RHODIUM_alpha_linwin.dtsi"
-                #include "./features/hands_down/layers_B_RHODIUM_adaptive_keys.dtsi"
-            #elif defined PROMETHIUM
+            #if defined PROMETHIUM
                 #include "./features/hands_down/layers_A_PROMETHIUM_alpha.dtsi"
                 #include "./features/hands_down/layers_A_PROMETHIUM_alpha_linwin.dtsi"
                 #include "./features/hands_down/layers_B_PROMETHIUM_adaptive_keys.dtsi"
+            #elif defined RHODIUM
+                #include "./features/hands_down/layers_A_RHODIUM_alpha.dtsi"
+                #include "./features/hands_down/layers_A_RHODIUM_alpha_linwin.dtsi"
+                #include "./features/hands_down/layers_B_RHODIUM_adaptive_keys.dtsi"
             #else
                 #include "./features/hands_down/layers_A_alpha.dtsi"
                 #include "./features/hands_down/layers_A_alpha_linwin.dtsi"
