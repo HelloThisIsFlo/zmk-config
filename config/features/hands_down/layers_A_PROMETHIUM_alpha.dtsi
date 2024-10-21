@@ -8,7 +8,7 @@ Removed from keymap (for now ?)
 */
 
 /*
-Based on: Hands-Down Neu Vibranium B 
+Based on: Hands-Down Promethium
 */
                 l_alpha {
                         label = "Reality?"; // The base layer ... ?
@@ -16,7 +16,9 @@ Based on: Hands-Down Neu Vibranium B
 
 ak_X          ak_W         ak_G         &bk M           ak_K                             &SlashHash   dotcol        &bk SQT     &DashEqual   ak_A
 ak_S          ak_N         ak_T         ak_H            ak_J                             comsemi      ak_A          ak_E        &bk I        ak_C
-ak_P          ak_F         ak_D         ak_L            ak_V                          &UnderStar      ak_U          ak_O        ak_Y         ak_B
+ak_F          ak_P         ak_D         ak_L            ak_V                          &UnderStar      ak_U          ak_O        ak_Y         ak_B
+
+// TODO: Add linger for F->FF and P->PP | Or AK FP -> FF, ...
 
                         &mo l_num tapStickyShiftHoldModsLayer     &blt l_nav R                 &blt l_numsym SPACE     &mo l_numsym     &togMacPc
                         >;

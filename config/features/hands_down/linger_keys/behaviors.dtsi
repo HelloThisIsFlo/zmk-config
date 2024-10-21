@@ -46,6 +46,30 @@ SwitchSpaceR: <- That's the 'switch to linwin' logic
 
 
 
+// TODO: Make the repeat macro take 1 param, so I can then just define a bunch of: #define lkr_X &lrk F F
+// TYPING_MACRO(repeatF, &kp F &kp F)
+// TYPING_MACRO(singleF, &kp F)
+// LK(repeat, &ak, &repeatF)
+// lk_repeat: lk_repeat {
+//     compatible = "zmk,behavior-hold-tap";
+//     label = "lk_repeat";
+//     #binding-cells = <3>;
+//     tapping-term-ms = <linger_term>;
+//     flavor = "tap-preferred";
+//     bindings = <&repeatF>, <&ak>;
+// };
+// #define lkr_F &lk_repeat XXX <l_akF F>
+// #define lkr_F &lk_repeat XXX l_akF F
+// #define ak_H &ak l_akH H
+
+// Working, for non-AK keys
+TYPING_MACRO(repeatF, &kp F &kp F)
+TYPING_MACRO(singleF, &kp F)
+LK(repeat, &bk, &repeatF)
+#define lkr_F &lk_repeat XXX F
+
+// NOTE: Maybe I just accept that it only works with non-ak keys (for now?)
+
 
 
 
