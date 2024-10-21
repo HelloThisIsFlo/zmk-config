@@ -46,3 +46,4 @@
 /* Uncoment to enable the rhodium variant */
 #define RHODIUM
 #define PROMETHIUM
+#define NAQUADAH
