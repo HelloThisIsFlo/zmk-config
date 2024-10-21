@@ -21,8 +21,8 @@ layers:
   - E⛶
   - I
   - C⛶
-  - P⛶
   - F⛶
+  - P⛶
   - D⛶
   - L⛶
   - V⛶
@@ -280,8 +280,8 @@ layers:
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
-  - {t: ' ', type: trans}
   - F⛶
+  - F
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
   - {t: ' ', type: trans}
