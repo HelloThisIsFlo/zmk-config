@@ -6,17 +6,32 @@ from operator import itemgetter
 from bigrams import compute_bigrams
 from generate_bigrams_from_corpus import get_corpus
 
-# Define the keyboard layout as a dictionary, where each key corresponds to a finger.
+# Define the keyboard layout as a dictionary, where each key corresponds to a finger or a set of fingers.
 # Layout: Naquadah
 LAYOUT = {
-    'j': 1, 'w': 2, 'm': 3, 'p': 4, 'k': 4,
-    'c': 1, 's': 2, 'n': 3, 't': 4, 'x': 4,
-    'f': 1, 'g': 2, 'l': 3, 'd': 4, 'v': 4,
+    'j': {1}, 'w': {2}, 'm': {3}, 'p': {4}, 'k': {4},
+    'c': {1}, 's': {2}, 'n': {3}, 't': {4}, 'x': {4},
+    'f': {1}, 'g': {2}, 'l': {3}, 'd': {4}, 'v': {4},
 
-    ',': 5, '.': 5, "'": 6, '/': 7, ';': 8,
-    '=': 5, 'a': 5, 'e': 6, 'i': 7, 'h': 8,
-    '-': 5, 'u': 5, 'o': 6, 'y': 7, 'b': 8
+    ',': {5}, '.': {5}, "'": {6}, '/': {7}, ';': {8},
+    '=': {5}, 'a': {5}, 'e': {6}, 'i': {7}, 'h': {8},
+    '-': {5}, 'u': {5}, 'o': {6}, 'y': {7}, 'b': {8},
+
+    'z': {2, 3},
+    'q': {3, 4},
 }
+AK = [
+  'SD => SW',
+  "A' => AU",
+  "U' => UA",
+  "PX => PT",
+  "E/ => EO",
+  "O/ => OE",
+  "GF => GS",
+  "NW => NM",
+  "NP => NL",
+  "YB => YI"
+]
 
 MAYZNER_BIGRAMS_FILE = "../Data/ALL bigrams.html"
 
@@ -37,11 +52,21 @@ def get_args():
 
 
 def is_same_finger(bigram):
+    # Check if the bigram is mapped in AK to be excluded or added as SFB
+    for mapping in AK:
+        original, replacement = mapping.split(' => ')
+        if bigram == replacement.lower():
+            return False  # Exclude the replacement bigram from SFB
+        if bigram == original.lower():
+            return True  # Include the original bigram as SFB
+
     if bigram[0] not in LAYOUT or bigram[1] not in LAYOUT:
         return False
     if bigram[0] == bigram[1]:  # Exclude repeated letters
         return False
-    return LAYOUT[bigram[0]] == LAYOUT[bigram[1]]
+
+    # Check if the two keys share any finger
+    return not LAYOUT[bigram[0]].isdisjoint(LAYOUT[bigram[1]])
 
 
 def parse_bigrams(bigrams_text):
@@ -78,12 +103,15 @@ if __name__ == '__main__':
         if is_same_finger(bigram):
             sfb_frequencies[bigram] = round(frequency, 3)
 
-    sorted_sfb = sorted(sfb_frequencies.items(), key=itemgetter(1), reverse=True)
+    sorted_sfb = sorted(sfb_frequencies.items(), key=itemgetter(1), reverse=False)
 
-    print("Same Finger Bigrams (sorted by percentage):")
+    print("Same Finger Bigrams (only >= 0.009% are shown)")
+    print("----------------------------------------------")
     for bigram, frequency in sorted_sfb:
-        if frequency > 0:  # Hide bigrams that are 0% after rounding
+        if frequency >= 0.009:  # Hide bigrams that are less than 0.009% after rounding
             print(f"{bigram.upper()}: {frequency:.3f}%")
 
     sfb_sum = sum(sfb_frequencies.values())
-    print(f"Total SFB percentage: {sfb_sum:.3f}%")
+    print()
+    print(f"Total SFB: {sfb_sum:.3f}%")
+    print()
