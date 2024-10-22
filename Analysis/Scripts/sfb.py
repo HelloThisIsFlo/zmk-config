@@ -1,6 +1,7 @@
 import argparse
 import re
 from collections import defaultdict
+from operator import itemgetter
 
 from bigrams import compute_bigrams
 from generate_bigrams_from_corpus import get_corpus
@@ -38,6 +39,8 @@ def get_args():
 def is_same_finger(bigram):
     if bigram[0] not in LAYOUT or bigram[1] not in LAYOUT:
         return False
+    if bigram[0] == bigram[1]:  # Exclude repeated letters
+        return False
     return LAYOUT[bigram[0]] == LAYOUT[bigram[1]]
 
 
@@ -46,7 +49,7 @@ def parse_bigrams(bigrams_text):
     for line in bigrams_text.strip().split('\n'):
         match = re.match(r"([0-9.]+)%\s+-\s+([A-Z]{2})", line)
         if match:
-            frequency = float(match.group(1))
+            frequency = round(float(match.group(1)), 3)
             bigram = match.group(2).lower()  # Convert bigram to lowercase
             bigrams[bigram] = frequency
     return bigrams
@@ -66,7 +69,6 @@ def load_bigrams(args):
     return compute_bigrams(corpus)
 
 
-
 if __name__ == '__main__':
     bigram_freq = load_bigrams(get_args())
 
@@ -74,10 +76,14 @@ if __name__ == '__main__':
 
     for bigram, frequency in bigram_freq.items():
         if is_same_finger(bigram):
-            sfb_frequencies[bigram] = frequency
+            sfb_frequencies[bigram] = round(frequency, 3)
 
-    sorted_sfb = sorted(sfb_frequencies.items(), key=lambda x: x[1], reverse=True)
+    sorted_sfb = sorted(sfb_frequencies.items(), key=itemgetter(1), reverse=True)
 
     print("Same Finger Bigrams (sorted by percentage):")
     for bigram, frequency in sorted_sfb:
-        print(f"{bigram.upper()}: {frequency:.3f}%")
+        if frequency > 0:  # Hide bigrams that are 0% after rounding
+            print(f"{bigram.upper()}: {frequency:.3f}%")
+
+    sfb_sum = sum(sfb_frequencies.values())
+    print(f"Total SFB percentage: {sfb_sum:.3f}%")
