@@ -30,7 +30,7 @@ def parse_bigrams(bigrams_text):
     return bigrams
 
 # Load the bigram list from a file
-with open("../Data/ALL bigrams.html", "r") as file:
+with open("../Data/Bigrams.txt", "r") as file:
     bigrams_text = file.read()
 
 # Parse the bigrams
