@@ -24,6 +24,5 @@ def compute_bigrams(corpus):
         frequency = count / total_bigrams * 100
         bigram_freq[bigram] = frequency
 
-    sorted_bigram_freq = sorted(bigram_freq.items(), key=lambda x: x[1], reverse=True)
-    return sorted_bigram_freq
+    return bigram_freq
 

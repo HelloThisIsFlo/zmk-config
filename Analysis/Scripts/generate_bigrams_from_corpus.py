@@ -1,15 +1,11 @@
-import pyperclip
 import argparse
+
+import pyperclip
 
 from bigrams import compute_bigrams
 
-
-def get_corpus(from_clipboard=False):
-    if from_clipboard:
-        return pyperclip.paste()
-
-    with open('../Data/Corpus.txt', 'r') as file:
-        return file.read()
+CORPUS_FILE = './Corpus.txt'
+BIGRAM_FILE = './Bigrams.txt'
 
 
 def get_args():
@@ -23,13 +19,25 @@ def get_args():
     return parser.parse_args()
 
 
+def get_corpus(from_clipboard=False):
+    if from_clipboard:
+        return pyperclip.paste()
+
+    with open(CORPUS_FILE, 'r') as file:
+        return file.read()
+
+
+def compute_bigram_freq_from_corpus(from_clipboard=False):
+    corpus = get_corpus(from_clipboard)
+    return compute_bigrams(corpus)
+
+
 if __name__ == '__main__':
     args = get_args()
-    corpus = get_corpus(from_clipboard=args.clipboard)
 
-    bigram_freq = compute_bigrams(corpus)
+    bigram_freq = compute_bigram_freq_from_corpus(from_clipboard=args.clipboard)
 
     # Write the frequency of each bigram to a file
-    with open('../Data/Bigrams.txt', 'w') as output_file:
+    with open(BIGRAM_FILE, 'w') as output_file:
         for bigram, freq in bigram_freq:
             output_file.write(f"{freq:.3f}% - {bigram.upper()}\n")
