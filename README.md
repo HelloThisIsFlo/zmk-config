@@ -6,6 +6,16 @@
   - See the `features` directory for a hierarchally organized list of features
 - **`Analysis`**: Bigram analysis used to find AKs (Adaptive Keys)
 
+## Alpha Layout: Naquadah
+> **The driving question:** What if we built a layout that _required_ adaptive keys?
+
+Naquadah is a heavy variation of HandsDown Titanium, it's so modified as a matter of fact, it's practically unrecognizable.
+Its core principles are:
+- Extremely low SFB: **0.082%** (See `sfb.py` in `Analysis/scripts`)
+- Low Redirects (~<2%)
+- IN Rolls >> OUT Rolls
+- Adaptive Keys are **NOT** optional (this layout is useless without AKs)
+
 ## Concepts
 _Many concepts are based on Alan's amazing work: [Hands Down Layouts](https://sites.google.com/alanreiser.com/handsdown/home/hands-down-neu)_
 
