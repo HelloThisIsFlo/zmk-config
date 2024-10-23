@@ -11,10 +11,91 @@
 
 Naquadah is a heavy variation of HandsDown Titanium, it's so modified as a matter of fact, it's practically unrecognizable.
 Its core principles are:
-- Extremely low SFB: **0.082%** (See `sfb.py` in `Analysis/scripts`)
-- Low Redirects (~<2%)
-- IN Rolls >> OUT Rolls
+- It should feel like it "flows":
+  - Extremely low SFB: **0.082%** (See `sfb.py` in `Analysis/scripts`)
+  - Low Redirects (~<2%)
+  - IN Rolls >> OUT Rolls
+  - The few SFBs left should ideally be on syllable breaks
 - Adaptive Keys are **NOT** optional (this layout is useless without AKs)
+---
+### Naquadah and its 31 AKs
+_Note: This is designed for heavy colstag keyboards (Chocofi)_
+
+```
+
+Naquadah layout:
+================
+   w  m  p  x              =  .  ;  /
+j                                      '
+   s  n  t  k              ,  a  e  i
+c                                      h
+   g  l  d  v              -  u  o  y
+f                                      b
+
+                r        space
+
+
+The 31 accompanying AKs:
+============
+## SFB AKs ###################################
+"A, => AU",
+"U- => UA",
+
+"E/ => EO",
+"O' => OE",
+
+"GF => GS",
+
+"LG => LM",
+"LJ => LG", # To remove SFB caused by LG => LM
+
+"NP => NL",
+"NK => NP", # To remove SFB caused by NP => NL
+
+"MW => MN",
+"NW => NM",
+
+"PX => PT",
+
+"SR => SW",
+"WJ => WS",
+
+"YH => YI", # More comfortable than YB => YI
+"IH => IB", # Definitely better than YB => IB (because of maYBe)
+"B; => BI",
+##############################################
+
+
+
+## IMPOSSIBLE Movements (on Chocofi) #########
+"SJ => SF",
+##############################################
+
+
+## Comfort AKs ###############################
+"DV => LV",
+"DK => LK",
+"DF => DV", # To remove SFB caused by DV => LV
+
+"TK => NK",
+"KT => KN",
+"TV => NV",
+
+"SX => SK",
+"PG => PL", # For M->P->L, but also for regular P->L
+##############################################
+
+
+## Repeat AKs ################################
+## Only for pinkies & ring fingers (skipped II because it's so rare)
+"FG => FF",
+"SD => SS",
+"B, => BB",
+"CG => CC", # CD would technically work, but it would make using the terminal a nightmare
+"GC => GG",
+##############################################
+
+```
 
 ## Concepts
 _Many concepts are based on Alan's amazing work: [Hands Down Layouts](https://sites.google.com/alanreiser.com/handsdown/home/hands-down-neu)_
