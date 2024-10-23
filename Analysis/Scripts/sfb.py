@@ -13,40 +13,109 @@ LAYOUT = {
     'c': {1}, 's': {2}, 'n': {3}, 't': {4}, 'k': {4},
     'f': {1}, 'g': {2}, 'l': {3}, 'd': {4}, 'v': {4},
 
-    ',': {5}, '.': {5}, ";": {6}, '/': {7}, "'": {8},
-    '=': {5}, 'a': {5}, 'e': {6}, 'i': {7}, 'h': {8},
+    '=': {5}, '.': {5}, ";": {6}, '/': {7}, "'": {8},
+    ',': {5}, 'a': {5}, 'e': {6}, 'i': {7}, 'h': {8},
     '-': {5}, 'u': {5}, 'o': {6}, 'y': {7}, 'b': {8},
 
     'z': {2, 3},
     'q': {3, 4},
 }
+
+# TODO: Remember to update AKs w/ symbols if symbols change position in the layout
 AK = [
-    "A' => AU",
-    "DF => DV",
-    "DK => LK",
-    "DV => LV",
+    ## SFB AKs ###################################
+    "A, => AU",
+    "U- => UA",
+
     "E/ => EO",
+    "O' => OE",
+
     "GF => GS",
-    "KT => KD",
+
     "LG => LM",
-    "MW => MN",
+    "LJ => LG", # To remove SFB caused by LG => LM
+
     "NP => NL",
+    "NK => NP", # To remove SFB caused by NP => NL
+
+    "MW => MN",
     "NW => NM",
-    "O/ => OE",
+
     "PX => PT",
-    "SD => SW",
-    "SX => SK",
-    "TK => NK",
-    "TV => NV",
-    "U' => UA",
+
+    "SR => SW",
     "WJ => WS",
-    "YB => YI",
+
+    "YH => YI", # More comfortable than YB => YI
+    "IH => IB", # Definitely better than YB => IB (because of maYBe)
+    "B; => BI",
+    ##############################################
+
+
+
+    ## IMPOSSIBLE Movements ######################
+    "SJ => SF",
+    ##############################################
+
+
+    ## Comfort AKs ###############################
+    "DV => LV",
+    "DK => LK",
+    "DF => DV", # To remove SFB caused by DV => LV
+
+    "TK => NK",
+    "KT => KN",
+    "TV => NV",
+
+    "SX => SK",
+    "PG => PL", # For M->P->L, but also for regular P->L
+    ##############################################
+
+
+    ## Repeat AKs ################################
+    ## Only for pinkies & ring fingers (skipped II because it's so rare)
+    "FG => FF",
+    "SD => SS",
+    "B, => BB",
+    "CG => CC", # CD would technically work, but it would make using the terminal a nightmare
+    "GC => GG",
+    ##############################################
 ]
 ALT_FINGERING = [
     "XP",
     "XT",
     # "DV" # Actually, the alt fingering of this is LV (for comfort)
 ]
+IMPOSSIBLE = [ # These are impossible to actually do in one move on my keyboard (Chocofi)), so they're equivalent to SFBs
+    # TODO: Migrate this to key positions instead of bigrams
+    "FS",
+    "SF",
+    "FW",
+    "WF",
+
+    "CW",
+    "WC",
+
+    "BI",
+    "IB",
+    "B/",
+    "/B",
+
+    "H/",
+    "/H",
+]
+COMFORTABLE_REPEAT = [
+    "LL",
+    "EE",
+    "OO",
+    "TT",
+    "PP",
+    "MM",
+    "NN",
+    "DD",
+]
+
+
 
 MAYZNER_BIGRAMS_FILE = "../Data/ALL bigrams.html"
 
@@ -63,10 +132,14 @@ def get_args():
         '-m', '--use-mayzner', action='store_true',
         help='Uses Mayzner data instead of corpus'
     )
+    parser.add_argument(
+        '-r', '--include-repeat', action='store_true',
+        help='Includes SFB due to letter repeated twice'
+    )
     return parser.parse_args()
 
 
-def is_same_finger(bigram):
+def is_same_finger(bigram, include_repeat=False):
     sfb_ak_added = set()
     sfb_ak_removed = set()
     for mapping in AK:
@@ -85,10 +158,17 @@ def is_same_finger(bigram):
         if bigram in alt_fingering_bigram.lower():
             return False
 
+    for impossible_bigram in IMPOSSIBLE:
+        if bigram in impossible_bigram.lower():
+            return True
+
     if bigram[0] not in LAYOUT or bigram[1] not in LAYOUT:
         return False
-    if bigram[0] == bigram[1]:  # Exclude repeated letters
-        return False
+    if bigram[0] == bigram[1]:
+        if not include_repeat:
+            return False
+        if bigram.upper() in COMFORTABLE_REPEAT:
+            return False
 
     # Check if the two keys share any finger
     return not LAYOUT[bigram[0]].isdisjoint(LAYOUT[bigram[1]])
@@ -120,22 +200,26 @@ def load_bigrams(args):
 
 
 if __name__ == '__main__':
+    args = get_args()
     bigram_freq = load_bigrams(get_args())
 
     sfb_frequencies = defaultdict(float)
 
     for bigram, frequency in bigram_freq.items():
-        if is_same_finger(bigram):
+        if is_same_finger(bigram, args.include_repeat):
             sfb_frequencies[bigram] = round(frequency, 3)
 
     sorted_sfb = sorted(
         sfb_frequencies.items(), key=itemgetter(1), reverse=False
     )
 
-    print("Same Finger Bigrams (only >= 0.009% are shown)")
+    cutoff_frequency = 0.009
+    cutoff_frequency = 0.007
+    # cutoff_frequency = 0
+    print(f"Same Finger Bigrams (only >= {cutoff_frequency:.3f}% are shown)")
     print("----------------------------------------------")
     for bigram, frequency in sorted_sfb:
-        if frequency >= 0.009:  # Hide bigrams that are less than 0.009% after rounding
+        if frequency >= cutoff_frequency:  # Hide bigrams that are less than 0.009% after rounding
             print(f"{bigram.upper()}: {frequency:.3f}%")
 
     sfb_sum = sum(sfb_frequencies.values())
