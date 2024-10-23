@@ -9,8 +9,8 @@ from generate_bigrams_from_corpus import get_corpus
 # Define the keyboard layout as a dictionary, where each key corresponds to a finger or a set of fingers.
 # Layout: Naquadah
 LAYOUT = {
-    'j': {1}, 'w': {2}, 'm': {3}, 'p': {4}, 'k': {4},
-    'c': {1}, 's': {2}, 'n': {3}, 't': {4}, 'x': {4},
+    'j': {1}, 'w': {2}, 'm': {3}, 'p': {4}, 'x': {4},
+    'c': {1}, 's': {2}, 'n': {3}, 't': {4}, 'k': {4},
     'f': {1}, 'g': {2}, 'l': {3}, 'd': {4}, 'v': {4},
 
     ',': {5}, '.': {5}, "'": {6}, '/': {7}, ';': {8},
@@ -21,16 +21,28 @@ LAYOUT = {
     'q': {3, 4},
 }
 AK = [
-  'SD => SW',
-  "A' => AU",
-  "U' => UA",
-  "PX => PT",
-  "E/ => EO",
-  "O/ => OE",
-  "GF => GS",
-  "NW => NM",
-  "NP => NL",
-  "YB => YI"
+    "SD => SW",
+    "A' => AU",
+    "U' => UA",
+    "PX => PT",
+    "E/ => EO",
+    "O/ => OE",
+    "GF => GS",
+    "NW => NM",
+    "NP => NL",
+    "YB => YI",
+    "LG => LM",
+    "WJ => WS",
+    "DV => LV",
+    "DK => LK",
+    "DF => DV",
+    "MW => MN",
+    "SX => SK"
+]
+ALT_FINGERING = [
+    "XP",
+    "XT",
+    # "DV" # Actually, the alt fingering of this is LV (for comfort)
 ]
 
 MAYZNER_BIGRAMS_FILE = "../Data/ALL bigrams.html"
@@ -52,13 +64,23 @@ def get_args():
 
 
 def is_same_finger(bigram):
-    # Check if the bigram is mapped in AK to be excluded or added as SFB
+    sfb_ak_added = set()
+    sfb_ak_removed = set()
     for mapping in AK:
         original, replacement = mapping.split(' => ')
-        if bigram == replacement.lower():
-            return False  # Exclude the replacement bigram from SFB
-        if bigram == original.lower():
-            return True  # Include the original bigram as SFB
+        sfb_ak_removed.add(replacement.lower())
+        sfb_ak_added.add(original.lower())
+    removed_by_another_ak = sfb_ak_removed.intersection(sfb_ak_added)
+    sfb_ak_added.difference_update(removed_by_another_ak)
+
+    if bigram in sfb_ak_added:
+        return True
+    if bigram in sfb_ak_removed:
+        return False
+
+    for alt_fingering_bigram in ALT_FINGERING:
+        if bigram in alt_fingering_bigram.lower():
+            return False
 
     if bigram[0] not in LAYOUT or bigram[1] not in LAYOUT:
         return False
@@ -103,7 +125,9 @@ if __name__ == '__main__':
         if is_same_finger(bigram):
             sfb_frequencies[bigram] = round(frequency, 3)
 
-    sorted_sfb = sorted(sfb_frequencies.items(), key=itemgetter(1), reverse=False)
+    sorted_sfb = sorted(
+        sfb_frequencies.items(), key=itemgetter(1), reverse=False
+    )
 
     print("Same Finger Bigrams (only >= 0.009% are shown)")
     print("----------------------------------------------")
