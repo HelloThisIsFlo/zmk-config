@@ -44,15 +44,15 @@ The 31 accompanying AKs:
 "U- => UA",
 
 "E/ => EO",
-"O' => OE",
+"O' => OE", # Better than OH because of "Oh! really?"
 
 "GF => GS",
 
 "LG => LM",
-"LJ => LG", # To remove SFB caused by LG => LM
+"LJ => LG", # To remove SFB caused by LG => LM (aLGorithm)
 
 "NP => NL",
-"NK => NP", # To remove SFB caused by NP => NL
+"NK => NP", # To remove SFB caused by NP => NL (iNPut)
 
 "MW => MN",
 "NW => NM",
