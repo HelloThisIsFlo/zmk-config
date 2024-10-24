@@ -34,6 +34,8 @@ f                                      b
 
                 r        space
 
+The position of the special chars is still in flux (only . , ' are fixed)
+
 
 The 31 accompanying AKs:
 ============
