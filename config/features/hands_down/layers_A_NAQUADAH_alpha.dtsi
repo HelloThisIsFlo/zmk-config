@@ -13,9 +13,9 @@ Based on: Hands-Down Promethium
                 l_alpha {
                         label = "Reality?"; // The base layer ... ?
                         bindings = <
-ak_J          ak_W         ak_M         ak_P           ak_X                             &SlashHash     dotcol        &DashEqual  &SlashHash   &bk SQT
-ak_C          ak_S         ak_N         ak_T           ak_K                             comsemi        ak_A          ak_E        ak_I         ak_H
-ak_F          ak_G         ak_L         ak_D           ak_V                             &UnderStar     ak_U          ak_O        ak_Y         ak_B
+&bk J         ak_W         ak_M         ak_P           &bk X                            &SlashHash     dotcol        &DashEqual  &SlashHash   &bk SQT
+ak_C          ak_S         ak_N         ak_T           ak_K                             comsemi        ak_A          ak_E        ak_I         &bk H
+ak_F          ak_G         ak_L         ak_D           &bk V                            &UnderStar     ak_U          ak_O        ak_Y         ak_B
 
         &mo l_num    tapStickyShiftHoldModsLayer     &blt l_nav R                 &blt l_numsym SPACE     &mo l_numsym     &togMacPc
                         >;
