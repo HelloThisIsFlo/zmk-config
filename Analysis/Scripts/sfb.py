@@ -21,6 +21,11 @@ LAYOUT = {
     'q': {3, 4},
 }
 
+"""
+Notes on some bigrams/trigrams:
+- NPL: Not very common, mostly for un- words (unplug, unplanned, ...), and other words like "downplay"
+"""
+
 # TODO: Remember to update AKs w/ symbols if symbols change position in the layout
 AK = [
     ## SFB AKs ###################################
@@ -28,15 +33,15 @@ AK = [
     "U- => UA",
 
     "E/ => EO",
-    "O' => OE",
+    "O' => OE", # Better than OH because of "Oh! really?"
 
     "GF => GS",
 
     "LG => LM",
-    "LJ => LG", # To remove SFB caused by LG => LM
+    "LJ => LG", # To remove SFB caused by LG => LM (aLGorithm)
 
     "NP => NL",
-    "NK => NP", # To remove SFB caused by NP => NL
+    "NX => NP", # To remove SFB caused by NP => NL (iNPut)
 
     "MW => MN",
     "NW => NM",
@@ -53,7 +58,7 @@ AK = [
 
 
 
-    ## IMPOSSIBLE Movements ######################
+    ## IMPOSSIBLE Movements (on Chocofi) #########
     "SJ => SF",
     ##############################################
 
