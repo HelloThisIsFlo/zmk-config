@@ -15,7 +15,15 @@
 
 
 #include "./features/__BASE__/aliases_key_positions.dtsi"
-#include "./features/__BASE__/aliases_layers.dtsi"
+#if defined NAQUADAH
+    #include "./features/__BASE__/aliases_layers_NAQUADAH.dtsi"
+#elif defined PROMETHIUM
+    #include "./features/__BASE__/aliases_layers_PROMETHIUM.dtsi"
+#elif defined RHODIUM
+    #include "./features/__BASE__/aliases_layers_RHODIUM.dtsi"
+#else
+    #include "./features/__BASE__/aliases_layers.dtsi"
+#endif
 
 #include "./features/hands_down/aliases.dtsi"
 #include "./features/hands_down/adaptive_keys/aliases.dtsi"
