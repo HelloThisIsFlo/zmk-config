@@ -37,13 +37,14 @@ AK = [
 
     "GF => GS",
 
-    "LG => LM",
+    "LG => LL",
+    "LX => LM",
     "LJ => LG", # To remove SFB caused by LG => LM (aLGorithm)
 
     "NP => NL",
     "NX => NP", # To remove SFB caused by NP => NL (iNPut)
 
-    "MW => MN",
+    "MT => MN",
     "NW => NM",
 
     "PX => PT",
@@ -84,6 +85,9 @@ AK = [
     "B, => BB",
     "CG => CC", # CD would technically work, but it would make using the terminal a nightmare
     "GC => GG",
+    "PW => PP", # Not using PM because of 6PM, 7PM, ...
+    "MW => MM",
+    "O- => OO",
     ##############################################
 ]
 ALT_FINGERING = [
@@ -110,12 +114,8 @@ IMPOSSIBLE = [ # These are impossible to actually do in one move on my keyboard 
     "/H",
 ]
 COMFORTABLE_REPEAT = [
-    "LL",
     "EE",
-    "OO",
     "TT",
-    "PP",
-    "MM",
     "NN",
     "DD",
 ]

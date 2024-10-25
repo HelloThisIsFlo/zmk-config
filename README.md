@@ -48,13 +48,14 @@ The 31 accompanying AKs:
 
 "GF => GS",
 
-"LG => LM",
+"LG => LL",
+"LX => LM",
 "LJ => LG", # To remove SFB caused by LG => LM (aLGorithm)
 
 "NP => NL",
-"NK => NP", # To remove SFB caused by NP => NL (iNPut)
+"NX => NP", # To remove SFB caused by NP => NL (iNPut)
 
-"MW => MN",
+"MT => MN",
 "NW => NM",
 
 "PX => PT",
@@ -95,6 +96,9 @@ The 31 accompanying AKs:
 "B, => BB",
 "CG => CC", # CD would technically work, but it would make using the terminal a nightmare
 "GC => GG",
+"PW => PP", # Not using PM because of 6PM, 7PM, ...
+"MW => MM",
+"O- => OO",
 ##############################################
 
 ```
