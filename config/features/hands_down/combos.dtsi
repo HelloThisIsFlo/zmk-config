@@ -52,7 +52,7 @@ COMBO_LAY_ONE_HAND(l_alpha_aks, typeExcl,        &bk EXCL,                      
 COMBO_LAY_ONE_HAND(l_alpha_aks, typeQues,        &bk QMARK,                                                       RT2 RT3     ) // tODO: Maybe move to RT0 RT1 (or maybe exlamation) (so that they're both aligned with 'dot' key)
 COMBO_LAY_ONE_HAND(l_alpha_aks, typeGrav,        &bk GRAVE,                                               RT0 RT1             )
 // COMBO_LAY_ONE_HAND(l_alpha_aks, typeTilde,       &bk GRAVE,                                                           RT3 RT4 ) // Originally wanted to put Tilde here, but it's actually on shifted 'GRAVE'. So let's try to use it there first. 
-COMBO_LAY_ONE_HAND(l_alpha_aks, magicBracketsL,  &MagicBracketsL,                                             RB1 RB2         )
+COMBO_LAY_ONE_HAND(l_alpha_aks, magicBracketsL,  &MagicBracketsL,                                         RB0 RB1             ) // I was getting too many misfires on RB1 RB2, when typing 'you' it would do 'y(', and reducing the combo timing make it difficult to hit the other combos
 COMBO_LAY_ONE_HAND(l_alpha_aks, magicBracketsR,  &MagicBracketsR,                                                 RB2 RB3     )
 COMBO_LAY_ONE_HAND(l_alpha_aks, logseqPageRef,   &logseqPageRef,                                              RB1 RB2 RB3     )
 
