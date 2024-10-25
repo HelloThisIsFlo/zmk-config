@@ -89,6 +89,8 @@ AK = [
     "MW => MM",
     "O- => OO",
     ##############################################
+
+    # TODO: Find a way to take into account: hE. => hEI and hEU => hEY (or not 🤷‍♂️)
 ]
 ALT_FINGERING = [
     "XP",

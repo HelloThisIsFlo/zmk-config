@@ -9,6 +9,7 @@
 #define ak_F &ak l_akF F
 #define ak_G &ak l_akG G
 #define ak_H &ak l_akH H
+#define ak_hE &ak l_akhE E
 #define ak_I &ak l_akI I
 #define ak_J &ak l_akJ J
 #define ak_K &ak l_akK K
@@ -56,6 +57,7 @@
 #define ___X____ ak_X
 #define ___Y____ ak_Y
 #define ___Z____ ak_Z
+#define __hE____ ak_hE
 
 
 /* Sorted by BIGRAM_1 */

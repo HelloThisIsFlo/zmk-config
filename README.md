@@ -37,7 +37,7 @@ f                                      b
 The position of the special chars is still in flux (only . , ' are fixed)
 
 
-The 31 accompanying AKs:
+The 31 accompanying AKs: (Note: This is the beta version, I'll update once the list of AKs is stable)
 ============
 ## SFB AKs ###################################
 "A, => AU",
