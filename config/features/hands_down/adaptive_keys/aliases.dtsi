@@ -10,6 +10,7 @@
 #define ak_G &ak l_akG G
 #define ak_H &ak l_akH H
 #define ak_hE &ak l_akhE E
+// I could create a ak_hO, for "hoi" => "hoo" ... but that would take one layer for a niche use-case => Only do if I have extra layers I don't need after setting everything.
 #define ak_I &ak l_akI I
 #define ak_J &ak l_akJ J
 #define ak_K &ak l_akK K
