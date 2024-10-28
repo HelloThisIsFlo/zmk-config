@@ -87,7 +87,7 @@ AK = [
     "GC => GG",
     "PW => PP", # Not using PM because of 6PM, 7PM, ...
     "MW => MM",
-    "O- => OO",
+    "O. => OO", # May need to increase the timing of adaptive keys to make this one more reliable
     ##############################################
 
     # TODO: Find a way to take into account: hE. => hEI and hEU => hEY (or not 🤷‍♂️)
