@@ -17,6 +17,8 @@ LAYOUT = {
     ',': {5}, 'a': {5}, 'e': {6}, 'i': {7}, 'h': {8},
     '-': {5}, 'u': {5}, 'o': {6}, 'y': {7}, 'b': {8},
 
+    'r': {9},
+
     'z': {2, 3},
     'q': {3, 4},
 }
@@ -41,11 +43,10 @@ AK = [
     "LX => LM",
     "LJ => LG", # To remove SFB caused by LG => LM (aLGorithm)
 
-    "NP => NL",
-    "NX => NP", # To remove SFB caused by NP => NL (iNPut)
+    "NP => NL", # NP is rarely used in "flow", essentially mostly in "input". The rest is "un-" words
 
     "MT => MN",
-    "NW => NM",
+    "NX => NM", # To remove SFB caused by NP => NL (iNPut)
 
     "PX => PT",
 
@@ -80,6 +81,7 @@ AK = [
 
     ## Repeat AKs ################################
     ## Only for pinkies & ring fingers (skipped II because it's so rare)
+    "E. => EE",
     "FG => FF",
     "SD => SS",
     "B, => BB",
@@ -87,7 +89,9 @@ AK = [
     "GC => GG",
     "PW => PP", # Not using PM because of 6PM, 7PM, ...
     "MW => MM",
+    "NW => NN",
     "O. => OO", # May need to increase the timing of adaptive keys to make this one more reliable
+    # "RX => RR", # TODO: Implement with a new ak_R ... but not sure if it'll work without issues considering 'R' is using a hold-tap
     ##############################################
 
     # TODO: Find a way to take into account: hE. => hEI and hEU => hEY (or not 🤷‍♂️)
@@ -116,9 +120,9 @@ IMPOSSIBLE = [ # These are impossible to actually do in one move on my keyboard 
     "/H",
 ]
 COMFORTABLE_REPEAT = [
-    "EE",
+    # "EE",
     "TT",
-    "NN",
+    # "NN",
     "DD",
 ]
 
@@ -222,6 +226,7 @@ if __name__ == '__main__':
 
     cutoff_frequency = 0.009
     cutoff_frequency = 0.007
+    cutoff_frequency = 0.005
     # cutoff_frequency = 0
     print(f"Same Finger Bigrams (only >= {cutoff_frequency:.3f}% are shown)")
     print("----------------------------------------------")
