@@ -93,6 +93,7 @@ AK = [
     "O. => OO", # May need to increase the timing of adaptive keys to make this one more reliable
     "RX => RR",
     "TG => TT",
+    "DC => DD",
     ##############################################
 
     # TODO: Find a way to take into account: hE. => hEI and hEU => hEY (or not 🤷‍♂️)
