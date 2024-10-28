@@ -17,6 +17,6 @@ Based on: Hands-Down Promethium
 ak_C          ak_S         ak_N         ak_T           ak_K                             comsemi        ak_A          ak_E        ak_I         ak_H
 ak_F          ak_G         ak_L         ak_D           &bk V                            &UnderStar     ak_U          ak_O        ak_Y         ak_B
 
-        &mo l_num    tapStickyShiftHoldModsLayer     &blt l_nav R                 &blt l_numsym SPACE     &mo l_numsym     &togMacPc
+                &mo l_num    tapStickyShiftHoldModsLayer     nav_akR              &blt l_numsym SPACE     &mo l_numsym     &togMacPc
                         >;
                 };

@@ -91,7 +91,7 @@ AK = [
     "MW => MM",
     "NW => NN",
     "O. => OO", # May need to increase the timing of adaptive keys to make this one more reliable
-    # "RX => RR", # TODO: Implement with a new ak_R ... but not sure if it'll work without issues considering 'R' is using a hold-tap
+    "RX => RR",
     ##############################################
 
     # TODO: Find a way to take into account: hE. => hEI and hEU => hEY (or not 🤷‍♂️)

@@ -17,6 +17,17 @@ blt: blt {
     bindings = <&mo>, <&bk>;
 };
 
+ZMK_MACRO(ak_R_macro, wait-ms = <0>; tap-ms = <0>; bindings = <&ak l_akR R>;)
+blt_akR: blt_akR {
+    compatible = "zmk,behavior-hold-tap";
+    #binding-cells = <2>;
+    flavor = "tap-preferred";
+    tapping-term-ms = <my_tapping_term_thumb>;
+    bindings = <&mo>, <&ak_R_macro>;
+};
+#define nav_akR  &blt_akR l_nav XXX
+
+
 bksl: bksl {
     compatible = "zmk,behavior-hold-tap";
     label = "flo,behavior-buffered-key-sticky-layer";
