@@ -39,7 +39,7 @@ AK = [
     "NP => NL", # NP is rarely used in "flow", essentially mostly in "input". The rest is "un-" words
 
     "MT => MN",
-    # "N(K) => NM", # TODO: Review    # To remove SFB caused by NP => NL (iNPut)
+    "NX => NM",
 
     "PK => PT",
 
@@ -47,14 +47,16 @@ AK = [
     "WX => WS",
 
     "YH => YI", # More comfortable than YB => YI
-    # "IH => IB", # Definitely better than YB => IB (because of maYBe)
-    # "B; => BI",
+    "XS => XC",
     ##############################################
 
 
 
     ## IMPOSSIBLE Movements (on Chocofi) #########
     "SX => SF",
+    "MK => MB",
+    "BC => BS",
+    "LB => LM", # & Use alt-fingering
     ##############################################
 
 
@@ -74,6 +76,7 @@ AK = [
     "VT => VN",
 
     "PG => PL", # For M->P->L, but also for regular P->L
+    "BG => BL", # For M->B(k)->L
     ##############################################
 
 
@@ -82,25 +85,32 @@ AK = [
     "E. => EE",
     "FG => FF",
     "SD => SS",
-    # "YB => BB", # It's ok to use YB because YB is most often surrounded by vowels, so anyway I have to break the rhythm a bit (e.g. "maYBe", "keYBoard", "plaYBook", "plaYBack", ...)
+    "BF => BB",
     "CG => CC", # CD would technically work, but it would make using the terminal a nightmare
     "GC => GG",
     "PW => PP", # Not using PM because of 6PM, 7PM, ...
     "MW => MM",
     "NW => NN",
     "O. => OO", # May need to increase the timing of adaptive keys to make this one more reliable
-    # "RX => RR", # TODO!
+    "RX => RR",
     "TG => TT",
     "DC => DD",
     ##############################################
 
+
+    ## NOT SIMULATED #############################
     # TODO: Find a way to take into account: hE. => hEI and hEU => hEY (or not 🤷‍♂️)
+    # "hE. => hEI",
+    # "hEU => hEY",
+    ##############################################
+
 ]
 ALT_FINGERING = [
     # "XP",
     # "XT",
     # "DV" # Actually, the alt fingering of this is LV (for comfort)
-    "LV"
+    "BT",
+    # "LM"
 ]
 IMPOSSIBLE = [ # These are impossible to actually do in one move on my keyboard (Chocofi)), so they're equivalent to SFBs
     # TODO: Migrate this to key positions instead of bigrams
@@ -143,7 +153,8 @@ IMPOSSIBLE = [ # These are impossible to actually do in one move on my keyboard 
     "E,",
     "-_",
 ]
-COMFORTABLE_REPEAT = [
+IGNORE = [
+    "II"
     # "EE",
     # "TT",
     # "NN",

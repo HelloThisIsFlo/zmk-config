@@ -6,7 +6,7 @@ from operator import itemgetter
 from bigrams import compute_bigrams
 from generate_bigrams_from_corpus import get_corpus
 
-from layout_naquadah_RC2 import LAYOUT, AK, ALT_FINGERING, IMPOSSIBLE, COMFORTABLE_REPEAT
+from layout_naquadah_RC2 import LAYOUT, AK, ALT_FINGERING, IMPOSSIBLE, IGNORE
 
 
 MAYZNER_BIGRAMS_FILE = "../Data/ALL bigrams.html"
@@ -70,7 +70,7 @@ def is_same_finger(bigram, include_repeat=False):
     if bigram[0] == bigram[1]:
         if not include_repeat:
             return False
-        if bigram.upper() in COMFORTABLE_REPEAT:
+        if bigram.upper() in IGNORE:
             return False
 
     # Check if the two keys share any finger
@@ -123,7 +123,7 @@ if __name__ == '__main__':
     print(f"Same Finger Bigrams (only >= {cutoff_frequency:.3f}% are shown)")
     print("----------------------------------------------")
     for bigram, frequency in sorted_sfb:
-        if frequency >= cutoff_frequency:  # Hide bigrams that are less than 0.009% after rounding
+        if frequency >= cutoff_frequency:
             print(f"{bigram.upper()}: {frequency:.3f}%")
 
     sfb_sum = sum(sfb_frequencies.values())

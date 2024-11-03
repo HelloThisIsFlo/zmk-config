@@ -139,7 +139,8 @@ IMPOSSIBLE = [ # These are impossible to actually do in one move on my keyboard 
     "E,",
     ";-",
 ]
-COMFORTABLE_REPEAT = [
+IGNORE = [
+    "II"
     # "EE",
     # "TT",
     # "NN",
