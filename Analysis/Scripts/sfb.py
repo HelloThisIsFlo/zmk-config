@@ -11,6 +11,17 @@ from layout_naquadah import LAYOUT, AK, ALT_FINGERING, IMPOSSIBLE, COMFORTABLE_R
 
 MAYZNER_BIGRAMS_FILE = "../Data/ALL bigrams.html"
 
+def include_reverted_bigrams(bigram_list):
+        result = set(bigram_list)
+        for bigram in bigram_list:
+            if len(bigram) == 2:
+                reversed_bigram = bigram[::-1]
+                if reversed_bigram != bigram:
+                    result.add(reversed_bigram)
+        return list(result)
+
+IMPOSSIBLE_AND_REVERTED = include_reverted_bigrams(IMPOSSIBLE)
+
 
 def get_args():
     parser = argparse.ArgumentParser(
@@ -50,7 +61,7 @@ def is_same_finger(bigram, include_repeat=False):
         if bigram in alt_fingering_bigram.lower():
             return False
 
-    for impossible_bigram in IMPOSSIBLE:
+    for impossible_bigram in IMPOSSIBLE_AND_REVERTED:
         if bigram in impossible_bigram.lower():
             return True
 
@@ -107,7 +118,7 @@ if __name__ == '__main__':
 
     cutoff_frequency = 0.009
     cutoff_frequency = 0.007
-    cutoff_frequency = 0.005
+    # cutoff_frequency = 0.005
     # cutoff_frequency = 0
     print(f"Same Finger Bigrams (only >= {cutoff_frequency:.3f}% are shown)")
     print("----------------------------------------------")

@@ -60,6 +60,8 @@ AK = [
     ## Comfort AKs ###############################
     "DV => LV",
     "DK => LK",
+    "VD => VL",
+    "KD => KL",
     "DF => DV", # To remove SFB caused by DV => LV
 
     "TK => NK",
@@ -67,6 +69,7 @@ AK = [
     "TV => NV",
 
     "SX => SK",
+    "XS => KS",
     "PG => PL", # For M->P->L, but also for regular P->L
     ##############################################
 
@@ -97,21 +100,42 @@ ALT_FINGERING = [
 ]
 IMPOSSIBLE = [ # These are impossible to actually do in one move on my keyboard (Chocofi)), so they're equivalent to SFBs
     # TODO: Migrate this to key positions instead of bigrams
+    ### Left Hand
+    ## Pinky
     "FS",
-    "SF",
     "FW",
-    "WF",
-
     "CW",
-    "WC",
 
-    "BI",
-    "IB",
+    ## Ring
+    "SV",
+    "SK",
+    "GV",
+    "GK",
+
+    ## Middle
+    "LV",
+    "LK",
+    "NV",
+    "NK",
+
+
+    ### Right Hand
+    ## Pinky
     "B/",
-    "/B",
-
+    "B/",
     "H/",
-    "/H",
+
+    ## Ring
+    "Y-",
+    "Y,",
+    "I-",
+    "I,",
+
+    ## Middle
+    "O-",
+    "O,",
+    "E-",
+    "E,",
 ]
 COMFORTABLE_REPEAT = [
     # "EE",
