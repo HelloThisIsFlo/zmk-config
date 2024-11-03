@@ -1,13 +1,22 @@
 import pyperclip
 import collections
 
-def analyze_clipboard():
-    # Step 1: Get clipboard content
-    clipboard_content = pyperclip.paste()
+import re
 
+
+def count_letters(text):
+    filtered_text = re.sub(r'[^a-zA-Z]', '', text).lower()
+
+    counter = collections.Counter(text)
+    for letter, count in counter.most_common(50):
+        print(f"{letter}: {count}")
+
+
+
+def find_words_with_SS(text):
     following_letters = {}
     words_with_ss = []
-    for word in clipboard_content.split():
+    for word in text.split():
         index = 0
 
         while (index := word.find('ss', index)) != -1:
@@ -33,4 +42,6 @@ def analyze_clipboard():
 
 
 if __name__ == '__main__':
-    analyze_clipboard()
+    clipboard_content = pyperclip.paste()
+    count_letters(text=clipboard_content)
+    find_words_with_SS(text=clipboard_content)
