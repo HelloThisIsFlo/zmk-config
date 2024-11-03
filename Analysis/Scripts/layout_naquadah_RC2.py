@@ -1,13 +1,13 @@
 # Define the keyboard layout as a dictionary, where each key corresponds to a finger or a set of fingers.
 # Layout: Naquadah
 LAYOUT = {
-    'j': {1}, 'w': {2}, 'm': {3}, 'p': {4}, 'x': {4},
-    'c': {1}, 's': {2}, 'n': {3}, 't': {4}, 'k': {4},
-    'f': {1}, 'g': {2}, 'l': {3}, 'd': {4}, 'v': {4},
+    'x': {1}, 'w': {2}, 'm': {3}, 'p': {4}, 'k': {4},
+    'c': {1}, 's': {2}, 'n': {3}, 't': {4}, 'v': {4},
+    'f': {1}, 'g': {2}, 'l': {3}, 'd': {4}, 'b': {4},
 
-    '=': {5}, '.': {5}, ";": {6}, '/': {7}, "'": {8},
+    '/': {5}, '.': {5}, "-": {6}, '=': {7}, "'": {8},
     ',': {5}, 'a': {5}, 'e': {6}, 'i': {7}, 'h': {8},
-    '-': {5}, 'u': {5}, 'o': {6}, 'y': {7}, 'b': {8},
+    '_': {5}, 'u': {5}, 'o': {6}, 'y': {7}, 'j': {8},
 
     'r': {9},
 
@@ -21,39 +21,40 @@ Notes on some bigrams/trigrams:
 """
 
 # TODO: Remember to update AKs w/ symbols if symbols change position in the layout
+
 AK = [
     ## SFB AKs ###################################
     "A, => AU",
-    "U- => UA",
+    "U_ => UA",
 
-    "E/ => EO",
+    "E= => EO",
     "O' => OE", # Better than OH because of "Oh! really?"
 
     "GF => GS",
 
     "LG => LL",
-    "LX => LM",
-    "LJ => LG", # To remove SFB caused by LG => LM (aLGorithm)
+    # "L(K) => LM", # TODO: Review!!
+    "LX => LG", # To remove SFB caused by LG => LM (aLGorithm)
 
     "NP => NL", # NP is rarely used in "flow", essentially mostly in "input". The rest is "un-" words
 
     "MT => MN",
-    "NX => NM", # To remove SFB caused by NP => NL (iNPut)
+    # "N(K) => NM", # TODO: Review    # To remove SFB caused by NP => NL (iNPut)
 
-    "PX => PT",
+    "PK => PT",
 
     "SR => SW",
-    "WJ => WS",
+    "WX => WS",
 
     "YH => YI", # More comfortable than YB => YI
-    "IH => IB", # Definitely better than YB => IB (because of maYBe)
-    "B; => BI",
+    # "IH => IB", # Definitely better than YB => IB (because of maYBe)
+    # "B; => BI",
     ##############################################
 
 
 
     ## IMPOSSIBLE Movements (on Chocofi) #########
-    "SJ => SF",
+    "SX => SF",
     ##############################################
 
 
@@ -62,14 +63,16 @@ AK = [
     "DK => LK",
     "VD => VL",
     "KD => KL",
+    "DB => LB",
+    "BD => BL",
     "DF => DV", # To remove SFB caused by DV => LV
 
-    "TK => NK",
-    "KT => KN",
-    "TV => NV",
 
-    "SX => SK",
-    "XS => KS",
+    # "TK => NK",
+    # "KT => KN",
+    "TV => NV",
+    "VT => VN",
+
     "PG => PL", # For M->P->L, but also for regular P->L
     ##############################################
 
@@ -79,14 +82,14 @@ AK = [
     "E. => EE",
     "FG => FF",
     "SD => SS",
-    "YB => BB", # It's ok to use YB because YB is most often surrounded by vowels, so anyway I have to break the rhythm a bit (e.g. "maYBe", "keYBoard", "plaYBook", "plaYBack", ...)
+    # "YB => BB", # It's ok to use YB because YB is most often surrounded by vowels, so anyway I have to break the rhythm a bit (e.g. "maYBe", "keYBoard", "plaYBook", "plaYBack", ...)
     "CG => CC", # CD would technically work, but it would make using the terminal a nightmare
     "GC => GG",
     "PW => PP", # Not using PM because of 6PM, 7PM, ...
     "MW => MM",
     "NW => NN",
     "O. => OO", # May need to increase the timing of adaptive keys to make this one more reliable
-    "RX => RR",
+    # "RX => RR", # TODO!
     "TG => TT",
     "DC => DD",
     ##############################################
@@ -94,9 +97,10 @@ AK = [
     # TODO: Find a way to take into account: hE. => hEI and hEU => hEY (or not 🤷‍♂️)
 ]
 ALT_FINGERING = [
-    "XP",
-    "XT",
+    # "XP",
+    # "XT",
     # "DV" # Actually, the alt fingering of this is LV (for comfort)
+    "LV"
 ]
 IMPOSSIBLE = [ # These are impossible to actually do in one move on my keyboard (Chocofi)), so they're equivalent to SFBs
     # TODO: Migrate this to key positions instead of bigrams
@@ -107,37 +111,37 @@ IMPOSSIBLE = [ # These are impossible to actually do in one move on my keyboard 
     "CW",
 
     ## Ring
-    "SV",
-    "SK",
+    "GB",
     "GV",
-    "GK",
+    "SB",
+    "SV",
 
     ## Middle
+    "LB",
     "LV",
-    "LK",
+    "NB",
     "NV",
-    "NK",
-    "MV",
+    "MB",
 
 
     ### Right Hand
     ## Pinky
-    "B/",
-    "B/",
-    "H/",
+    "JI",
+    "J=",
+    "H=",
 
     ## Ring
-    "Y-",
+    "Y_",
     "Y,",
-    "I-",
+    "I_",
     "I,",
 
     ## Middle
-    "O-",
+    "O_",
     "O,",
-    "E-",
+    "E_",
     "E,",
-    ";-",
+    "-_",
 ]
 COMFORTABLE_REPEAT = [
     # "EE",
