@@ -39,6 +39,12 @@ def get_args():
         '-r', '--include-repeat', action='store_true',
         help='Includes SFB due to letter repeated twice'
     )
+    parser.add_argument(
+        '-f', "--cuttoff-frequency",
+        type=int,
+        default=7,
+        help="Cuttoff frequency (.00X%) - SFB below this value won't be displayed"
+    ) 
     return parser.parse_args()
 
 
@@ -116,10 +122,7 @@ if __name__ == '__main__':
         sfb_frequencies.items(), key=itemgetter(1), reverse=False
     )
 
-    cutoff_frequency = 0.009
-    cutoff_frequency = 0.007
-    # cutoff_frequency = 0.005
-    # cutoff_frequency = 0
+    cutoff_frequency = float(args.cuttoff_frequency) / 1000
     print(f"Same Finger Bigrams (only >= {cutoff_frequency:.3f}% are shown)")
     print("----------------------------------------------")
     for bigram, frequency in sorted_sfb:
