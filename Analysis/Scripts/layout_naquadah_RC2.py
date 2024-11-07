@@ -1,3 +1,4 @@
+
 # Define the keyboard layout as a dictionary, where each key corresponds to a finger or a set of fingers.
 # Layout: Naquadah
 LAYOUT = {
@@ -33,7 +34,6 @@ AK = [
     "GF => GS",
 
     "LG => LL",
-    # "L(K) => LM", # TODO: Review!!
     "LX => LG", # To remove SFB caused by LG => LM (aLGorithm)
 
     "NP => NL", # NP is rarely used in "flow", essentially mostly in "input". The rest is "un-" words
@@ -70,8 +70,6 @@ AK = [
     "DF => DV", # To remove SFB caused by DV => LV
 
 
-    # "TK => NK",
-    # "KT => KN",
     "TV => NV",
     "VT => VN",
 

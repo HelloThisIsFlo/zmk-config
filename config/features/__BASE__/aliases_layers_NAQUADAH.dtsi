@@ -27,36 +27,36 @@ Here, `_zmk_keymap_layer_state` is the 'uint32_t' bit array.
 #define l_akG          8
 #define l_akH          9
 #define l_akhE         10
-#define l_akI          11
+#define l_akI                  999 // Disabled
 #define l_akJ                  999 // Disabled
-#define l_akK          12
-#define l_akL          13
-#define l_akM          14
-#define l_akN          15
-#define l_akO          16
-#define l_akP          17
+#define l_akK          11
+#define l_akL          12
+#define l_akM          13
+#define l_akN          14
+#define l_akO          15
+#define l_akP          16
 #define l_akQ                  999 // Disabled
-#define l_akR          18
-#define l_akS          19
-#define l_akT          20
-#define l_akU          21
-#define l_akV                  999 // Disabled
+#define l_akR          17
+#define l_akS          18
+#define l_akT          19
+#define l_akU          20
+#define l_akV          21
 #define l_akW          22
-#define l_akX                  999 // Disabled
-#define l_akY          23
+#define l_akX          23
+#define l_akY          24
 #define l_akZ                  999 // Disabled
 
-#define l_nav          24
-#define l_mod          25
-#define l_fn           26
-#define l_num          27
-#define l_numsym       28
-#define l_cfg          29
+#define l_nav          25
+#define l_mod          26
+#define l_fn           27
+#define l_num          28
+#define l_numsym       29
+#define l_cfg          30
 
-#define l_nav_linwin   30
+#define l_nav_linwin   31
 
 
-#define l_alpha_aks l_alpha l_alpha_linwin l_akA l_akB l_akC l_akD l_akE l_akF l_akG l_akI l_akK l_akL l_akM l_akN l_akO l_akP l_akR l_akS l_akT l_akU l_akW l_akY
+#define l_alpha_aks l_alpha l_alpha_linwin l_akA l_akB l_akC l_akD l_akE l_akF l_akG l_akH l_akhE l_akK l_akL l_akM l_akN l_akO l_akP l_akR l_akS l_akT l_akU l_akV l_akW l_akX l_akY
 #define l_all l_alpha_aks l_nav l_mod l_fn l_num l_numsym l_cfg l_nav_linwin
 // Before this was: 'l_all_except_winpc', the idea was to exclude it from the combos, so it doesn't conflict
 // with the generated combos for winpc, but ...

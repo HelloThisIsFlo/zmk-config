@@ -74,6 +74,7 @@
 #define WM_to_PM    &replace_char_with_bigram_PM /* Symetry on MP(w) ✔ */
 #define PN_to_LN    &replace_char_with_bigram_LN /* Symetry on NL(p) ✔ */
 #define DV_to_LV    &replace_char_with_bigram_LV /* Symetry on VL(d) ✔ <- Not really needed, but kept for consistency */
+#define DB_to_LB    &replace_char_with_bigram_LB /* Symetry on BL(d) ✔ */
 #define TV_to_NV    &replace_char_with_bigram_NV /* Symetry on VN(t) ✔ <- Not really needed, but kept for consistency */
 #define YB_to_BB    &replace_char_with_bigram_BB /* NO Symetry, but that's ok */
 

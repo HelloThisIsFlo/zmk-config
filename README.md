@@ -11,96 +11,106 @@
 
 Naquadah is a heavy variation of HandsDown Titanium, it's so modified as a matter of fact, it's practically unrecognizable.
 Its core principles are:
+- Adaptive Keys are **NOT** optional (this layout is useless without AKs)
 - It should feel like it "flows":
   - Extremely low SFB: **0.082%** (See `sfb.py` in `Analysis/scripts`)
   - Low Redirects (~<2%)
   - IN Rolls >> OUT Rolls
   - The few SFBs left should ideally be on syllable breaks
-- Adaptive Keys are **NOT** optional (this layout is useless without AKs)
 ---
-### Naquadah and its 31 AKs
+### Naquadah and its 45 AKs
 _Note: This is designed for heavy colstag keyboards (Chocofi)_
 
 ```
 
 Naquadah layout:
 ================
-   w  m  p  x              =  .  ;  /
-j                                      '
-   s  n  t  k              ,  a  e  i
+   w  m  p  k              /  .  -  =
+x                                      '
+   s  n  t  v              ,  a  e  i
 c                                      h
-   g  l  d  v              -  u  o  y
-f                                      b
+   g  l  d  b              _  u  o  y
+f                                      j
 
-                r        space
+                r      ␣
 
 The position of the special chars is still in flux (only . , ' are fixed)
 
 
-The 31 accompanying AKs: (Note: This is the beta version, I'll update once the list of AKs is stable)
+The 45 accompanying AKs: (Note: This is RC2, it may evolve until the full release)
 ============
 ## SFB AKs ###################################
-"A, => AU",
-"U- => UA",
+"A, => AU" 
+"U_ => UA" 
 
-"E/ => EO",
-"O' => OE", # Better than OH because of "Oh! really?"
+"E= => EO" 
+"O' => OE"  # Better than OH because of "Oh! really?"
 
-"GF => GS",
+"GF => GS" 
 
-"LG => LL",
-"LX => LM",
-"LJ => LG", # To remove SFB caused by LG => LM (aLGorithm)
+"LG => LL" 
+"LX => LG"  # To remove SFB caused by LG => LM (aLGorithm)
 
-"NP => NL",
-"NX => NP", # To remove SFB caused by NP => NL (iNPut)
+"NP => NL"  # NP is rarely used in "flow", essentially mostly in "input". The rest is "un-" words
 
-"MT => MN",
-"NW => NM",
+"MT => MN" 
+"NX => NM" 
 
-"PX => PT",
+"PK => PT" 
 
-"SR => SW",
-"WJ => WS",
+"SR => SW" 
+"WX => WS" 
 
-"YH => YI", # More comfortable than YB => YI
-"IH => IB", # Definitely better than YB => IB (because of maYBe)
-"B; => BI",
+"YH => YI"  # More comfortable than YB => YI
+"XS => XC" 
 ##############################################
 
 
 
 ## IMPOSSIBLE Movements (on Chocofi) #########
-"SJ => SF",
+"SX => SF" 
+"MK => MB" 
+"BC => BS" 
+"LB => LM"  # & Use alt-fingering
 ##############################################
 
 
 ## Comfort AKs ###############################
-"DV => LV",
-"DK => LK",
-"DF => DV", # To remove SFB caused by DV => LV
+"DV => LV" 
+"DK => LK" 
+"VD => VL" 
+"KD => KL" 
+"DB => LB" 
+"BD => BL" 
+"DF => DV"  # To remove SFB caused by DV => LV
+"hE. => hEI" 
+"hEU => hEY" 
 
-"TK => NK",
-"KT => KN",
-"TV => NV",
 
-"SX => SK",
-"PG => PL", # For M->P->L, but also for regular P->L
+"TV => NV" 
+"VT => VN" 
+
+"PG => PL"  # For M->P->L, but also for regular P->L
+"BG => BL"  # For M->B(k)->L
 ##############################################
 
 
 ## Repeat AKs ################################
 ## Only for pinkies & ring fingers (skipped II because it's so rare)
-"FG => FF",
-"SD => SS",
-"B, => BB",
-"CG => CC", # CD would technically work, but it would make using the terminal a nightmare
-"GC => GG",
-"PW => PP", # Not using PM because of 6PM, 7PM, ...
-"MW => MM",
-"O- => OO",
+"E. => EE" 
+"FG => FF" 
+"SD => SS" 
+"BF => BB" 
+"CG => CC"  # CD would technically work, but it would make using the terminal a nightmare
+"GC => GG" 
+"PW => PP"  # Not using PM because of 6PM, 7PM, ...
+"MW => MM" 
+"NW => NN" 
+"O. => OO"  # May need to increase the timing of adaptive keys to make this one more reliable
+"RX => RR" 
+"TG => TT" 
+"DC => DD" 
 ##############################################
-
 ```
 
 ## Concepts
