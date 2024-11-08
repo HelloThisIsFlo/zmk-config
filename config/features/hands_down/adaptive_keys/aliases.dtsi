@@ -61,18 +61,22 @@
 #define __hE____ ak_hE
 
 
+#define CB_to_SB    &replace_char_with_bigram_SB /* Symetry on BS(c) ✔ */
 #define CM_to_NM    &replace_char_with_bigram_NM /* Symetry on MN(c) ✔ */
 #define DB_to_LB    &replace_char_with_bigram_LB /* Symetry on BL(d) ✔ */
 #define DK_to_LK    &replace_char_with_bigram_LK /* Symetry on KL(d) ✔ */
 #define DV_to_LV    &replace_char_with_bigram_LV /* Symetry on VL(d) ✔ <- Not really needed, but kept for consistency */
 #define FP_to_SP    &replace_char_with_bigram_SP /* Symetry on PS(f) ✔ */
 #define JG_to_DG    &replace_char_with_bigram_DG /* Symetry on GD(j) ✔ */
+#define KM_to_BM    &replace_char_with_bigram_BM /* Symetry on MB(k) ✔ */
 #define MG_to_LG    &replace_char_with_bigram_LG /* Symetry on GL(m) ✔ */
+#define PB_to_NB    &replace_char_with_bigram_NB /* NO Symetry, but that's ok */
 #define PB_to_SB    &replace_char_with_bigram_SB /* Symetry on BS(p) ✔ */
 #define PN_to_LN    &replace_char_with_bigram_LN /* Symetry on NL(p) ✔ */
 #define TJ_to_NJ    &replace_char_with_bigram_NJ /* Symetry on JN(t) ✔ <- Not really needed, but kept for consistency */
 #define TK_to_NK    &replace_char_with_bigram_NK /* Symetry on KN(t) ✔ */
 #define TV_to_NV    &replace_char_with_bigram_NV /* Symetry on VN(t) ✔ <- Not really needed, but kept for consistency */
+#define WM_to_LM    &replace_char_with_bigram_LM /* NO Symetry, but that's ok */
 #define WM_to_PM    &replace_char_with_bigram_PM /* Symetry on MP(w) ✔ */
 #define XM_to_BM    &replace_char_with_bigram_BM /* Symetry on MB(x) ✔ */
 #define YB_to_BB    &replace_char_with_bigram_BB /* NO Symetry, but that's ok */

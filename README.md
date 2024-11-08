@@ -18,7 +18,7 @@ Its core principles are:
   - IN Rolls >> OUT Rolls
   - The few SFBs left should ideally be on syllable breaks
 ---
-### Naquadah and its 45 AKs
+### Naquadah and its 48 AKs
 _Note: This is designed for heavy colstag keyboards (Chocofi)_
 
 ```
@@ -36,8 +36,7 @@ f                                      j
 
 The position of the special chars is still in flux (only . , ' are fixed)
 
-
-The 45 accompanying AKs: (Note: This is RC2, it may evolve until the full release)
+The 48 accompanying AKs: (Note: This is RC2, it may evolve until the full release)
 ============
 ## SFB AKs ###################################
 "A, => AU" 
@@ -63,15 +62,19 @@ The 45 accompanying AKs: (Note: This is RC2, it may evolve until the full releas
 
 "YH => YI"  # More comfortable than YB => YI
 "XS => XC" 
+
+"WM => LM"
 ##############################################
 
 
 
 ## IMPOSSIBLE Movements (on Chocofi) #########
 "SX => SF" 
-"MK => MB" 
+"MK => MB"
+"KM => BM"  # Useful because of the "MK => MB" muscle memory
 "BC => BS" 
-"LB => LM"  # & Use alt-fingering
+"CB => SB"
+"PB => NB"  # & Use alt-fingering
 ##############################################
 
 

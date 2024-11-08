@@ -48,6 +48,8 @@ AK = [
 
     "YH => YI", # More comfortable than YB => YI
     "XS => XC",
+    
+    "WM => LM",
     ##############################################
 
 
@@ -55,8 +57,10 @@ AK = [
     ## IMPOSSIBLE Movements (on Chocofi) #########
     "SX => SF",
     "MK => MB",
+    "KM => BM", # Useful because of the "MK => MB" muscle memory
     "BC => BS",
-    "LB => LM", # & Use alt-fingering
+    "CB => SB",
+    "PB => NB", # & Use alt-fingering
     ##############################################
 
 
