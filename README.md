@@ -18,7 +18,7 @@ Its core principles are:
   - IN Rolls >> OUT Rolls
   - The few SFBs left should ideally be on syllable breaks
 ---
-### Naquadah and its 48 AKs
+### Naquadah and its 46 AKs
 _Note: This is designed for heavy colstag keyboards (Chocofi)_
 
 ```
@@ -36,7 +36,7 @@ f                                      j
 
 The position of the special chars is still in flux (only . , ' are fixed)
 
-The 48 accompanying AKs: (Note: This is RC2, it may evolve until the full release)
+The 46 accompanying AKs: (Note: This is RC2, it may evolve until the full release)
 ============
 ## SFB AKs ###################################
 "A, => AU" 
@@ -60,20 +60,18 @@ The 48 accompanying AKs: (Note: This is RC2, it may evolve until the full releas
 "SR => SW" 
 "WX => WS" 
 
-"YH => YI"  # More comfortable than YB => YI
+"YH => YI"  # More comfortable than YJ => YI
 "XS => XC" 
 
-"WM => LM"
+"WM => LM" 
 ##############################################
 
 
 
 ## IMPOSSIBLE Movements (on Chocofi) #########
 "SX => SF" 
-"MK => MB"
+"MK => MB" 
 "KM => BM"  # Useful because of the "MK => MB" muscle memory
-"BC => BS" 
-"CB => SB"
 "PB => NB"  # & Use alt-fingering
 ##############################################
 
@@ -86,8 +84,6 @@ The 48 accompanying AKs: (Note: This is RC2, it may evolve until the full releas
 "DB => LB" 
 "BD => BL" 
 "DF => DV"  # To remove SFB caused by DV => LV
-"hE. => hEI" 
-"hEU => hEY" 
 
 
 "TV => NV" 
@@ -103,7 +99,7 @@ The 48 accompanying AKs: (Note: This is RC2, it may evolve until the full releas
 "E. => EE" 
 "FG => FF" 
 "SD => SS" 
-"BF => BB" 
+"BC => BB" 
 "CG => CC"  # CD would technically work, but it would make using the terminal a nightmare
 "GC => GG" 
 "PW => PP"  # Not using PM because of 6PM, 7PM, ...
@@ -113,6 +109,12 @@ The 48 accompanying AKs: (Note: This is RC2, it may evolve until the full releas
 "RX => RR" 
 "TG => TT" 
 "DC => DD" 
+##############################################
+
+
+## Special Cases #############################
+"hE. => hEI"
+"hEU => hEY"
 ##############################################
 ```
 

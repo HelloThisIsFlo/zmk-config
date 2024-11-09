@@ -3,8 +3,8 @@
 # Layout: Naquadah
 LAYOUT = {
     'x': {1}, 'w': {2}, 'm': {3}, 'p': {4}, 'k': {4},
-    'c': {1}, 's': {2}, 'n': {3}, 't': {4}, 'v': {4},
-    'f': {1}, 'g': {2}, 'l': {3}, 'd': {4}, 'b': {4},
+    'c': {1}, 's': {2}, 'n': {3}, 't': {4}, 'b': {4},
+    'f': {1}, 'g': {2}, 'l': {3}, 'd': {4}, 'v': {4},
 
     '/': {5}, '.': {5}, "-": {6}, '=': {7}, "'": {8},
     ',': {5}, 'a': {5}, 'e': {6}, 'i': {7}, 'h': {8},
@@ -58,8 +58,6 @@ AK = [
     "SX => SF",
     "MK => MB",
     "KM => BM", # Useful because of the "MK => MB" muscle memory
-    "BC => BS",
-    "CB => SB",
     "PB => NB", # & Use alt-fingering
     ##############################################
 
@@ -87,7 +85,7 @@ AK = [
     "E. => EE",
     "FG => FF",
     "SD => SS",
-    "BF => BB",
+    "BC => BB",
     "CG => CC", # CD would technically work, but it would make using the terminal a nightmare
     "GC => GG",
     "PW => PP", # Not using PM because of 6PM, 7PM, ...
