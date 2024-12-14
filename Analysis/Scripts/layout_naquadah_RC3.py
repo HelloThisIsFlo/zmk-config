@@ -76,6 +76,9 @@ AK = [
     "VT => VN",
 
     "PG => PL", # For M->P->L, but also for regular P->L
+    "GP => LP",
+    "KG => KL",
+    "GK => LK",
     "BG => BL", # For M->B(k)->L
     ##############################################
 

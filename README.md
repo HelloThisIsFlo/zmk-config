@@ -39,11 +39,11 @@ The position of the special chars is still in flux (only . , ' are fixed)
 The 46 accompanying AKs: (Note: This is RC2, it may evolve until the full release)
 ============
 ## SFB AKs ###################################
-"A, => AU" 
-"U_ => UA" 
+"A- => AU" 
+"U- => UA" 
 
 "E= => EO" 
-"O' => OE"  # Better than OH because of "Oh! really?"
+"O= => OE"  # Better than OH because of "Oh! really?"
 
 "GF => GS" 
 
@@ -90,6 +90,9 @@ The 46 accompanying AKs: (Note: This is RC2, it may evolve until the full releas
 "VT => VN" 
 
 "PG => PL"  # For M->P->L, but also for regular P->L
+"GP => LP" 
+"KG => KL" 
+"GK => LK" 
 "BG => BL"  # For M->B(k)->L
 ##############################################
 
