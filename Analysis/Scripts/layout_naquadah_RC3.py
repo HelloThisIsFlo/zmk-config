@@ -25,11 +25,11 @@ Notes on some bigrams/trigrams:
 
 AK = [
     ## SFB AKs ###################################
-    "A, => AU",
-    "U_ => UA",
+    "A- => AU",
+    "U- => UA",
 
     "E= => EO",
-    "O' => OE", # Better than OH because of "Oh! really?"
+    "O= => OE", # Better than OH because of "Oh! really?"
 
     "GF => GS",
 
