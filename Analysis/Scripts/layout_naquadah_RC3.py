@@ -36,7 +36,7 @@ AK = [
     "LG => LL",
     "LX => LG", # To remove SFB caused by LG => LM (aLGorithm)
 
-    "NP => NL", # NP is rarely used in "flow", essentially mostly in "input". The rest is "un-" words
+    "NP => NN", # NP is rarely used in "flow", essentially mostly in "input". The rest is "un-" words
 
     "MT => MN",
     "NX => NM",
@@ -93,7 +93,7 @@ AK = [
     "GC => GG",
     "PW => PP", # Not using PM because of 6PM, 7PM, ...
     "MW => MM",
-    "NW => NN",
+    "NW => NL", # On 'NW' instead of 'NP' to keep the more comfortable 'NP' move for 'NN' (and 'WNL' awkward for 'doWNLoad in one move anyway)
     "O. => OO", # May need to increase the timing of adaptive keys to make this one more reliable
     "RX => RR",
     "TG => TT",
