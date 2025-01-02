@@ -76,8 +76,8 @@ def is_same_finger(bigram, include_repeat=False):
     if bigram[0] == bigram[1]:
         if not include_repeat:
             return False
-        if bigram.upper() in IGNORE:
-            return False
+    if bigram.upper() in IGNORE:
+        return False
 
     # Check if the two keys share any finger
     return not LAYOUT[bigram[0]].isdisjoint(LAYOUT[bigram[1]])
