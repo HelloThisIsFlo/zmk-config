@@ -126,7 +126,7 @@ IMPOSSIBLE = [ # These are impossible to actually do in one move on my keyboard 
     ## Ring
     "GB",
     "GV",
-    "SB",
+    # "SB", # Actually this is not so uncomfortable. It's not ideal, but not as 'impossible' like the others from this list
     "SV",
 
     ## Middle
@@ -147,7 +147,7 @@ IMPOSSIBLE = [ # These are impossible to actually do in one move on my keyboard 
     "Y_",
     "Y,",
     "I_",
-    "I,",
+    # "I,", # Actually this is not so uncomfortable. It's not ideal, but not as 'impossible' like the others from this list
 
     ## Middle
     "O_",
@@ -157,9 +157,11 @@ IMPOSSIBLE = [ # These are impossible to actually do in one move on my keyboard 
     "-_",
 ]
 IGNORE = [
-    "II"
+    "II",
     # "EE",
     # "TT",
     # "NN",
     # "DD",
+    "DT", # Really only for 'width'
+    "DB", # Most freq comes from uuids (in Notion corpus)
 ]
