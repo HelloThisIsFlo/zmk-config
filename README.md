@@ -55,7 +55,8 @@ The 46 accompanying AKs: (Note: This is RC2, it may evolve until the full releas
 "MT => MN" 
 "NX => NM" 
 
-"PK => PT" 
+"PC => PT"  # Better that "PN => PT" because of 'M->P->T' (and 'P->T->S' remains doable relatively easily)
+"CP => TP"  # For 'ouTPut'
 
 "SR => SW" 
 "WX => WS" 
