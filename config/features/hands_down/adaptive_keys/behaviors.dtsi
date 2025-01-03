@@ -26,6 +26,8 @@ blt_akR: blt_akR {
     bindings = <&mo>, <&ak_R_macro>;
 };
 #define nav_akR  &blt_akR l_nav XXX
+#define nav_akR_linwin &blt_akR l_nav_linwin XXX
+
 
 
 bksl: bksl {
