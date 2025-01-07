@@ -41,6 +41,8 @@ AK = [
     "MT => MN",
     "NX => NM",
 
+    "PN => PD", # Essentially just for 'update'
+
     "PC => PT", # Better that "PN => PT" because of 'M->P->T' (and 'P->T->S' remains doable relatively easily)
     "CP => TP", # For 'ouTPut'
 
