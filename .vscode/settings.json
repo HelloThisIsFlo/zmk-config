@@ -2,7 +2,5 @@
   "files.associations": {
     "*.dtsi": "cpp"
   },
-  "[cpp]": {
-    "editor.formatOnSave": false
-  }
+  "editor.formatOnSave": false
 }
