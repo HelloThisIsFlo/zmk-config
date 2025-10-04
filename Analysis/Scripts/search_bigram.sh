@@ -6,6 +6,6 @@ cd "$DIR"
 
 bigram="$1"
 
-cat Corpus-Notion.txt | grep "\w*$bigram\w*" -o | sort | uniq | grep --color=always "$bigram"
+cat Corpus.txt | grep "\w*$bigram\w*" -o | sort | uniq | grep --color=always "$bigram"
 
 cd - >/dev/null
