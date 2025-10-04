@@ -1,0 +1,42 @@
+---
+alwaysApply: true
+---
+
+# ZMK Keyboard Configuration Project
+
+This is a ZMK (Zephyr-based keyboard firmware) configuration for a Corne keyboard with custom layouts and advanced features.
+
+## Project Structure
+
+- **`config/`**: Main configuration directory containing all ZMK files
+  - [corne.keymap](mdc:config/corne.keymap): Main keymap file that includes all features
+  - [CONFIG.h](mdc:config/CONFIG.h): Configuration constants and timing parameters
+  - [build.yaml](mdc:config/build.yaml): GitHub Actions build matrix
+  - [west.yml](mdc:config/west.yml): Zephyr workspace configuration
+- **`config/features/`**: Hierarchically organized feature modules
+  - **`__BASE__/`**: Core aliases, layers, and behaviors
+  - **`hands_down/`**: Main layout implementation with adaptive keys
+  - **`switch_device/`**: Device switching functionality
+- **`Analysis/`**: Bigram analysis and layout optimization data
+
+## Key Layouts
+
+- **Naquadah**: Primary layout with 46 Adaptive Keys (AKs) for ultra-low SFB (0.082%)
+- **Promethium**: Alternative layout variant
+- **Rhodium**: Another layout variant
+
+## Build & Flash
+
+To compile and flash the firmware:
+
+```bash
+../zmk/build_and_flash.sh left   # Flash left side
+../zmk/build_and_flash.sh right  # Flash right side
+```
+
+## Core Concepts
+
+- **Adaptive Keys**: Keys that behave differently based on context to eliminate Same Finger Bigrams (SFBs)
+- **Callum Style Mods**: One-shot mods that chain and stack
+- **Linger Keys**: Tap-hold behaviors with different actions
+- **Magic Parenthesis**: Context-aware bracket insertion

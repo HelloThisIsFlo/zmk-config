@@ -1,0 +1,65 @@
+---
+description: Build, flash, and testing procedures
+---
+
+# Build and Testing Procedures
+
+## Build Commands
+
+```bash
+# Build and flash left side
+../zmk/build_and_flash.sh left
+
+# Build and flash right side
+../zmk/build_and_flash.sh right
+```
+
+## Build Process
+
+1. **Zephyr Workspace**: Uses [west.yml](mdc:config/west.yml) to define the workspace
+2. **GitHub Actions**: [build.yaml](mdc:config/build.yaml) defines the build matrix
+3. **Firmware Download**: Uses `gh run download` to get built firmware
+4. **Flash**: Copies `.uf2` files to `/Volumes/NICENANO/`
+
+## Testing Checklist
+
+- [ ] Compile without errors (only test needed)
+
+**Success indicators:**
+
+- Build completes with `[300/300] Linking C executable zephyr/zmk.elf`
+- Memory usage statistics shown
+- `Converted to uf2, output size: X, start address: 0x26000`
+- `Wrote X bytes to zmk.uf2`
+- `cp: directory /Volumes/NICENANO does not exist` (expected when keyboard not plugged in)
+
+**Failure indicators:**
+
+- `devicetree error:` with parse errors
+- `CMake Error` messages
+- `ninja: error: rebuilding 'build.ninja': subcommand failed`
+- `FATAL ERROR: command exited with status 1`
+
+## Common Issues
+
+- **Compilation Errors**: Check syntax in `.dtsi` files
+  - Look for `devicetree error:` messages with parse errors
+  - Check column numbers in error messages for exact location
+  - Verify all `#include` paths are correct
+  - Ensure proper syntax in combo definitions, behaviors, and macros
+
+## Development Workflow
+
+1. Make changes to configuration files
+2. Test compilation: `../zmk/build_and_flash.sh left`
+3. If compilation fails, fix syntax errors and repeat
+4. If compilation succeeds, commit working changes
+
+**Note**: Only compilation success matters. The `cp: directory /Volumes/NICENANO does not exist` error is expected when the keyboard is not plugged in.
+
+## Configuration Validation
+
+- Verify all `#include` paths are correct
+- Check that all referenced behaviors are defined
+- Ensure combo timing is appropriate
+- Validate layer references and key positions

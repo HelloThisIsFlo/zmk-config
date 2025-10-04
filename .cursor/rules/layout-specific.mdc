@@ -1,0 +1,63 @@
+---
+description: Layout-specific configuration rules
+---
+
+# Layout-Specific Configuration
+
+## Available Layouts
+
+The project supports three main layouts defined in [CONFIG.h](mdc:config/CONFIG.h):
+
+- **NAQUADAH**: Primary layout with 46 Adaptive Keys
+- **PROMETHIUM**: Alternative layout variant
+- **RHODIUM**: Another layout variant
+
+## Layout Selection
+
+Layouts are selected via preprocessor defines in [CONFIG.h](mdc:config/CONFIG.h):
+
+```c
+#define NAQUADAH
+#define PROMETHIUM
+#define RHODIUM
+```
+
+## Layout-Specific Files
+
+Each layout has dedicated files in [config/features/hands_down/](mdc:config/features/hands_down/):
+
+### Layer Files
+
+- `layers_A_*_alpha.dtsi`: Base alpha layer
+- `layers_A_*_alpha_linwin.dtsi`: Linux/Windows specific alpha layer
+- `layers_B_*_adaptive_keys.dtsi`: Adaptive key layer
+
+### Aliases
+
+- `aliases_layers_*.dtsi` in [**BASE**/](mdc:config/features/__BASE__/): Layout-specific layer aliases
+
+## Naquadah Layout Details
+
+- **SFB Rate**: 0.082% (extremely low)
+- **Adaptive Keys**: 46 total AKs
+- **Categories**:
+  - SFB AKs: Eliminate same-finger bigrams
+  - Impossible Movements: Handle difficult key sequences
+  - Comfort AKs: Improve typing comfort
+  - Repeat AKs: Handle repeated keys
+  - Special Cases: Unique combinations
+
+## Layout Principles
+
+- **Flow**: Extremely low SFB, low redirects
+- **Rolls**: IN rolls >> OUT rolls
+- **Syllable Breaks**: Remaining SFBs should be on syllable breaks
+- **Adaptive Keys Required**: Layout is useless without AKs
+
+## Adding New Layouts
+
+1. Add layout define to [CONFIG.h](mdc:config/CONFIG.h)
+2. Create layout-specific layer files
+3. Add aliases in [**BASE**/aliases*layers*\*.dtsi](mdc:config/features/__BASE__/aliases_layers.dtsi)
+4. Update [corne.keymap](mdc:config/corne.keymap) to include new layout files
+5. Test compilation and functionality

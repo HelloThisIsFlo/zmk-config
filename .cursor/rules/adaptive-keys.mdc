@@ -1,0 +1,50 @@
+---
+description: Rules for working with Adaptive Keys (AKs) system
+---
+
+# Adaptive Keys (AKs) System
+
+## Overview
+
+Adaptive Keys are the core feature of this keyboard configuration, designed to eliminate Same Finger Bigrams (SFBs) by making keys behave differently based on context.
+
+## Key Files
+
+- [adaptive_keys/behaviors.dtsi](mdc:config/features/hands_down/adaptive_keys/behaviors.dtsi): AK behavior definitions
+- [adaptive_keys/combos.dtsi](mdc:config/features/hands_down/adaptive_keys/combos.dtsi): AK combo implementations
+- [adaptive_keys/macros.dtsi](mdc:config/features/hands_down/adaptive_keys/macros.dtsi): AK macro definitions
+- [adaptive_keys/aliases.dtsi](mdc:config/features/hands_down/adaptive_keys/aliases.dtsi): AK aliases
+
+## How AKs Work
+
+1. **Detection**: Combos detect when specific key sequences are pressed
+2. **Timing**: Uses `my_ak_window` (100ms) to determine if keys are part of the same sequence
+3. **Macro Queue**: Leverages ZMK's macro queue system for reliable execution
+4. **Context Awareness**: Keys behave differently based on surrounding keys
+
+## Configuration Constants
+
+- `my_ak_window`: Time window for AK detection (100ms)
+- `ak_tap_time`: Tap timing for AK macros (10ms)
+- `hold_key_event_delay`: Delay for hold key events (11ms)
+
+## Common AK Patterns
+
+- **SFB Elimination**: "A-" → "AU", "U-" → "UA"
+- **Comfort Improvements**: "DV" → "LV", "DK" → "LK"
+- **Repeat Keys**: "E." → "EE", "FG" → "FF"
+- **Impossible Movements**: "SX" → "SF", "MK" → "MB"
+
+## Debugging AKs
+
+- Check combo timing in [combos.dtsi](mdc:config/features/hands_down/adaptive_keys/combos.dtsi)
+- Verify macro definitions in [macros.dtsi](mdc:config/features/hands_down/adaptive_keys/macros.dtsi)
+- Test with burst typing at 200+ WPM
+- Use `../zmk/build_and_flash.sh left` to test changes
+
+## Important Notes
+
+- AKs are **NOT optional** - the layout is designed around them
+- Very reliable (no missed keys in over a year)
+- Requires understanding of ZMK's macro queue implementation
+- Some minor caveats with HRMs (Home Row Mods)

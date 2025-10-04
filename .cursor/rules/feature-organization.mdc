@@ -1,0 +1,54 @@
+---
+globs: config/features/**/*
+---
+
+# Feature Organization Rules
+
+## Directory Structure
+
+Features are organized hierarchically in [config/features/](mdc:config/features/):
+
+### Core Features (`__BASE__/`)
+
+- [aliases_key_positions.dtsi](mdc:config/features/__BASE__/aliases_key_positions.dtsi): Key position definitions
+- [aliases*layers*\*.dtsi](mdc:config/features/__BASE__/aliases_layers_NAQUADAH.dtsi): Layer aliases for each layout
+- [default_behaviors_config.dtsi](mdc:config/features/__BASE__/default_behaviors_config.dtsi): Default behavior configurations
+
+### Main Features (`hands_down/`)
+
+- **Adaptive Keys**: Context-sensitive key behaviors to eliminate SFBs
+- **Mods**: Callum-style one-shot modifiers
+- **Linger Keys**: Tap-hold behaviors
+- **Combos**: Key combinations and shortcuts
+- **Layers**: Different keyboard layouts (alpha, adaptive, extra)
+
+### Layout-Specific Files
+
+Each layout (NAQUADAH, PROMETHIUM, RHODIUM) has its own:
+
+- `layers_A_*_alpha.dtsi`: Base alpha layer
+- `layers_A_*_alpha_linwin.dtsi`: Linux/Windows specific alpha layer
+- `layers_B_*_adaptive_keys.dtsi`: Adaptive key layer
+
+## File Naming Conventions
+
+- `aliases.dtsi`: Key and layer aliases
+- `behaviors.dtsi`: Custom behaviors
+- `combos.dtsi`: Key combinations
+- `macros.dtsi`: Macro definitions
+- `layers_*.dtsi`: Layer definitions
+
+## Feature Dependencies
+
+Features are included in [corne.keymap](mdc:config/corne.keymap) in this order:
+
+1. Base aliases and configurations
+2. Feature-specific aliases
+3. Behaviors
+4. Combos
+5. Macros
+6. Keymap layers
+
+## Experimental Features
+
+Features under `zz__INVESTIGATE__zz/` are experimental and may be incomplete or unstable.

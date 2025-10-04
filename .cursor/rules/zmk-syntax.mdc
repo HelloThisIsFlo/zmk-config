@@ -1,0 +1,43 @@
+---
+globs: *.dtsi,*.keymap,*.c
+---
+
+# ZMK Configuration Syntax Rules
+
+## File Extensions
+
+- `.dtsi`: Device Tree Source Include files (main ZMK configuration)
+- `.keymap`: Main keymap file
+- `.c`: C source files for preprocessor macros
+
+## Key ZMK Concepts
+
+- **Behaviors**: Define how keys behave (tap, hold, combo, etc.)
+- **Combos**: Key combinations that trigger special actions
+- **Macros**: Sequences of key presses
+- **Layers**: Different key layouts that can be activated
+- **Aliases**: Shortcuts for complex key definitions
+
+## Common Patterns
+
+- Use `#include` to include feature modules
+- Define behaviors in `behaviors` section
+- Define combos in `combos` section with `compatible = "zmk,combos"`
+- Use `&` for behavior references: `&mt`, `&kp`, `&mo`, etc.
+- Layer references: `&mo LAYER_NAME`
+- Key position aliases: `&kp L1` (left thumb), `&kp R1` (right thumb)
+
+## Configuration Constants
+
+All timing and behavior constants are defined in [CONFIG.h](mdc:config/CONFIG.h):
+
+- `my_tapping_term_main`: Main tapping term (500ms)
+- `my_ak_window`: Adaptive key window (100ms)
+- `linger_term`: Linger key timeout (100ms)
+- Combo timeouts: `my_combo_timeout_adjacent`, `my_combo_timeout_non_adjc`
+
+## Preprocessor Directives
+
+- `#if defined LAYOUT_NAME`: Conditional compilation for different layouts
+- `#include "./features/path/file.dtsi"`: Include feature modules
+- Use `#define` for configuration constants
