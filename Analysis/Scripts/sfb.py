@@ -6,7 +6,7 @@ from operator import itemgetter
 from bigrams import compute_bigrams
 from generate_bigrams_from_corpus import get_corpus
 
-from layout_naquadah_RC3 import LAYOUT, AK, ALT_FINGERING, IMPOSSIBLE, IGNORE
+from layout_naquadah_RC4 import LAYOUT, AK, ALT_FINGERING, IMPOSSIBLE, IGNORE
 
 
 MAYZNER_BIGRAMS_FILE = "../Data/ALL bigrams.html"

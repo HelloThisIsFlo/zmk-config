@@ -36,8 +36,6 @@ AK = [
     "LG => LL",
     "LX => LG", # To remove SFB caused by LG => LM (aLGorithm)
 
-    "NP => NN", # NP is rarely used in "flow", essentially mostly in "input". The rest is "un-" words
-
     "MT => MN",
     "NX => NM",
 
@@ -72,8 +70,8 @@ AK = [
     "KD => KL",
     "DB => LB",
     "BD => BL",
-    "DF => DV", # To remove SFB caused by DV => LV
-
+    "DX => DV", # To remove SFB caused by DV => LV. 
+                # Not on F to enable DF, for df (dataframe)
 
     "TV => NV",
     "VT => VN",
@@ -96,7 +94,9 @@ AK = [
     "GC => GG",
     "PW => PP", # Not using PM because of 6PM, 7PM, ...
     "MW => MM",
-    "NW => NL", # On 'NW' instead of 'NP' to keep the more comfortable 'NP' move for 'NN' (and 'WNL' awkward for 'doWNLoad in one move anyway)
+    "NW => NN", # On 'NW' instead of 'NP' because even though 'NP' is rare, it's very annoying when it breaks the flow (e.g. "np" for numpy, or "input" for input)
+                # Also: Not handling the 'NL' SFB because it there's no great candidate and it actually flows quite nicely to break between 'N' and 'L'
+                #       I think this may be due to 'ON-ly' feels like 'on ... ly', whereas 'IN-put' feels more like 'e ... nput'
     "O. => OO", # May need to increase the timing of adaptive keys to make this one more reliable
     "RX => RR",
     "TG => TT",
