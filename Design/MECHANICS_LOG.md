@@ -42,33 +42,42 @@ side.
 > underneath the keyboard has been evolving for over two years and 600+ commits.
 > Here's the technical story.
 
-**Sep 2023 -- The buffered key invention.** The project starts with a standard
-Corne template and basic Home Row Mods. Almost immediately, a critical timing
-problem surfaces: Adaptive Key detection fires macros that output keys, but
-without careful timing, keypresses arrive out of order or get dropped entirely.
-The solution is deceptively simple -- `&bkp` (buffered key press), a custom ZMK
-behavior that wraps `&kp` in a macro with a 10ms tap delay. That tiny buffer
-ensures every keypress registers cleanly, in order. Within days, all relevant
-`&kp` calls are migrated to `&bkp`. The buffered key concept (renamed to `&bk`
-in its modern form) remains the foundation of the entire system. Every
-character output in the codebase flows through it.
+**Sep 2023 -- The buffered key invention.** The project starts by importing
+Adaptive Key and linger key concepts from Moutis' Hands Down ZMK derivative --
+Alan Reiser's Hands Down project pioneered the idea of detecting key sequences
+and replacing output to eliminate Same-Finger Bigrams. With the AK concept in
+place alongside a standard Corne template and basic Home Row Mods, a critical
+timing problem surfaces almost immediately: AK detection fires macros that
+output keys, but without careful timing, keypresses arrive out of order or get
+dropped entirely. The solution is deceptively simple -- `&bkp` (buffered key
+press), a custom ZMK behavior that wraps `&kp` in a macro with a 10ms tap
+delay. That tiny buffer ensures every keypress registers cleanly, in order.
+This was not part of the original Hands Down implementation -- it was invented
+here to make AKs actually reliable. Within days, all relevant `&kp` calls are
+migrated to `&bkp`. The buffered key concept (renamed to `&bk` in its modern
+form) remains the foundation of the entire system. Every character output in
+the codebase flows through it.
 
-**Sep–Oct 2023 -- The AK layer-per-character system.** Early Adaptive Key
-experiments quickly surface a design question: how do you detect a two-key
-sequence and replace it? The answer becomes one of the project's most pivotal
-architectural decisions. Each AK trigger key gets its own dedicated ZMK layer
-(l_akA through l_akY). When you type a key, the `&ak` behavior taps the
+**Sep-Oct 2023 -- The AK layer-per-character system.** While the concept of
+Adaptive Keys came from Hands Down, the imported system had no prescribed
+architecture for scaling them. Early experiments quickly surface a design
+question: how do you detect a two-key sequence and replace it? The answer
+becomes one of the project's most pivotal architectural decisions -- and is
+entirely novel engineering. Each AK trigger key gets its own dedicated ZMK
+layer (l_akA through l_akY). When you type a key, the `&ak` behavior taps the
 character and activates the corresponding AK layer via `&aksl` (sticky layer).
 While that layer is active -- for the duration of the `my_ak_window` -- pressing
 a second key can hit a replacement binding instead of the default. The
 `REPLACE_CHAR_WITH_BIGRAM` macro standardizes the replacement: backspace the
 first character, type the correct pair, and explicitly release shift to prevent
-case contamination. This architecture scales cleanly to 23+ AK layers without
-any combinatorial explosion. But there's a race condition: what if the second
-key fires before the AK layer activates? Enter the AK Consistency Hack -- a
-master combo bound to all 36 keys with an 11ms timeout. It exploits a 1ms
-margin over `ak_tap_time` (10ms), guaranteeing the AK layer is always live
-before any second key event can register.
+case contamination. This layer-per-AK architecture, the `&aksl` behavior, and
+the scaling model are all original to this project. The architecture scales
+cleanly to 23+ AK layers without any combinatorial explosion. But there's a
+race condition: what if the second key fires before the AK layer activates?
+Enter the AK Consistency Hack -- another original invention -- a master combo
+bound to all 36 keys with an 11ms timeout. It exploits a 1ms margin over
+`ak_tap_time` (10ms), guaranteeing the AK layer is always live before any
+second key event can register.
 
 **Oct 2023 -- The Great Restructuring.** The codebase undergoes a complete
 architectural overhaul. Monolithic files (`flo_config.h`, `flo_behaviors.dtsi`,
@@ -84,7 +93,7 @@ restructuring takes about a week and touches nearly every file, but the payoff
 is a codebase where you can find anything by name and add features without
 touching unrelated code.
 
-**Oct 2023 – Sep 2024 -- The HRM engineering era.** Home Row Mods are the
+**Oct 2023--Sep 2024 -- The HRM engineering era.** Home Row Mods are the
 modifier system for almost a year, and they demand constant technical tuning.
 Tap-preferred vs balanced flavor. `hold-while-undecided` for visual feedback.
 `require-prior-idle-ms` added to reduce misfires, then removed when it causes
@@ -121,7 +130,8 @@ accessible via thumb hold. The engineering is cleaner than HRMs: fewer special
 cases, no cross-hand timing heuristics, no ambiguity about whether a home row
 key was meant as a letter or a modifier.
 
-**Oct 2024 -- Multi-layout architecture.** The system is generalized to support
+**Oct 2024 -- Multi-layout architecture.** With Naquadah departing entirely from
+Hands Down Titanium's letter placement, the system is generalized to support
 multiple layouts simultaneously: Naquadah, Promethium, Rhodium. Per-layout
 files follow a strict naming convention: `layers_A_{LAYOUT}_alpha.dtsi` for the
 base alpha layer, `layers_B_{LAYOUT}_adaptive_keys.dtsi` for AK layers. Layer
@@ -133,7 +143,7 @@ all layouts. The architecture means adding a new layout requires only new A/B
 layer files and an alias mapping. Everything else -- combos, linger keys, mods,
 the entire AK infrastructure -- just works.
 
-**2023–2025 -- Combo timeout refinement.** Combo timeouts evolve through months
+**2023--2025 -- Combo timeout refinement.** Combo timeouts evolve through months
 of daily-driver testing, one millisecond at a time. Early values start at 10ms
 (too tight -- missed combos during fast typing), climb to 15ms, then 20ms. The
 two-hand timeout gets its own value early (30ms), acknowledging that

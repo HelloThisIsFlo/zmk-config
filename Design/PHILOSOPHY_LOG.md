@@ -41,13 +41,18 @@ ergonomic."
 **Sep 2023 -- The beginning.** Project starts with a Corne (Chocofi) split
 keyboard and Nice Nano v2 controllers. Early weeks are pure exploration:
 Gallium, Sturdy, Recurva, Dhorf, Whorf -- trying every layout that looks
-promising. Sturdy becomes the first real baseline.
+promising. Sturdy becomes the first real baseline. The initial import from
+Moutis' ZMK repo (Sep 22, 2023) brings the first taste of what will become
+central: adaptive keys, linger keys, and the bigram analysis approach -- all
+concepts originating from Alan Reiser's Hands Down project.
 
 **Sep 2023 -- Hands Down enters the picture.** Importing features from Alan
-Reiser's Hands Down ZMK fork is transformational. Suddenly the architecture has
-adaptive layers, bigram analysis, and sophisticated mod handling. The Adaptive
-Keys concept -- detecting rapid key sequences and replacing them -- takes root.
-Early AK window tuning starts at 50ms, experiments through 70-90ms.
+Reiser's Hands Down ZMK fork is transformational. This is where the core
+toolkit arrives: adaptive key layers, bigram-driven layout analysis, linger
+keys for character variants, and sophisticated home row mod handling. Suddenly
+the architecture has real depth. The Adaptive Keys concept -- detecting rapid
+key sequences and replacing them -- takes root. Early AK window tuning starts
+at 50ms, experiments through 70-90ms.
 
 **Oct 2023 -- Apr 2024 -- The HRM era.** Six months of wrestling with Home Row
 Mods. Tap-preferred, positional variants, cross-hand detection, `require-prior-
@@ -56,15 +61,18 @@ The timing dance never fully goes away.
 
 **Sep 2024 -- The Callum revolution.** After a year of HRM tweaking, a proof of
 concept: Callum-style one-shot mods. Tap to chain/stack, hold for regular mods.
-"Love at first sight." By October, all HRMs are gone. The keyboard becomes
-dramatically more reliable for mod combinations. This is one of those decisions
-that never gets revisited -- it was just right.
+"Love at first sight." By October, all HRMs are gone -- a sharp departure from
+Hands Down's home row mod approach. The keyboard becomes dramatically more
+reliable for mod combinations. This is one of those decisions that never gets
+revisited -- it was just right.
 
 **Oct 21, 2024 -- Naquadah is born.** The bold question: "What if we built a
 layout that _required_ adaptive keys?" Not AKs as optimization, but AKs as
-foundation. Naquadah starts as a heavy variation of Hands Down Titanium, quickly
-becoming unrecognizable from its origin. All AKs are reset and redesigned from
-scratch against bigram corpus analysis.
+foundation. This is the philosophical break from Hands Down -- Alan's project
+treats AKs as a refinement layer; Naquadah makes them load-bearing. Naquadah
+starts as a heavy variation of Hands Down Titanium, but quickly becomes
+unrecognizable from its origin. All AKs are reset and redesigned from scratch
+against bigram corpus analysis.
 
 **Oct 24, 2024 -- RC1.** First release candidate. 31 AKs across four
 categories: SFB elimination, impossible movements, comfort, and repeat keys.
