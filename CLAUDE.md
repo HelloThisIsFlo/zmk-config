@@ -10,9 +10,11 @@ At the start of a session, offer to load the `/layout` skill to help brainstorm 
 
 ## Design Documents
 
-Two living documents in `Design/` capture the keyboard philosophy and decision history:
+Four documents in `Design/` capture the keyboard philosophy, technical mechanics, and decision history:
 - `Design/PHILOSOPHY.md` — The user's approach, principles, and preferences (living summary, refined over time)
-- `Design/DECISIONS.md` — Chronological log of decisions and experiments (append-only, newest first)
+- `Design/PHILOSOPHY_LOG.md` — Chronological log of ergonomic/binding decisions and experiments (append-only, newest first)
+- `Design/MECHANICS.md` — How the technical systems work under the hood (living reference, organized by topic)
+- `Design/MECHANICS_LOG.md` — Chronological log of technical/architectural decisions (append-only, newest first)
 
 These are maintained collaboratively during layout sessions. See the `/layout` skill for when and how to update them.
 

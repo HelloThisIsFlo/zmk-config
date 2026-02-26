@@ -1,8 +1,9 @@
-# Decision Journal
+# Philosophy Log
 
 > Chronological log of keyboard design decisions, experiments, and philosophy
 > shifts. Not code changes (git has that) -- this captures the reasoning,
-> experiments tried, and lessons learned.
+> experiments tried, and lessons learned. For technical/architectural decisions,
+> see the companion Mechanics Log.
 >
 > Newest entries first.
 
