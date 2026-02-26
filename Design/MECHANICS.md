@@ -108,6 +108,13 @@ Replaced Home Row Mods in Sep 2024.
 
 **`moAndBuffer`:** A macro that presses `&mo l_mod`, pauses for release, waits `action_mod_tapping_term` (130ms), then releases. The 130ms buffer keeps the mod layer alive long enough for the hold-tap to complete -- without it, the layer could deactivate before the mod registers.
 
+**The timing guarantee:** This architecture ensures you never have to think about timing. As long as the _order_ is correct, it works:
+- Correct: Mod Layer Press → Mod 1 → Mod 2 → Mod Layer Release
+- Correct: Mod Layer Press → Mod 1 → Mod 2 press → Mod Layer Release → Mod 2 release
+- Incorrect: Mod Layer Press → Mod 1 → Mod Layer Release → Mod 2 (too late -- layer gone)
+
+The 130ms buffer is what makes this forgiving -- it gives you a generous window after releasing the mod layer thumb key for any in-flight mod taps to resolve.
+
 **Home row mods still exist** (`hml`/`hmr`): `behavior-hold-tap` with `hold-trigger-key-positions` for cross-hand activation. Uses `&bm` (buffered mod) for hold, `&bk` for tap. Some keys (S, C, N, T, E, A, M) use custom variants that tap the AK macro instead of plain `&bk`, enabling AKs from home-row positions.
 
 ## Mod Morphs -- Conditional Behavior

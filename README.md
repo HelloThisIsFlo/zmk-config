@@ -1,28 +1,34 @@
-
 # Flo's Magic ZMK Config
 
-## Structure
-- **`config`**: Contains almost everything
-  - See the `features` directory for a hierarchally organized list of features
-- **`Analysis`**: Bigram analysis used to find AKs (Adaptive Keys)
+ZMK firmware configuration for a Corne (Chocofi) split keyboard with Nice Nano v2 controllers. Three custom layouts -- Naquadah (active), Promethium, and Rhodium -- all built around an Adaptive Keys system that eliminates Same-Finger Bigrams.
+
+## Design Documentation
+
+Start here to understand the keyboard:
+
+- **[`Design/PHILOSOPHY.md`](Design/PHILOSOPHY.md)** -- Why the keyboard works this way. Principles, preferences, ergonomic thinking.
+- **[`Design/PHILOSOPHY_LOG.md`](Design/PHILOSOPHY_LOG.md)** -- The story of ergonomic decisions, chronological.
+- **[`Design/MECHANICS.md`](Design/MECHANICS.md)** -- How the technical systems work under the hood.
+- **[`Design/MECHANICS_LOG.md`](Design/MECHANICS_LOG.md)** -- The story of technical decisions, chronological.
+
+The technical infrastructure is mature and stable. The ongoing work is iterating on bindings -- what key does what, adjusting combos, rethinking symbol placements, optimizing for ergonomics.
 
 ## Alpha Layout: Naquadah
+
 > **The driving question:** What if we built a layout that _required_ adaptive keys?
 
-Naquadah is a heavy variation of HandsDown Titanium, it's so modified as a matter of fact, it's practically unrecognizable.
-Its core principles are:
+Naquadah is a heavy variation of HandsDown Titanium -- so heavily modified it's practically unrecognizable. Its core principles are:
 - Adaptive Keys are **NOT** optional (this layout is useless without AKs)
 - It should feel like it "flows":
-  - Extremely low SFB: **0.082%** (See `sfb.py` in `Analysis/scripts`)
+  - Extremely low SFB: **0.082%** (See `sfb.py` in `Analysis/Scripts`)
   - Low Redirects (~<2%)
   - IN Rolls >> OUT Rolls
   - The few SFBs left should ideally be on syllable breaks
----
+
 ### Naquadah and its 46 AKs
-_Note: This is designed for heavy colstag keyboards (Chocofi)_
+_Designed for heavy column-stagger keyboards (Chocofi)_
 
 ```
-
 Naquadah layout:
 ================
    w  m  p  k              /  .  -  =
@@ -32,89 +38,89 @@ c                                      h
    g  l  d  b              _  u  o  y
 f                                      j
 
-                r      ␣
+                r      space
 
 The position of the special chars is still in flux (only . , ' are fixed)
 
-The 46 accompanying AKs: (Note: This is RC2, it may evolve until the full release)
+The 46 accompanying AKs:
 ============
 ## SFB AKs ###################################
-"A- => AU" 
-"U- => UA" 
+"A- => AU"
+"U- => UA"
 
-"E= => EO" 
+"E= => EO"
 "O= => OE"  # Better than OH because of "Oh! really?"
 
-"GF => GS" 
+"GF => GS"
 
-"LG => LL" 
+"LG => LL"
 "LX => LG"  # To remove SFB caused by LG => LM (aLGorithm)
 
 "NP => NN"  # NP is rarely used in "flow", essentially mostly in "input". The rest is "un-" words
 
-"MT => MN" 
-"NX => NM" 
+"MT => MN"
+"NX => NM"
 
 "PN => PD"  # Essentially just for 'update'
 
 "PC => PT"  # Better that "PN => PT" because of 'M->P->T' (and 'P->T->S' remains doable relatively easily)
 "CP => TP"  # For 'ouTPut'
 
-"SR => SW" 
-"WX => WS" 
+"SR => SW"
+"WX => WS"
 
 "YH => YI"  # More comfortable than YJ => YI
-"XS => XC" 
+"XS => XC"
 
-"WM => LM" 
+"WM => LM"
 ##############################################
 
 
 
 ## IMPOSSIBLE Movements (on Chocofi) #########
-"SX => SF" 
-"MK => MB" 
+"SX => SF"
+"MK => MB"
 "KM => BM"  # Useful because of the "MK => MB" muscle memory
 "PB => NB"  # & Use alt-fingering
 ##############################################
 
 
 ## Comfort AKs ###############################
-"DV => LV" 
-"DK => LK" 
-"VD => VL" 
-"KD => KL" 
-"DB => LB" 
-"BD => BL" 
+"DV => LV"
+"DK => LK"
+"VD => VL"
+"KD => KL"
+"DB => LB"
+"BD => BL"
 "DF => DV"  # To remove SFB caused by DV => LV
 
 
-"TV => NV" 
-"VT => VN" 
+"TV => NV"
+"VT => VN"
 
 "PG => PL"  # For M->P->L, but also for regular P->L
-"GP => LP" 
-"KG => KL" 
-"GK => LK" 
+"GP => LP"
+"KG => KL"
+"GK => LK"
 "BG => BL"  # For M->B(k)->L
 ##############################################
 
 
 ## Repeat AKs ################################
 ## Only for pinkies & ring fingers (skipped II because it's so rare)
-"E. => EE" 
-"FG => FF" 
-"SD => SS" 
-"BC => BB" 
+"E. => EE"
+"FG => FF"
+"SD => SS"
+"BC => BB"
 "CG => CC"  # CD would technically work, but it would make using the terminal a nightmare
-"GC => GG" 
+"GC => GG"
 "PW => PP"  # Not using PM because of 6PM, 7PM, ...
-"MW => MM" 
+"MW => MM"
 "NW => NL"  # On 'NW' instead of 'NP' to keep the more comfortable 'NP' move for 'NN' (and 'WNL' awkward for 'doWNLoad in one move anyway)
 "O. => OO"  # May need to increase the timing of adaptive keys to make this one more reliable
-"RX => RR" 
-"TG => TT" 
-"DC => DD" 
+"RX => RR"
+"TG => TT"
+"DC => DD"
 ##############################################
 
 
@@ -124,67 +130,31 @@ The 46 accompanying AKs: (Note: This is RC2, it may evolve until the full releas
 ##############################################
 ```
 
-## Concepts
-_Many concepts are based on Alan's amazing work: [Hands Down Layouts](https://sites.google.com/alanreiser.com/handsdown/home/hands-down-neu)_
+## Key Concepts
 
+### Adaptive Keys
+_Concept by [Alan Reiser](https://sites.google.com/alanreiser.com/handsdown/home/hands-down-neu) (Hands Down layouts)_
 
-### Adaptive Keys (Alan Reiser)
-Key behaving differently if pressed in quick successions. Virtually removes any remaining SFB
-- It works with a combination of layers, macros, and behaviors
-- It relies on the inner workings of the Macro queue implementation in ZMK
-  - Very reliable (no missed keys in more than a year), but
-    - It is sort of a hack
-    - There are some very minor caveats, [combo hack](config/features/hands_down/adaptive_keys/combos.dtsi), and some issues in very specific cases when using HRMs)
-    - Maintaining and debugging issues with this requires understading the inner workings of ZMK
-    - Eventually I'd may implement this in ZMK directly, but for now this has worked flawlessly so I'm keeping it as is.
-  - That being said, it works, and it works well (tested on burst words at 200wpm+)
+Keys that behave differently when pressed in quick succession, virtually eliminating all remaining SFBs. The system uses a layer-per-AK architecture -- each of the 46 AKs gets its own dedicated layer. Combos detect key sequences within a 100ms window, then macros replace the output with the intended bigram.
 
-<br/>
+Very reliable -- no missed keys in over a year, tested at 200wpm+ burst typing. See [`Design/MECHANICS.md`](Design/MECHANICS.md) for the full technical breakdown.
 
-### Callum Style Mods (Callum)
-After using HRMs for about a year, and tweaking everything I could tweak about it I felt it was a bottleneck. I had always looked down on Callum style mods until .... I actually tried it 😅. It's been love at first sight.
-- One shot mods
-- On tap, they chain and stack up
-- On hold, they act as regular mods. With a special feature in ZMK to enable the mod being pressed while tap/hold is decided (useful for mouse actions)
-- The mods layer (action layer) stay active for a few milliseconds after releasing
-  - This is to ensure the correct tap/hold resolution
-  - It guarantees we never have to think about the timing.
-  - As long as the order is correct, it will work as expected
-    - Correct order: 
-      - Mod Layer Press -> Mod 1 -> Mod 2 -> Mod Layer Release 
-      - Mod Layer Press -> Mod 1 -> Mod 2 press -> Mod Layer Release -> Mod 2 release
-      - ...
-    - Incorrect order:
-      - Mod Layer Press -> Mod 1 -> Mod Layer Release -> Mod 2 press & release
-      - ...
-        
-<br/>
+### Callum-Style Mods
+_Concept by [Callum](https://github.com/callum-oakley/qmk_firmware/tree/master/users/callum)_
 
-### Other
-- **Switch Device**: Switch the device and uses the associated layer
-- **Linger Keys (Alan Reiser)**: Does 2 different action on short tap vs hold. Essentially a tap-hold.
-- **Magic parenthesis**: One combo does 4 different types of parenthesis
-  - Depends on how long it's held and whether or not it's shifted
-- And probably more ...
+Replaced home row mods after a year of tweaking -- love at first sight. One-shot mods on tap (chaining and stacking), regular hold behavior. The timing guarantee (correct order = correct result) removes all ambiguity.
 
+### Other Concepts
+- **Linger Keys** (Alan Reiser) -- Tap for one action, hold for a related action. Used for H-digraphs (`th`, `sh`, `gh`), bracket variants, and more.
+- **Magic Parenthesis** -- One combo, four bracket types depending on hold duration and shift state.
+- **Wispr Combo** (S+N) -- Dictation shortcut. Tap for Opt+R, hold for Globe key. Eliminated thumb strain from repeated layer activation.
+- **Switch Device** -- Switches Bluetooth device and activates its associated layer.
 
-# Layout
-TODO: Fix visualization
-![3x5 layout](./keymap-drawer/corne.svg)
+## Architecture & Build
 
+See [`CLAUDE.md`](CLAUDE.md) for full architecture documentation, file navigation, build and flash instructions, and the `/layout` skill for collaborative binding iteration.
 
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
+## Credits
 
----
-#### Note to self
-
-- Try urob's timeless HRMs (?): https://www.reddit.com/r/ErgoMechKeyboards/comments/11gejh3/lpt_try_urobs_zmk_timeless_homerow_mods_combos/  
-(and other small features)
+- **Alan Reiser** -- [Hands Down layouts](https://sites.google.com/alanreiser.com/handsdown). Adaptive Keys, linger keys, and the analytical foundation that made Naquadah possible.
+- **Callum Oakley** -- [Callum-style mods](https://github.com/callum-oakley/qmk_firmware/tree/master/users/callum). One-shot mod system.
