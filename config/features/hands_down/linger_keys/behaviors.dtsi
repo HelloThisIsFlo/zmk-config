@@ -8,6 +8,15 @@ lk: lk {
     bindings = <&bk>, <&bk>;
 };
 
+lk_wispr: lk_wispr {
+    compatible = "zmk,behavior-hold-tap";
+    label = "lk_wispr";
+    #binding-cells = <2>;
+    tapping-term-ms = <linger_term>;
+    flavor = "tap-preferred";
+    bindings = <&kp>, <&bk>;  // hold=kp (holds Globe for transient dictation), tap=bk (taps Opt+R)
+};
+
 LK(qu, &Qu, &bk)
 LK(th, &Th, &tion)
 LK(sh, &Sh, &sion)
