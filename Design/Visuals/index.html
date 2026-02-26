@@ -1567,6 +1567,16 @@ input[type="range"]::-webkit-slider-thumb {
             <div class="combo-card-name">Caps Word</div>
             <div class="combo-card-keys">RM1 + RM2 + RM3 + RM4</div>
           </div>
+          <div class="combo-card" data-keys="LT2,RM3" data-tier="two-hand">
+            <div class="combo-card-tier two-hand">Two-hand &middot; 30ms</div>
+            <div class="combo-card-name">I'm</div>
+            <div class="combo-card-keys">LT2 + RM3 (pronoun combo)</div>
+          </div>
+          <div class="combo-card" data-keys="LB2,RM3" data-tier="two-hand">
+            <div class="combo-card-tier two-hand">Two-hand &middot; 30ms</div>
+            <div class="combo-card-name">I'll</div>
+            <div class="combo-card-keys">LB2 + RM3 (pronoun combo)</div>
+          </div>
         </div>
       </div>
 
@@ -1874,7 +1884,8 @@ function initConcept1() {
       { id: 's-p', start: 6, end: 9, text: 'P', color: 'cyan' },
     ]},
     { id: 'combo', label: 'Combo', events: [
-      { id: 's-combo', start: 0, end: 16, text: 'Combo evaluation (keys buffered)', color: 'orange' },
+      { id: 's-combo', start: 0, end: 6, text: 'C buffered by combo', color: 'orange' },
+      { id: 's-combo-inv', start: 6, end: 14, text: 'P invalidates \u2192 C released', color: 'red' },
     ]},
     { id: 'master', label: 'Master', events: [
       { id: 's-master', start: 6, end: 17, text: 'ALL_KEYS buffers P (11ms)', color: 'gold' },
@@ -1902,37 +1913,44 @@ function initConcept1() {
         showEv('c1-lanes-fail', 'f-c');
         showEv('c1-lanes-success', 's-c');
       }},
-      { t: 0.12, action: () => {
+      { t: 0.08, action: () => {
+        // Combo starts buffering C
+        showEv('c1-lanes-fail', 'f-combo');
+        showEv('c1-lanes-success', 's-combo');
+        setKeyState('LM4', 'combo-member');
+      }},
+      { t: 0.16, action: () => {
         setKeyState('LT1', 'pressed');
         showEv('c1-lanes-fail', 'f-p');
         showEv('c1-lanes-success', 's-p');
       }},
-      { t: 0.20, action: () => {
-        showEv('c1-lanes-fail', 'f-combo');
-        showEv('c1-lanes-success', 's-combo');
+      { t: 0.24, action: () => {
+        // Success: P is not in C's combo -> combo invalidated -> C released
+        showEv('c1-lanes-success', 's-combo-inv');
         showEv('c1-lanes-success', 's-master');
-        setKeyState('LM4', 'combo-member');
         setKeyState('LT1', 'combo-member');
       }},
-      { t: 0.40, action: () => {
-        // Fail: both release at once
+      { t: 0.34, action: () => {
+        // Success: C released by invalidation, &ak macro starts immediately
+        showEv('c1-lanes-success', 's-kpc');
+      }},
+      { t: 0.46, action: () => {
+        // Fail: combo times out at 16ms, both released at once
         showEv('c1-lanes-fail', 'f-release');
         showEv('c1-lanes-fail', 'f-kpc');
         showEv('c1-lanes-fail', 'f-phit');
         document.getElementById('c1-output-fail').innerHTML = '<span class="char">C</span><span class="char">P</span>';
-        // Success: C released first, macro starts
-        showEv('c1-lanes-success', 's-kpc');
       }},
       { t: 0.55, action: () => {
         showEv('c1-lanes-fail', 'f-aksl');
         showEv('c1-lanes-fail', 'f-layer');
       }},
-      { t: 0.60, action: () => {
+      { t: 0.62, action: () => {
         // Success: layer activates
         showEv('c1-lanes-success', 's-aksl');
         showEv('c1-lanes-success', 's-layer');
       }},
-      { t: 0.70, action: () => {
+      { t: 0.72, action: () => {
         // Success: P fires and hits AK layer
         showEv('c1-lanes-success', 's-phit');
         setKeyState('LT1', 'ak-success');
