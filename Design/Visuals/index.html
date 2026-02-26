@@ -1158,7 +1158,7 @@ input[type="range"]::-webkit-slider-thumb {
           <div class="concept-subtitle">How a 1ms margin makes 23 adaptive keys reliable</div>
         </div>
         <div class="concept-desc">
-          When a combo times out, ZMK releases all buffered keys <strong>simultaneously</strong>. The <code>&ak</code> macro
+          When a combo times out or is invalidated (e.g., a non-member key is pressed), ZMK releases all buffered keys <strong>simultaneously</strong>. The <code>&ak</code> macro
           needs <code>ak_tap_time</code> (10ms) to tap the first key before activating the AK layer. Without help, the second
           key fires before the layer is ready &mdash; a race condition. The fix: a master combo on <strong>all 36 keys</strong>
           with timeout <code>hold_key_event_delay</code> (11ms), guaranteeing the AK layer activates 1ms before the second key fires.
@@ -1242,16 +1242,19 @@ input[type="range"]::-webkit-slider-thumb {
           <div class="concept-subtitle">A 130ms safety net that makes mods forgiving</div>
         </div>
         <div class="concept-desc">
-          The <code>htls</code> thumb key (hold &ge; <code>action_lay_tapping_term</code> = 90ms) activates the mod layer via
+          The <code>htls</code> thumb key (hold-preferred, resolves on interrupt or after <code>action_lay_tapping_term</code> = 90ms) activates the mod layer via
           <code>&moAndBuffer</code>. This macro presses <code>&mo l_mod</code>, waits for the thumb release, then keeps the
           layer alive for an extra <strong>130ms buffer</strong> (<code>action_mod_tapping_term</code>). This means you
           don't have to think about timing &mdash; as long as the <em>order</em> is correct, it works.
+          <strong>Note:</strong> the failure mode is about the <em>layer</em> disappearing &mdash; when the buffer expires,
+          the mod layer deactivates and mod key positions revert to alpha keys. Already-armed sticky mods (like a Shift
+          tapped via <code>skm</code>) remain active; the problem is that you can no longer <em>reach</em> new mod keys.
         </div>
 
         <div class="scenario-pills">
           <div class="scenario-pill active" data-scenario="relaxed">Relaxed Roll</div>
           <div class="scenario-pill" data-scenario="close">Cutting it Close</div>
-          <div class="scenario-pill" data-scenario="late">Too Late</div>
+          <div class="scenario-pill" data-scenario="late">Too Late &mdash; mod layer gone</div>
         </div>
 
         <div style="display:flex;gap:8px;margin-bottom:16px;align-items:center">
@@ -1327,7 +1330,7 @@ input[type="range"]::-webkit-slider-thumb {
               </div>
               <div class="wf-micro-steps">
                 <div class="wf-step green" data-delay="100">&kp C <span style="color:var(--text-dim)">(tap-ms: 10ms)</span></div>
-                <div class="wf-step gold" data-delay="300">wait 10ms (ak_tap_time)</div>
+                <div class="wf-step green" data-delay="300">tap-ms: 10ms (key held then released)</div>
                 <div class="wf-step purple" data-delay="500">&aksl l_akC <span style="color:var(--text-dim)">(sticky layer ON)</span></div>
               </div>
             </div>
@@ -1476,10 +1479,6 @@ input[type="range"]::-webkit-slider-thumb {
             <div class="combo-card" style="flex:0 0 auto;padding:8px 14px">
               <div class="combo-card-name" style="font-size:0.75rem">gh</div>
               <div class="combo-card-keys">tap: gh &nbsp;linger: ght</div>
-            </div>
-            <div class="combo-card" style="flex:0 0 auto;padding:8px 14px">
-              <div class="combo-card-name" style="font-size:0.75rem">qu</div>
-              <div class="combo-card-keys">tap: q &nbsp;linger: qu</div>
             </div>
             <div class="combo-card" style="flex:0 0 auto;padding:8px 14px">
               <div class="combo-card-name" style="font-size:0.75rem">wispr</div>
@@ -1849,7 +1848,7 @@ function initConcept1() {
       { id: 'f-p', start: 6, end: 9, text: 'P', color: 'cyan' },
     ]},
     { id: 'combo', label: 'Combo', events: [
-      { id: 'f-combo', start: 0, end: 16, text: 'C+P combo window (16ms)', color: 'orange' },
+      { id: 'f-combo', start: 0, end: 16, text: 'Keys buffered by active combos', color: 'orange' },
     ]},
     { id: 'buffer', label: 'Buffer', events: [
       { id: 'f-release', start: 16, end: 17, text: 'Both released at once!', color: 'red' },
@@ -1875,20 +1874,20 @@ function initConcept1() {
       { id: 's-p', start: 6, end: 9, text: 'P', color: 'cyan' },
     ]},
     { id: 'combo', label: 'Combo', events: [
-      { id: 's-combo', start: 0, end: 16, text: 'Normal combo (16ms)', color: 'orange' },
+      { id: 's-combo', start: 0, end: 16, text: 'Combo evaluation (keys buffered)', color: 'orange' },
     ]},
     { id: 'master', label: 'Master', events: [
-      { id: 's-master', start: 0, end: 11, text: 'ALL_KEYS combo (11ms)', color: 'gold' },
+      { id: 's-master', start: 6, end: 17, text: 'ALL_KEYS buffers P (11ms)', color: 'gold' },
     ]},
     { id: 'macro', label: '&ak Macro', events: [
-      { id: 's-kpc', start: 5, end: 15, text: '&kp C (10ms)', color: 'green' },
-      { id: 's-aksl', start: 15, end: 17, text: '&aksl', color: 'purple' },
+      { id: 's-kpc', start: 6, end: 16, text: '&kp C (10ms)', color: 'green' },
+      { id: 's-aksl', start: 16, end: 17, text: '&aksl', color: 'purple' },
     ]},
     { id: 'layer', label: 'Layer', events: [
-      { id: 's-layer', start: 15, end: 30, text: 'l_akC active', color: 'purple' },
+      { id: 's-layer', start: 16, end: 30, text: 'l_akC active', color: 'purple' },
     ]},
     { id: 'second', label: 'P resolves', events: [
-      { id: 's-phit', start: 16, end: 19, text: 'P hits l_akC!', color: 'green' },
+      { id: 's-phit', start: 17, end: 20, text: 'P hits l_akC!', color: 'green' },
     ]},
   ];
   buildLanes('c1-lanes-success', successLanes, totalMs);
@@ -2027,7 +2026,7 @@ function initConcept2() {
       success: true
     },
     late: {
-      label: 'Too Late — layer already gone',
+      label: 'Too Late — tries to tap a second mod after buffer expires',
       thumbRelease: 120, modTap: 100, nextKey: 260,
       success: false
     }
@@ -2057,8 +2056,8 @@ function initConcept2() {
       { id: 'mod-tap', label: 'Mod Key', events: [
         { id: 'mod-shift', start: s.modTap, end: s.modTap + 5, text: 'Shift (skm)', color: 'green' },
       ]},
-      { id: 'next-key', label: 'Next Key', events: [
-        { id: 'next', start: s.nextKey, end: s.nextKey + 5, text: s.success ? 'A (shifted!)' : 'A (no shift!)', color: s.success ? 'green' : 'red' },
+      { id: 'next-key', label: s.success ? 'Next Key' : "Ctrl? \u2192 hits alpha 'A'!", events: [
+        { id: 'next', start: s.nextKey, end: s.nextKey + 5, text: s.success ? 'A (shifted!)' : "Ctrl gone \u2192 types 'a'!", color: s.success ? 'green' : 'red' },
       ]},
     ];
 
@@ -2079,11 +2078,11 @@ function initConcept2() {
         { t: 0.50, action: () => { clearAllKeyStates(); showEv('c2-lanes', 'buffer-bar'); }},
         { t: 0.75, action: () => {
           showEv('c2-lanes', 'next');
-          document.getElementById('c2-output').innerHTML = s.success ? '<span class="char new">A</span>' : '<span class="char" style="color:var(--red)">a</span>';
+          document.getElementById('c2-output').innerHTML = s.success ? '<span class="char new">A</span>' : '<span class="char" style="color:var(--red)">a</span> <span style="font-size:0.6rem;color:var(--red)">unwanted letter!</span>';
           const badge = document.getElementById('c2-badge');
           badge.style.opacity = '1';
           badge.className = 'result-badge ' + (s.success ? 'success' : 'fail');
-          badge.innerHTML = s.success ? '&#10003; Shift applied' : '&#10007; Layer expired!';
+          badge.innerHTML = s.success ? '&#10003; Shift applied' : '&#10007; Layer expired &mdash; mod key became alpha!';
         }},
       ],
       onTick: (t) => {
