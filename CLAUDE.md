@@ -8,6 +8,14 @@ The technical infrastructure of this keyboard config is mature and stable. The m
 
 At the start of a session, offer to load the `/layout` skill to help brainstorm and make binding changes together. Most sessions will be about this.
 
+## Design Documents
+
+Two living documents in `Design/` capture the keyboard philosophy and decision history:
+- `Design/PHILOSOPHY.md` — The user's approach, principles, and preferences (living summary, refined over time)
+- `Design/DECISIONS.md` — Chronological log of decisions and experiments (append-only, newest first)
+
+These are maintained collaboratively during layout sessions. See the `/layout` skill for when and how to update them.
+
 ## Project Overview
 
 ZMK firmware configuration for a Corne (Chocofi) split keyboard with Nice Nano v2 controllers. The project centers on three custom keyboard layouts (Naquadah, Promethium, Rhodium) built around an **Adaptive Keys (AKs) system** that eliminates Same-Finger Bigrams.
