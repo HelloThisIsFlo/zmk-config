@@ -2,6 +2,12 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+## What We're Working On
+
+The technical infrastructure of this keyboard config is mature and stable. The main work these days is **iterating on the bindings** — tweaking what key does what, adjusting combos, rethinking symbol placements, optimizing for ergonomics.
+
+At the start of a session, offer to load the `/layout` skill to help brainstorm and make binding changes together. Most sessions will be about this.
+
 ## Project Overview
 
 ZMK firmware configuration for a Corne (Chocofi) split keyboard with Nice Nano v2 controllers. The project centers on three custom keyboard layouts (Naquadah, Promethium, Rhodium) built around an **Adaptive Keys (AKs) system** that eliminates Same-Finger Bigrams.
