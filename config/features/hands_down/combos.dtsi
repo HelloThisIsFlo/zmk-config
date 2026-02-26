@@ -43,6 +43,7 @@ COMBO_LAY_NON_ADJC(            l_nav l_num l_nav_linwin l_numsym,  delWordTrans,
 /********************** UI actions ************************/
 // COMBO_ANY_ONE_HAND(             undo,            &bk LG(Z),                         LB4 LB3                                   ) // TODO: Do 'redo' as Linger Key
 COMBO_ANY_ONE_HAND( magicCloseQuitCb,       magicCloseQuit,                             LB3 LB2 LB1                           )
+COMBO_LAY_ONE_HAND(l_alpha_aks, dictation,       &kp LA(R),                             LM3 LM2                               ) // Dictation (Opt+R)
 
 
 
