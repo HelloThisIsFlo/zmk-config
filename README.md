@@ -2,6 +2,9 @@
 
 ZMK firmware configuration for a Corne (Chocofi) split keyboard with Nice Nano v2 controllers. Three custom layouts -- Naquadah (active), Promethium, and Rhodium -- all built around an Adaptive Keys system that eliminates Same-Finger Bigrams.
 
+### [**Explore the Interactive Timing Systems Visualization**](https://hellothisisflo.github.io/zmk-config/)
+> See how Adaptive Keys, combos, linger keys, and all the timing systems interact -- with animated diagrams and detailed breakdowns.
+
 ## Design Documentation
 
 Start here to understand the keyboard:
