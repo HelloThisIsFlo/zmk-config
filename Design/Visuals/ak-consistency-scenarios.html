@@ -1,0 +1,1458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AK Consistency Hack — 12 Scenarios</title>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;500;600;700&family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+/* ═══════════════════════════════════════════════
+   BASE & THEME
+   ═══════════════════════════════════════════════ */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --bg: #060a12;
+  --bg-raised: #0c1220;
+  --bg-surface: #111827;
+  --bg-surface-2: #162032;
+  --border: #1e2d42;
+  --border-bright: #2a3f5f;
+  --text: #c9d1d9;
+  --text-dim: #6e7a8a;
+  --text-bright: #e6edf3;
+
+  --cyan: #4fc3f7;
+  --cyan-dim: #1a3a4a;
+  --purple: #bb86fc;
+  --purple-dim: #2d1b4e;
+  --orange: #ff9800;
+  --orange-dim: #3d2600;
+  --green: #66bb6a;
+  --green-dim: #1a3320;
+  --red: #ef5350;
+  --red-dim: #3d1414;
+  --gold: #ffd54f;
+  --gold-dim: #3d3000;
+  --white: #e0e0e0;
+
+  --font-display: 'Chakra Petch', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  --sidebar-w: 260px;
+  --header-h: 48px;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+html { font-size: 14px; }
+body {
+  font-family: var(--font-display);
+  background: var(--bg);
+  color: var(--text);
+  overflow: hidden;
+  height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* ═══════════════════════════════════════════════
+   LAYOUT
+   ═══════════════════════════════════════════════ */
+.app {
+  display: grid;
+  grid-template-columns: var(--sidebar-w) 1fr;
+  grid-template-rows: var(--header-h) 1fr;
+  height: 100vh;
+}
+.header {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  padding: 0 24px;
+  background: var(--bg-raised);
+  border-bottom: 1px solid var(--border);
+  gap: 12px;
+  z-index: 100;
+}
+.header-logo {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  color: var(--gold);
+  text-transform: uppercase;
+}
+.header-sep { color: var(--border-bright); font-size: 0.7rem; }
+.header-sub {
+  font-size: 0.75rem;
+  font-weight: 300;
+  color: var(--text-dim);
+  letter-spacing: 0.04em;
+}
+
+/* Sidebar */
+.sidebar {
+  background: var(--bg-raised);
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  padding: 16px 0;
+}
+.sidebar-label {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  padding: 0 16px;
+  margin-bottom: 8px;
+}
+.sidebar-label.section { margin-top: 16px; }
+.nav-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 8px 16px;
+  cursor: pointer;
+  border-left: 2px solid transparent;
+  transition: all 0.2s var(--ease-out);
+  user-select: none;
+}
+.nav-item:hover { background: rgba(255,255,255,0.03); }
+.nav-item.active {
+  background: rgba(79,195,247,0.05);
+  border-left-color: var(--gold);
+}
+.nav-tag {
+  font-family: var(--font-mono);
+  font-size: 0.55rem;
+  font-weight: 600;
+  min-width: 22px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  margin-top: 1px;
+  transition: all 0.2s;
+  padding: 0 4px;
+}
+.nav-item.active .nav-tag {
+  color: var(--gold);
+  border-color: var(--gold);
+  background: rgba(255,213,79,0.08);
+}
+.nav-tag.pass { color: var(--green); border-color: rgba(102,187,106,0.4); }
+.nav-tag.fail { color: var(--red); border-color: rgba(239,83,80,0.4); }
+.nav-tag.partial { color: var(--orange); border-color: rgba(255,152,0,0.4); }
+.nav-text { flex: 1; }
+.nav-title {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--text);
+  line-height: 1.3;
+}
+.nav-item.active .nav-title { color: var(--text-bright); }
+.nav-subtitle {
+  font-size: 0.6rem;
+  color: var(--text-dim);
+  margin-top: 1px;
+  font-weight: 300;
+}
+
+/* Constants */
+.constants-panel {
+  margin-top: auto;
+  border-top: 1px solid var(--border);
+  padding: 12px 16px;
+}
+.constants-panel .sidebar-label { padding: 0; margin-bottom: 8px; }
+.const-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3px 0;
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+}
+.const-name { color: var(--text-dim); }
+.const-val {
+  color: var(--gold);
+  font-weight: 600;
+  text-shadow: 0 0 8px rgba(255,213,79,0.3);
+}
+
+/* Main */
+.main {
+  overflow-y: auto;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+.main-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 32px 40px 80px;
+}
+
+/* ═══════════════════════════════════════════════
+   SCENARIO SECTION
+   ═══════════════════════════════════════════════ */
+.scenario {
+  display: none;
+  animation: fadeIn 0.4s var(--ease-out);
+}
+.scenario.active { display: block; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+
+.scenario-header { margin-bottom: 20px; }
+.scenario-num {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+.scenario-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-bright);
+  letter-spacing: -0.01em;
+  margin-bottom: 4px;
+}
+.scenario-subtitle {
+  font-size: 0.85rem;
+  font-weight: 300;
+  color: var(--text-dim);
+}
+.scenario-desc {
+  font-size: 0.82rem;
+  line-height: 1.65;
+  color: var(--text);
+  max-width: 750px;
+  margin-bottom: 24px;
+  font-weight: 300;
+}
+.scenario-desc code {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  background: var(--bg-surface);
+  color: var(--gold);
+  padding: 1px 5px;
+  border-radius: 3px;
+  border: 1px solid var(--border);
+}
+.scenario-desc strong { color: var(--text-bright); font-weight: 600; }
+
+/* ═══════════════════════════════════════════════
+   DUAL PANEL LAYOUT
+   ═══════════════════════════════════════════════ */
+.dual-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+.panel {
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+.panel.fail { border-color: rgba(239,83,80,0.3); }
+.panel.success { border-color: rgba(102,187,106,0.3); }
+.panel.neutral { border-color: rgba(79,195,247,0.3); }
+.panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 16px;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+.panel.fail .panel-header { background: rgba(239,83,80,0.08); color: var(--red); }
+.panel.success .panel-header { background: rgba(102,187,106,0.08); color: var(--green); }
+.panel.neutral .panel-header { background: rgba(79,195,247,0.08); color: var(--cyan); }
+.panel-body {
+  background: var(--bg-surface);
+  padding: 16px;
+}
+
+/* ═══════════════════════════════════════════════
+   TIMELINE COMPONENTS
+   ═══════════════════════════════════════════════ */
+.time-ruler {
+  display: flex;
+  align-items: flex-end;
+  height: 20px;
+  margin-left: 100px;
+  margin-bottom: 6px;
+  position: relative;
+  border-bottom: 1px solid var(--border);
+}
+.ruler-tick {
+  position: absolute;
+  bottom: 0;
+  font-family: var(--font-mono);
+  font-size: 0.5rem;
+  color: var(--text-dim);
+  transform: translateX(-50%);
+}
+.ruler-tick::before {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 50%;
+  width: 1px;
+  height: 6px;
+  background: var(--border-bright);
+}
+.swim-lanes {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  position: relative;
+}
+.swim-lane {
+  display: flex;
+  align-items: center;
+  min-height: 30px;
+}
+.lane-label {
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  font-weight: 500;
+  color: var(--text-dim);
+  width: 100px;
+  min-width: 100px;
+  text-align: right;
+  padding-right: 12px;
+  white-space: nowrap;
+}
+.lane-track {
+  flex: 1;
+  height: 26px;
+  background: rgba(255,255,255,0.015);
+  border-radius: 3px;
+  position: relative;
+  overflow: hidden;
+}
+.ev {
+  position: absolute;
+  top: 1px;
+  height: 24px;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  padding: 0 6px;
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  font-weight: 500;
+  white-space: nowrap;
+  transition: opacity 0.3s, transform 0.3s var(--ease-spring);
+  opacity: 0;
+  transform: scaleX(0);
+  transform-origin: left center;
+}
+.ev.visible {
+  opacity: 1;
+  transform: scaleX(1);
+}
+.ev.cyan    { background: var(--cyan-dim);   color: var(--cyan);   border: 1px solid rgba(79,195,247,0.3); }
+.ev.purple  { background: var(--purple-dim); color: var(--purple); border: 1px solid rgba(187,134,252,0.3); }
+.ev.orange  { background: var(--orange-dim); color: var(--orange); border: 1px solid rgba(255,152,0,0.3); }
+.ev.green   { background: var(--green-dim);  color: var(--green);  border: 1px solid rgba(102,187,106,0.3); }
+.ev.red     { background: var(--red-dim);    color: var(--red);    border: 1px solid rgba(239,83,80,0.3); }
+.ev.gold    { background: var(--gold-dim);   color: var(--gold);   border: 1px solid rgba(255,213,79,0.3); }
+
+/* Now cursor */
+.now-cursor {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: var(--red);
+  box-shadow: 0 0 6px rgba(239,83,80,0.5);
+  pointer-events: none;
+  transition: left 0.05s linear;
+  z-index: 10;
+  opacity: 0;
+}
+.now-cursor.visible { opacity: 1; }
+.now-cursor::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -3px;
+  width: 7px;
+  height: 7px;
+  background: var(--red);
+  border-radius: 50%;
+}
+
+/* Play controls */
+.play-controls {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+  align-items: center;
+}
+.tl-btn {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  color: var(--text-dim);
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  padding: 3px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.15s;
+  user-select: none;
+}
+.tl-btn:hover { border-color: var(--border-bright); color: var(--text); }
+.tl-btn.active { border-color: var(--cyan); color: var(--cyan); background: rgba(79,195,247,0.08); }
+.tl-btn.play-btn { min-width: 32px; text-align: center; }
+
+/* HID Output */
+.hid-output {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 10px;
+  padding: 6px 14px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-family: var(--font-mono);
+}
+.hid-label { font-size: 0.6rem; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.1em; }
+.hid-chars {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--white);
+  letter-spacing: 0.05em;
+  min-width: 40px;
+}
+.hid-chars .char { display: inline-block; transition: all 0.2s; }
+.hid-chars .char.strike { text-decoration: line-through; color: var(--red); opacity: 0.5; }
+.hid-chars .char.new { color: var(--green); }
+
+/* Result badges */
+.result-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 0.65rem;
+  font-weight: 600;
+  font-family: var(--font-mono);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.result-badge.visible { opacity: 1; }
+.result-badge.fail { background: var(--red-dim); color: var(--red); }
+.result-badge.success { background: var(--green-dim); color: var(--green); }
+.result-badge.same { background: rgba(79,195,247,0.1); color: var(--cyan); }
+
+/* Annotation callout */
+.annotation {
+  background: rgba(255,213,79,0.06);
+  border: 1px solid rgba(255,213,79,0.2);
+  border-radius: 6px;
+  padding: 12px 16px;
+  margin: 20px 0;
+  font-family: var(--font-mono);
+}
+.annotation .formula {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--gold);
+  margin-bottom: 4px;
+}
+.annotation .note {
+  font-size: 0.68rem;
+  color: var(--text-dim);
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+/* Summary table */
+.summary-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  margin: 20px 0;
+}
+.summary-table th, .summary-table td {
+  padding: 8px 12px;
+  border: 1px solid var(--border);
+  text-align: center;
+}
+.summary-table th {
+  background: var(--bg-raised);
+  color: var(--text-dim);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.6rem;
+}
+.summary-table td { background: var(--bg-surface); }
+.summary-table .pass-cell { color: var(--green); }
+.summary-table .fail-cell { color: var(--red); }
+.summary-table .partial-cell { color: var(--orange); }
+.summary-table .neutral-cell { color: var(--text-dim); }
+.summary-table .row-label { text-align: left; color: var(--text-bright); font-weight: 500; }
+
+/* ═══════════════════════════════════════════════
+   RESPONSIVE
+   ═══════════════════════════════════════════════ */
+@media (max-width: 900px) {
+  .app {
+    grid-template-columns: 1fr;
+    grid-template-rows: var(--header-h) auto 1fr;
+  }
+  .sidebar {
+    flex-direction: row;
+    overflow-x: auto;
+    overflow-y: hidden;
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+    padding: 8px 12px;
+    gap: 4px;
+    flex-wrap: nowrap;
+  }
+  .sidebar-label { display: none; }
+  .constants-panel { display: none; }
+  .nav-item {
+    border-left: none;
+    border-bottom: 2px solid transparent;
+    padding: 6px 10px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .nav-item.active { border-bottom-color: var(--gold); }
+  .nav-subtitle { display: none; }
+  .main-inner { padding: 20px 16px 60px; }
+  .lane-label { width: 70px; min-width: 70px; font-size: 0.5rem; }
+  .time-ruler { margin-left: 70px; }
+}
+</style>
+</head>
+<body>
+
+<div class="app">
+  <header class="header">
+    <span class="header-logo">Naquadah</span>
+    <span class="header-sep">//</span>
+    <span class="header-sub">AK Consistency Hack &mdash; 12-Scenario Analysis</span>
+  </header>
+
+  <nav class="sidebar" id="sidebar"></nav>
+
+  <main class="main">
+    <div class="main-inner" id="main-content"></div>
+  </main>
+</div>
+
+<script>
+/* ═══════════════════════════════════════════════
+   TIMING CONSTANTS
+   ═══════════════════════════════════════════════ */
+const T = {
+  ak_tap:     10,   // ak_tap_time
+  hack:       11,   // hold_key_event_delay
+  combo_adj:  16,   // my_combo_timeout_adjacent
+  ak_window: 100,   // my_ak_window
+};
+
+/* ═══════════════════════════════════════════════
+   SCENARIO DEFINITIONS
+   All 6 scenarios. Each renders two panels (without / with hack).
+   ═══════════════════════════════════════════════ */
+const scenarios = [
+  // ────── A: Key1 in real combo ──────
+  {
+    id: 'A1',
+    group: 'combo',
+    title: 'In Combo + Slow',
+    subtitle: 'gap > 110ms — AK overlay has expired',
+    num: 'Scenario A1',
+    gap: 130,
+    desc: `Key1 (<strong>N</strong>) is part of a real combo (N+D, ${T.combo_adj}ms timeout). Key2 (<strong>W</strong>) arrives ${130}ms later — well after the AK layer has expired. No adaptive transformation expected.`,
+    without: {
+      verdict: 'pass',
+      badge: 'Correct — no AK expected',
+      totalMs: 160,
+      rulerStep: 20,
+      output: { text: 'NW', chars: '<span class="char">N</span><span class="char">W</span>' },
+      lanes: [
+        { id: 'phys', label: 'Physical', events: [
+          { id: 'k1', start: 0, end: 4, text: 'N', color: 'cyan' },
+          { id: 'k2', start: 130, end: 134, text: 'W', color: 'cyan' },
+        ]},
+        { id: 'combo', label: 'Real Combo', events: [
+          { id: 'cbuf', start: 0, end: 16, text: 'N buffered (16ms)', color: 'orange' },
+        ]},
+        { id: 'macro', label: '&ak Macro', events: [
+          { id: 'tap', start: 16, end: 26, text: '&kp N (10ms)', color: 'green' },
+          { id: 'aksl', start: 26, end: 28, text: '&aksl', color: 'purple' },
+        ]},
+        { id: 'layer', label: 'AK Layer', events: [
+          { id: 'layer', start: 26, end: 126, text: 'l_akN active (100ms)', color: 'purple' },
+        ]},
+        { id: 'key2', label: 'W resolves', events: [
+          { id: 'w', start: 130, end: 134, text: 'W on base layer', color: 'green' },
+        ]},
+      ],
+      anim: [
+        { t: 0.00, evs: ['k1'] },
+        { t: 0.06, evs: ['cbuf'] },
+        { t: 0.14, evs: ['tap'] },
+        { t: 0.22, evs: ['aksl', 'layer'] },
+        { t: 0.75, evs: ['k2'] },
+        { t: 0.82, evs: ['w'], badge: true, output: true },
+      ],
+    },
+    with: {
+      verdict: 'pass',
+      badge: 'Correct — no AK expected',
+      totalMs: 160,
+      rulerStep: 20,
+      output: { text: 'NW', chars: '<span class="char">N</span><span class="char">W</span>' },
+      lanes: [
+        { id: 'phys', label: 'Physical', events: [
+          { id: 'k1', start: 0, end: 4, text: 'N', color: 'cyan' },
+          { id: 'k2', start: 130, end: 134, text: 'W', color: 'cyan' },
+        ]},
+        { id: 'combo', label: 'Real Combo', events: [
+          { id: 'cbuf', start: 0, end: 16, text: 'N buffered (16ms)', color: 'orange' },
+        ]},
+        { id: 'hack', label: 'Hack Combo', events: [
+          { id: 'hbuf', start: 0, end: 11, text: 'N (11ms)', color: 'gold' },
+          { id: 'hbuf2', start: 130, end: 141, text: 'W (11ms)', color: 'gold' },
+        ]},
+        { id: 'macro', label: '&ak Macro', events: [
+          { id: 'tap', start: 16, end: 26, text: '&kp N (10ms)', color: 'green' },
+          { id: 'aksl', start: 26, end: 28, text: '&aksl', color: 'purple' },
+        ]},
+        { id: 'layer', label: 'AK Layer', events: [
+          { id: 'layer', start: 26, end: 126, text: 'l_akN active (100ms)', color: 'purple' },
+        ]},
+        { id: 'key2', label: 'W resolves', events: [
+          { id: 'w', start: 141, end: 145, text: 'W on base layer', color: 'green' },
+        ]},
+      ],
+      anim: [
+        { t: 0.00, evs: ['k1'] },
+        { t: 0.04, evs: ['cbuf', 'hbuf'] },
+        { t: 0.10, evs: ['tap'] },
+        { t: 0.14, evs: ['aksl', 'layer'] },
+        { t: 0.75, evs: ['k2', 'hbuf2'] },
+        { t: 0.84, evs: ['w'], badge: true, output: true },
+      ],
+    },
+  },
+  {
+    id: 'A2',
+    group: 'combo',
+    title: 'In Combo + Fast',
+    subtitle: 'gap ~20ms — within AK window',
+    num: 'Scenario A2',
+    gap: 20,
+    desc: `Key1 (<strong>N</strong>) is in a real combo (16ms timeout). Key2 (<strong>W</strong>) arrives at 20ms — after the combo times out (16ms) but <strong>before the AK layer activates</strong> (26ms). Without the hack, W slips through during the 10ms activation gap.`,
+    without: {
+      verdict: 'fail',
+      badge: 'W fires before AK layer!',
+      totalMs: 40,
+      rulerStep: 5,
+      output: { text: 'NW', chars: '<span class="char">N</span><span class="char">W</span>' },
+      lanes: [
+        { id: 'phys', label: 'Physical', events: [
+          { id: 'k1', start: 0, end: 3, text: 'N', color: 'cyan' },
+          { id: 'k2', start: 20, end: 23, text: 'W', color: 'cyan' },
+        ]},
+        { id: 'combo', label: 'Real Combo', events: [
+          { id: 'cbuf', start: 0, end: 16, text: 'N buffered (16ms)', color: 'orange' },
+        ]},
+        { id: 'macro', label: '&ak Macro', events: [
+          { id: 'tap', start: 16, end: 26, text: '&kp N (10ms)', color: 'green' },
+          { id: 'aksl', start: 26, end: 28, text: '&aksl', color: 'purple' },
+        ]},
+        { id: 'layer', label: 'AK Layer', events: [
+          { id: 'layer', start: 26, end: 40, text: 'l_akN active', color: 'purple' },
+        ]},
+        { id: 'key2', label: 'W resolves', events: [
+          { id: 'w', start: 20, end: 24, text: 'W on ALPHA!', color: 'red' },
+        ]},
+      ],
+      anim: [
+        { t: 0.00, evs: ['k1'] },
+        { t: 0.08, evs: ['cbuf'] },
+        { t: 0.30, evs: ['tap'] },
+        { t: 0.42, evs: ['k2', 'w'] },
+        { t: 0.60, evs: ['aksl', 'layer'] },
+        { t: 0.78, badge: true, output: true },
+      ],
+    },
+    with: {
+      verdict: 'pass',
+      badge: 'Hack delays W past AK activation',
+      totalMs: 40,
+      rulerStep: 5,
+      output: { text: 'AK!', chars: '<span class="char strike">N</span><span class="char new">M</span><span class="char new">N</span>' },
+      lanes: [
+        { id: 'phys', label: 'Physical', events: [
+          { id: 'k1', start: 0, end: 3, text: 'N', color: 'cyan' },
+          { id: 'k2', start: 20, end: 23, text: 'W', color: 'cyan' },
+        ]},
+        { id: 'combo', label: 'Real Combo', events: [
+          { id: 'cbuf', start: 0, end: 16, text: 'N buffered (16ms)', color: 'orange' },
+        ]},
+        { id: 'hack', label: 'Hack Combo', events: [
+          { id: 'hbuf', start: 0, end: 11, text: 'N (11ms)', color: 'gold' },
+          { id: 'hbuf2', start: 20, end: 31, text: 'W buffered (11ms)', color: 'gold' },
+        ]},
+        { id: 'macro', label: '&ak Macro', events: [
+          { id: 'tap', start: 16, end: 26, text: '&kp N (10ms)', color: 'green' },
+          { id: 'aksl', start: 26, end: 28, text: '&aksl', color: 'purple' },
+        ]},
+        { id: 'layer', label: 'AK Layer', events: [
+          { id: 'layer', start: 26, end: 40, text: 'l_akN active', color: 'purple' },
+        ]},
+        { id: 'key2', label: 'W resolves', events: [
+          { id: 'w', start: 31, end: 35, text: 'W hits l_akN!', color: 'green' },
+        ]},
+      ],
+      anim: [
+        { t: 0.00, evs: ['k1'] },
+        { t: 0.06, evs: ['cbuf', 'hbuf'] },
+        { t: 0.30, evs: ['tap'] },
+        { t: 0.42, evs: ['k2', 'hbuf2'] },
+        { t: 0.55, evs: ['aksl', 'layer'] },
+        { t: 0.68, evs: ['w'] },
+        { t: 0.80, badge: true, output: true },
+      ],
+    },
+  },
+  {
+    id: 'A3',
+    group: 'combo',
+    title: 'In Combo + Extreme',
+    subtitle: 'gap ~13ms — within combo timeout',
+    num: 'Scenario A3',
+    gap: 13,
+    desc: `Key1 (<strong>N</strong>) is in a real combo (16ms). Key2 (<strong>W</strong>) arrives at 13ms — <strong>before the combo times out</strong>. W invalidates the real combo, releasing N. The hack combo has already expired for N at 11ms, so N and W are on <strong>independent timers</strong>. This is the sweet spot: 11ms &lt; 13ms &lt; 16ms.`,
+    without: {
+      verdict: 'fail',
+      badge: 'Both fire at once!',
+      totalMs: 35,
+      rulerStep: 5,
+      output: { text: 'NW', chars: '<span class="char">N</span><span class="char">W</span>' },
+      lanes: [
+        { id: 'phys', label: 'Physical', events: [
+          { id: 'k1', start: 0, end: 3, text: 'N', color: 'cyan' },
+          { id: 'k2', start: 13, end: 16, text: 'W', color: 'cyan' },
+        ]},
+        { id: 'combo', label: 'Real Combo', events: [
+          { id: 'cbuf', start: 0, end: 13, text: 'N buffered', color: 'orange' },
+          { id: 'cinv', start: 13, end: 15, text: 'W invalidates!', color: 'red' },
+        ]},
+        { id: 'macro', label: '&ak Macro', events: [
+          { id: 'tap', start: 13, end: 23, text: '&kp N (10ms)', color: 'green' },
+          { id: 'aksl', start: 23, end: 25, text: '&aksl', color: 'purple' },
+        ]},
+        { id: 'layer', label: 'AK Layer', events: [
+          { id: 'layer', start: 23, end: 35, text: 'l_akN active', color: 'purple' },
+        ]},
+        { id: 'key2', label: 'W resolves', events: [
+          { id: 'w', start: 13, end: 17, text: 'W on ALPHA!', color: 'red' },
+        ]},
+      ],
+      anim: [
+        { t: 0.00, evs: ['k1'] },
+        { t: 0.06, evs: ['cbuf'] },
+        { t: 0.30, evs: ['k2', 'cinv'] },
+        { t: 0.40, evs: ['tap', 'w'] },
+        { t: 0.62, evs: ['aksl', 'layer'] },
+        { t: 0.80, badge: true, output: true },
+      ],
+    },
+    with: {
+      verdict: 'pass',
+      badge: '1ms margin saves it!',
+      totalMs: 35,
+      rulerStep: 5,
+      output: { text: 'AK!', chars: '<span class="char strike">N</span><span class="char new">M</span><span class="char new">N</span>' },
+      lanes: [
+        { id: 'phys', label: 'Physical', events: [
+          { id: 'k1', start: 0, end: 3, text: 'N', color: 'cyan' },
+          { id: 'k2', start: 13, end: 16, text: 'W', color: 'cyan' },
+        ]},
+        { id: 'combo', label: 'Real Combo', events: [
+          { id: 'cbuf', start: 0, end: 13, text: 'N buffered', color: 'orange' },
+          { id: 'cinv', start: 13, end: 15, text: 'Invalidated', color: 'red' },
+        ]},
+        { id: 'hack', label: 'Hack Combo', events: [
+          { id: 'hbuf', start: 0, end: 11, text: 'N (expires)', color: 'gold' },
+          { id: 'hbuf2', start: 13, end: 24, text: 'W buffered (11ms)', color: 'gold' },
+        ]},
+        { id: 'macro', label: '&ak Macro', events: [
+          { id: 'tap', start: 13, end: 23, text: '&kp N (10ms)', color: 'green' },
+          { id: 'aksl', start: 23, end: 25, text: '&aksl', color: 'purple' },
+        ]},
+        { id: 'layer', label: 'AK Layer', events: [
+          { id: 'layer', start: 23, end: 35, text: 'l_akN active', color: 'purple' },
+        ]},
+        { id: 'key2', label: 'W resolves', events: [
+          { id: 'w', start: 24, end: 28, text: 'W hits l_akN!', color: 'green' },
+        ]},
+      ],
+      anim: [
+        { t: 0.00, evs: ['k1'] },
+        { t: 0.05, evs: ['cbuf', 'hbuf'] },
+        { t: 0.28, evs: ['k2', 'cinv', 'hbuf2'] },
+        { t: 0.38, evs: ['tap'] },
+        { t: 0.58, evs: ['aksl', 'layer'] },
+        { t: 0.68, evs: ['w'] },
+        { t: 0.82, badge: true, output: true },
+      ],
+    },
+  },
+  // ────── B: Key1 NOT in real combo ──────
+  {
+    id: 'B1',
+    group: 'no-combo',
+    title: 'No Combo + Slow',
+    subtitle: 'gap > 110ms — AK overlay has expired',
+    num: 'Scenario B1',
+    gap: 130,
+    desc: `Key1 (<strong>R</strong>) is not part of any real combo, so it fires immediately. Key2 (<strong>W</strong>) arrives ${130}ms later — after the AK layer has expired. No adaptive transformation expected.`,
+    without: {
+      verdict: 'pass',
+      badge: 'Correct — no AK expected',
+      totalMs: 150,
+      rulerStep: 20,
+      output: { text: 'RW', chars: '<span class="char">R</span><span class="char">W</span>' },
+      lanes: [
+        { id: 'phys', label: 'Physical', events: [
+          { id: 'k1', start: 0, end: 4, text: 'R', color: 'cyan' },
+          { id: 'k2', start: 130, end: 134, text: 'W', color: 'cyan' },
+        ]},
+        { id: 'macro', label: '&ak Macro', events: [
+          { id: 'tap', start: 0, end: 10, text: '&kp R (10ms)', color: 'green' },
+          { id: 'aksl', start: 10, end: 12, text: '&aksl', color: 'purple' },
+        ]},
+        { id: 'layer', label: 'AK Layer', events: [
+          { id: 'layer', start: 10, end: 110, text: 'l_akR active (100ms)', color: 'purple' },
+        ]},
+        { id: 'key2', label: 'W resolves', events: [
+          { id: 'w', start: 130, end: 134, text: 'W on base layer', color: 'green' },
+        ]},
+      ],
+      anim: [
+        { t: 0.00, evs: ['k1', 'tap'] },
+        { t: 0.10, evs: ['aksl', 'layer'] },
+        { t: 0.75, evs: ['k2'] },
+        { t: 0.82, evs: ['w'], badge: true, output: true },
+      ],
+    },
+    with: {
+      verdict: 'pass',
+      badge: 'Correct — no AK expected',
+      totalMs: 160,
+      rulerStep: 20,
+      output: { text: 'RW', chars: '<span class="char">R</span><span class="char">W</span>' },
+      lanes: [
+        { id: 'phys', label: 'Physical', events: [
+          { id: 'k1', start: 0, end: 4, text: 'R', color: 'cyan' },
+          { id: 'k2', start: 130, end: 134, text: 'W', color: 'cyan' },
+        ]},
+        { id: 'hack', label: 'Hack Combo', events: [
+          { id: 'hbuf', start: 0, end: 11, text: 'R (11ms)', color: 'gold' },
+          { id: 'hbuf2', start: 130, end: 141, text: 'W (11ms)', color: 'gold' },
+        ]},
+        { id: 'macro', label: '&ak Macro', events: [
+          { id: 'tap', start: 11, end: 21, text: '&kp R (10ms)', color: 'green' },
+          { id: 'aksl', start: 21, end: 23, text: '&aksl', color: 'purple' },
+        ]},
+        { id: 'layer', label: 'AK Layer', events: [
+          { id: 'layer', start: 21, end: 121, text: 'l_akR active (100ms)', color: 'purple' },
+        ]},
+        { id: 'key2', label: 'W resolves', events: [
+          { id: 'w', start: 141, end: 145, text: 'W on base layer', color: 'green' },
+        ]},
+      ],
+      anim: [
+        { t: 0.00, evs: ['k1', 'hbuf'] },
+        { t: 0.10, evs: ['tap'] },
+        { t: 0.18, evs: ['aksl', 'layer'] },
+        { t: 0.75, evs: ['k2', 'hbuf2'] },
+        { t: 0.84, evs: ['w'], badge: true, output: true },
+      ],
+    },
+  },
+  {
+    id: 'B2',
+    group: 'no-combo',
+    title: 'No Combo + Fast',
+    subtitle: 'gap ~50ms — within AK window',
+    num: 'Scenario B2',
+    gap: 50,
+    desc: `Key1 (<strong>R</strong>) fires immediately (no combo). Key2 (<strong>W</strong>) arrives at 50ms. The AK layer activated at 10ms, so it's been active for 40ms when W arrives. Comfortable margin.`,
+    without: {
+      verdict: 'pass',
+      badge: 'AK fires correctly',
+      totalMs: 65,
+      rulerStep: 10,
+      output: { text: 'AK!', chars: '<span class="char strike">R</span><span class="char new">L</span><span class="char new">R</span>' },
+      lanes: [
+        { id: 'phys', label: 'Physical', events: [
+          { id: 'k1', start: 0, end: 3, text: 'R', color: 'cyan' },
+          { id: 'k2', start: 50, end: 53, text: 'W', color: 'cyan' },
+        ]},
+        { id: 'macro', label: '&ak Macro', events: [
+          { id: 'tap', start: 0, end: 10, text: '&kp R (10ms)', color: 'green' },
+          { id: 'aksl', start: 10, end: 12, text: '&aksl', color: 'purple' },
+        ]},
+        { id: 'layer', label: 'AK Layer', events: [
+          { id: 'layer', start: 10, end: 65, text: 'l_akR active', color: 'purple' },
+        ]},
+        { id: 'key2', label: 'W resolves', events: [
+          { id: 'w', start: 50, end: 54, text: 'W hits l_akR!', color: 'green' },
+        ]},
+      ],
+      anim: [
+        { t: 0.00, evs: ['k1', 'tap'] },
+        { t: 0.15, evs: ['aksl', 'layer'] },
+        { t: 0.65, evs: ['k2', 'w'] },
+        { t: 0.80, badge: true, output: true },
+      ],
+    },
+    with: {
+      verdict: 'pass',
+      badge: 'AK fires correctly',
+      totalMs: 75,
+      rulerStep: 10,
+      output: { text: 'AK!', chars: '<span class="char strike">R</span><span class="char new">L</span><span class="char new">R</span>' },
+      lanes: [
+        { id: 'phys', label: 'Physical', events: [
+          { id: 'k1', start: 0, end: 3, text: 'R', color: 'cyan' },
+          { id: 'k2', start: 50, end: 53, text: 'W', color: 'cyan' },
+        ]},
+        { id: 'hack', label: 'Hack Combo', events: [
+          { id: 'hbuf', start: 0, end: 11, text: 'R (11ms)', color: 'gold' },
+          { id: 'hbuf2', start: 50, end: 61, text: 'W (11ms)', color: 'gold' },
+        ]},
+        { id: 'macro', label: '&ak Macro', events: [
+          { id: 'tap', start: 11, end: 21, text: '&kp R (10ms)', color: 'green' },
+          { id: 'aksl', start: 21, end: 23, text: '&aksl', color: 'purple' },
+        ]},
+        { id: 'layer', label: 'AK Layer', events: [
+          { id: 'layer', start: 21, end: 75, text: 'l_akR active', color: 'purple' },
+        ]},
+        { id: 'key2', label: 'W resolves', events: [
+          { id: 'w', start: 61, end: 65, text: 'W hits l_akR!', color: 'green' },
+        ]},
+      ],
+      anim: [
+        { t: 0.00, evs: ['k1', 'hbuf'] },
+        { t: 0.12, evs: ['tap'] },
+        { t: 0.24, evs: ['aksl', 'layer'] },
+        { t: 0.58, evs: ['k2', 'hbuf2'] },
+        { t: 0.72, evs: ['w'] },
+        { t: 0.82, badge: true, output: true },
+      ],
+    },
+  },
+  {
+    id: 'B3',
+    group: 'no-combo',
+    title: 'No Combo + Extreme',
+    subtitle: 'gap ~5ms — extraordinarily fast',
+    num: 'Scenario B3',
+    gap: 5,
+    desc: `Key1 (<strong>R</strong>) fires immediately, but Key2 (<strong>W</strong>) arrives just 5ms later — before the AK layer activates at 10ms. With the hack, both keys are captured by the same hack combo instance and released together. This is the <strong>minor caveat</strong>.`,
+    without: {
+      verdict: 'fail',
+      badge: 'W fires before AK layer!',
+      totalMs: 25,
+      rulerStep: 5,
+      output: { text: 'RW', chars: '<span class="char">R</span><span class="char">W</span>' },
+      lanes: [
+        { id: 'phys', label: 'Physical', events: [
+          { id: 'k1', start: 0, end: 2, text: 'R', color: 'cyan' },
+          { id: 'k2', start: 5, end: 7, text: 'W', color: 'cyan' },
+        ]},
+        { id: 'macro', label: '&ak Macro', events: [
+          { id: 'tap', start: 0, end: 10, text: '&kp R (10ms)', color: 'green' },
+          { id: 'aksl', start: 10, end: 12, text: '&aksl', color: 'purple' },
+        ]},
+        { id: 'layer', label: 'AK Layer', events: [
+          { id: 'layer', start: 10, end: 25, text: 'l_akR active', color: 'purple' },
+        ]},
+        { id: 'key2', label: 'W resolves', events: [
+          { id: 'w', start: 5, end: 9, text: 'W on ALPHA!', color: 'red' },
+        ]},
+      ],
+      anim: [
+        { t: 0.00, evs: ['k1', 'tap'] },
+        { t: 0.18, evs: ['k2', 'w'] },
+        { t: 0.40, evs: ['aksl', 'layer'] },
+        { t: 0.72, badge: true, output: true },
+      ],
+    },
+    with: {
+      verdict: 'fail',
+      badge: 'Minor caveat — both release at once',
+      totalMs: 30,
+      rulerStep: 5,
+      output: { text: 'RW', chars: '<span class="char">R</span><span class="char">W</span>' },
+      lanes: [
+        { id: 'phys', label: 'Physical', events: [
+          { id: 'k1', start: 0, end: 2, text: 'R', color: 'cyan' },
+          { id: 'k2', start: 5, end: 7, text: 'W', color: 'cyan' },
+        ]},
+        { id: 'hack', label: 'Hack Combo', events: [
+          { id: 'hbuf', start: 0, end: 11, text: 'R + W both captured (11ms)', color: 'gold' },
+          { id: 'hrel', start: 11, end: 13, text: 'Both released!', color: 'red' },
+        ]},
+        { id: 'macro', label: '&ak Macro', events: [
+          { id: 'tap', start: 11, end: 21, text: '&kp R (10ms)', color: 'green' },
+          { id: 'aksl', start: 21, end: 23, text: '&aksl', color: 'purple' },
+        ]},
+        { id: 'layer', label: 'AK Layer', events: [
+          { id: 'layer', start: 21, end: 30, text: 'l_akR active', color: 'purple' },
+        ]},
+        { id: 'key2', label: 'W resolves', events: [
+          { id: 'w', start: 11, end: 15, text: 'W on ALPHA!', color: 'red' },
+        ]},
+      ],
+      anim: [
+        { t: 0.00, evs: ['k1', 'hbuf'] },
+        { t: 0.15, evs: ['k2'] },
+        { t: 0.35, evs: ['hrel', 'tap', 'w'] },
+        { t: 0.60, evs: ['aksl', 'layer'] },
+        { t: 0.78, badge: true, output: true },
+      ],
+    },
+  },
+];
+
+/* ═══════════════════════════════════════════════
+   BUILD UI
+   ═══════════════════════════════════════════════ */
+
+// Build sidebar
+function buildSidebar() {
+  const sb = document.getElementById('sidebar');
+  let html = '<div class="sidebar-label">Key1 in real combo</div>';
+
+  scenarios.forEach((sc, i) => {
+    if (i === 3) html += '<div class="sidebar-label section">Key1 NOT in combo</div>';
+    const woV = sc.without.verdict;
+    const wiV = sc.with.verdict;
+    let tag, tagClass;
+    if (woV === 'pass' && wiV === 'pass') { tag = 'OK'; tagClass = 'pass'; }
+    else if (wiV === 'pass') { tag = 'FIX'; tagClass = 'partial'; }
+    else { tag = 'FAIL'; tagClass = 'fail'; }
+
+    html += `
+      <div class="nav-item${i === 0 ? ' active' : ''}" data-scenario="${i}">
+        <span class="nav-tag ${tagClass}">${tag}</span>
+        <div class="nav-text">
+          <div class="nav-title">${sc.title}</div>
+          <div class="nav-subtitle">${sc.subtitle}</div>
+        </div>
+      </div>`;
+  });
+
+  html += `
+    <div class="constants-panel">
+      <div class="sidebar-label" style="margin-top:0">Constants</div>
+      <div class="const-item"><span class="const-name">ak_tap_time</span><span class="const-val">${T.ak_tap}ms</span></div>
+      <div class="const-item"><span class="const-name">hold_key_event_delay</span><span class="const-val">${T.hack}ms</span></div>
+      <div class="const-item"><span class="const-name">combo_adjacent</span><span class="const-val">${T.combo_adj}ms</span></div>
+      <div class="const-item"><span class="const-name">my_ak_window</span><span class="const-val">${T.ak_window}ms</span></div>
+    </div>`;
+  sb.innerHTML = html;
+}
+
+// Build main content
+function buildMainContent() {
+  const main = document.getElementById('main-content');
+  let html = '';
+
+  scenarios.forEach((sc, i) => {
+    html += `
+      <div class="scenario${i === 0 ? ' active' : ''}" id="scenario-${i}">
+        <div class="scenario-header">
+          <div class="scenario-num">${sc.num}</div>
+          <div class="scenario-title">${sc.title}</div>
+          <div class="scenario-subtitle">${sc.subtitle}</div>
+        </div>
+        <div class="scenario-desc">${sc.desc}</div>
+
+        <div class="play-controls">
+          <button class="tl-btn play-btn" id="play-${i}">&#9654;</button>
+          <button class="tl-btn" id="reset-${i}">Reset</button>
+          <span style="font-family:var(--font-mono);font-size:0.6rem;color:var(--text-dim);margin-left:8px">
+            gap = <span style="color:var(--gold)">${sc.gap}ms</span>
+          </span>
+        </div>
+
+        <div class="dual-panel">
+          <div class="panel ${sc.without.verdict === 'pass' ? 'success' : 'fail'}">
+            <div class="panel-header">
+              <span>Without the Hack</span>
+              <span class="result-badge ${sc.without.verdict === 'pass' ? 'success' : 'fail'}" id="badge-wo-${i}">
+                ${sc.without.verdict === 'pass' ? '&#10003;' : '&#10007;'} ${sc.without.badge}
+              </span>
+            </div>
+            <div class="panel-body">
+              <div class="time-ruler" id="ruler-wo-${i}"></div>
+              <div class="swim-lanes" id="lanes-wo-${i}" style="position:relative">
+                <div class="now-cursor" id="cursor-wo-${i}"></div>
+              </div>
+              <div class="hid-output">
+                <span class="hid-label">Output</span>
+                <span class="hid-chars" id="output-wo-${i}">&mdash;</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel ${sc.with.verdict === 'pass' ? 'success' : 'fail'}">
+            <div class="panel-header">
+              <span>With the Hack</span>
+              <span class="result-badge ${sc.with.verdict === 'pass' ? 'success' : 'fail'}" id="badge-wi-${i}">
+                ${sc.with.verdict === 'pass' ? '&#10003;' : '&#10007;'} ${sc.with.badge}
+              </span>
+            </div>
+            <div class="panel-body">
+              <div class="time-ruler" id="ruler-wi-${i}"></div>
+              <div class="swim-lanes" id="lanes-wi-${i}" style="position:relative">
+                <div class="now-cursor" id="cursor-wi-${i}"></div>
+              </div>
+              <div class="hid-output">
+                <span class="hid-label">Output</span>
+                <span class="hid-chars" id="output-wi-${i}">&mdash;</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        ${i === 2 ? `
+        <div class="annotation">
+          <div class="formula">hold_key_event_delay (11ms) &gt; ak_tap_time (10ms)</div>
+          <div class="note">
+            The hack combo expires for Key1 at 11ms. The real combo still holds Key1 until 16ms.<br>
+            When Key2 arrives at 13ms, it invalidates the real combo (releasing Key1) and starts a fresh hack instance for itself.<br>
+            Key1 needs 10ms for AK layer. Key2 is held for 11ms. Since both start from t=13ms: 10 &lt; 11. The 1ms margin saves it.
+          </div>
+        </div>` : ''}
+
+        ${i === 5 ? `
+        <div class="annotation">
+          <div class="formula">gap (5ms) &lt; hold_key_event_delay (11ms)</div>
+          <div class="note">
+            Both keys arrive within the hack combo's 11ms window, so they're captured by the same instance.<br>
+            When the hack times out, both are released at once — the same "AT ONCE" problem.<br>
+            Acceptable because: at 5ms gap you're typing at combo-triggering speed (~600+ WPM equivalent).
+          </div>
+        </div>` : ''}
+      </div>`;
+  });
+
+  // Summary section (always visible below active scenario)
+  html += `
+    <div style="margin-top:40px;border-top:1px solid var(--border);padding-top:24px">
+      <div class="scenario-num" style="margin-bottom:12px">Summary</div>
+      <table class="summary-table">
+        <thead>
+          <tr>
+            <th>Scenario</th>
+            <th>Speed</th>
+            <th>Without Hack</th>
+            <th>With Hack</th>
+            <th>Hack Helps?</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="row-label">A1 — In combo</td><td>Slow</td>
+            <td class="pass-cell">&#10003; Pass</td><td class="pass-cell">&#10003; Pass</td>
+            <td class="neutral-cell">&mdash;</td>
+          </tr>
+          <tr>
+            <td class="row-label">A2 — In combo</td><td>Fast</td>
+            <td class="fail-cell">&#10007; Fails 16-26ms</td><td class="pass-cell">&#10003; Pass</td>
+            <td class="pass-cell">YES</td>
+          </tr>
+          <tr>
+            <td class="row-label">A3 — In combo</td><td>Extreme</td>
+            <td class="fail-cell">&#10007; Fails &lt;16ms</td><td class="partial-cell">&#10003; 11-16ms / &#10007; &lt;11ms</td>
+            <td class="pass-cell">YES (partial)</td>
+          </tr>
+          <tr>
+            <td class="row-label">B1 — No combo</td><td>Slow</td>
+            <td class="pass-cell">&#10003; Pass</td><td class="pass-cell">&#10003; Pass</td>
+            <td class="neutral-cell">&mdash;</td>
+          </tr>
+          <tr>
+            <td class="row-label">B2 — No combo</td><td>Fast</td>
+            <td class="pass-cell">&#10003; Pass</td><td class="pass-cell">&#10003; Pass</td>
+            <td class="neutral-cell">&mdash;</td>
+          </tr>
+          <tr>
+            <td class="row-label">B3 — No combo</td><td>Extreme</td>
+            <td class="fail-cell">&#10007; Fails &lt;10ms</td><td class="fail-cell">&#10007; Fails &lt;11ms</td>
+            <td class="neutral-cell">&mdash;</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>`;
+
+  main.innerHTML = html;
+}
+
+
+/* ═══════════════════════════════════════════════
+   TIMELINE ENGINE
+   ═══════════════════════════════════════════════ */
+function buildLanes(containerId, lanesDef, totalMs) {
+  const container = document.getElementById(containerId);
+  const cursor = container.querySelector('.now-cursor');
+  container.innerHTML = '';
+  if (cursor) container.appendChild(cursor);
+
+  lanesDef.forEach(lane => {
+    const row = document.createElement('div');
+    row.classList.add('swim-lane');
+
+    const lbl = document.createElement('div');
+    lbl.classList.add('lane-label');
+    lbl.textContent = lane.label;
+    row.appendChild(lbl);
+
+    const track = document.createElement('div');
+    track.classList.add('lane-track');
+    track.dataset.laneId = lane.id;
+
+    lane.events.forEach(ev => {
+      const block = document.createElement('div');
+      block.classList.add('ev', ev.color);
+      block.dataset.evId = ev.id || '';
+      const leftPct = (ev.start / totalMs) * 100;
+      const widthPct = ((ev.end - ev.start) / totalMs) * 100;
+      block.style.left = leftPct + '%';
+      block.style.width = Math.max(widthPct, 3) + '%';
+      block.textContent = ev.text;
+      track.appendChild(block);
+    });
+
+    row.appendChild(track);
+    container.appendChild(row);
+  });
+}
+
+function buildRuler(rulerId, totalMs, step) {
+  const ruler = document.getElementById(rulerId);
+  ruler.innerHTML = '';
+  for (let ms = 0; ms <= totalMs; ms += step) {
+    const tick = document.createElement('div');
+    tick.classList.add('ruler-tick');
+    tick.style.left = (ms / totalMs * 100) + '%';
+    tick.textContent = ms + 'ms';
+    ruler.appendChild(tick);
+  }
+}
+
+function showEv(containerId, evId) {
+  const el = document.querySelector(`#${containerId} .ev[data-ev-id="${evId}"]`);
+  if (el) el.classList.add('visible');
+}
+
+function hideAllEv(containerId) {
+  document.querySelectorAll(`#${containerId} .ev`).forEach(el => el.classList.remove('visible'));
+}
+
+class TimelineAnim {
+  constructor(opts) {
+    this.duration = opts.duration || 3500;
+    this.events = opts.events || [];
+    this.onTick = opts.onTick || (() => {});
+    this.onComplete = opts.onComplete || (() => {});
+    this.t = 0;
+    this.playing = false;
+    this.raf = null;
+    this.lastTime = 0;
+    this.triggered = new Set();
+  }
+  play() {
+    if (this.t >= 1) this.reset();
+    this.playing = true;
+    this.lastTime = performance.now();
+    this._tick();
+  }
+  pause() { this.playing = false; if (this.raf) cancelAnimationFrame(this.raf); }
+  reset() {
+    this.pause();
+    this.t = 0;
+    this.triggered.clear();
+    this.onTick(0);
+  }
+  _tick() {
+    if (!this.playing) return;
+    const now = performance.now();
+    const dt = (now - this.lastTime) / this.duration;
+    this.lastTime = now;
+    this.t = Math.min(1, this.t + dt);
+    this.events.forEach((ev, i) => {
+      if (this.t >= ev.t && !this.triggered.has(i)) {
+        this.triggered.add(i);
+        ev.action();
+      }
+    });
+    this.onTick(this.t);
+    if (this.t >= 1) {
+      this.playing = false;
+      this.onComplete();
+    } else {
+      this.raf = requestAnimationFrame(() => this._tick());
+    }
+  }
+}
+
+
+/* ═══════════════════════════════════════════════
+   INIT SCENARIOS
+   ═══════════════════════════════════════════════ */
+const anims = [];
+
+function initScenarios() {
+  scenarios.forEach((sc, i) => {
+    // Build lanes and rulers
+    buildLanes(`lanes-wo-${i}`, sc.without.lanes, sc.without.totalMs);
+    buildRuler(`ruler-wo-${i}`, sc.without.totalMs, sc.without.rulerStep);
+    buildLanes(`lanes-wi-${i}`, sc.with.lanes, sc.with.totalMs);
+    buildRuler(`ruler-wi-${i}`, sc.with.totalMs, sc.with.rulerStep);
+
+    // Build animation events
+    function makeAnimEvents(panel, prefix) {
+      const events = [];
+      panel.anim.forEach(step => {
+        events.push({
+          t: step.t,
+          action: () => {
+            if (step.evs) step.evs.forEach(id => showEv(`lanes-${prefix}-${i}`, id));
+            if (step.badge) document.getElementById(`badge-${prefix}-${i}`).classList.add('visible');
+            if (step.output) document.getElementById(`output-${prefix}-${i}`).innerHTML = panel.output.chars;
+          }
+        });
+      });
+      return events;
+    }
+
+    const woEvents = makeAnimEvents(sc.without, 'wo');
+    const wiEvents = makeAnimEvents(sc.with, 'wi');
+    const allEvents = [...woEvents, ...wiEvents];
+
+    const anim = new TimelineAnim({
+      duration: 3500,
+      events: allEvents,
+      onTick: (t) => {
+        ['wo', 'wi'].forEach(prefix => {
+          const cursor = document.getElementById(`cursor-${prefix}-${i}`);
+          cursor.classList.toggle('visible', t > 0);
+          const parent = cursor.parentElement;
+          if (parent) {
+            const laneLabel = parent.querySelector('.lane-label');
+            const offset = laneLabel ? laneLabel.offsetWidth : 100;
+            cursor.style.left = (offset + (t * (parent.offsetWidth - offset))) + 'px';
+          }
+        });
+      },
+      onComplete: () => {
+        document.getElementById(`play-${i}`).innerHTML = '&#9654;';
+      }
+    });
+    anims.push(anim);
+
+    // Reset function
+    function resetScenario() {
+      anim.reset();
+      document.getElementById(`play-${i}`).innerHTML = '&#9654;';
+      hideAllEv(`lanes-wo-${i}`);
+      hideAllEv(`lanes-wi-${i}`);
+      document.getElementById(`badge-wo-${i}`).classList.remove('visible');
+      document.getElementById(`badge-wi-${i}`).classList.remove('visible');
+      document.getElementById(`output-wo-${i}`).innerHTML = '&mdash;';
+      document.getElementById(`output-wi-${i}`).innerHTML = '&mdash;';
+      document.getElementById(`cursor-wo-${i}`).classList.remove('visible');
+      document.getElementById(`cursor-wi-${i}`).classList.remove('visible');
+    }
+
+    // Bind buttons (deferred to avoid missing elements)
+    setTimeout(() => {
+      document.getElementById(`play-${i}`).onclick = () => {
+        if (anim.playing) {
+          anim.pause();
+          document.getElementById(`play-${i}`).innerHTML = '&#9654;';
+        } else {
+          anim.play();
+          document.getElementById(`play-${i}`).innerHTML = '&#10074;&#10074;';
+        }
+      };
+      document.getElementById(`reset-${i}`).onclick = resetScenario;
+    }, 0);
+  });
+}
+
+
+/* ═══════════════════════════════════════════════
+   NAVIGATION
+   ═══════════════════════════════════════════════ */
+function switchScenario(idx) {
+  // Pause any playing animation
+  anims.forEach(a => a.pause());
+
+  document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
+  document.querySelectorAll('.scenario').forEach(el => el.classList.remove('active'));
+
+  document.querySelectorAll('.nav-item')[idx].classList.add('active');
+  document.getElementById(`scenario-${idx}`).classList.add('active');
+
+  // Scroll main to top
+  document.querySelector('.main').scrollTop = 0;
+}
+
+function bindNav() {
+  document.querySelectorAll('.nav-item').forEach((el, idx) => {
+    el.addEventListener('click', () => switchScenario(idx));
+  });
+}
+
+
+/* ═══════════════════════════════════════════════
+   BOOT
+   ═══════════════════════════════════════════════ */
+buildSidebar();
+buildMainContent();
+initScenarios();
+bindNav();
+</script>
+</body>
+</html>
