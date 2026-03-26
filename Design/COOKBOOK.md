@@ -20,7 +20,8 @@
 | Mod-morph behaviors | `config/features/hands_down/mod_morph/behaviors.dtsi` |
 | AK macros | `config/features/hands_down/adaptive_keys/macros.dtsi` |
 | AK aliases | `config/features/hands_down/adaptive_keys/aliases.dtsi` |
-| AK combos (per layout) | `config/features/hands_down/adaptive_keys/combos_NAQUADAH.dtsi` |
+| AK consistency hack | `config/features/hands_down/adaptive_keys/combos.dtsi` |
+| AK layers (per layout) | `config/features/hands_down/layers_B_*_adaptive_keys.dtsi` |
 | H-digraph combos | `config/features/hands_down/h_digraphs/combos.dtsi` |
 | Mods behaviors | `config/features/hands_down/mods/behaviors.dtsi` |
 | Thumb / HRM behaviors | `config/features/hands_down/mods/behaviors.dtsi` |
@@ -113,7 +114,7 @@ myAlias
 
 **I want:** a key where tap or linger (or both) produce multi-character sequences.
 
-Use this recipe whenever **any** output is more than one character. If one output is a single char, wrap it with Recipe 14 (single-char wrapper) to keep the `XXX XXX` pattern consistent.
+Use this recipe whenever **any** output is more than one character. If one output is a single char, wrap it with Recipe 15 (single-char wrapper) to keep the `XXX XXX` pattern consistent.
 
 **Files:** `macros.dtsi` + `linger_keys/behaviors.dtsi` + layer file
 
@@ -193,7 +194,7 @@ MyMagic: MyMagic {
 // 1. In macros.dtsi — define macros for all outputs:
 TYPING_MACRO(myLingerMacro,      &kp A &kp B)
 TYPING_MACRO(myShiftLingerMacro, &kp C &kp D)
-// Single-char outputs get wrapped too (Recipe 14) for XXX XXX consistency:
+// Single-char outputs get wrapped too (Recipe 15) for XXX XXX consistency:
 TYPING_MACRO(myTapMacro,         &kp X)
 TYPING_MACRO(myShiftTapMacro,    &kp Y)
 
@@ -250,35 +251,91 @@ COMBO_ANY_TWO_HAND(comboName, BINDING, POS1 POS2)
 
 ## Adaptive Keys
 
-### Recipe 9: Standard AK (SFB Elimination)
+### Recipe 9: AK — Second Character Changes
 
-**I want:** typing `XY` gets replaced with `AB` to eliminate a same-finger bigram.
+> ⚠️ **Partially reviewed** — structure is correct but examples may need improvement.
 
-**Files:** `adaptive_keys/macros.dtsi` + `adaptive_keys/aliases.dtsi` + `adaptive_keys/combos_LAYOUTNAME.dtsi`
+**I want:** typing XY to produce XZ instead (only the second character changes).
+
+This is the simpler, more common AK type. X stays as-is; the next keystroke's output is replaced.
+
+**Files:** `layers_B_*_adaptive_keys.dtsi`
+
+**Prerequisites:** trigger key X must have an AK entry (`#define ak_X &ak l_akX X` in `adaptive_keys/aliases.dtsi`) and an AK layer in the layers file.
 
 **Steps:**
+
+On X's AK layer (`l_akX`), at Y's key position, place the replacement:
+
 ```dtsi
-// 1. In adaptive_keys/macros.dtsi — define the replacement:
-REPLACE_CHAR_WITH_BIGRAM(A, B)
-//    This creates &replace_char_with_bigram_AB which:
-//    backspace → type A → clear shift → activate ak_B
+// Chain ends (most common):
+&bk Z       // types Z, no AK layer activates
 
-// 2. In adaptive_keys/aliases.dtsi — create a readable alias:
-#define XY_to_AB  &replace_char_with_bigram_AB
-
-// 3. In adaptive_keys/combos_LAYOUTNAME.dtsi — add the combo on X's AK layer:
-COMBO_LAY_BASE(l_akX, XY_to_AB_cb, XY_to_AB, KEY_POSITION_OF_Y, my_combo_timeout_adjacent)
+// Chain continues (when Z has its own AK replacements):
+ak_Z        // types Z AND activates l_akZ
 ```
 
-**Prerequisites:** the trigger key X must already have `#define ak_X &ak l_akX X` in aliases and an AK layer defined in `layers_B_*_adaptive_keys.dtsi`.
+**Example:** M→T produces MN
 
-**Example:** `REPLACE_CHAR_WITH_BIGRAM(S, B)` + `#define CB_to_SB &replace_char_with_bigram_SB`
+```dtsi
+// On l_akM in layers_B_NAQUADAH_adaptive_keys.dtsi:
+// At LM1 (T's alpha position):
+&bk N
+```
+
+**Chaining example:** M→K produces MB, chain continues into B's AK layer:
+
+```dtsi
+// On l_akM, at LT0 (K's alpha position):
+ak_B    // NOT &bk B — use ak_B so the chain continues
+```
+
+See [ak-deepdive.md](ak-deepdive.md) for the full chaining mechanism.
 
 ---
 
-### Recipe 10: AK on Home-Row Mod Key
+### Recipe 10: AK — First Character Changes (`REPLACE_CHAR_WITH_BIGRAM`)
+
+> ⚠️ **Partially reviewed** — structure is correct but examples may need improvement.
+
+**I want:** typing XY to produce AB instead (the already-typed first character is retroactively replaced).
+
+The macro deletes X, types A, then fires `ak_B` — so this type **always chains**.
+
+**Files:** `adaptive_keys/macros.dtsi` + `adaptive_keys/aliases.dtsi` + `layers_B_*_adaptive_keys.dtsi`
+
+**Prerequisites:** same as Recipe 9.
+
+**Steps:**
+```dtsi
+// 1. In adaptive_keys/macros.dtsi — instantiate the replacement:
+REPLACE_CHAR_WITH_BIGRAM(A, B)
+//    Creates &replace_char_with_bigram_AB which:
+//    backspace → type A → clear shifts → fire ak_B (chains!)
+
+// 2. In adaptive_keys/aliases.dtsi — readable alias:
+#define XY_to_AB  &replace_char_with_bigram_AB
+
+// 3. On l_akX in layers_B_*_adaptive_keys.dtsi, at Y's position:
+XY_to_AB
+```
+
+**Example:** C→P produces TP (instead of CP)
+- `REPLACE_CHAR_WITH_BIGRAM(T, P)` in macros.dtsi
+- `#define CP_to_TP &replace_char_with_bigram_TP` in aliases.dtsi
+- On `l_akC`, at LT1 (P's alpha position): `CP_to_TP`
+
+**Note:** always chains — after the replacement, B's AK layer (`l_akB`) is active. See [ak-deepdive.md](ak-deepdive.md) for details.
+
+---
+
+### Recipe 11: AK on Home-Row Mod Key
+
+> ⚠️ **Not yet reviewed** — this recipe hasn't been verified for accuracy.
 
 **I want:** a key that acts as a home-row mod (hold=modifier) but also triggers AKs on tap.
+
+**Note:** this pattern isn't currently active in the layout, but documents a known technique for future use.
 
 **Files:** `mods/behaviors.dtsi`
 
@@ -309,7 +366,9 @@ hml_X: hml_X {
 
 ## Thumb Cluster
 
-### Recipe 11: Layer-Tap With AK
+### Recipe 12: Layer-Tap With AK
+
+> ⚠️ **Not yet reviewed** — this recipe hasn't been verified for accuracy.
 
 **I want:** a thumb key that activates an AK on tap and a layer on hold.
 
@@ -337,7 +396,9 @@ blt_akX: blt_akX {
 
 ---
 
-### Recipe 12: Sticky Shift + Mod Layer (Action Button)
+### Recipe 13: Sticky Shift + Mod Layer (Action Button)
+
+> ⚠️ **Not yet reviewed** — this recipe hasn't been verified for accuracy.
 
 **I want:** a thumb key that triggers sticky shift on tap and activates a mod/action layer on hold.
 
@@ -361,7 +422,7 @@ blt_akX: blt_akX {
 
 ## Utility
 
-### Recipe 13: Typing Macro
+### Recipe 14: Typing Macro
 
 **I want:** a key sequence (multiple keypresses fired in order).
 
@@ -378,7 +439,7 @@ TYPING_MACRO(myMacro, &kp KEY1 &kp KEY2 &kp KEY3)
 
 ---
 
-### Recipe 14: Single-Char Wrapper Macro
+### Recipe 15: Single-Char Wrapper Macro
 
 **I want:** a macro that types a single character, for use as an LK binding.
 
