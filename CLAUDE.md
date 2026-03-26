@@ -15,6 +15,7 @@ Four documents in `Design/` capture the keyboard philosophy, technical mechanics
 - `Design/PHILOSOPHY_LOG.md` — Chronological log of ergonomic/binding decisions and experiments (append-only, newest first)
 - `Design/MECHANICS.md` — How the technical systems work under the hood (living reference, organized by topic)
 - `Design/MECHANICS_LOG.md` — Chronological log of technical/architectural decisions (append-only, newest first)
+- `Design/COOKBOOK.md` — Implementation recipes for adding new key behaviors ("I want X — what pattern do I use?")
 
 These are maintained collaboratively during layout sessions. See the `/layout` skill for when and how to update them.
 

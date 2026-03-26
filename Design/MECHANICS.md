@@ -2,6 +2,7 @@
 
 > Technical reference for how the keyboard systems work under the hood.
 > Organized by topic. This is a living document -- refined as patterns evolve.
+> For implementation recipes ("I want to add X"), see [COOKBOOK.md](COOKBOOK.md).
 >
 > Last refined: 2026-02-26
 
