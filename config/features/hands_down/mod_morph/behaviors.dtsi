@@ -106,18 +106,41 @@ EqualSlash: EqualSlash {
     bindings = <&bk EQUAL>, <&none>; // Disabling shifted behavior for now, to make sure I don't use it and weaken the muscle memory on the new position.
     mods = <(MOD_LSFT|MOD_RSFT)>;
 };
-SlashHash: SlashHash {
+/*
+Magic Slash Behavior
+
+S L => Output (L = Linger, S = Shifted)
+-------------
+_ _ => /
+_ X => ~/
+X _ => #
+X X => ~/.
+
+*/
+MagicSlash: MagicSlash {
     compatible = "zmk,behavior-mod-morph";
-    label = "SlashHash";
+    label = "MagicSlash";
     #binding-cells = <0>;
-    bindings = <&bk FSLH>, <&bk HASH>;
+    bindings = <&lk_magicSlashHome XXX XXX>, <&lk_magicHashDotHome XXX XXX>;
     mods = <(MOD_LSFT|MOD_RSFT)>;
 };
-UnderStar: UnderStar {
+
+/*
+Magic Under Behavior
+
+S L => Output (L = Linger, S = Shifted)
+-------------
+_ _ => _
+_ X =>  |  (with spaces)
+X _ => *
+X X => \
+
+*/
+MagicUnder: MagicUnder {
     compatible = "zmk,behavior-mod-morph";
-    label = "UnderStar";
+    label = "MagicUnder";
     #binding-cells = <0>;
-    bindings = <&bk UNDER>, <&bk STAR>;
+    bindings = <&lk_magicUnderPipe XXX XXX>, <&lk BSLH STAR>;
     mods = <(MOD_LSFT|MOD_RSFT)>;
 };
 EqualAt: EqualAt {

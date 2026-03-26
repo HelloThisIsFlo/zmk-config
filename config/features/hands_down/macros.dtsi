@@ -23,6 +23,14 @@ TYPING_MACRO(arrowRightSingle, &kp SPACE &kp MINUS &kp GREATER_THAN &kp SPACE)
 TYPING_MACRO(arrowLeftDouble,  &kp SPACE &kp LESS_THAN &kp EQUAL &kp SPACE)
 TYPING_MACRO(arrowRightDouble, &kp SPACE &kp EQUAL &kp GREATER_THAN &kp SPACE)
 
+TYPING_MACRO(spacePipeSpace,  &kp SPACE &kp PIPE &kp SPACE)
+TYPING_MACRO(tildeSlash,      &kp TILDE &kp FSLH)
+TYPING_MACRO(tildeDotSlash,   &kp TILDE &kp FSLH &kp DOT)
+// Single-char wrappers: LK needs macro bindings (not &bk), so we wrap single keys to keep all Magic LKs using the same XXX XXX pattern
+TYPING_MACRO(typeSlash,       &kp FSLH)
+TYPING_MACRO(typeHash,        &kp HASH)
+TYPING_MACRO(typeUnder,       &kp UNDER)
+
 TYPING_MACRO(closeTab, &kp LG(W))
 TYPING_MACRO(quitApp,  &kp LG(Q))
 TYPING_MACRO(closeTabLinWin, &kp LC(W))

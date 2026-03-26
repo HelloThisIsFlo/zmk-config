@@ -22,6 +22,10 @@ LK(th, &Th, &tion)
 LK(sh, &Sh, &sion)
 LK(gh, &Gh, &ght)
 
+LK(magicSlashHome,    &typeSlash, &tildeSlash)      // tap=/    linger=~/
+LK(magicHashDotHome,  &typeHash,  &tildeDotSlash)   // tap=#    linger=~/.
+LK(magicUnderPipe,    &typeUnder, &spacePipeSpace)   // tap=_    linger= |
+
 #define tabAlttab &lk LA(TAB) TAB
 #define tabCmdtab &lk LG(TAB) TAB
 
