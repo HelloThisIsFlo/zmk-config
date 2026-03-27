@@ -30,6 +30,8 @@ TYPING_MACRO(tildeDotSlash,   &kp TILDE &kp FSLH &kp DOT)
 TYPING_MACRO(typeSlash,       &kp FSLH)
 TYPING_MACRO(typeHash,        &kp HASH)
 TYPING_MACRO(typeUnder,       &kp UNDER)
+TYPING_MACRO(typeGrave,       &kp GRAVE)
+TYPING_MACRO(typeCodeBlock,   &kp LS(ENTER) &kp GRAVE &kp GRAVE &kp GRAVE &kp LS(ENTER))
 
 TYPING_MACRO(closeTab, &kp LG(W))
 TYPING_MACRO(quitApp,  &kp LG(Q))

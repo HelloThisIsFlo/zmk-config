@@ -178,3 +178,22 @@ MagicBracketsR: MagicBracketsR {
     bindings = <&lk RIGHT_BRACKET RIGHT_PARENTHESIS>, <&lk RIGHT_BRACE GREATER_THAN>;
     mods = <(MOD_LSFT|MOD_RSFT)>;
 };
+
+/*
+Magic Grave Behavior
+
+S L => Output (L = Linger, S = Shifted)
+-------------
+_ _ => `
+_ X => ```+Enter
+X _ => ~
+X X => ~ (held)
+
+*/
+MagicGrave: MagicGrave {
+    compatible = "zmk,behavior-mod-morph";
+    label = "MagicGrave";
+    #binding-cells = <0>;
+    bindings = <&lk_magicGraveCodeblock XXX XXX>, <&bk GRAVE>;
+    mods = <(MOD_LSFT|MOD_RSFT)>;
+};
