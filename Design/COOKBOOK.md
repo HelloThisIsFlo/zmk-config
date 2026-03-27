@@ -142,6 +142,8 @@ myAlias
 
 **Note:** if you need this linger key triggered by a combo, just create the alias per this recipe, then use it as the binding in a combo (Recipe 8).
 
+**Note:** if this linger key will also be wrapped in a mod-morph (shift changes output), use Recipe 6 or 7 instead — it's a magic key. Use `magic` naming for all components, even if the shifted side is simple for now.
+
 ---
 
 ## Magic Keys (Shift + Linger = 4 Outputs)
@@ -198,9 +200,11 @@ TYPING_MACRO(myShiftLingerMacro, &kp C &kp D)
 TYPING_MACRO(myTapMacro,         &kp X)
 TYPING_MACRO(myShiftTapMacro,    &kp Y)
 
-// 2. In linger_keys/behaviors.dtsi — create LKs:
+// 2. In linger_keys/behaviors.dtsi — create LKs and aliases:
 LK(myUnshifted, &myTapMacro, &myLingerMacro)          // tap=X    linger=AB
+#define myUnshifted  &lk_myUnshifted XXX XXX
 LK(myShifted,   &myShiftTapMacro, &myShiftLingerMacro) // tap=Y    linger=CD
+#define myShifted  &lk_myShifted XXX XXX
 
 // 3. In mod_morph/behaviors.dtsi:
 MyMagic: MyMagic {
