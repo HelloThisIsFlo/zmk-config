@@ -31,17 +31,13 @@ There are no local tests. The only validation is successful compilation.
 # Build and flash (requires local ZMK checkout at ../zmk)
 ../zmk/build_and_flash.sh left    # Build + flash left half
 ../zmk/build_and_flash.sh right   # Build + flash right half
-
-# Flash from GitHub Actions artifact (keyboard must be in bootloader mode)
-./flash.sh left
-./flash.sh right
 ```
 
 **Build success**: ends with `Linking C executable zephyr/zmk.elf` and `Wrote X bytes to zmk.uf2`. The error `cp: directory /Volumes/NICENANO does not exist` is expected when the keyboard is not plugged in.
 
 **Build failure**: look for `devicetree error:` with parse errors — check the column number for exact location.
 
-GitHub Actions builds automatically on pushes to `config/**`. Uses a custom ZMK fork at `https://github.com/HelloThisIsFlo/zmk`.
+Builds run locally in the `zmk-devcontainer` Docker container (no CI build). Uses a custom ZMK fork at `https://github.com/HelloThisIsFlo/zmk`.
 
 ## Formatting
 

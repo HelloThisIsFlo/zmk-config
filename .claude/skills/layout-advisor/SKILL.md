@@ -107,13 +107,6 @@ When the user wants to flash after a successful build:
 3. The script will build (cached, instant) and copy the `.uf2` to the NICENANO volume
 4. If it fails with `cp: /Volumes/NICENANO: No such file or directory`, the keyboard wasn't in bootloader mode in time -- there may be a macOS permission popup to allow the USB device. Try again.
 
-### CI Alternative
-
-GitHub Actions builds automatically on pushes to `config/**`. Download and flash the artifact with:
-```bash
-./flash.sh left    # or right
-```
-
 ## Maintaining the Design Documents
 
 Four documents in `Design/` capture the user's keyboard thinking. Keeping them updated is part of the layout iteration workflow, not an afterthought.
