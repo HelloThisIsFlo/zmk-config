@@ -9,6 +9,19 @@
 
 ---
 
+## 2026-09-27 -- Pipe linger: bare `|`, no padding spaces
+
+**Context**: The Underscore linger key typed ` | ` (space-pipe-space). The
+leading space kept creating issues; the trailing one wasn't wanted either.
+
+**Decision**: Linger on `_` now types a bare `|` via a `typePipe` single-char
+wrapper (same family as `typeSlash`, `typeHash`, ...). `spacePipeSpace` removed.
+
+**Lesson**: Auto-inserted whitespace around symbols is a false good idea --
+spacing is context-dependent, typing it by hand is cheaper than deleting it.
+
+---
+
 ## 2026-02-26 -- S+N combo for dictation (Opt+R)
 
 **Context**: I use a dictation app constantly, triggered by Opt+R. The old way
