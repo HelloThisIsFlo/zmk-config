@@ -28,12 +28,16 @@ ZMK firmware configuration for a Corne (Chocofi) split keyboard with Nice Nano v
 There are no local tests. The only validation is successful compilation.
 
 ```bash
-# Build and flash (requires local ZMK checkout at ../zmk)
-../zmk/build_and_flash.sh left    # Build + flash left half
-../zmk/build_and_flash.sh right   # Build + flash right half
+# Requires local ZMK checkout at ../zmk. Auto-starts the zmk-devcontainer.
+../zmk/build_and_flash.sh left|right|both        # Build, then prompt to double-tap reset on each half
+../zmk/build_and_flash.sh reset                  # Flash settings_reset to both halves
+../zmk/build_and_flash.sh both --no-flash        # Build only (verify compilation)
+../zmk/build_and_flash.sh both --pristine        # Full rebuild (required after adding a new .conf file)
 ```
 
-**Build success**: ends with `Linking C executable zephyr/zmk.elf` and `Wrote X bytes to zmk.uf2`. The error `cp: directory /Volumes/NICENANO does not exist` is expected when the keyboard is not plugged in.
+**Split roles**: the **right** half is central (keymap + host Bluetooth + the working nice!view), the left is peripheral. Set in `config/corne_left.conf` / `config/corne_right.conf`, which also hold per-side overrides (left sleeps after 2h, right after 20 min from `corne.conf`). Changing roles requires `reset` on both halves, then re-pairing.
+
+**Build success**: ends with `Linking C executable zephyr/zmk.elf` and `Wrote X bytes to zmk.uf2`.
 
 **Build failure**: look for `devicetree error:` with parse errors — check the column number for exact location.
 

@@ -66,7 +66,7 @@ Current Naquadah alpha (for quick reference):
 - **Match the existing style** of the file you're editing (spacing, alignment, comment style)
 - After making changes, briefly summarize what was changed and why, so the user can decide whether to build/flash
 - If a change affects adaptive keys or combos elsewhere, flag the ripple effects
-- The user can build with `../zmk/build_and_flash.sh left` to verify compilation
+- The user can build with `../zmk/build_and_flash.sh both --no-flash` to verify compilation
 
 ## Analysis Tools
 
@@ -76,36 +76,29 @@ If the user wants to evaluate a change quantitatively:
 
 ## Build & Flash Workflow
 
-### Starting the Build Environment
-
-The project uses a dev container. Start it with:
-```bash
-devcontainer up --workspace-folder ../zmk
-```
-The Docker container may already be running from a previous session. If `docker exec zmk-devcontainer ...` works, no need to restart it.
-
 ### Building
 
+The script auto-starts the `zmk-devcontainer` Docker container if it's stopped.
+
 ```bash
-../zmk/build_and_flash.sh left    # Build + flash left half
-../zmk/build_and_flash.sh right   # Build + flash right half
+../zmk/build_and_flash.sh both --no-flash   # Build only -- use this to verify compilation
 ```
 
-**Build success:** ends with `Linking C executable zephyr/zmk.elf` and `Wrote X bytes to zmk.uf2`. The error `cp: directory /Volumes/NICENANO does not exist` is expected when the keyboard is not in bootloader mode -- it just means the build succeeded but couldn't flash.
+**Build success:** ends with `Linking C executable zephyr/zmk.elf` and `Wrote X bytes to zmk.uf2`.
 
 **Build failure:** look for `devicetree error:` with parse errors -- check the column number for exact location.
 
 ### Flashing
 
-When the user wants to flash after a successful build:
+The user runs flashing themselves (it needs hands on the keyboard):
 
-1. Tell the user to get ready to put the keyboard in bootloader mode (BIOS layer -> bottom-left pinky key)
-2. Run with a 10-second delay so they have time:
-   ```bash
-   sleep 10 && ../zmk/build_and_flash.sh left
-   ```
-3. The script will build (cached, instant) and copy the `.uf2` to the NICENANO volume
-4. If it fails with `cp: /Volumes/NICENANO: No such file or directory`, the keyboard wasn't in bootloader mode in time -- there may be a macOS permission popup to allow the USB device. Try again.
+```bash
+../zmk/build_and_flash.sh both    # or left / right
+```
+
+It builds first, then prompts "double-tap reset on the LEFT half", waits for `/Volumes/NICENANO`, copies, waits for the reboot, then does the same for the right half. There may be a macOS popup to allow the USB device on first connect.
+
+Right half = central (keymap + Bluetooth), so keymap-only changes technically only need `right`; flashing `both` keeps the halves in sync.
 
 ## Maintaining the Design Documents
 
