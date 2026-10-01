@@ -6,6 +6,15 @@
 >
 > Last refined: 2026-02-26
 
+> [!warning] Timing claims in this file are superseded (2026-10-01)
+>
+> - Sections **Adaptive Keys**, **Buffered Behaviors**, **Linger Keys**, **Combo System**, **Callum-Style Mods** and **Timing Architecture** contain timing statements that the 2026-09 investigation refuted
+>   - "This 1ms margin is what makes the whole system reliable" → the margin exists only from 11 ms gaps up; rolls ≤ 9 ms miss, 6 pairs miss to 14–16 ms
+>   - "Three timeout tiers" → two are compiled (16, 18); the 30 ms tier has no consumers
+>   - Callum "130 ms after hold detection" → 130 ms after the thumb **release**, queue parked to +260
+> - Proven model: [`Timing/MODEL.md`](Timing/MODEL.md) · numbers to use: [`Timing/FACTS.md`](Timing/FACTS.md)
+> - Rewrite of these sections pending review
+
 ## Lineage
 
 The technical foundation draws from Alan Reiser's [Hands Down](https://sites.google.com/alanreiser.com/handsdown) project, which pioneered Adaptive Keys and linger keys for ZMK. The concepts were imported in Sep 2023 from Moutis' Hands Down ZMK derivative. Everything documented below -- the layer-per-AK architecture, the buffered key system, the timing web, the preprocessor metaprogramming, the orchestrator pattern -- was built from scratch on top of those concepts.

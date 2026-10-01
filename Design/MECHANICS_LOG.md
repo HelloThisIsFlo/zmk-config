@@ -9,6 +9,44 @@
 
 ---
 
+## 2026-10-01 -- AK timing investigation: the consistency hack explained wrong, now proven
+
+**Context**: Neither the combo-hack docs nor the timing visuals page ever made
+the AK system intuitive, and both turned out to describe the wrong mechanism.
+A source-level investigation of the fork (ZMK `6e03a0bb`, Zephyr 3.5) plus
+60+ native_posix unit tests on two rigs (a synthetic mock and the real NAQUADAH
+keymap) established what the firmware actually does.
+
+**Findings**:
+- A key is held by its longest live combo: 11 ms (the 8 hack-only keys), 16 ms
+  (most keys), 18 ms (A E I H). The letter types at delivery D, the AK layer
+  turns on at D+10 and off at D+110.
+- With the hack, two keys <= 9 ms apart leave together at the trigger's 11 ms
+  rung and the follower is quick-tap-bypassed (`require-prior-idle-ms = -1`,
+  stale timestamp) onto the base layer. M->T at 5 ms types `mt`; C->P at 6 ms
+  types `cp`. At exactly 10 ms the follower is predicted to stall until the
+  next key event (board-only, not measured).
+- 45 of 54 AK pairs adapt from 11 ms up to ~105-115 ms. 6 pairs share a real
+  combo with their trigger and miss to 14-16 ms, hack or not (L->G key,
+  H->E key; M<->W and D<->V type Z / Tab instead).
+- The hack rescues 11 pairs (hack-only followers) for 11-25 ms gaps and costs
+  the 34 ordinary pairs every roll <= 9 ms. Upstream ZMK v0.3+ silently drops
+  the 36-key combo.
+- Callum buffer: `l_mod` turns off at thumb-release + 130 and the behaviour
+  queue stays parked until +260; Shift on LM1/RM1 sits in the Enter combo
+  (+16 ms) and becomes `t` / `a` in the buffer's last 16 ms. A replace macro
+  opens a dead window (F+10 .. F+40) where the next key resolves on base.
+
+**Decision**: Bank everything under `Design/Timing/` (MODEL, FACTS, PAIRS,
+TESTS, results, research) and the tests under `tests/timing/` with a runner.
+Old explanations (`ak-combo-hack.md`, `MECHANICS.md`, the `combos.dtsi`
+comment) are marked superseded and get rewritten after review. The visuals
+page is rebuilt from `Timing/FACTS.md`.
+
+**Outcome**: Pending review.
+
+---
+
 ## 2026-02-26 -- Hold pattern for linger keys (&kp vs &bk)
 
 **Context**: The wispr dictation combo (S+N) needed two modes: tap for Opt+R

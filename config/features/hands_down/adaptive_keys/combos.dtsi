@@ -1,4 +1,10 @@
 /*
+ * NOTE 2026-10: the explanation below is SUPERSEDED. The real mechanism is ZMK's quick-tap
+ *   bypass (combo 'require-prior-idle-ms' defaults to -1): two keys <= 9 ms apart leave the
+ *   engine together at the first key's 11 ms rung and the second lands on the BASE layer.
+ *   Adaptation holds from 11 ms gaps up (6 pairs that share a real combo: from 16/18 ms).
+ *   See zmk-config/Design/Timing/MODEL.md and Design/Timing/PAIRS.md. Rewrite pending review.
+ *
  * # This macro is a hack to ensure consistency with the AK layers.
  *
  *

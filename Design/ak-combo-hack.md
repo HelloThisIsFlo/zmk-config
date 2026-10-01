@@ -2,6 +2,13 @@
 
 How a 36-key combo that never fires makes adaptive keys reliable.
 
+> [!warning] Superseded (2026-10-01)
+>
+> - The mechanism below is **wrong in its core claim**: with the hack, two keys ≤ 9 ms apart leave the engine together and the second lands on the **base** layer
+> - M→T at 5 ms types `mt`, not `mn` (🧪 proven, [`Timing/results/T-23.md`](Timing/results/T-23.md))
+> - What the hack really does, per pair, and the failure bands: [`Timing/MODEL.md`](Timing/MODEL.md), [`Timing/PAIRS.md`](Timing/PAIRS.md)
+> - This file stays until it is rewritten from [`Timing/FACTS.md`](Timing/FACTS.md)
+
 Source: the comment block in `adaptive_keys/combos.dtsi:1-63` — this doc refines and structures that explanation.
 
 ## The Problem

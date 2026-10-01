@@ -2,6 +2,12 @@
 
 Complete reference for the AK mechanism in this keyboard config. Read this doc alone to understand how adaptive keys work end-to-end.
 
+> [!note] Timing numbers (2026-10-01)
+>
+> - The mechanism described here holds (chaining 🧪 proven, [`Timing/results/T-12.md`](Timing/results/T-12.md))
+> - Exact timings, the modifier pin rule and the replace-macro dead window live in [`Timing/MODEL.md`](Timing/MODEL.md)
+> - Where this file and that one differ, that one wins
+
 ## Overview
 
 Adaptive Keys (AKs) eliminate Same-Finger Bigrams (SFBs) — cases where two consecutive characters use the same finger. Instead of pressing two keys with one finger in sequence, the AK system detects the sequence and replaces the output.
