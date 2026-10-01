@@ -1,0 +1,414 @@
+[00:00:00.000,000] <dbg> zmk: behavior_macro_init: Precalculate initial release state:
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro param: 1to1
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: tap
+[00:00:00.000,000] <dbg> zmk: behavior_macro_init: Precalculate initial release state:
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro param: 1to1
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: press
+[00:00:00.000,000] <dbg> zmk: behavior_macro_init: Release will resume at 4
+[00:00:00.000,000] <dbg> zmk: behavior_macro_init: Precalculate initial release state:
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro param: 2to1
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: tap
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro tap time set: 0
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro param: 1to1
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: tap
+[00:00:00.000,000] <dbg> zmk: behavior_macro_init: Precalculate initial release state:
+[00:00:00.000,000] <dbg> zmk: behavior_macro_init: Precalculate initial release state:
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro param: 1to1
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: press
+[00:00:00.000,000] <dbg> zmk: behavior_macro_init: Release will resume at 4
+[00:00:00.000,000] <dbg> zmk: behavior_macro_init: Precalculate initial release state:
+[00:00:00.000,000] <dbg> zmk: behavior_macro_init: Precalculate initial release state:
+[00:00:00.000,000] <dbg> zmk: behavior_macro_init: Precalculate initial release state:
+[00:00:00.000,000] <dbg> zmk: behavior_macro_init: Precalculate initial release state:
+[00:00:00.000,000] <dbg> zmk: behavior_macro_init: Precalculate initial release state:
+[00:00:00.000,000] <dbg> zmk: behavior_macro_init: Precalculate initial release state:
+[00:00:00.000,000] <dbg> zmk: behavior_macro_init: Precalculate initial release state:
+[00:00:00.000,000] <dbg> zmk: behavior_macro_init: Precalculate initial release state:
+[00:00:00.000,000] <dbg> zmk: behavior_macro_init: Precalculate initial release state:
+[00:00:00.000,000] <dbg> zmk: behavior_macro_init: Precalculate initial release state:
+[00:00:00.000,000] <dbg> zmk: behavior_macro_init: Precalculate initial release state:
+[00:00:00.000,000] <dbg> zmk: behavior_macro_init: Precalculate initial release state:
+[00:00:00.000,000] <dbg> zmk: behavior_macro_init: Precalculate initial release state:
+[00:00:00.000,000] <dbg> zmk: behavior_macro_init: Precalculate initial release state:
+[00:00:00.000,000] <dbg> zmk: behavior_macro_init: Precalculate initial release state:
+[00:00:00.000,000] <dbg> zmk: behavior_macro_init: Precalculate initial release state:
+[00:00:00.000,000] <dbg> zmk: behavior_macro_init: Precalculate initial release state:
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: tap
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: release
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: release
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: tap
+[00:00:00.000,000] <dbg> zmk: behavior_macro_init: Precalculate initial release state:
+[00:00:00.000,000] <dbg> zmk: behavior_macro_init: Precalculate initial release state:
+[00:00:00.000,000] <dbg> zmk: behavior_macro_init: Precalculate initial release state:
+[00:00:00.000,000] <dbg> zmk: behavior_macro_init: Precalculate initial release state:
+[00:00:00.000,000] <dbg> zmk: behavior_macro_init: Precalculate initial release state:
+[00:00:00.000,000] <dbg> zmk: behavior_macro_init: Precalculate initial release state:
+[00:00:00.000,000] <dbg> zmk: behavior_macro_init: Precalculate initial release state:
+[00:00:00.000,000] <dbg> zmk: behavior_macro_init: Precalculate initial release state:
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: tap
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: release
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: release
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: tap
+[00:00:00.000,000] <dbg> zmk: behavior_macro_init: Precalculate initial release state:
+[00:00:00.000,000] <dbg> zmk: behavior_macro_init: Precalculate initial release state:
+[00:00:00.000,000] <dbg> zmk: behavior_macro_init: Precalculate initial release state:
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: tap
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: release
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: release
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: tap
+[00:00:00.000,000] <dbg> zmk: behavior_macro_init: Precalculate initial release state:
+[00:00:00.000,000] <dbg> zmk: behavior_macro_init: Precalculate initial release state:
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: tap
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: release
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: release
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: tap
+[00:00:00.000,000] <dbg> zmk: behavior_macro_init: Precalculate initial release state:
+[00:00:00.000,000] <dbg> zmk: behavior_macro_init: Precalculate initial release state:
+[00:00:00.000,000] <dbg> zmk: behavior_macro_init: Precalculate initial release state:
+[00:00:00.000,000] <dbg> zmk: behavior_macro_init: Precalculate initial release state:
+[00:00:00.000,000] <dbg> zmk: behavior_macro_init: Precalculate initial release state:
+[00:00:00.000,000] <dbg> zmk: behavior_macro_init: Precalculate initial release state:
+[00:00:00.000,000] <dbg> zmk: behavior_macro_init: Precalculate initial release state:
+[00:00:00.000,000] <dbg> zmk: behavior_macro_init: Precalculate initial release state:
+[00:00:00.000,000] <dbg> zmk: behavior_macro_init: Precalculate initial release state:
+[00:00:00.000,000] <dbg> zmk: behavior_macro_init: Precalculate initial release state:
+[00:00:00.000,000] <dbg> zmk: behavior_macro_init: Precalculate initial release state:
+[00:00:00.000,000] <dbg> zmk: behavior_macro_init: Precalculate initial release state:
+[00:00:00.000,000] <dbg> zmk: behavior_macro_init: Precalculate initial release state:
+[00:00:00.000,000] <dbg> zmk: behavior_macro_init: Precalculate initial release state:
+[00:00:00.000,000] <dbg> zmk: behavior_macro_init: Precalculate initial release state:
+[00:00:00.000,000] <dbg> zmk: behavior_macro_init: Precalculate initial release state:
+[00:00:00.000,000] <dbg> zmk: behavior_macro_init: Precalculate initial release state:
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: press
+[00:00:00.000,000] <dbg> zmk: behavior_macro_init: Release will resume at 3
+[00:00:00.000,000] <dbg> zmk: behavior_macro_init: Precalculate initial release state:
+[00:00:00.000,000] <dbg> zmk: behavior_macro_init: Precalculate initial release state:
+[00:00:00.000,000] <dbg> zmk: behavior_macro_init: Precalculate initial release state:
+[00:00:00.000,000] <dbg> zmk: behavior_macro_init: Precalculate initial release state:
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: tap
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: tap
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: release
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: release
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: tap
+[00:00:00.000,000] <dbg> zmk: behavior_macro_init: Precalculate initial release state:
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: tap
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: tap
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: release
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: release
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: tap
+[00:00:00.000,000] <dbg> zmk: behavior_macro_init: Precalculate initial release state:
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: tap
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: tap
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: release
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: release
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: tap
+[00:00:00.000,000] <dbg> zmk: behavior_macro_init: Precalculate initial release state:
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: tap
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: tap
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: release
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: release
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: tap
+[00:00:00.000,000] <dbg> zmk: behavior_macro_init: Precalculate initial release state:
+[00:00:00.000,000] <dbg> zmk: behavior_macro_init: Precalculate initial release state:
+[00:00:00.000,000] <dbg> zmk: behavior_macro_init: Precalculate initial release state:
+[00:00:00.000,000] <dbg> zmk: behavior_macro_init: Precalculate initial release state:
+[00:00:00.000,000] <dbg> zmk: behavior_macro_init: Precalculate initial release state:
+[00:00:00.000,000] <dbg> zmk: behavior_macro_init: Precalculate initial release state:
+[00:00:00.000,000] <dbg> zmk: behavior_macro_init: Precalculate initial release state:
+[00:00:00.000,000] <dbg> zmk: behavior_macro_init: Precalculate initial release state:
+[00:00:00.000,000] <dbg> zmk: behavior_macro_init: Precalculate initial release state:
+[00:00:00.000,000] <dbg> zmk: behavior_macro_init: Precalculate initial release state:
+[00:00:00.000,000] <dbg> zmk: behavior_macro_init: Precalculate initial release state:
+[00:00:00.000,000] <dbg> zmk: behavior_macro_init: Precalculate initial release state:
+[00:00:00.000,000] <dbg> zmk: behavior_macro_init: Precalculate initial release state:
+[00:00:00.000,000] <dbg> zmk: behavior_macro_init: Precalculate initial release state:
+[00:00:00.000,000] <dbg> zmk: behavior_macro_init: Precalculate initial release state:
+[00:00:00.000,000] <dbg> zmk: behavior_macro_init: Precalculate initial release state:
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: tap
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: tap
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: release
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: release
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: tap
+[00:00:00.000,000] <dbg> zmk: behavior_macro_init: Precalculate initial release state:
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: tap
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: tap
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: release
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: release
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: tap
+[00:00:00.000,000] <dbg> zmk: behavior_macro_init: Precalculate initial release state:
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: tap
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: tap
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: release
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: release
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: tap
+[00:00:00.000,000] <dbg> zmk: behavior_macro_init: Precalculate initial release state:
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: tap
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: tap
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: release
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: release
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: tap
+[00:00:00.000,000] <dbg> zmk: behavior_macro_init: Precalculate initial release state:
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: tap
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: tap
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: release
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: release
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: tap
+[00:00:00.000,000] <dbg> zmk: behavior_macro_init: Precalculate initial release state:
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: press
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: tap
+[00:00:00.000,000] <dbg> zmk: behavior_macro_init: Release will resume at 6
+[00:00:00.000,000] <dbg> zmk: behavior_macro_init: Precalculate initial release state:
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: tap
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: release
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: release
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: tap
+[00:00:00.000,000] <dbg> zmk: behavior_macro_init: Precalculate initial release state:
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: tap
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: release
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: release
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: tap
+[00:00:00.000,000] <dbg> zmk: behavior_macro_init: Precalculate initial release state:
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: tap
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: release
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: release
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: tap
+[00:00:00.000,000] <dbg> zmk: behavior_macro_init: Precalculate initial release state:
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: press
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: press
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: tap
+[00:00:00.000,000] <dbg> zmk: behavior_macro_init: Release will resume at 7
+[00:00:00.000,000] <dbg> zmk: behavior_macro_init: Precalculate initial release state:
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: tap
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: release
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: release
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: tap
+[00:00:00.000,000] <dbg> zmk: behavior_macro_init: Precalculate initial release state:
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: tap
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: release
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: release
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: tap
+[00:00:00.000,000] <dbg> zmk: behavior_macro_init: Precalculate initial release state:
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: tap
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: release
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: release
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: tap
+[00:00:00.000,000] <dbg> zmk: behavior_macro_init: Precalculate initial release state:
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro param: 1to1
+[00:00:00.000,000] <dbg> zmk: behavior_macro_init: Precalculate initial release state:
+[00:00:00.000,000] <dbg> zmk: behavior_macro_init: Precalculate initial release state:
+[00:00:00.000,000] <dbg> zmk: behavior_macro_init: Precalculate initial release state:
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: tap
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: tap
+[00:00:00.000,000] <dbg> zmk: behavior_macro_init: Precalculate initial release state:
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: tap
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: release
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: release
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: tap
+[00:00:00.000,000] <dbg> zmk: behavior_macro_init: Precalculate initial release state:
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: tap
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: release
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: release
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: tap
+[00:00:00.000,000] <dbg> zmk: behavior_macro_init: Precalculate initial release state:
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: tap
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: release
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: release
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: tap
+[00:00:00.000,000] <dbg> zmk: behavior_macro_init: Precalculate initial release state:
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: tap
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: release
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: release
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: tap
+[00:00:00.000,000] <dbg> zmk: behavior_macro_init: Precalculate initial release state:
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: tap
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: tap
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: release
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: release
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: tap
+[00:00:00.000,000] <dbg> zmk: behavior_macro_init: Precalculate initial release state:
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: tap
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: tap
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: release
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: release
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: tap
+[00:00:00.000,000] <dbg> zmk: behavior_macro_init: Precalculate initial release state:
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: tap
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: tap
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: release
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: release
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: tap
+[00:00:00.000,000] <dbg> zmk: behavior_macro_init: Precalculate initial release state:
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: tap
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: tap
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: release
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: release
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: tap
+[00:00:00.000,000] <dbg> zmk: behavior_macro_init: Precalculate initial release state:
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: tap
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: tap
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: release
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: release
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: tap
+[00:00:00.000,000] <dbg> zmk: behavior_macro_init: Precalculate initial release state:
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: tap
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: tap
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: release
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: release
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: tap
+[00:00:00.000,000] <dbg> zmk: behavior_macro_init: Precalculate initial release state:
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: tap
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: tap
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: release
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: release
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: tap
+[00:00:00.000,000] <dbg> zmk: behavior_macro_init: Precalculate initial release state:
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: tap
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: tap
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: release
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: release
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: tap
+[00:00:00.000,000] <dbg> zmk: behavior_macro_init: Precalculate initial release state:
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: tap
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: tap
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: release
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: release
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: tap
+[00:00:00.000,000] <dbg> zmk: behavior_macro_init: Precalculate initial release state:
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: tap
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: tap
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: release
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: release
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: tap
+[00:00:00.000,000] <dbg> zmk: behavior_macro_init: Precalculate initial release state:
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: tap
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: tap
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: release
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: release
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: tap
+[00:00:00.000,000] <dbg> zmk: behavior_macro_init: Precalculate initial release state:
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: tap
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: tap
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: release
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: release
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: tap
+[00:00:00.000,000] <dbg> zmk: behavior_macro_init: Precalculate initial release state:
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: tap
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: tap
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: release
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: release
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: tap
+[00:00:00.000,000] <dbg> zmk: behavior_macro_init: Precalculate initial release state:
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: tap
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: release
+[00:00:00.000,000] <dbg> zmk: behavior_macro_init: Precalculate initial release state:
+[00:00:00.000,000] <dbg> zmk: behavior_macro_init: Precalculate initial release state:
+*** Booting Zephyr OS build dacab4875df7 ***
+[00:00:00.000,000] <dbg> zmk: kscan_mock_schedule_next_event_0: delaying next keypress: 16
+[00:00:00.000,000] <dbg> zmk: get_selected_transport: No endpoint transports are ready.
+[00:00:00.000,000] <inf> zmk: Welcome to ZMK!
+
+[00:00:00.017,000] <dbg> zmk: kscan_mock_work_handler_0: ev 2148534785 row 1 column 10 state 1
+
+[00:00:00.017,000] <dbg> zmk: kscan_mock_schedule_next_event_0: delaying next keypress: 16
+[00:00:00.017,000] <dbg> zmk: zmk_physical_layouts_kscan_process_msgq: Row: 1, col: 10, position: 19, pressed: true
+[00:00:00.017,000] <dbg> zmk: position_state_changed_listener: 19 bubble (no undecided hold_tap active)
+[00:00:00.017,000] <dbg> zmk: position_state_down: combo: capturing position event 19
+[00:00:00.017,000] <dbg> zmk: zmk_event_manager_handle_from: Listener captured the event
+[00:00:00.034,000] <dbg> zmk: kscan_mock_work_handler_0: ev 2151417857 row 1 column 8 state 1
+
+[00:00:00.034,000] <dbg> zmk: kscan_mock_schedule_next_event_0: delaying next keypress: 60
+[00:00:00.034,000] <dbg> zmk: zmk_physical_layouts_kscan_process_msgq: Row: 1, col: 8, position: 17, pressed: true
+[00:00:00.034,000] <dbg> zmk: position_state_changed_listener: 17 bubble (no undecided hold_tap active)
+[00:00:00.034,000] <dbg> zmk: filter_timed_out_candidates: after filtering out timed out combo candidates: remaining_candidates=1 timestamp=34
+[00:00:00.034,000] <dbg> zmk: position_state_down: combo: capturing position event 17
+[00:00:00.034,000] <dbg> zmk: zmk_event_manager_handle_from: Listener captured the event
+[00:00:00.036,000] <dbg> zmk: filter_timed_out_candidates: after filtering out timed out combo candidates: remaining_candidates=0 timestamp=35
+[00:00:00.036,000] <dbg> zmk: release_pressed_keys: combo: releasing position event 19
+[00:00:00.036,000] <dbg> zmk: zmk_keymap_apply_position_state: layer_id: 0 position: 19, binding name: flo,behavior-adaptive-key
+[00:00:00.036,000] <dbg> zmk: queue_macro: Iterating macro bindings - starting: 0, count: 7
+[00:00:00.036,000] <dbg> zmk: handle_control_binding: macro param: 2to1
+[00:00:00.036,000] <dbg> zmk: handle_control_binding: macro mode set: tap
+[00:00:00.036,000] <dbg> zmk: behavior_queue_process_next: Invoking key_press: 0x7000b 0x00
+[00:00:00.036,000] <dbg> zmk: on_keymap_binding_pressed: position 0 keycode 0x7000B
+[00:00:00.036,000] <dbg> zmk: hid_listener_keycode_pressed: usage_page 0x07 keycode 0x0B implicit_mods 0x00 explicit_mods 0x00
+[00:00:00.036,000] <dbg> zmk: zmk_hid_implicit_modifiers_press: Modifiers set to 0x00
+[00:00:00.036,000] <dbg> zmk: zmk_endpoints_send_report: usage page 0x07
+[00:00:00.036,000] <err> zmk: USB endpoint is not supported
+[00:00:00.036,000] <dbg> zmk: behavior_queue_process_next: Processing next queued behavior in 10ms
+[00:00:00.036,000] <dbg> zmk: handle_control_binding: macro tap time set: 0
+[00:00:00.036,000] <dbg> zmk: handle_control_binding: macro param: 1to1
+[00:00:00.036,000] <dbg> zmk: handle_control_binding: macro mode set: tap
+[00:00:00.036,000] <dbg> zmk: release_pressed_keys: combo: reraising position event 17
+[00:00:00.036,000] <dbg> zmk: position_state_changed_listener: 17 bubble (no undecided hold_tap active)
+[00:00:00.036,000] <dbg> zmk: zmk_keymap_apply_position_state: layer_id: 0 position: 17, binding name: flo,behavior-adaptive-key
+[00:00:00.036,000] <dbg> zmk: queue_macro: Iterating macro bindings - starting: 0, count: 7
+[00:00:00.036,000] <dbg> zmk: handle_control_binding: macro param: 2to1
+[00:00:00.036,000] <dbg> zmk: handle_control_binding: macro mode set: tap
+[00:00:00.036,000] <dbg> zmk: handle_control_binding: macro tap time set: 0
+[00:00:00.036,000] <dbg> zmk: handle_control_binding: macro param: 1to1
+[00:00:00.036,000] <dbg> zmk: handle_control_binding: macro mode set: tap
+[00:00:00.047,000] <dbg> zmk: behavior_queue_process_next: Invoking key_press: 0x7000b 0x00
+[00:00:00.047,000] <dbg> zmk: on_keymap_binding_released: position 0 keycode 0x7000B
+[00:00:00.047,000] <dbg> zmk: hid_listener_keycode_released: usage_page 0x07 keycode 0x0B implicit_mods 0x00 explicit_mods 0x00
+[00:00:00.047,000] <dbg> zmk: zmk_endpoints_send_report: usage page 0x07
+[00:00:00.047,000] <err> zmk: USB endpoint is not supported
+[00:00:00.047,000] <err> zmk: Failed to send key report for the released keycode (-95)
+[00:00:00.047,000] <dbg> zmk: zmk_hid_implicit_modifiers_release: Modifiers set to 0x00
+[00:00:00.047,000] <dbg> zmk: zmk_endpoints_send_report: usage page 0x07
+[00:00:00.047,000] <err> zmk: USB endpoint is not supported
+[00:00:00.047,000] <dbg> zmk: behavior_queue_process_next: Processing next queued behavior in 0ms
+[00:00:00.047,000] <dbg> zmk: behavior_queue_process_next: Invoking flo,behavior-adaptive-key-sticky-layer: 0x09 0x00
+[00:00:00.047,000] <dbg> zmk: on_sticky_key_binding_pressed: 0 new sticky_key
+[00:00:00.047,000] <dbg> zmk: mo_keymap_binding_pressed: position 0 layer 9
+[00:00:00.047,000] <dbg> zmk: set_layer_state: layer_changed: layer 9 state 1
+[00:00:00.047,000] <dbg> zmk: behavior_queue_process_next: Processing next queued behavior in 0ms
+[00:00:00.047,000] <dbg> zmk: behavior_queue_process_next: Invoking flo,behavior-adaptive-key-sticky-layer: 0x09 0x00
+[00:00:00.047,000] <dbg> zmk: behavior_queue_process_next: Processing next queued behavior in 0ms
+[00:00:00.047,000] <dbg> zmk: behavior_queue_process_next: Invoking key_press: 0x70008 0x00
+[00:00:00.047,000] <dbg> zmk: on_keymap_binding_pressed: position 0 keycode 0x70008
+[00:00:00.047,000] <dbg> zmk: hid_listener_keycode_pressed: usage_page 0x07 keycode 0x08 implicit_mods 0x00 explicit_mods 0x00
+[00:00:00.047,000] <dbg> zmk: zmk_hid_implicit_modifiers_press: Modifiers set to 0x00
+[00:00:00.047,000] <dbg> zmk: zmk_endpoints_send_report: usage page 0x07
+[00:00:00.047,000] <err> zmk: USB endpoint is not supported
+[00:00:00.047,000] <dbg> zmk: behavior_queue_process_next: Processing next queued behavior in 10ms
+[00:00:00.058,000] <dbg> zmk: behavior_queue_process_next: Invoking key_press: 0x70008 0x00
+[00:00:00.058,000] <dbg> zmk: on_keymap_binding_released: position 0 keycode 0x70008
+[00:00:00.058,000] <dbg> zmk: hid_listener_keycode_released: usage_page 0x07 keycode 0x08 implicit_mods 0x00 explicit_mods 0x00
+[00:00:00.058,000] <dbg> zmk: zmk_endpoints_send_report: usage page 0x07
+[00:00:00.058,000] <err> zmk: USB endpoint is not supported
+[00:00:00.058,000] <err> zmk: Failed to send key report for the released keycode (-95)
+[00:00:00.058,000] <dbg> zmk: zmk_hid_implicit_modifiers_release: Modifiers set to 0x00
+[00:00:00.058,000] <dbg> zmk: zmk_endpoints_send_report: usage page 0x07
+[00:00:00.058,000] <err> zmk: USB endpoint is not supported
+[00:00:00.058,000] <dbg> zmk: mo_keymap_binding_released: position 0 layer 9
+[00:00:00.058,000] <dbg> zmk: set_layer_state: layer_changed: layer 9 state 0
+[00:00:00.058,000] <dbg> zmk: zmk_event_manager_handle_from: Listener captured the event
+[00:00:00.058,000] <dbg> zmk: behavior_queue_process_next: Processing next queued behavior in 0ms
+[00:00:00.058,000] <dbg> zmk: behavior_queue_process_next: Invoking flo,behavior-adaptive-key-sticky-layer: 0x06 0x00
+[00:00:00.058,000] <dbg> zmk: on_sticky_key_binding_pressed: 0 new sticky_key
+[00:00:00.058,000] <dbg> zmk: mo_keymap_binding_pressed: position 0 layer 6
+[00:00:00.058,000] <dbg> zmk: set_layer_state: layer_changed: layer 6 state 1
+[00:00:00.058,000] <dbg> zmk: behavior_queue_process_next: Processing next queued behavior in 0ms
+[00:00:00.058,000] <dbg> zmk: behavior_queue_process_next: Invoking flo,behavior-adaptive-key-sticky-layer: 0x06 0x00
+[00:00:00.058,000] <dbg> zmk: behavior_queue_process_next: Processing next queued behavior in 0ms
+[00:00:00.095,000] <dbg> zmk: kscan_mock_work_handler_0: ev 2624001 row 1 column 10 state 0
+
+[00:00:00.095,000] <dbg> zmk: kscan_mock_schedule_next_event_0: delaying next keypress: 40
+[00:00:00.095,000] <dbg> zmk: zmk_physical_layouts_kscan_process_msgq: Row: 1, col: 10, position: 19, pressed: false
+[00:00:00.095,000] <dbg> zmk: position_state_changed_listener: 19 bubble (no undecided hold_tap active)
+[00:00:00.095,000] <dbg> zmk: tap_dance_position_state_changed_listener: Ignore upstroke at position 19.
+[00:00:00.095,000] <dbg> zmk: zmk_keymap_apply_position_state: layer_id: 0 position: 19, binding name: flo,behavior-adaptive-key
+[00:00:00.095,000] <dbg> zmk: queue_macro: Iterating macro bindings - starting: 7, count: 0
+[00:00:00.136,000] <dbg> zmk: kscan_mock_work_handler_0: ev 19662849 row 1 column 8 state 0
+
+[00:00:00.136,000] <dbg> zmk: kscan_mock_schedule_next_event_0: delaying next keypress: 300
+[00:00:00.136,000] <dbg> zmk: zmk_physical_layouts_kscan_process_msgq: Row: 1, col: 8, position: 17, pressed: false
+[00:00:00.136,000] <dbg> zmk: position_state_changed_listener: 17 bubble (no undecided hold_tap active)
+[00:00:00.136,000] <dbg> zmk: tap_dance_position_state_changed_listener: Ignore upstroke at position 17.
+[00:00:00.136,000] <dbg> zmk: zmk_keymap_apply_position_state: layer_id: 0 position: 17, binding name: flo,behavior-adaptive-key
+[00:00:00.136,000] <dbg> zmk: queue_macro: Iterating macro bindings - starting: 7, count: 0
+[00:00:00.159,000] <dbg> zmk: mo_keymap_binding_released: position 0 layer 6
+[00:00:00.159,000] <dbg> zmk: set_layer_state: layer_changed: layer 6 state 0
+[00:00:00.437,000] <dbg> zmk: kscan_mock_work_handler_0: ev 1 row 1 column 0 state 0
+
+[00:00:00.437,000] <dbg> zmk: kscan_mock_schedule_next_event_0: Exiting

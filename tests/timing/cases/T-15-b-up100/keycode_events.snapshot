@@ -1,0 +1,20 @@
+pos Row: 2, col: 1, position: 9, pressed: true
+capturing position event 9
+after filtering out timed out combo candidates: remaining_candidates=0 timestamp=111
+releasing position event 9
+keymap layer_id: 0 position: 9, binding name: lk
+ht 9 new undecided hold_tap
+pos Row: 2, col: 1, position: 9, pressed: false
+ht 9 bubble undecided hold-tap keyrelease event
+keymap layer_id: 0 position: 9, binding name: lk
+ht 9 decided tap (tap-preferred decision moment key-up)
+macro Iterating macro bindings - starting: 0, count: 3
+queue invoke key_press: 0x7001c 0x00
+kp_pressed: usage_page 0x07 keycode 0x1C implicit_mods 0x00 explicit_mods 0x00
+queue wait 10ms
+macro Iterating macro bindings - starting: 3, count: 0
+ht 9 cleaning up hold-tap
+queue invoke key_press: 0x7001c 0x00
+kp_released: usage_page 0x07 keycode 0x1C implicit_mods 0x00 explicit_mods 0x00
+queue wait 0ms
+Exiting

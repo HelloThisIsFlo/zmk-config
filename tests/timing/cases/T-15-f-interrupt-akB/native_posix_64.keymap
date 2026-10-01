@@ -1,0 +1,274 @@
+/*
+ * Rig R1 — synthetic 3x4 mock keymap for the AK-truth test plan
+ * (CLAIMS.md "Common rig R1"; node shapes verbatim from Flo's zmk-config).
+ *
+ * TEMPLATE — do not edit in place. Copy this directory to
+ * tests/ak-truth/<your-case>/ and add the `events` list at the bottom.
+ *
+ * Mock geometry: rows = 3, columns = 4, no matrix transform
+ *   → position p = row * 4 + col  →  ZMK_MOCK_PRESS(p / 4, p % 4, ms)
+ *
+ *   ╭──────────────────────────────────────────────────────────────╮
+ *   │ pos  0 (0,0) A   1 (0,1) B    2 (0,2) C     3 (0,3) D        │  row 0
+ *   │ pos  4 (1,0) E   5 (1,1) F    6 (1,2) G     7 (1,3) H        │  row 1
+ *   │ pos  8 (2,0) I   9 (2,1) lkXY 10 (2,2) thumb 11 (2,3) J      │  row 2
+ *   ╰──────────────────────────────────────────────────────────────╯
+ *
+ * Node → real-config source:
+ *   ak, bk          features/hands_down/adaptive_keys/macros.dtsi   (ak_tap_time = TEMP_macro_tap_time = 10)
+ *   aksl, blt_akR,
+ *   ak_R_macro      features/hands_down/adaptive_keys/behaviors.dtsi (my_ak_window = 100, my_tapping_term_thumb = 200)
+ *   lk              features/hands_down/linger_keys/behaviors.dtsi  (linger_term = 100)
+ *   htls, htm,
+ *   skm, skms       features/hands_down/mods/behaviors.dtsi         (action_lay_tapping_term = 90, action_mod_tapping_term = 130)
+ *   moAndBuffer     features/hands_down/mods/macros.dtsi            (l_mod → layer 4 here)
+ *   hack combo      features/hands_down/adaptive_keys/combos.dtsi   (hold_key_event_delay = 11; defined LAST like the real one)
+ *
+ * Layers: 0 base · 1 akA · 2 akB · 3 akH · 4 mod · 5 nav
+ * Labels: `combos`, `combo_hack`, `combo_R16` … so a case can `/delete-node/ &combo_hack;`
+ * or `/delete-node/ &combos;` after including nothing else (see T-01-r1).
+ */
+
+#include <dt-bindings/zmk/keys.h>
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/kscan_mock.h>
+
+/ {
+    macros {
+        ak: ak {
+                label = "flo,behavior-adaptive-key";
+                compatible = "zmk,behavior-macro-two-param";
+                #binding-cells = <2>;
+                wait-ms = <0>;
+                tap-ms = <10>;
+                bindings =
+                        <&macro_param_2to1>,
+                        <&macro_tap &kp MACRO_PLACEHOLDER>,
+
+                        <&macro_tap_time 0>,
+
+                        <&macro_param_1to1>,
+                        <&macro_tap &aksl MACRO_PLACEHOLDER>;
+        };
+
+        bk: bk {
+                label = "flo,behavior-buffered-key";
+                compatible = "zmk,behavior-macro-one-param";
+                #binding-cells = <1>;
+                wait-ms = <0>;
+                tap-ms = <10>;
+                bindings =
+                        <&macro_param_1to1>,
+                        <&macro_tap &kp MACRO_PLACEHOLDER>
+                        ;
+        };
+
+        /* real: ZMK_MACRO(ak_R_macro, wait-ms = <0>; tap-ms = <0>; bindings = <&ak l_akR R>;)
+         * here the thumb's AK layer is 3 (akH) and the letter is H, per CLAIMS R1 */
+        ak_R_macro: ak_R_macro {
+                compatible = "zmk,behavior-macro";
+                #binding-cells = <0>;
+                wait-ms = <0>;
+                tap-ms = <0>;
+                bindings = <&ak 3 H>;
+        };
+
+        moAndBuffer: moAndBuffer {
+                compatible = "zmk,behavior-macro-one-param";
+                #binding-cells = <1>;
+                wait-ms = <0>;
+                tap-ms = <0>;
+                bindings =
+                        <&macro_press &mo 4>,
+
+                        <&macro_pause_for_release>,
+
+                        <&macro_wait_time 130>,
+                        <&macro_tap &none>,
+
+                        <&macro_release &mo 4>;
+        };
+    };
+
+    behaviors {
+        aksl: aksl {
+            compatible = "zmk,behavior-sticky-key";
+            label = "flo,behavior-adaptive-key-sticky-layer";
+            #binding-cells = <1>;
+            release-after-ms = <100>;
+            bindings = <&mo>;
+        };
+
+        blt_akR: blt_akR {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            bindings = <&mo>, <&ak_R_macro>;
+        };
+
+        lk: lk {
+            compatible = "zmk,behavior-hold-tap";
+            label = "lk";
+            #binding-cells = <2>;
+            tapping-term-ms = <100>;
+            flavor = "tap-preferred";
+            bindings = <&bk>, <&bk>;
+        };
+
+        skm: sticky_key_mod {
+                compatible = "zmk,behavior-sticky-key";
+                #binding-cells = <1>;
+                bindings = <&kp>;
+                release-after-ms = <1500>;
+                ignore-modifiers;
+        };
+
+        skms: sticky_key_mod_shift {
+                compatible = "zmk,behavior-sticky-key";
+                #binding-cells = <1>;
+                bindings = <&kp>;
+                release-after-ms = <1500>;
+        };
+
+        htm: hold_tap_mod {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <130>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&skm>;
+            hold-while-undecided;
+            hold-while-undecided-linger;
+        };
+
+        htls: hold_tap_layer_sticky_shift {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <90>;
+            flavor = "hold-preferred";
+            bindings = <&moAndBuffer>, <&skms>;
+        };
+    };
+
+    combos: combos {
+        compatible = "zmk,combos";
+
+        /* real tiers: adjacent 16 / non-adjacent 18 / two-hand 30; layers = l_all (every layer) */
+        combo_R16: combo_R16 {
+            bindings = <&bk C>;
+            key-positions = <0 2>;
+            layers = <0 1 2 3 4 5>;
+            timeout-ms = <16>;
+        };
+        combo_S16: combo_S16 {
+            bindings = <&bk V>;
+            key-positions = <4 5>;
+            layers = <0 1 2 3 4 5>;
+            timeout-ms = <16>;
+        };
+        combo_Q18: combo_Q18 {
+            bindings = <&bk W>;
+            key-positions = <4 5 6>;
+            layers = <0 1 2 3 4 5>;
+            timeout-ms = <18>;
+        };
+        combo_W30: combo_W30 {
+            bindings = <&bk Z>;
+            key-positions = <7 8>;
+            layers = <0 1 2 3 4 5>;
+            timeout-ms = <30>;
+        };
+        combo_V16: combo_V16 {
+            bindings = <&bk Y>;
+            key-positions = <6 11>;
+            layers = <0 1 2 3 4 5>;
+            timeout-ms = <16>;
+        };
+
+        /* COMBO_AK_CONSISTENCY_HACK — all keys, alpha+AK layers only (not mod/nav), 11 ms.
+         * Defined last, as in the real combos.dtsi include order. */
+        combo_hack: combo_ak_consistency_hack {
+            bindings = <&none>;
+            key-positions = <0 1 2 3 4 5 6 7 8 9 10 11>;
+            layers = <0 1 2 3>;
+            timeout-ms = <11>;
+        };
+    };
+
+    keymap {
+        compatible = "zmk,keymap";
+
+        base {          /* 0 */
+            bindings = <
+                &ak 1 A     &ak 2 B     &kp C           &kp D
+                &kp E       &kp F       &kp G           &ak 3 H
+                &kp I       &lk X Y     &blt_akR 5 0    &kp J
+            >;
+        };
+
+        akA {           /* 1: after A */
+            bindings = <
+                &trans      &bk K       &trans          &bk L
+                &bk N       &trans      &trans          &bk O
+                &trans      &trans      &trans          &bk M
+            >;
+        };
+
+        akB {           /* 2: after B */
+            bindings = <
+                &bk P       &trans      &trans          &bk Q
+                &bk R       &trans      &trans          &bk S
+                &trans      &trans      &trans          &trans
+            >;
+        };
+
+        akH {           /* 3: after H (also the thumb's AK layer) */
+            bindings = <
+                &bk U       &bk T       &trans          &trans
+                &trans      &trans      &trans          &trans
+                &trans      &trans      &trans          &trans
+            >;
+        };
+
+        mod {           /* 4: l_mod stand-in */
+            bindings = <
+                &trans      &trans      &trans          &trans
+                &trans      &htm LCTRL LCTRL  &trans    &trans
+                &trans      &trans      &trans          &trans
+            >;
+        };
+
+        nav {           /* 5: hold target of blt_akR */
+            bindings = <
+                &trans      &trans      &trans          &trans
+                &trans      &trans      &trans          &trans
+                &trans      &trans      &trans          &trans
+            >;
+        };
+    };
+};
+
+&kscan {
+    rows = <3>;
+    columns = <4>;
+
+    /* >>> PLACEHOLDER — the template has NO events and will not build. <<<
+     * A test case copies this directory and adds, e.g.:
+     *
+     * events = <
+     *     ZMK_MOCK_PRESS(0,3,100)      // pos 3 (D); 100 = boot delay AND the gap after (+1 each on native)
+     *     ZMK_MOCK_RELEASE(0,3,10)
+     *     ZMK_MOCK_PRESS(0,2,50)
+     *     ZMK_MOCK_RELEASE(0,2,300)    // last gap bounds the observation window (100 ms timers need ≥ 300)
+     * >;
+     */
+};
+
+&kscan {
+    events = <
+        ZMK_MOCK_PRESS(2,1,40)
+        ZMK_MOCK_PRESS(0,1,40)
+        ZMK_MOCK_RELEASE(2,1,10)
+        ZMK_MOCK_RELEASE(0,1,300)
+    >;
+};

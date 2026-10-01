@@ -1,0 +1,57 @@
+pos Row: 0, col: 3, position: 3, pressed: true
+capturing position event 3
+after filtering out timed out combo candidates: remaining_candidates=0 timestamp=42
+releasing position event 3
+keymap layer_id: 0 position: 3, binding name: momentary_layer
+layer_changed: layer 4 state 1
+pos Row: 1, col: 1, position: 5, pressed: true
+capturing position event 5
+after filtering out timed out combo candidates: remaining_candidates=1 timestamp=78
+after filtering out timed out combo candidates: remaining_candidates=0 timestamp=80
+releasing position event 5
+keymap layer_id: 4 position: 5, binding name: hold_tap_mod
+ht 5 new undecided hold_tap
+ht 5 hold behavior pressed while undecided
+kp_pressed: usage_page 0x07 keycode 0xE0 implicit_mods 0x00 explicit_mods 0x00
+pos Row: 1, col: 1, position: 5, pressed: false
+ht 5 bubble undecided hold-tap keyrelease event
+keymap layer_id: 4 position: 5, binding name: hold_tap_mod
+ht 5 decided tap (tap-preferred decision moment key-up)
+sk 5 new sticky_key
+kp_pressed: usage_page 0x07 keycode 0xE0 implicit_mods 0x00 explicit_mods 0x00
+kp_released: usage_page 0x07 keycode 0xE0 implicit_mods 0x00 explicit_mods 0x00
+ht 5 cleaning up hold-tap
+pos Row: 1, col: 1, position: 5, pressed: true
+capturing position event 5
+after filtering out timed out combo candidates: remaining_candidates=1 timestamp=140
+after filtering out timed out combo candidates: remaining_candidates=0 timestamp=142
+releasing position event 5
+keymap layer_id: 4 position: 5, binding name: hold_tap_mod
+ht 5 new undecided hold_tap
+ht 5 hold behavior pressed while undecided
+kp_pressed: usage_page 0x07 keycode 0xE0 implicit_mods 0x00 explicit_mods 0x00
+pos Row: 1, col: 1, position: 5, pressed: false
+ht 5 bubble undecided hold-tap keyrelease event
+keymap layer_id: 4 position: 5, binding name: hold_tap_mod
+ht 5 decided tap (tap-preferred decision moment key-up)
+kp_released: usage_page 0x07 keycode 0xE0 implicit_mods 0x00 explicit_mods 0x00
+sk 5 new sticky_key
+kp_pressed: usage_page 0x07 keycode 0xE0 implicit_mods 0x00 explicit_mods 0x00
+kp_released: usage_page 0x07 keycode 0xE0 implicit_mods 0x00 explicit_mods 0x00
+ht 5 cleaning up hold-tap
+pos Row: 0, col: 2, position: 2, pressed: true
+capturing position event 2
+after filtering out timed out combo candidates: remaining_candidates=0 timestamp=442
+releasing position event 2
+keymap layer_id: 4 position: 2, binding name: transparent
+keymap layer_id: 0 position: 2, binding name: key_press
+kp_pressed: usage_page 0x07 keycode 0x06 implicit_mods 0x00 explicit_mods 0x00
+pos Row: 0, col: 2, position: 2, pressed: false
+keymap layer_id: 4 position: 2, binding name: transparent
+keymap layer_id: 0 position: 2, binding name: key_press
+kp_released: usage_page 0x07 keycode 0x06 implicit_mods 0x00 explicit_mods 0x00
+kp_released: usage_page 0x07 keycode 0xE0 implicit_mods 0x00 explicit_mods 0x00
+pos Row: 0, col: 3, position: 3, pressed: false
+keymap layer_id: 0 position: 3, binding name: momentary_layer
+layer_changed: layer 4 state 0
+Exiting

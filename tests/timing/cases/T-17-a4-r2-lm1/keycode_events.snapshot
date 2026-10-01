@@ -1,0 +1,41 @@
+pos Row: 3, col: 4, position: 31, pressed: true
+capturing position event 31
+after filtering out timed out combo candidates: remaining_candidates=0 timestamp=42
+releasing position event 31
+keymap layer_id: 0 position: 31, binding name: hold_tap_layer_sticky_shift
+ht 31 new undecided hold_tap
+pos Row: 1, col: 4, position: 13, pressed: true
+ht 31 capturing 13 down event
+ht 31 decided hold-interrupt (hold-preferred decision moment other-key-down)
+macro Iterating macro bindings - starting: 0, count: 2
+queue invoke momentary_layer: 0x1a 0x00
+layer_changed: layer 26 state 1
+queue wait 0ms
+ht Releasing key position event for position 13 pressed
+capturing position event 13
+after filtering out timed out combo candidates: remaining_candidates=0 timestamp=78
+releasing position event 13
+keymap layer_id: 26 position: 13, binding name: hold_tap_mod
+ht 13 new undecided hold_tap
+ht 13 hold behavior pressed while undecided
+kp_pressed: usage_page 0x07 keycode 0xE1 implicit_mods 0x00 explicit_mods 0x00
+pos Row: 1, col: 4, position: 13, pressed: false
+ht 13 bubble undecided hold-tap keyrelease event
+keymap layer_id: 26 position: 13, binding name: hold_tap_mod
+ht 13 decided tap (tap-preferred decision moment key-up)
+sk 13 new sticky_key
+kp_pressed: usage_page 0x07 keycode 0xE1 implicit_mods 0x00 explicit_mods 0x00
+kp_released: usage_page 0x07 keycode 0xE1 implicit_mods 0x00 explicit_mods 0x00
+ht 13 cleaning up hold-tap
+pos Row: 3, col: 4, position: 31, pressed: false
+keymap layer_id: 0 position: 31, binding name: hold_tap_layer_sticky_shift
+macro Iterating macro bindings - starting: 3, count: 5
+queue invoke none: 0x00 0x00
+queue wait 0ms
+queue invoke none: 0x00 0x00
+queue wait 130ms
+ht 31 cleaning up hold-tap
+queue invoke momentary_layer: 0x1a 0x00
+layer_changed: layer 26 state 0
+queue wait 130ms
+Exiting

@@ -1,0 +1,18 @@
+pos Row: 0, col: 2, position: 2, pressed: true
+capturing position event 2
+pos Row: 0, col: 0, position: 0, pressed: true
+after filtering out timed out combo candidates: remaining_candidates=2 timestamp=12
+capturing position event 0
+after filtering out timed out combo candidates: remaining_candidates=1 timestamp=17
+after filtering out timed out combo candidates: remaining_candidates=0 timestamp=22
+macro Iterating macro bindings - starting: 0, count: 3
+queue invoke key_press: 0x70006 0x00
+kp_pressed: usage_page 0x07 keycode 0x06 implicit_mods 0x00 explicit_mods 0x00
+queue wait 10ms
+queue invoke key_press: 0x70006 0x00
+kp_released: usage_page 0x07 keycode 0x06 implicit_mods 0x00 explicit_mods 0x00
+queue wait 0ms
+pos Row: 0, col: 2, position: 2, pressed: false
+macro Iterating macro bindings - starting: 3, count: 0
+pos Row: 0, col: 0, position: 0, pressed: false
+Exiting

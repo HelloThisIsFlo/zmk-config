@@ -1,0 +1,54 @@
+pos Row: 1, col: 2, position: 11, pressed: true
+capturing position event 11
+pos Row: 3, col: 5, position: 32, pressed: true
+after filtering out timed out combo candidates: remaining_candidates=2 timestamp=20
+capturing position event 32
+after filtering out timed out combo candidates: remaining_candidates=0 timestamp=21
+releasing position event 11
+keymap layer_id: 0 position: 11, binding name: flo,behavior-adaptive-key
+macro Iterating macro bindings - starting: 0, count: 7
+queue invoke key_press: 0x70016 0x00
+kp_pressed: usage_page 0x07 keycode 0x16 implicit_mods 0x00 explicit_mods 0x00
+queue wait 10ms
+reraising position event 32
+keymap layer_id: 0 position: 32, binding name: blt_akR
+ht 32 new undecided hold_tap
+ht 32 decided tap (tap-preferred decision moment quick-tap)
+macro Iterating macro bindings - starting: 0, count: 1
+queue invoke key_press: 0x70016 0x00
+kp_released: usage_page 0x07 keycode 0x16 implicit_mods 0x00 explicit_mods 0x00
+queue wait 0ms
+queue invoke flo,behavior-adaptive-key-sticky-layer: 0x12 0x00
+sk 0 new sticky_key
+layer_changed: layer 18 state 1
+queue wait 0ms
+queue invoke flo,behavior-adaptive-key-sticky-layer: 0x12 0x00
+queue wait 0ms
+queue invoke flo,behavior-adaptive-key: 0x11 0x70015
+macro Iterating macro bindings - starting: 0, count: 7
+queue wait 0ms
+queue invoke flo,behavior-adaptive-key: 0x11 0x70015
+macro Iterating macro bindings - starting: 7, count: 0
+queue wait 0ms
+queue invoke key_press: 0x70015 0x00
+kp_pressed: usage_page 0x07 keycode 0x15 implicit_mods 0x00 explicit_mods 0x00
+queue wait 10ms
+queue invoke key_press: 0x70015 0x00
+kp_released: usage_page 0x07 keycode 0x15 implicit_mods 0x00 explicit_mods 0x00
+layer_changed: layer 18 state 0
+queue wait 0ms
+queue invoke flo,behavior-adaptive-key-sticky-layer: 0x11 0x00
+sk 0 new sticky_key
+layer_changed: layer 17 state 1
+queue wait 0ms
+queue invoke flo,behavior-adaptive-key-sticky-layer: 0x11 0x00
+queue wait 0ms
+pos Row: 1, col: 2, position: 11, pressed: false
+keymap layer_id: 0 position: 11, binding name: flo,behavior-adaptive-key
+macro Iterating macro bindings - starting: 7, count: 0
+pos Row: 3, col: 5, position: 32, pressed: false
+keymap layer_id: 0 position: 32, binding name: blt_akR
+macro Iterating macro bindings - starting: 1, count: 0
+ht 32 cleaning up hold-tap
+layer_changed: layer 17 state 0
+Exiting

@@ -1,0 +1,41 @@
+pos Row: 2, col: 1, position: 9, pressed: true
+capturing position event 9
+after filtering out timed out combo candidates: remaining_candidates=0 timestamp=52
+releasing position event 9
+keymap layer_id: 0 position: 9, binding name: lk
+ht 9 new undecided hold_tap
+pos Row: 0, col: 1, position: 1, pressed: true
+ht 9 capturing 1 down event
+pos Row: 2, col: 1, position: 9, pressed: false
+ht 9 bubble undecided hold-tap keyrelease event
+keymap layer_id: 0 position: 9, binding name: lk
+ht 9 decided tap (tap-preferred decision moment key-up)
+macro Iterating macro bindings - starting: 0, count: 3
+queue invoke key_press: 0x7001c 0x00
+kp_pressed: usage_page 0x07 keycode 0x1C implicit_mods 0x00 explicit_mods 0x00
+queue wait 10ms
+ht Releasing key position event for position 1 pressed
+keymap layer_id: 0 position: 1, binding name: flo,behavior-adaptive-key
+macro Iterating macro bindings - starting: 0, count: 7
+macro Iterating macro bindings - starting: 3, count: 0
+ht 9 cleaning up hold-tap
+queue invoke key_press: 0x7001c 0x00
+kp_released: usage_page 0x07 keycode 0x1C implicit_mods 0x00 explicit_mods 0x00
+queue wait 0ms
+queue invoke key_press: 0x70005 0x00
+kp_pressed: usage_page 0x07 keycode 0x05 implicit_mods 0x00 explicit_mods 0x00
+queue wait 10ms
+pos Row: 0, col: 1, position: 1, pressed: false
+keymap layer_id: 0 position: 1, binding name: flo,behavior-adaptive-key
+macro Iterating macro bindings - starting: 7, count: 0
+queue invoke key_press: 0x70005 0x00
+kp_released: usage_page 0x07 keycode 0x05 implicit_mods 0x00 explicit_mods 0x00
+queue wait 0ms
+queue invoke flo,behavior-adaptive-key-sticky-layer: 0x02 0x00
+sk 0 new sticky_key
+layer_changed: layer 2 state 1
+queue wait 0ms
+queue invoke flo,behavior-adaptive-key-sticky-layer: 0x02 0x00
+queue wait 0ms
+layer_changed: layer 2 state 0
+Exiting

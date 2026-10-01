@@ -1,0 +1,27 @@
+pos Row: 2, col: 2, position: 10, pressed: true
+capturing position event 10
+after filtering out timed out combo candidates: remaining_candidates=0 timestamp=62
+releasing position event 10
+keymap layer_id: 0 position: 10, binding name: blt_akR
+ht 10 new undecided hold_tap
+pos Row: 2, col: 2, position: 10, pressed: false
+ht 10 bubble undecided hold-tap keyrelease event
+keymap layer_id: 0 position: 10, binding name: blt_akR
+ht 10 decided tap (tap-preferred decision moment key-up)
+macro Iterating macro bindings - starting: 0, count: 5
+queue invoke key_press: 0x7000b 0x00
+kp_pressed: usage_page 0x07 keycode 0x0B implicit_mods 0x00 explicit_mods 0x00
+queue wait 10ms
+macro Iterating macro bindings - starting: 5, count: 0
+ht 10 cleaning up hold-tap
+queue invoke key_press: 0x7000b 0x00
+kp_released: usage_page 0x07 keycode 0x0B implicit_mods 0x00 explicit_mods 0x00
+queue wait 0ms
+queue invoke flo,behavior-adaptive-key-sticky-layer: 0x03 0x00
+sk 0 new sticky_key
+layer_changed: layer 3 state 1
+queue wait 0ms
+queue invoke flo,behavior-adaptive-key-sticky-layer: 0x03 0x00
+queue wait 0ms
+layer_changed: layer 3 state 0
+Exiting

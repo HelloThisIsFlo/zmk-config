@@ -1,0 +1,182 @@
+[00:00:00.000,000] <dbg> zmk: behavior_macro_init: Precalculate initial release state:
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: press
+[00:00:00.000,000] <dbg> zmk: behavior_macro_init: Release will resume at 3
+[00:00:00.000,000] <dbg> zmk: behavior_macro_init: Precalculate initial release state:
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro param: 1to1
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: tap
+[00:00:00.000,000] <dbg> zmk: behavior_macro_init: Precalculate initial release state:
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro param: 2to1
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: tap
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro tap time set: 0
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro param: 1to1
+[00:00:00.000,000] <dbg> zmk: handle_control_binding: macro mode set: tap
+[00:00:00.000,000] <dbg> zmk: behavior_macro_init: Precalculate initial release state:
+*** Booting Zephyr OS build dacab4875df7 ***
+[00:00:00.000,000] <dbg> zmk: kscan_mock_schedule_next_event_0: delaying next keypress: 60
+[00:00:00.000,000] <dbg> zmk: get_selected_transport: No endpoint transports are ready.
+[00:00:00.000,000] <inf> zmk: Welcome to ZMK!
+
+[00:00:00.061,000] <dbg> zmk: kscan_mock_work_handler_0: ev 2151416064 row 0 column 1 state 1
+
+[00:00:00.061,000] <dbg> zmk: kscan_mock_schedule_next_event_0: delaying next keypress: 60
+[00:00:00.061,000] <dbg> zmk: zmk_physical_layouts_kscan_process_msgq: Row: 0, col: 1, position: 1, pressed: true
+[00:00:00.061,000] <dbg> zmk: position_state_changed_listener: 1 bubble (no undecided hold_tap active)
+[00:00:00.061,000] <dbg> zmk: zmk_keymap_apply_position_state: layer_id: 0 position: 1, binding name: flo,behavior-adaptive-key
+[00:00:00.061,000] <dbg> zmk: queue_macro: Iterating macro bindings - starting: 0, count: 7
+[00:00:00.061,000] <dbg> zmk: handle_control_binding: macro param: 2to1
+[00:00:00.061,000] <dbg> zmk: handle_control_binding: macro mode set: tap
+[00:00:00.061,000] <dbg> zmk: behavior_queue_process_next: Invoking key_press: 0x70005 0x00
+[00:00:00.061,000] <dbg> zmk: on_keymap_binding_pressed: position 0 keycode 0x70005
+[00:00:00.061,000] <dbg> zmk: hid_listener_keycode_pressed: usage_page 0x07 keycode 0x05 implicit_mods 0x00 explicit_mods 0x00
+[00:00:00.061,000] <dbg> zmk: zmk_hid_implicit_modifiers_press: Modifiers set to 0x00
+[00:00:00.061,000] <dbg> zmk: zmk_endpoints_send_report: usage page 0x07
+[00:00:00.061,000] <err> zmk: USB endpoint is not supported
+[00:00:00.061,000] <dbg> zmk: behavior_queue_process_next: Processing next queued behavior in 10ms
+[00:00:00.061,000] <dbg> zmk: handle_control_binding: macro tap time set: 0
+[00:00:00.061,000] <dbg> zmk: handle_control_binding: macro param: 1to1
+[00:00:00.061,000] <dbg> zmk: handle_control_binding: macro mode set: tap
+[00:00:00.072,000] <dbg> zmk: behavior_queue_process_next: Invoking key_press: 0x70005 0x00
+[00:00:00.072,000] <dbg> zmk: on_keymap_binding_released: position 0 keycode 0x70005
+[00:00:00.072,000] <dbg> zmk: hid_listener_keycode_released: usage_page 0x07 keycode 0x05 implicit_mods 0x00 explicit_mods 0x00
+[00:00:00.072,000] <dbg> zmk: zmk_hid_implicit_modifiers_release: Modifiers set to 0x00
+[00:00:00.072,000] <dbg> zmk: zmk_endpoints_send_report: usage page 0x07
+[00:00:00.072,000] <err> zmk: USB endpoint is not supported
+[00:00:00.072,000] <dbg> zmk: behavior_queue_process_next: Processing next queued behavior in 0ms
+[00:00:00.072,000] <dbg> zmk: behavior_queue_process_next: Invoking flo,behavior-adaptive-key-sticky-layer: 0x02 0x00
+[00:00:00.072,000] <dbg> zmk: on_sticky_key_binding_pressed: 0 new sticky_key
+[00:00:00.072,000] <dbg> zmk: mo_keymap_binding_pressed: position 0 layer 2
+[00:00:00.072,000] <dbg> zmk: set_layer_state: layer_changed: layer 2 state 1
+[00:00:00.072,000] <dbg> zmk: behavior_queue_process_next: Processing next queued behavior in 0ms
+[00:00:00.072,000] <dbg> zmk: behavior_queue_process_next: Invoking flo,behavior-adaptive-key-sticky-layer: 0x02 0x00
+[00:00:00.072,000] <dbg> zmk: behavior_queue_process_next: Processing next queued behavior in 0ms
+[00:00:00.122,000] <dbg> zmk: kscan_mock_work_handler_0: ev 19661056 row 0 column 1 state 0
+
+[00:00:00.122,000] <dbg> zmk: kscan_mock_schedule_next_event_0: delaying next keypress: 300
+[00:00:00.122,000] <dbg> zmk: zmk_physical_layouts_kscan_process_msgq: Row: 0, col: 1, position: 1, pressed: false
+[00:00:00.122,000] <dbg> zmk: position_state_changed_listener: 1 bubble (no undecided hold_tap active)
+[00:00:00.122,000] <dbg> zmk: zmk_keymap_apply_position_state: layer_id: 0 position: 1, binding name: flo,behavior-adaptive-key
+[00:00:00.122,000] <dbg> zmk: queue_macro: Iterating macro bindings - starting: 7, count: 0
+[00:00:00.173,000] <dbg> zmk: mo_keymap_binding_released: position 0 layer 2
+[00:00:00.173,000] <dbg> zmk: set_layer_state: layer_changed: layer 2 state 0
+[00:00:00.423,000] <dbg> zmk: kscan_mock_work_handler_0: ev 2151415808 row 0 column 0 state 1
+
+[00:00:00.423,000] <dbg> zmk: kscan_mock_schedule_next_event_0: delaying next keypress: 60
+[00:00:00.423,000] <dbg> zmk: zmk_physical_layouts_kscan_process_msgq: Row: 0, col: 0, position: 0, pressed: true
+[00:00:00.423,000] <dbg> zmk: position_state_changed_listener: 0 bubble (no undecided hold_tap active)
+[00:00:00.423,000] <dbg> zmk: position_state_down: combo: capturing position event 0
+[00:00:00.423,000] <dbg> zmk: zmk_event_manager_handle_from: Listener captured the event
+[00:00:00.440,000] <dbg> zmk: filter_timed_out_candidates: after filtering out timed out combo candidates: remaining_candidates=0 timestamp=439
+[00:00:00.440,000] <dbg> zmk: release_pressed_keys: combo: releasing position event 0
+[00:00:00.440,000] <dbg> zmk: zmk_keymap_apply_position_state: layer_id: 0 position: 0, binding name: flo,behavior-adaptive-key
+[00:00:00.440,000] <dbg> zmk: queue_macro: Iterating macro bindings - starting: 0, count: 7
+[00:00:00.440,000] <dbg> zmk: handle_control_binding: macro param: 2to1
+[00:00:00.440,000] <dbg> zmk: handle_control_binding: macro mode set: tap
+[00:00:00.440,000] <dbg> zmk: behavior_queue_process_next: Invoking key_press: 0x70004 0x00
+[00:00:00.440,000] <dbg> zmk: on_keymap_binding_pressed: position 0 keycode 0x70004
+[00:00:00.440,000] <dbg> zmk: hid_listener_keycode_pressed: usage_page 0x07 keycode 0x04 implicit_mods 0x00 explicit_mods 0x00
+[00:00:00.440,000] <dbg> zmk: zmk_hid_implicit_modifiers_press: Modifiers set to 0x00
+[00:00:00.440,000] <dbg> zmk: zmk_endpoints_send_report: usage page 0x07
+[00:00:00.440,000] <err> zmk: USB endpoint is not supported
+[00:00:00.440,000] <dbg> zmk: behavior_queue_process_next: Processing next queued behavior in 10ms
+[00:00:00.440,000] <dbg> zmk: handle_control_binding: macro tap time set: 0
+[00:00:00.440,000] <dbg> zmk: handle_control_binding: macro param: 1to1
+[00:00:00.440,000] <dbg> zmk: handle_control_binding: macro mode set: tap
+[00:00:00.451,000] <dbg> zmk: behavior_queue_process_next: Invoking key_press: 0x70004 0x00
+[00:00:00.451,000] <dbg> zmk: on_keymap_binding_released: position 0 keycode 0x70004
+[00:00:00.451,000] <dbg> zmk: hid_listener_keycode_released: usage_page 0x07 keycode 0x04 implicit_mods 0x00 explicit_mods 0x00
+[00:00:00.451,000] <dbg> zmk: zmk_hid_implicit_modifiers_release: Modifiers set to 0x00
+[00:00:00.451,000] <dbg> zmk: zmk_endpoints_send_report: usage page 0x07
+[00:00:00.451,000] <err> zmk: USB endpoint is not supported
+[00:00:00.451,000] <dbg> zmk: behavior_queue_process_next: Processing next queued behavior in 0ms
+[00:00:00.451,000] <dbg> zmk: behavior_queue_process_next: Invoking flo,behavior-adaptive-key-sticky-layer: 0x01 0x00
+[00:00:00.451,000] <dbg> zmk: on_sticky_key_binding_pressed: 0 new sticky_key
+[00:00:00.451,000] <dbg> zmk: mo_keymap_binding_pressed: position 0 layer 1
+[00:00:00.451,000] <dbg> zmk: set_layer_state: layer_changed: layer 1 state 1
+[00:00:00.451,000] <dbg> zmk: behavior_queue_process_next: Processing next queued behavior in 0ms
+[00:00:00.451,000] <dbg> zmk: behavior_queue_process_next: Invoking flo,behavior-adaptive-key-sticky-layer: 0x01 0x00
+[00:00:00.451,000] <dbg> zmk: behavior_queue_process_next: Processing next queued behavior in 0ms
+[00:00:00.484,000] <dbg> zmk: kscan_mock_work_handler_0: ev 19660800 row 0 column 0 state 0
+
+[00:00:00.484,000] <dbg> zmk: kscan_mock_schedule_next_event_0: delaying next keypress: 300
+[00:00:00.484,000] <dbg> zmk: zmk_physical_layouts_kscan_process_msgq: Row: 0, col: 0, position: 0, pressed: false
+[00:00:00.484,000] <dbg> zmk: position_state_changed_listener: 0 bubble (no undecided hold_tap active)
+[00:00:00.484,000] <dbg> zmk: zmk_keymap_apply_position_state: layer_id: 0 position: 0, binding name: flo,behavior-adaptive-key
+[00:00:00.484,000] <dbg> zmk: queue_macro: Iterating macro bindings - starting: 7, count: 0
+[00:00:00.552,000] <dbg> zmk: mo_keymap_binding_released: position 0 layer 1
+[00:00:00.552,000] <dbg> zmk: set_layer_state: layer_changed: layer 1 state 0
+[00:00:00.785,000] <dbg> zmk: kscan_mock_work_handler_0: ev 2151415809 row 1 column 0 state 1
+
+[00:00:00.785,000] <dbg> zmk: kscan_mock_schedule_next_event_0: delaying next keypress: 60
+[00:00:00.785,000] <dbg> zmk: zmk_physical_layouts_kscan_process_msgq: Row: 1, col: 0, position: 4, pressed: true
+[00:00:00.785,000] <dbg> zmk: position_state_changed_listener: 4 bubble (no undecided hold_tap active)
+[00:00:00.785,000] <dbg> zmk: position_state_down: combo: capturing position event 4
+[00:00:00.785,000] <dbg> zmk: zmk_event_manager_handle_from: Listener captured the event
+[00:00:00.802,000] <dbg> zmk: filter_timed_out_candidates: after filtering out timed out combo candidates: remaining_candidates=1 timestamp=801
+[00:00:00.804,000] <dbg> zmk: filter_timed_out_candidates: after filtering out timed out combo candidates: remaining_candidates=0 timestamp=803
+[00:00:00.804,000] <dbg> zmk: release_pressed_keys: combo: releasing position event 4
+[00:00:00.804,000] <dbg> zmk: zmk_keymap_apply_position_state: layer_id: 0 position: 4, binding name: key_press
+[00:00:00.804,000] <dbg> zmk: on_keymap_binding_pressed: position 4 keycode 0x70008
+[00:00:00.804,000] <dbg> zmk: hid_listener_keycode_pressed: usage_page 0x07 keycode 0x08 implicit_mods 0x00 explicit_mods 0x00
+[00:00:00.804,000] <dbg> zmk: zmk_hid_implicit_modifiers_press: Modifiers set to 0x00
+[00:00:00.804,000] <dbg> zmk: zmk_endpoints_send_report: usage page 0x07
+[00:00:00.804,000] <err> zmk: USB endpoint is not supported
+[00:00:00.846,000] <dbg> zmk: kscan_mock_work_handler_0: ev 19660801 row 1 column 0 state 0
+
+[00:00:00.846,000] <dbg> zmk: kscan_mock_schedule_next_event_0: delaying next keypress: 300
+[00:00:00.846,000] <dbg> zmk: zmk_physical_layouts_kscan_process_msgq: Row: 1, col: 0, position: 4, pressed: false
+[00:00:00.846,000] <dbg> zmk: position_state_changed_listener: 4 bubble (no undecided hold_tap active)
+[00:00:00.846,000] <dbg> zmk: zmk_keymap_apply_position_state: layer_id: 0 position: 4, binding name: key_press
+[00:00:00.846,000] <dbg> zmk: on_keymap_binding_released: position 4 keycode 0x70008
+[00:00:00.846,000] <dbg> zmk: hid_listener_keycode_released: usage_page 0x07 keycode 0x08 implicit_mods 0x00 explicit_mods 0x00
+[00:00:00.846,000] <dbg> zmk: zmk_hid_implicit_modifiers_release: Modifiers set to 0x00
+[00:00:00.846,000] <dbg> zmk: zmk_endpoints_send_report: usage page 0x07
+[00:00:00.846,000] <err> zmk: USB endpoint is not supported
+[00:00:01.147,000] <dbg> zmk: kscan_mock_work_handler_0: ev 2151416577 row 1 column 3 state 1
+
+[00:00:01.147,000] <dbg> zmk: kscan_mock_schedule_next_event_0: delaying next keypress: 60
+[00:00:01.147,000] <dbg> zmk: zmk_physical_layouts_kscan_process_msgq: Row: 1, col: 3, position: 7, pressed: true
+[00:00:01.147,000] <dbg> zmk: position_state_changed_listener: 7 bubble (no undecided hold_tap active)
+[00:00:01.147,000] <dbg> zmk: position_state_down: combo: capturing position event 7
+[00:00:01.147,000] <dbg> zmk: zmk_event_manager_handle_from: Listener captured the event
+[00:00:01.178,000] <dbg> zmk: filter_timed_out_candidates: after filtering out timed out combo candidates: remaining_candidates=0 timestamp=1177
+[00:00:01.178,000] <dbg> zmk: release_pressed_keys: combo: releasing position event 7
+[00:00:01.178,000] <dbg> zmk: zmk_keymap_apply_position_state: layer_id: 0 position: 7, binding name: flo,behavior-adaptive-key
+[00:00:01.178,000] <dbg> zmk: queue_macro: Iterating macro bindings - starting: 0, count: 7
+[00:00:01.178,000] <dbg> zmk: handle_control_binding: macro param: 2to1
+[00:00:01.178,000] <dbg> zmk: handle_control_binding: macro mode set: tap
+[00:00:01.178,000] <dbg> zmk: behavior_queue_process_next: Invoking key_press: 0x7000b 0x00
+[00:00:01.178,000] <dbg> zmk: on_keymap_binding_pressed: position 0 keycode 0x7000B
+[00:00:01.178,000] <dbg> zmk: hid_listener_keycode_pressed: usage_page 0x07 keycode 0x0B implicit_mods 0x00 explicit_mods 0x00
+[00:00:01.178,000] <dbg> zmk: zmk_hid_implicit_modifiers_press: Modifiers set to 0x00
+[00:00:01.178,000] <dbg> zmk: zmk_endpoints_send_report: usage page 0x07
+[00:00:01.178,000] <err> zmk: USB endpoint is not supported
+[00:00:01.178,000] <dbg> zmk: behavior_queue_process_next: Processing next queued behavior in 10ms
+[00:00:01.178,000] <dbg> zmk: handle_control_binding: macro tap time set: 0
+[00:00:01.178,000] <dbg> zmk: handle_control_binding: macro param: 1to1
+[00:00:01.178,000] <dbg> zmk: handle_control_binding: macro mode set: tap
+[00:00:01.189,000] <dbg> zmk: behavior_queue_process_next: Invoking key_press: 0x7000b 0x00
+[00:00:01.189,000] <dbg> zmk: on_keymap_binding_released: position 0 keycode 0x7000B
+[00:00:01.189,000] <dbg> zmk: hid_listener_keycode_released: usage_page 0x07 keycode 0x0B implicit_mods 0x00 explicit_mods 0x00
+[00:00:01.189,000] <dbg> zmk: zmk_hid_implicit_modifiers_release: Modifiers set to 0x00
+[00:00:01.189,000] <dbg> zmk: zmk_endpoints_send_report: usage page 0x07
+[00:00:01.189,000] <err> zmk: USB endpoint is not supported
+[00:00:01.189,000] <dbg> zmk: behavior_queue_process_next: Processing next queued behavior in 0ms
+[00:00:01.189,000] <dbg> zmk: behavior_queue_process_next: Invoking flo,behavior-adaptive-key-sticky-layer: 0x03 0x00
+[00:00:01.189,000] <dbg> zmk: on_sticky_key_binding_pressed: 0 new sticky_key
+[00:00:01.189,000] <dbg> zmk: mo_keymap_binding_pressed: position 0 layer 3
+[00:00:01.189,000] <dbg> zmk: set_layer_state: layer_changed: layer 3 state 1
+[00:00:01.189,000] <dbg> zmk: behavior_queue_process_next: Processing next queued behavior in 0ms
+[00:00:01.189,000] <dbg> zmk: behavior_queue_process_next: Invoking flo,behavior-adaptive-key-sticky-layer: 0x03 0x00
+[00:00:01.189,000] <dbg> zmk: behavior_queue_process_next: Processing next queued behavior in 0ms
+[00:00:01.208,000] <dbg> zmk: kscan_mock_work_handler_0: ev 19661569 row 1 column 3 state 0
+
+[00:00:01.208,000] <dbg> zmk: kscan_mock_schedule_next_event_0: delaying next keypress: 300
+[00:00:01.208,000] <dbg> zmk: zmk_physical_layouts_kscan_process_msgq: Row: 1, col: 3, position: 7, pressed: false
+[00:00:01.208,000] <dbg> zmk: position_state_changed_listener: 7 bubble (no undecided hold_tap active)
+[00:00:01.208,000] <dbg> zmk: zmk_keymap_apply_position_state: layer_id: 0 position: 7, binding name: flo,behavior-adaptive-key
+[00:00:01.208,000] <dbg> zmk: queue_macro: Iterating macro bindings - starting: 7, count: 0
+[00:00:01.290,000] <dbg> zmk: mo_keymap_binding_released: position 0 layer 3
+[00:00:01.290,000] <dbg> zmk: set_layer_state: layer_changed: layer 3 state 0
+[00:00:01.509,000] <dbg> zmk: kscan_mock_work_handler_0: ev 1 row 1 column 0 state 0
+
+[00:00:01.509,000] <dbg> zmk: kscan_mock_schedule_next_event_0: Exiting

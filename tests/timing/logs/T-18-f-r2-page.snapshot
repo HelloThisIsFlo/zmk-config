@@ -1,0 +1,62 @@
+pos Row: 3, col: 4, position: 31, pressed: true
+capturing position event 31
+after filtering out timed out combo candidates: remaining_candidates=0 timestamp=111
+releasing position event 31
+keymap layer_id: 0 position: 31, binding name: hold_tap_layer_sticky_shift
+ht 31 new undecided hold_tap
+ht 31 decided hold-timer (hold-preferred decision moment timer)
+macro Iterating macro bindings - starting: 0, count: 2
+queue invoke momentary_layer: 0x1a 0x00
+layer_changed: layer 26 state 1
+queue wait 0ms
+pos Row: 1, col: 4, position: 13, pressed: true
+capturing position event 13
+pos Row: 1, col: 4, position: 13, pressed: false
+releasing position event 13
+keymap layer_id: 26 position: 13, binding name: hold_tap_mod
+ht 13 new undecided hold_tap
+ht 13 hold behavior pressed while undecided
+kp_pressed: usage_page 0x07 keycode 0xE1 implicit_mods 0x00 explicit_mods 0x00
+keymap layer_id: 26 position: 13, binding name: hold_tap_mod
+ht 13 decided tap (tap-preferred decision moment key-up)
+sk 13 new sticky_key
+kp_pressed: usage_page 0x07 keycode 0xE1 implicit_mods 0x00 explicit_mods 0x00
+kp_released: usage_page 0x07 keycode 0xE1 implicit_mods 0x00 explicit_mods 0x00
+ht 13 cleaning up hold-tap
+pos Row: 3, col: 4, position: 31, pressed: false
+keymap layer_id: 0 position: 31, binding name: hold_tap_layer_sticky_shift
+macro Iterating macro bindings - starting: 3, count: 5
+queue invoke none: 0x00 0x00
+queue wait 0ms
+queue invoke none: 0x00 0x00
+queue wait 130ms
+ht 31 cleaning up hold-tap
+queue invoke momentary_layer: 0x1a 0x00
+layer_changed: layer 26 state 0
+queue wait 130ms
+pos Row: 1, col: 7, position: 16, pressed: true
+capturing position event 16
+after filtering out timed out combo candidates: remaining_candidates=4 timestamp=373
+after filtering out timed out combo candidates: remaining_candidates=2 timestamp=378
+after filtering out timed out combo candidates: remaining_candidates=0 timestamp=380
+releasing position event 16
+keymap layer_id: 0 position: 16, binding name: flo,behavior-adaptive-key
+macro Iterating macro bindings - starting: 0, count: 7
+pos Row: 1, col: 7, position: 16, pressed: false
+keymap layer_id: 0 position: 16, binding name: flo,behavior-adaptive-key
+macro Iterating macro bindings - starting: 7, count: 0
+queue invoke key_press: 0x70004 0x00
+kp_pressed: usage_page 0x07 keycode 0x04 implicit_mods 0x00 explicit_mods 0x00
+queue wait 10ms
+queue invoke key_press: 0x70004 0x00
+kp_released: usage_page 0x07 keycode 0x04 implicit_mods 0x00 explicit_mods 0x00
+kp_released: usage_page 0x07 keycode 0xE1 implicit_mods 0x00 explicit_mods 0x00
+queue wait 0ms
+queue invoke flo,behavior-adaptive-key-sticky-layer: 0x02 0x00
+sk 0 new sticky_key
+layer_changed: layer 2 state 1
+queue wait 0ms
+queue invoke flo,behavior-adaptive-key-sticky-layer: 0x02 0x00
+queue wait 0ms
+layer_changed: layer 2 state 0
+Exiting

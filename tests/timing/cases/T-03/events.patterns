@@ -1,0 +1,18 @@
+s/.*zmk_physical_layouts_kscan_process_msgq: /pos /p
+s/.*zmk_keymap_apply_position_state: /keymap /p
+s/.*hid_listener_keycode_/kp_/p
+s/.*set_layer_state: //p
+s/.*filter_timed_out_candidates: //p
+s/.*combo: //p
+s/.*on_hold_tap_binding_pressed: /ht /p
+s/.*decide_hold_tap: /ht /p
+/no undecided hold_tap active/!s/.* position_state_changed_listener: /ht /p
+s/.* keycode_state_changed_listener: /ht /p
+s/.*release_captured_events: /ht /p
+s/.*on_hold_tap_binding_released: /ht /p
+s/.*on_sticky_key_binding_pressed: /sk /p
+s/.*on_sticky_key_binding_released: /sk /p
+s/.*queue_macro: /macro /p
+s/.*behavior_queue_process_next: Invoking /queue invoke /p
+s/.*behavior_queue_process_next: Processing next queued behavior in /queue wait /p
+s/.*kscan_mock_schedule_next_event_0: Exiting/Exiting/p

@@ -1,0 +1,83 @@
+pos Row: 0, col: 0, position: 0, pressed: true
+capturing position event 0
+after filtering out timed out combo candidates: remaining_candidates=1 timestamp=42
+after filtering out timed out combo candidates: remaining_candidates=0 timestamp=47
+releasing position event 0
+keymap layer_id: 0 position: 0, binding name: flo,behavior-adaptive-key
+macro Iterating macro bindings - starting: 0, count: 7
+queue invoke key_press: 0x70004 0x00
+kp_pressed: usage_page 0x07 keycode 0x04 implicit_mods 0x00 explicit_mods 0x00
+queue wait 10ms
+queue invoke key_press: 0x70004 0x00
+kp_released: usage_page 0x07 keycode 0x04 implicit_mods 0x00 explicit_mods 0x00
+queue wait 0ms
+queue invoke flo,behavior-adaptive-key-sticky-layer: 0x01 0x00
+sk 0 new sticky_key
+layer_changed: layer 1 state 1
+queue wait 0ms
+queue invoke flo,behavior-adaptive-key-sticky-layer: 0x01 0x00
+queue wait 0ms
+pos Row: 1, col: 0, position: 4, pressed: true
+capturing position event 4
+after filtering out timed out combo candidates: remaining_candidates=2 timestamp=73
+after filtering out timed out combo candidates: remaining_candidates=1 timestamp=78
+after filtering out timed out combo candidates: remaining_candidates=0 timestamp=80
+releasing position event 4
+keymap layer_id: 1 position: 4, binding name: flo-macro-replace-char-with-bigram-LB
+macro Iterating macro bindings - starting: 0, count: 10
+queue invoke key_press: 0x7002a 0x00
+kp_pressed: usage_page 0x07 keycode 0x2A implicit_mods 0x00 explicit_mods 0x00
+queue wait 10ms
+queue invoke key_press: 0x7002a 0x00
+kp_released: usage_page 0x07 keycode 0x2A implicit_mods 0x00 explicit_mods 0x00
+layer_changed: layer 1 state 0
+queue wait 0ms
+queue invoke key_press: 0x7000f 0x00
+kp_pressed: usage_page 0x07 keycode 0x0F implicit_mods 0x00 explicit_mods 0x00
+queue wait 10ms
+queue invoke key_press: 0x7000f 0x00
+kp_released: usage_page 0x07 keycode 0x0F implicit_mods 0x00 explicit_mods 0x00
+queue wait 0ms
+queue invoke key_press: 0x700e1 0x00
+kp_released: usage_page 0x07 keycode 0xE1 implicit_mods 0x00 explicit_mods 0x00
+kp_released: Unable to release keycode
+queue wait 0ms
+queue invoke key_press: 0x700e5 0x00
+kp_released: usage_page 0x07 keycode 0xE5 implicit_mods 0x00 explicit_mods 0x00
+kp_released: Unable to release keycode
+queue wait 0ms
+queue invoke flo,behavior-adaptive-key: 0x03 0x70005
+macro Iterating macro bindings - starting: 0, count: 7
+queue wait 10ms
+pos Row: 0, col: 3, position: 3, pressed: true
+capturing position event 3
+queue invoke flo,behavior-adaptive-key: 0x03 0x70005
+macro Iterating macro bindings - starting: 7, count: 0
+queue wait 0ms
+queue invoke key_press: 0x70005 0x00
+kp_pressed: usage_page 0x07 keycode 0x05 implicit_mods 0x00 explicit_mods 0x00
+queue wait 10ms
+after filtering out timed out combo candidates: remaining_candidates=0 timestamp=124
+releasing position event 3
+keymap layer_id: 0 position: 3, binding name: key_press
+kp_pressed: usage_page 0x07 keycode 0x07 implicit_mods 0x00 explicit_mods 0x00
+queue invoke key_press: 0x70005 0x00
+kp_released: usage_page 0x07 keycode 0x05 implicit_mods 0x00 explicit_mods 0x00
+queue wait 0ms
+queue invoke flo,behavior-adaptive-key-sticky-layer: 0x03 0x00
+sk 0 new sticky_key
+layer_changed: layer 3 state 1
+queue wait 0ms
+queue invoke flo,behavior-adaptive-key-sticky-layer: 0x03 0x00
+queue wait 0ms
+layer_changed: layer 3 state 0
+pos Row: 0, col: 0, position: 0, pressed: false
+keymap layer_id: 0 position: 0, binding name: flo,behavior-adaptive-key
+macro Iterating macro bindings - starting: 7, count: 0
+pos Row: 1, col: 0, position: 4, pressed: false
+keymap layer_id: 1 position: 4, binding name: flo-macro-replace-char-with-bigram-LB
+macro Iterating macro bindings - starting: 10, count: 0
+pos Row: 0, col: 3, position: 3, pressed: false
+keymap layer_id: 0 position: 3, binding name: key_press
+kp_released: usage_page 0x07 keycode 0x07 implicit_mods 0x00 explicit_mods 0x00
+Exiting

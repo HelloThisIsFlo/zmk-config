@@ -1,0 +1,21 @@
+pos Row: 1, col: 0, position: 4, pressed: true
+capturing position event 4
+after filtering out timed out combo candidates: remaining_candidates=2 timestamp=23
+pos Row: 1, col: 2, position: 6, pressed: true
+after filtering out timed out combo candidates: remaining_candidates=2 timestamp=24
+capturing position event 6
+pos Row: 1, col: 0, position: 4, pressed: false
+releasing position event 4
+keymap layer_id: 0 position: 4, binding name: key_press
+kp_pressed: usage_page 0x07 keycode 0x08 implicit_mods 0x00 explicit_mods 0x00
+reraising position event 6
+capturing position event 6
+releasing position event 6
+keymap layer_id: 0 position: 6, binding name: key_press
+kp_pressed: usage_page 0x07 keycode 0x0A implicit_mods 0x00 explicit_mods 0x00
+keymap layer_id: 0 position: 4, binding name: key_press
+kp_released: usage_page 0x07 keycode 0x08 implicit_mods 0x00 explicit_mods 0x00
+pos Row: 1, col: 2, position: 6, pressed: false
+keymap layer_id: 0 position: 6, binding name: key_press
+kp_released: usage_page 0x07 keycode 0x0A implicit_mods 0x00 explicit_mods 0x00
+Exiting

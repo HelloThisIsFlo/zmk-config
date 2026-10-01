@@ -1,0 +1,39 @@
+pos Row: 0, col: 3, position: 3, pressed: true
+capturing position event 3
+after filtering out timed out combo candidates: remaining_candidates=0 timestamp=42
+releasing position event 3
+keymap layer_id: 0 position: 3, binding name: momentary_layer
+layer_changed: layer 4 state 1
+pos Row: 1, col: 1, position: 5, pressed: true
+capturing position event 5
+after filtering out timed out combo candidates: remaining_candidates=1 timestamp=78
+after filtering out timed out combo candidates: remaining_candidates=0 timestamp=80
+releasing position event 5
+keymap layer_id: 4 position: 5, binding name: hold_tap_mod
+ht 5 new undecided hold_tap
+ht 5 hold behavior pressed while undecided
+kp_pressed: usage_page 0x07 keycode 0xE0 implicit_mods 0x00 explicit_mods 0x00
+pos Row: 0, col: 2, position: 2, pressed: true
+ht 5 capturing 2 down event
+ht 5 decided hold-timer (tap-preferred decision moment timer)
+ht Releasing key position event for position 2 pressed
+capturing position event 2
+after filtering out timed out combo candidates: remaining_candidates=0 timestamp=129
+releasing position event 2
+keymap layer_id: 4 position: 2, binding name: transparent
+keymap layer_id: 0 position: 2, binding name: key_press
+kp_pressed: usage_page 0x07 keycode 0x06 implicit_mods 0x00 explicit_mods 0x00
+pos Row: 0, col: 2, position: 2, pressed: false
+keymap layer_id: 4 position: 2, binding name: transparent
+keymap layer_id: 0 position: 2, binding name: key_press
+kp_released: usage_page 0x07 keycode 0x06 implicit_mods 0x00 explicit_mods 0x00
+pos Row: 1, col: 1, position: 5, pressed: false
+keymap layer_id: 4 position: 5, binding name: hold_tap_mod
+kp_released: usage_page 0x07 keycode 0xE0 implicit_mods 0x00 explicit_mods 0x00
+kp_released: usage_page 0x07 keycode 0xE0 implicit_mods 0x00 explicit_mods 0x00
+kp_released: Unable to release keycode
+ht 5 cleaning up hold-tap
+pos Row: 0, col: 3, position: 3, pressed: false
+keymap layer_id: 0 position: 3, binding name: momentary_layer
+layer_changed: layer 4 state 0
+Exiting

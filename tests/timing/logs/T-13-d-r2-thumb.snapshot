@@ -1,0 +1,47 @@
+pos Row: 3, col: 5, position: 32, pressed: true
+capturing position event 32
+after filtering out timed out combo candidates: remaining_candidates=0 timestamp=42
+releasing position event 32
+keymap layer_id: 0 position: 32, binding name: blt_akR
+ht 32 new undecided hold_tap
+pos Row: 0, col: 1, position: 0, pressed: true
+ht 32 capturing 0 down event
+pos Row: 3, col: 5, position: 32, pressed: false
+ht 32 bubble undecided hold-tap keyrelease event
+keymap layer_id: 0 position: 32, binding name: blt_akR
+ht 32 decided tap (tap-preferred decision moment key-up)
+macro Iterating macro bindings - starting: 0, count: 1
+queue invoke flo,behavior-adaptive-key: 0x11 0x70015
+macro Iterating macro bindings - starting: 0, count: 7
+queue invoke key_press: 0x70015 0x00
+kp_pressed: usage_page 0x07 keycode 0x15 implicit_mods 0x00 explicit_mods 0x00
+queue wait 10ms
+queue wait 0ms
+queue invoke key_press: 0x70015 0x00
+kp_released: usage_page 0x07 keycode 0x15 implicit_mods 0x00 explicit_mods 0x00
+queue wait 0ms
+queue invoke flo,behavior-adaptive-key-sticky-layer: 0x11 0x00
+sk 0 new sticky_key
+layer_changed: layer 17 state 1
+queue wait 0ms
+queue invoke flo,behavior-adaptive-key-sticky-layer: 0x11 0x00
+queue wait 0ms
+ht Releasing key position event for position 0 pressed
+keymap layer_id: 17 position: 0, binding name: flo,behavior-buffered-key
+macro Iterating macro bindings - starting: 0, count: 3
+macro Iterating macro bindings - starting: 1, count: 0
+ht 32 cleaning up hold-tap
+queue invoke flo,behavior-adaptive-key: 0x11 0x70015
+macro Iterating macro bindings - starting: 7, count: 0
+queue wait 0ms
+queue invoke key_press: 0x70015 0x00
+kp_pressed: usage_page 0x07 keycode 0x15 implicit_mods 0x00 explicit_mods 0x00
+queue wait 10ms
+pos Row: 0, col: 1, position: 0, pressed: false
+keymap layer_id: 17 position: 0, binding name: flo,behavior-buffered-key
+macro Iterating macro bindings - starting: 3, count: 0
+queue invoke key_press: 0x70015 0x00
+kp_released: usage_page 0x07 keycode 0x15 implicit_mods 0x00 explicit_mods 0x00
+layer_changed: layer 17 state 0
+queue wait 0ms
+Exiting

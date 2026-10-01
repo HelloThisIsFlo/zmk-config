@@ -1,0 +1,42 @@
+pos Row: 2, col: 3, position: 22, pressed: true
+capturing position event 22
+after filtering out timed out combo candidates: remaining_candidates=0 timestamp=36
+releasing position event 22
+keymap layer_id: 0 position: 22, binding name: flo,behavior-adaptive-key
+macro Iterating macro bindings - starting: 0, count: 7
+queue invoke key_press: 0x7000f 0x00
+kp_pressed: usage_page 0x07 keycode 0x0F implicit_mods 0x00 explicit_mods 0x00
+queue wait 10ms
+pos Row: 0, col: 1, position: 0, pressed: true
+keymap layer_id: 0 position: 0, binding name: flo,behavior-adaptive-key
+macro Iterating macro bindings - starting: 0, count: 7
+queue invoke key_press: 0x7000f 0x00
+kp_released: usage_page 0x07 keycode 0x0F implicit_mods 0x00 explicit_mods 0x00
+queue wait 0ms
+queue invoke flo,behavior-adaptive-key-sticky-layer: 0x0c 0x00
+sk 0 new sticky_key
+layer_changed: layer 12 state 1
+queue wait 0ms
+queue invoke flo,behavior-adaptive-key-sticky-layer: 0x0c 0x00
+queue wait 0ms
+queue invoke key_press: 0x7001b 0x00
+kp_pressed: usage_page 0x07 keycode 0x1B implicit_mods 0x00 explicit_mods 0x00
+queue wait 10ms
+queue invoke key_press: 0x7001b 0x00
+kp_released: usage_page 0x07 keycode 0x1B implicit_mods 0x00 explicit_mods 0x00
+layer_changed: layer 12 state 0
+queue wait 0ms
+queue invoke flo,behavior-adaptive-key-sticky-layer: 0x17 0x00
+sk 0 new sticky_key
+layer_changed: layer 23 state 1
+queue wait 0ms
+queue invoke flo,behavior-adaptive-key-sticky-layer: 0x17 0x00
+queue wait 0ms
+pos Row: 2, col: 3, position: 22, pressed: false
+keymap layer_id: 0 position: 22, binding name: flo,behavior-adaptive-key
+macro Iterating macro bindings - starting: 7, count: 0
+pos Row: 0, col: 1, position: 0, pressed: false
+keymap layer_id: 0 position: 0, binding name: flo,behavior-adaptive-key
+macro Iterating macro bindings - starting: 7, count: 0
+layer_changed: layer 23 state 0
+Exiting

@@ -1,0 +1,97 @@
+/*
+ * Rig R2 — Flo's REAL keymap on native_posix_64 (G-test-harness.md §4 skeleton).
+ *
+ * TEMPLATE — do not edit in place. Copy this directory to tests/ak-truth/<your-case>/
+ * and add the `events` list at the bottom.
+ *
+ * What this does:
+ *   - pulls in the Corne physical layouts and gives them the two matrix transforms
+ *     (copied verbatim from app/boards/shields/corne/corne.dtsi — no shield on native_posix)
+ *   - includes the live zmk-config keymap by absolute container path
+ *     (/workspaces/zmk-config is a bind of the host zmk-config checkout)
+ *   - the chosen zmk,kscan stays the board's mock; the keymap's chosen
+ *     zmk,physical-layout = &foostan_corne_5col_layout → five_column_transform (columns = 10)
+ *
+ * Mock coordinates (5-col transform, columns = 10, no col-offset):
+ *   position p < 30  →  ZMK_MOCK_PRESS(p / 10, p % 10 + 1, ms)
+ *   thumbs 30..35    →  ZMK_MOCK_PRESS(3, p - 27, ms)        (RC(3,3) … RC(3,8))
+ *
+ *   ╭───────────────────────────────────╮ ╭───────────────────────────────────╮
+ *   │ LT4 LT3 LT2 LT1 LT0 │ │ RT0 RT1 RT2 RT3 RT4 │   pos  0.. 4 │  5.. 9   row 0, col 1..5 │ 6..10
+ *   │ LM4 LM3 LM2 LM1 LM0 │ │ RM0 RM1 RM2 RM3 RM4 │   pos 10..14 │ 15..19   row 1, col 1..5 │ 6..10
+ *   │ LB4 LB3 LB2 LB1 LB0 │ │ RB0 RB1 RB2 RB3 RB4 │   pos 20..24 │ 25..29   row 2, col 1..5 │ 6..10
+ *   ╰───────╮ LH2 LH1 LH0 │ │ RH0 RH1 RH2 ╭───────╯   pos 30..32 │ 33..35   row 3, col 3..5 │ 6..8
+ *
+ *   e.g. LM1 = pos 13 = (1,4) · LT2 = pos 2 = (0,3) · LB2 = pos 22 = (2,3) · LH1 = pos 31 = (3,4) · RM1 = pos 16 = (1,7)
+ */
+
+#include <dt-bindings/zmk/kscan_mock.h>
+#include <dt-bindings/zmk/matrix_transform.h>
+#include <layouts/foostan/corne.dtsi>
+
+/ {
+    default_transform: keymap_transform_0 {
+        compatible = "zmk,matrix-transform";
+        columns = <12>;
+        rows = <4>;
+// | SW1  | SW2  | SW3  | SW4  | SW5  | SW6  |   | SW6  | SW5  | SW4  | SW3  | SW2  | SW1  |
+// | SW7  | SW8  | SW9  | SW10 | SW11 | SW12 |   | SW12 | SW11 | SW10 | SW9  | SW8  | SW7  |
+// | SW13 | SW14 | SW15 | SW16 | SW17 | SW18 |   | SW18 | SW17 | SW16 | SW15 | SW14 | SW13 |
+//                      | SW19 | SW20 | SW21 |   | SW21 | SW20 | SW19 |
+        map = <
+RC(0,0) RC(0,1) RC(0,2) RC(0,3) RC(0,4) RC(0,5)  RC(0,6) RC(0,7) RC(0,8) RC(0,9) RC(0,10) RC(0,11)
+RC(1,0) RC(1,1) RC(1,2) RC(1,3) RC(1,4) RC(1,5)  RC(1,6) RC(1,7) RC(1,8) RC(1,9) RC(1,10) RC(1,11)
+RC(2,0) RC(2,1) RC(2,2) RC(2,3) RC(2,4) RC(2,5)  RC(2,6) RC(2,7) RC(2,8) RC(2,9) RC(2,10) RC(2,11)
+                        RC(3,3) RC(3,4) RC(3,5)  RC(3,6) RC(3,7) RC(3,8)
+        >;
+    };
+
+    five_column_transform: keymap_transform_1 {
+        compatible = "zmk,matrix-transform";
+        columns = <10>;
+        rows = <4>;
+// | SW2  | SW3  | SW4  | SW5  | SW6  |   | SW6  | SW5  | SW4  | SW3  | SW2  |
+// | SW8  | SW9  | SW10 | SW11 | SW12 |   | SW12 | SW11 | SW10 | SW9  | SW8  |
+// | SW14 | SW15 | SW16 | SW17 | SW18 |   | SW18 | SW17 | SW16 | SW15 | SW14 |
+//               | SW19 | SW20 | SW21 |   | SW21 | SW20 | SW19 |
+        map = <
+RC(0,1) RC(0,2) RC(0,3) RC(0,4) RC(0,5)  RC(0,6) RC(0,7) RC(0,8) RC(0,9) RC(0,10)
+RC(1,1) RC(1,2) RC(1,3) RC(1,4) RC(1,5)  RC(1,6) RC(1,7) RC(1,8) RC(1,9) RC(1,10)
+RC(2,1) RC(2,2) RC(2,3) RC(2,4) RC(2,5)  RC(2,6) RC(2,7) RC(2,8) RC(2,9) RC(2,10)
+                        RC(3,3) RC(3,4) RC(3,5)  RC(3,6) RC(3,7) RC(3,8)
+        >;
+    };
+};
+
+&foostan_corne_6col_layout {
+    transform = <&default_transform>;
+};
+
+&foostan_corne_5col_layout {
+    transform = <&five_column_transform>;
+};
+
+/* Flo's real keymap (includes behaviors.dtsi, keys.h, CONFIG.h, all features, 32 layers, 28 combos) */
+#include "/workspaces/zmk-config/config/corne.keymap"
+
+&kscan {
+    /* >>> PLACEHOLDER — the template has NO events and will not build. <<<
+     * A test case copies this directory and adds, e.g.:
+     *
+     * events = <
+     *     ZMK_MOCK_PRESS(1,4,100)      // LM1 = pos 13 = T; 100 = boot delay AND gap after (+1 each on native)
+     *     ZMK_MOCK_RELEASE(1,4,300)    // last gap bounds the observation window
+     * >;
+     */
+};
+
+/* ===== AK-pair sweep case S-H_RM2-d18: RM4 -> RM2, Δ = 18, hack ON ===== */
+
+&kscan {
+    events = <
+        ZMK_MOCK_PRESS(1,10,17)      /* RM4 down  abs 18 (t)        */
+        ZMK_MOCK_PRESS(1,8,60)     /* RM2 down  abs 36 (t+18)     */
+        ZMK_MOCK_RELEASE(1,10,40)   /* RM4 up    abs 97 (t+79) */
+        ZMK_MOCK_RELEASE(1,8,300)  /* RM2 up    abs 138 (t+120) */
+    >;
+};
