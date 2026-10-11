@@ -24,7 +24,7 @@ The cases live in this repo; the firmware source and the build dirs live in the 
 flowchart LR
     subgraph H["Host"]
         RS["tests/timing/run.sh"]
-        RC["zmk-config repo<br/>tests/timing/cases/CASE<br/>config/corne.keymap"]
+        RC["zmk-config repo<br/>tests/timing/cases/CASE<br/>config/keyboards/chocofi/corne.keymap"]
         RF["zmk fork<br/>app/build/zmk-config-timing/CASE"]
     end
     subgraph C["zmk-devcontainer"]
@@ -47,7 +47,7 @@ flowchart LR
 - 📜 `-DZMK_CONFIG=<dir>` adds **no** include path
   - It selects `<dir>/native_posix_64.keymap` as the DT overlay
   - It merges `<dir>/native_posix_64.conf` **in addition to** `app/boards/native_posix_64.conf`
-  - R2 pulls Flo's keymap in with an absolute `#include "/workspaces/zmk-config/config/corne.keymap"` (DTS goes through cpp)
+  - R2 pulls Flo's keymap in with an absolute `#include "/workspaces/zmk-config/config/keyboards/chocofi/corne.keymap"` (DTS goes through cpp)
 
 ### `run.sh`
 
@@ -159,7 +159,7 @@ row 2   pos 8 (2,0)   pos 9 (2,1)   pos 10 (2,2)  pos 11 (2,3)
 - Skeleton (🧪 builds and runs unmodified)
   - `#include <dt-bindings/zmk/kscan_mock.h>`, `<dt-bindings/zmk/matrix_transform.h>`, `<layouts/foostan/corne.dtsi>`
   - Both Corne transforms copied verbatim from `app/boards/shields/corne/corne.dtsi`, wired to `&foostan_corne_6col_layout` / `&foostan_corne_5col_layout`
-  - `#include "/workspaces/zmk-config/config/corne.keymap"`, then the `&kscan { events }` block
+  - `#include "/workspaces/zmk-config/config/keyboards/chocofi/corne.keymap"`, then the `&kscan { events }` block
 - 📜 **Why the transforms**
   - Flo's keymap chooses `&foostan_corne_5col_layout`, which **requires** a `transform` phandle
   - The shield normally supplies it; native_posix has no shield

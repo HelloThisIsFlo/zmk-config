@@ -10,10 +10,10 @@ Adaptive Keys are the core feature of this keyboard configuration, designed to e
 
 ## Key Files
 
-- [adaptive_keys/behaviors.dtsi](mdc:config/features/hands_down/adaptive_keys/behaviors.dtsi): AK behavior definitions
-- [adaptive_keys/combos.dtsi](mdc:config/features/hands_down/adaptive_keys/combos.dtsi): AK combo implementations
-- [adaptive_keys/macros.dtsi](mdc:config/features/hands_down/adaptive_keys/macros.dtsi): AK macro definitions
-- [adaptive_keys/aliases.dtsi](mdc:config/features/hands_down/adaptive_keys/aliases.dtsi): AK aliases
+- [adaptive_keys/behaviors.dtsi](mdc:config/layout/features/hands_down/adaptive_keys/behaviors.dtsi): AK behavior definitions
+- [adaptive_keys/combos.dtsi](mdc:config/layout/features/hands_down/adaptive_keys/combos.dtsi): AK combo implementations
+- [adaptive_keys/macros.dtsi](mdc:config/layout/features/hands_down/adaptive_keys/macros.dtsi): AK macro definitions
+- [adaptive_keys/aliases.dtsi](mdc:config/layout/features/hands_down/adaptive_keys/aliases.dtsi): AK aliases
 
 ## How AKs Work
 
@@ -37,8 +37,8 @@ Adaptive Keys are the core feature of this keyboard configuration, designed to e
 
 ## Debugging AKs
 
-- Check combo timing in [combos.dtsi](mdc:config/features/hands_down/adaptive_keys/combos.dtsi)
-- Verify macro definitions in [macros.dtsi](mdc:config/features/hands_down/adaptive_keys/macros.dtsi)
+- Check combo timing in [combos.dtsi](mdc:config/layout/features/hands_down/adaptive_keys/combos.dtsi)
+- Verify macro definitions in [macros.dtsi](mdc:config/layout/features/hands_down/adaptive_keys/macros.dtsi)
 - Test with burst typing at 200+ WPM
 - Use `../zmk/build_and_flash.sh left` to test changes
 

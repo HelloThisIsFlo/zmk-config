@@ -9,23 +9,23 @@
 
 - **`XXX`** — dummy binding cell value (defined as `0` in preprocessor_macros.c). Use whenever a binding cell is passed to a macro that ignores it.
 - **`&bk`** — buffered key. Use instead of `&kp` for all character output in behaviors. See MECHANICS.md for why.
-- **Include order matters**: macros.dtsi -> behaviors.dtsi -> combos.dtsi -> layers. If something silently doesn't work, check that the thing you're referencing is `#include`d earlier in `corne.keymap`.
+- **Include order matters**: macros.dtsi -> behaviors.dtsi -> combos.dtsi -> layers. If something silently doesn't work, check that the thing you're referencing is `#include`d earlier in `config/layout/layout.dtsi`.
 
 ## File Locations
 
 | What | Where |
 |------|-------|
-| Typing macros | `config/features/hands_down/macros.dtsi` |
-| Linger key behaviors | `config/features/hands_down/linger_keys/behaviors.dtsi` |
-| Mod-morph behaviors | `config/features/hands_down/mod_morph/behaviors.dtsi` |
-| AK macros | `config/features/hands_down/adaptive_keys/macros.dtsi` |
-| AK aliases | `config/features/hands_down/adaptive_keys/aliases.dtsi` |
-| AK consistency hack | `config/features/hands_down/adaptive_keys/combos.dtsi` |
-| AK layers (per layout) | `config/features/hands_down/layers_B_*_adaptive_keys.dtsi` |
-| H-digraph combos | `config/features/hands_down/h_digraphs/combos.dtsi` |
-| Mods behaviors | `config/features/hands_down/mods/behaviors.dtsi` |
-| Thumb / HRM behaviors | `config/features/hands_down/mods/behaviors.dtsi` |
-| Alpha layers | `config/features/hands_down/layers_A_*.dtsi` |
+| Typing macros | `config/layout/features/hands_down/macros.dtsi` |
+| Linger key behaviors | `config/layout/features/hands_down/linger_keys/behaviors.dtsi` |
+| Mod-morph behaviors | `config/layout/features/hands_down/mod_morph/behaviors.dtsi` |
+| AK macros | `config/layout/features/hands_down/adaptive_keys/macros.dtsi` |
+| AK aliases | `config/layout/features/hands_down/adaptive_keys/aliases.dtsi` |
+| AK consistency hack | `config/layout/features/hands_down/adaptive_keys/combos.dtsi` |
+| AK layers (per layout) | `config/layout/features/hands_down/layers_B_*_adaptive_keys.dtsi` |
+| H-digraph combos | `config/layout/features/hands_down/h_digraphs/combos.dtsi` |
+| Mods behaviors | `config/layout/features/hands_down/mods/behaviors.dtsi` |
+| Thumb / HRM behaviors | `config/layout/features/hands_down/mods/behaviors.dtsi` |
+| Alpha layers | `config/layout/features/hands_down/layers_A_*.dtsi` |
 
 ---
 
@@ -249,7 +249,7 @@ COMBO_ANY_TWO_HAND(comboName, BINDING, POS1 POS2)
 - Simple key: `COMBO_ANY_ONE_HAND(space, &bk SPACE, LT1 LT0)`
 - Linger key: `COMBO_LAY_ONE_HAND(l_alpha_aks, th, thAlias, LM2 LM1)` — fires a linger key alias (tap=Th, linger=tion)
 
-**Key positions:** defined in `__BASE__/aliases_key_positions.dtsi`. Format: `{L|R}{T|M|B|H}{0-4}`.
+**Key positions:** defined per keyboard in `config/keyboards/<model>/positions.dtsi`. Format: `{L|R}{T|M|B|H}{0-4}`.
 
 ---
 

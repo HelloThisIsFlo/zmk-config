@@ -1,0 +1,11 @@
+# 🎯 Build targets: one row per physical keyboard (unit)
+# Read by '../zmk/build_and_flash.sh <unit> left|right|both'
+#
+# unit         → 'units/<unit>.conf'       (config level 3: name, per-unit tweaks)
+# keyboard     → 'keyboards/<keyboard>/'   (ZMK config dir: keymap + config levels 1 & 2)
+# board        → controller board
+# shields      → '{side}' is replaced by left|right
+#
+# unit          keyboard   board          shields
+chocofi-og      chocofi    nice_nano_v2   corne_{side} nice_view_adapter nice_view
+chocofi-pro     chocofi    nice_nano_v2   corne_{side} nice_view_adapter nice_view

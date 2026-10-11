@@ -9,6 +9,31 @@
 
 ---
 
+## 2026-10-11 -- Config hierarchy: layout / keyboard / unit / side
+
+**Context**: A second Chocofi was built on Pro Micro nRF52840 clones (the old one
+stays). Both need different Bluetooth names from the same config. A 42-key board
+and a Charybdis are coming within weeks.
+
+**Decision**: Split `config/` by axis:
+- `layout/` -- `layout.dtsi` (was `corne.keymap`), `CONFIG.h`, `features/`
+- `keyboards/chocofi/` -- `corne.keymap` (positions + layout + physical layout),
+  `positions.dtsi` (was `__BASE__/aliases_key_positions.dtsi`), `corne*.conf`
+- `units/` -- `chocofi-og.conf` ("Chocofi OG"), `chocofi-pro.conf` ("The Chocofi Pro")
+- `targets.txt` -- unit → keyboard, board, shields
+
+**Mechanics**: Each keyboard folder is passed as `ZMK_CONFIG`; the unit file as
+Zephyr's `EXTRA_CONF_FILE`, merged last. `build_and_flash.sh <unit> <side>`.
+
+**Rejected**: per-unit name override on a single `corne.conf` default (silently
+renames the other unit if the flag is forgotten); one-off builds (name reverts
+on the next flash).
+
+**Verified**: identical `zephyr.dts` before/after; `.config` differs only in the
+name. R2 timing tests repointed to `keyboards/chocofi/corne.keymap`.
+
+---
+
 ## 2026-10-01 -- AK timing investigation: the consistency hack explained wrong, now proven
 
 **Context**: Neither the combo-hack docs nor the timing visuals page ever made

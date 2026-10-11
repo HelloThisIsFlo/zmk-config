@@ -29,7 +29,7 @@ globs: *.dtsi,*.keymap,*.c
 
 ## Configuration Constants
 
-All timing and behavior constants are defined in [CONFIG.h](mdc:config/CONFIG.h):
+All timing and behavior constants are defined in [CONFIG.h](mdc:config/layout/CONFIG.h):
 
 - `my_tapping_term_main`: Main tapping term (500ms)
 - `my_ak_window`: Adaptive key window (100ms)

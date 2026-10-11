@@ -21,7 +21,7 @@ These are maintained collaboratively during layout sessions. See the `/layout` s
 
 ## Project Overview
 
-ZMK firmware configuration for a Corne (Chocofi) split keyboard with Nice Nano v2 controllers. The project centers on three custom keyboard layouts (Naquadah, Promethium, Rhodium) built around an **Adaptive Keys (AKs) system** that eliminates Same-Finger Bigrams.
+ZMK firmware configuration for split keyboards, currently two Chocofi units (36-key Corne, nice!nano v2 or Pro Micro nRF52840 clones). One shared layout, built per physical keyboard (see *Config Hierarchy*). The project centers on three custom keyboard layouts (Naquadah, Promethium, Rhodium) built around an **Adaptive Keys (AKs) system** that eliminates Same-Finger Bigrams.
 
 ## Build & Flash
 
@@ -29,13 +29,15 @@ There are no local tests. The only validation is successful compilation.
 
 ```bash
 # Requires local ZMK checkout at ../zmk. Auto-starts the zmk-devcontainer.
-../zmk/build_and_flash.sh left|right|both        # Build, then prompt to double-tap reset on each half
-../zmk/build_and_flash.sh reset                  # Flash settings_reset to both halves
-../zmk/build_and_flash.sh both --no-flash        # Build only (verify compilation)
-../zmk/build_and_flash.sh both --pristine        # Full rebuild (required after adding a new .conf file)
+../zmk/build_and_flash.sh <unit> left|right|both          # Build, then prompt to double-tap reset on each half
+../zmk/build_and_flash.sh <unit> reset                     # Flash settings_reset to both halves
+../zmk/build_and_flash.sh chocofi-pro both --no-flash      # Build only (verify compilation)
+../zmk/build_and_flash.sh chocofi-pro both --pristine      # Full rebuild (after adding a .conf file or editing targets.txt)
 ```
 
-**Split roles**: the **right** half is central (keymap + host Bluetooth + the working nice!view), the left is peripheral. Set in `config/corne_left.conf` / `config/corne_right.conf`, which also hold per-side overrides (left sleeps after 2h, right after 20 min from `corne.conf`). Changing roles requires `reset` on both halves, then re-pairing.
+Units (physical keyboards) are listed in `config/targets.txt`: `chocofi-og`, `chocofi-pro`. Running the script with no arguments lists them. If the board is already in bootloader mode when the build finishes, it's flashed right away.
+
+**Split roles**: the **right** half is central (keymap + host Bluetooth + the working nice!view), the left is peripheral. Set in `config/keyboards/chocofi/corne_left.conf` / `config/keyboards/chocofi/corne_right.conf`, which also hold per-side overrides (left sleeps after 2h, right after 20 min from `keyboards/chocofi/corne.conf`). Changing roles requires `reset` on both halves, then re-pairing.
 
 **Build success**: ends with `Linking C executable zephyr/zmk.elf` and `Wrote X bytes to zmk.uf2`.
 
@@ -49,17 +51,35 @@ Builds run locally in the `zmk-devcontainer` Docker container (no CI build). Use
 
 ## Architecture
 
+### Config Hierarchy
+
+Four independent axes, one folder each:
+
+```
+config/
+  layout/              🧠 bindings, keyboard-agnostic: layout.dtsi (orchestrator), CONFIG.h, features/
+  keyboards/chocofi/   ⌨️ one folder per model = ZMK config dir: corne.keymap, positions.dtsi, corne*.conf
+  units/               🏷️ one .conf per physical keyboard (name + per-unit tweaks)
+  targets.txt          🎯 unit → keyboard, board, shields
+```
+
+- Kconfig levels cascade, later wins: `keyboards/<model>/corne.conf` → `corne_<side>.conf` → `units/<unit>.conf`
+- Each setting lives in exactly one level; the keyboard name lives only in `units/`
+- Files in `keyboards/chocofi/` keep `corne.*` names: ZMK finds keymap/conf files by shield name
+- `keyboards/<model>/corne.keymap` = positions + `#include "../../layout/layout.dtsi"` + physical layout
+- Planned: a 42-key model becomes canonical (layout written for 42, 36-key boards drop the outer columns); Charybdis with trackball later. See `Design/MECHANICS.md` → Config Hierarchy
+
 ### Orchestrator Pattern
 
-`config/corne.keymap` is the central orchestrator. It includes all features in strict dependency order via `#include` directives. **Inclusion order matters** — aliases before macros, macros before behaviors, behaviors before combos, combos before layers.
+`config/layout/layout.dtsi` is the central orchestrator. It includes all features in strict dependency order via `#include` directives. **Inclusion order matters** — aliases before macros, macros before behaviors, behaviors before combos, combos before layers.
 
 ### Layout Selection
 
-Layouts are selected via `#define` in `config/CONFIG.h`. The active layout is whichever is defined last (all three are currently defined, so NAQUADAH wins due to `#if defined` priority in `corne.keymap`).
+Layouts are selected via `#define` in `config/layout/CONFIG.h`. The active layout is whichever is defined last (all three are currently defined, so NAQUADAH wins due to `#if defined` priority in `layout.dtsi`).
 
 ### Feature Module Structure
 
-Each feature under `config/features/` follows a consistent pattern with optional files:
+Each feature under `config/layout/features/` follows a consistent pattern with optional files:
 - `aliases.dtsi` — name definitions
 - `macros.dtsi` — macro sequences
 - `behaviors.dtsi` — custom behaviors
@@ -67,11 +87,11 @@ Each feature under `config/features/` follows a consistent pattern with optional
 
 ### Key Directories
 
-- `config/features/__BASE__/` — Core infrastructure: key position aliases, layer aliases per layout, preprocessor macro definitions, default behavior config
-- `config/features/hands_down/` — Main layout implementation: alpha layers, adaptive keys, mods, linger keys, combos, h-digraphs, pronouns
-- `config/features/hands_down/adaptive_keys/` — The AK system (the core innovation)
-- `config/features/__EXPERIMENT__/` — Experimental features (enabled via `#define EXPERIMENT` in CONFIG.h)
-- `config/features/hands_down/zz__INVESTIGATE__zz/` — Experimental/disabled features
+- `config/layout/features/__BASE__/` — Core infrastructure: layer aliases per layout, preprocessor macro definitions, default behavior config
+- `config/layout/features/hands_down/` — Main layout implementation: alpha layers, adaptive keys, mods, linger keys, combos, h-digraphs, pronouns
+- `config/layout/features/hands_down/adaptive_keys/` — The AK system (the core innovation)
+- `config/layout/features/__EXPERIMENT__/` — Experimental features (enabled via `#define EXPERIMENT` in CONFIG.h)
+- `config/layout/features/hands_down/zz__INVESTIGATE__zz/` — Experimental/disabled features
 
 ### Layer System
 
@@ -82,7 +102,7 @@ Layers are numbered 0–31 (uint32_t bitmask). Per layout, there are three tiers
 
 ### Key Position Naming
 
-Defined in `__BASE__/aliases_key_positions.dtsi`. Format: `{L|R}{T|M|B|H}{0-4}` where L/R=hand, T/M/B=top/middle/bottom row, H=thumb, 0=innermost.
+Defined per keyboard in `keyboards/<model>/positions.dtsi`. Format: `{L|R}{T|M|B|H}{0-4}` where L/R=hand, T/M/B=top/middle/bottom row, H=thumb, 0=innermost.
 
 ```
 ╭─────────────────────╮ ╭─────────────────────╮
@@ -95,7 +115,7 @@ Defined in `__BASE__/aliases_key_positions.dtsi`. Format: `{L|R}{T|M|B|H}{0-4}` 
 
 ### Preprocessor Macros
 
-`config/features/__BASE__/preprocessor_macros.c` defines key macros used throughout:
+`config/layout/features/__BASE__/preprocessor_macros.c` defines key macros used throughout:
 - `________` / `xxxxxxxx` — transparent / none key shortcuts
 - `COMBO_ANY_ONE_HAND`, `COMBO_ANY_TWO_HAND`, `COMBO_LAY_*` — combo definition helpers with pre-set timeouts
 - `REPLACE_CHAR_WITH_BIGRAM(A, B)` — generates AK replacement macros
@@ -104,7 +124,7 @@ Defined in `__BASE__/aliases_key_positions.dtsi`. Format: `{L|R}{T|M|B|H}{0-4}` 
 
 ### Timing Constants
 
-All timing lives in `config/CONFIG.h`:
+All timing lives in `config/layout/CONFIG.h`:
 - `my_ak_window` (100ms) — adaptive key detection window
 - `linger_term` (100ms) — tap-hold decision time
 - Combo timeouts: adjacent=16ms, non-adjacent=18ms, two-hand=30ms

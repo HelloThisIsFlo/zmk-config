@@ -138,7 +138,7 @@ All mod morphs use `&bk` for their bindings to maintain timing consistency with 
 
 _Lineage: Entirely custom. Every constant was derived through empirical testing over 2+ years._
 
-All timing constants live in `config/CONFIG.h`. They form an interdependent system.
+All timing constants live in `config/layout/CONFIG.h`. They form an interdependent system.
 
 **Core relationships:**
 
@@ -153,22 +153,55 @@ combo timeouts: 16ms < 18ms < 30ms                    -- tighter = less misfire 
 
 **The 500ms HRM tapping term:** Intentionally high. With cross-hand `hold-trigger-key-positions`, the actual hold detection is much faster -- the 500ms is a safety ceiling, not the usual activation time.
 
-## Orchestrator Pattern -- `corne.keymap`
+## Config Hierarchy -- Layout / Keyboard / Unit / Side
 
-_Lineage: Entirely custom. Created during the Great Restructuring (Oct 2023)._
+_Lineage: Entirely custom. Created Oct 2026 when a second Chocofi unit arrived, ahead of a 42-key board and a Charybdis._
 
-`corne.keymap` is an include-only coordinator. Inclusion order is strict and load-bearing:
+Four axes that change independently, one place each:
+
+| Axis | What | Where | Changes |
+|---|---|---|---|
+| 🧠 Layout | Bindings, AKs, combos, layers | `config/layout/` | All the time |
+| ⌨️ Keyboard model | Geometry, key positions, hardware settings | `config/keyboards/<model>/` | New board bought |
+| 🏷️ Unit | One physical keyboard: name, per-unit tweaks | `config/units/<unit>.conf` | Almost never |
+| ↔️ Side | Central / peripheral, sleep | `config/keyboards/<model>/<shield>_<side>.conf` | Never |
+
+```
+$ build_and_flash.sh chocofi-pro right
+  targets.txt: chocofi-pro → keyboard chocofi, nice_nano_v2, corne_right nice_view_adapter nice_view
+  ZMK_CONFIG      = config/keyboards/chocofi/       → corne.keymap, corne.conf, corne_right.conf
+  EXTRA_CONF_FILE = config/units/chocofi-pro.conf   → merged last, wins
+
+Kconfig cascade (later wins):  corne.conf → corne_right.conf → units/chocofi-pro.conf
+Devicetree:                    corne.keymap → positions.dtsi + ../../layout/layout.dtsi + physical layout
+```
+
+- **One setting, one level.** The keyboard name is only in `units/`; overrides between levels stay rare and commented in each file's header.
+- **Files named by shield, folder named by model.** ZMK's `keymap-module/modules/modules.cmake` finds `<shield>.keymap` / `<shield>.conf` / `<shield>_<side>.conf` in `ZMK_CONFIG`, so `keyboards/chocofi/` holds `corne.*`.
+- **Build dirs per unit and side** (`zmk/app/build/<unit>/<side>`), so switching units never reuses a cached config.
+- **Key positions are per keyboard.** Combos and AKs use names (`LT0`, `RM2`), resolved by the model's `positions.dtsi`.
+- **Planned, not built:**
+  - A 42-key model becomes canonical: every layer written with 42 entries through a `KEYS(...)` macro; 36-key keyboards drop the outer columns. Outer-column names `LT5`… ; combos on them behind `#ifdef`.
+  - `CONFIG_ZMK_COMBO_MAX_KEYS_PER_COMBO` (= all keys, for the AK hack) moves to each model's `.conf`: 36 vs 42.
+  - Charybdis: own `keyboards/` folder with trackball overlay + config.
+- **Verified on creation:** rebuilt Chocofi had an identical `zephyr.dts` and a `.config` differing only in the name.
+
+## Orchestrator Pattern -- `layout.dtsi`
+
+_Lineage: Entirely custom. Created during the Great Restructuring (Oct 2023) as `corne.keymap`; became `layout/layout.dtsi` with the config hierarchy (Oct 2026)._
+
+`layout.dtsi` is an include-only coordinator, included by each keyboard's keymap after its `positions.dtsi`. Inclusion order is strict and load-bearing:
 
 1. `CONFIG.h` -- timing constants (must be first, everything depends on them)
 2. `preprocessor_macros.c` -- macro definitions
-3. Key position aliases, layer aliases, feature aliases
+3. Layer aliases, feature aliases (key position aliases come from the keyboard, before this file)
 4. Default behavior config
 5. **Macros section** -- all macro definitions
 6. **Behaviors section** -- all custom behaviors (depend on macros)
 7. **Combos section** -- all combos (depend on behaviors)
 8. **Keymap section** -- layer definitions (depend on everything above)
 
-**Layout selection:** All three layouts (`NAQUADAH`, `PROMETHIUM`, `RHODIUM`) are `#define`d in CONFIG.h. The `#if defined` cascade in `corne.keymap` picks the first match. Since all three are defined, whichever appears first in the `#if` chain wins -- currently NAQUADAH.
+**Layout selection:** All three layouts (`NAQUADAH`, `PROMETHIUM`, `RHODIUM`) are `#define`d in CONFIG.h. The `#if defined` cascade in `layout.dtsi` picks the first match. Since all three are defined, whichever appears first in the `#if` chain wins -- currently NAQUADAH.
 
 ## Layer System -- Three Tiers, 32-Layer Limit
 
@@ -186,7 +219,7 @@ Layers are a `uint32_t` bitmask (bits 0-31). Currently at exactly 32 layers -- t
 
 _Lineage: Entirely custom. Created Mar 2024 to eliminate boilerplate._
 
-`config/features/__BASE__/preprocessor_macros.c` is the metaprogramming hub.
+`config/layout/features/__BASE__/preprocessor_macros.c` is the metaprogramming hub.
 
 | Macro | Purpose |
 |-------|---------|
@@ -200,7 +233,7 @@ These macros eliminated massive boilerplate (87 lines down to 36 for linger keys
 
 ## Key Position Naming
 
-Defined in `__BASE__/aliases_key_positions.dtsi`. Format: `{L|R}{T|M|B|H}{0-4}`.
+Defined per keyboard in `keyboards/<model>/positions.dtsi` (Chocofi: `keyboards/chocofi/positions.dtsi`). Format: `{L|R}{T|M|B|H}{0-4}`.
 
 ```
 ╭─────────────────────╮ ╭─────────────────────╮
@@ -217,7 +250,7 @@ Defined in `__BASE__/aliases_key_positions.dtsi`. Format: `{L|R}{T|M|B|H}{0-4}`.
 
 ## Hardware Configuration
 
-`corne.conf` tuned for the AK system:
+`keyboards/chocofi/corne.conf` tuned for the AK system:
 
 - `CONFIG_ZMK_COMBO_MAX_COMBOS_PER_KEY=30` -- many combos per key (AKs + regular)
 - `CONFIG_ZMK_BEHAVIORS_QUEUE_SIZE=512` -- large queue for macro event cascades

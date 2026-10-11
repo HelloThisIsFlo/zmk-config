@@ -6,7 +6,7 @@ description: Layout-specific configuration rules
 
 ## Available Layouts
 
-The project supports three main layouts defined in [CONFIG.h](mdc:config/CONFIG.h):
+The project supports three main layouts defined in [CONFIG.h](mdc:config/layout/CONFIG.h):
 
 - **NAQUADAH**: Primary layout with 46 Adaptive Keys
 - **PROMETHIUM**: Alternative layout variant
@@ -14,7 +14,7 @@ The project supports three main layouts defined in [CONFIG.h](mdc:config/CONFIG.
 
 ## Layout Selection
 
-Layouts are selected via preprocessor defines in [CONFIG.h](mdc:config/CONFIG.h):
+Layouts are selected via preprocessor defines in [CONFIG.h](mdc:config/layout/CONFIG.h):
 
 ```c
 #define NAQUADAH
@@ -24,7 +24,7 @@ Layouts are selected via preprocessor defines in [CONFIG.h](mdc:config/CONFIG.h)
 
 ## Layout-Specific Files
 
-Each layout has dedicated files in [config/features/hands_down/](mdc:config/features/hands_down/):
+Each layout has dedicated files in [config/layout/features/hands_down/](mdc:config/layout/features/hands_down/):
 
 ### Layer Files
 
@@ -34,7 +34,7 @@ Each layout has dedicated files in [config/features/hands_down/](mdc:config/feat
 
 ### Aliases
 
-- `aliases_layers_*.dtsi` in [**BASE**/](mdc:config/features/__BASE__/): Layout-specific layer aliases
+- `aliases_layers_*.dtsi` in [**BASE**/](mdc:config/layout/features/__BASE__/): Layout-specific layer aliases
 
 ## Naquadah Layout Details
 
@@ -56,8 +56,8 @@ Each layout has dedicated files in [config/features/hands_down/](mdc:config/feat
 
 ## Adding New Layouts
 
-1. Add layout define to [CONFIG.h](mdc:config/CONFIG.h)
+1. Add layout define to [CONFIG.h](mdc:config/layout/CONFIG.h)
 2. Create layout-specific layer files
-3. Add aliases in [**BASE**/aliases*layers*\*.dtsi](mdc:config/features/__BASE__/aliases_layers.dtsi)
-4. Update [corne.keymap](mdc:config/corne.keymap) to include new layout files
+3. Add aliases in [**BASE**/aliases*layers*\*.dtsi](mdc:config/layout/features/__BASE__/aliases_layers.dtsi)
+4. Update [layout.dtsi](mdc:config/layout/layout.dtsi) to include new layout files
 5. Test compilation and functionality

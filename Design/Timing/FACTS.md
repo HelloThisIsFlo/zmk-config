@@ -1242,7 +1242,7 @@ flowchart LR
 | MECH | `Design/MECHANICS.md` |
 | MLOG | `Design/MECHANICS_LOG.md` |
 | COOK | `Design/COOKBOOK.md` |
-| CMT | `config/features/hands_down/adaptive_keys/combos.dtsi:1-63` |
+| CMT | `config/layout/features/hands_down/adaptive_keys/combos.dtsi:1-63` |
 | ART | earlier artifact |
 | E-xx | ids from `E-claims.md` |
 

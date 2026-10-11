@@ -17,7 +17,7 @@ The technical infrastructure (adaptive keys system, combo framework, linger keys
 
 ## Lineage
 
-Naquadah stands on the shoulders of Alan Reiser's [Hands Down](https://sites.google.com/alanreiser.com/handsdown) project. The layout descends from Hands Down Titanium, and the key concepts that make it work -- Adaptive Keys, linger keys, bigram-driven layout optimization -- all originated there. The `config/features/hands_down/` directory is named in honor of that heritage.
+Naquadah stands on the shoulders of Alan Reiser's [Hands Down](https://sites.google.com/alanreiser.com/handsdown) project. The layout descends from Hands Down Titanium, and the key concepts that make it work -- Adaptive Keys, linger keys, bigram-driven layout optimization -- all originated there. The `config/layout/features/hands_down/` directory is named in honor of that heritage.
 
 Where Naquadah departs: Hands Down treats AKs as an optimization; here they are a requirement. The "comfort over theory" principle, Callum-style mods (replacing HD's home row mods), and an extreme SFB elimination target (0.082% with 46 AKs) are all choices that have carried the layout far from its Titanium origin -- but the analytical foundation Alan built made all of it possible.
 

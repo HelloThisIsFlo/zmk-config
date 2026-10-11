@@ -1,0 +1,13 @@
+/* ⌨️ KEYBOARD: Chocofi (corne shield, 5 columns, 36 keys)
+ * Only what's specific to this model; all bindings live in '../../layout/'.
+ * Named 'corne.*' because ZMK finds keymap/conf files by shield name.
+ */
+
+#include "./positions.dtsi"
+#include "../../layout/layout.dtsi"
+
+/ {
+    chosen {
+        zmk,physical-layout = &foostan_corne_5col_layout;
+    };
+};

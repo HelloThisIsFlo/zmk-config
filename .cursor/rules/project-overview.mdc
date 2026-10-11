@@ -9,11 +9,11 @@ This is a ZMK (Zephyr-based keyboard firmware) configuration for a Corne keyboar
 ## Project Structure
 
 - **`config/`**: Main configuration directory containing all ZMK files
-  - [corne.keymap](mdc:config/corne.keymap): Main keymap file that includes all features
-  - [CONFIG.h](mdc:config/CONFIG.h): Configuration constants and timing parameters
+  - [layout.dtsi](mdc:config/layout/layout.dtsi): Main orchestrator that includes all features (included by `config/keyboards/<model>/corne.keymap`)
+  - [CONFIG.h](mdc:config/layout/CONFIG.h): Configuration constants and timing parameters
   - [build.yaml](mdc:config/build.yaml): GitHub Actions build matrix
   - [west.yml](mdc:config/west.yml): Zephyr workspace configuration
-- **`config/features/`**: Hierarchically organized feature modules
+- **`config/layout/features/`**: Hierarchically organized feature modules
   - **`__BASE__/`**: Core aliases, layers, and behaviors
   - **`hands_down/`**: Main layout implementation with adaptive keys
   - **`switch_device/`**: Device switching functionality

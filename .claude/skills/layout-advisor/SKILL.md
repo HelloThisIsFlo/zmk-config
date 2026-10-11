@@ -37,14 +37,14 @@ Depending on what the user wants to change, read the relevant files:
 - **Philosophy log**: `Design/PHILOSOPHY_LOG.md` (reference when discussing past ergonomic choices)
 - **Technical mechanics**: `Design/MECHANICS.md` (how systems work under the hood)
 - **Mechanics log**: `Design/MECHANICS_LOG.md` (reference when discussing past technical decisions)
-- **Alpha layer**: `config/features/hands_down/layers_A_NAQUADAH_alpha.dtsi`
-- **Adaptive keys**: `config/features/hands_down/layers_B_NAQUADAH_adaptive_keys.dtsi` and `config/features/hands_down/adaptive_keys/`
-- **Combos**: `config/features/hands_down/combos.dtsi`
-- **Linger keys**: `config/features/hands_down/linger_keys/behaviors.dtsi`
-- **Mod morphs**: `config/features/hands_down/mod_morph/behaviors.dtsi`
-- **Extra layers**: `config/features/hands_down/layers_C_extra.dtsi`
-- **Timing constants**: `config/CONFIG.h`
-- **Macros**: `config/features/hands_down/macros.dtsi`
+- **Alpha layer**: `config/layout/features/hands_down/layers_A_NAQUADAH_alpha.dtsi`
+- **Adaptive keys**: `config/layout/features/hands_down/layers_B_NAQUADAH_adaptive_keys.dtsi` and `config/layout/features/hands_down/adaptive_keys/`
+- **Combos**: `config/layout/features/hands_down/combos.dtsi`
+- **Linger keys**: `config/layout/features/hands_down/linger_keys/behaviors.dtsi`
+- **Mod morphs**: `config/layout/features/hands_down/mod_morph/behaviors.dtsi`
+- **Extra layers**: `config/layout/features/hands_down/layers_C_extra.dtsi`
+- **Timing constants**: `config/layout/CONFIG.h`
+- **Macros**: `config/layout/features/hands_down/macros.dtsi`
 
 ## Layout Reference
 
@@ -66,7 +66,7 @@ Current Naquadah alpha (for quick reference):
 - **Match the existing style** of the file you're editing (spacing, alignment, comment style)
 - After making changes, briefly summarize what was changed and why, so the user can decide whether to build/flash
 - If a change affects adaptive keys or combos elsewhere, flag the ripple effects
-- The user can build with `../zmk/build_and_flash.sh both --no-flash` to verify compilation
+- The user can build with `../zmk/build_and_flash.sh chocofi-pro both --no-flash` to verify compilation
 
 ## Analysis Tools
 
@@ -78,10 +78,12 @@ If the user wants to evaluate a change quantitatively:
 
 ### Building
 
-The script auto-starts the `zmk-devcontainer` Docker container if it's stopped.
+The script auto-starts the `zmk-devcontainer` Docker container if it's stopped (and recreates it if missing).
+
+The first argument is a **unit**, one physical keyboard from `config/targets.txt` (`chocofi-og`, `chocofi-pro`). Bindings live in `config/layout/` and are shared by every unit; see `Design/MECHANICS.md` → Config Hierarchy.
 
 ```bash
-../zmk/build_and_flash.sh both --no-flash   # Build only -- use this to verify compilation
+../zmk/build_and_flash.sh chocofi-pro both --no-flash   # Build only -- use this to verify compilation
 ```
 
 **Build success:** ends with `Linking C executable zephyr/zmk.elf` and `Wrote X bytes to zmk.uf2`.
@@ -93,10 +95,10 @@ The script auto-starts the `zmk-devcontainer` Docker container if it's stopped.
 The user runs flashing themselves (it needs hands on the keyboard):
 
 ```bash
-../zmk/build_and_flash.sh both    # or left / right
+../zmk/build_and_flash.sh <unit> both    # or left / right; ask which keyboard is being flashed
 ```
 
-It builds first, then prompts "double-tap reset on the LEFT half", waits for `/Volumes/NICENANO`, copies, waits for the reboot, then does the same for the right half. There may be a macOS popup to allow the USB device on first connect.
+It builds first, then prompts "double-tap reset on the LEFT half", waits for `/Volumes/NICENANO` (or flashes right away if it's already mounted), copies, waits for the reboot, then does the same for the right half. There may be a macOS popup to allow the USB device on first connect.
 
 Right half = central (keymap + Bluetooth), so keymap-only changes technically only need `right`; flashing `both` keeps the halves in sync.
 

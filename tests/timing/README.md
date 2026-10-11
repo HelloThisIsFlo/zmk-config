@@ -24,7 +24,7 @@ tests/timing/
 - `_rig_R1`, `_rig_R1_nohack`, `_rig_R2` are **templates**
   - No `&kscan events` → they do not build
   - Copy one, append an `events` block, never edit them in place
-- R2 cases `#include "/workspaces/zmk-config/config/corne.keymap"`
+- R2 cases `#include "/workspaces/zmk-config/config/keyboards/chocofi/corne.keymap"`
   - That path exists only inside the container, where this repo is bind-mounted
   - It is the **live** keymap: a binding change can change an R2 case's output
 

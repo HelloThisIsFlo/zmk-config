@@ -1,3 +1,7 @@
+/* 🧠 LAYOUT: keyboard-agnostic bindings, included by each 'keyboards/<model>/<shield>.keymap'.
+ * The including keymap must define the key position names first (see 'keyboards/<model>/positions.dtsi').
+ * Inclusion order matters: aliases → macros → behaviors → combos → layers.
+ */
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
@@ -14,7 +18,7 @@
 #include "./features/__BASE__/preprocessor_macros.c"
 
 
-#include "./features/__BASE__/aliases_key_positions.dtsi"
+// Key position names (LT0, RM2…) come from the keyboard's 'positions.dtsi'
 #if defined NAQUADAH
     #include "./features/__BASE__/aliases_layers_NAQUADAH.dtsi"
 #elif defined PROMETHIUM
@@ -35,10 +39,6 @@
 
 
 / {
-    chosen {
-        zmk,physical-layout = &foostan_corne_5col_layout;
-    };
-
 
 
     macros {

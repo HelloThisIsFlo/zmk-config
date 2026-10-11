@@ -272,7 +272,7 @@ The AK system relies on two separate mechanisms to keep keystroke processing rel
 
 | File | What it contains |
 |------|-----------------|
-| `config/CONFIG.h` | All timing constants: `ak_tap_time` (10ms), `hold_key_event_delay` (11ms), `my_ak_window` (100ms) |
+| `config/layout/CONFIG.h` | All timing constants: `ak_tap_time` (10ms), `hold_key_event_delay` (11ms), `my_ak_window` (100ms) |
 | `adaptive_keys/macros.dtsi:25-39` | `&ak` behavior — the core two-param macro |
 | `adaptive_keys/macros.dtsi:77-87` | `&bk` behavior — simple tap, exits AK ecosystem |
 | `adaptive_keys/behaviors.dtsi:1-9` | `&aksl` — sticky layer that creates the detection window |

@@ -1,18 +1,18 @@
 ---
-globs: config/features/**/*
+globs: config/layout/features/**/*
 ---
 
 # Feature Organization Rules
 
 ## Directory Structure
 
-Features are organized hierarchically in [config/features/](mdc:config/features/):
+Features are organized hierarchically in [config/layout/features/](mdc:config/layout/features/):
 
 ### Core Features (`__BASE__/`)
 
-- [aliases_key_positions.dtsi](mdc:config/features/__BASE__/aliases_key_positions.dtsi): Key position definitions
-- [aliases*layers*\*.dtsi](mdc:config/features/__BASE__/aliases_layers_NAQUADAH.dtsi): Layer aliases for each layout
-- [default_behaviors_config.dtsi](mdc:config/features/__BASE__/default_behaviors_config.dtsi): Default behavior configurations
+- [aliases_key_positions.dtsi](mdc:config/keyboards/chocofi/positions.dtsi): Key position definitions
+- [aliases*layers*\*.dtsi](mdc:config/layout/features/__BASE__/aliases_layers_NAQUADAH.dtsi): Layer aliases for each layout
+- [default_behaviors_config.dtsi](mdc:config/layout/features/__BASE__/default_behaviors_config.dtsi): Default behavior configurations
 
 ### Main Features (`hands_down/`)
 
@@ -40,7 +40,7 @@ Each layout (NAQUADAH, PROMETHIUM, RHODIUM) has its own:
 
 ## Feature Dependencies
 
-Features are included in [corne.keymap](mdc:config/corne.keymap) in this order:
+Features are included in [layout.dtsi](mdc:config/layout/layout.dtsi) in this order:
 
 1. Base aliases and configurations
 2. Feature-specific aliases

@@ -8,10 +8,10 @@ description: Build, flash, and testing procedures
 
 ```bash
 # Build and flash left side
-../zmk/build_and_flash.sh left
+../zmk/build_and_flash.sh chocofi-pro left
 
 # Build and flash right side
-../zmk/build_and_flash.sh right
+../zmk/build_and_flash.sh chocofi-pro right
 ```
 
 ## Build Process
@@ -51,7 +51,7 @@ description: Build, flash, and testing procedures
 ## Development Workflow
 
 1. Make changes to configuration files
-2. Test compilation: `../zmk/build_and_flash.sh left`
+2. Test compilation: `../zmk/build_and_flash.sh chocofi-pro left`
 3. If compilation fails, fix syntax errors and repeat
 4. If compilation succeeds, commit working changes
 
