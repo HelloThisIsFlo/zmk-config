@@ -175,11 +175,6 @@ draw_config:
                 </g>
             </svg>
 
-    glyph_urls:
-        tabler: https://tabler-icons.io/static/tabler-icons/icons/{}.svg
-        mdi: https://raw.githubusercontent.com/Templarian/MaterialDesign-SVG/master/svg/{}.svg
-        mdil: https://raw.githubusercontent.com/Pictogrammers/MaterialDesignLight/master/svg/{}.svg
-        material: https://fonts.gstatic.com/s/i/short-term/release/materialsymbolsoutlined/{}/default/48px.svg
     use_local_cache: false
 
 parse_config:
@@ -529,16 +524,16 @@ parse_config:
         # F12: $$mdi:keyboard-f12$$
 
         # Numpad
-        KP_N0: 0
-        KP_N1: 1
-        KP_N2: 2
-        KP_N3: 3
-        KP_N4: 4
-        KP_N5: 5
-        KP_N6: 6
-        KP_N7: 7
-        KP_N8: 8
-        KP_N9: 9
+        KP_N0: "0"
+        KP_N1: "1"
+        KP_N2: "2"
+        KP_N3: "3"
+        KP_N4: "4"
+        KP_N5: "5"
+        KP_N6: "6"
+        KP_N7: "7"
+        KP_N8: "8"
+        KP_N9: "9"
         KP_PLUS: +
         KP_MINUS: "-"
         KP_MULTIPLY: "*"

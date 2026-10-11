@@ -7,8 +7,8 @@ cd "$DIR"
 CONFIG=./config.yaml
 KEYMAP=../config/keyboards/chocofi/corne.keymap
 
-# Using local version until the main project is fixed
-PATH=$PATH:$HOME/Library/Caches/pypoetry/virtualenvs/keymap-drawer-GuFs4spq-py3.10/bin
+# Latest keymap-drawer release from PyPI, no install needed
+keymap() { uvx --from keymap-drawer keymap "$@"; }
 
 refresh_drawing() {
     echo "Refreshing drawing"
