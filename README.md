@@ -133,6 +133,12 @@ The 46 accompanying AKs:
 ##############################################
 ```
 
+## Full Keymap
+
+_Every layer and combo, rendered by [keymap-drawer](https://github.com/caksoylar/keymap-drawer) on each push to `config/`._
+
+![Full keymap: every layer and combo](keymap-drawer/corne.svg)
+
 ## Key Concepts
 
 ### Adaptive Keys
