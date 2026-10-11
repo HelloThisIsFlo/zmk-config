@@ -19,7 +19,7 @@ and a Charybdis are coming within weeks.
 - `layout/` -- `layout.dtsi` (was `corne.keymap`), `CONFIG.h`, `features/`
 - `keyboards/chocofi/` -- `corne.keymap` (positions + layout + physical layout),
   `positions.dtsi` (was `__BASE__/aliases_key_positions.dtsi`), `corne*.conf`
-- `units/` -- `chocofi-og.conf` ("Chocofi OG"), `chocofi-pro.conf` ("The Chocofi Pro")
+- `units/` -- `chocofi-og.conf` ("The Chocofi OG"), `chocofi-pro.conf` ("The Chocofi Pro")
 - `targets.txt` -- unit → keyboard, board, shields
 
 **Mechanics**: Each keyboard folder is passed as `ZMK_CONFIG`; the unit file as
