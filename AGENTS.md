@@ -1,12 +1,12 @@
-# CLAUDE.md
+# AGENTS.md
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+This file provides guidance to agents working with code in this repository.
 
 ## What We're Working On
 
 The technical infrastructure of this keyboard config is mature and stable. The main work these days is **iterating on the bindings** — tweaking what key does what, adjusting combos, rethinking symbol placements, optimizing for ergonomics.
 
-At the start of a session, offer to load the `/layout` skill to help brainstorm and make binding changes together. Most sessions will be about this.
+At the start of a session, offer to load the `layout` skill to help brainstorm and make binding changes together. Most sessions will be about this.
 
 ## Design Documents
 
@@ -17,7 +17,7 @@ Four documents in `Design/` capture the keyboard philosophy, technical mechanics
 - `Design/MECHANICS_LOG.md` — Chronological log of technical/architectural decisions (append-only, newest first)
 - `Design/COOKBOOK.md` — Implementation recipes for adding new key behaviors ("I want X — what pattern do I use?")
 
-These are maintained collaboratively during layout sessions. See the `/layout` skill for when and how to update them.
+These are maintained collaboratively during layout sessions. See the `layout` skill for when and how to update them.
 
 ## Hardware Documents
 

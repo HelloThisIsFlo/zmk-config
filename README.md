@@ -161,7 +161,7 @@ Replaced home row mods after a year of tweaking -- love at first sight. One-shot
 
 ## Architecture & Build
 
-See [`CLAUDE.md`](CLAUDE.md) for full architecture documentation, file navigation, build and flash instructions, and the `/layout` skill for collaborative binding iteration.
+See [`AGENTS.md`](AGENTS.md) for full architecture documentation, file navigation, build and flash instructions, and the `layout` skill for collaborative binding iteration.
 
 ## Credits
 
