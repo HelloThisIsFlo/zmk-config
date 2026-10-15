@@ -24,7 +24,8 @@ Personal licence: no branches, no Configurations, max 10 editable documents.
 
 - ❌ **`doc.saveMilestone(name, desc)` doesn't stick** (since Oct 2026, this document)
   - It returns True and `isMilestone` reads True for ~1 min. Then the flag is gone and only a plain version remains (v12, v13, v14)
-  - Only M0–M4 (v2–v6) survive. Suspected cause: a 5-milestone cap on the Personal plan (unconfirmed)
+  - Only M0–M4 (v2–v6) survive. Suspected cause: a 5-milestone-per-file cap on the Personal plan (unconfirmed; no file in the project has more than 5)
+  - Freeing a slot (unmarking an old milestone) is Flo's call. Marking a version by hand in the Data Panel is the other test
   - Fallback tag: put the milestone name at the start of the version description
 - Verify **after ≥ 2 min**, from the cloud:
   ```python
