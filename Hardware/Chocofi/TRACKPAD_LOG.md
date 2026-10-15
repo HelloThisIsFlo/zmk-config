@@ -73,6 +73,6 @@
 
 **Decision**: SDA/SCL on **D8/D9** (`&i2c1`), RDY on **P1.02**, NRST on **P1.07**, VDD on VCC
 
-**Verified** on the beekeeb `power-switch` PCB (matches order #24381, the wireless kit): D8, D9, D10, D16 pads have no tracks or vias. The wired main-branch PCB agrees
+**Verified** on the beekeeb `power-switch` PCB (the wireless kit Flo owns): D8, D9, D10, D16 pads have no tracks or vias. The wired main-branch PCB agrees
 
 **Rejected**: D0 (routed to the TRRS data pad)
