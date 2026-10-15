@@ -159,5 +159,3 @@ After making changes or hearing insights, suggest updates naturally:
 - "Should I log this in the philosophy log or the mechanics log?"
 
 Don't ask every time -- use judgment. Significant decisions and clear insights warrant capturing. Minor tweaks don't.
-
-$ARGUMENTS
