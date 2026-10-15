@@ -4,6 +4,40 @@
 
 ---
 
+## 2026-10-15 -- v3 spike: index-aligned pad over the socketed nano
+
+**Context**: v2 doesn't fit the socketed nano and felt far. Spike v3 as its own timeline group, then stop for print feedback.
+
+**Decision**:
+- Pad at 0° over the nano, centre (149.6, 5.9), touch at rim + pins + pad + skin = **10.7** (+0.28 over the Lamé home row)
+- One flat-top **Trackpad Pod v3**, printed upside down without supports. The case grows a rim-high bulge with a cavity for the pad's components
+- The pad rests on a 2 mm case ledge, a rib on the stock inner wall, and the nano pins
+- **Fixing**: 2 × M2 from below through the bulge into pod inserts, on a 7 mm outboard frame. S2 sits under the pad edge, and S1 would need a lobe toward the thumb keys
+- `keycap_height` = 10.42 + `keycap_height_tall` = 13.7; its v1/v2 users frozen to literals
+- The TRRS opening is closed (wireless build)
+
+**Not chosen** (agent's call during the spike, open for review):
+- Screwing the pod at S1: needs a pod lobe toward the thumb cluster, close to the "ear" look Flo disliked in v2
+
+**Rejected**: a pin gauge as one stepped bridge, since it lifts at the first contact (Flo's catch) → 5 separate gauges
+
+**Found**:
+- The pad's index-side edge has no support: the right pin row sits 0.45 outside it. Needs adhesive, foam or a standoff at S2
+- The tall Lamé index keys stand 3.0 above the pod, 1.9 mm away
+- `saveMilestone` flags no longer stick (v12 "v2 final", v13, v14 "M9 - v3 spike" all lost theirs within ~1 min). Only M0–M4 are milestones. Cause unknown (5-milestone cap on Personal?)
+
+**Verified**:
+- Interference (pins, USB-C, keys, PCB) clean
+- Raised USB-C plug + switch corridor clear; PCB drop-in clear
+- 39 param variants clean
+- Pod has one up-facing face
+- TEST parts sit on the stock case; gauges behave go/no-go
+- v2-only still rebuilds to 55.809 / 3.549
+
+**Outcome**: (after the reach + pin test prints)
+
+---
+
 ## 2026-10-15 -- v2 review: printability + socketed nano → v3 experiment
 
 **Context**: Flo loved v2's look. Two problems surfaced in review.

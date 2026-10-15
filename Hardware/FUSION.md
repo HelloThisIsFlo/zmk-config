@@ -18,13 +18,17 @@ Personal licence: no branches, no Configurations, max 10 editable documents.
 - 🏷️ A version group must not depend on another version's features, so each one switches cleanly on its own
 - 🔤 Timeline item names in plain ASCII
 - 🧪 Test prints = their own components (names start with `TEST`), exported to Bambu by Flo
+  - Built inside the version's group, **before** its case features, so they can be checked against the stock case (see 🔍)
 
 ## 💾 Milestones
 
-- `doc.saveMilestone(name, desc)` can return True yet save only a **plain version**
-- Always verify:
+- ❌ **`doc.saveMilestone(name, desc)` doesn't stick** (since Oct 2026, this document)
+  - It returns True and `isMilestone` reads True for ~1 min. Then the flag is gone and only a plain version remains (v12, v13, v14)
+  - Only M0–M4 (v2–v6) survive. Suspected cause: a 5-milestone cap on the Personal plan (unconfirmed)
+  - Fallback tag: put the milestone name at the start of the version description
+- Verify **after ≥ 2 min**, from the cloud:
   ```python
-  df = app.data.findFileById(doc.dataFile.id)
+  df = app.data.findFileById(doc.dataFile.id); df.refresh(None)
   [(v.versionNumber, v.isMilestone, v.milestone.name if v.milestone else None) for v in df.versions]
   ```
 
@@ -42,6 +46,12 @@ Personal licence: no branches, no Configurations, max 10 editable documents.
 - Expressions come back normalized with spaces → strip spaces before matching
 - `addByThreePoints` may swap arc start/end → match endpoints by distance. `addByCenterStartSweep` is reliable
 - Keep every sketch fully constrained. A master sketch that the others project from keeps parts from drifting apart
+  - Put **every offset ring in the master**. An offset constraint on projected curves in a derived sketch breaks for good once the master moves
+  - An inward offset deeper than the corner radius collapses the arcs (v3: `v3_ledge − pad_clearance < pad_corner`)
+- Fixed geometry counts as constrained only with its endpoints fixed too (`line.startSketchPoint.isFixed = True`, same for the end)
+- Sketch text: fix its box (`text.definition.rectangleLines`, endpoints included)
+- Root sketches can drive extrudes in any component, the mirrored case included: `comp.features.extrudeFeatures` + `participantBodies`
+- 🎯 Pick profiles by **bounding box**, not centroid. An L-shaped leftover profile can have its centroid inside the region you want to cut (it ate the pin gauges' feet once)
 
 ## 🧱 Features
 
@@ -55,13 +65,16 @@ Personal licence: no branches, no Configurations, max 10 editable documents.
 - 💥 **Interference**: `design.analyzeInterference` returned None → intersect `TemporaryBRepManager` copies instead
   - Coincident faces can fail → nudge one copy 0.001 cm and retry
 - 📦 **Envelopes** (USB plug, finger corridor, pin tips): `tbm.createBox(OrientedBoundingBox3D)` and intersect with the bodies
-- 🔁 **Param sweep**: set `userParameters.itemByName(n).expression`, check timeline health + `sketch.isFullyConstrained` + body count, restore
+- 🔁 **Param sweep**: set `userParameters.itemByName(n).expression`, check timeline health + `sketch.isFullyConstrained` + body count, restore. Then check the restore matches the baseline volumes (a feature can stay broken after the restore)
+- 🧪 **Against the stock case**: `timeline.markerPosition` = index of the version's first case feature, check, `timeline.moveToEnd()`
+- 🖨️ **Upside-down print check**: list the planar faces with normal +z. Anything other than the top = an overhang
 
 ## 📸 Renders
 
 - Orthographic only (perspective via the API misbehaves). `viewExtents` ≈ visible height in cm, set **after** eye/target
 - `vp.visualStyle = ShadedVisualStyle`, then `vp.saveAsImageFile(path, 2000, 1400)`
-- Sections: `design.analyses.sectionAnalyses.createInput(root.yZConstructionPlane, 0)` + `inp.transform` (no timeline item). Delete them afterwards
+- Sections: `design.analyses.sectionAnalyses.createInput(root.yZConstructionPlane, 0)` + `inp.transform` (no timeline item), `isHatchShown = False`, view with a slight tilt (0.25 up) + `adsk.doEvents()`. Delete them afterwards
+- New bodies get "Steel - Satin" → set matte appearances (`Plastic - Matte (Black)` = case/pod, `(White)` = keycaps). Low grazing views still show reflections on matte black; it isn't transparency
 
 ## ⚠️ MCP quirks
 
@@ -69,3 +82,6 @@ Personal licence: no branches, no Configurations, max 10 editable documents.
 - Non-ASCII in script strings gets garbled → ASCII names only
 - Occurrence timeline items show as " Name:1" and can't be renamed
 - Groups can't nest. Regroup: `group.deleteMe(False)` then `tl.timelineGroups.add(start, end)`. `isGroup` items report health state 5
+- A **collapsed** group hides its items from `timeline.item(i)` → set `group.isCollapsed = False` before indexing, collapse again after
+- A script that raises **rolls back everything it did**, so a failure leaves no half-built state
+- `timelineObject.rollTo()` fails on a broken feature ("Associated feature is invalid") → set `timeline.markerPosition`. A feature created at the marker inside a group joins that group

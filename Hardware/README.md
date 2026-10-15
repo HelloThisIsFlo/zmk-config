@@ -16,6 +16,7 @@ The physical side of the keyboards: cases, mods, CAD. Firmware and bindings live
 - 🖥️ **Fusion**: Default Project → `Chocofi` → `Chocofi Massive Case`, the single source of truth for the case and every mod
 - 🖨️ **Print files**: Synology Drive → `99 Working Files/3D Printing/Keyboard/Chocofi/Cases/02 Massive Chocofi - PR814712/`
   - `trackpad-mod/` = v1, `trackpad-mod-v2/` = v2. Each has STLs, renders and a README (print + assembly)
+  - `trackpad-mod-v3/` = v3 spike renders only. The TEST parts are exported from Fusion by Flo
 - 📓 **Project tracker**: Notion → AI Conducting → "🖲️ Chocofi Trackpad Wing (TPS43)" (status, next action, shopping)
 - 🔌 **PCB source**: [beekeeb/chocofi](https://github.com/beekeeb/chocofi), branch `power-switch` (the wireless kit PCB)
 
