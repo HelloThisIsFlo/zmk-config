@@ -19,6 +19,10 @@ Four documents in `Design/` capture the keyboard philosophy, technical mechanics
 
 These are maintained collaboratively during layout sessions. See the `/layout` skill for when and how to update them.
 
+## Hardware Documents
+
+`Hardware/` holds the physical build: cases, the Chocofi trackpad mod, Fusion conventions. Read `Hardware/README.md` before any case, CAD or Fusion work, and record hardware learnings there rather than in agent memory, so they're committed.
+
 ## Project Overview
 
 ZMK firmware configuration for split keyboards, currently two Chocofi units (36-key Corne, nice!nano v2 or Pro Micro nRF52840 clones). One shared layout, built per physical keyboard (see *Config Hierarchy*). The project centers on three custom keyboard layouts (Naquadah, Promethium, Rhodium) built around an **Adaptive Keys (AKs) system** that eliminates Same-Finger Bigrams.
