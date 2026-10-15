@@ -9,7 +9,7 @@ Personal licence: no branches, no Configurations, max 10 editable documents.
 | Git | Fusion |
 |---|---|
 | commit | save (a new version) |
-| tag | **milestone**, checked after saving (see below) |
+| tag | **version description** starting with the tag name + a row in the doc's version table (see 🏷️ Tags) |
 | branch you can switch | a **timeline group** per version → suppress one, unsuppress another |
 | fork | Save As a copy (no merge back) |
 | revert / reset | open an old version → **Promote** |
@@ -20,17 +20,20 @@ Personal licence: no branches, no Configurations, max 10 editable documents.
 - 🧪 Test prints = their own components (names start with `TEST`), exported to Bambu by Flo
   - Built inside the version's group, **before** its case features, so they can be checked against the stock case (see 🔍)
 
-## 💾 Milestones
+## 🏷️ Tags (no more milestones)
 
-- ❌ **`doc.saveMilestone(name, desc)` doesn't stick** (since Oct 2026, this document)
-  - It returns True and `isMilestone` reads True for ~1 min. Then the flag is gone and only a plain version remains (v12, v13, v14)
-  - Only M0–M4 (v2–v6) survive. Suspected cause: a 5-milestone-per-file cap on the Personal plan (unconfirmed; no file in the project has more than 5)
-  - Freeing a slot (unmarking an old milestone) is Flo's call. Marking a version by hand in the Data Panel is the other test
-  - Fallback tag: put the milestone name at the start of the version description
-- Verify **after ≥ 2 min**, from the cloud:
+- ✅ **Convention**
+  - Tag a checkpoint by saving a version whose description **starts with the tag name**: `M9 - v3 spike: …`
+  - Add a row to the project doc's version table (tag → Fusion version number → what it holds). The docs are the tag index, like git tags + a changelog
+- ❌ **Milestones don't work for new tags in this file**
+  - `doc.saveMilestone()` returns True and `isMilestone` reads True for ~1 min. Then the flag is gone and a plain version remains (v12, v13, v14)
+  - Only M0–M4 (v2–v6) are milestones. Old milestones can't be deleted or unmarked
+  - Cause unknown. Flo saw a 5-milestone limit; Autodesk documents none. Autodesk staff acknowledged a Personal-licence milestone bug (PIM-18623, Aug 2025)
+  - Not collaborative editing: `doc.saveDataVersion()` (its "version") fails with "Save with Version is not applicable for this file"
+- 🔍 Read versions from the cloud (refresh first):
   ```python
   df = app.data.findFileById(doc.dataFile.id); df.refresh(None)
-  [(v.versionNumber, v.isMilestone, v.milestone.name if v.milestone else None) for v in df.versions]
+  [(v.versionNumber, v.description[:40]) for v in df.versions]
   ```
 
 ## 🪞 Mirrored right half

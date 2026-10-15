@@ -76,13 +76,13 @@ An Azoteq **TPS43-201A** trackpad (43.3 × 40.3 mm, IQS572, I²C) built into the
 
 Each version is one timeline group. Suppress one, unsuppress another to switch (see [FUSION.md](../FUSION.md)).
 
-| Group | State | Saved as | What |
+| Group | State | Tag (Fusion version) | What |
 |---|---|---|---|
-| `Trackpad mod` (v1) | suppressed | milestone **M4 - v1 final** (v6) | Bolt-on wing beside the inner wall. Works, judged ugly |
-| `Trackpad mod v2` | suppressed | v12, plain version ("v2 final" in the description) | Toucan2 style: pad at 30°, case bulge + one pod replacing the controller cover. Doesn't fit the sockets |
-| `Trackpad mod v3` | **active** | v14, plain version ("M9 - v3 spike" in the description) | Index-aligned pad over the socketed nano, one flat-top pod. Spike, waiting on test prints |
+| `Trackpad mod` (v1) | suppressed | **M4 - v1 final** (v6, also a real milestone) | Bolt-on wing beside the inner wall. Works, judged ugly |
+| `Trackpad mod v2` | suppressed | **v2 final** (v12) | Toucan2 style: pad at 30°, case bulge + one pod replacing the controller cover. Doesn't fit the sockets |
+| `Trackpad mod v3` | **active** | **M9 - v3 spike** (v14) | Index-aligned pad over the socketed nano, one flat-top pod. Spike, waiting on test prints |
 
-- 🏷️ Only M0–M4 (v2–v6) are real milestones. Every later `saveMilestone` reads True for ~1 min, then the flag disappears (see [FUSION.md](../FUSION.md) → Milestones)
+- 🏷️ Tags = the version description's first words + this table (see [FUSION.md](../FUSION.md) → Tags). Real milestones stop at M0–M4 (v2–v6)
 - 🧊 `keycap_height` users in v1/v2 are frozen (`wing_height` = 8.5 mm, `touch_height` = 8.5 mm − `bezel_step`, REF Keys v2 d242 = 5.5 mm, d246 = 5 mm), so each version rebuilds as saved
 - 🔁 Switch check: all off → case 45.482 cm³ · v2 only → case 55.809 + pod 3.549 · v3 only → case 59.852 + pod 5.046
 

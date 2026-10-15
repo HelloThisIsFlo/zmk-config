@@ -24,7 +24,7 @@
 **Found**:
 - The pad's index-side edge has no support: the right pin row sits 0.45 outside it. Needs adhesive, foam or a standoff at S2
 - The tall Lamé index keys stand 3.0 above the pod, 1.9 mm away
-- `saveMilestone` flags no longer stick (v12 "v2 final", v13, v14 "M9 - v3 spike" all lost theirs within ~1 min). Only M0–M4 are milestones. Cause unknown (5-milestone cap on Personal?)
+- `saveMilestone` flags no longer stick (v12 "v2 final", v13, v14 "M9 - v3 spike" all lost theirs within ~1 min). Only M0–M4 are milestones. Cause unknown. Decision: tags = version descriptions + the version table in TRACKPAD.md
 
 **Verified**:
 - Interference (pins, USB-C, keys, PCB) clean
@@ -59,7 +59,7 @@
 
 ---
 
-## 2026-10-15 -- v2: Toucan2-style pod (milestone "v2 final")
+## 2026-10-15 -- v2: Toucan2-style pod (tag "v2 final" = v12)
 
 **Context**: v1 worked but looked like a box bolted on. Target: beekeeb's Toucan2. Pad between the index column and the inner thumb key, angled like the thumb key, with the case bulging to hold it.
 
