@@ -21,7 +21,7 @@
 | `D7.html` | Two presses, one gate: D2's playground reworked (opens where the hack wins, labels in place, rule stated, 0–40 strip below) | from Flo's "D2 is the keeper playground" + D2's critic; critic pass + fix round done (labels now sit right of the gate line when they don't fit left of it) |
 | `D8.html` | What comes out: a real word (kept = K E P C, column = C O L U M T) typed at a chosen gap, hack on beside off, outcome not mechanism | from every critic's "why is mt wrong?"; critic pass + fix round done (both words always on screen, replay timed around the critical gap) |
 | `D9.html` | Type it yourself: the browser times your own two-key roll and shows what the firmware would type at that gap, kept and column, hack on beside off | from "the ms stays abstract"; critic pass + fix round done (verdict sentence under your gap, strip first, mechanism behind a toggle) |
-| `D10.html` | Your roll, and why: the jury's merge, D9 spine + D7 lanes driven by one gap, 0–9 ms drawn as combo territory | built last (22:10), no critic pass: budget |
+| `D10.html` | Your roll, and why: the jury's merge, D9 spine + D7 lanes driven by one gap, 0–9 ms drawn as combo territory | built last; critic pass + fix round done (Rule line states the holds, pair switch pinnable, slider keeps your gap) |
 | `test_outcome*.js` | `node test_outcome.js` (D3), `_d4.js`, `_d5.js` check each page's pure `outcome()` against 11 FACTS cases and print the bands | all pass |
 
 - Open any page locally: `python3 -m http.server` in this folder, then `http://127.0.0.1:8000/index.html`
@@ -132,9 +132,9 @@
 - 👀 D8 replay "stuck at ke / colu" seen by the jury: checked, not reproducible (words complete by 2.5 s at 1100 and 400 px, background tab too); the replay runs on timers, not animation frames. Only a window that draws no frames hides the letters (the `drop` keyframe fades from opacity 0). Hardening if ever needed: drop `opacity: 0` from that keyframe
 
 ## 🔚 Where this stopped (2026-11-04 ~21:50)
-- Nine candidates in the artifact (version 12) and in this folder; usage guard reached ~96 % weekly before the 23:00 reset
+- Ten candidates in the artifact and in this folder; this week's limit used to ~99 % before the 23:00 reset, as Flo asked
 - ⚠️ From ~21:35 the SSH push was refused (the SSH agent socket had no identities); the commits went up over HTTPS with the GitHub CLI's login instead (`git -c credential.helper='!gh auth git-credential' push https://github.com/HelloThisIsFlo/zmk-config.git main`). The SSH agent still needs a look
-- Next: Flo reads the jury table, opens D9 then D7, decides merge vs sequence; then the website rebuild from `../../Timing/FACTS.md`
+- Next: Flo opens D10 (the jury's merge) first, then D9 and D7, decides what the one page is; then the website rebuild from `../../Timing/FACTS.md`
 
 ## 🔍 Cold critic on D10 (Fable, 2026-11-04, time-boxed)
 

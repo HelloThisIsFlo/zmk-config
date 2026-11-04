@@ -130,6 +130,7 @@ details.mech p{margin:8px 0 0;font-size:14px}
 /* ===== D10: combo territory (0–9 ms, hack ON) ===== */
 .zone.combo{fill:none;stroke:var(--tie)}
 .zoneT.combo{fill:var(--tie)}
+.cellMark{font-size:9px;pointer-events:none}
 .combo-cell{fill:url(#comboHatch)}
 .ctReason{margin:6px 0 0;font-size:13px;color:var(--muted)}
 .field .l.given{color:var(--tie);text-decoration:underline dotted 2px;text-underline-offset:6px}
@@ -142,6 +143,7 @@ details.mech[open] summary{margin-bottom:6px}
 .pbar{display:flex;align-items:center;gap:8px;margin:10px 0 6px;flex-wrap:wrap}
 .pchip{font:inherit;font-size:14px;font-weight:600;cursor:pointer;border:1px solid var(--grid);background:var(--card);color:var(--fg);border-radius:999px;padding:5px 14px;min-height:32px}
 .pchip[aria-pressed="true"]{background:var(--chipOn);color:var(--chipOnTx);border-color:var(--chipOn)}
+.pbar .pcap{font-size:12px;color:var(--muted)}
 .pbar .dl{margin-left:auto;font-size:14px;color:var(--muted)}
 .pbar .dl b{color:var(--handle);font-size:18px}
 .at40{margin:0 0 6px;font-size:13px;color:var(--wait)}
@@ -241,10 +243,11 @@ details.mech[open] summary{margin-bottom:6px}
 
   <details class="mech card" id="mech">
     <summary>why? two presses, one gate</summary>
-    <p class="rule"><b>Rule:</b> the 2nd letter adapts only if it is typed after the gate opens. Gate = 1st letter + 10 ms.</p>
+    <p class="rule"><b>Rule:</b> a pressed key is held by the combo engine before its letter is typed (16 ms for most keys, 11 ms under the hack, 0 for keys like C); a 2nd press ends the 1st hold early. The gate opens 10 ms after the 1st letter is <em>typed</em>, and the 2nd letter adapts only if it is typed after that.</p>
     <div class="pbar" role="group" aria-label="Key pair">
       <button class="pchip" type="button" data-pair="PC" aria-pressed="true">P→C</button>
       <button class="pchip" type="button" data-pair="MT" aria-pressed="false">M→T</button>
+      <span class="pcap" id="pcap">showing the pair your gap changes; click to pin</span>
       <span class="dl num">2nd key at Δ <b id="dval">15</b> ms</span>
     </div>
     <p class="at40" id="at40" hidden>drawn at 40 ms</p>
@@ -447,7 +450,7 @@ pad.addEventListener('pointerdown', function(){ pad.focus(); });
 var ctl = document.getElementById('ctl'), manual = document.getElementById('manual');
 if (coarse || ('ontouchstart' in window && !(window.matchMedia && window.matchMedia('(pointer: fine)').matches))){ ctl.hidden = false; manual.hidden = true; }
 manual.addEventListener('click', function(){
-  ctl.hidden = false; manual.hidden = true; histSel = -1; state.gap = 15; state.measured = false; state.byHand = true; state.pop = true; render();
+  ctl.hidden = false; manual.hidden = true; histSel = -1; state.gap = Math.max(0, Math.min(40, state.gap)); state.measured = false; state.byHand = true; state.pop = true; render();
 });
 document.getElementById('gap').addEventListener('input', function(e){
   histSel = -1; state.gap = +e.target.value; state.measured = false; state.byHand = true; render();
@@ -468,7 +471,7 @@ function renderStrip(){
     {label:'column off', pair:'MT', on:false, y:106}
   ];
   var s = '<defs><pattern id="comboHatch" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">'
-        + '<rect width="5" height="5" style="fill:var(--tieBg)"/><line x1="0" y1="0" x2="0" y2="5" style="stroke:var(--tie)" stroke-width="1.6"/></pattern></defs>', labs = '';
+        + '<rect width="5" height="5" style="fill:var(--tieBg)"/><line x1="0" y1="0" x2="0" y2="5" style="stroke:var(--tie)" stroke-width="1.6"/></pattern></defs>', labs = '', marks = '';
   rows.forEach(function(row){
     var z = row.zone;
     if (row.combo){
@@ -484,7 +487,10 @@ function renderStrip(){
     s += txt('t-lab', 0, row.y+12, row.label);
     for (var d=0; d<=DMAX; d++){
       var v = outcome(row.pair, row.on, d).verdict, cc = givenUp(row.on, d) ? 'combo-cell' : 'c-'+v;
-      s += '<rect class="'+cc+'" x="'+(x(d)-SC/2+0.4)+'" y="'+row.y+'" width="'+(SC-0.8)+'" height="'+RH+'" rx="1"/>';
+      var tip = cc === 'c-wait' ? '⏸ '+d+' ms: 2nd key waits for your next key' : cc === 'c-tie' ? '⚖️ '+d+' ms: exact tie' : '';
+      s += '<rect class="'+cc+'" x="'+(x(d)-SC/2+0.4)+'" y="'+row.y+'" width="'+(SC-0.8)+'" height="'+RH+'" rx="1"'
+         + (tip ? '><title>'+tip+'</title></rect>' : '/>');
+      if (tip && W >= 480) marks += txt('cellMark', x(d), row.y-1, tip.slice(0, tip.indexOf(' ')), 'middle');
     }
   });
   var yt = rows[0].y, yb = rows[3].y + RH;
@@ -495,7 +501,7 @@ function renderStrip(){
   s += txt('you', Math.max(X0 - 10, Math.min(hx, W - 4 - you.length*3.6)), yb+28, you, 'middle');
   [0,10,20,30,40].forEach(function(t){ s += txt('t-ax', x(t), yb+46, t, 'middle'); });
   s += txt('t-ax', 0, yb+46, 'gap, ms');
-  s += labs; /* zone labels above the cursor */
+  s += labs + marks; /* zone labels and edge glyphs above the cursor */
   svg.setAttribute('viewBox', '0 0 '+W+' '+(yb+52));
   svg.innerHTML = s;
 }
@@ -531,7 +537,7 @@ function outcome(pair, hackOn, delta) {
 // END lane outcome
 
   const T_MAX = 60, D_MAX = 40;
-  const lane = { pair: 'PC', delta: 15, lastGap: null };
+  const lane = { pair: 'PC', delta: 15, lastGap: null, pinned: false };
   const svg = document.getElementById('lanes');
   const fig = document.getElementById('fig');
   const dyn = document.getElementById('dyn');
@@ -732,7 +738,7 @@ function outcome(pair, hackOn, delta) {
   }
   // default to the pair the reader's gap actually changes: ≤ 10 → M→T, 11–25 → P→C, else keep
   function update(gap) {
-    if (gap !== lane.lastGap) {
+    if (gap !== lane.lastGap && !lane.pinned) {
       if (gap <= 10) lane.pair = 'MT';
       else if (gap <= 25) lane.pair = 'PC';
       lane.lastGap = gap;
@@ -742,7 +748,11 @@ function outcome(pair, hackOn, delta) {
     setChips();
     draw();
   }
-  document.querySelectorAll('.pchip').forEach(btn => btn.addEventListener('click', () => { lane.pair = btn.dataset.pair; setChips(); draw(); }));
+  document.querySelectorAll('.pchip').forEach(btn => btn.addEventListener('click', () => {
+    lane.pair = btn.dataset.pair; lane.pinned = true;
+    document.getElementById('pcap').textContent = 'pinned';
+    setChips(); draw();
+  }));
   // open by default on desktop, closed on phones
   if (!(window.matchMedia && window.matchMedia('(max-width: 599px)').matches)) mech.open = true;
   mech.addEventListener('toggle', () => { if (mech.open) { layout(); draw(); } });
