@@ -77,14 +77,14 @@ nav button:disabled{opacity:.35;cursor:default}
 @media (prefers-reduced-motion: reduce){ .fade,.hint{animation:none} *{transition:none!important} }
 
 /* svg classes */
-.t-lab{fill:var(--muted);font-size:13px}
+.t-lab{fill:var(--fg);font-size:13px}
 .t-key{fill:var(--fg);font-size:14px;font-weight:700}
 .t-ax{fill:var(--muted);font-size:13px}
-.t-sm{fill:var(--muted);font-size:13px}
+.t-sm{fill:var(--fg);font-size:13px}
 .grid{stroke:var(--grid);stroke-width:1}
 .axis{stroke:var(--line);stroke-width:1}
 .hold{fill:url(#hatch);stroke:var(--hold);stroke-width:1}
-.holdT{fill:var(--hold);font-size:13px;font-weight:600}
+.holdT{fill:var(--fg);font-size:13px;font-weight:600}
 .ghost{fill:none;stroke:var(--hold);stroke-width:1;stroke-dasharray:3 3}
 .cut{stroke:var(--fg);stroke-width:2}
 .holdT.new{fill:var(--fg)}
@@ -146,7 +146,7 @@ nav button:disabled{opacity:.35;cursor:default}
   <div class="card summary">
     <h2>All of it on one axis</h2>
     <svg id="sum" viewBox="0 0 400 130" role="img" aria-label="Outcome for every gap from 0 to 130 ms, P→C and M→T, hack off and on"></svg>
-    <p class="sub">✅ adapted · ❌ base letter · ⏸ waits for your next key · ⚖️ tie. </p>
+    <p class="sub">✅ adapted · ❌ base letter · ⏸ the 2nd key waits for your next key, then usually adapts late · ⚖️ exact tie, either letter</p>
     <p class="sub">P→C stands for 11 pairs, M→T for 34: 45 pairs with no shared combo. The 6 pairs that share a real combo are untouched.</p>
   </div>
 </div>
@@ -186,12 +186,12 @@ function outcome(pair, hackOn, delta){
 /* ===== VIEW ===== */
 var X0 = 64, SC = 5.4, TMAX = 60, DMAX = 40;
 function x(t){ return X0 + t*SC; }
-var state = {stage:1, dPC:18, dMT:7, hack3:true, hinted:false};
+var state = {stage:1, dPC:18, dMT:7, hack2:true, hack3:true, hinted:false};
 var EMO = {ok:'✅', bad:'❌', wait:'⏸', tie:'⚖️'};
 var CW = 7.2; /* approx px per char at 13px semibold */
 
 function curPair(){ return state.stage === 3 ? 'MT' : 'PC'; }
-function curHack(){ return state.stage === 1 ? false : state.stage === 2 ? true : state.hack3; }
+function curHack(){ return state.stage === 1 ? false : state.stage === 2 ? state.hack2 : state.hack3; }
 function curDelta(){ return state.stage === 3 ? state.dMT : state.dPC; }
 
 function defs(){
@@ -246,7 +246,7 @@ function followerLabel(o, p){
   if (o.verdict === 'wait') return {cls:'waitT', lines:['⏸ held until your next key']};
   if (o.hackOn && o.delta <= 9) return {cls:'holdT', lines:['held until 11, then read with '+p.a]};
   if (p.kB === 0 && !o.hackOn) return {cls:'holdT', lines:[p.b.toLowerCase()+' typed at once: '+p.b+' is in no combo']};
-  if (p.kB === 0 && o.hackOn) return {cls:'holdT new', lines:['now held 11 ms by the 36-key combo', 'that never fires']};
+  if (p.kB === 0 && o.hackOn) return {cls:'holdT new', lines:['now held 11 ms by the hack', '(a 36-key combo that never fires)']};
   return {cls:'holdT', lines:['held '+holdOf(p.kB, o.hackOn)+' ms by '+p.b+'’s own combos']};
 }
 function verdictLabel(o, p){
@@ -330,6 +330,8 @@ function runs(pair, hackOn, max){
   }).join(' · ');
 }
 
+var NARROW = window.matchMedia ? window.matchMedia('(max-width: 479px)') : null;
+function narrow(){ return !!(NARROW && NARROW.matches); }
 function renderStrip(pair, rows, delta){
   var s = '', h = rows.length*18 + 20;
   rows.forEach(function(row, i){
@@ -342,7 +344,7 @@ function renderStrip(pair, rows, delta){
     if (row.active) s += '<rect class="cur" x="'+(x(delta)-SC/2-1)+'" y="'+(y-2)+'" width="'+(SC+2)+'" height="16" rx="2"/>';
   });
   var yb = 4 + rows.length*18;
-  [0,10,20,30,40].forEach(function(t){ s += txt('t-ax', x(t), yb+11, t, 'middle'); });
+  (narrow() ? [0,20,40] : [0,10,20,30,40]).forEach(function(t){ s += txt('t-ax', x(t), yb+11, t, 'middle'); });
   s += txt('t-ax', x(DMAX)+12, yb+11, 'gap, ms');
   s += '<rect class="stripHit" data-lane="1" x="'+(x(0)-SC)+'" y="0" width="'+(x(DMAX)-x(0)+2*SC)+'" height="'+(yb)+'"/>';
   return {svg:s, h:h};
@@ -356,24 +358,29 @@ function renderSummary(){
     {pair:'PC', on:false, label:'P→C off'}, {pair:'PC', on:true, label:'P→C on'},
     {pair:'MT', on:false, label:'M→T off'}, {pair:'MT', on:true, label:'M→T on'}
   ];
-  var Y0 = 40, RH = 18, s = '';
-  var yEnd = Y0 + rows.length*RH - 4;
-  /* zones */
+  var Y0 = 40, RH = 18, PG = 8, s = '';
+  function ry(i){ return Y0 + i*RH + (i >= 2 ? PG : 0); }
+  var yEnd = ry(rows.length-1) + 14;
+  /* zones: the fix sits on P→C on (row 1), the cost on M→T on (row 3) */
   var cx0 = sx(0)-SS/2, cx1 = sx(9)+SS/2, fx0 = sx(11)-SS/2, fx1 = sx(26)+SS/2;
-  s += '<rect class="zone cost" x="'+cx0+'" y="'+(Y0-4)+'" width="'+(cx1-cx0)+'" height="'+(yEnd-Y0+8)+'" rx="2"/>';
-  s += '<rect class="zone fix" x="'+fx0+'" y="'+(Y0-4)+'" width="'+(fx1-fx0)+'" height="'+(yEnd-Y0+8)+'" rx="2"/>';
-  s += '<line class="zl cost" x1="'+cx0+'" y1="4" x2="'+cx0+'" y2="'+(Y0-4)+'"/>';
-  s += txt('zoneT cost', cx0+4, 14, 'what it costs (0–9)');
-  s += '<line class="zl fix" x1="'+fx1+'" y1="20" x2="'+fx1+'" y2="'+(Y0-4)+'"/>';
-  s += txt('zoneT fix', fx1+4, 31, 'what the hack fixes (11–26)');
+  var fy = ry(1), cy = ry(3);
+  s += '<rect class="zone fix" x="'+fx0+'" y="'+(fy-3)+'" width="'+(fx1-fx0)+'" height="18" rx="2"/>';
+  s += '<rect class="zone cost" x="'+cx0+'" y="'+(cy-3)+'" width="'+(cx1-cx0)+'" height="18" rx="2"/>';
   rows.forEach(function(r, i){
-    var y = Y0 + i*RH;
+    var y = ry(i);
     s += txt('t-lab', 2, y+10, r.label);
     for (var d=0; d<=SMAX; d++){
       var v = outcome(r.pair, r.on, d).verdict;
       s += '<rect class="c-'+v+'" x="'+(sx(d)-SS/2+0.2)+'" y="'+y+'" width="'+(SS-0.4)+'" height="12"/>';
     }
   });
+  /* labels: the fix first (top), the cost second (under its row) */
+  s += '<line class="zl fix" x1="'+fx1+'" y1="18" x2="'+fx1+'" y2="'+(fy-3)+'"/>';
+  s += txt('zoneT fix', fx1+4, 22, 'what the hack fixes (11–26)');
+  var cl = yEnd + 16;
+  s += '<line class="zl cost" x1="'+(cx0+2)+'" y1="'+(cy+15)+'" x2="'+(cx0+2)+'" y2="'+(cl-4)+'"/>';
+  s += txt('zoneT cost', cx0+6, cl, 'what it costs (0–9)');
+  yEnd = cl + 7;
   var ya = yEnd + 19;
   for (var t=0; t<=SMAX; t+=10){
     if (t % 20 && t !== 10) continue;
@@ -394,11 +401,11 @@ function resultHTML(o){
 
 var STAGES = {
   1: {title:'Without the hack, P→C is unreliable',
-      cap:'A fast P→C types pc. A slower one types pt. Same roll, two results.'},
+      cap:'Wanted: pt, the adapted letter. A fast P→C types pc instead, a slower one pt. Same roll, two results.'},
   2: {title:'The hack: every key waits 11 ms',
       cap:'The hack solves gaps 11–26 ms. That’s where real typing happens.'},
   3: {title:'The price: rolls under 10 ms',
-      cap:'Rolls this fast are the speed real two-key combos fire at (M+W within 15 ms is Z). Losing them is the intended trade.'}
+      cap:'M→T is the other kind of pair: T has combos of its own, so it was never unreliable. Rolls this fast are the speed real two-key combos fire at (M+W within 15 ms is Z). Losing them is the intended trade.'}
 };
 
 var fig = document.getElementById('fig'), strip = document.getElementById('strip');
@@ -413,10 +420,11 @@ function render(){
   document.getElementById('title').textContent = S.title;
   document.getElementById('cap').textContent = S.cap;
   var chips = document.getElementById('chips');
-  if (st === 3){
+  if (st >= 2){
+    var cur = st === 2 ? state.hack2 : state.hack3, plab = PAIRS[curPair()].label;
     chips.style.display = 'flex';
     chips.innerHTML = [true,false].map(function(on){
-      return '<button type="button" data-hack="'+on+'" aria-pressed="'+(state.hack3===on)+'"><b>M→T</b> hack '+(on?'ON':'OFF')+'</button>';
+      return '<button type="button" data-hack="'+on+'" aria-pressed="'+(cur===on)+'"><b>'+plab+'</b> hack '+(on?'ON':'OFF')+'</button>';
     }).join('');
   } else { chips.style.display = 'none'; chips.innerHTML = ''; }
 
@@ -484,7 +492,9 @@ fig.addEventListener('keydown', function(e){
 });
 document.getElementById('chips').addEventListener('click', function(e){
   var bt = e.target.closest('button[data-hack]'); if (!bt) return;
-  state.hack3 = bt.getAttribute('data-hack') === 'true'; render();
+  var on = bt.getAttribute('data-hack') === 'true';
+  if (state.stage === 2) state.hack2 = on; else state.hack3 = on;
+  render();
 });
 function go(n){
   state.stage = Math.max(1, Math.min(3, n));
@@ -499,6 +509,7 @@ document.getElementById('back').addEventListener('click', function(){ go(state.s
 document.getElementById('next').addEventListener('click', function(){ go(state.stage+1); });
 renderSummary();
 render();
+if (NARROW){ var onNarrow = function(){ render(); }; if (NARROW.addEventListener) NARROW.addEventListener('change', onNarrow); else if (NARROW.addListener) NARROW.addListener(onNarrow); }
 </script>
 </body>
 </html>

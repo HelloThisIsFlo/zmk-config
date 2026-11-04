@@ -43,6 +43,27 @@
 - **D4** (from Flo's feedback): problem first. P→C without the hack, then with it, then the price on M→T; every drawing element labelled in place, almost no prose
 - **D5** (from the critic): D3 collapsed to the two groups that differ, even ticks with a cut tail, headings outside the plot, a race-lane "why" below the scrubber that shows the barrier cut short
 
+## 🔍 Cold critic on D4 (Fable, 2026-11-04)
+
+- Cold read after 60 s: "Pressing C soon after P gives pc or pt depending on a few ms, and the hack is going to fix that" (right)
+- Confusions, ranked: (1) reader assumed fast = adapted, so the red `pc` strip looked like the adapted case failing → say which output is wanted before "unreliable"; (2) the 4-row summary boxes span all rows, including the off rows they don't apply to; (3) stage 2 shows the hack with no on/off comparison in the picture, the layer line doesn't move, so "the hack moved nothing"; (4) stage 3 switches to M→T with no sentence saying it's the other kind of pair; (5) the key distinction (C in no combo vs T held by its own combos) lives only in 11 px grey annotations; (6) ⏸ and ⚖️ legend too terse; (7) phone annotations grey on grey; (8) "same roll, two results", "36-key combo that never fires" unglossed
+- Keep: the stage tabs with the live verdict pill ("that pill is the page"), the band strip with the mirrored handle, stage 3's on/off chips
+- Still reads as "the hack is a problem"? Slightly: first screen is a red ❌ pill and the red box sits above the green one across every row; "the words say trade-off, the colour says loss"
+- Fix round applied the three top fixes + legend, gloss, phone contrast (see git log)
+
+## 🔍 Cold critic on D5 (Fable, 2026-11-04)
+
+- Cold read after 60 s: "The hack makes 11 P→C-type pairs adapt from 11 ms instead of 26, and in exchange 34 M→T-type pairs stop adapting under 10 ms" (right)
+- Confusions, ranked: (1) no legend for ✗mt / ✓mn, "why is typing mt wrong?"; claim sentence is jargon ("rolls", "reliable what"); (2) cost/fix boxes span rows where nothing differs; (3) the rule is never stated ("2nd letter adapts only if it leaves after the gate"), "+10" unlabelled, gate has two names; (4) "held 16 ms by its combos" reads as a finger holding the key, nothing says the circled p is the moment the letter is typed; (5) label pile-up at 7 and 10 ms, unreadable at 400 px; (6) phone axis "gap, ms 0" merges; (7) ⏸ / ⚖️ slivers unlabelled on the map
+- Keep: one scrubber driving map and lanes, per-lane verdict pill + coloured one-sentence verdict, the 10 ms ⏸ case ("clearest moment on the page"), dark + 400 px hold
+- Did the "why" panel click? Half: ✂ cut-short and the +10 gate landed; "a letter waits behind its hold" did not
+- Fix round applied: plain-words claim + legend, boxes on the differing rows only, the rule stated once, label staggering (see git log)
+
+### 🧭 What both critics agree on (drives the next candidate)
+- The reader must be told **which output is wanted** before anything is called a failure
+- The **rule** must be stated in words once: 2nd letter adapts only if it leaves after the gate (1st letter + 10 ms)
+- **"A letter waits behind its hold, then is typed"** has not landed in any static drawing; the circled letter must read as the typing moment
+
 ## 🔁 How a candidate is made
 
 1. Builder writes `Dn.html` reusing a page's unit-tested `outcome(pair, hackOn, delta)`
