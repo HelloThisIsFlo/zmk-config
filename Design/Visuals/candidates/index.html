@@ -1,0 +1,72 @@
+<title>Hack Diagram Candidates</title>
+<style>
+  :root {
+    --bg: #F4F6F8; --panel: #FFFFFF; --ink: #1C2530; --ink-2: #51606F; --line: #D3DBE4;
+    --accent: #0B5FC4; --accent-ink: #FFFFFF;
+    --ok: #1E8E5A; --bad: #C8382E; --wait: #B7791F; --tie: #6B7785; --combo: #7C4DCC;
+    --font: "Avenir Next", "Segoe UI", system-ui, -apple-system, Helvetica, Arial, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #141A21; --panel: #1C242E; --ink: #E8EDF3; --ink-2: #AEB9C6; --line: #34414F;
+      --accent: #80B2F5; --accent-ink: #0F1720;
+      --ok: #4CC08A; --bad: #F0776B; --wait: #E2B35A; --tie: #98A4B2; --combo: #B693F5; color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #141A21; --panel: #1C242E; --ink: #E8EDF3; --ink-2: #AEB9C6; --line: #34414F;
+    --accent: #80B2F5; --accent-ink: #0F1720;
+    --ok: #4CC08A; --bad: #F0776B; --wait: #E2B35A; --tie: #98A4B2; --combo: #B693F5; color-scheme: dark;
+  }
+  body { background: var(--bg); color: var(--ink); font-family: var(--font); font-size: 17px; line-height: 1.5; margin: 0; }
+  main { max-width: 760px; margin: 0 auto; padding-inline: 16px; padding-block: 28px 64px; }
+  h1 { font-size: clamp(26px, 5vw, 36px); line-height: 1.1; margin: 0 0 10px; text-wrap: balance; }
+  .lede { color: var(--ink-2); margin: 0 0 24px; max-width: 60ch; }
+  .legend { display: flex; flex-wrap: wrap; gap: 8px 16px; font-size: 15px; color: var(--ink-2); margin: 0 0 28px; padding: 0; list-style: none; }
+  .legend b { font-weight: 600; color: var(--ink); }
+  .card { display: grid; grid-template-columns: 1fr; gap: 6px 18px; border-top: 1px solid var(--line); padding-block: 22px; }
+  .card h2 { font-size: 22px; margin: 0; }
+  .card h2 small { font-weight: 400; color: var(--ink-2); font-size: 15px; margin-left: 8px; }
+  .card p { margin: 0; max-width: 60ch; }
+  .card .try { color: var(--ink-2); font-size: 15.5px; }
+  .open { justify-self: start; margin-top: 8px; display: inline-block; padding: 9px 16px; background: var(--accent); color: var(--accent-ink); text-decoration: none; border-radius: 6px; font-weight: 600; }
+  .open:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+  footer { border-top: 1px solid var(--line); padding-top: 16px; color: var(--ink-2); font-size: 15px; max-width: 60ch; }
+  .k { display: inline-block; width: 0.8em; height: 0.8em; border-radius: 2px; vertical-align: -0.05em; margin-right: 4px; }
+</style>
+<main>
+  <h1>Three ways to draw the hack</h1>
+  <p class="lede">Same proven numbers in all three, same drag-the-key control, no metaphors. What differs is the shape of the explanation. Open each one, see which clicks first, say which.</p>
+  <ul class="legend">
+    <li><span class="k" style="background:var(--ok)"></span><b>adapted</b> the second letter is replaced</li>
+    <li><span class="k" style="background:var(--bad)"></span><b>base letter</b> no replacement</li>
+    <li><span class="k" style="background:var(--wait)"></span><b>waits</b> second key held until your next key</li>
+    <li><span class="k" style="background:var(--tie)"></span><b>tie</b> undetermined on hardware</li>
+    <li><span class="k" style="background:var(--combo)"></span><b>combo fires</b> Z or Tab instead</li>
+  </ul>
+
+  <section class="card">
+    <h2>D1 <small>Build-up, three steps</small></h2>
+    <p>One key alone, then two keys without the hack, then with it. Each step adds one idea to the same picture.</p>
+    <p class="try">Try: step through with Next, then drag the second key between 5 and 15 ms on the last step. Switch to P→C to see the pair the hack was built for.</p>
+    <a class="open" href="D1.html">Open D1</a>
+  </section>
+
+  <section class="card">
+    <h2>D2 <small>One race, two rows</small></h2>
+    <p>A single timeline, hack on above, hack off below. The whole verdict is where the second letter lands relative to the layer's edge.</p>
+    <p class="try">Try: drag from 5 to 12 ms and watch the margin arrow flip sign. Stop at exactly 10.</p>
+    <a class="open" href="D2.html">Open D2</a>
+  </section>
+
+  <section class="card">
+    <h2>D3 <small>Outcome map</small></h2>
+    <p>Every pair class across 0–130 ms at once, hack on and off. Drag the cursor to see the mini-timeline behind any cell.</p>
+    <p class="try">Try: park the cursor at 8, 10, 20 and 110 ms.</p>
+    <a class="open" href="D3.html">Open D3</a>
+  </section>
+
+  <footer>
+    <p>Numbers are board engine time from <code>Design/Timing/FACTS.md</code>; the exactly-10 ms wait and the ties are hardware predictions, not measurements.</p>
+  </footer>
+</main>

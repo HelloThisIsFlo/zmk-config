@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Hack outcome map</title>
+<style>
+:root{
+  --bg:#f7f7f4; --card:#ffffff; --fg:#1c1c1f; --muted:#66666d; --line:#d8d8d2;
+  --ok:#2f9a4e; --bad:#d24848; --wait:#e09c16; --tie:#9b9ba2; --combo:#8656d4;
+  --none:#d9d9d4; --layer:#3f73de; --hold:#8a8a92; --cursor:#1c1c1f; --pill:#ececE7;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#131315; --card:#1c1c20; --fg:#ececef; --muted:#9a9aa3; --line:#33333a;
+    --ok:#40bd66; --bad:#ec6464; --wait:#f0b53c; --tie:#7c7c86; --combo:#a57ef2;
+    --none:#37373e; --layer:#6d97ff; --hold:#8c8c96; --cursor:#f2f2f5; --pill:#26262b;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#131315; --card:#1c1c20; --fg:#ececef; --muted:#9a9aa3; --line:#33333a;
+  --ok:#40bd66; --bad:#ec6464; --wait:#f0b53c; --tie:#7c7c86; --combo:#a57ef2;
+  --none:#37373e; --layer:#6d97ff; --hold:#8c8c96; --cursor:#f2f2f5; --pill:#26262b;
+  color-scheme: dark;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{
+  background:var(--bg); color:var(--fg);
+  font:15px/1.4 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  padding:12px max(16px,env(safe-area-inset-right)) 32px max(16px,env(safe-area-inset-left));
+  overflow-x:hidden;
+}
+main{max-width:860px;margin:0 auto}
+.pill{display:inline-block;font-size:13px;padding:4px 10px;border-radius:999px;background:var(--pill);color:var(--fg);text-decoration:none;border:1px solid var(--line)}
+.pill:focus-visible{outline:2px solid var(--layer);outline-offset:2px}
+h1{font-size:19px;line-height:1.3;margin:14px 0 10px;font-weight:700}
+.legend{display:flex;flex-wrap:wrap;gap:6px 12px;font-size:12.5px;color:var(--muted);margin:0 0 8px}
+.legend span{display:inline-flex;align-items:center;gap:5px}
+.sw{width:12px;height:12px;border-radius:3px;display:inline-block}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 8px}
+svg{display:block;width:100%;height:auto}
+svg text{fill:var(--fg);font-family:inherit;font-variant-numeric:tabular-nums}
+.cap{font-size:13px;color:var(--muted);margin:6px 2px 14px}
+.num{font-variant-numeric:tabular-nums}
+#chart{touch-action:pan-y;cursor:ew-resize;user-select:none;-webkit-user-select:none}
+.handle{cursor:grab;outline:none}
+.handle .ring{fill:none;stroke:var(--layer);stroke-width:2.5;opacity:0}
+.handle:focus-visible .ring,.handle:focus .ring{opacity:1}
+.cursorgrp{transition:transform 90ms ease-out}
+@media (prefers-reduced-motion: reduce){ .cursorgrp{transition:none} }
+h2{font-size:16px;margin:4px 2px 6px;font-weight:700}
+h2 .big{font-size:20px}
+.foot{font-size:12px;color:var(--muted);margin-top:16px}
+</style>
+</head>
+<body>
+<main>
+<a class="pill" href="index.html">← All three</a>
+<h1>The hack is a trade: it rescues 11 pairs for 11–25 ms gaps and costs 34 pairs every roll under 10 ms.</h1>
+
+<div class="legend" aria-label="Legend">
+  <span><i class="sw" style="background:var(--ok)"></i>✅ adapted</span>
+  <span><i class="sw" style="background:var(--bad)"></i>❌ base letter</span>
+  <span><i class="sw" style="background:var(--wait)"></i>⏸ waits for your next key</span>
+  <span><i class="sw" style="background:var(--tie)"></i>⚖️ tie, undetermined on hardware</span>
+  <span><i class="sw" style="background:var(--combo)"></i>🟪 the real combo fires instead</span>
+</div>
+
+<div class="card">
+  <svg id="chart" viewBox="0 0 414 300" role="group" aria-label="Outcome by gap between the two key presses"></svg>
+</div>
+<p class="cap">Drag the line (or use ← →): each column is one gap, in ms, between pressing the AK trigger and the next key.</p>
+
+<div class="card">
+  <h2>What happens at Δ = <span class="big num" id="dval">8</span> ms</h2>
+  <svg id="mini" viewBox="0 0 414 140" aria-live="polite"></svg>
+</div>
+<p class="cap">Each key's letter is held while its combo might still fire; it turns adapted (✅) only if it lands inside the AK layer, which starts 10 ms after the trigger's letter.</p>
+
+<p class="foot">Strips are predicted on hardware from 181 native tests.</p>
+</main>
+
+<script>
+// BEGIN outcome
+var PAIRS = {
+  MT: { trig: "M", fol: "T", k1: 16, k2: 16, ok: "mn", bad: "mt" },
+  PC: { trig: "P", fol: "C", k1: 16, k2: 0,  ok: "pt", bad: "pc" }
+};
+// Board engine time in ms, t = 0 is the trigger press, delta = follower press.
+// Returns letter delivery times, the AK layer window and the class:
+// ok (adapted), bad (base letter), wait (stalled), tie (lands on an edge).
+function outcome(pair, hackOn, delta) {
+  var dA = hackOn ? Math.max(11, pair.k1) : pair.k1;
+  var d2 = hackOn ? Math.max(11, pair.k2) : pair.k2;
+  var a, b;
+  if (hackOn && delta <= 10) {
+    a = 11;
+    b = delta === 10 ? null : 11;          // delta 10: follower stalls
+  } else {
+    a = Math.min(delta, dA);
+    b = delta + d2;
+  }
+  var on = a + 10, off = a + 110, cls;
+  if (b === null) cls = "wait";
+  else if (b < on) cls = "bad";
+  else if (b === on) cls = "tie";
+  else if (b < off) cls = "ok";
+  else if (b === off) cls = "tie";
+  else cls = "bad";
+  var out = cls === "ok" ? pair.ok : cls === "bad" ? pair.bad
+          : cls === "wait" ? pair.ok[0] + "…" : pair.ok + " or " + pair.bad;
+  return { cls: cls, a: a, b: b, on: on, off: off, delta: delta, out: out };
+}
+// END outcome
+
+var MAXD = 130;
+var COL = { ok: "var(--ok)", bad: "var(--bad)", wait: "var(--wait)", tie: "var(--tie)", combo: "var(--combo)", none: "var(--none)" };
+var EMO = { ok: "✅", bad: "❌", wait: "⏸", tie: "⚖️", combo: "🟪", none: "👍" };
+
+function computed(pair, on) { var r = []; for (var d = 0; d <= MAXD; d++) r.push(outcome(pair, on, d).cls); return r; }
+function runs(list) { var r = []; list.forEach(function (x) { for (var d = x[0]; d <= x[1]; d++) r[d] = x[2]; }); return r; }
+
+var ROWS = [
+  { head: "🟩 34 ordinary pairs · e.g. M→T → mn" },
+  { label: "hack ON",  cells: computed(PAIRS.MT, true) },
+  { label: "hack OFF", cells: computed(PAIRS.MT, false) },
+  { head: "🟨 11 pairs, follower has no combo (X C F, R thumb) · e.g. P→C → pt" },
+  { label: "hack ON",  cells: computed(PAIRS.PC, true) },
+  { label: "hack OFF", cells: computed(PAIRS.PC, false) },
+  { head: "🟥 2 pairs sharing a 3- or 4-key combo · hack ON = OFF" },
+  { label: "L→G 16ms", cells: runs([[0,14,"bad"],[15,15,"wait"],[16,109,"ok"],[110,110,"tie"],[111,130,"bad"]]) },
+  { label: "H→E 18ms", cells: runs([[0,16,"bad"],[17,17,"wait"],[18,109,"ok"],[110,110,"tie"],[111,130,"bad"]]) },
+  { head: "🟪 4 pairs that are a 2-key combo (M↔W = Z, D↔V = Tab) · ON = OFF" },
+  { label: "ON = OFF", cells: runs([[0,15,"combo"],[16,109,"ok"],[110,110,"tie"],[111,130,"bad"]]) },
+  { head: "👍 3 pairs with no timing band" },
+  { label: "", cells: runs([[0,130,"none"]]), note: "R thumb, E E and R R repeats: always fine" }
+];
+
+// ---------- chart ----------
+var W = 414, X0 = 70, CW = 2.6, RH = 15, HH = 15, AX = 22;
+function cx(d) { return X0 + d * CW; }
+var TICKS = [0, 10, 20, 30, 50, 100, 130];
+var chart = document.getElementById("chart");
+var delta = 8, layoutRows = [], chartH = 0;
+
+function buildChart() {
+  var s = "", y = AX;
+  // top axis
+  s += '<text x="' + (X0 - 6) + '" y="12" font-size="9" text-anchor="end" fill="var(--muted)" style="fill:var(--muted)">gap ms</text>';
+  TICKS.forEach(function (t) {
+    s += '<text x="' + (t === MAXD ? cx(t) + CW : cx(t) + CW / 2) + '" y="12" font-size="9.5" text-anchor="' + (t === MAXD ? 'end' : 'middle') + '">' + t + '</text>';
+  });
+  ROWS.forEach(function (r) {
+    if (r.head) {
+      y += 6;
+      s += '<text x="0" y="' + (y + 10) + '" font-size="10" font-weight="600">' + r.head + '</text>';
+      y += HH;
+      return;
+    }
+    s += '<text x="' + (X0 - 5) + '" y="' + (y + RH / 2 + 3.5) + '" font-size="9.5" text-anchor="end" style="fill:var(--muted)">' + r.label + '</text>';
+    var start = 0;
+    for (var d = 1; d <= MAXD + 1; d++) {
+      if (d === MAXD + 1 || r.cells[d] !== r.cells[start]) {
+        s += '<rect x="' + cx(start) + '" y="' + y + '" width="' + ((d - start) * CW) + '" height="' + RH + '" fill="' + COL[r.cells[start]] + '"><title>' + EMO[r.cells[start]] + ' ' + start + (d - 1 > start ? '–' + (d - 1) : '') + ' ms</title></rect>';
+        start = d;
+      }
+    }
+    if (r.note) s += '<text x="' + (cx(65)) + '" y="' + (y + RH / 2 + 3.5) + '" font-size="9.5" text-anchor="middle">' + r.note + '</text>';
+    layoutRows.push({ y: y, cells: r.cells });
+    y += RH + 2;
+  });
+  // tick gridlines
+  var gl = "";
+  TICKS.forEach(function (t) {
+    gl += '<line x1="' + cx(t) + '" x2="' + cx(t) + '" y1="15" y2="' + y + '" stroke="var(--line)" stroke-width="0.6"/>';
+  });
+  y += 4;
+  chartH = y;
+  s = gl + s;
+  // cursor
+  s += '<g class="cursorgrp" id="cur">' +
+       '<rect id="curcol" x="0" y="' + (AX - 2) + '" width="' + CW + '" height="' + (y - AX - 2) + '" fill="none" stroke="var(--cursor)" stroke-width="1"/>' +
+       '<line x1="' + (CW / 2) + '" x2="' + (CW / 2) + '" y1="' + AX + '" y2="' + (y - 4) + '" stroke="var(--cursor)" stroke-width="0.8" stroke-dasharray="2 2"/>' +
+       '</g>';
+  s += '<g class="handle" id="handle" tabindex="0" role="slider" aria-label="Gap between the two key presses, ms" aria-valuemin="0" aria-valuemax="130">' +
+       '<g class="cursorgrp" id="hg"><rect x="-17" y="' + (y - 2) + '" width="34" height="15" rx="7.5" fill="var(--cursor)"/>' +
+       '<text id="hlabel" x="0" y="' + (y + 8.6) + '" font-size="9.5" font-weight="700" text-anchor="middle" style="fill:var(--bg)">8 ms</text>' +
+       '<rect class="ring" x="-20" y="' + (y - 5) + '" width="40" height="21" rx="10"/></g></g>';
+  chartH = y + 17;
+  chart.setAttribute("viewBox", "0 0 " + W + " " + chartH);
+  chart.innerHTML = s;
+}
+
+function setDelta(d) {
+  delta = Math.max(0, Math.min(MAXD, Math.round(d)));
+  var tx = "translate(" + cx(delta) + "px,0)";
+  document.getElementById("cur").style.transform = tx;
+  var hg = document.getElementById("hg");
+  hg.style.transform = "translate(" + Math.min(W - 21, Math.max(21, cx(delta) + CW / 2)) + "px,0)";
+  document.getElementById("hlabel").textContent = delta + " ms";
+  var h = document.getElementById("handle");
+  h.setAttribute("aria-valuenow", delta);
+  h.setAttribute("aria-valuetext", delta + " ms");
+  document.getElementById("dval").textContent = delta;
+  drawMini();
+}
+
+function toDelta(evt) {
+  var pt = chart.createSVGPoint(); pt.x = evt.clientX; pt.y = evt.clientY;
+  var p = pt.matrixTransform(chart.getScreenCTM().inverse());
+  return (p.x - X0) / CW - 0.5;
+}
+var dragging = false;
+chart.addEventListener("pointerdown", function (e) {
+  dragging = true; chart.setPointerCapture(e.pointerId); setDelta(toDelta(e));
+});
+chart.addEventListener("pointermove", function (e) { if (dragging) setDelta(toDelta(e)); });
+["pointerup", "pointercancel"].forEach(function (n) { chart.addEventListener(n, function () { dragging = false; }); });
+document.addEventListener("keydown", function (e) {
+  if (e.target.tagName === "A") return;
+  var step = e.shiftKey ? 10 : 1;
+  if (e.key === "ArrowLeft") { setDelta(delta - step); e.preventDefault(); }
+  else if (e.key === "ArrowRight") { setDelta(delta + step); e.preventDefault(); }
+  else if (e.key === "Home") { setDelta(0); e.preventDefault(); }
+  else if (e.key === "End") { setDelta(MAXD); e.preventDefault(); }
+});
+
+// ---------- mini timeline ----------
+var mini = document.getElementById("mini");
+var TX0 = 62, TX1 = 406;
+function drawMini() {
+  var xmax = delta <= 40 ? 70 : 160;
+  function tx(t) { return TX0 + Math.min(t, xmax) / xmax * (TX1 - TX0); }
+  var s = "", y = 4;
+  // axis
+  var step = xmax === 70 ? 10 : 20;
+  for (var t = 0; t <= xmax; t += step) {
+    s += '<text x="' + tx(t) + '" y="' + (y + 8) + '" font-size="8.5" text-anchor="middle" style="fill:var(--muted)">' + t + '</text>';
+  }
+  s += '<text x="' + (TX0 - 6) + '" y="' + (y + 8) + '" font-size="8.5" text-anchor="end" style="fill:var(--muted)">ms</text>';
+  y += 13;
+  var top = y;
+  var scen = [["MT", true], ["MT", false]];
+  if (delta <= 30) scen.push(["PC", true], ["PC", false]);
+  var grid = "";
+  scen.forEach(function (sc, i) {
+    var pair = PAIRS[sc[0]], on = sc[1], o = outcome(pair, on, delta);
+    if (i === 2) { s += '<line x1="0" x2="414" y1="' + (y + 1) + '" y2="' + (y + 1) + '" stroke="var(--line)"/>'; y += 4; }
+    // header
+    s += '<text x="0" y="' + (y + 10) + '" font-size="10.5" font-weight="700">' + pair.trig + '→' + pair.fol + ' · hack ' + (on ? 'ON' : 'OFF') + '</text>';
+    s += '<rect x="' + (TX1 - 78) + '" y="' + y + '" width="78" height="14" rx="7" fill="' + COL[o.cls] + '"/>';
+    s += '<text x="' + (TX1 - 39) + '" y="' + (y + 10.3) + '" font-size="9.5" font-weight="700" text-anchor="middle" style="fill:#fff">' + EMO[o.cls] + ' ' + o.out + '</text>';
+    y += 17;
+    var L = 12; // lane height
+    // lane 1: trigger key
+    s += '<text x="' + (TX0 - 6) + '" y="' + (y + 9) + '" font-size="9" text-anchor="end" style="fill:var(--muted)">' + pair.trig + ' key</text>';
+    s += '<line x1="' + tx(0) + '" x2="' + tx(0) + '" y1="' + y + '" y2="' + (y + L) + '" stroke="var(--fg)" stroke-width="1.5"/>';
+    if (o.a > 0) s += '<rect x="' + tx(0) + '" y="' + (y + 3) + '" width="' + (tx(o.a) - tx(0)) + '" height="6" rx="2" fill="var(--hold)" opacity="0.55"><title>held by combo</title></rect>';
+    s += '<circle cx="' + tx(o.a) + '" cy="' + (y + 6) + '" r="5.5" fill="var(--fg)"/><text x="' + tx(o.a) + '" y="' + (y + 9) + '" font-size="8" font-weight="700" text-anchor="middle" style="fill:var(--bg)">' + pair.trig.toLowerCase() + '</text>';
+    y += L + 2;
+    // lane 2: follower
+    s += '<text x="' + (TX0 - 6) + '" y="' + (y + 9) + '" font-size="9" text-anchor="end" style="fill:var(--muted)">' + pair.fol + ' key</text>';
+    s += '<line x1="' + tx(delta) + '" x2="' + tx(delta) + '" y1="' + y + '" y2="' + (y + L) + '" stroke="var(--fg)" stroke-width="1.5"/>';
+    if (o.b === null) {
+      s += '<rect x="' + tx(delta) + '" y="' + (y + 3) + '" width="' + (TX1 - tx(delta)) + '" height="6" rx="2" fill="var(--wait)" opacity="0.5"/>';
+      s += '<text x="' + (tx(delta) + 30) + '" y="' + (y + 9) + '" font-size="9" font-weight="700">⏸ held until your next key</text>';
+    } else {
+      if (o.b > delta) s += '<rect x="' + tx(delta) + '" y="' + (y + 3) + '" width="' + (tx(o.b) - tx(delta)) + '" height="6" rx="2" fill="var(--hold)" opacity="0.55"><title>held by combo</title></rect>';
+      var letter = o.cls === "ok" ? pair.ok[1] : o.cls === "bad" ? pair.fol.toLowerCase() : "?";
+      s += '<circle cx="' + tx(o.b) + '" cy="' + (y + 6) + '" r="5.5" fill="' + COL[o.cls] + '"/><text x="' + tx(o.b) + '" y="' + (y + 9) + '" font-size="8" font-weight="700" text-anchor="middle" style="fill:#fff">' + letter + '</text>';
+      if (o.b > xmax) s += '<text x="' + (TX1 - 8) + '" y="' + (y + 9) + '" font-size="8" text-anchor="end">' + o.b + ' →</text>';
+    }
+    var laneTop = y;
+    y += L + 2;
+    // lane 3: AK layer
+    s += '<text x="' + (TX0 - 6) + '" y="' + (y + 9) + '" font-size="9" text-anchor="end" style="fill:var(--muted)">AK layer</text>';
+    s += '<rect x="' + tx(0) + '" y="' + (y + 2) + '" width="' + (TX1 - tx(0)) + '" height="8" fill="var(--none)" opacity="0.5"/>';
+    var x1 = tx(o.on), x2 = tx(o.off);
+    s += '<rect x="' + x1 + '" y="' + (y + 1) + '" width="' + Math.max(0, x2 - x1) + '" height="10" rx="2" fill="var(--layer)" opacity="0.8"/>';
+    s += '<text x="' + (x1 + 3) + '" y="' + (y + 9) + '" font-size="8" style="fill:#fff">on ' + o.on + (o.off <= xmax ? '' : ' →') + '</text>';
+    if (o.off <= xmax) s += '<text x="' + (x2 - 3) + '" y="' + (y + 9) + '" font-size="8" text-anchor="end" style="fill:#fff">off ' + o.off + '</text>';
+    // guide from follower letter down to layer lane
+    if (o.b !== null && o.b <= xmax) grid += '<line x1="' + tx(o.b) + '" x2="' + tx(o.b) + '" y1="' + (laneTop + 11) + '" y2="' + (y + 12) + '" stroke="' + COL[o.cls] + '" stroke-width="1.2" stroke-dasharray="2 1.5"/>';
+    y += L + 8;
+  });
+  // cursor line at delta across all
+  grid = '<line x1="' + tx(delta) + '" x2="' + tx(delta) + '" y1="' + top + '" y2="' + (y - 6) + '" stroke="var(--line)" stroke-width="1"/>' + grid;
+  mini.setAttribute("viewBox", "0 0 414 " + y);
+  mini.innerHTML = grid + s;
+}
+
+buildChart();
+setDelta(8);
+</script>
+</body>
+</html>

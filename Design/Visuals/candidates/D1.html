@@ -1,0 +1,435 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Hack build-up</title>
+<style>
+:root{
+  --bg:#f6f5f1; --card:#ffffff; --fg:#1c1c1f; --muted:#6a6a72; --grid:#e6e3db; --line:#bdb9ae;
+  --hold:#8c867a; --holdBg:#efebe2;
+  --layer:#2a74c8; --layerBg:#d8e7f8; --layerTx:#174a85; --base:#ebe9e3; --baseTx:#77746c;
+  --ok:#1e874a; --okBg:#dcf2e4; --bad:#c3352b; --badBg:#fbe1de; --wait:#a86d10; --waitBg:#fbecd2;
+  --tie:#6c6c74; --tieBg:#e8e8ec; --focus:#2563eb; --chip:#eceae4; --chipOn:#1c1c1f; --chipOnTx:#ffffff;
+  --capBg:#ffffff;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#131316; --card:#1c1c20; --fg:#ececf0; --muted:#9b9ba4; --grid:#2a2a30; --line:#4a4a53;
+    --hold:#97927f; --holdBg:#25252a;
+    --layer:#5aa2ee; --layerBg:#1b3350; --layerTx:#b9d8fb; --base:#28282e; --baseTx:#9b9890;
+    --ok:#4fca7d; --okBg:#173a25; --bad:#ff6d61; --badBg:#46201c; --wait:#f1b54d; --waitBg:#3e2e13;
+    --tie:#acacb4; --tieBg:#303036; --focus:#7aa7ff; --chip:#28282e; --chipOn:#ececf0; --chipOnTx:#131316;
+    --capBg:#2a2a30;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#131316; --card:#1c1c20; --fg:#ececf0; --muted:#9b9ba4; --grid:#2a2a30; --line:#4a4a53;
+  --hold:#97927f; --holdBg:#25252a;
+  --layer:#5aa2ee; --layerBg:#1b3350; --layerTx:#b9d8fb; --base:#28282e; --baseTx:#9b9890;
+  --ok:#4fca7d; --okBg:#173a25; --bad:#ff6d61; --badBg:#46201c; --wait:#f1b54d; --waitBg:#3e2e13;
+  --tie:#acacb4; --tieBg:#303036; --focus:#7aa7ff; --chip:#28282e; --chipOn:#ececf0; --chipOnTx:#131316;
+  --capBg:#2a2a30;
+  color-scheme: dark;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--fg);font:15px/1.45 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  padding:12px max(16px,env(safe-area-inset-right)) 32px max(16px,env(safe-area-inset-left));overflow-x:hidden}
+.wrap{max-width:720px;margin:0 auto}
+.num,svg text,.legend,.readout{font-variant-numeric:tabular-nums}
+a.pill{display:inline-block;font-size:13px;color:var(--fg);text-decoration:none;background:var(--chip);border-radius:999px;padding:4px 12px}
+a.pill:focus-visible,button:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+h1{font-size:20px;margin:14px 0 4px}
+.dots{display:flex;gap:6px;margin:6px 0 14px}
+.dots span{height:6px;flex:1;border-radius:3px;background:var(--grid)}
+.dots span.on{background:var(--fg)}
+.card{background:var(--card);border-radius:14px;padding:14px 12px 12px;box-shadow:0 1px 0 var(--grid)}
+h2{font-size:17px;margin:0 0 4px}
+.cap{margin:0 0 10px;color:var(--fg)}
+.sub{margin:6px 0 0;color:var(--muted);font-size:13px}
+.chips{display:flex;gap:8px;margin:0 0 8px;flex-wrap:wrap}
+.chips button{border:0;border-radius:999px;padding:6px 12px;background:var(--chip);color:var(--fg);font:inherit;font-size:13px;cursor:pointer}
+.chips button[aria-pressed="true"]{background:var(--chipOn);color:var(--chipOnTx)}
+.chips b{font-weight:700}
+svg{display:block;width:100%;height:auto;overflow:visible}
+.result{display:flex;align-items:center;gap:10px;margin:8px 0 2px;padding:8px 10px;border-radius:10px}
+.result .out{font:700 22px/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:1px}
+.result .word{font-weight:600}
+.result.ok{background:var(--okBg);color:var(--ok)} .result.bad{background:var(--badBg);color:var(--bad)}
+.result.wait{background:var(--waitBg);color:var(--wait)} .result.tie{background:var(--tieBg);color:var(--tie)}
+.readout{font-size:13px;color:var(--muted);margin:4px 0 10px}
+.legend{font-size:13px;margin:4px 0 0}
+.legend div{margin:2px 0}
+.trade{margin:12px 0 0;padding:8px 10px;border-left:3px solid var(--fg);font-size:14px}
+nav{display:flex;justify-content:space-between;margin-top:14px;gap:10px}
+nav button{flex:1;border:0;border-radius:10px;padding:10px;font:inherit;font-weight:600;background:var(--chip);color:var(--fg);cursor:pointer}
+nav button.next{background:var(--chipOn);color:var(--chipOnTx)}
+nav button:disabled{opacity:.35;cursor:default}
+.fade{animation:fade .25s ease}
+@keyframes fade{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+@keyframes nudge{0%,100%{transform:translateX(0)}50%{transform:translateX(4px)}}
+.hint{animation:nudge 1.2s ease-in-out 3}
+@media (prefers-reduced-motion: reduce){ .fade,.hint{animation:none} *{transition:none!important} }
+
+/* svg classes */
+.t-lab{fill:var(--muted);font-size:10.5px}
+.t-ax{fill:var(--muted);font-size:10px}
+.t-fg{fill:var(--fg);font-size:11px}
+.t-sm{fill:var(--muted);font-size:9.5px}
+.grid{stroke:var(--grid);stroke-width:1}
+.axis{stroke:var(--line);stroke-width:1}
+.hold{fill:url(#hatch);stroke:var(--hold);stroke-width:1}
+.ghost{fill:none;stroke:var(--hold);stroke-width:1;stroke-dasharray:3 3}
+.stall{fill:url(#hatchW);stroke:var(--wait);stroke-width:1.2;stroke-dasharray:4 3}
+.capk{fill:var(--capBg);stroke:var(--fg);stroke-width:1.4}
+.capt{fill:var(--fg);font-size:12px;font-weight:700}
+.baseL{fill:var(--base)} .baseT{fill:var(--baseTx);font-size:10px}
+.layer{fill:var(--layerBg);stroke:var(--layer);stroke-width:1.2} .layerT{fill:var(--layerTx);font-size:10.5px;font-weight:600}
+.guide{stroke:var(--layer);stroke-width:1.3;stroke-dasharray:4 3}
+.guideT{fill:var(--layer);font-size:10.5px;font-weight:600}
+.bub{fill:var(--card);stroke:var(--fg);stroke-width:1.4} .bubT{fill:var(--fg);font:700 12px ui-monospace,Menlo,monospace}
+.bub.ok{fill:var(--okBg);stroke:var(--ok)} .bubT.ok{fill:var(--ok)}
+.bub.bad{fill:var(--badBg);stroke:var(--bad)} .bubT.bad{fill:var(--bad)}
+.bub.tie{fill:var(--tieBg);stroke:var(--tie)} .bubT.tie{fill:var(--tie)}
+.stem{stroke:var(--fg);stroke-width:1}
+.queue{stroke:var(--bad);stroke-width:1.4;stroke-dasharray:2 3}
+.badT{fill:var(--bad);font-size:9.5px;font-weight:600}
+.waitT{fill:var(--wait);font-size:10.5px;font-weight:600}
+.brk{stroke:var(--layer);stroke-width:1.3;fill:none}
+.c-ok{fill:var(--ok)} .c-bad{fill:var(--bad)} .c-wait{fill:var(--wait)} .c-tie{fill:var(--tie)}
+.cur{fill:none;stroke:var(--fg);stroke-width:2}
+.curTri{fill:var(--fg)}
+#handle{cursor:grab;touch-action:none;outline:none}
+#handle:focus-visible .capk{stroke:var(--focus);stroke-width:3}
+#handle .ring{fill:none;stroke:var(--focus);stroke-width:1.3;stroke-dasharray:3 3;opacity:.8}
+.lanehit{fill:transparent;touch-action:pan-y;cursor:pointer}
+.stripHit{fill:transparent;touch-action:pan-y;cursor:pointer}
+.dl{fill:var(--fg);font-size:10.5px;font-weight:600}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="pill" href="index.html">← All three</a>
+  <h1>The AK consistency hack</h1>
+  <div class="dots" aria-hidden="true"><span></span><span></span><span></span></div>
+  <div class="card" id="card">
+    <h2 id="title"></h2>
+    <p class="cap" id="cap"></p>
+    <div class="chips" id="chips" role="group" aria-label="Key pair"></div>
+    <svg id="fig" viewBox="0 0 400 204" role="img" aria-labelledby="title"></svg>
+    <div id="res"></div>
+    <svg id="strip" viewBox="0 0 400 40" aria-hidden="true"></svg>
+    <div class="legend" id="legend"></div>
+    <p class="sub" id="note"></p>
+    <p class="trade" id="trade"></p>
+  </div>
+  <nav>
+    <button id="back" type="button">← Back</button>
+    <button id="next" class="next" type="button">Next →</button>
+  </nav>
+</div>
+<script>
+/* ===== MODEL (pure) ===== */
+var PAIRS = {
+  MT: {a:'M', b:'T', kA:16, kB:16, adapted:'mn', base:'mt', label:'M→T', sub:'ordinary key'},
+  PC: {a:'P', b:'C', kA:16, kB:0,  adapted:'pt', base:'pc', label:'P→C', sub:'key without its own combo'}
+};
+var AK_DELAY = 10, AK_WINDOW = 110;
+function holdOf(k, hackOn){ return hackOn ? Math.max(11, k) : k; }
+
+/* One key alone: delivered at its hold. */
+function lone(k, hackOn){ var d = holdOf(k, hackOn); return {deliver:d, layerOn:d+AK_DELAY, layerOff:d+AK_WINDOW}; }
+
+/* Pair: trigger A pressed at 0, follower B pressed at delta. */
+function outcome(pair, hackOn, delta){
+  var p = PAIRS[pair], dA = holdOf(p.kA, hackOn), dB = holdOf(p.kB, hackOn);
+  var r = {pair:pair, hackOn:hackOn, delta:delta, aPress:0, bPress:delta,
+           aDeliver:null, layerOn:null, layerOff:null, bDeliver:null, bLetter:null, verdict:null, text:null};
+  if (hackOn && delta <= 9){
+    r.aDeliver = 11; r.bDeliver = 11; r.bLetter = 11 + AK_DELAY; r.verdict = 'bad';
+  } else if (hackOn && delta === 10){
+    r.aDeliver = 11; r.verdict = 'wait';
+  } else {
+    r.aDeliver = Math.min(delta, dA);
+    r.bDeliver = delta + dB; r.bLetter = r.bDeliver;
+  }
+  r.layerOn = r.aDeliver + AK_DELAY; r.layerOff = r.aDeliver + AK_WINDOW;
+  if (!r.verdict){
+    r.verdict = r.bLetter > r.layerOn ? 'ok' : (r.bLetter === r.layerOn ? 'tie' : 'bad');
+  }
+  r.text = r.verdict === 'ok' ? p.adapted : r.verdict === 'bad' ? p.base : r.verdict === 'wait' ? p.base[0] + '…' : p.base[0] + '?';
+  return r;
+}
+
+/* ===== VIEW ===== */
+var X0 = 64, SC = 5.4, TMAX = 60, DMAX = 40;
+function x(t){ return X0 + t*SC; }
+var state = {stage:1, pair:'MT', delta:8, hinted:false};
+var EMO = {ok:'✅', bad:'❌', wait:'⏸', tie:'⚖️'};
+
+function defs(){
+  return '<defs>'+
+    '<pattern id="hatch" patternUnits="userSpaceOnUse" width="5" height="5" patternTransform="rotate(45)"><rect width="5" height="5" style="fill:var(--holdBg)"/><line x1="0" y1="0" x2="0" y2="5" style="stroke:var(--hold);stroke-width:1.6"/></pattern>'+
+    '<pattern id="hatchW" patternUnits="userSpaceOnUse" width="5" height="5" patternTransform="rotate(45)"><rect width="5" height="5" style="fill:var(--waitBg)"/><line x1="0" y1="0" x2="0" y2="5" style="stroke:var(--wait);stroke-width:1.4"/></pattern>'+
+  '</defs>';
+}
+function txt(cls, X, Y, s, anchor){ return '<text class="'+cls+'" x="'+X+'" y="'+Y+'"'+(anchor?' text-anchor="'+anchor+'"':'')+'>'+s+'</text>'; }
+function grid(yTop, yAxis){
+  var s = '';
+  for (var t=0; t<=TMAX; t+=10){
+    s += '<line class="grid" x1="'+x(t)+'" y1="'+yTop+'" x2="'+x(t)+'" y2="'+yAxis+'"/>';
+    s += txt('t-ax', x(t), yAxis+13, t, 'middle');
+  }
+  s += '<line class="axis" x1="'+x(0)+'" y1="'+yAxis+'" x2="'+x(TMAX)+'" y2="'+yAxis+'"/>';
+  s += txt('t-ax', x(TMAX)+6, yAxis+4, 'ms');
+  return s;
+}
+function cap(t, y, letter){
+  return '<rect class="capk" x="'+(x(t)-10)+'" y="'+(y-10)+'" width="20" height="20" rx="4"/>'+txt('capt', x(t), y+4, letter, 'middle');
+}
+function holdBar(t0, t1, y, h){ h=h||12; if (t1<=t0) return ''; return '<rect class="hold" x="'+x(t0)+'" y="'+(y-h/2)+'" width="'+(x(t1)-x(t0))+'" height="'+h+'" rx="2"/>'; }
+function bubble(t, y, letter, cls, laneY, timeLabel){
+  var s = '';
+  if (laneY != null) s += '<line class="stem" x1="'+x(t)+'" y1="'+(y+9)+'" x2="'+x(t)+'" y2="'+(laneY-6)+'"/>';
+  s += '<circle class="bub '+(cls||'')+'" cx="'+x(t)+'" cy="'+y+'" r="9"/>'+txt('bubT '+(cls||''), x(t), y+4, letter, 'middle');
+  if (timeLabel) s += txt('t-sm', x(t)+12, y+3, t);
+  return s;
+}
+function layerLane(y, on, off, name){
+  var s = '<rect class="baseL" x="'+x(0)+'" y="'+(y-8)+'" width="'+(x(on)-x(0))+'" height="16" rx="3"/>';
+  if (x(on)-x(0) > 56) s += txt('baseT', x(0)+5, y+4, 'base layer');
+  else if (x(on)-x(0) > 30) s += txt('baseT', x(0)+4, y+4, 'base');
+  s += '<rect class="layer" x="'+x(on)+'" y="'+(y-8)+'" width="'+(x(TMAX)-x(on))+'" height="16" rx="3"/>';
+  s += txt('layerT', x(on)+5, y+4, name);
+  if (x(TMAX)-x(on) > 130) s += txt('t-sm', x(TMAX)-4, y+4, 'off at '+off+' →', 'end');
+  return s;
+}
+function guide(t, yTop, yBot, label){
+  var lx = Math.min(Math.max(x(t), 90), 330);
+  return '<line class="guide" x1="'+x(t)+'" y1="'+yTop+'" x2="'+x(t)+'" y2="'+yBot+'"/>'+txt('guideT', lx, yTop-5, label, 'middle');
+}
+
+function renderStage1(){
+  var T = lone(16, true), C = lone(0, true);
+  var s = defs() + grid(24, 124);
+  s += txt('t-lab', 4, 62, 'key');
+  s += txt('t-lab', 4, 104, 'AK layer');
+  s += guide(T.layerOn, 22, 108, 'l_akT on · '+T.layerOn+' ms');
+  s += holdBar(0, T.deliver, 58) + cap(0, 58, 'T');
+  s += txt('t-sm', x(T.deliver/2), 47, 'combo hold', 'middle');
+  s += bubble(T.deliver, 36, 't', '', 58, true);
+  s += layerLane(100, T.layerOn, T.layerOff, 'l_akT');
+  /* 10 ms gap bracket */
+  var by = 80;
+  s += '<path class="brk" d="M'+x(T.deliver)+' '+(by-4)+' V'+by+' H'+x(T.layerOn)+' V'+(by-4)+'"/>';
+  s += txt('guideT', (x(T.deliver)+x(T.layerOn))/2, by+11, '10 ms', 'middle');
+  /* hack-only key C, smaller */
+  s += '<line class="grid" x1="4" y1="150" x2="396" y2="150"/>';
+  s += txt('t-lab', 4, 186, 'key C');
+  s += txt('t-sm', x(0)-10, 166, 'no combo of its own → only the hack’s 11 ms hold');
+  s += '<rect class="ghost" x="'+x(0)+'" y="176" width="'+(x(16)-x(0))+'" height="10" rx="2"/>';
+  s += txt('t-sm', x(16)+4, 185, 'T: 16');
+  s += holdBar(0, C.deliver, 181, 10);
+  s += '<rect class="capk" x="'+(x(0)-8)+'" y="173" width="16" height="16" rx="3"/>'+txt('capt', x(0), 185, 'C', 'middle');
+  s += '<circle class="bub" cx="'+(x(C.deliver)+0)+'" cy="181" r="7"/>'+txt('bubT', x(C.deliver), 185, 'c', 'middle');
+  s += txt('t-sm', x(C.deliver)-2, 200, C.deliver, 'middle');
+  return s;
+}
+
+function renderPair(o){
+  var p = PAIRS[o.pair], a = p.a, b = p.b, la = 'l_ak'+a;
+  var LA = 58, LB = 112, LL = 158, AX = 184;
+  var s = defs() + grid(24, AX);
+  s += txt('t-lab', 4, LA+4, '1st key');
+  s += txt('t-lab', 4, LB+4, '2nd key');
+  s += txt('t-lab', 4, LL+4, 'AK layer');
+  s += guide(o.layerOn, 22, LL-10, la+' on · '+o.layerOn+' ms');
+  /* trigger */
+  s += holdBar(0, o.aDeliver, LA) + cap(0, LA, a);
+  s += bubble(o.aDeliver, 36, a.toLowerCase(), '', LA, true);
+  /* follower lane hit area */
+  s += '<rect class="lanehit" data-lane="1" x="'+(x(0)-12)+'" y="'+(LB-22)+'" width="'+(x(TMAX)-x(0)+18)+'" height="44"/>';
+  if (o.verdict === 'wait'){
+    s += '<rect class="stall" x="'+x(o.delta)+'" y="'+(LB-6)+'" width="'+(x(TMAX)-x(o.delta))+'" height="12" rx="2"/>';
+    s += txt('waitT', x(o.delta)+16, LB-12, '⏸ waits for your next key');
+  } else {
+    s += holdBar(o.delta, o.bDeliver, LB);
+    if (o.bLetter !== o.bDeliver){
+      s += '<line class="queue" x1="'+x(o.bDeliver)+'" y1="'+LB+'" x2="'+x(o.bLetter)+'" y2="'+LB+'"/>';
+      s += '<line class="queue" x1="'+x(o.bDeliver)+'" y1="'+(LB-7)+'" x2="'+x(o.bDeliver)+'" y2="'+(LB+7)+'" style="stroke-dasharray:none"/>';
+      s += txt('badT', x(o.bDeliver), LB+20, 'read on base · '+o.bDeliver, 'middle');
+    }
+    var ch = o.verdict === 'ok' ? p.adapted[1] : o.verdict === 'bad' ? p.base[1] : '?';
+    s += bubble(o.bLetter, 90, ch, o.verdict, o.bLetter===o.bDeliver ? LB : null, true);
+  }
+  /* layer */
+  s += layerLane(LL, o.layerOn, o.layerOff, la);
+  /* drag handle */
+  var hx = x(o.delta);
+  s += '<g id="handle" class="'+(state.hinted?'':'hint')+'" tabindex="0" role="slider" aria-label="When you press '+b+' (ms after '+a+')" aria-valuemin="0" aria-valuemax="'+DMAX+'" aria-valuenow="'+o.delta+'" aria-valuetext="'+o.delta+' ms">'+
+       '<circle cx="'+hx+'" cy="'+LB+'" r="22" style="fill:transparent"/>'+
+       '<circle class="ring" cx="'+hx+'" cy="'+LB+'" r="15"/>' +
+       cap(o.delta, LB, b) +
+       '</g>';
+  if (o.bLetter === o.bDeliver || o.verdict === 'wait') s += txt('dl', hx, LB+24, 'Δ '+o.delta+' ms', 'middle');
+  else s += txt('dl', hx, LB-16, 'Δ '+o.delta, 'middle');
+  return s;
+}
+
+function runs(pair, hackOn){
+  var out = [];
+  for (var d=0; d<=DMAX; d++){
+    var v = outcome(pair, hackOn, d).verdict, last = out[out.length-1];
+    if (last && last.v === v) last.end = d; else out.push({v:v, start:d, end:d});
+  }
+  if (out.length === 1) return EMO[out[0].v]+'\u00a0every gap';
+  return out.map(function(r){
+    var span = r.end === DMAX && r.start !== r.end ? r.start+'+' : (r.start === r.end ? ''+r.start : r.start+'–'+r.end);
+    return EMO[r.v]+'\u00a0'+span;
+  }).join(' · ');
+}
+
+function renderStrip(rows){
+  var s = '', h = rows.length*16 + 16;
+  rows.forEach(function(row, i){
+    var y = 4 + i*16;
+    s += txt('t-lab', 4, y+10, row.label);
+    for (var d=0; d<=DMAX; d++){
+      var v = outcome(state.pair, row.hackOn, d).verdict;
+      s += '<rect class="c-'+v+'" x="'+(x(d)-SC/2+0.4)+'" y="'+y+'" width="'+(SC-0.8)+'" height="12" rx="1"/>';
+    }
+    if (row.active) s += '<rect class="cur" x="'+(x(state.delta)-SC/2-1)+'" y="'+(y-2)+'" width="'+(SC+2)+'" height="16" rx="2"/>';
+  });
+  var yb = 4 + rows.length*16;
+  [0,10,20,30,40].forEach(function(t){ s += txt('t-ax', x(t), yb+9, t, 'middle'); });
+  s += txt('t-ax', x(DMAX)+12, yb+9, 'Δ ms');
+  s += '<rect class="stripHit" data-lane="1" x="'+(x(0)-SC)+'" y="0" width="'+(x(DMAX)-x(0)+2*SC)+'" height="'+(yb)+'"/>';
+  return {svg:s, h:h};
+}
+
+function resultHTML(o){
+  var p = PAIRS[o.pair], a = p.a, b = p.b, la = 'l_ak'+a;
+  var word = {ok:'adapted', bad:'base letters', wait:'stalls', tie:'tie'}[o.verdict];
+  var line;
+  if (o.verdict === 'wait') line = la+' on at '+o.layerOn+'; '+b+' stalls until your next key';
+  else if (o.verdict === 'tie') line = b+' lands at '+o.bLetter+', the same ms '+la+' comes on: hardware decides';
+  else if (o.hackOn && o.delta <= 9) line = 'both keys leave at 11; '+b+' is read on the base layer, '+la+' only comes on at '+o.layerOn;
+  else line = b+' lands at '+o.bLetter+', '+(o.verdict==='ok'?'after':'before')+' '+la+' comes on at '+o.layerOn;
+  return '<div class="result '+o.verdict+'"><span class="out">'+o.text+'</span><span class="word">'+EMO[o.verdict]+'\u00a0'+word+'</span></div>'+
+         '<div class="readout">'+line+'</div>';
+}
+
+var STAGES = {
+  1: {title:'1 · One key alone',
+      cap:'The combo engine holds T for 16 ms, types “t”, then turns on l_akT 10 ms later: that 10 ms gap is where everything below happens.'},
+  2: {title:'2 · Two keys, hack OFF',
+      capMT:'Drag T: it sits out its own 16 ms combo hold, so it always lands after M’s layer is on.',
+      capPC:'C has no combo, so it lands the instant you press it, before P’s layer is on: this is why the hack exists.'},
+  3: {title:'3 · Two keys, hack ON',
+      cap:'Every key now gets at least an 11 ms combo hold, so the 2nd key lands after the layer, unless you press it within 10 ms.',
+      note:'Past 40 ms it stays ✅ until the AK window closes at about 110 ms.',
+      trade:'The trade: the 45 pairs that share no combo lose gaps 0–9 ms (and stall at exactly 10); the 11 whose follower has no combo of its own, like C, win back 11–25 ms; the 6 that share a real combo are untouched.'}
+};
+
+var fig = document.getElementById('fig'), strip = document.getElementById('strip');
+function render(){
+  var st = state.stage, S = STAGES[st];
+  var hadFocus = document.activeElement && document.activeElement.id === 'handle';
+  document.querySelectorAll('.dots span').forEach(function(el, i){ el.className = i < st ? 'on' : ''; });
+  document.getElementById('title').textContent = S.title;
+  var capEl = document.getElementById('cap');
+  var chips = document.getElementById('chips'), res = document.getElementById('res');
+  var legend = document.getElementById('legend'), note = document.getElementById('note'), trade = document.getElementById('trade');
+  if (st === 1){
+    capEl.textContent = S.cap;
+    chips.style.display = 'none'; strip.style.display = 'none';
+    fig.setAttribute('viewBox', '0 0 400 206');
+    fig.innerHTML = renderStage1();
+    res.innerHTML = '<div class="result ok"><span class="out">t</span><span class="word">lone T</span></div>';
+    legend.innerHTML = ''; note.textContent = ''; note.style.display='none'; trade.style.display = 'none';
+  } else {
+    var hackOn = st === 3;
+    capEl.textContent = hackOn ? S.cap : (state.pair === 'MT' ? S.capMT : S.capPC);
+    chips.style.display = 'flex';
+    chips.innerHTML = ['MT','PC'].map(function(k){
+      var p = PAIRS[k];
+      return '<button type="button" data-pair="'+k+'" aria-pressed="'+(state.pair===k)+'"><b>'+p.label+'</b> '+p.sub+'</button>';
+    }).join('');
+    var o = outcome(state.pair, hackOn, state.delta);
+    fig.setAttribute('viewBox', '0 0 400 204');
+    fig.innerHTML = renderPair(o);
+    res.innerHTML = resultHTML(o);
+    var rows = hackOn ? [{label:'hack on', hackOn:true, active:true},{label:'hack off', hackOn:false}]
+                      : [{label:'hack off', hackOn:false, active:true}];
+    var r = renderStrip(rows);
+    strip.style.display = 'block';
+    strip.setAttribute('viewBox', '0 0 400 '+r.h);
+    strip.innerHTML = r.svg;
+    var lab = PAIRS[state.pair].label;
+    legend.innerHTML = rows.map(function(row){ return '<div><b>'+lab+' '+row.label+'</b>: '+runs(state.pair, row.hackOn)+'</div>'; }).join('');
+    note.style.display = hackOn ? 'block' : 'none'; note.textContent = hackOn ? S.note : '';
+    trade.style.display = hackOn ? 'block' : 'none'; trade.textContent = hackOn ? S.trade : '';
+  }
+  document.getElementById('back').disabled = st === 1;
+  document.getElementById('next').disabled = st === 3;
+  if (hadFocus){ var h = document.getElementById('handle'); if (h) h.focus({preventScroll:true}); }
+}
+function setDelta(d){
+  d = Math.max(0, Math.min(DMAX, Math.round(d)));
+  state.hinted = true;
+  if (d !== state.delta){ state.delta = d; render(); }
+}
+function deltaFromEvent(svg, e){
+  var pt = svg.createSVGPoint(); pt.x = e.clientX; pt.y = e.clientY;
+  var loc = pt.matrixTransform(svg.getScreenCTM().inverse());
+  return (loc.x - X0) / SC;
+}
+var drag = null;
+[fig, strip].forEach(function(svg){
+  svg.addEventListener('pointerdown', function(e){
+    if (state.stage === 1) return;
+    var onHandle = e.target.closest && e.target.closest('#handle');
+    var onLane = e.target.getAttribute && e.target.getAttribute('data-lane');
+    if (!onHandle && !onLane) return;
+    e.preventDefault();
+    drag = {id:e.pointerId, svg:svg};
+    try { svg.setPointerCapture(e.pointerId); } catch(_){}
+    setDelta(deltaFromEvent(svg, e));
+    var h = document.getElementById('handle'); if (h) h.focus({preventScroll:true});
+  });
+  svg.addEventListener('pointermove', function(e){
+    if (!drag || drag.id !== e.pointerId) return;
+    setDelta(deltaFromEvent(svg, e));
+  });
+  ['pointerup','pointercancel'].forEach(function(ev){
+    svg.addEventListener(ev, function(e){ if (drag && drag.id === e.pointerId) drag = null; });
+  });
+});
+fig.addEventListener('keydown', function(e){
+  if (!e.target.closest || !e.target.closest('#handle')) return;
+  var step = e.shiftKey ? 5 : 1, d = state.delta;
+  if (e.key === 'ArrowLeft' || e.key === 'ArrowDown') d -= step;
+  else if (e.key === 'ArrowRight' || e.key === 'ArrowUp') d += step;
+  else if (e.key === 'Home') d = 0;
+  else if (e.key === 'End') d = DMAX;
+  else return;
+  e.preventDefault(); setDelta(d);
+});
+document.getElementById('chips').addEventListener('click', function(e){
+  var bt = e.target.closest('button[data-pair]'); if (!bt) return;
+  state.pair = bt.getAttribute('data-pair'); render();
+});
+function go(n){
+  state.stage = Math.max(1, Math.min(3, n));
+  render();
+  var c = document.getElementById('card');
+  c.classList.remove('fade'); void c.offsetWidth; c.classList.add('fade');
+}
+document.getElementById('back').addEventListener('click', function(){ go(state.stage-1); });
+document.getElementById('next').addEventListener('click', function(){ go(state.stage+1); });
+render();
+</script>
+</body>
+</html>
