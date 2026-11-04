@@ -1,0 +1,538 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Two presses, one gate</title>
+<style>
+:root{
+  --bg:#fbfaf7; --fg:#1d1f23; --muted:#6b6f78; --panel:#ffffff; --border:#e3e1da;
+  --grid:#efede7; --grid-strong:#d6d3ca; --hatch:#8a8f99; --hold-bg:#f1efe9;
+  --layer:#6d5bd0; --layer-fill:#e6e0fb; --layer-text:#3b2d91;
+  --ok:#1f8a4c; --ok-bg:#dcf3e4; --bad:#c8372d; --bad-bg:#fbe0dd;
+  --wait:#a86200; --wait-bg:#fdf0d5; --tie:#5f646d; --tie-bg:#e9e9ea;
+  --handle:#2563eb; --focus:#2563eb; --key-bg:#f3f2ee;
+  --chip-bg:#ffffff; --chip-on-bg:#1d1f23; --chip-on-fg:#ffffff;
+  --strip-tx:#ffffff;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#15171b; --fg:#e9e9ec; --muted:#9aa0aa; --panel:#1c1f25; --border:#2e323a;
+    --grid:#23272e; --grid-strong:#3a3f48; --hatch:#8d94a0; --hold-bg:#262a31;
+    --layer:#a898ff; --layer-fill:#342d62; --layer-text:#dcd5ff;
+    --ok:#4fd18a; --ok-bg:#163a26; --bad:#ff7a6e; --bad-bg:#461d1a;
+    --wait:#f2b544; --wait-bg:#433312; --tie:#b4b9c2; --tie-bg:#30343b;
+    --handle:#6ea2ff; --focus:#8bb4ff; --key-bg:#262a31;
+    --chip-bg:#1c1f25; --chip-on-bg:#e9e9ec; --chip-on-fg:#15171b;
+    --strip-tx:#15171b;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#15171b; --fg:#e9e9ec; --muted:#9aa0aa; --panel:#1c1f25; --border:#2e323a;
+  --grid:#23272e; --grid-strong:#3a3f48; --hatch:#8d94a0; --hold-bg:#262a31;
+  --layer:#a898ff; --layer-fill:#342d62; --layer-text:#dcd5ff;
+  --ok:#4fd18a; --ok-bg:#163a26; --bad:#ff7a6e; --bad-bg:#461d1a;
+  --wait:#f2b544; --wait-bg:#433312; --tie:#b4b9c2; --tie-bg:#30343b;
+  --handle:#6ea2ff; --focus:#8bb4ff; --key-bg:#262a31;
+  --chip-bg:#1c1f25; --chip-on-bg:#e9e9ec; --chip-on-fg:#15171b;
+  --strip-tx:#15171b;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{
+  background:var(--bg); color:var(--fg);
+  font:15px/1.45 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  padding:12px max(16px,env(safe-area-inset-right)) 32px max(16px,env(safe-area-inset-left));
+  overflow-x:hidden;
+}
+main{max-width:760px;margin:0 auto}
+.pill{
+  display:inline-block;font-size:13px;text-decoration:none;color:var(--fg);
+  border:1px solid var(--border);background:var(--chip-bg);border-radius:999px;padding:3px 11px;
+}
+.pill:focus-visible,.chip:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
+h1{font-size:22px;margin:14px 0 4px}
+.lead{margin:0 0 3px;font-size:15px}
+.lead b{font-weight:700}
+.bar{display:flex;align-items:center;gap:8px;margin:12px 0 8px;flex-wrap:wrap}
+.chip{
+  font:inherit;font-size:14px;font-weight:600;cursor:pointer;
+  border:1px solid var(--border);background:var(--chip-bg);color:var(--fg);
+  border-radius:999px;padding:5px 14px;
+}
+.chip[aria-pressed="true"]{background:var(--chip-on-bg);color:var(--chip-on-fg);border-color:var(--chip-on-bg)}
+.delta{margin-left:auto;font-size:14px;color:var(--muted)}
+.delta b{color:var(--handle);font-size:18px}
+.hint{font-size:13px;color:var(--muted);margin:0 0 6px}
+.num{font-variant-numeric:tabular-nums}
+.fig{border-radius:12px;outline:none}
+.fig:focus-visible{outline:2px solid var(--focus);outline-offset:3px}
+svg{width:100%;height:auto;display:block;user-select:none;-webkit-user-select:none;-webkit-touch-callout:none}
+svg text{font-family:inherit;font-variant-numeric:tabular-nums}
+.hit{fill:transparent;cursor:ew-resize;touch-action:none}
+.grid{stroke:var(--grid);stroke-width:1}
+.grid10{stroke:var(--grid-strong);stroke-width:1}
+.axis{fill:var(--muted);font-size:12px}
+.panelbg{fill:var(--panel);stroke:var(--border)}
+.title{fill:var(--fg);font-size:14px;font-weight:700}
+.sub{fill:var(--muted);font-size:12px}
+.key{fill:var(--fg);font-size:17px;font-weight:700}
+.role{fill:var(--muted);font-size:11px}
+.lbl{fill:var(--fg);font-size:11.5px}
+.typed{fill:var(--muted);font-size:11px}
+.halo{paint-order:stroke;stroke:var(--panel);stroke-width:4px;stroke-linejoin:round}
+.press{stroke:var(--fg);stroke-width:2}
+.hold{fill:url(#hatch);stroke:var(--hatch);stroke-width:1}
+.ghost{fill:none;stroke:var(--hatch);stroke-width:1;stroke-dasharray:3 3}
+.parkhold{fill:url(#hatchw);stroke:var(--wait);stroke-width:1;stroke-dasharray:3 2}
+.cutt{fill:var(--bad);font-size:11.5px;font-weight:600}
+.bub{fill:var(--key-bg);stroke:var(--fg);stroke-width:1.6}
+.bub.ok{fill:var(--ok-bg);stroke:var(--ok)} .bub.bad{fill:var(--bad-bg);stroke:var(--bad)} .bub.tie{fill:var(--tie-bg);stroke:var(--tie)}
+.bubt{fill:var(--fg);font:700 13px ui-monospace,SFMono-Regular,Menlo,monospace}
+.bubt.ok{fill:var(--ok)} .bubt.bad{fill:var(--bad)} .bubt.tie{fill:var(--tie)}
+.gatebg{fill:var(--layer-fill);opacity:.5}
+.gate{stroke:var(--layer);stroke-width:2;stroke-dasharray:5 3}
+.gatet{fill:var(--layer-text);font-size:11.5px;font-weight:700}
+.plus{stroke:var(--layer);stroke-width:1.2;stroke-dasharray:1 2}
+.plust{fill:var(--layer-text);font-size:11px;font-weight:600}
+.marg{stroke-width:2.2}
+.marg.ok{stroke:var(--ok)} .marg.bad{stroke:var(--bad)}
+.mtxt{font-size:12.5px;font-weight:700}
+.mtxt.ok{fill:var(--ok)} .mtxt.bad{fill:var(--bad)} .mtxt.tie{fill:var(--tie)} .mtxt.wait{fill:var(--wait)}
+.vp.ok{fill:var(--ok-bg);stroke:var(--ok)} .vp.bad{fill:var(--bad-bg);stroke:var(--bad)} .vp.wait{fill:var(--wait-bg);stroke:var(--wait)} .vp.tie{fill:var(--tie-bg);stroke:var(--tie)}
+.vpt{font-size:13px;font-weight:700}
+.vpt.ok{fill:var(--ok)} .vpt.bad{fill:var(--bad)} .vpt.wait{fill:var(--wait)} .vpt.tie{fill:var(--tie)}
+.stem{stroke:var(--handle);stroke-width:2}
+.hpill{fill:var(--handle)}
+.hpt{fill:var(--panel);font-size:12px;font-weight:700}
+.hring{fill:none;stroke:var(--focus);stroke-width:2;opacity:0}
+.fig:focus-visible .hring,.fig.dragging .hring{opacity:1}
+.ahead{fill:context-stroke}
+/* strips */
+h2{font-size:15px;margin:18px 0 6px}
+.strips{background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:8px 6px}
+#strips{touch-action:pan-y;cursor:ew-resize}
+.tm{fill:var(--muted);font-size:11px}
+.gridl{stroke:var(--grid);stroke-width:1}
+.c-ok{fill:var(--ok)} .c-bad{fill:var(--bad)} .c-wait{fill:var(--wait)} .c-tie{fill:var(--tie)}
+.st{fill:var(--strip-tx);font-size:11.5px;font-weight:700}
+.sg{fill:var(--fg);font-size:11px}
+.zcost{fill:var(--bad);fill-opacity:.08;stroke:var(--bad);stroke-width:1.2;stroke-dasharray:4 3}
+.zfix{fill:var(--ok);fill-opacity:.09;stroke:var(--ok);stroke-width:1.2;stroke-dasharray:4 3}
+.zct{fill:var(--bad);font-size:11.5px;font-weight:700}
+.zft{fill:var(--ok);font-size:11.5px;font-weight:700}
+.tail{fill:var(--ok-bg);stroke:var(--ok);stroke-width:1}
+.tailt{fill:var(--ok);font-size:11px;font-weight:700}
+.zig{fill:none;stroke:var(--muted);stroke-width:1.2}
+.scell{fill:none;stroke:var(--fg);stroke-width:1.6}
+.scrub{stroke:var(--handle);stroke-width:2}
+.legend{margin:8px 2px 0;font-size:13.5px}
+.context{margin:10px 2px 0;font-size:14.5px;padding:8px 12px;border-left:3px solid var(--layer);background:var(--panel);border-radius:0 8px 8px 0}
+.foot{font-size:12.5px;color:var(--muted);margin:16px 2px 0;padding-left:10px;border-left:2px solid var(--grid-strong)}
+.foot p{margin:3px 0}
+.foot code{font-size:12px}
+@media (prefers-reduced-motion: reduce){
+  *{transition:none !important;animation:none !important;scroll-behavior:auto !important}
+}
+</style>
+</head>
+<body>
+<main>
+  <a class="pill" href="index.html">← All candidates</a>
+
+  <h1>Two presses, one gate</h1>
+  <p class="lead"><b>Wanted:</b> the second letter adapted (P→C types pt, M→T types mn).</p>
+  <p class="lead"><b>Rule:</b> the 2nd letter adapts only if it is typed after the gate opens. Gate = 1st letter + 10 ms.</p>
+
+  <div class="bar" role="group" aria-label="Key pair">
+    <button class="chip" type="button" data-pair="PC" aria-pressed="true">P→C</button>
+    <button class="chip" type="button" data-pair="MT" aria-pressed="false">M→T</button>
+    <span class="delta num">2nd key at Δ <b id="dval">15</b> ms</span>
+  </div>
+  <p class="hint">Drag the 2nd key's lane (or use ← →) to press it earlier or later.</p>
+
+  <div class="fig" id="fig" tabindex="0" role="slider"
+       aria-label="2nd key press time, milliseconds after the 1st press"
+       aria-valuemin="0" aria-valuemax="40" aria-valuenow="15">
+    <svg id="svg" aria-hidden="true">
+      <defs>
+        <pattern id="hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+          <rect width="6" height="6" style="fill:var(--hold-bg)"/>
+          <line x1="0" y1="0" x2="0" y2="6" style="stroke:var(--hatch)" stroke-width="2"/>
+        </pattern>
+        <pattern id="hatchw" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+          <rect width="6" height="6" style="fill:var(--wait-bg)"/>
+          <line x1="0" y1="0" x2="0" y2="6" style="stroke:var(--wait)" stroke-width="2"/>
+        </pattern>
+        <marker id="arr-ok" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+          <path d="M0,0 L8,4 L0,8 z" style="fill:var(--ok)"/>
+        </marker>
+        <marker id="arr-bad" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+          <path d="M0,0 L8,4 L0,8 z" style="fill:var(--bad)"/>
+        </marker>
+      </defs>
+      <g id="static"></g>
+      <g id="dyn" pointer-events="none"></g>
+      <g id="hits"></g>
+    </svg>
+  </div>
+
+  <h2 id="stripsh">Every gap at once, P→C</h2>
+  <div class="strips" id="stripbox">
+    <svg id="strips" aria-hidden="true"></svg>
+  </div>
+  <p class="legend">✅ mn / pt = adapted · ❌ mt / pc = the adaptation missed, base letter typed · ⏸ 2nd key waits for your next key · ⚖️ exact tie</p>
+  <p class="context">Under 10 ms is the speed real two-key combos fire at (M+W within 15 ms is Z): giving those rolls up is the intended trade. 11–26 ms is where typing really happens, and where 11 pairs used to be unreliable.</p>
+
+  <div class="foot">
+    <p>P→C stands for 11 pairs whose 2nd key has no combo (X C F, thumbs); M→T for 34 pairs whose 2nd key has its own combos. 6 pairs that share a real combo and 3 with no timing band type the same with the hack on or off.</p>
+    <p>⏸ at exactly 10 ms and the ⚖️ edges are hardware predictions. Board engine time, numbers from <code>Design/Timing/FACTS.md</code>.</p>
+  </div>
+</main>
+
+<script>
+// BEGIN outcome
+const PAIRS = {
+  MT: { A: 'M', B: 'T', kA: 16, kB: 16, layer: 'l_akM', aGlyph: 'm', bAdapted: 'n', bBase: 't', adapted: 'mn', base: 'mt' },
+  PC: { A: 'P', B: 'C', kA: 16, kB: 0,  layer: 'l_akP', aGlyph: 'p', bAdapted: 't', bBase: 'c', adapted: 'pt', base: 'pc' }
+};
+// Board engine time in ms, t = 0 at the trigger press. Pure: no DOM.
+function outcome(pair, hackOn, delta) {
+  const p = typeof pair === 'string' ? PAIRS[pair] : pair;
+  const dA = hackOn ? Math.max(11, p.kA) : p.kA;   // trigger hold
+  const dB = hackOn ? Math.max(11, p.kB) : p.kB;   // follower hold
+  let aOut, bOut, parked = false, together = false;
+  if (hackOn && delta <= 9) { aOut = 11; bOut = 11; together = true; }
+  else if (hackOn && delta === 10) { aOut = 11; bOut = null; parked = true; }
+  else { aOut = Math.min(delta, dA); bOut = delta + dB; }
+  const layerOn = aOut + 10, layerOff = aOut + 110;
+  const margin = parked ? null : bOut - layerOn;
+  // D7: the only change from D2's block: the gate also closes (layerOff), so a late 2nd letter misses it again
+  const verdict = parked ? 'wait' : margin < 0 ? 'bad' : margin === 0 ? 'tie' : bOut < layerOff ? 'ok' : bOut === layerOff ? 'tie' : 'bad';
+  const output = verdict === 'ok' ? p.adapted : verdict === 'bad' ? p.base : null;
+  const bGlyph = verdict === 'ok' ? p.bAdapted : verdict === 'bad' ? p.bBase : verdict === 'tie' ? '?' : null;
+  return { aPress: 0, bPress: delta, aOut, bOut, layerOn, layerOff, margin, verdict, output, bGlyph, parked, together, dA, dB };
+}
+// END outcome
+
+(function () {
+  const T_MAX = 60, D_MAX = 40;
+  const state = { pair: 'PC', delta: 15 };
+  const svg = document.getElementById('svg');
+  const fig = document.getElementById('fig');
+  const dyn = document.getElementById('dyn');
+  const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;');
+  const EMO = { ok: '✅', bad: '❌', wait: '⏸', tie: '⚖️' };
+  // rough text width, px (good enough to stagger labels)
+  const ctx = document.createElement('canvas').getContext('2d');
+  const FONT = getComputedStyle(document.body).fontFamily;
+  const tw = (s, size, bold) => { ctx.font = `${bold ? 700 : 400} ${size}px ${FONT}`; return ctx.measureText(String(s)).width + 2; };
+
+  // ---------- geometry (re-computed on resize: the SVG is drawn at real pixel width) ----------
+  let G = {};
+  const PANEL_H = 204;
+  const PANELS = [
+    { hackOn: true,  title: 'hack ON',  sub: "today's firmware" },
+    { hackOn: false, title: 'hack OFF', sub: 'upstream ZMK' }
+  ];
+  function layout() {
+    const W = Math.max(300, Math.round(fig.clientWidth));
+    const X0 = 42, X1 = W - 12, S = (X1 - X0) / T_MAX;
+    const x = t => X0 + Math.min(Math.max(t, 0), T_MAX) * S;
+    const tops = [26, 26 + PANEL_H + 10];
+    const H = tops[1] + PANEL_H + 26;
+    G = { W, X0, X1, S, x, tops, H };
+    svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
+    svg.style.height = H + 'px';
+
+    let st = '';
+    for (let t = 0; t <= T_MAX; t++) {
+      if (S < 7 && t % 5) continue;
+      st += `<line class="${t % 10 ? 'grid' : 'grid10'}" x1="${x(t)}" x2="${x(t)}" y1="22" y2="${H - 20}"/>`;
+    }
+    for (let t = 0; t <= T_MAX; t += 10) {
+      st += `<text class="axis" x="${x(t)}" y="16" text-anchor="middle">${t}</text>`;
+      st += `<text class="axis" x="${x(t)}" y="${H - 5}" text-anchor="middle">${t}</text>`;
+    }
+    st += `<text class="axis" x="${X0 - 12}" y="16" text-anchor="end">ms</text>`;
+    PANELS.forEach((P, i) => {
+      const top = tops[i];
+      st += `<rect class="panelbg" x="1" y="${top}" width="${W - 2}" height="${PANEL_H}" rx="10" style="fill-opacity:.9"/>`;
+      st += `<text class="title" x="10" y="${top + 19}">${P.title}</text>`;
+      st += `<text class="sub" x="${10 + (P.hackOn ? 62 : 70)}" y="${top + 19}">${P.sub}</text>`;
+    });
+    document.getElementById('static').innerHTML = st;
+
+    // hit areas: the whole 2nd-key lane of each panel, handle pill included (>= 32 px tall)
+    let hits = '';
+    tops.forEach(top => {
+      const l2 = top + 130;
+      hits += `<rect class="hit" x="0" y="${l2 - 24}" width="${W}" height="${PANEL_H - (l2 - 24 - top)}"/>`;
+    });
+    document.getElementById('hits').innerHTML = hits;
+  }
+
+  // ---------- one race panel ----------
+  function holdLabel(letter, k, hackOn, first) {
+    const h = hackOn ? Math.max(11, k) : k;
+    if (h === 0) return `${letter} is typed at once: no hold`;
+    return `${letter} waits ${h} ms behind ${h === k ? 'its combos' : 'the hack'}${first ? ', then is typed' : ''}`;
+  }
+
+  function panel(i, P, p, d) {
+    const { x, X0, X1, W } = G;
+    const top = G.tops[i];
+    const o = outcome(p, P.hackOn, d);
+    const tl = p.aGlyph, fl = p.bBase;
+    let s = '';
+    // rows inside the panel
+    const gTop = top + 28, yGate = top + 42, yTrigL = top + 59, l1 = top + 74, yUnder = top + 93;
+    const yFolL = top + 115, l2 = top + 130, yArr = l2 + 16, yM = l2 + 35, yPill = l2 + 44;
+    const gBot = l2 + 20;
+    const gx = x(o.layerOn);
+
+    // verdict pill, top right
+    const vtxt = o.verdict === 'ok' ? `✅ ${p.adapted}` : o.verdict === 'bad' ? `❌ ${p.base}`
+               : o.verdict === 'wait' ? `⏸ ${fl} waits` : `⚖️ ${p.adapted} or ${p.base}`;
+    const vw = o.verdict === 'tie' ? 104 : o.verdict === 'wait' ? 92 : 64;
+    s += `<rect class="vp ${o.verdict}" x="${W - vw - 8}" y="${top + 4}" width="${vw}" height="24" rx="12"/>`;
+    s += `<text class="vpt ${o.verdict}" x="${W - vw / 2 - 8}" y="${top + 20.5}" text-anchor="middle">${vtxt}</text>`;
+
+    // gate: shaded from the moment the 1st key's layer opens
+    s += `<rect class="gatebg" x="${gx}" y="${gTop}" width="${X1 - gx}" height="${gBot - gTop}"/>`;
+    s += `<line class="gate" x1="${gx}" x2="${gx}" y1="${gTop}" y2="${gBot}"/>`;
+    const gl = `gate opens at ${o.layerOn} (${p.A}’s layer)`;
+    const gEnd = gx + 6 + tw(gl, 11.5, true) > W - 4;
+    s += `<text class="gatet halo" x="${gEnd ? gx - 6 : gx + 6}" y="${yGate}" text-anchor="${gEnd ? 'end' : 'start'}">${gl}</text>`;
+
+    // lane 1: the 1st key
+    s += `<text class="key" x="6" y="${l1 + 6}">${p.A}</text><text class="role" x="25" y="${l1 + 5}">1st</text>`;
+    if (o.aOut < o.dA) s += `<rect class="ghost" x="${x(0)}" y="${l1 - 6}" width="${x(o.dA) - x(0)}" height="12" rx="2"/>`;
+    if (o.aOut > 0) s += `<rect class="hold" x="${x(0)}" y="${l1 - 6}" width="${x(o.aOut) - x(0)}" height="12" rx="2"/>`;
+    s += `<line class="press" x1="${x(0)}" x2="${x(0)}" y1="${l1 - 11}" y2="${l1 + 11}"/>`;
+    s += `<text class="lbl halo" x="${x(0) + 2}" y="${yTrigL}">${holdLabel(tl, p.kA, P.hackOn, true)}</text>`;
+    // +10 ms connector, letter -> gate
+    s += `<line class="plus" x1="${x(o.aOut) + 10}" x2="${gx}" y1="${l1}" y2="${l1}"/>`;
+    s += `<text class="plust halo" x="${(x(o.aOut) + 10 + gx) / 2}" y="${l1 + 4}" text-anchor="middle">+10 ms</text>`;
+    // ✂ cut short
+    if (o.aOut < o.dA) {
+      const cx = x(o.aOut);
+      const ct = o.together ? 'both leave at 11' : o.parked ? `${tl} leaves at 11` : 'cut short by the 2nd press';
+      s += `<text class="cutt halo" x="${cx + 20}" y="${yUnder}">✂ ${ct}</text>`;
+    }
+    s += `<circle class="bub" cx="${x(o.aOut)}" cy="${l1}" r="9.5"/><text class="bubt" x="${x(o.aOut)}" y="${l1 + 4.5}" text-anchor="middle">${tl}</text>`;
+    s += `<text class="typed halo" x="${x(o.aOut)}" y="${yUnder}" text-anchor="${o.aOut < o.dA ? 'middle' : 'middle'}">typed</text>`;
+
+    // lane 2: the 2nd key
+    s += `<text class="key" x="6" y="${l2 + 6}">${p.B}</text><text class="role" x="25" y="${l2 + 5}">2nd</text>`;
+    let flab;
+    if (o.parked) {
+      s += `<rect class="parkhold" x="${x(d)}" y="${l2 - 6}" width="${X1 - x(d)}" height="12" rx="2"/>`;
+      flab = `${fl} is held, not typed yet`;
+    } else {
+      if (o.bOut > d) s += `<rect class="hold" x="${x(d)}" y="${l2 - 6}" width="${x(o.bOut) - x(d)}" height="12" rx="2"/>`;
+      flab = o.together ? `${fl} is released with ${p.A} at 11` : holdLabel(fl, p.kB, P.hackOn, false);
+    }
+    s += `<line class="press" style="stroke:var(--handle)" x1="${x(d)}" x2="${x(d)}" y1="${l2 - 12}" y2="${l2 + 12}"/>`;
+    const fw = tw(flab, 11.5, o.parked);
+    const fStart = x(d) + 3 + fw <= W - 4;
+    const fx = fStart ? x(d) + 3 : Math.max(4 + fw, x(d) - 3);
+    s += `<text class="lbl halo" x="${fx}" y="${yFolL}" text-anchor="${fStart ? 'start' : 'end'}">${flab}</text>`;
+
+    // margin arrow: when the 2nd letter is typed vs when the gate opens
+    let mtxt = '', mcls = o.verdict, stemGap = false;
+    if (o.parked) mtxt = `⏸ exactly 10 ms: ${fl} waits for your next key`;
+    if (!o.parked) {
+      const bx = x(o.bOut);
+      if (o.margin !== 0) s += `<line class="marg ${o.verdict}" x1="${bx}" x2="${gx}" y1="${yArr}" y2="${yArr}" marker-end="url(#arr-${o.verdict})"/>`;
+      mtxt = o.margin > 0 ? `${fl} typed ${o.margin} ms after the gate opens`
+           : o.margin < 0 ? `${fl} typed ${-o.margin} ms before the gate opens`
+           : `${fl} typed the same ms the gate opens`;
+      const glyph = o.bGlyph;
+      s += `<circle class="bub ${o.verdict}" cx="${bx}" cy="${l2}" r="9.5"/><text class="bubt ${o.verdict}" x="${bx}" y="${l2 + 4.5}" text-anchor="middle">${esc(glyph)}</text>`;
+    }
+    // place the sentence clear of the handle stem; if no side has room, break the stem around it
+    {
+      const mw = tw(mtxt, 12.5, true), hx = x(d);
+      let mx = X0, anchor = 'start';
+      if (hx >= X0 - 8 && hx <= X0 + mw + 8) {
+        if (hx + 10 + mw <= W - 4) { mx = hx + 10; }
+        else if (hx - 10 - mw >= 4) { mx = hx - 10; anchor = 'end'; }
+        else { mx = Math.max(4, Math.min(X0, W - 4 - mw)); stemGap = true; }
+      }
+      s += `<text class="mtxt ${mcls}" x="${mx}" y="${yM}" text-anchor="${anchor}">${mtxt}</text>`;
+    }
+
+    // handle: blue stem from the 2nd press down to a pill
+    const hx = x(d);
+    const px = Math.min(W - 44, Math.max(44, hx));
+    if (stemGap) s += `<line class="stem" x1="${hx}" x2="${hx}" y1="${l2 + 12}" y2="${yM - 14}"/><line class="stem" x1="${hx}" x2="${hx}" y1="${yM + 4}" y2="${yPill}"/>`;
+    else s += `<line class="stem" x1="${hx}" x2="${hx}" y1="${l2 + 12}" y2="${yPill}"/>`;
+    s += `<rect class="hring" x="${px - 40}" y="${yPill - 3}" width="80" height="30" rx="15"/>`;
+    s += `<rect class="hpill" x="${px - 36}" y="${yPill}" width="72" height="24" rx="12"/>`;
+    s += `<text class="hpt" x="${px}" y="${yPill + 16.5}" text-anchor="middle">◂ Δ ${d} ms ▸</text>`;
+
+    const aria = `hack ${P.hackOn ? 'ON' : 'OFF'}: ${mtxt}, ${vtxt}`;
+    return { s, aria };
+  }
+
+  function draw() {
+    const p = PAIRS[state.pair], d = state.delta;
+    let s = '';
+    const aria = [];
+    PANELS.forEach((P, i) => { const r = panel(i, P, p, d); s += r.s; aria.push(r.aria); });
+    dyn.innerHTML = s;
+    document.getElementById('dval').textContent = d;
+    fig.setAttribute('aria-valuenow', d);
+    fig.setAttribute('aria-valuetext', `${p.A}→${p.B}, 2nd key at ${d} ms. ` + aria.join('. '));
+    drawStrips();
+  }
+
+  // ---------- whole-range strips ----------
+  const strips = document.getElementById('strips');
+  const stripbox = document.getElementById('stripbox');
+  let SG = {};
+  function lastOk(p, on) { let d = 200; while (d > 0 && outcome(p, on, d).verdict !== 'ok') d--; return d; }
+  const ZONE = {
+    MT: { cls: 'zcost', tcls: 'zct', from: 0, to: 10, txt: 'what it costs: 0–9 ms' },
+    PC: { cls: 'zfix', tcls: 'zft', from: 11, to: 27, txt: 'what it fixes: 11–26 ms' }
+  };
+  const NOTE = { wait: '2nd key waits for your next key', tie: 'exact tie' };
+  function drawStrips() {
+    const p = PAIRS[state.pair], d = state.delta;
+    document.getElementById('stripsh').textContent = `Every gap at once, ${p.A}→${p.B}`;
+    const W = Math.max(280, Math.round(stripbox.clientWidth - 12));
+    const narrow = W < 520;
+    const LBL = 62, TAIL = narrow ? 76 : 92;
+    const PR = W - TAIL, s = (PR - LBL) / (D_MAX + 1);
+    const x = v => LBL + v * s;
+    const AXY = 13, RH = 24;
+    let o = '', body = '';
+    const z = ZONE[state.pair];
+    let y = AXY + 26;                       // zone label sits above the hack ON row
+    body += `<text class="${z.tcls} halo" x="${x(z.from) + (z.from ? 5 : 1)}" y="${y - 8}">${z.txt}</text>`;
+    const rows = [];
+    [true, false].forEach((on, ri) => {
+      if (ri) y += narrow ? 4 : 16;
+      rows.push(y);
+      body += `<text class="tm" x="${LBL - 6}" y="${y + 16}" text-anchor="end">hack ${on ? 'ON' : 'OFF'}</text>`;
+      if (on) body += `<rect class="${z.cls}" x="${x(z.from) - 2}" y="${y - 3}" width="${(z.to - z.from) * s + 4}" height="${RH + 6}" rx="4"/>`;
+      let st = 0;
+      for (let v = 1; v <= D_MAX + 1; v++) {
+        const c0 = outcome(p, on, st).verdict;
+        if (v === D_MAX + 1 || outcome(p, on, v).verdict !== c0) {
+          const w = (v - st) * s;
+          const tip = `${EMO[c0]} ${st}${v - 1 > st ? '–' + (v - 1) : ''} ms${NOTE[c0] ? ': ' + NOTE[c0] : ''}`;
+          body += `<rect class="c-${c0}" x="${x(st)}" y="${y}" width="${w + 0.4}" height="${RH}"><title>${tip}</title></rect>`;
+          const lab = `${EMO[c0]} ${c0 === 'ok' ? p.adapted : p.base}`;
+          if ((c0 === 'ok' || c0 === 'bad') && w > 46) body += `<text class="st" x="${x(st) + w / 2}" y="${y + 16}" text-anchor="middle">${lab}</text>`;
+          if (!narrow && NOTE[c0]) body += `<text class="sg" x="${x(st) + w / 2}" y="${y - (on ? 6 : 4)}" text-anchor="middle">${EMO[c0]}</text>`;
+          st = v;
+        }
+      }
+      const zx = x(D_MAX + 1) + 3;
+      body += `<path class="zig" d="M${zx} ${y - 2} l4 7 l-4 7 l4 7 l-4 7"/>`;
+      const tx = zx + 9;
+      body += `<rect class="tail" x="${tx}" y="${y}" width="${W - tx - 1}" height="${RH}" rx="4"/>`;
+      body += `<text class="tailt" x="${tx + 6}" y="${y + 16}">${narrow ? '… ✅ ~' : '… ✅ to ~'}${lastOk(p, on) + 1}</text>`;
+      y += RH + 4;
+    });
+    const bottom = y;
+    for (let t = 0; t <= D_MAX; t += 5) {
+      o += `<line class="gridl" x1="${x(t) + s / 2}" x2="${x(t) + s / 2}" y1="${AXY + 4}" y2="${bottom - 4}"/>`;
+      o += `<text class="tm" x="${x(t) + s / 2}" y="${AXY}" text-anchor="middle">${t}</text>`;
+    }
+    o += `<text class="tm" x="${LBL - 6}" y="${AXY}" text-anchor="end">gap, ms</text>`;
+    o += body;
+    // mirrored handle
+    const cx = x(d) + s / 2;
+    o += `<rect class="scell" x="${x(d)}" y="${rows[0] - 2}" width="${s}" height="${bottom - 4 - rows[0] + 4}" rx="1.5"/>`;
+    const hy = bottom + 6;
+    o += `<line class="scrub" x1="${cx}" x2="${cx}" y1="${bottom - 2}" y2="${hy}"/>`;
+    const hx = Math.min(W - 40, Math.max(40, cx));
+    o += `<rect class="hpill" x="${hx - 36}" y="${hy}" width="72" height="24" rx="12"/>`;
+    o += `<text class="hpt" x="${hx}" y="${hy + 16.5}" text-anchor="middle">◂ Δ ${d} ms ▸</text>`;
+    const H = hy + 28;
+    o += `<rect class="hit" x="0" y="0" width="${W}" height="${H}"/>`;
+    SG = { LBL, s };
+    strips.setAttribute('viewBox', `0 0 ${W} ${H}`);
+    strips.style.height = H + 'px';
+    strips.innerHTML = o;
+  }
+
+  // ---------- interaction ----------
+  function set(d) {
+    d = Math.max(0, Math.min(D_MAX, Math.round(d)));
+    if (d !== state.delta) { state.delta = d; draw(); }
+  }
+  function svgX(el, e) {
+    const pt = el.createSVGPoint();
+    pt.x = e.clientX; pt.y = e.clientY;
+    return pt.matrixTransform(el.getScreenCTM().inverse()).x;
+  }
+  const toMs = e => (svgX(svg, e) - G.X0) / G.S;
+  const stripMs = e => (svgX(strips, e) - SG.LBL) / SG.s - 0.5;
+
+  let dragging = null;
+  document.getElementById('hits').addEventListener('pointerdown', e => {
+    e.preventDefault();
+    dragging = e.pointerId;
+    try { svg.setPointerCapture(e.pointerId); } catch (_) {}
+    fig.classList.add('dragging');
+    fig.focus({ preventScroll: true });
+    set(toMs(e));
+  });
+  svg.addEventListener('pointermove', e => { if (dragging === e.pointerId) set(toMs(e)); });
+  const end = e => { if (dragging === e.pointerId) { dragging = null; fig.classList.remove('dragging'); } };
+  svg.addEventListener('pointerup', end);
+  svg.addEventListener('pointercancel', end);
+  document.getElementById('hits').addEventListener('touchstart', e => e.preventDefault(), { passive: false });
+
+  let sdrag = null;
+  strips.addEventListener('pointerdown', e => {
+    e.preventDefault();
+    sdrag = e.pointerId;
+    try { strips.setPointerCapture(e.pointerId); } catch (_) {}
+    set(stripMs(e));
+  });
+  strips.addEventListener('pointermove', e => { if (sdrag === e.pointerId) set(stripMs(e)); });
+  ['pointerup', 'pointercancel'].forEach(n => strips.addEventListener(n, () => { sdrag = null; }));
+
+  fig.addEventListener('keydown', e => {
+    const step = e.shiftKey ? 5 : 1;
+    let d = state.delta;
+    if (e.key === 'ArrowRight' || e.key === 'ArrowUp') d += step;
+    else if (e.key === 'ArrowLeft' || e.key === 'ArrowDown') d -= step;
+    else if (e.key === 'Home') d = 0;
+    else if (e.key === 'End') d = D_MAX;
+    else return;
+    e.preventDefault();
+    set(d);
+  });
+
+  function setPair(k) {
+    state.pair = k;
+    document.querySelectorAll('.chip').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.pair === k)));
+    draw();
+  }
+  document.querySelectorAll('.chip').forEach(btn => btn.addEventListener('click', () => setPair(btn.dataset.pair)));
+
+  // ?p=MT&d=7 deep links (used for screenshots)
+  const q = new URLSearchParams(location.search);
+  if (q.get('d') !== null) state.delta = Math.max(0, Math.min(D_MAX, +q.get('d') || 0));
+  if (q.get('p') === 'MT' || q.get('p') === 'PC') state.pair = q.get('p');
+  document.querySelectorAll('.chip').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.pair === state.pair)));
+
+  let raf = 0;
+  window.addEventListener('resize', () => {
+    cancelAnimationFrame(raf);
+    raf = requestAnimationFrame(() => { layout(); draw(); });
+  });
+  layout();
+  draw();
+})();
+</script>
+</body>
+</html>

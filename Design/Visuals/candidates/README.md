@@ -18,9 +18,11 @@
 | `D4.html` | Problem first, three steps: P→C without the hack, with it, then the price on M→T; every element labelled in place | from Flo's feedback; critic pass + fix round done |
 | `D5.html` | What the hack trades: map of the two groups that differ + race-lane "why" under the scrubber | from the critic's verdict; critic pass + fix round done |
 | `D6.html` | Watch the letters land: slow-motion replay (1 s = 20 ms), hack on/off scenes in sync, letters fly into a text field at their typing moment | from both critics' "the hold wait never landed"; critic pass pending |
+| `D7.html` | Two presses, one gate: D2's playground reworked (opens where the hack wins, labels in place, rule stated, 0–40 strip below) | from Flo's "D2 is the keeper playground" + D2's critic; critic pass pending |
 | `test_outcome*.js` | `node test_outcome.js` (D3), `_d4.js`, `_d5.js` check each page's pure `outcome()` against 11 FACTS cases and print the bands | all pass |
 
 - Open any page locally: `python3 -m http.server` in this folder, then `http://127.0.0.1:8000/index.html`
+- D2's own `outcome()` lacks the window-closing edge (fails 4 of the 11 edge cases past 110 ms; harmless on its 0–60 axis); D4–D7 carry the complete one
 - Each `D*.html` is standalone (own doctype, inline CSS/JS, light + dark tokens, phone width ok)
 
 ## 🗣️ Flo's gut feedback (2026-11-04, not a validation of accuracy)
