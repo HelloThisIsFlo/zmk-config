@@ -85,6 +85,14 @@
 - ⚠️ the critic's suggested wording "the hack shortens T's 16 ms wait to 11" is wrong (hold = max(11, 16) = 16); not applied
 - Fix round applied: slower replay with holds on events, per-pair sentence per panel, plain words, chip beside the typed box (see git log)
 
+## 🔍 Cold critic on D8 (Fable, 2026-11-04)
+
+- Cold read after the first replay: "with the hack on, K-E-P-C at 15 ms gives kept; without it kepc, so the hack fixes 11–26 ms gaps". The hack looks like a pure win
+- Confusions, ranked: (1) the cost is hidden behind the second word chip, "a trade I cannot see"; (2) the replay spends 2 s on K E P and the only moment that matters lasts 100 ms; (3) blue keycaps unexplained, the press flash invisible; (4) "which is enough" / "before P's adaptive layer is on" don't share one sentence; (5) the ⏸ chip says nothing about the letter; (6) "?" for the tie; (7) phone strip 10 px rows and labels; (8) footer is a wall of numbers
+- Keep: the two typed boxes side by side with the last letter coloured ("the whole claim in one glance"), verdict chips under them, the strip with the cursor + zone, the per-gap sentence, dark mode
+- Verdicts: wanted output understood (why C becomes T stays opaque, by design); reads as "the hack is free" (the opposite risk); as a first page, nearly: fix 1 mandatory
+- Fix round applied: both words on screen at once, replay re-timed around the critical gap, phone strip (see git log)
+
 ## 🔁 How a candidate is made
 
 1. Builder writes `Dn.html` reusing a page's unit-tested `outcome(pair, hackOn, delta)`
