@@ -102,6 +102,14 @@
 - Kept on purpose: "the intended trade" (Flo's own judgement, 2026-11-04: "it's a trade-off that I'm happy to make"); "where real typing happens" was replaced by Flo's words "where the inconsistency was"
 - Not fixed, cosmetic: D5 strip tails "… ✅ to ~115" are hedged with ~ (✅ ends at 114, ⚖️ at 115)
 
+## 🔍 Cold critic on D9 (Fable, 2026-11-04)
+
+- Cold read after 60 s: "the board turns kepc into kept and columt into column if you roll fast enough; the hack makes kept work in a band where it used to fail while breaking column only for super-fast rolls" (right)
+- Confusions, ranked: (1) first roll gave 2 ms and four red tiles, "I broke it?": nothing next to the number says which zone you landed in; (2) "Wanted: the adapted letter" read three times, nothing says kept is the goal; (3) "the pair the hack fixes / costs" is the thesis but muted grey; (4) the mechanism paragraphs compete with the strip, skipped; (5) a slow roll pins "you" at 40 and shows the same red as the cost; (6) "Use 15 ms instead" reveals a slider it doesn't promise; (7) ⏸ needs a verdict word; (8) phone copy says "roll two keys" with no keyboard
+- Keep: the two-word on/off tile grid with underline vs squiggle ("instant"), the 4-row strip with the "you" box and the zones ("the best element on the page"), the clickable history pills and the ±2 ms line, dark mode
+- Verdicts: measuring the gap made it real; reads as "a reasonable trade, slightly in its favour"; would send to a friend after fix 1
+- Fix round applied: verdict sentence under the gap, strip moved under the pad with the mechanism behind a "why?" toggle, intro rewritten, phone copy (see git log)
+
 ## 🔁 How a candidate is made
 
 1. Builder writes `Dn.html` reusing a page's unit-tested `outcome(pair, hackOn, delta)`
