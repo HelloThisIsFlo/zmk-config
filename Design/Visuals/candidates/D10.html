@@ -108,7 +108,8 @@ svg{display:block;width:100%;height:auto;overflow:visible}
 .meas .big small{font-size:20px;font-weight:700;margin-left:4px}
 .note{margin:4px 0 0;font-size:12px;color:var(--muted)}
 .vline{margin:8px 0 0;font-size:15px;font-weight:600;color:var(--fg);border-left:4px solid var(--line);padding-left:10px}
-.vline.cost{border-color:var(--bad)} .vline.stall{border-color:var(--wait)} .vline.fix{border-color:var(--ok)}
+.vline.cost{border-color:var(--bad)}
+  .vline.combo { border-left-color: var(--tie, #6B7785); } .vline.stall{border-color:var(--wait)} .vline.fix{border-color:var(--ok)}
 .field .l.plain{color:var(--tie)}
 .verdict.plain{background:var(--tieBg);color:var(--tie)}
 .ctl label{display:block;font-size:14px;margin-bottom:4px}
@@ -332,7 +333,7 @@ var SLOW = 125; /* above this nothing adapts, hack on or off */
 
 /* verdict sentence under the gap number: board bands at the set/measured gap */
 function verdictLine(g){
-  if (g <= 9)   return {cls:'cost',  s:g+' ms: inside the 0–9 ms cost zone. column breaks with the hack; kept never worked this fast anyway.'};
+  if (g <= 9)   return {cls:'combo', s:g+' ms: combo territory (0–9 ms). The hack gives rolls this fast up on purpose: column comes out columt; kept never worked this fast anyway.'};
   if (g === 10) return {cls:'stall', s:'10 ms: the predicted stall. The 2nd key waits for your next key, then usually adapts late. Treat it as a near-miss.'};
   if (g <= 25)  return {cls:'fix',   s:g+' ms: inside the 11–25 ms fix zone. kept works only thanks to the hack; column works either way.'};
   if (g === 26) return {cls:'edge',  s:'26 ms: the tie edge for kept without the hack (either letter). With the hack, both words are fine.'};
