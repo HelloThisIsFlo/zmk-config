@@ -42,31 +42,36 @@ h1{font-size:22px;margin:14px 0 4px}
 .lead{margin:0 0 12px}
 .lead b{font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
 .card{background:var(--card);border-radius:14px;padding:12px;box-shadow:0 1px 0 var(--grid)}
-.chips{display:flex;gap:8px;flex-wrap:wrap}
-.chips button,.presets button,.play{border:0;border-radius:999px;min-height:34px;padding:6px 14px;background:var(--chip);color:var(--fg);font:inherit;font-size:14px;cursor:pointer}
-.chips button[aria-pressed="true"],.presets button[aria-pressed="true"]{background:var(--chipOn);color:var(--chipOnTx)}
-.chips .pr{font-size:12px;opacity:.75;margin-left:4px}
-.ctl{margin-top:10px}
+.presets button,.play{border:0;border-radius:999px;min-height:34px;padding:6px 14px;background:var(--chip);color:var(--fg);font:inherit;font-size:14px;cursor:pointer}
+.presets button[aria-pressed="true"]{background:var(--chipOn);color:var(--chipOnTx)}
 .ctl label{display:flex;justify-content:space-between;gap:8px;font-size:14px}
-.ctl label .num{font-weight:700}
+.ctl label .num{font-weight:700;white-space:nowrap}
 input[type=range]{width:100%;height:32px;margin:2px 0;accent-color:var(--fg);cursor:pointer}
 .presets{display:flex;gap:6px;flex-wrap:wrap}
 .presets button{font-size:13px;padding:6px 10px}
 .play{background:var(--chipOn);color:var(--chipOnTx);font-weight:600;margin-left:auto}
 .row2{display:flex;gap:6px;flex-wrap:wrap;align-items:center;margin-top:6px}
 
-.boxes{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:12px 0}
+.wrow{margin:12px 0;display:flex;flex-direction:column;gap:8px}
+.wrow h2{margin:0;font-size:15px;font-weight:600}
+.wrow h2 .wd{font:700 17px ui-monospace,SFMono-Regular,Menlo,monospace}
+.wrow h2 .ks{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:1px}
+.wrow h2 .mut{color:var(--muted);font-weight:400}
+.cap{margin:-2px 0 0;font-size:12px;color:var(--muted)}
+.boxes{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 @media (max-width:599px){ .boxes{grid-template-columns:1fr} }
-.box{background:var(--card);border-radius:14px;padding:12px;box-shadow:0 1px 0 var(--grid);display:flex;flex-direction:column;gap:10px;min-width:0}
-.box h2{margin:0;font-size:15px;letter-spacing:.5px}
-.keys{display:flex;align-items:flex-end;gap:5px;flex-wrap:nowrap}
-.key{width:30px;height:32px;border:1.5px solid var(--line);border-radius:6px;background:var(--capBg);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;transition:transform .08s,background .08s}
-.key.crit{border-color:var(--layer);border-width:2px;color:var(--layerTx);background:var(--layerBg)}
-.key.down{transform:translateY(2px);background:var(--fg);color:var(--card);border-color:var(--fg)}
+.box{border:1px solid var(--grid);border-radius:10px;padding:10px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.box h3{margin:0;font-size:13px;letter-spacing:.5px}
+.keys{display:flex;align-items:flex-end;gap:5px;flex-wrap:nowrap;padding-bottom:3px}
+.key{width:30px;height:32px;border:1.5px solid var(--line);border-radius:6px;background:var(--capBg);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;
+  box-shadow:0 3px 0 var(--line);transition:transform .1s ease-out,box-shadow .1s ease-out,background .1s,color .1s}
+.key.crit{border-color:var(--layer);border-width:2px;color:var(--layerTx);background:var(--layerBg);box-shadow:0 3px 0 var(--layer)}
+.key.down{transform:translateY(3px);box-shadow:0 0 0 var(--line);background:var(--fg);color:var(--card);border-color:var(--fg)}
+.key.crit.down{background:var(--layerTx);color:var(--card);border-color:var(--layerTx)}
 .gap{display:flex;flex-direction:column;align-items:center;font-size:12px;font-weight:700;color:var(--layer);min-width:40px;line-height:1.1}
 .gap::after{content:"";display:block;width:100%;height:6px;border:1.5px solid var(--layer);border-top:0;margin-top:2px;border-radius:0 0 3px 3px}
-.field{background:var(--field);border:1px solid var(--grid);border-radius:10px;min-height:68px;padding:8px 12px;display:flex;align-items:center;flex-wrap:wrap;gap:0 2px}
-.field .l{font:700 40px/1.1 ui-monospace,SFMono-Regular,Menlo,monospace;opacity:0}
+.field{background:var(--field);border:1px solid var(--grid);border-radius:10px;min-height:64px;padding:8px 12px;display:flex;align-items:center;flex-wrap:wrap;gap:0 2px}
+.field .l{font:700 38px/1.1 ui-monospace,SFMono-Regular,Menlo,monospace;opacity:0}
 .field .l.in{opacity:1;animation:drop .25s ease-out}
 .field .l.ok{color:var(--ok);text-decoration:underline 3px;text-underline-offset:6px}
 .field .l.bad{color:var(--bad);text-decoration:underline wavy 2px;text-underline-offset:6px}
@@ -74,12 +79,16 @@ input[type=range]{width:100%;height:32px;margin:2px 0;accent-color:var(--fg);cur
 .field .w{font-size:14px;font-weight:700;color:var(--wait);background:var(--waitBg);border-radius:8px;padding:4px 8px;margin-left:8px;opacity:0}
 .field .w.in{opacity:1;animation:drop .25s ease-out}
 @keyframes drop{from{transform:translateY(-10px);opacity:0}to{transform:none;opacity:1}}
+@keyframes pop{0%{transform:scale(.6);opacity:0}70%{transform:scale(1.08);opacity:1}100%{transform:none}}
 .verdict{align-self:flex-start;border-radius:999px;padding:4px 12px;font-size:14px;font-weight:700;visibility:hidden}
 .verdict.in{visibility:visible}
+.verdict.pop{animation:pop .3s ease-out}
 .verdict.ok{background:var(--okBg);color:var(--ok)} .verdict.bad{background:var(--badBg);color:var(--bad)}
 .verdict.wait{background:var(--waitBg);color:var(--wait)} .verdict.tie{background:var(--tieBg);color:var(--tie)}
 .verdict .mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
 .why{margin:0;font-size:14px}
+.whyWait{margin:0;font-size:14px;color:var(--wait)}
+.whyWait[hidden]{display:none}
 
 svg{display:block;width:100%;height:auto;overflow:visible}
 #strip{max-width:540px}
@@ -94,11 +103,12 @@ svg{display:block;width:100%;height:auto;overflow:visible}
 .zone.cost{fill:var(--bad);fill-opacity:.12;stroke:var(--bad)}
 .zoneT{font-size:13px;font-weight:700;paint-order:stroke;stroke:var(--card);stroke-width:5px;stroke-linejoin:round}
 .zoneT.fix{fill:var(--ok)} .zoneT.cost{fill:var(--bad)}
-.legend{font-size:13px;margin:6px 0 0}
+.legend{font-size:13px;margin:6px 0 0;display:flex;flex-wrap:wrap;gap:2px 14px}
+.legend span{white-space:nowrap}
 .ctx{margin:14px 0 6px;font-size:14px}
 .foot{margin:6px 0 0;color:var(--muted);font-size:13px}
 .foot code{font-size:12px}
-@media (prefers-reduced-motion: reduce){ .field .l.in,.field .w.in{animation:none} *{transition:none!important} }
+@media (prefers-reduced-motion: reduce){ .field .l.in,.field .w.in,.verdict.pop{animation:none} *{transition:none!important} }
 </style>
 </head>
 <body>
@@ -107,49 +117,50 @@ svg{display:block;width:100%;height:auto;overflow:visible}
   <h1>What comes out</h1>
   <p class="lead">Wanted: the adapted letter. <b>kept</b> is typed K E P C, <b>column</b> is typed C O L U M T.</p>
 
-  <div class="card">
-    <div class="chips" id="words" role="group" aria-label="Word">
-      <button type="button" data-word="kept">kept<span class="pr">P→C</span></button>
-      <button type="button" data-word="column">column<span class="pr">M→T</span></button>
-    </div>
-    <div class="ctl">
-      <label for="gap"><span id="gapLab">Gap between P and C</span><span class="num" id="gapVal">15 ms</span></label>
-      <input type="range" id="gap" min="0" max="40" step="1" value="15">
-      <div class="row2">
-        <div class="presets" id="presets" role="group" aria-label="Roll speed">
-          <button type="button" data-gap="7">fast roll · 7 ms</button>
-          <button type="button" data-gap="15">quick · 15 ms</button>
-          <button type="button" data-gap="30">relaxed · 30 ms</button>
-        </div>
-        <button type="button" class="play" id="play">▶ Play</button>
+  <div class="card ctl">
+    <label for="gap"><span>Gap between the two blue keys (P→C and M→T)</span><span class="num" id="gapVal">15 ms</span></label>
+    <input type="range" id="gap" min="0" max="40" step="1" value="15">
+    <div class="row2">
+      <div class="presets" id="presets" role="group" aria-label="Roll speed">
+        <button type="button" data-gap="7">fast roll · 7 ms</button>
+        <button type="button" data-gap="15">quick · 15 ms</button>
+        <button type="button" data-gap="30">relaxed · 30 ms</button>
       </div>
+      <button type="button" class="play" id="play">▶ Play</button>
     </div>
   </div>
 
-  <div class="boxes">
-    <section class="box" id="boxOn" aria-labelledby="hOn">
-      <h2 id="hOn">hack ON</h2>
-      <div class="keys" aria-hidden="true"></div>
-      <div class="field" aria-live="polite"></div>
-      <div class="verdict"></div>
-      <p class="why"></p>
-    </section>
-    <section class="box" id="boxOff" aria-labelledby="hOff">
-      <h2 id="hOff">hack OFF</h2>
-      <div class="keys" aria-hidden="true"></div>
-      <div class="field" aria-live="polite"></div>
-      <div class="verdict"></div>
-      <p class="why"></p>
-    </section>
-  </div>
+  <section class="card wrow" id="rowKept" data-word="kept" aria-labelledby="hKept">
+    <h2 id="hKept"><span class="wd">kept</span> · <span class="ks">K E P C</span> · P→C, <span class="mut">the pair the hack fixes</span></h2>
+    <div class="keys" aria-hidden="true"></div>
+    <p class="cap">blue = the two keys that matter; the gap between them is the slider</p>
+    <div class="boxes">
+      <div class="box" data-on="1"><h3>hack ON</h3><div class="field" aria-live="polite"></div><div class="verdict"></div></div>
+      <div class="box" data-on="0"><h3>hack OFF</h3><div class="field" aria-live="polite"></div><div class="verdict"></div></div>
+    </div>
+    <p class="why"></p>
+    <p class="whyWait" hidden></p>
+  </section>
+
+  <section class="card wrow" id="rowColumn" data-word="column" aria-labelledby="hColumn">
+    <h2 id="hColumn"><span class="wd">column</span> · <span class="ks">C O L U M T</span> · M→T, <span class="mut">the pair the hack costs</span></h2>
+    <div class="keys" aria-hidden="true"></div>
+    <p class="cap">blue = the two keys that matter; the gap between them is the slider</p>
+    <div class="boxes">
+      <div class="box" data-on="1"><h3>hack ON</h3><div class="field" aria-live="polite"></div><div class="verdict"></div></div>
+      <div class="box" data-on="0"><h3>hack OFF</h3><div class="field" aria-live="polite"></div><div class="verdict"></div></div>
+    </div>
+    <p class="why"></p>
+    <p class="whyWait" hidden></p>
+  </section>
 
   <div class="card">
-    <svg id="strip" viewBox="0 0 400 100" role="img" aria-label="Outcome for every gap from 0 to 40 ms, hack on and hack off"></svg>
-    <p class="legend">✅ adapted · ❌ base letter · ⏸ 2nd key waits for your next key · ⚖️ exact tie</p>
+    <svg id="strip" viewBox="0 0 400 140" role="img" aria-label="Outcome for every gap from 0 to 40 ms, for kept and column, hack on and hack off"></svg>
+    <p class="legend"><span>✅ adapted</span><span>❌ base letter</span><span>⏸ 2nd key waits for your next key</span><span>⚖️ exact tie</span></p>
   </div>
 
-  <p class="ctx">Real two-key combos fire on presses up to 15 ms apart (M+W is Z). A roll under 10 ms sits inside that range, so giving it up is the intended trade. 11–26 ms is where typing really happens, and where 11 pairs used to be unreliable.</p>
-  <p class="foot">⏸ at exactly 10 ms and the ⚖️ edges are hardware predictions. P→C stands for 11 pairs, M→T for 34: 34 + 11 = 45 pairs with no shared combo; the 6 pairs sharing a real combo are unchanged. Numbers from <code>Design/Timing/FACTS.md</code>. For the mechanism, see D6 and D7.</p>
+  <p class="ctx">Real two-key combos fire on presses up to 15 ms apart (M+W is Z). A roll under 10 ms sits inside that range, so giving it up is the intended trade. 11–25 ms is where the inconsistency was: 11 pairs used to be unreliable there.</p>
+  <p class="foot">⏸ at exactly 10 ms and the ⚖️ edges are hardware predictions. 11 pairs behave like kept (the 2nd key has no combo: X C F and a thumb), 34 like column; together 45 pairs with no shared combo. The 6 pairs that share a real combo and the 3 with no timing band type the same with the hack on or off. Numbers from <code>Design/Timing/FACTS.md</code>. For the mechanism, see D6 and D7.</p>
 </div>
 <script>
 // BEGIN outcome
@@ -200,138 +211,144 @@ function typedWord(word, hackOn, gap){
 // END word
 
 /* ===== VIEW ===== */
-var EMO = {ok:'✅', bad:'❌', wait:'⏸', tie:'⚖️'};
-var state = {word:'kept', gap:15};
+var state = {gap:15};
 var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 var timers = [];
 function clearTimers(){ timers.forEach(clearTimeout); timers = []; }
+function later(fn, ms){ timers.push(setTimeout(fn, ms)); }
 
-function why(word, hackOn, gap){
-  var v = typedWord(word, hackOn, gap).verdict, mt = WORDS[word].pair === 'MT';
-  if (v === 'wait') return '⏸ At exactly 10 ms the 2nd key waits for your next key (predicted, not measured).';
-  if (mt){
-    if (!hackOn) return 'T already waits 16 ms for its own combos, so it always lands after M’s layer.';
-    if (v === 'bad') return 'The only thing the hack changes is a roll under 10 ms: both keys are then released together at 11 ms and t lands on the base layer.';
-    return 'T already waits 16 ms for its own combos, so it always lands after M’s layer; the only thing the hack changes is a roll under 10 ms.';
-  }
-  if (!hackOn){
-    if (v === 'bad') return 'C has no combo of its own, so c is typed the instant you press it, before P’s adaptive layer is on.';
-    if (v === 'tie') return 'C has no combo of its own, so c is typed the instant you press it: at 26 ms that is the same moment P’s adaptive layer comes on.';
-    return 'C has no combo of its own, so c is typed the instant you press it; at this gap P’s adaptive layer is already on.';
-  }
-  if (v === 'bad') return 'A roll under 10 ms: both keys are then released together at 11 ms and c lands on the base layer.';
-  return 'The hack (a 36-key combo that never fires) makes C wait 11 ms, which is enough.';
-}
+var ROWS = [
+  {el:document.getElementById('rowKept'),   word:'kept'},
+  {el:document.getElementById('rowColumn'), word:'column'}
+];
+/* one shared sentence per row */
+var WHY = {
+  kept:   'P’s adaptation switches on 10 ms after p is typed. C has no combo of its own, so without the hack c is typed the instant you press it, too early for any gap under 26 ms; the hack makes C wait 11 ms, which lands it after the switch-on from 11 ms on.',
+  column: 'M’s adaptation switches on 10 ms after m is typed. T already waits 16 ms for its own combos, so it always lands after; the only thing the hack changes is a roll under 10 ms: both keys are released together at 11 ms and t lands too early.'
+};
+var WAIT_LINE = '⏸ at exactly 10 ms the 2nd key is held until your next key, then usually adapts late (predicted, not measured)';
+
 function pillText(r){
   if (r.verdict === 'ok') return '✅ adapted · <span class="mono">'+r.text+'</span>';
   if (r.verdict === 'bad') return '❌ base letter · <span class="mono">'+r.text+'</span>';
   if (r.verdict === 'wait') return '⏸ waits for your next key';
-  return '⚖️ exact tie · either letter';
+  return '⚖️ tie: either letter, unpredictable';
 }
 
-/* builds a box in its final state, returns the timed events for a replay */
-function buildBox(box, hackOn){
-  var w = WORDS[state.word], p = PAIRS[w.pair], n = w.keys.length, ti = n - 2;
-  var r = typedWord(state.word, hackOn, state.gap), o = r.o, t0 = STEP*ti;
-  /* keycaps */
+/* builds one word row in its final state */
+function buildRow(row){
+  var w = WORDS[row.word], p = PAIRS[w.pair], n = w.keys.length, ti = n - 2, anyWait = false;
   var k = '';
   w.keys.forEach(function(c, i){
     if (i === n-1) k += '<span class="gap">'+state.gap+' ms</span>';
     k += '<span class="key'+(i >= ti ? ' crit' : '')+'" data-i="'+i+'">'+c+'</span>';
   });
-  box.querySelector('.keys').innerHTML = k;
-  /* letters */
-  var letters = (w.pre + p.a.toLowerCase()).split(''), f = '';
-  letters.forEach(function(c, i){ f += '<span class="l in" data-i="'+i+'">'+c+'</span>'; });
-  if (r.verdict === 'wait') f += '<span class="w in" data-i="'+(n-1)+'">⏸ waits for your next key</span>';
-  else f += '<span class="l in '+r.verdict+'" data-i="'+(n-1)+'">'+r.crit+'</span>';
-  var field = box.querySelector('.field');
-  field.innerHTML = f;
-  field.setAttribute('aria-label', 'typed: '+r.text+(r.verdict === 'wait' ? ', then waits' : ''));
-  var pill = box.querySelector('.verdict');
-  pill.className = 'verdict in '+r.verdict;
-  pill.innerHTML = pillText(r);
-  box.querySelector('.why').textContent = why(state.word, hackOn, state.gap);
-  /* events in board ms: presses and landings */
-  var ev = [];
-  for (var i=0; i<n; i++) ev.push({t: i < n-1 ? STEP*i : t0 + state.gap, press:i});
-  for (var j=0; j<ti; j++) ev.push({t: STEP*j, land:j});
-  ev.push({t: t0 + o.aDeliver, land:ti});
-  var tc = r.verdict === 'wait' ? t0 + state.gap + 20 : t0 + o.bDeliver;
-  ev.push({t: tc, land:n-1, last:true});
-  return ev;
+  row.el.querySelector('.keys').innerHTML = k;
+  row.el.querySelectorAll('.box').forEach(function(box){
+    var on = box.getAttribute('data-on') === '1', r = typedWord(row.word, on, state.gap);
+    if (r.verdict === 'wait') anyWait = true;
+    var f = '';
+    r.head.split('').forEach(function(c, i){ f += '<span class="l in" data-i="'+i+'">'+c+'</span>'; });
+    if (r.verdict === 'wait') f += '<span class="w in" data-i="'+(n-1)+'">⏸ waits for your next key</span>';
+    else f += '<span class="l in '+r.verdict+'" data-i="'+(n-1)+'">'+r.crit+'</span>';
+    var field = box.querySelector('.field');
+    field.innerHTML = f;
+    field.setAttribute('aria-label', (on ? 'hack on' : 'hack off')+', typed: '+r.text+(r.verdict === 'wait' ? ', then waits' : ''));
+    var pill = box.querySelector('.verdict');
+    pill.className = 'verdict in '+r.verdict;
+    pill.innerHTML = pillText(r);
+  });
+  row.el.querySelector('.why').textContent = WHY[row.word];
+  var ww = row.el.querySelector('.whyWait');
+  ww.textContent = WAIT_LINE; ww.hidden = !anyWait;
 }
 
 function render(){
   clearTimers();
-  var w = WORDS[state.word], p = PAIRS[w.pair];
-  document.querySelectorAll('#words button').forEach(function(b){ b.setAttribute('aria-pressed', String(b.getAttribute('data-word') === state.word)); });
   document.querySelectorAll('#presets button').forEach(function(b){ b.setAttribute('aria-pressed', String(+b.getAttribute('data-gap') === state.gap)); });
-  document.getElementById('gapLab').textContent = 'Gap between '+p.a+' and '+p.b;
   document.getElementById('gapVal').textContent = state.gap+' ms';
   var g = document.getElementById('gap'); if (+g.value !== state.gap) g.value = state.gap;
   g.setAttribute('aria-valuetext', state.gap+' ms');
-  var evOn = buildBox(document.getElementById('boxOn'), true);
-  var evOff = buildBox(document.getElementById('boxOff'), false);
+  ROWS.forEach(buildRow);
   renderStrip();
-  return [evOn, evOff];
 }
 
-/* slow-motion replay, about 2 s, both boxes on one clock */
+/* replay: the earlier letters land at once, then the two blue keys run on a
+   slow clock (1 real second = 20 ms of board time); both rows, one clock */
+var MS_PER_BOARD_MS = 50, PRE_SPAN = 150, LEAD = 100, BEAT = 250, PRESS = 250, HOLD = 600;
+function press(key, ms){
+  if (!key) return;
+  key.classList.add('down');
+  later(function(){ key.classList.remove('down'); }, ms);
+}
 function play(){
-  var evs = render(), boxes = [document.getElementById('boxOn'), document.getElementById('boxOff')];
-  var w = WORDS[state.word], tEnd = STEP*(w.keys.length-2) + 60, LEAD = 300, SCALE = 2000 / tEnd;
-  boxes.forEach(function(box){
-    box.querySelectorAll('.field .l, .field .w').forEach(function(el){ el.classList.remove('in'); });
-    box.querySelector('.verdict').classList.remove('in');
+  render();
+  var T1 = LEAD + PRE_SPAN + BEAT, end = 0;
+  ROWS.forEach(function(row){
+    row.el.querySelectorAll('.field .l, .field .w').forEach(function(el){ el.classList.remove('in'); });
+    row.el.querySelectorAll('.verdict').forEach(function(el){ el.classList.remove('in', 'pop'); });
   });
-  evs.forEach(function(ev, bi){
-    var box = boxes[bi];
-    ev.forEach(function(e){
-      timers.push(setTimeout(function(){
-        if (e.press != null){
-          var key = box.querySelector('.key[data-i="'+e.press+'"]');
-          if (key){ key.classList.add('down'); timers.push(setTimeout(function(){ key.classList.remove('down'); }, 160)); }
-        } else {
-          var el = box.querySelector('.field [data-i="'+e.land+'"]');
-          if (el) el.classList.add('in');
-          if (e.last) box.querySelector('.verdict').classList.add('in');
-        }
-      }, LEAD + e.t*SCALE));
+  ROWS.forEach(function(row){
+    var w = WORDS[row.word], n = w.keys.length, ti = n - 2, keysEl = row.el.querySelector('.keys');
+    function keyAt(i){ return keysEl.querySelector('.key[data-i="'+i+'"]'); }
+    /* letters before the blue pair: within 150 ms */
+    for (var i=0; i<ti; i++) (function(i){
+      later(function(){
+        press(keyAt(i), 90);
+        row.el.querySelectorAll('.field [data-i="'+i+'"]').forEach(function(el){ el.classList.add('in'); });
+      }, LEAD + i*PRE_SPAN/ti);
+    })(i);
+    /* the blue pair, board clock starts at the 1st blue press */
+    later(function(){ press(keyAt(ti), PRESS); }, T1);
+    later(function(){ press(keyAt(n-1), PRESS); }, T1 + state.gap*MS_PER_BOARD_MS);
+    row.el.querySelectorAll('.box').forEach(function(box){
+      var on = box.getAttribute('data-on') === '1', r = typedWord(row.word, on, state.gap), o = r.o;
+      later(function(){ box.querySelector('.field [data-i="'+ti+'"]').classList.add('in'); }, T1 + o.aDeliver*MS_PER_BOARD_MS);
+      var tLast = T1 + (r.verdict === 'wait' ? state.gap + 20 : o.bDeliver)*MS_PER_BOARD_MS;
+      later(function(){ box.querySelector('.field [data-i="'+(n-1)+'"]').classList.add('in'); }, tLast);
+      later(function(){ box.querySelector('.verdict').classList.add('in', 'pop'); }, tLast + HOLD);
+      end = Math.max(end, tLast + HOLD);
     });
   });
 }
 
-/* ===== band strip: hack on / hack off, 0–40 ms ===== */
-var X0 = 70, SC = 7.5, DMAX = 40;
+/* ===== band strip: 4 rows (kept on/off, column on/off), 0–40 ms, drawn 1 unit = 1 px ===== */
+var X0 = 78, SC = 7.5, DMAX = 40, RH = 16;
 function x(t){ return X0 + t*SC; }
 function txt(cls, X, Y, s, anchor){ return '<text class="'+cls+'" x="'+X+'" y="'+Y+'"'+(anchor?' text-anchor="'+anchor+'"':'')+'>'+s+'</text>'; }
 function renderStrip(){
-  var pair = WORDS[state.word].pair, rows = [{label:'hack on', on:true}, {label:'hack off', on:false}];
-  var Y0 = 30, RH = 22, s = '';
-  /* the zone box on the differing row (hack on) for this pair */
-  var z = pair === 'PC' ? {a:11, b:26, cls:'fix', s:'what it fixes: 11–26 ms'} : {a:0, b:9, cls:'cost', s:'what it costs: 0–9 ms'};
-  var zx0 = x(z.a) - SC/2 - 1, zx1 = x(z.b) + SC/2 + 1;
-  s += '<rect class="zone '+z.cls+'" x="'+zx0+'" y="'+(Y0-4)+'" width="'+(zx1-zx0)+'" height="22" rx="3"/>';
-  s += txt('zoneT '+z.cls, Math.max(4, Math.min(zx0, 396 - z.s.length*7.4)), Y0-10, z.s);
-  rows.forEach(function(row, i){
-    var y = Y0 + i*RH;
-    s += txt('t-lab', 2, y+11, row.label);
+  var svg = document.getElementById('strip');
+  var W = Math.round(Math.max(300, Math.min(540, svg.getBoundingClientRect().width || 400)));
+  SC = (W - X0 - 12) / DMAX;
+  var rows = [
+    {label:'kept on',    pair:'PC', on:true,  y:22,  zone:{a:11, b:25, cls:'fix',  s:'what it fixes: 11–25 ms'}},
+    {label:'kept off',   pair:'PC', on:false, y:42},
+    {label:'column on',  pair:'MT', on:true,  y:86,  zone:{a:0,  b:9,  cls:'cost', s:'what it costs: 0–9 ms'}},
+    {label:'column off', pair:'MT', on:false, y:106}
+  ];
+  var s = '', labs = '';
+  rows.forEach(function(row){
+    var z = row.zone;
+    if (z){
+      var zx0 = x(z.a) - SC/2 - 1, zx1 = x(z.b) + SC/2 + 1;
+      s += '<rect class="zone '+z.cls+'" x="'+zx0+'" y="'+(row.y-3)+'" width="'+(zx1-zx0)+'" height="'+(RH+6)+'" rx="3"/>';
+      labs += txt('zoneT '+z.cls, Math.max(2, Math.min(zx0, W - 4 - z.s.length*7.4)), row.y-8, z.s);
+    }
+    s += txt('t-lab', 0, row.y+12, row.label);
     for (var d=0; d<=DMAX; d++){
-      var v = outcome(pair, row.on, d).verdict;
-      s += '<rect class="c-'+v+'" x="'+(x(d)-SC/2+0.4)+'" y="'+y+'" width="'+(SC-0.8)+'" height="14" rx="1"/>';
+      var v = outcome(row.pair, row.on, d).verdict;
+      s += '<rect class="c-'+v+'" x="'+(x(d)-SC/2+0.4)+'" y="'+row.y+'" width="'+(SC-0.8)+'" height="'+RH+'" rx="1"/>';
     }
   });
-  var yb = Y0 + rows.length*RH;
-  /* mirrored handle */
+  var yt = rows[0].y, yb = rows[3].y + RH;
   var hx = x(state.gap);
-  s += '<rect class="cur" x="'+(hx-SC/2-1.5)+'" y="'+(Y0-3)+'" width="'+(SC+3)+'" height="'+(RH+20)+'" rx="2"/>';
-  s += '<path class="knob" d="M'+hx+' '+(yb-4)+' l-6 9 h12 z"/>';
-  [0,10,20,30,40].forEach(function(t){ s += txt('t-ax', x(t), yb+20, t, 'middle'); });
-  s += txt('t-ax', 2, yb+20, 'gap, ms');
-  s += '<rect class="stripHit" id="stripHit" x="'+(x(0)-SC)+'" y="'+(Y0-8)+'" width="'+(x(DMAX)-x(0)+2*SC)+'" height="'+(yb-Y0+18)+'"/>';
-  var svg = document.getElementById('strip');
-  svg.setAttribute('viewBox', '0 0 400 '+(yb+26));
+  s += '<rect class="cur" x="'+(hx-SC/2-1.5)+'" y="'+(yt-4)+'" width="'+(SC+3)+'" height="'+(yb-yt+8)+'" rx="2"/>';
+  s += '<path class="knob" d="M'+hx+' '+(yb+5)+' l-6 9 h12 z"/>';
+  [0,10,20,30,40].forEach(function(t){ s += txt('t-ax', x(t), yb+30, t, 'middle'); });
+  s += txt('t-ax', 0, yb+30, 'gap, ms');
+  s += labs; /* zone labels above the cursor */
+  s += '<rect class="stripHit" id="stripHit" x="'+(x(0)-SC)+'" y="'+(yt-8)+'" width="'+(x(DMAX)-x(0)+2*SC)+'" height="'+(yb-yt+24)+'"/>';
+  svg.setAttribute('viewBox', '0 0 '+W+' '+(yb+36));
   svg.innerHTML = s;
 }
 
@@ -345,11 +362,6 @@ function setGap(d, andPlay){
 document.getElementById('gap').addEventListener('input', function(e){ setGap(+e.target.value, false); });
 document.getElementById('presets').addEventListener('click', function(e){
   var b = e.target.closest('button[data-gap]'); if (b) setGap(+b.getAttribute('data-gap'), true);
-});
-document.getElementById('words').addEventListener('click', function(e){
-  var b = e.target.closest('button[data-word]'); if (!b) return;
-  state.word = b.getAttribute('data-word');
-  if (reduce) render(); else play();
 });
 document.getElementById('play').addEventListener('click', function(){ play(); });
 var strip = document.getElementById('strip'), drag = null;
@@ -366,6 +378,8 @@ strip.addEventListener('pointerdown', function(e){
 });
 strip.addEventListener('pointermove', function(e){ if (drag === e.pointerId) setGap(gapFromEvent(e), false); });
 ['pointerup','pointercancel'].forEach(function(ev){ strip.addEventListener(ev, function(e){ if (drag === e.pointerId) drag = null; }); });
+var rsz = null;
+window.addEventListener('resize', function(){ clearTimeout(rsz); rsz = setTimeout(renderStrip, 100); });
 
 if (reduce) render(); else play();
 </script>
