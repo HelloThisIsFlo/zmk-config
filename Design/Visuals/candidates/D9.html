@@ -1,0 +1,386 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Type it yourself</title>
+<style>
+:root{
+  --bg:#f6f5f1; --card:#ffffff; --fg:#1c1c1f; --muted:#6a6a72; --grid:#e6e3db; --line:#bdb9ae;
+  --layer:#2a74c8; --layerBg:#d8e7f8; --layerTx:#174a85;
+  --ok:#1e874a; --okBg:#dcf2e4; --bad:#c3352b; --badBg:#fbe1de; --wait:#a86d10; --waitBg:#fbecd2;
+  --tie:#6c6c74; --tieBg:#e8e8ec; --focus:#2563eb; --chip:#eceae4; --chipOn:#1c1c1f; --chipOnTx:#ffffff;
+  --capBg:#ffffff; --field:#faf9f6;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#131316; --card:#1c1c20; --fg:#ececf0; --muted:#9b9ba4; --grid:#2a2a30; --line:#4a4a53;
+    --layer:#5aa2ee; --layerBg:#1b3350; --layerTx:#b9d8fb;
+    --ok:#4fca7d; --okBg:#173a25; --bad:#ff6d61; --badBg:#46201c; --wait:#f1b54d; --waitBg:#3e2e13;
+    --tie:#acacb4; --tieBg:#303036; --focus:#7aa7ff; --chip:#28282e; --chipOn:#ececf0; --chipOnTx:#131316;
+    --capBg:#2a2a30; --field:#16161a;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#131316; --card:#1c1c20; --fg:#ececf0; --muted:#9b9ba4; --grid:#2a2a30; --line:#4a4a53;
+  --layer:#5aa2ee; --layerBg:#1b3350; --layerTx:#b9d8fb;
+  --ok:#4fca7d; --okBg:#173a25; --bad:#ff6d61; --badBg:#46201c; --wait:#f1b54d; --waitBg:#3e2e13;
+  --tie:#acacb4; --tieBg:#303036; --focus:#7aa7ff; --chip:#28282e; --chipOn:#ececf0; --chipOnTx:#131316;
+  --capBg:#2a2a30; --field:#16161a;
+  color-scheme: dark;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--fg);font:15px/1.45 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  padding:12px max(16px,env(safe-area-inset-right)) 32px max(16px,env(safe-area-inset-left));overflow-x:hidden}
+.wrap{max-width:760px;margin:0 auto}
+.num,svg text,.legend{font-variant-numeric:tabular-nums}
+a.pill{display:inline-block;font-size:13px;color:var(--fg);text-decoration:none;background:var(--chip);border-radius:999px;padding:4px 12px}
+a.pill:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+h1{font-size:22px;margin:14px 0 4px}
+.lead{margin:0 0 12px}
+.lead b{font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+.card{background:var(--card);border-radius:14px;padding:12px;box-shadow:0 1px 0 var(--grid)}
+.wrow{margin:12px 0;display:flex;flex-direction:column;gap:8px}
+.wrow h2{margin:0;font-size:15px;font-weight:600}
+.wrow h2 .wd{font:700 17px ui-monospace,SFMono-Regular,Menlo,monospace}
+.wrow h2 .ks{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:1px}
+.wrow h2 .mut{color:var(--muted);font-weight:400}
+.cap{margin:-2px 0 0;font-size:12px;color:var(--muted)}
+.boxes{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media (max-width:599px){ .boxes{grid-template-columns:1fr} }
+.box{border:1px solid var(--grid);border-radius:10px;padding:10px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.box h3{margin:0;font-size:13px;letter-spacing:.5px}
+.field{background:var(--field);border:1px solid var(--grid);border-radius:10px;min-height:64px;padding:8px 12px;display:flex;align-items:center;flex-wrap:wrap;gap:0 2px}
+.field .l{font:700 38px/1.1 ui-monospace,SFMono-Regular,Menlo,monospace;opacity:0}
+.field .l.in{opacity:1;animation:drop .25s ease-out}
+.field .l.ok{color:var(--ok);text-decoration:underline 3px;text-underline-offset:6px}
+.field .l.bad{color:var(--bad);text-decoration:underline wavy 2px;text-underline-offset:6px}
+.field .l.tie{color:var(--tie)}
+.field .w{font-size:14px;font-weight:700;color:var(--wait);background:var(--waitBg);border-radius:8px;padding:4px 8px;margin-left:8px;opacity:0}
+.field .w.in{opacity:1;animation:drop .25s ease-out}
+@keyframes drop{from{transform:translateY(-10px);opacity:0}to{transform:none;opacity:1}}
+@keyframes pop{0%{transform:scale(.6);opacity:0}70%{transform:scale(1.08);opacity:1}100%{transform:none}}
+.verdict{align-self:flex-start;border-radius:999px;padding:4px 12px;font-size:14px;font-weight:700;visibility:hidden}
+.verdict.in{visibility:visible}
+.verdict.pop{animation:pop .3s ease-out}
+.verdict.ok{background:var(--okBg);color:var(--ok)} .verdict.bad{background:var(--badBg);color:var(--bad)}
+.verdict.wait{background:var(--waitBg);color:var(--wait)} .verdict.tie{background:var(--tieBg);color:var(--tie)}
+.verdict .mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+.why{margin:0;font-size:14px}
+.whyWait{margin:0;font-size:14px;color:var(--wait)}
+.whyWait[hidden]{display:none}
+svg{display:block;width:100%;height:auto;overflow:visible}
+#strip{max-width:540px}
+.t-lab{fill:var(--fg);font-size:13px}
+.t-ax{fill:var(--muted);font-size:13px}
+.c-ok{fill:var(--ok)} .c-bad{fill:var(--bad)} .c-wait{fill:var(--wait)} .c-tie{fill:var(--tie)}
+.cur{fill:none;stroke:var(--fg);stroke-width:2}
+.knob{fill:var(--fg)}
+.stripHit{fill:transparent;touch-action:none;cursor:ew-resize}
+.zone{stroke-width:1.4;stroke-dasharray:3 2}
+.zone.fix{fill:var(--ok);fill-opacity:.12;stroke:var(--ok)}
+.zone.cost{fill:var(--bad);fill-opacity:.12;stroke:var(--bad)}
+.zoneT{font-size:13px;font-weight:700;paint-order:stroke;stroke:var(--card);stroke-width:5px;stroke-linejoin:round}
+.zoneT.fix{fill:var(--ok)} .zoneT.cost{fill:var(--bad)}
+.legend{font-size:13px;margin:6px 0 0;display:flex;flex-wrap:wrap;gap:2px 14px}
+.legend span{white-space:nowrap}
+.ctx{margin:14px 0 6px;font-size:14px}
+.foot{margin:6px 0 0;color:var(--muted);font-size:13px}
+.foot code{font-size:12px}
+
+/* ===== D9: the typing pad ===== */
+.pad{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;min-height:150px;padding:14px;text-align:center;
+  border:2px dashed var(--line);border-radius:14px;background:var(--field);cursor:text;user-select:none;-webkit-user-select:none;outline:none;transition:border-color .15s,background .15s}
+.pad:focus,.pad:focus-visible{border-style:solid;border-color:var(--focus)}
+.pad .ph{font-size:15px;color:var(--muted);max-width:30em}
+.pad:focus .ph{color:var(--fg)}
+.pad .pressed{font:700 18px ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--layer);min-height:24px}
+.padCap{margin:6px 0 0;font-size:12px;color:var(--muted)}
+.meas{display:flex;align-items:baseline;flex-wrap:wrap;gap:4px 10px;margin:12px 0 0}
+.meas .lbl{font-size:15px;color:var(--muted)}
+.meas .big{font:800 44px/1 ui-monospace,SFMono-Regular,Menlo,monospace;font-variant-numeric:tabular-nums}
+.meas .big small{font-size:20px;font-weight:700;margin-left:4px}
+.note{margin:4px 0 0;font-size:12px;color:var(--muted)}
+.slow{margin:6px 0 0;font-size:14px;font-weight:600;color:var(--wait)}
+.slow[hidden]{display:none}
+.hist{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:10px 0 0;min-height:34px}
+.hist .hl{font-size:12px;color:var(--muted)}
+.hist button{border:0;border-radius:999px;min-height:32px;min-width:44px;padding:4px 10px;background:var(--chip);color:var(--fg);font:600 13px ui-monospace,SFMono-Regular,Menlo,monospace;cursor:pointer}
+.hist button[aria-pressed="true"]{background:var(--chipOn);color:var(--chipOnTx)}
+.manual{border:0;border-radius:999px;min-height:34px;padding:6px 14px;background:var(--chip);color:var(--fg);font:inherit;font-size:14px;cursor:pointer;margin-top:10px}
+.ctl{margin-top:8px}
+.ctl[hidden]{display:none}
+.you{font-size:13px;font-weight:800;fill:var(--fg)}
+.wrow{margin:12px 0}
+@media (prefers-reduced-motion: reduce){ .field .l.in,.field .w.in,.verdict.pop{animation:none} *{transition:none!important} }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="pill" href="index.html">← All candidates</a>
+  <h1>Type it yourself</h1>
+  <p class="lead">Wanted: the adapted letter. On Flo's board <b>kept</b> is typed K E P C and <b>column</b> C O L U M T. Roll two keys here and see what his firmware would type at your speed.</p>
+
+  <div class="card">
+    <div class="pad" id="pad" tabindex="0" role="button" aria-label="Typing pad: focus it, then roll two keys">
+      <span class="ph" id="padPh">Click here, then roll two keys: first one, then the other, fast</span>
+      <span class="pressed" id="padKeys" aria-hidden="true"></span>
+    </div>
+    <p class="padCap">which keys you press doesn't matter, only the gap</p>
+    <div class="meas" aria-live="polite">
+      <span class="lbl" id="gapLbl">example gap:</span>
+      <span class="big" id="gapBig">15<small>ms</small></span>
+    </div>
+    <p class="note">rounded to the ms; browser timing, not the board's, so take it as ±2 ms</p>
+    <p class="slow" id="slow" hidden>slower than the 100 ms adaptive window: nothing adapts, you get the plain letters</p>
+    <div class="hist" id="hist" aria-label="Your last gaps"></div>
+    <button type="button" class="manual" id="manual">Use 15 ms instead</button>
+    <div class="ctl" id="ctl" hidden>
+      <label for="gap"><span>Gap, set by hand</span><span class="num" id="gapVal">15 ms</span></label>
+      <input type="range" id="gap" min="0" max="40" step="1" value="15">
+    </div>
+  </div>
+
+  <section class="card wrow" id="rowKept" data-word="kept" aria-labelledby="hKept">
+    <h2 id="hKept"><span class="wd">kept</span> · <span class="ks">K E P C</span> · P→C, <span class="mut">the pair the hack fixes</span></h2>
+    <div class="boxes">
+      <div class="box" data-on="1"><h3>hack ON</h3><div class="field" aria-live="polite"></div><div class="verdict"></div></div>
+      <div class="box" data-on="0"><h3>hack OFF</h3><div class="field" aria-live="polite"></div><div class="verdict"></div></div>
+    </div>
+    <p class="why"></p>
+    <p class="whyWait" hidden></p>
+  </section>
+
+  <section class="card wrow" id="rowColumn" data-word="column" aria-labelledby="hColumn">
+    <h2 id="hColumn"><span class="wd">column</span> · <span class="ks">C O L U M T</span> · M→T, <span class="mut">the pair the hack costs</span></h2>
+    <div class="boxes">
+      <div class="box" data-on="1"><h3>hack ON</h3><div class="field" aria-live="polite"></div><div class="verdict"></div></div>
+      <div class="box" data-on="0"><h3>hack OFF</h3><div class="field" aria-live="polite"></div><div class="verdict"></div></div>
+    </div>
+    <p class="why"></p>
+    <p class="whyWait" hidden></p>
+  </section>
+
+  <div class="card">
+    <svg id="strip" viewBox="0 0 400 160" role="img" aria-label="Outcome for every gap from 0 to 40 ms, for kept and column, hack on and hack off, with your gap marked"></svg>
+    <p class="legend"><span>✅ adapted</span><span>❌ base letter</span><span>⏸ 2nd key waits for your next key</span><span>⚖️ exact tie</span></p>
+  </div>
+
+  <p class="ctx">Real two-key combos fire on presses up to 15 ms apart (M+W is Z). A roll under 10 ms sits inside that range, so giving it up is the intended trade. 11–25 ms is where the inconsistency was: 11 pairs used to be unreliable there.</p>
+  <p class="foot">⏸ at exactly 10 ms and the ⚖️ edges are hardware predictions. 11 pairs behave like kept (the 2nd key has no combo: X C F and a thumb), 34 like column; together 45 pairs with no shared combo. The 6 pairs that share a real combo and the 3 with no timing band type the same with the hack on or off. Numbers from <code>Design/Timing/FACTS.md</code>. Your gap is measured by the browser on your keyboard; Flo's numbers are the board's engine time. For the mechanism, see D6 and D7.</p>
+</div>
+<script>
+// BEGIN outcome
+/* ===== MODEL (pure): D1's outcome() plus the AK window's closing edge ===== */
+var PAIRS = {
+  MT: {a:'M', b:'T', kA:16, kB:16, adapted:'mn', base:'mt', label:'M→T', sub:'ordinary key'},
+  PC: {a:'P', b:'C', kA:16, kB:0,  adapted:'pt', base:'pc', label:'P→C', sub:'key without its own combo'}
+};
+var AK_DELAY = 10, AK_WINDOW = 110;
+function holdOf(k, hackOn){ return hackOn ? Math.max(11, k) : k; }
+
+/* Pair: trigger A pressed at 0, follower B pressed at delta (board engine time, ms). */
+function outcome(pair, hackOn, delta){
+  var p = PAIRS[pair], dA = holdOf(p.kA, hackOn), dB = holdOf(p.kB, hackOn);
+  var r = {pair:pair, hackOn:hackOn, delta:delta, aPress:0, bPress:delta,
+           aDeliver:null, layerOn:null, layerOff:null, bDeliver:null, bLetter:null, verdict:null, text:null};
+  if (hackOn && delta <= 9){
+    r.aDeliver = 11; r.bDeliver = 11; r.bLetter = 11 + AK_DELAY; r.verdict = 'bad';
+  } else if (hackOn && delta === 10){
+    r.aDeliver = 11; r.verdict = 'wait';
+  } else {
+    r.aDeliver = Math.min(delta, dA);
+    r.bDeliver = delta + dB; r.bLetter = r.bDeliver;
+  }
+  r.layerOn = r.aDeliver + AK_DELAY; r.layerOff = r.aDeliver + AK_WINDOW;
+  if (!r.verdict){
+    r.verdict = r.bLetter < r.layerOn ? 'bad' : r.bLetter === r.layerOn ? 'tie'
+              : r.bLetter < r.layerOff ? 'ok' : r.bLetter === r.layerOff ? 'tie' : 'bad';
+  }
+  r.text = r.verdict === 'ok' ? p.adapted : r.verdict === 'bad' ? p.base : r.verdict === 'wait' ? p.base[0] + '…' : p.base[0] + '?';
+  return r;
+}
+// END outcome
+
+// BEGIN word
+/* ===== WORDS (pure): what the box types for (word, hack, gap) ===== */
+var WORDS = {
+  kept:   {pair:'PC', keys:['K','E','P','C'],         pre:'ke'},
+  column: {pair:'MT', keys:['C','O','L','U','M','T'], pre:'colu'}
+};
+var STEP = 60; /* the other letters are typed 60 ms apart */
+function typedWord(word, hackOn, gap){
+  var w = WORDS[word], p = PAIRS[w.pair], o = outcome(w.pair, hackOn, gap);
+  var crit = o.verdict === 'ok' ? p.adapted[1] : o.verdict === 'bad' ? p.base[1] : o.verdict === 'tie' ? '?' : '';
+  return {verdict:o.verdict, crit:crit, head:w.pre + p.a.toLowerCase(),
+          text:w.pre + p.a.toLowerCase() + crit, o:o};
+}
+// END word
+
+/* ===== VIEW ===== */
+var state = {gap:15, measured:false, byHand:false};
+var ROWS = [
+  {el:document.getElementById('rowKept'),   word:'kept'},
+  {el:document.getElementById('rowColumn'), word:'column'}
+];
+/* one shared sentence per row (verbatim from D8) */
+var WHY = {
+  kept:   'P’s adaptation switches on 10 ms after p is typed. C has no combo of its own, so without the hack c is typed the instant you press it, too early for any gap under 26 ms; the hack makes C wait 11 ms, which lands it after the switch-on from 11 ms on.',
+  column: 'M’s adaptation switches on 10 ms after m is typed. T already waits 16 ms for its own combos, so it always lands after; the only thing the hack changes is a roll under 10 ms: both keys are released together at 11 ms and t lands too early.'
+};
+var WAIT_LINE = '⏸ at exactly 10 ms the 2nd key is held until your next key, then usually adapts late (predicted, not measured)';
+var SLOW = 125; /* above this nothing adapts, hack on or off */
+
+function pillText(r){
+  if (r.verdict === 'ok') return '✅ adapted · <span class="mono">'+r.text+'</span>';
+  if (r.verdict === 'bad') return '❌ base letter · <span class="mono">'+r.text+'</span>';
+  if (r.verdict === 'wait') return '⏸ waits for your next key';
+  return '⚖️ tie: either letter, unpredictable';
+}
+
+/* one word row at the current gap (D8's final state, no replay) */
+function buildRow(row){
+  var w = WORDS[row.word], n = w.keys.length, anyWait = false, popIt = state.pop;
+  row.el.querySelectorAll('.box').forEach(function(box){
+    var on = box.getAttribute('data-on') === '1', r = typedWord(row.word, on, state.gap);
+    if (r.verdict === 'wait') anyWait = true;
+    var f = '';
+    r.head.split('').forEach(function(c, i){ f += '<span class="l in" data-i="'+i+'">'+c+'</span>'; });
+    if (r.verdict === 'wait') f += '<span class="w in" data-i="'+(n-1)+'">⏸ waits for your next key</span>';
+    else f += '<span class="l in '+r.verdict+'" data-i="'+(n-1)+'">'+r.crit+'</span>';
+    var field = box.querySelector('.field');
+    field.innerHTML = f;
+    field.setAttribute('data-text', r.text);
+    field.setAttribute('aria-label', (on ? 'hack on' : 'hack off')+', typed: '+r.text+(r.verdict === 'wait' ? ', then waits' : ''));
+    var pill = box.querySelector('.verdict');
+    pill.className = 'verdict in '+r.verdict+(popIt ? ' pop' : '');
+    pill.innerHTML = pillText(r);
+  });
+  row.el.querySelector('.why').textContent = WHY[row.word];
+  var ww = row.el.querySelector('.whyWait');
+  ww.textContent = WAIT_LINE; ww.hidden = !anyWait;
+}
+
+function render(){
+  document.getElementById('gapLbl').textContent = state.measured ? 'your gap:' : state.byHand ? 'gap set by hand:' : 'example gap:';
+  document.getElementById('gapBig').innerHTML = state.gap+'<small>ms</small>';
+  document.getElementById('slow').hidden = !(state.gap > SLOW);
+  document.getElementById('gapVal').textContent = Math.min(state.gap, 40)+' ms';
+  var g = document.getElementById('gap'); if (+g.value !== Math.min(state.gap, 40)) g.value = Math.min(state.gap, 40);
+  g.setAttribute('aria-valuetext', g.value+' ms');
+  renderHist();
+  ROWS.forEach(buildRow);
+  renderStrip();
+  state.pop = false;
+}
+
+/* ===== last 5 gaps ===== */
+var hist = [], histSel = -1;
+function renderHist(){
+  var h = document.getElementById('hist');
+  if (!hist.length){ h.innerHTML = '<span class="hl">your last 5 gaps show here</span>'; return; }
+  var s = '<span class="hl">last '+hist.length+':</span>';
+  hist.forEach(function(v, i){ s += '<button type="button" data-i="'+i+'" aria-pressed="'+(i === histSel)+'">'+v+'</button>'; });
+  h.innerHTML = s;
+}
+document.getElementById('hist').addEventListener('click', function(e){
+  var b = e.target.closest('button[data-i]'); if (!b) return;
+  histSel = +b.getAttribute('data-i'); state.gap = hist[histSel]; state.measured = true; state.byHand = false; state.pop = true; render();
+});
+
+/* ===== the typing pad: gap = 2nd keydown − 1st keydown ===== */
+var IGNORE = {Shift:1, Control:1, Alt:1, Meta:1, CapsLock:1, Fn:1, FnLock:1, Hyper:1, Super:1, OS:1, AltGraph:1, Tab:1, Escape:1, Dead:1, Unidentified:1, Process:1};
+var RESET_MS = 1000;
+var first = null, silence = null;
+var pad = document.getElementById('pad'), padKeys = document.getElementById('padKeys'), padPh = document.getElementById('padPh');
+function keyName(e){ var k = e.key; return k === ' ' ? 'Space' : k.length === 1 ? k.toUpperCase() : k; }
+function armReset(){
+  clearTimeout(silence);
+  silence = setTimeout(function(){ first = null; padKeys.textContent = ''; }, RESET_MS);
+}
+function recordGap(ms){
+  var d = Math.max(0, Math.round(ms));
+  hist.push(d); if (hist.length > 5) hist.shift();
+  histSel = hist.length - 1;
+  state.gap = d; state.measured = true; state.byHand = false; state.pop = true;
+  render();
+}
+pad.addEventListener('keydown', function(e){
+  if (e.repeat || IGNORE[e.key] || e.ctrlKey || e.metaKey || e.altKey) return; /* let shortcuts and Tab through */
+  e.preventDefault();
+  var t = e.timeStamp > 0 ? e.timeStamp : performance.now(); /* same clock as performance.now(), taken when the key event was created */
+  var id = e.code || e.key;
+  if (first && id !== first.id && t - first.t <= RESET_MS){
+    padKeys.textContent = first.name+' → '+keyName(e);
+    recordGap(t - first.t);
+    first = null;
+  } else {
+    first = {id:id, t:t, name:keyName(e)};
+    padKeys.textContent = first.name+' → …';
+  }
+  armReset();
+});
+pad.addEventListener('focus', function(){ padPh.textContent = 'Ready: roll two keys, first one, then the other, fast'; });
+pad.addEventListener('blur', function(){ padPh.textContent = 'Click here, then roll two keys: first one, then the other, fast'; first = null; });
+pad.addEventListener('pointerdown', function(){ pad.focus(); });
+
+/* ===== by hand ===== */
+var ctl = document.getElementById('ctl');
+var coarse = window.matchMedia && window.matchMedia('(pointer: coarse)').matches;
+if (coarse || ('ontouchstart' in window && !(window.matchMedia && window.matchMedia('(pointer: fine)').matches))) ctl.hidden = false;
+document.getElementById('manual').addEventListener('click', function(){
+  ctl.hidden = false; histSel = -1; state.gap = 15; state.measured = false; state.byHand = true; state.pop = true; render();
+});
+document.getElementById('gap').addEventListener('input', function(e){
+  histSel = -1; state.gap = +e.target.value; state.measured = false; state.byHand = true; render();
+});
+
+/* ===== band strip: 4 rows (kept on/off, column on/off), 0–40 ms; cursor clamped at 40 ===== */
+var X0 = 78, SC = 7.5, DMAX = 40, RH = 16;
+function x(t){ return X0 + t*SC; }
+function txt(cls, X, Y, s, anchor){ return '<text class="'+cls+'" x="'+X+'" y="'+Y+'"'+(anchor?' text-anchor="'+anchor+'"':'')+'>'+s+'</text>'; }
+function renderStrip(){
+  var svg = document.getElementById('strip');
+  var W = Math.round(Math.max(300, Math.min(540, svg.getBoundingClientRect().width || 400)));
+  SC = (W - X0 - 12) / DMAX;
+  var rows = [
+    {label:'kept on',    pair:'PC', on:true,  y:22,  zone:{a:11, b:25, cls:'fix',  s:'what it fixes: 11–25 ms'}},
+    {label:'kept off',   pair:'PC', on:false, y:42},
+    {label:'column on',  pair:'MT', on:true,  y:86,  zone:{a:0,  b:9,  cls:'cost', s:'what it costs: 0–9 ms'}},
+    {label:'column off', pair:'MT', on:false, y:106}
+  ];
+  var s = '', labs = '';
+  rows.forEach(function(row){
+    var z = row.zone;
+    if (z){
+      var zx0 = x(z.a) - SC/2 - 1, zx1 = x(z.b) + SC/2 + 1;
+      s += '<rect class="zone '+z.cls+'" x="'+zx0+'" y="'+(row.y-3)+'" width="'+(zx1-zx0)+'" height="'+(RH+6)+'" rx="3"/>';
+      labs += txt('zoneT '+z.cls, Math.max(2, Math.min(zx0, W - 4 - z.s.length*7.4)), row.y-8, z.s);
+    }
+    s += txt('t-lab', 0, row.y+12, row.label);
+    for (var d=0; d<=DMAX; d++){
+      var v = outcome(row.pair, row.on, d).verdict;
+      s += '<rect class="c-'+v+'" x="'+(x(d)-SC/2+0.4)+'" y="'+row.y+'" width="'+(SC-0.8)+'" height="'+RH+'" rx="1"/>';
+    }
+  });
+  var yt = rows[0].y, yb = rows[3].y + RH;
+  var cg = Math.min(state.gap, DMAX), hx = x(cg);
+  s += '<rect class="cur" x="'+(hx-SC/2-1.5)+'" y="'+(yt-4)+'" width="'+(SC+3)+'" height="'+(yb-yt+8)+'" rx="2"/>';
+  s += '<path class="knob" d="M'+hx+' '+(yb+5)+' l-6 9 h12 z"/>';
+  var you = state.gap > DMAX ? 'you ('+state.gap+') →' : 'you';
+  s += txt('you', Math.max(X0 - 10, Math.min(hx, W - 4 - you.length*3.6)), yb+28, you, 'middle');
+  [0,10,20,30,40].forEach(function(t){ s += txt('t-ax', x(t), yb+46, t, 'middle'); });
+  s += txt('t-ax', 0, yb+46, 'gap, ms');
+  s += labs; /* zone labels above the cursor */
+  svg.setAttribute('viewBox', '0 0 '+W+' '+(yb+52));
+  svg.innerHTML = s;
+}
+var rsz = null;
+window.addEventListener('resize', function(){ clearTimeout(rsz); rsz = setTimeout(renderStrip, 100); });
+
+render();
+</script>
+</body>
+</html>
