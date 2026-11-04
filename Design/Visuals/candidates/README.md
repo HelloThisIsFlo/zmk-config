@@ -75,6 +75,15 @@
 - Verdicts: ✅ no longer reads as "the hack is a problem" (first page to pass); gate idea landed; hold-wait half-landed (wording)
 - Fix round applied: one state sentence per 1st key, bracket margin, phone pass (see git log)
 
+## 🔍 Cold critic on D6 (Fable, 2026-11-04)
+
+- Cold read after one watch: "C only gives pt if the t lands after a gate that opens 10 ms after p; with the hack C holds back and lands after the gate, without it C fires immediately and misses" (right; could not say what the hack is or why M→T differs)
+- Confusions, ranked: (1) the replay is over in 1.5 s, every transition flashes past; (2) the two panels hide their one difference, nothing says why C waits with the hack and not without; (3) M→T contradicts the framing (hack only hurts there) with no per-pair sentence; (4) "P's layer" jargon; (5) "both leave at 11" unexplained; (6) verdict chip far from the typed box; (7) phone: the on/off comparison is never on screen at once, playhead hard to scrub by thumb, strip slivers 4 px; (8) the gate box grows with "now" and reads as a bar
+- Keep: the typed box with the letter landing green/red ("instantly tells the outcome"), the three-row timeline with hatched holds and typed dots, the gap slider that auto-replays, the strip summary lines
+- Verdicts: hold-wait landed (when scrubbing), cut-short landed clearly, the gate rule landed; what the page never states is *why* the 2nd letter is early or late
+- ⚠️ the critic's suggested wording "the hack shortens T's 16 ms wait to 11" is wrong (hold = max(11, 16) = 16); not applied
+- Fix round applied: slower replay with holds on events, per-pair sentence per panel, plain words, chip beside the typed box (see git log)
+
 ## 🔁 How a candidate is made
 
 1. Builder writes `Dn.html` reusing a page's unit-tested `outcome(pair, hackOn, delta)`
