@@ -93,6 +93,14 @@
 - Verdicts: wanted output understood (why C becomes T stays opaque, by design); reads as "the hack is free" (the opposite risk); as a first page, nearly: fix 1 mandatory
 - Fix round applied: both words on screen at once, replay re-timed around the critical gap, phone strip (see git log)
 
+## 🧮 Correctness audit of D4–D7 against FACTS (Fable, 2026-11-04)
+
+- All four `outcome()` blocks agree with MODEL's Δ tables (holds 16/16/16/0, 11 for C under the hack, 1st letter at min(Δ, hold), gate +10, close +110, every band edge). Only text was off
+- ❌ fixed: D4 stage 2 title "every key waits 11 ms" → "at least 11 ms"; D6 "makes C wait 11 ms, like every key" → the 11 ms floor; D5 bug: at exactly 10 ms the detail showed "both leave at 11" (code `d <= 10`, must be `d <= 9`)
+- ⚠️ fixed everywhere: the rescued band is **11–25 ms** (26 is a tie without the hack), the pages said 11–26; "6 pairs untouched/unchanged" → "type the same with the hack on or off" and the 3 band-less pairs named; "(X C F, thumbs)" → "a thumb" (only LH0 is a follower in the H0 pairs); D7 "upstream ZMK" → "v0.3+"; ≤ 9 ms wording "typed together" → "both leave the engine at 11, t read on the base layer"; ⏸ "waits for your next key-up or a later press"
+- Kept on purpose: "the intended trade" (Flo's own judgement, 2026-11-04: "it's a trade-off that I'm happy to make"); "where real typing happens" was replaced by Flo's words "where the inconsistency was"
+- Not fixed, cosmetic: D5 strip tails "… ✅ to ~115" are hedged with ~ (✅ ends at 114, ⚖️ at 115)
+
 ## 🔁 How a candidate is made
 
 1. Builder writes `Dn.html` reusing a page's unit-tested `outcome(pair, hackOn, delta)`

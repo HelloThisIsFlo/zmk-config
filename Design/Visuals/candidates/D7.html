@@ -183,10 +183,10 @@ h2{font-size:15px;margin:18px 0 6px}
   </div>
   <p class="costnote" id="costnote">No cost on this pair: the price is on M→T, rolls 0–9 ms.</p>
   <p class="legend"><span>✅ adapted (mn / pt)</span> · <span>❌ missed, base letter (mt / pc)</span> · <span>⏸ 2nd key waits for your next key</span> · <span>⚖️ tie</span></p>
-  <p class="context">Real two-key combos fire on presses up to 15 ms apart (M+W is Z). A roll under 10 ms sits inside that range, so giving it up is the intended trade. 11–26 ms is where typing really happens, and where 11 pairs used to be unreliable.</p>
+  <p class="context">Real two-key combos fire on presses up to 15 ms apart (M+W is Z). A roll under 10 ms sits inside that range, so giving it up is the intended trade. 11–25 ms is where the inconsistency was: 11 pairs used to be unreliable there.</p>
 
   <div class="foot">
-    <p>P→C stands for 11 pairs whose 2nd key has no combo (X C F, thumbs); M→T for 34 pairs whose 2nd key has its own combos. 6 pairs that share a real combo and 3 with no timing band type the same with the hack on or off.</p>
+    <p>P→C stands for 11 pairs whose 2nd key has no combo (X C F, a thumb); M→T for 34 pairs whose 2nd key has its own combos. 6 pairs that share a real combo and 3 with no timing band type the same with the hack on or off.</p>
     <p>⏸ at exactly 10 ms and the ⚖️ edges are hardware predictions. Board engine time, numbers from <code>Design/Timing/FACTS.md</code>.</p>
   </div>
 </main>
@@ -234,7 +234,7 @@ function outcome(pair, hackOn, delta) {
   const PANEL_H = 204;
   const PANELS = [
     { hackOn: true,  title: 'hack ON',  sub: "today's firmware" },
-    { hackOn: false, title: 'hack OFF', sub: 'upstream ZMK' }
+    { hackOn: false, title: 'hack OFF', sub: 'upstream ZMK v0.3+' }
   ];
   function layout() {
     const W = Math.max(300, Math.round(fig.clientWidth));
@@ -289,7 +289,7 @@ function outcome(pair, hackOn, delta) {
   }
   function secondLabel(o, p, narrow) {
     const fl = p.bBase;
-    if (o.together) return narrow ? `${fl} released at 11` : `${fl} held by the hack until 11, typed at 11`;
+    if (o.together) return narrow ? `${fl} released at 11` : `${fl} released at 11, read on the base layer`;
     if (o.parked) return narrow ? `${fl} held, not typed yet` : `${fl} held until your next key, not typed yet`;
     if (o.dB === 0) return narrow ? `${fl} typed at once` : `${fl} typed at once at ${o.bOut}: no hold`;
     const who = o.dB === p.kB ? 'its combos' : 'the hack';
@@ -444,7 +444,7 @@ function outcome(pair, hackOn, delta) {
   function lastOk(p, on) { let d = 200; while (d > 0 && outcome(p, on, d).verdict !== 'ok') d--; return d; }
   const ZONE = {
     MT: { cls: 'zcost', tcls: 'zct', from: 0, to: 10, txt: 'what it costs: 0–9 ms' },
-    PC: { cls: 'zfix', tcls: 'zft', from: 11, to: 27, txt: 'what it fixes: 11–26 ms' }
+    PC: { cls: 'zfix', tcls: 'zft', from: 11, to: 26, txt: 'what it fixes: 11–25 ms' }
   };
   const NOTE = { wait: '2nd key waits for your next key', tie: 'exact tie' };
   function drawStrips() {
@@ -452,7 +452,7 @@ function outcome(pair, hackOn, delta) {
     document.getElementById('stripsh').textContent = `Every gap at once, ${p.A}→${p.B}`;
     document.getElementById('costnote').textContent = state.pair === 'PC'
       ? 'No cost on this pair: the price is on M→T, rolls 0–9 ms.'
-      : 'No fix on this pair: the fix is on P→C, 11–26 ms.';
+      : 'No fix on this pair: the fix is on P→C, 11–25 ms.';
     const W = Math.max(280, Math.round(stripbox.clientWidth - 12));
     const narrow = W < 520;
     const LBL = 62, TAIL = narrow ? 76 : 92;

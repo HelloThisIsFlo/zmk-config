@@ -172,8 +172,8 @@ svg{display:block;width:100%;height:auto;overflow:visible}
   </div>
 
   <div class="foot">
-    <p>✅ adapted · ❌ base letter · ⏸ the 2nd key waits for your next key · ⚖️ exact tie, either letter.</p>
-    <p>⏸ at exactly 10 ms and the ⚖️ edges are hardware predictions. P→C stands for 11 pairs, M→T for 34: 34 + 11 = 45 pairs with no shared combo; the 6 pairs sharing a real combo are unchanged. Numbers: <code>Design/Timing/FACTS.md</code>.</p>
+    <p>✅ adapted · ❌ base letter · ⏸ the 2nd key waits for your next key-up or a later press · ⚖️ exact tie, either letter.</p>
+    <p>⏸ at exactly 10 ms and the ⚖️ edges are hardware predictions. P→C stands for 11 pairs, M→T for 34: 34 + 11 = 45 pairs with no shared combo; the 6 pairs sharing a real combo and the 3 with no timing band type the same with the hack on or off. Numbers: <code>Design/Timing/FACTS.md</code>.</p>
   </div>
 </div>
 <script>
@@ -242,10 +242,10 @@ var EMO = {ok:'✅', bad:'❌', wait:'⏸', tie:'⚖️'};
 
 /* the one sentence per pair and hack state, first line of each panel */
 var SAY = {
-  PC: {on:  'C has no combo of its own. The hack is a 36-key combo that never fires: it makes C wait 11 ms, like every key.',
+  PC: {on:  'C has no combo of its own. The hack is a 36-key combo that never fires: it gives every key an 11 ms floor: C goes from no wait to 11 ms; most keys already wait 16 for their own combos.',
        off: 'C has no combo of its own, so c is typed the instant you press it.'},
-  MT: {on:  'T already waits 16 ms for its own combos; the hack changes nothing for T. But a roll under 10 ms makes the hack’s combo time out at 11 ms with both keys held, so both letters are typed together.',
-       off: 'T already waits 16 ms for its own combos, so t always lands after the gate.'}
+  MT: {on:  'T already waits 16 ms for its own combos; the hack changes nothing for T. But a roll under 10 ms makes the hack’s combo time out at 11 ms with both keys held, so both keys leave the combo engine at 11 and t is read on the base layer.',
+       off: 'T already waits 16 ms for its own combos, so t always lands after the gate, up to the ~110 ms window edge.'}
 };
 
 function defs(){
@@ -287,7 +287,7 @@ function aLabel(sc, now){
   var A = sc.A, a = sc.a;
   if (now < sc.aTyped) return {cls:'', s:A+': waiting '+Math.ceil(sc.aHoldEnd - now - 1e-9)+' ms'};
   var when = now < sc.aTyped + 4 ? 'now' : 'at '+sc.aTyped;
-  if (sc.both) return {cls:'', s:'the hack’s combo times out at 11 ms: '+a+' and '+sc.B.toLowerCase()+' typed together'};
+  if (sc.both) return {cls:'', s:'the hack’s combo times out at 11 ms: both keys released, '+sc.B.toLowerCase()+' read on the base layer'};
   if (sc.aCut) return {cls:'', s:A+': cut short: '+a+' typed '+when};
   return {cls:'', s:A+': held '+sc.aHoldEnd+' ms, '+a+' typed '+when};
 }
@@ -296,7 +296,7 @@ function bLabel(sc, now){
   if (now < sc.bPress) return {cls:'mut', s:B+': pressed at '+sc.bPress+' ms'};
   if (sc.wait){
     if (now < 11) return {cls:'', s:B+': waiting '+Math.ceil(sc.bHoldEnd - now - 1e-9)+' ms'};
-    return {cls:'wait', s:B+': ⏸ waiting for your next key'};
+    return {cls:'wait', s:B+': ⏸ waits for your next key-up or a later press'};
   }
   if (now < sc.bTyped) return {cls:'', s:B+': waiting '+Math.ceil(sc.bHoldEnd - now - 1e-9)+' ms'};
   var how = sc.bInstant ? ' at once,' : '';
@@ -372,7 +372,7 @@ function scene(sc, now, hl, fin){
     s += sideTxt('dl halo', sc.gate, RG+5, 'open '+sc.gate, 9, true);
   }
   s += lane(RA, sc.aPress, sc.aHoldEnd, sc.aTyped, now, '', sc.a, false);
-  s += lane(RB, sc.bPress, sc.bHoldEnd, sc.bTyped, now, sc.verdict, sc.bChar, sc.wait);
+  s += lane(RB, sc.bPress, sc.bHoldEnd, sc.bTyped, now, sc.verdict, sc.bChar, sc.wait, sc.both);
   /* playhead, with a wide grab zone around it */
   var px = x(clamp(now, 0, TMAX));
   s += '<rect class="scrub" data-scrub="1" x="'+(X0-12)+'" y="'+(RA-16)+'" width="'+(x(TMAX)-X0+20)+'" height="'+(AXY-RA+34)+'"/>';
@@ -388,7 +388,7 @@ function sideTxt(cls, t, y, s, gap, above){
   if (x(t) + gap + w <= 398) return txt(cls, x(t)+gap, yy, s);
   return txt(cls, x(t)-gap, yy, s, 'end');
 }
-function lane(y, press, holdEnd, typed, now, vcls, ch, stall){
+function lane(y, press, holdEnd, typed, now, vcls, ch, stall, onBase){
   var s = '';
   if (now < press) return s;
   if (stall){
@@ -401,7 +401,7 @@ function lane(y, press, holdEnd, typed, now, vcls, ch, stall){
   if (now >= typed){
     if (typed < holdEnd) s += '<line class="cut" x1="'+x(typed)+'" y1="'+(y-10)+'" x2="'+x(typed)+'" y2="'+(y+10)+'"/>';
     s += '<circle class="dot '+vcls+'" cx="'+x(typed)+'" cy="'+y+'" r="6"/>';
-    s += sideTxt('dl halo '+vcls, typed, y+5, ch+' typed '+typed, 10);
+    s += sideTxt('dl halo '+vcls, typed, y+5, onBase ? ch+' on base, '+typed : ch+' typed '+typed, 10);
   }
   return s;
 }

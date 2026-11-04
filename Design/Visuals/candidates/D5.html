@@ -141,7 +141,7 @@ svg text{font-family:inherit}
 
   <div class="foot">
     <p>Not drawn: 6 pairs that share a real combo and 3 with no timing band type the same with the hack on or off.</p>
-    <p>⏸ at exactly 10 ms and the ⚖️ edges (✅ ends near 110–125 ms) are hardware predictions. Board engine time, numbers from <code>Design/Timing/FACTS.md</code>.</p>
+    <p>⏸ at exactly 10 ms and the ⚖️ edges (✅ ends near 110–126 ms) are hardware predictions. Board engine time, numbers from <code>Design/Timing/FACTS.md</code>.</p>
   </div>
 </div>
 
@@ -184,7 +184,7 @@ function outcome(pair, hackOn, delta) {
   var EMO = { ok: "✅", bad: "❌", wait: "⏸", tie: "⚖️" };
   var GROUPS = [
     { key: "MT", head: "34 pairs like M→T · 2nd key has its own combos", short: "34 pairs like M→T · 2nd key has combos" },
-    { key: "PC", head: "11 pairs like P→C · 2nd key has no combo (X C F, thumbs)", short: "11 pairs like P→C · 2nd key has no combo" }
+    { key: "PC", head: "11 pairs like P→C · 2nd key has no combo (X C F, a thumb)", short: "11 pairs like P→C · 2nd key has no combo" }
   ];
   function lastOk(pair, on) { var d = 200; while (d > 0 && outcome(pair, on, d).cls !== "ok") d--; return d; }
 
@@ -207,7 +207,7 @@ function outcome(pair, hackOn, delta) {
     var body = "", zones = "";
     var ZONE = {
       MT: { cls: "zcost", tcls: "zct", from: 0, to: 10, txt: "what it costs: 0–9 ms" },
-      PC: { cls: "zfix", tcls: "zft", from: 11, to: 27, txt: "what it fixes: 11–26 ms" }
+      PC: { cls: "zfix", tcls: "zft", from: 11, to: 26, txt: "what it fixes: 11–25 ms" }
     };
     var NOTE = { wait: "2nd key waits for your next key", tie: "exact tie" };
     GROUPS.forEach(function (g, gi) {
@@ -364,7 +364,8 @@ function outcome(pair, hackOn, delta) {
     [true, false].forEach(function (on, bi) {
       var r = outcome(pair, on, d);
       var hA = on ? Math.max(11, pair.k1) : pair.k1;
-      var together = on && d <= 10;
+      var together = on && d <= 9;
+      var parked = on && d === 10;
       var yb = y;
       if (bi) o += '<line class="sep" x1="0" x2="' + W + '" y1="' + (yb - 4) + '" y2="' + (yb - 4) + '"/>';
       // rows in this lane (y offsets from yb): gate label 33, trigger label 47, trigger bar 59,
@@ -392,9 +393,9 @@ function outcome(pair, hackOn, delta) {
       o += '<rect class="ghost" x="' + x(0) + '" y="' + (l1 - 6) + '" width="' + (x(hA) - x(0)) + '" height="12" rx="2"/>';
       o += '<rect class="hold" x="' + x(0) + '" y="' + (l1 - 6) + '" width="' + (x(r.a) - x(0)) + '" height="12" rx="2"/>';
       o += '<line class="press" x1="' + x(0) + '" x2="' + x(0) + '" y1="' + (l1 - 11) + '" y2="' + (l1 + 11) + '"/>';
-      o += '<text class="tm halo" x="' + (x(0) + 2) + '" y="' + (l1 - 12) + '">' + holdLabel(tl, pair.k1, on, true) + '</text>';
+      o += '<text class="tm halo" x="' + (x(0) + 2) + '" y="' + (l1 - 12) + '">' + (parked ? (W < 520 ? tl + " at 11, " + fl + " held" : tl + " leaves at 11; " + fl + " stays held") : together ? tl + " would wait " + hA + " ms; the hack releases it at 11" : holdLabel(tl, pair.k1, on, true)) + '</text>';
       o += '<text class="typed halo" x="' + x(r.a) + '" y="' + (l1 + 19) + '" text-anchor="middle">typed</text>';
-      if (r.a < hA) {
+      if (r.a < hA && !parked) {
         var cx = x(r.a);
         o += '<path class="cut" d="M' + (cx - 3) + ' ' + (l1 - 10) + ' l6 5 l-6 5 l6 5 l-3 5"/>';
         var ctxt = together ? "both leave at 11" : "cut short by the 2nd press";

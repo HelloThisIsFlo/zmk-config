@@ -146,8 +146,8 @@ nav button:disabled{opacity:.35;cursor:default}
   <div class="card summary">
     <h2>All of it on one axis</h2>
     <svg id="sum" viewBox="0 0 400 130" role="img" aria-label="Outcome for every gap from 0 to 130 ms, P→C and M→T, hack off and on"></svg>
-    <p class="sub">✅ adapted · ❌ base letter · ⏸ the 2nd key waits for your next key, then usually adapts late · ⚖️ exact tie, either letter</p>
-    <p class="sub">P→C stands for 11 pairs, M→T for 34: 45 pairs with no shared combo. The 6 pairs that share a real combo are untouched.</p>
+    <p class="sub">✅ adapted · ❌ base letter · ⏸ the 2nd key waits for your next key-up or a later press, then usually adapts late · ⚖️ exact tie, either letter</p>
+    <p class="sub">P→C stands for 11 pairs, M→T for 34: 45 pairs with no shared combo. The 6 pairs that share a real combo and the 3 with no timing band type the same with the hack on or off.</p>
   </div>
 </div>
 <script>
@@ -323,7 +323,7 @@ function runs(pair, hackOn, max){
     var v = outcome(pair, hackOn, d).verdict, last = out[out.length-1];
     if (last && last.v === v) last.end = d; else out.push({v:v, start:d, end:d});
   }
-  if (out.length === 1) return EMO[out[0].v]+' every gap';
+  if (out.length === 1) return EMO[out[0].v]+' every gap to ~110';
   return out.map(function(r){
     var span = r.end === max && r.start !== r.end ? r.start+'+' : (r.start === r.end ? ''+r.start : r.start+'–'+r.end);
     return EMO[r.v]+' '+span;
@@ -362,7 +362,7 @@ function renderSummary(){
   function ry(i){ return Y0 + i*RH + (i >= 2 ? PG : 0); }
   var yEnd = ry(rows.length-1) + 14;
   /* zones: the fix sits on P→C on (row 1), the cost on M→T on (row 3) */
-  var cx0 = sx(0)-SS/2, cx1 = sx(9)+SS/2, fx0 = sx(11)-SS/2, fx1 = sx(26)+SS/2;
+  var cx0 = sx(0)-SS/2, cx1 = sx(9)+SS/2, fx0 = sx(11)-SS/2, fx1 = sx(25)+SS/2;
   var fy = ry(1), cy = ry(3);
   s += '<rect class="zone fix" x="'+fx0+'" y="'+(fy-3)+'" width="'+(fx1-fx0)+'" height="18" rx="2"/>';
   s += '<rect class="zone cost" x="'+cx0+'" y="'+(cy-3)+'" width="'+(cx1-cx0)+'" height="18" rx="2"/>';
@@ -376,7 +376,7 @@ function renderSummary(){
   });
   /* labels: the fix first (top), the cost second (under its row) */
   s += '<line class="zl fix" x1="'+fx1+'" y1="18" x2="'+fx1+'" y2="'+(fy-3)+'"/>';
-  s += txt('zoneT fix', fx1+4, 22, 'what the hack fixes (11–26)');
+  s += txt('zoneT fix', fx1+4, 22, 'what the hack fixes (11–25)');
   var cl = yEnd + 16;
   s += '<line class="zl cost" x1="'+(cx0+2)+'" y1="'+(cy+15)+'" x2="'+(cx0+2)+'" y2="'+(cl-4)+'"/>';
   s += txt('zoneT cost', cx0+6, cl, 'what it costs (0–9)');
@@ -402,8 +402,8 @@ function resultHTML(o){
 var STAGES = {
   1: {title:'Without the hack, P→C is unreliable',
       cap:'Wanted: pt, the adapted letter. A fast P→C types pc instead, a slower one pt. Same roll, two results.'},
-  2: {title:'The hack: every key waits 11 ms',
-      cap:'The hack solves gaps 11–26 ms. That’s where real typing happens.'},
+  2: {title:'The hack: every key waits at least 11 ms',
+      cap:'The hack solves gaps 11–25 ms. That’s where the inconsistency was.'},
   3: {title:'The price: rolls under 10 ms',
       cap:'M→T is the other kind of pair: T has combos of its own, so it was never unreliable. Rolls this fast are the speed real two-key combos fire at (M+W within 15 ms is Z). Losing them is the intended trade.'}
 };
