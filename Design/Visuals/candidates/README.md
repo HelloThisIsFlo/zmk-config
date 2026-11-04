@@ -136,6 +136,13 @@
 - ⚠️ From ~21:35 the SSH push was refused (the SSH agent socket had no identities); the commits went up over HTTPS with the GitHub CLI's login instead (`git -c credential.helper='!gh auth git-credential' push https://github.com/HelloThisIsFlo/zmk-config.git main`). The SSH agent still needs a look
 - Next: Flo reads the jury table, opens D9 then D7, decides merge vs sequence; then the website rebuild from `../../Timing/FACTS.md`
 
+## 🔍 Cold critic on D10 (Fable, 2026-11-04, time-boxed)
+
+- Cold read: "a tool that measures my two-key gap and tells me the hack rescues kept between 11–25 ms and deliberately sacrifices column under 10 ms; the timeline below half-proves it" (right)
+- Confusions, ranked: (1) Rule says "gate = 1st letter + 10 ms" but the lanes show "gate opens at 25" for a 15 ms roll: the text never says a letter is typed up to 16 ms after its press; (2) the pair switch flips on its own when the gap changes; (3) at 7 ms "▨ given up · kepc" vs "❌ base letter · kepc" for the same word; (4) opening the slider replaces the measured gap with 15; (5) ⏸ / ⚖️ cells unlabeled
+- Keep: the big live gap + verdict sentence ("best part of the page"), the four strips with "you" and the hatched 0–9 band ("reads instantly"), the word cards, the chips, the mobile layout
+- Verdicts: the 0–9 band now reads as a deliberate trade ✅; the why panel explains the gate but never states the holds in words; "with fix 1 I would send it to a friend"
+
 ## 🔁 How a candidate is made
 
 1. Builder writes `Dn.html` reusing a page's unit-tested `outcome(pair, hackOn, delta)`
