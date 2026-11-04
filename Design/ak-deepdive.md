@@ -2,11 +2,12 @@
 
 Complete reference for the AK mechanism in this keyboard config. Read this doc alone to understand how adaptive keys work end-to-end.
 
-> [!note] Timing numbers (2026-10-01)
+> [!note] Timing numbers (2026-11-04)
 >
 > - The mechanism described here holds (chaining 🧪 proven, [`Timing/results/T-12.md`](Timing/results/T-12.md))
-> - Exact timings, the modifier pin rule and the replace-macro dead window live in [`Timing/MODEL.md`](Timing/MODEL.md)
+> - The timing statements below are corrected from the proven model; exact timings and the full rules (window, modifier pin, replace-macro dead window, forced-TAP band, R thumb) live in [`Timing/MODEL.md`](Timing/MODEL.md)
 > - Where this file and that one differ, that one wins
+> - Tags: 🧪 proven by test · 📜 proven by source · 🔮 predicted on hardware · ⚖️ undetermined on the board
 
 ## Overview
 
@@ -38,13 +39,13 @@ On the **Naquadah alpha layer** (`layers_A_NAQUADAH_alpha.dtsi`):
 │ ak_X  ak_W  ak_M  ak_P  ak_K │ │  /·    .:    =-    -    '"  │
 │ ak_C  ak_S  ak_N  ak_T  ak_B │ │  ,;   ak_A  ak_E  ak_I  ak_H │
 │ ak_F  ak_G  ak_L  ak_D  ak_V │ │  _·   ak_U  ak_O  ak_Y  &bk J │
-╰─────────╮ NUM   SFT   NAV    │ │  SPC  NSYM  TGL ╭───────────╯
+╰─────────╮ NUM   SFT   R/NAV  │ │  SPC  NSYM  TGL ╭───────────╯
           ╰────────────────────╯ ╰─────────────────╯
 ```
 
 - **Left hand**: all 15 alpha keys are adaptive (`ak_X`)
 - **Right hand**: A, E, I, H, U, O, Y are adaptive; punctuation keys and J use `&bk` or custom behaviors
-- **Thumbs**: none are adaptive (they're layer switches, shift, space, etc.)
+- **Thumbs**: LH0 is adaptive. Tapped, it types R through `&ak l_akR R` (`nav_akR` = `&blt_akR`) and arms `l_akR`; with an idle queue the tap is 0ms, so R↓, R↑ and `l_akR` ON land in the thumb-up ms (right after a letter the queue is busy: R is queued and `l_akR` comes on 10ms after R↓) 🧪 T-14-c, S-S_LH0-d10. Held 200ms it's the nav layer (`my_tapping_term_thumb`, `CONFIG.h:6`) 📜. The other thumbs are layer switches, shift, space, etc.
 - Some adaptive keys have **disabled AK layers** (e.g., `l_akI = 999`) — the key still goes through the `&ak` macro for timing consistency, but the layer activation is a no-op
 
 ## The `&ak` Behavior
@@ -71,7 +72,7 @@ Step by step for `ak_M` = `&ak l_akM M`:
 2. **Set tap-time to 0** — so the next step executes instantly
 3. **Tap `&aksl l_akM`** — activates the sticky layer for M
 
-The 10ms tap time is critical — it can't be 0 (causes missed keypresses on some hardware). This delay is what creates the race condition that the consistency hack solves (see `ak-combo-hack.md`).
+The 10ms tap time sets when the AK layer comes on: the letter goes down when the key is delivered (D), the layer turns on 10ms later (D+10) and off at D+110 if nothing consumes it 🧪 T-12-a. A follower delivered inside that 10ms gap falls into it and lands on the base layer. The consistency hack does not close that gap, it decides who falls into it: a follower pressed ≥ 11ms after its trigger (and sharing no real combo with it) arrives after the layer is on, one pressed ≤ 9ms after leaves the combo engine together with the trigger and lands on base (see [ak-combo-hack.md](ak-combo-hack.md)). Why it can't be 0 ("missed keypresses on some hardware") is the original rationale, a host-side claim the native tests can't check.
 
 ## The `&aksl` Sticky Layer
 
@@ -89,8 +90,9 @@ aksl: aksl {
 
 Key properties:
 - **Wraps `&mo`** — activates the AK layer as a momentary layer
-- **100ms window** (`my_ak_window`) — the AK layer deactivates after 100ms if no key is pressed
-- **No `quick-release`** — this is deliberate. Without quick-release, the AK layer stays active until the next `&kp` _releases_ (not just presses). This means the next `&ak` macro can activate its own layer _before_ the current one deactivates, enabling seamless chaining.
+- **100ms window** (`my_ak_window`) — counted from layer ON (D+10, ~26ms after the trigger's press on most keys), not from the press; seen from key-downs it ends 105–115ms after the trigger (🧪 T-12-a/b; exact edge 🔮). The layer turns off at D+110 unless a keycode **delivered after arming** consumes or pins it; a key already down when the layer arms doesn't count
+- **Modifier pin** — a modifier pressed inside the window pins the layer until the modifier's up **or** the next `&ak`-typed key (a `&trans` letter, an adapted `ak_X`, a replace macro), whichever comes first; a modifier already held when the trigger is typed doesn't pin 🧪 T-20, RVB-pin-akfollower (proven with a raw `&kp` Shift; see `Timing/MODEL.md` → Pin semantics)
+- **No `quick-release`** — this is deliberate. Without quick-release, the AK layer stays active until the first keycode delivered after it arms _releases_ (not just presses). This means the next `&ak` macro can activate its own layer _before_ the current one deactivates, enabling seamless chaining.
 
 ## AK Layers
 
@@ -123,7 +125,7 @@ bk: bk {
 
 `&bk Z` types Z with no AK layer activation — the chain ends. But chain termination is only half the story. `&bk` exists primarily as a **consistency mechanism** that keeps all key events in ZMK's macro processing pipeline.
 
-**Why not just use `&kp`?** ZMK processes macro events in a serialized pipeline — events within and between macros maintain strict ordering. A raw `&kp` outside a macro bypasses this pipeline. When an `&ak` macro is still in flight (typing a character, activating an AK layer), a raw `&kp` from the next keystroke can fire out of order or race with those in-flight events. `&bk` wraps `&kp` in a macro, keeping it in the ordered pipeline so output arrives in the correct sequence.
+**Why not just use `&kp`?** Everything runs on one thread, and all macros share a single FIFO behaviour queue, item by item. A raw `&kp` never enters that queue: it reaches HID when the key is delivered and overtakes queued output, so typed after an in-flight `&ak` (character still down, AK layer not yet on) it can come out first 🧪 T-21-h. `&bk` wraps `&kp` in a macro, so it waits its turn in the queue and output arrives in typing order. The order is per queued item, not strict across nesting: a replace macro's nested `ak_Y` adds its steps only when its parent item runs, so a buffered key delivered before then is typed before Y 🧪 T-21-c.
 
 **The rule:**
 - **`&bk`** for all normal typing flow — alpha layer bindings, AK layer bindings, combo outputs
@@ -172,6 +174,8 @@ The first character already typed gets retroactively replaced. Defined in `__BAS
 
 **Always chains** — step 4 uses `ak_BIGRAM_1`, which activates BIGRAM_1's AK layer.
 
+**Queue cost and dead window.** In the behaviour queue the macro is 8 outer + 4 nested items. With F = the replace key's delivery: ⌫ at F (it consumes the old AK layer), the first char at F+10, the nested `ak_BIGRAM_1`'s letter at F+30, its AK layer ON at F+40. Between F+10 and F+40 no AK layer is on: a key delivered in that dead window lands on the base layer. Example: C, then P 20ms later, then N 25ms after P → "tpn", not "tpd" (`l_akP` has `&bk D` on N's key) 🧪 T-21-a, RVA-ex33-cpn; both ends ⚖️ on the board.
+
 **Example: C→P produces TP**
 - C is at LM4, P is at LT1 on the alpha layer
 - Alias: `CP_to_TP` → `&replace_char_with_bigram_TP` (`aliases.dtsi:66`)
@@ -218,8 +222,9 @@ Key insight: the choice at step 2 is deliberate. Using `ak_B` (instead of `&bk B
 
 The `&aksl` behavior has no `quick-release` (`behaviors.dtsi:7-8`). This means:
 - When K is pressed in step 2, `l_akM` doesn't deactivate until K's `&kp` _releases_
-- By that time, `ak_B` has already fired and `l_akB` is active
+- That release and `l_akB` ON happen in the same queue step: `ak_B`'s B↑ drops `l_akM` and its `&aksl` turns on `l_akB` in the same instant 🧪 T-12-c
 - There's no gap between AK layers — seamless handoff
+- A related rule ends a modifier pin: every `&aksl` runs at queue position 0, so each new `&aksl` press releases any still-active AK layer at that position, pinned or not 📜 `behavior_sticky_key.c:147-151`, 🧪 RVB-pin-akfollower
 
 ### `REPLACE_CHAR_WITH_BIGRAM` Always Chains
 
@@ -251,10 +256,10 @@ The AK system relies on two separate mechanisms to keep keystroke processing rel
 
 | Mechanism | What it solves | Scope |
 |-----------|---------------|-------|
-| `&bk` | Individual key ordering — keeps events in ZMK's macro processing pipeline | Every keystroke in the typing flow |
-| Combo hack | Combo-resolution ordering — delays keys released simultaneously by the combo system | Keys participating in combos |
+| `&bk` | Output ordering — keeps the key's output in the single behaviour queue, behind in-flight `&ak` output (a raw `&kp` overtakes it) | Every keystroke in the typing flow |
+| Combo hack | Arrival timing — holds every press for its longest combo, at least the hack's 11ms unless a key-up or a non-sharing press releases it first, so a follower pressed ≥ 11ms after its trigger (sharing no real combo with it) reaches the keymap after the trigger's AK layer is on | Every key on the alpha + AK layers (0–24) |
 
-`&bk` is the more fundamental mechanism — it applies universally to every key in the typing path. The combo hack addresses the specific edge case where combo resolution releases multiple buffered keys at once, which would bypass `&bk`'s ordering guarantees. See [ak-combo-hack.md](ak-combo-hack.md) for the full combo hack mechanism.
+They solve different gaps: `&bk` orders output once keys reach the keymap; the hack decides _when_ a key reaches it relative to the trigger's 10ms layer delay. The hack is not a guarantee. A follower pressed ≤ 9ms after its trigger shares the hack with it, both leave the combo engine together at the trigger's 11ms mark, and the follower lands on base (M then T 5ms apart types "mt"); exactly 10ms is a predicted stall on the board 🔮; and 6 pairs whose two keys share a real combo stay fragile to 14–16ms whatever the hack does 🧪 T-02, T-23. See [ak-combo-hack.md](ak-combo-hack.md) for the full combo hack mechanism.
 
 ## The `ak_hE` Composite Adaptive
 
