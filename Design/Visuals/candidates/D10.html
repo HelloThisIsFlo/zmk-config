@@ -1,0 +1,756 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Your roll, and why</title>
+<link rel="icon" href="data:,">
+<style>
+:root{
+  --bg:#f6f5f1; --card:#ffffff; --fg:#1c1c1f; --muted:#6a6a72; --grid:#e6e3db; --line:#bdb9ae;
+  --layer:#2a74c8; --layerBg:#d8e7f8; --layerTx:#174a85;
+  --ok:#1e874a; --okBg:#dcf2e4; --bad:#c3352b; --badBg:#fbe1de; --wait:#a86d10; --waitBg:#fbecd2;
+  --tie:#6c6c74; --tieBg:#e8e8ec; --focus:#2563eb; --chip:#eceae4; --chipOn:#1c1c1f; --chipOnTx:#ffffff;
+  --capBg:#ffffff; --field:#faf9f6;
+  --gate:#6d5bd0; --gateFill:#e6e0fb; --gateTx:#3b2d91; --hatch:#8a8f99; --holdBg:#f1efe9; --handle:#2563eb; --keyBg:#f3f2ee; --gridStrong:#d6d3ca;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#131316; --card:#1c1c20; --fg:#ececf0; --muted:#9b9ba4; --grid:#2a2a30; --line:#4a4a53;
+    --layer:#5aa2ee; --layerBg:#1b3350; --layerTx:#b9d8fb;
+    --ok:#4fca7d; --okBg:#173a25; --bad:#ff6d61; --badBg:#46201c; --wait:#f1b54d; --waitBg:#3e2e13;
+    --tie:#acacb4; --tieBg:#303036; --focus:#7aa7ff; --chip:#28282e; --chipOn:#ececf0; --chipOnTx:#131316;
+    --capBg:#2a2a30; --field:#16161a;
+    --gate:#a898ff; --gateFill:#342d62; --gateTx:#dcd5ff; --hatch:#8d94a0; --holdBg:#262a31; --handle:#6ea2ff; --keyBg:#262a31; --gridStrong:#3a3f48;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#131316; --card:#1c1c20; --fg:#ececf0; --muted:#9b9ba4; --grid:#2a2a30; --line:#4a4a53;
+  --layer:#5aa2ee; --layerBg:#1b3350; --layerTx:#b9d8fb;
+  --ok:#4fca7d; --okBg:#173a25; --bad:#ff6d61; --badBg:#46201c; --wait:#f1b54d; --waitBg:#3e2e13;
+  --tie:#acacb4; --tieBg:#303036; --focus:#7aa7ff; --chip:#28282e; --chipOn:#ececf0; --chipOnTx:#131316;
+  --capBg:#2a2a30; --field:#16161a;
+  --gate:#a898ff; --gateFill:#342d62; --gateTx:#dcd5ff; --hatch:#8d94a0; --holdBg:#262a31; --handle:#6ea2ff; --keyBg:#262a31; --gridStrong:#3a3f48;
+  color-scheme: dark;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--fg);font:15px/1.45 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  padding:12px max(16px,env(safe-area-inset-right)) 32px max(16px,env(safe-area-inset-left));overflow-x:hidden}
+.wrap{max-width:760px;margin:0 auto}
+.num,svg text,.legend{font-variant-numeric:tabular-nums}
+a.pill{display:inline-block;font-size:13px;color:var(--fg);text-decoration:none;background:var(--chip);border-radius:999px;padding:4px 12px}
+a.pill:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+h1{font-size:22px;margin:14px 0 4px}
+.lead{margin:0 0 12px}
+.lead b{font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+.card{background:var(--card);border-radius:14px;padding:12px;box-shadow:0 1px 0 var(--grid)}
+.wrow{margin:12px 0;display:flex;flex-direction:column;gap:8px}
+.wrow h2{margin:0;font-size:15px;font-weight:600}
+.wrow h2 .wd{font:700 17px ui-monospace,SFMono-Regular,Menlo,monospace}
+.wrow h2 .ks{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:1px}
+.wrow h2 .mut{color:var(--muted);font-weight:400}
+.cap{margin:-2px 0 0;font-size:12px;color:var(--muted)}
+.boxes{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media (max-width:599px){ .boxes{grid-template-columns:1fr} }
+.box{border:1px solid var(--grid);border-radius:10px;padding:10px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.box h3{margin:0;font-size:13px;letter-spacing:.5px}
+.field{background:var(--field);border:1px solid var(--grid);border-radius:10px;min-height:64px;padding:8px 12px;display:flex;align-items:center;flex-wrap:wrap;gap:0 2px}
+.field .l{font:700 38px/1.1 ui-monospace,SFMono-Regular,Menlo,monospace;opacity:0}
+.field .l.in{opacity:1;animation:drop .25s ease-out}
+.field .l.ok{color:var(--ok);text-decoration:underline 3px;text-underline-offset:6px}
+.field .l.bad{color:var(--bad);text-decoration:underline wavy 2px;text-underline-offset:6px}
+.field .l.tie{color:var(--tie)}
+.field .w{font-size:14px;font-weight:700;color:var(--wait);background:var(--waitBg);border-radius:8px;padding:4px 8px;margin-left:8px;opacity:0}
+.field .w.in{opacity:1;animation:drop .25s ease-out}
+@keyframes drop{from{transform:translateY(-10px);opacity:0}to{transform:none;opacity:1}}
+@keyframes pop{0%{transform:scale(.6);opacity:0}70%{transform:scale(1.08);opacity:1}100%{transform:none}}
+.verdict{align-self:flex-start;border-radius:999px;padding:4px 12px;font-size:14px;font-weight:700;visibility:hidden}
+.verdict.in{visibility:visible}
+.verdict.pop{animation:pop .3s ease-out}
+.verdict.ok{background:var(--okBg);color:var(--ok)} .verdict.bad{background:var(--badBg);color:var(--bad)}
+.verdict.wait{background:var(--waitBg);color:var(--wait)} .verdict.tie{background:var(--tieBg);color:var(--tie)}
+.verdict .mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+.why{margin:0;font-size:14px}
+.whyWait{margin:0;font-size:14px;color:var(--wait)}
+.whyWait[hidden]{display:none}
+svg{display:block;width:100%;height:auto;overflow:visible}
+#strip{max-width:540px}
+.t-lab{fill:var(--fg);font-size:13px}
+.t-ax{fill:var(--muted);font-size:13px}
+.c-ok{fill:var(--ok)} .c-bad{fill:var(--bad)} .c-wait{fill:var(--wait)} .c-tie{fill:var(--tie)}
+.cur{fill:none;stroke:var(--fg);stroke-width:2}
+.knob{fill:var(--fg)}
+.stripHit{fill:transparent;touch-action:none;cursor:ew-resize}
+.zone{stroke-width:1.4;stroke-dasharray:3 2}
+.zone.fix{fill:var(--ok);fill-opacity:.12;stroke:var(--ok)}
+.zone.cost{fill:var(--bad);fill-opacity:.12;stroke:var(--bad)}
+.zoneT{font-size:13px;font-weight:700;paint-order:stroke;stroke:var(--card);stroke-width:5px;stroke-linejoin:round}
+.zoneT.fix{fill:var(--ok)} .zoneT.cost{fill:var(--bad)}
+.legend{font-size:13px;margin:6px 0 0;display:flex;flex-wrap:wrap;gap:2px 14px}
+.legend span{white-space:nowrap}
+.ctx{margin:14px 0 6px;font-size:14px}
+.foot{margin:6px 0 0;color:var(--muted);font-size:13px}
+.foot code{font-size:12px}
+
+/* ===== D9: the typing pad ===== */
+.pad{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;min-height:150px;padding:14px;text-align:center;
+  border:2px dashed var(--line);border-radius:14px;background:var(--field);cursor:text;user-select:none;-webkit-user-select:none;outline:none;transition:border-color .15s,background .15s}
+.pad:focus,.pad:focus-visible{border-style:solid;border-color:var(--focus)}
+.pad .ph{font-size:15px;color:var(--muted);max-width:30em}
+.pad:focus .ph{color:var(--fg)}
+.pad .pressed{font:700 18px ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--layer);min-height:24px}
+.padCap{margin:6px 0 0;font-size:12px;color:var(--muted)}
+.meas{display:flex;align-items:baseline;flex-wrap:wrap;gap:4px 10px;margin:12px 0 0}
+.meas .lbl{font-size:15px;color:var(--muted)}
+.meas .big{font:800 44px/1 ui-monospace,SFMono-Regular,Menlo,monospace;font-variant-numeric:tabular-nums}
+.meas .big small{font-size:20px;font-weight:700;margin-left:4px}
+.note{margin:4px 0 0;font-size:12px;color:var(--muted)}
+.vline{margin:8px 0 0;font-size:15px;font-weight:600;color:var(--fg);border-left:4px solid var(--line);padding-left:10px}
+.vline.cost{border-color:var(--bad)} .vline.stall{border-color:var(--wait)} .vline.fix{border-color:var(--ok)}
+.field .l.plain{color:var(--tie)}
+.verdict.plain{background:var(--tieBg);color:var(--tie)}
+.ctl label{display:block;font-size:14px;margin-bottom:4px}
+.ctl input{width:100%;max-width:540px}
+details.mech{margin:12px 0 0}
+details.mech summary{cursor:pointer;font-size:14px;font-weight:600}
+details.mech p{margin:8px 0 0;font-size:14px}
+@media (max-width:480px){ .field{padding:10px} .field .l{font-size:28px} }
+.hist{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:10px 0 0;min-height:34px}
+.hist .hl{font-size:12px;color:var(--muted)}
+.hist button{border:0;border-radius:999px;min-height:32px;min-width:44px;padding:4px 10px;background:var(--chip);color:var(--fg);font:600 13px ui-monospace,SFMono-Regular,Menlo,monospace;cursor:pointer}
+.hist button[aria-pressed="true"]{background:var(--chipOn);color:var(--chipOnTx)}
+.manual{border:0;border-radius:999px;min-height:34px;padding:6px 14px;background:var(--chip);color:var(--fg);font:inherit;font-size:14px;cursor:pointer;margin-top:10px}
+.ctl{margin-top:8px}
+.ctl[hidden]{display:none}
+.you{font-size:13px;font-weight:800;fill:var(--fg)}
+.wrow{margin:12px 0}
+/* ===== D10: combo territory (0–9 ms, hack ON) ===== */
+.zone.combo{fill:none;stroke:var(--tie)}
+.zoneT.combo{fill:var(--tie)}
+.combo-cell{fill:url(#comboHatch)}
+.ctReason{margin:6px 0 0;font-size:13px;color:var(--muted)}
+.field .l.given{color:var(--tie);text-decoration:underline dotted 2px;text-underline-offset:6px}
+.verdict.given{background:var(--tieBg);color:var(--tie)}
+.trade{margin:8px 0 0;font-size:14px;padding:8px 12px;border-left:3px solid var(--tie);background:var(--field);border-radius:0 8px 8px 0}
+.trade[hidden],.ctx[hidden]{display:none}
+/* ===== D10: D7's two lanes inside "why?" ===== */
+details.mech[open] summary{margin-bottom:6px}
+.rule{margin:6px 0 0;font-size:14px}
+.pbar{display:flex;align-items:center;gap:8px;margin:10px 0 6px;flex-wrap:wrap}
+.pchip{font:inherit;font-size:14px;font-weight:600;cursor:pointer;border:1px solid var(--grid);background:var(--card);color:var(--fg);border-radius:999px;padding:5px 14px;min-height:32px}
+.pchip[aria-pressed="true"]{background:var(--chipOn);color:var(--chipOnTx);border-color:var(--chipOn)}
+.pbar .dl{margin-left:auto;font-size:14px;color:var(--muted)}
+.pbar .dl b{color:var(--handle);font-size:18px}
+.at40{margin:0 0 6px;font-size:13px;color:var(--wait)}
+.at40[hidden]{display:none}
+#fig svg{user-select:none;-webkit-user-select:none}
+#fig svg text{font-family:inherit;font-variant-numeric:tabular-nums}
+#fig .grid{stroke:var(--grid);stroke-width:1}
+#fig .grid10{stroke:var(--gridStrong);stroke-width:1}
+#fig .axis{fill:var(--muted);font-size:12px}
+#fig .panelbg{fill:var(--card);stroke:var(--grid)}
+#fig .title{fill:var(--fg);font-size:14px;font-weight:700}
+#fig .sub{fill:var(--muted);font-size:12px}
+#fig .key{fill:var(--fg);font-size:17px;font-weight:700}
+#fig .role{fill:var(--muted);font-size:11px}
+#fig .lbl{fill:var(--fg);font-size:11.5px}
+#fig .typed{fill:var(--muted);font-size:11px}
+#fig .halo{paint-order:stroke;stroke:var(--card);stroke-width:4px;stroke-linejoin:round}
+#fig .press{stroke:var(--fg);stroke-width:2}
+#fig .hold{fill:url(#hatch);stroke:var(--hatch);stroke-width:1}
+#fig .ghost{fill:none;stroke:var(--fg);stroke-opacity:.6;stroke-width:1.3;stroke-dasharray:3 3}
+#fig .cut{stroke:var(--fg);stroke-width:1.6}
+#fig .parkhold{fill:url(#hatchw);stroke:var(--wait);stroke-width:1;stroke-dasharray:3 2}
+#fig .bub{fill:var(--keyBg);stroke:var(--fg);stroke-width:1.6}
+#fig .bub.ok{fill:var(--okBg);stroke:var(--ok)} #fig .bub.bad{fill:var(--badBg);stroke:var(--bad)} #fig .bub.tie{fill:var(--tieBg);stroke:var(--tie)}
+#fig .bubt{fill:var(--fg);font:700 13px ui-monospace,SFMono-Regular,Menlo,monospace}
+#fig .bubt.ok{fill:var(--ok)} #fig .bubt.bad{fill:var(--bad)} #fig .bubt.tie{fill:var(--tie)}
+#fig .gatebg{fill:var(--gateFill);opacity:.5}
+#fig .gate{stroke:var(--gate);stroke-width:2;stroke-dasharray:5 3}
+#fig .gatet{fill:var(--gateTx);font-size:11.5px;font-weight:700}
+#fig .plus{stroke:var(--gate);stroke-width:1.2;stroke-dasharray:1 2}
+#fig .plust{fill:var(--gateTx);font-size:11px;font-weight:600}
+#fig .marg{stroke-width:1.4}
+#fig .marg.ok{stroke:var(--ok)} #fig .marg.bad{stroke:var(--bad)}
+#fig .mext{stroke-width:1;stroke-dasharray:2 2}
+#fig .mext.ok{stroke:var(--ok)} #fig .mext.bad{stroke:var(--bad)}
+#fig .mtxt{font-size:12.5px;font-weight:700}
+#fig .mtxt.ok{fill:var(--ok)} #fig .mtxt.bad{fill:var(--bad)} #fig .mtxt.tie{fill:var(--tie)} #fig .mtxt.wait{fill:var(--wait)}
+#fig .vp.ok{fill:var(--okBg);stroke:var(--ok)} #fig .vp.bad{fill:var(--badBg);stroke:var(--bad)} #fig .vp.wait{fill:var(--waitBg);stroke:var(--wait)} #fig .vp.tie,#fig .vp.given{fill:var(--tieBg);stroke:var(--tie)}
+#fig .vpt{font-size:13px;font-weight:700}
+#fig .vpt.ok{fill:var(--ok)} #fig .vpt.bad{fill:var(--bad)} #fig .vpt.wait{fill:var(--wait)} #fig .vpt.tie,#fig .vpt.given{fill:var(--tie)}
+#fig .stem{stroke:var(--handle);stroke-width:2}
+#fig .hpill{fill:var(--handle)}
+#fig .hpt{fill:var(--card);font-size:12px;font-weight:700}
+@media (prefers-reduced-motion: reduce){ .field .l.in,.field .w.in,.verdict.pop{animation:none} *{transition:none!important} }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="pill" href="index.html">← All candidates</a>
+  <h1>Your roll, and why</h1>
+  <p class="lead">Goal: <b>kept</b>, not <b>kepc</b> (and <b>column</b>, not <b>columt</b>). Roll two keys; the page shows which word Flo's board would type at your speed, with and without the hack, and draws why.</p>
+
+  <div class="card">
+    <div class="pad" id="pad" tabindex="0" role="button" aria-label="Typing pad: focus it, then roll two keys">
+      <span class="ph" id="padPh">Click here, then roll two keys: first one, then the other, fast</span>
+      <span class="pressed" id="padKeys" aria-hidden="true"></span>
+    </div>
+    <p class="padCap">which keys you press doesn't matter, only the gap</p>
+    <div class="meas" aria-live="polite">
+      <span class="lbl" id="gapLbl">example gap:</span>
+      <span class="big" id="gapBig">15<small>ms</small></span>
+    </div>
+    <p class="vline" id="vline" aria-live="polite"></p>
+    <p class="trade" id="tradeTop" hidden>⌨️ Real two-key combos fire on presses up to 15 ms apart (M+W is Z). A roll under 10 ms sits inside that range, so giving it up is the intended trade. 11–25 ms is where the inconsistency was: 11 pairs used to be unreliable there.</p>
+    <p class="note">rounded to the ms; browser timing, not the board's, so take it as ±2 ms</p>
+    <div class="hist" id="hist" aria-label="Your last gaps"></div>
+    <button type="button" class="manual" id="manual">No keyboard? Set the gap by hand</button>
+    <div class="ctl" id="ctl" hidden>
+      <label for="gap" class="num" id="gapVal">gap set by hand: 15 ms</label>
+      <input type="range" id="gap" min="0" max="40" step="1" value="15">
+    </div>
+  </div>
+
+  <div class="card wrow">
+    <svg id="strip" viewBox="0 0 400 160" role="img" aria-label="Outcome for every gap from 0 to 40 ms, for kept and column, hack on and hack off, with your gap marked"></svg>
+    <p class="legend"><span>✅ adapted</span><span>❌ base letter</span><span>▨ combo territory: given up on purpose</span><span>⏸ 2nd key waits for your next key</span><span>⚖️ exact tie</span></p>
+    <p class="ctReason">⌨️ under 10 ms a roll is as fast as a real combo; the hack gives these up on purpose</p>
+  </div>
+
+  <section class="card wrow" id="rowKept" data-word="kept" aria-labelledby="hKept">
+    <h2 id="hKept"><span class="wd">kept</span> · <span class="ks">K E P C</span> · P→C, <span>the pair the hack fixes</span></h2>
+    <div class="boxes">
+      <div class="box" data-on="1"><h3>hack ON</h3><div class="field" aria-live="polite"></div><div class="verdict"></div></div>
+      <div class="box" data-on="0"><h3>hack OFF</h3><div class="field" aria-live="polite"></div><div class="verdict"></div></div>
+    </div>
+    <p class="whyWait" hidden></p>
+  </section>
+
+  <section class="card wrow" id="rowColumn" data-word="column" aria-labelledby="hColumn">
+    <h2 id="hColumn"><span class="wd">column</span> · <span class="ks">C O L U M T</span> · M→T, <span>the pair the hack costs</span></h2>
+    <div class="boxes">
+      <div class="box" data-on="1"><h3>hack ON</h3><div class="field" aria-live="polite"></div><div class="verdict"></div></div>
+      <div class="box" data-on="0"><h3>hack OFF</h3><div class="field" aria-live="polite"></div><div class="verdict"></div></div>
+    </div>
+    <p class="whyWait" hidden></p>
+  </section>
+
+  <details class="mech card" id="mech">
+    <summary>why? two presses, one gate</summary>
+    <p class="rule"><b>Rule:</b> the 2nd letter adapts only if it is typed after the gate opens. Gate = 1st letter + 10 ms.</p>
+    <div class="pbar" role="group" aria-label="Key pair">
+      <button class="pchip" type="button" data-pair="PC" aria-pressed="true">P→C</button>
+      <button class="pchip" type="button" data-pair="MT" aria-pressed="false">M→T</button>
+      <span class="dl num">2nd key at Δ <b id="dval">15</b> ms</span>
+    </div>
+    <p class="at40" id="at40" hidden>drawn at 40 ms</p>
+    <div id="fig" role="img" aria-label="Two race lanes">
+      <svg id="lanes" aria-hidden="true">
+        <defs>
+          <pattern id="hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+            <rect width="6" height="6" style="fill:var(--holdBg)"/>
+            <line x1="0" y1="0" x2="0" y2="6" style="stroke:var(--hatch)" stroke-width="2"/>
+          </pattern>
+          <pattern id="hatchw" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+            <rect width="6" height="6" style="fill:var(--waitBg)"/>
+            <line x1="0" y1="0" x2="0" y2="6" style="stroke:var(--wait)" stroke-width="2"/>
+          </pattern>
+        </defs>
+        <g id="static"></g>
+        <g id="dyn"></g>
+      </svg>
+    </div>
+  </details>
+
+  <p class="ctx" id="ctxFoot">Real two-key combos fire on presses up to 15 ms apart (M+W is Z). A roll under 10 ms sits inside that range, so giving it up is the intended trade. 11–25 ms is where the inconsistency was: 11 pairs used to be unreliable there.</p>
+  <p class="foot">⏸ at exactly 10 ms and the ⚖️ edges are hardware predictions. 11 pairs behave like kept (the 2nd key has no combo: X C F and a thumb), 34 like column; together 45 pairs with no shared combo. The 6 pairs that share a real combo and the 3 with no timing band type the same with the hack on or off. Numbers from <code>Design/Timing/FACTS.md</code>. Your gap is measured by the browser on your keyboard; Flo's numbers are the board's engine time.</p>
+</div>
+<script>
+// BEGIN outcome
+/* ===== MODEL (pure): D1's outcome() plus the AK window's closing edge ===== */
+var PAIRS = {
+  MT: {a:'M', b:'T', kA:16, kB:16, adapted:'mn', base:'mt', label:'M→T', sub:'ordinary key'},
+  PC: {a:'P', b:'C', kA:16, kB:0,  adapted:'pt', base:'pc', label:'P→C', sub:'key without its own combo'}
+};
+var AK_DELAY = 10, AK_WINDOW = 110;
+function holdOf(k, hackOn){ return hackOn ? Math.max(11, k) : k; }
+
+/* Pair: trigger A pressed at 0, follower B pressed at delta (board engine time, ms). */
+function outcome(pair, hackOn, delta){
+  var p = PAIRS[pair], dA = holdOf(p.kA, hackOn), dB = holdOf(p.kB, hackOn);
+  var r = {pair:pair, hackOn:hackOn, delta:delta, aPress:0, bPress:delta,
+           aDeliver:null, layerOn:null, layerOff:null, bDeliver:null, bLetter:null, verdict:null, text:null};
+  if (hackOn && delta <= 9){
+    r.aDeliver = 11; r.bDeliver = 11; r.bLetter = 11 + AK_DELAY; r.verdict = 'bad';
+  } else if (hackOn && delta === 10){
+    r.aDeliver = 11; r.verdict = 'wait';
+  } else {
+    r.aDeliver = Math.min(delta, dA);
+    r.bDeliver = delta + dB; r.bLetter = r.bDeliver;
+  }
+  r.layerOn = r.aDeliver + AK_DELAY; r.layerOff = r.aDeliver + AK_WINDOW;
+  if (!r.verdict){
+    r.verdict = r.bLetter < r.layerOn ? 'bad' : r.bLetter === r.layerOn ? 'tie'
+              : r.bLetter < r.layerOff ? 'ok' : r.bLetter === r.layerOff ? 'tie' : 'bad';
+  }
+  r.text = r.verdict === 'ok' ? p.adapted : r.verdict === 'bad' ? p.base : r.verdict === 'wait' ? p.base[0] + '…' : p.base[0] + '?';
+  return r;
+}
+// END outcome
+
+// BEGIN word
+/* ===== WORDS (pure): what the box types for (word, hack, gap) ===== */
+var WORDS = {
+  kept:   {pair:'PC', keys:['K','E','P','C'],         pre:'ke'},
+  column: {pair:'MT', keys:['C','O','L','U','M','T'], pre:'colu'}
+};
+var STEP = 60; /* the other letters are typed 60 ms apart */
+function typedWord(word, hackOn, gap){
+  var w = WORDS[word], p = PAIRS[w.pair], o = outcome(w.pair, hackOn, gap);
+  var crit = o.verdict === 'ok' ? p.adapted[1] : o.verdict === 'bad' ? p.base[1] : o.verdict === 'tie' ? '?' : '';
+  return {verdict:o.verdict, crit:crit, head:w.pre + p.a.toLowerCase(),
+          text:w.pre + p.a.toLowerCase() + crit, o:o};
+}
+// END word
+
+/* ===== VIEW ===== */
+var state = {gap:15, measured:false, byHand:false};
+var ROWS = [
+  {el:document.getElementById('rowKept'),   word:'kept'},
+  {el:document.getElementById('rowColumn'), word:'column'}
+];
+/* one shared sentence per row (verbatim from D8) */
+var WHY = {
+  kept:   'P’s adaptation switches on 10 ms after p is typed. C has no combo of its own, so without the hack c is typed the instant you press it, too early for any gap under 26 ms; the hack makes C wait 11 ms, which lands it after the switch-on from 11 ms on.',
+  column: 'M’s adaptation switches on 10 ms after m is typed. T already waits 16 ms for its own combos, so it always lands after; the only thing the hack changes is a roll under 10 ms: both keys are released together at 11 ms and t lands too early.'
+};
+var WAIT_LINE = '⏸ at exactly 10 ms the 2nd key is held until your next key, then usually adapts late (predicted, not measured)';
+var SLOW = 125; /* above this nothing adapts, hack on or off */
+
+/* verdict sentence under the gap number: board bands at the set/measured gap */
+function verdictLine(g){
+  if (g <= 9)   return {cls:'cost',  s:g+' ms: inside the 0–9 ms cost zone. column breaks with the hack; kept never worked this fast anyway.'};
+  if (g === 10) return {cls:'stall', s:'10 ms: the predicted stall. The 2nd key waits for your next key, then usually adapts late. Treat it as a near-miss.'};
+  if (g <= 25)  return {cls:'fix',   s:g+' ms: inside the 11–25 ms fix zone. kept works only thanks to the hack; column works either way.'};
+  if (g === 26) return {cls:'edge',  s:'26 ms: the tie edge for kept without the hack (either letter). With the hack, both words are fine.'};
+  if (g <= 109) return {cls:'fine',  s:g+' ms: a relaxed roll. Both words come out right, hack or not.'};
+  if (g <= SLOW) return {cls:'edge', s:g+' ms: at the edge of the 100 ms adaptive window; the outcome can tie.'};
+  return {cls:'slow', s:g+' ms: slower than the adaptive window. Nothing adapts: you get the plain letters, which is normal typing, not a failure.'};
+}
+
+function givenUp(on, gap){ return on && gap <= 9; } /* combo territory: outcome() still says 'bad' */
+function pillText(r){
+  if (r.verdict === 'ok') return '✅ adapted · <span class="mono">'+r.text+'</span>';
+  if (r.verdict === 'bad') return '❌ base letter · <span class="mono">'+r.text+'</span>';
+  if (r.verdict === 'wait') return '⏸ near-miss · waits for your next key';
+  return '⚖️ tie: either letter, unpredictable';
+}
+
+/* one word row at the current gap (D8's final state, no replay) */
+function buildRow(row){
+  var w = WORDS[row.word], n = w.keys.length, anyWait = false, popIt = state.pop, plain = state.gap > SLOW;
+  row.el.querySelectorAll('.box').forEach(function(box){
+    var on = box.getAttribute('data-on') === '1', r = typedWord(row.word, on, state.gap), given = givenUp(on, state.gap);
+    if (r.verdict === 'wait') anyWait = true;
+    var f = '';
+    r.head.split('').forEach(function(c, i){ f += '<span class="l in" data-i="'+i+'">'+c+'</span>'; });
+    if (r.verdict === 'wait') f += '<span class="w in" data-i="'+(n-1)+'">⏸ waits for your next key</span>';
+    else f += '<span class="l in '+(plain ? 'plain' : given ? 'given' : r.verdict)+'" data-i="'+(n-1)+'">'+r.crit+'</span>';
+    var field = box.querySelector('.field');
+    field.innerHTML = f;
+    field.setAttribute('data-text', r.text);
+    field.setAttribute('aria-label', (on ? 'hack on' : 'hack off')+', typed: '+r.text+(r.verdict === 'wait' ? ', then waits' : ''));
+    var pill = box.querySelector('.verdict');
+    pill.className = 'verdict in '+(plain ? 'plain' : given ? 'given' : r.verdict)+(popIt ? ' pop' : '');
+    pill.innerHTML = plain ? 'no adaptation · plain letters' : given ? '▨ given up · <span class="mono">'+r.text+'</span>' : pillText(r);
+  });
+  var ww = row.el.querySelector('.whyWait');
+  ww.textContent = WAIT_LINE; ww.hidden = !anyWait;
+}
+
+function render(){
+  document.getElementById('gapLbl').textContent = state.measured ? 'your gap:' : state.byHand ? 'gap set by hand:' : 'example gap:';
+  document.getElementById('gapBig').innerHTML = state.gap+'<small>ms</small>';
+  var vl = verdictLine(state.gap), vel = document.getElementById('vline');
+  vel.textContent = vl.s; vel.className = 'vline '+vl.cls;
+  document.getElementById('tradeTop').hidden = state.gap > 9;
+  document.getElementById('ctxFoot').hidden = state.gap <= 9;
+  document.getElementById('gapVal').textContent = 'gap set by hand: '+Math.min(state.gap, 40)+' ms';
+  var g = document.getElementById('gap'); if (+g.value !== Math.min(state.gap, 40)) g.value = Math.min(state.gap, 40);
+  g.setAttribute('aria-valuetext', g.value+' ms');
+  renderHist();
+  ROWS.forEach(buildRow);
+  renderStrip();
+  if (window.LANES) LANES.update(state.gap);
+  state.pop = false;
+}
+
+/* ===== last 5 gaps ===== */
+var hist = [], histSel = -1;
+function renderHist(){
+  var h = document.getElementById('hist');
+  if (!hist.length){ h.innerHTML = '<span class="hl">your last 5 gaps show here</span>'; return; }
+  var s = '<span class="hl">last '+hist.length+':</span>';
+  hist.forEach(function(v, i){ s += '<button type="button" data-i="'+i+'" aria-pressed="'+(i === histSel)+'">'+v+'</button>'; });
+  h.innerHTML = s;
+}
+document.getElementById('hist').addEventListener('click', function(e){
+  var b = e.target.closest('button[data-i]'); if (!b) return;
+  histSel = +b.getAttribute('data-i'); state.gap = hist[histSel]; state.measured = true; state.byHand = false; state.pop = true; render();
+});
+
+/* ===== the typing pad: gap = 2nd keydown − 1st keydown ===== */
+var IGNORE = {Shift:1, Control:1, Alt:1, Meta:1, CapsLock:1, Fn:1, FnLock:1, Hyper:1, Super:1, OS:1, AltGraph:1, Tab:1, Escape:1, Dead:1, Unidentified:1, Process:1};
+var RESET_MS = 1000;
+var first = null, silence = null;
+var pad = document.getElementById('pad'), padKeys = document.getElementById('padKeys'), padPh = document.getElementById('padPh');
+function keyName(e){ var k = e.key; return k === ' ' ? 'Space' : k.length === 1 ? k.toUpperCase() : k; }
+function armReset(){
+  clearTimeout(silence);
+  silence = setTimeout(function(){ first = null; padKeys.textContent = ''; }, RESET_MS);
+}
+function recordGap(ms){
+  var d = Math.max(0, Math.round(ms));
+  hist.push(d); if (hist.length > 5) hist.shift();
+  histSel = hist.length - 1;
+  state.gap = d; state.measured = true; state.byHand = false; state.pop = true;
+  render();
+}
+pad.addEventListener('keydown', function(e){
+  if (e.repeat || IGNORE[e.key] || e.ctrlKey || e.metaKey || e.altKey) return; /* let shortcuts and Tab through */
+  e.preventDefault();
+  var t = e.timeStamp > 0 ? e.timeStamp : performance.now(); /* same clock as performance.now(), taken when the key event was created */
+  var id = e.code || e.key;
+  if (first && id !== first.id && t - first.t <= RESET_MS){
+    padKeys.textContent = first.name+' → '+keyName(e);
+    recordGap(t - first.t);
+    first = null;
+  } else {
+    first = {id:id, t:t, name:keyName(e)};
+    padKeys.textContent = first.name+' → …';
+  }
+  armReset();
+});
+var coarse = window.matchMedia && window.matchMedia('(pointer: coarse)').matches;
+var PH_IDLE = coarse ? 'No physical keyboard here: drag the slider below' : 'Click here, then roll two keys: first one, then the other, fast';
+var PH_READY = coarse ? PH_IDLE : 'Ready: roll two keys, first one, then the other, fast';
+padPh.textContent = PH_IDLE;
+pad.addEventListener('focus', function(){ padPh.textContent = PH_READY; });
+pad.addEventListener('blur', function(){ padPh.textContent = PH_IDLE; first = null; });
+pad.addEventListener('pointerdown', function(){ pad.focus(); });
+
+/* ===== by hand ===== */
+var ctl = document.getElementById('ctl'), manual = document.getElementById('manual');
+if (coarse || ('ontouchstart' in window && !(window.matchMedia && window.matchMedia('(pointer: fine)').matches))){ ctl.hidden = false; manual.hidden = true; }
+manual.addEventListener('click', function(){
+  ctl.hidden = false; manual.hidden = true; histSel = -1; state.gap = 15; state.measured = false; state.byHand = true; state.pop = true; render();
+});
+document.getElementById('gap').addEventListener('input', function(e){
+  histSel = -1; state.gap = +e.target.value; state.measured = false; state.byHand = true; render();
+});
+
+/* ===== band strip: 4 rows (kept on/off, column on/off), 0–40 ms; cursor clamped at 40 ===== */
+var X0 = 78, SC = 7.5, DMAX = 40, RH = 16;
+function x(t){ return X0 + t*SC; }
+function txt(cls, X, Y, s, anchor){ return '<text class="'+cls+'" x="'+X+'" y="'+Y+'"'+(anchor?' text-anchor="'+anchor+'"':'')+'>'+s+'</text>'; }
+function renderStrip(){
+  var svg = document.getElementById('strip');
+  var W = Math.round(Math.max(300, Math.min(540, svg.getBoundingClientRect().width || 400)));
+  SC = (W - X0 - 12) / DMAX;
+  var rows = [
+    {label:'kept on',    pair:'PC', on:true,  y:22,  zone:{a:11, b:25, cls:'fix',  s:'what it fixes: 11–25 ms'}, combo:'⌨️'},
+    {label:'kept off',   pair:'PC', on:false, y:42},
+    {label:'column on',  pair:'MT', on:true,  y:86,  combo:'⌨️ combo territory: 0–9 ms'},
+    {label:'column off', pair:'MT', on:false, y:106}
+  ];
+  var s = '<defs><pattern id="comboHatch" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">'
+        + '<rect width="5" height="5" style="fill:var(--tieBg)"/><line x1="0" y1="0" x2="0" y2="5" style="stroke:var(--tie)" stroke-width="1.6"/></pattern></defs>', labs = '';
+  rows.forEach(function(row){
+    var z = row.zone;
+    if (row.combo){
+      var cx0 = x(0) - SC/2 - 1, cx1 = x(9) + SC/2 + 1;
+      s += '<rect class="zone combo" x="'+cx0+'" y="'+(row.y-3)+'" width="'+(cx1-cx0)+'" height="'+(RH+6)+'" rx="3"/>';
+      labs += txt('zoneT combo', cx0 + 1, row.y-8, row.combo);
+    }
+    if (z){
+      var zx0 = x(z.a) - SC/2 - 1, zx1 = x(z.b) + SC/2 + 1;
+      s += '<rect class="zone '+z.cls+'" x="'+zx0+'" y="'+(row.y-3)+'" width="'+(zx1-zx0)+'" height="'+(RH+6)+'" rx="3"/>';
+      labs += txt('zoneT '+z.cls, Math.max(2, Math.min(zx0, W - 4 - z.s.length*7.4)), row.y-8, z.s);
+    }
+    s += txt('t-lab', 0, row.y+12, row.label);
+    for (var d=0; d<=DMAX; d++){
+      var v = outcome(row.pair, row.on, d).verdict, cc = givenUp(row.on, d) ? 'combo-cell' : 'c-'+v;
+      s += '<rect class="'+cc+'" x="'+(x(d)-SC/2+0.4)+'" y="'+row.y+'" width="'+(SC-0.8)+'" height="'+RH+'" rx="1"/>';
+    }
+  });
+  var yt = rows[0].y, yb = rows[3].y + RH;
+  var cg = Math.min(state.gap, DMAX), hx = x(cg);
+  s += '<rect class="cur" x="'+(hx-SC/2-1.5)+'" y="'+(yt-4)+'" width="'+(SC+3)+'" height="'+(yb-yt+8)+'" rx="2"/>';
+  s += '<path class="knob" d="M'+hx+' '+(yb+5)+' l-6 9 h12 z"/>';
+  var you = state.gap > SLOW ? 'you ('+state.gap+') → beyond the strip' : state.gap > DMAX ? 'you ('+state.gap+') →' : 'you';
+  s += txt('you', Math.max(X0 - 10, Math.min(hx, W - 4 - you.length*3.6)), yb+28, you, 'middle');
+  [0,10,20,30,40].forEach(function(t){ s += txt('t-ax', x(t), yb+46, t, 'middle'); });
+  s += txt('t-ax', 0, yb+46, 'gap, ms');
+  s += labs; /* zone labels above the cursor */
+  svg.setAttribute('viewBox', '0 0 '+W+' '+(yb+52));
+  svg.innerHTML = s;
+}
+var rsz = null;
+window.addEventListener('resize', function(){ clearTimeout(rsz); rsz = setTimeout(renderStrip, 100); });
+
+render();
+</script>
+<script>
+/* ===== D10: D7's two race lanes, driven by the shared gap ===== */
+(function () {
+// BEGIN lane outcome (D7's own block, for the lane geometry; same bands as outcome() above)
+const PAIRS = {
+  MT: { A: 'M', B: 'T', kA: 16, kB: 16, layer: 'l_akM', aGlyph: 'm', bAdapted: 'n', bBase: 't', adapted: 'mn', base: 'mt' },
+  PC: { A: 'P', B: 'C', kA: 16, kB: 0,  layer: 'l_akP', aGlyph: 'p', bAdapted: 't', bBase: 'c', adapted: 'pt', base: 'pc' }
+};
+// Board engine time in ms, t = 0 at the trigger press. Pure: no DOM.
+function outcome(pair, hackOn, delta) {
+  const p = typeof pair === 'string' ? PAIRS[pair] : pair;
+  const dA = hackOn ? Math.max(11, p.kA) : p.kA;   // trigger hold
+  const dB = hackOn ? Math.max(11, p.kB) : p.kB;   // follower hold
+  let aOut, bOut, parked = false, together = false;
+  if (hackOn && delta <= 9) { aOut = 11; bOut = 11; together = true; }
+  else if (hackOn && delta === 10) { aOut = 11; bOut = null; parked = true; }
+  else { aOut = Math.min(delta, dA); bOut = delta + dB; }
+  const layerOn = aOut + 10, layerOff = aOut + 110;
+  const margin = parked ? null : bOut - layerOn;
+  const verdict = parked ? 'wait' : margin < 0 ? 'bad' : margin === 0 ? 'tie' : bOut < layerOff ? 'ok' : bOut === layerOff ? 'tie' : 'bad';
+  const output = verdict === 'ok' ? p.adapted : verdict === 'bad' ? p.base : null;
+  const bGlyph = verdict === 'ok' ? p.bAdapted : verdict === 'bad' ? p.bBase : verdict === 'tie' ? '?' : null;
+  return { aPress: 0, bPress: delta, aOut, bOut, layerOn, layerOff, margin, verdict, output, bGlyph, parked, together, dA, dB };
+}
+// END lane outcome
+
+  const T_MAX = 60, D_MAX = 40;
+  const lane = { pair: 'PC', delta: 15, lastGap: null };
+  const svg = document.getElementById('lanes');
+  const fig = document.getElementById('fig');
+  const dyn = document.getElementById('dyn');
+  const mech = document.getElementById('mech');
+  const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;');
+  const ctx = document.createElement('canvas').getContext('2d');
+  const FONT = getComputedStyle(document.body).fontFamily;
+  const tw = (s, size, bold) => { ctx.font = `${bold ? 700 : 400} ${size}px ${FONT}`; return ctx.measureText(String(s)).width + 2; };
+
+  let G = {};
+  const PANEL_H = 204;
+  const PANELS = [
+    { hackOn: true,  title: 'hack ON',  sub: "today's firmware" },
+    { hackOn: false, title: 'hack OFF', sub: 'upstream ZMK v0.3+' }
+  ];
+  function layout() {
+    const W = Math.max(300, Math.round(fig.clientWidth));
+    const X0 = 42, X1 = W - 12, S = (X1 - X0) / T_MAX;
+    const x = t => X0 + Math.min(Math.max(t, 0), T_MAX) * S;
+    const tops = [26, 26 + PANEL_H + 10];
+    const H = tops[1] + PANEL_H + 26;
+    G = { W, X0, X1, S, x, tops, H, narrow: W < 460 };
+    svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
+    svg.style.height = H + 'px';
+    let st = '';
+    for (let t = 0; t <= T_MAX; t++) {
+      if (S < 7 && t % 5) continue;
+      st += `<line class="${t % 10 ? 'grid' : 'grid10'}" x1="${x(t)}" x2="${x(t)}" y1="22" y2="${H - 20}"/>`;
+    }
+    for (let t = 0; t <= T_MAX; t += 10) {
+      st += `<text class="axis" x="${x(t)}" y="16" text-anchor="middle">${t}</text>`;
+      st += `<text class="axis" x="${x(t)}" y="${H - 5}" text-anchor="middle">${t}</text>`;
+    }
+    st += `<text class="axis" x="${X0 - 12}" y="16" text-anchor="end">ms</text>`;
+    PANELS.forEach((P, i) => {
+      const top = tops[i];
+      st += `<rect class="panelbg" x="1" y="${top}" width="${W - 2}" height="${PANEL_H}" rx="10" style="fill-opacity:.9"/>`;
+      st += `<text class="title" x="10" y="${top + 19}">${P.title}</text>`;
+      st += `<text class="sub" x="${10 + (P.hackOn ? 62 : 70)}" y="${top + 19}">${P.sub}</text>`;
+    });
+    document.getElementById('static').innerHTML = st;
+  }
+
+  // one state sentence per key (short variant on phones); the cut hold is the dashed ghost
+  function firstLabel(o, p, narrow) {
+    const tl = p.aGlyph, fl = p.bBase;
+    if (o.together) return narrow ? `both released at 11; ${o.dA} ms hold cut (dashed)`
+      : `the hack holds both keys until 11 ms, then releases them together: ${tl} typed at 11, its ${o.dA} ms hold cut short (dashed)`;
+    if (o.parked) return narrow ? `${tl} typed at 11; ${fl} held ⏸`
+      : `${tl} typed at 11; ${fl} held until your next key (⏸ predicted, not measured)`;
+    const who = o.dA === p.kA ? 'its combos' : 'the hack';
+    if (o.aOut >= o.dA) return narrow ? `${tl} held ${o.dA} ms, typed ${o.dA}`
+      : `${tl} held ${o.dA} ms by ${who}, then typed at ${o.dA}`;
+    return narrow ? `${tl} typed at ${o.aOut}, hold cut short (dashed)`
+      : `${tl} typed at ${o.aOut}: the 2nd press cut its ${o.dA} ms hold short (dashed)`;
+  }
+  function secondLabel(o, p, narrow) {
+    const fl = p.bBase;
+    if (o.together) return narrow ? `${fl} released at 11` : `${fl} released at 11, read on the base layer`;
+    if (o.parked) return narrow ? `${fl} held, not typed yet` : `${fl} held until your next key, not typed yet`;
+    if (o.dB === 0) return narrow ? `${fl} typed at once` : `${fl} typed at once at ${o.bOut}: no hold`;
+    const who = o.dB === p.kB ? 'its combos' : 'the hack';
+    return narrow ? `${fl} held ${o.dB} ms, typed ${o.bOut}` : `${fl} held ${o.dB} ms by ${who}, typed at ${o.bOut}`;
+  }
+  function tbox(x, y, w, size, anchor) {
+    const x0 = anchor === 'end' ? x - w : anchor === 'middle' ? x - w / 2 : x;
+    return { x0, x1: x0 + w, y0: y - size * 0.85, y1: y + size * 0.25 };
+  }
+  const hitsBox = (a, b) => a.x0 < b.x1 && b.x0 < a.x1 && a.y0 < b.y1 && b.y0 < a.y1;
+  function place(w, size, cands, obst) {
+    const fits = c => { const b = tbox(c.x, c.y, w, size, c.anchor); return b.x0 >= 4 && b.x1 <= G.W - 4; };
+    const clear = c => fits(c) && !obst.some(o => hitsBox(tbox(c.x, c.y, w, size, c.anchor), o));
+    const c = cands.find(clear) || cands.find(fits) || cands[0];
+    return Object.assign({}, c, { box: tbox(c.x, c.y, w, size, c.anchor) });
+  }
+
+  function panel(i, P, p, d) {
+    const { x, X0, X1, W } = G;
+    const top = G.tops[i];
+    const o = outcome(p, P.hackOn, d);
+    const tl = p.aGlyph, fl = p.bBase;
+    let s = '';
+    const gTop = top + 28, yGate = top + 42, yTrigL = top + 59, l1 = top + 74, yUnder = top + 93;
+    const yFolL = top + 115, l2 = top + 130, yArr = l2 + 16, yM = l2 + 35, yPill = l2 + 44;
+    const gBot = l2 + 20;
+    const gx = x(o.layerOn);
+
+    // verdict chip, top right (combo territory: hack ON under 10 ms is given up, not a failure)
+    const given = P.hackOn && d <= 9;
+    const vcls = given ? 'given' : o.verdict;
+    const vtxt = given ? `▨ ${p.base}` : o.verdict === 'ok' ? `✅ ${p.adapted}` : o.verdict === 'bad' ? `❌ ${p.base}`
+               : o.verdict === 'wait' ? `⏸ ${fl} waits` : `⚖️ ${p.adapted} or ${p.base}`;
+    const vw = o.verdict === 'tie' ? 104 : o.verdict === 'wait' ? 92 : 64;
+    s += `<rect class="vp ${vcls}" x="${W - vw - 8}" y="${top + 4}" width="${vw}" height="24" rx="12"/>`;
+    s += `<text class="vpt ${vcls}" x="${W - vw / 2 - 8}" y="${top + 20.5}" text-anchor="middle">${vtxt}</text>`;
+
+    s += `<rect class="gatebg" x="${gx}" y="${gTop}" width="${X1 - gx}" height="${gBot - gTop}"/>`;
+    s += `<line class="gate" x1="${gx}" x2="${gx}" y1="${gTop}" y2="${gBot}"/>`;
+    const gl = `gate opens at ${o.layerOn}`;
+    const glw = tw(gl, 11.5, true);
+    const gEnd = gx + 6 + glw > W - 4;
+    s += `<text class="gatet halo" x="${gEnd ? gx - 6 : gx + 6}" y="${yGate}" text-anchor="${gEnd ? 'end' : 'start'}">${gl}</text>`;
+    const gateLine = { x0: gx - 2, x1: gx + 2, y0: gTop, y1: gBot };
+    const obst = [gateLine, tbox(gEnd ? gx - 6 : gx + 6, yGate, glw, 11.5, gEnd ? 'end' : 'start')];
+
+    // lane 1: the 1st key; D4's dashed ghost of the uncut hold + a cut mark
+    s += `<text class="key" x="6" y="${l1 + 6}">${p.A}</text><text class="role" x="25" y="${l1 + 5}">1st</text>`;
+    if (o.aOut < o.dA) {
+      s += `<rect class="ghost" x="${x(0)}" y="${l1 - 6}" width="${x(o.dA) - x(0)}" height="12" rx="2"/>`;
+      s += `<line class="cut" x1="${x(o.aOut)}" x2="${x(o.aOut)}" y1="${l1 - 10}" y2="${l1 + 10}"/>`;
+    }
+    if (o.aOut > 0) s += `<rect class="hold" x="${x(0)}" y="${l1 - 6}" width="${x(o.aOut) - x(0)}" height="12" rx="2"/>`;
+    s += `<line class="press" x1="${x(0)}" x2="${x(0)}" y1="${l1 - 11}" y2="${l1 + 11}"/>`;
+    const plx = (x(o.aOut) + 10 + gx) / 2;
+    s += `<line class="plus" x1="${x(o.aOut) + 10}" x2="${gx}" y1="${l1}" y2="${l1}"/>`;
+    s += `<text class="plust halo" x="${plx}" y="${l1 + 4}" text-anchor="middle">+10 ms</text>`;
+    obst.push(tbox(plx, l1 + 4, tw('+10 ms', 11, true), 11, 'middle'));
+    s += `<circle class="bub" cx="${x(o.aOut)}" cy="${l1}" r="9.5"/><text class="bubt" x="${x(o.aOut)}" y="${l1 + 4.5}" text-anchor="middle">${tl}</text>`;
+    s += `<text class="typed halo" x="${x(o.aOut)}" y="${yUnder}" text-anchor="middle">typed</text>`;
+    const typedBox = tbox(x(o.aOut), yUnder, tw('typed', 11), 11, 'middle');
+    obst.push(typedBox);
+    const t1 = firstLabel(o, p, G.narrow), t1w = tw(t1, 11.5);
+    const L1 = place(t1w, 11.5, [
+      { x: x(0) + 2, y: yTrigL, anchor: 'start' },
+      { x: typedBox.x1 + 6, y: yUnder, anchor: 'start' },
+      { x: gx + 6, y: yTrigL, anchor: 'start' },
+      { x: gx + 6, y: yUnder, anchor: 'start' },
+      { x: W - 6, y: yTrigL, anchor: 'end' },
+      { x: W - 6, y: yUnder, anchor: 'end' }
+    ], obst);
+    s += `<text class="lbl halo" x="${L1.x}" y="${L1.y}" text-anchor="${L1.anchor}">${esc(t1)}</text>`;
+    obst.push(L1.box);
+
+    // lane 2: the 2nd key
+    s += `<text class="key" x="6" y="${l2 + 6}">${p.B}</text><text class="role" x="25" y="${l2 + 5}">2nd</text>`;
+    if (o.parked) s += `<rect class="parkhold" x="${x(d)}" y="${l2 - 6}" width="${X1 - x(d)}" height="12" rx="2"/>`;
+    else if (o.bOut > d) s += `<rect class="hold" x="${x(d)}" y="${l2 - 6}" width="${x(o.bOut) - x(d)}" height="12" rx="2"/>`;
+    s += `<line class="press" style="stroke:var(--handle)" x1="${x(d)}" x2="${x(d)}" y1="${l2 - 12}" y2="${l2 + 12}"/>`;
+    const flab = secondLabel(o, p, G.narrow), fw = tw(flab, 11.5);
+    const L2 = place(fw, 11.5, [
+      { x: x(d) + 3, y: yFolL, anchor: 'start' },
+      { x: x(d) - 3, y: yFolL, anchor: 'end' },
+      { x: gx + 6, y: yFolL, anchor: 'start' },
+      { x: gx - 6, y: yFolL, anchor: 'end' },
+      { x: W - 6, y: yFolL, anchor: 'end' },
+      { x: 4, y: yFolL, anchor: 'start' }
+    ], obst);
+    s += `<text class="lbl halo" x="${L2.x}" y="${L2.y}" text-anchor="${L2.anchor}">${esc(flab)}</text>`;
+
+    // margin bracket between the 2nd letter's typing moment and the gate line
+    let mtxt = '', mcls = o.verdict, stemGap = false;
+    if (o.parked) mtxt = `⏸ exactly 10 ms: ${fl} held until your next key`;
+    if (!o.parked) {
+      const bx = x(o.bOut);
+      if (o.margin !== 0) {
+        const mc = o.margin > 0 ? 'ok' : 'bad';
+        s += `<line class="mext ${mc}" x1="${bx}" x2="${bx}" y1="${l2 + 10}" y2="${yArr + 5}"/>`;
+        s += `<line class="marg ${mc}" x1="${bx}" x2="${gx}" y1="${yArr}" y2="${yArr}"/>`;
+        s += `<line class="marg ${mc}" x1="${bx}" x2="${bx}" y1="${yArr - 5}" y2="${yArr + 5}"/>`;
+        s += `<line class="marg ${mc}" x1="${gx}" x2="${gx}" y1="${yArr - 5}" y2="${yArr + 5}"/>`;
+      }
+      mtxt = o.margin > 0 ? `${fl} typed ${o.margin} ms after the gate opens`
+           : o.margin < 0 ? `${fl} typed ${-o.margin} ms before the gate opens`
+           : `${fl} typed as the gate opens: tie`;
+      s += `<circle class="bub ${o.verdict}" cx="${bx}" cy="${l2}" r="9.5"/><text class="bubt ${o.verdict}" x="${bx}" y="${l2 + 4.5}" text-anchor="middle">${esc(o.bGlyph)}</text>`;
+    }
+    {
+      const mw = tw(mtxt, 12.5, true), hx = x(d);
+      let mx = X0, anchor = 'start';
+      if (hx >= X0 - 8 && hx <= X0 + mw + 8) {
+        if (hx + 10 + mw <= W - 4) { mx = hx + 10; }
+        else if (hx - 10 - mw >= 4) { mx = hx - 10; anchor = 'end'; }
+        else { mx = Math.max(4, Math.min(X0, W - 4 - mw)); stemGap = true; }
+      }
+      s += `<text class="mtxt ${mcls}" data-margin x="${mx}" y="${yM}" text-anchor="${anchor}">${mtxt}</text>`;
+    }
+    // Δ marker: blue stem from the 2nd press down to a pill (the gap is set by the pad / slider)
+    const hx = x(d);
+    const px = Math.min(W - 44, Math.max(44, hx));
+    if (stemGap) s += `<line class="stem" x1="${hx}" x2="${hx}" y1="${l2 + 12}" y2="${yM - 14}"/><line class="stem" x1="${hx}" x2="${hx}" y1="${yM + 4}" y2="${yPill}"/>`;
+    else s += `<line class="stem" x1="${hx}" x2="${hx}" y1="${l2 + 12}" y2="${yPill}"/>`;
+    s += `<rect class="hpill" x="${px - 36}" y="${yPill}" width="72" height="24" rx="12"/>`;
+    s += `<text class="hpt" x="${px}" y="${yPill + 16.5}" text-anchor="middle">Δ ${d} ms</text>`;
+    return { s, aria: `hack ${P.hackOn ? 'ON' : 'OFF'}: ${mtxt}, ${vtxt}` };
+  }
+
+  function draw() {
+    const p = PAIRS[lane.pair], d = lane.delta;
+    let s = '';
+    const aria = [];
+    PANELS.forEach((P, i) => { const r = panel(i, P, p, d); s += r.s; aria.push(r.aria); });
+    dyn.innerHTML = s;
+    document.getElementById('dval').textContent = d;
+    fig.setAttribute('aria-label', `${p.A}→${p.B}, 2nd key at ${d} ms. ` + aria.join('. '));
+  }
+  function setChips() {
+    document.querySelectorAll('.pchip').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.pair === lane.pair)));
+  }
+  // default to the pair the reader's gap actually changes: ≤ 10 → M→T, 11–25 → P→C, else keep
+  function update(gap) {
+    if (gap !== lane.lastGap) {
+      if (gap <= 10) lane.pair = 'MT';
+      else if (gap <= 25) lane.pair = 'PC';
+      lane.lastGap = gap;
+    }
+    lane.delta = Math.max(0, Math.min(D_MAX, gap));
+    document.getElementById('at40').hidden = gap <= D_MAX;
+    setChips();
+    draw();
+  }
+  document.querySelectorAll('.pchip').forEach(btn => btn.addEventListener('click', () => { lane.pair = btn.dataset.pair; setChips(); draw(); }));
+  // open by default on desktop, closed on phones
+  if (!(window.matchMedia && window.matchMedia('(max-width: 599px)').matches)) mech.open = true;
+  mech.addEventListener('toggle', () => { if (mech.open) { layout(); draw(); } });
+  let raf = 0;
+  window.addEventListener('resize', () => { cancelAnimationFrame(raf); raf = requestAnimationFrame(() => { layout(); draw(); }); });
+  window.LANES = { update };
+  layout();
+  update(window.state ? window.state.gap : 15);
+})();
+</script>
+</body>
+</html>
