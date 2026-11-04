@@ -67,6 +67,14 @@
 - The **rule** must be stated in words once: 2nd letter adapts only if it leaves after the gate (1st letter + 10 ms)
 - **"A letter waits behind its hold, then is typed"** has not landed in any static drawing; the circled letter must read as the typing moment
 
+## 🔍 Cold critic on D7 (Fable, 2026-11-04)
+
+- Cold read after 60 s: "With the hack on, P→C adapts from 11 ms instead of needing 26, because the 2nd key is made to wait 11 ms and lands after the gate; the price is essentially nothing" (right on the fix; the cost is invisible on P→C)
+- Confusions, ranked: (1) three statements about one bar ("waits 16", bar ends at 15, "✂ cut short") → one state sentence per 1st key; (2) "leaves at 11 / both leave at 11" unexplained, the hack visibly delays the 1st letter too; (3) margin arrows read as motion, not measurement → bracket; (4) "(P's layer)" is jargon; (5) on P→C the cost is invisible → "cost: none here, see M→T"; (6) the combos sentence mixes 10 and 15 ms; (7) phone 400 px: labels collide, ⚖️ a smudge, legend orphans "exact tie"; (8) "waits behind" reads as spatial → "held 11 ms by the hack"; (9) ⏸ sounds like a bug the reader will hit, but it's a prediction
+- Keep: two lanes on one shared axis with one draggable Δ ("the best thing here"), verdict chip + the one-line margin sentence, the purple gate region from a dashed line, the "every gap at once" bar tied to the slider, "Wanted:" first
+- Verdicts: ✅ no longer reads as "the hack is a problem" (first page to pass); gate idea landed; hold-wait half-landed (wording)
+- Fix round applied: one state sentence per 1st key, bracket margin, phone pass (see git log)
+
 ## 🔁 How a candidate is made
 
 1. Builder writes `Dn.html` reusing a page's unit-tested `outcome(pair, hackOn, delta)`
