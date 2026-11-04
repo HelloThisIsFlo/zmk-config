@@ -87,7 +87,6 @@ svg text{font-family:inherit;font-variant-numeric:tabular-nums}
 .hold{fill:url(#hatch);stroke:var(--hatch);stroke-width:1}
 .ghost{fill:none;stroke:var(--hatch);stroke-width:1;stroke-dasharray:3 3}
 .parkhold{fill:url(#hatchw);stroke:var(--wait);stroke-width:1;stroke-dasharray:3 2}
-.cutt{fill:var(--bad);font-size:11.5px;font-weight:600}
 .bub{fill:var(--key-bg);stroke:var(--fg);stroke-width:1.6}
 .bub.ok{fill:var(--ok-bg);stroke:var(--ok)} .bub.bad{fill:var(--bad-bg);stroke:var(--bad)} .bub.tie{fill:var(--tie-bg);stroke:var(--tie)}
 .bubt{fill:var(--fg);font:700 13px ui-monospace,SFMono-Regular,Menlo,monospace}
@@ -97,8 +96,10 @@ svg text{font-family:inherit;font-variant-numeric:tabular-nums}
 .gatet{fill:var(--layer-text);font-size:11.5px;font-weight:700}
 .plus{stroke:var(--layer);stroke-width:1.2;stroke-dasharray:1 2}
 .plust{fill:var(--layer-text);font-size:11px;font-weight:600}
-.marg{stroke-width:2.2}
+.marg{stroke-width:1.4}
 .marg.ok{stroke:var(--ok)} .marg.bad{stroke:var(--bad)}
+.mext{stroke-width:1;stroke-dasharray:2 2}
+.mext.ok{stroke:var(--ok)} .mext.bad{stroke:var(--bad)}
 .mtxt{font-size:12.5px;font-weight:700}
 .mtxt.ok{fill:var(--ok)} .mtxt.bad{fill:var(--bad)} .mtxt.tie{fill:var(--tie)} .mtxt.wait{fill:var(--wait)}
 .vp.ok{fill:var(--ok-bg);stroke:var(--ok)} .vp.bad{fill:var(--bad-bg);stroke:var(--bad)} .vp.wait{fill:var(--wait-bg);stroke:var(--wait)} .vp.tie{fill:var(--tie-bg);stroke:var(--tie)}
@@ -119,6 +120,7 @@ h2{font-size:15px;margin:18px 0 6px}
 .c-ok{fill:var(--ok)} .c-bad{fill:var(--bad)} .c-wait{fill:var(--wait)} .c-tie{fill:var(--tie)}
 .st{fill:var(--strip-tx);font-size:11.5px;font-weight:700}
 .sg{fill:var(--fg);font-size:11px}
+.sgt{fill:var(--tie);font-size:9.5px;font-weight:600}
 .zcost{fill:var(--bad);fill-opacity:.08;stroke:var(--bad);stroke-width:1.2;stroke-dasharray:4 3}
 .zfix{fill:var(--ok);fill-opacity:.09;stroke:var(--ok);stroke-width:1.2;stroke-dasharray:4 3}
 .zct{fill:var(--bad);font-size:11.5px;font-weight:700}
@@ -129,6 +131,8 @@ h2{font-size:15px;margin:18px 0 6px}
 .scell{fill:none;stroke:var(--fg);stroke-width:1.6}
 .scrub{stroke:var(--handle);stroke-width:2}
 .legend{margin:8px 2px 0;font-size:13.5px}
+.legend span{white-space:nowrap}
+.costnote{margin:6px 2px 0;font-size:13px;color:var(--muted)}
 .context{margin:10px 2px 0;font-size:14.5px;padding:8px 12px;border-left:3px solid var(--layer);background:var(--panel);border-radius:0 8px 8px 0}
 .foot{font-size:12.5px;color:var(--muted);margin:16px 2px 0;padding-left:10px;border-left:2px solid var(--grid-strong)}
 .foot p{margin:3px 0}
@@ -166,12 +170,6 @@ h2{font-size:15px;margin:18px 0 6px}
           <rect width="6" height="6" style="fill:var(--wait-bg)"/>
           <line x1="0" y1="0" x2="0" y2="6" style="stroke:var(--wait)" stroke-width="2"/>
         </pattern>
-        <marker id="arr-ok" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
-          <path d="M0,0 L8,4 L0,8 z" style="fill:var(--ok)"/>
-        </marker>
-        <marker id="arr-bad" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
-          <path d="M0,0 L8,4 L0,8 z" style="fill:var(--bad)"/>
-        </marker>
       </defs>
       <g id="static"></g>
       <g id="dyn" pointer-events="none"></g>
@@ -183,8 +181,9 @@ h2{font-size:15px;margin:18px 0 6px}
   <div class="strips" id="stripbox">
     <svg id="strips" aria-hidden="true"></svg>
   </div>
-  <p class="legend">✅ mn / pt = adapted · ❌ mt / pc = the adaptation missed, base letter typed · ⏸ 2nd key waits for your next key · ⚖️ exact tie</p>
-  <p class="context">Under 10 ms is the speed real two-key combos fire at (M+W within 15 ms is Z): giving those rolls up is the intended trade. 11–26 ms is where typing really happens, and where 11 pairs used to be unreliable.</p>
+  <p class="costnote" id="costnote">No cost on this pair: the price is on M→T, rolls 0–9 ms.</p>
+  <p class="legend"><span>✅ adapted (mn / pt)</span> · <span>❌ missed, base letter (mt / pc)</span> · <span>⏸ 2nd key waits for your next key</span> · <span>⚖️ tie</span></p>
+  <p class="context">Real two-key combos fire on presses up to 15 ms apart (M+W is Z). A roll under 10 ms sits inside that range, so giving it up is the intended trade. 11–26 ms is where typing really happens, and where 11 pairs used to be unreliable.</p>
 
   <div class="foot">
     <p>P→C stands for 11 pairs whose 2nd key has no combo (X C F, thumbs); M→T for 34 pairs whose 2nd key has its own combos. 6 pairs that share a real combo and 3 with no timing band type the same with the hack on or off.</p>
@@ -243,7 +242,7 @@ function outcome(pair, hackOn, delta) {
     const x = t => X0 + Math.min(Math.max(t, 0), T_MAX) * S;
     const tops = [26, 26 + PANEL_H + 10];
     const H = tops[1] + PANEL_H + 26;
-    G = { W, X0, X1, S, x, tops, H };
+    G = { W, X0, X1, S, x, tops, H, narrow: W < 460 };
     svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
     svg.style.height = H + 'px';
 
@@ -275,10 +274,39 @@ function outcome(pair, hackOn, delta) {
   }
 
   // ---------- one race panel ----------
-  function holdLabel(letter, k, hackOn, first) {
-    const h = hackOn ? Math.max(11, k) : k;
-    if (h === 0) return `${letter} is typed at once: no hold`;
-    return `${letter} waits ${h} ms behind ${h === k ? 'its combos' : 'the hack'}${first ? ', then is typed' : ''}`;
+  // one state sentence per key (short variant on phones)
+  function firstLabel(o, p, narrow) {
+    const tl = p.aGlyph, fl = p.bBase;
+    if (o.together) return narrow ? 'both released at 11'
+      : `the hack holds both keys until 11 ms, then releases them together: ${tl} typed at 11`;
+    if (o.parked) return narrow ? `${tl} typed at 11; ${fl} held ⏸`
+      : `${tl} typed at 11; ${fl} held until your next key (⏸ predicted, not measured)`;
+    const who = o.dA === p.kA ? 'its combos' : 'the hack';
+    if (o.aOut >= o.dA) return narrow ? `${tl} held ${o.dA} ms, typed ${o.dA}`
+      : `${tl} held ${o.dA} ms by ${who}, then typed at ${o.dA}`;
+    return narrow ? `${tl} typed at ${o.aOut}, hold cut short`
+      : `${tl} typed at ${o.aOut}: the 2nd press cut its ${o.dA} ms hold short`;
+  }
+  function secondLabel(o, p, narrow) {
+    const fl = p.bBase;
+    if (o.together) return narrow ? `${fl} released at 11` : `${fl} held by the hack until 11, typed at 11`;
+    if (o.parked) return narrow ? `${fl} held, not typed yet` : `${fl} held until your next key, not typed yet`;
+    if (o.dB === 0) return narrow ? `${fl} typed at once` : `${fl} typed at once at ${o.bOut}: no hold`;
+    const who = o.dB === p.kB ? 'its combos' : 'the hack';
+    return narrow ? `${fl} held ${o.dB} ms, typed ${o.bOut}` : `${fl} held ${o.dB} ms by ${who}, typed at ${o.bOut}`;
+  }
+  // text box for a label drawn at (x, y) with an anchor
+  function tbox(x, y, w, size, anchor) {
+    const x0 = anchor === 'end' ? x - w : anchor === 'middle' ? x - w / 2 : x;
+    return { x0, x1: x0 + w, y0: y - size * 0.85, y1: y + size * 0.25 };
+  }
+  const hitsBox = (a, b) => a.x0 < b.x1 && b.x0 < a.x1 && a.y0 < b.y1 && b.y0 < a.y1;
+  // first candidate that stays on the panel and clears every obstacle; else the first that fits
+  function place(w, size, cands, obst) {
+    const fits = c => { const b = tbox(c.x, c.y, w, size, c.anchor); return b.x0 >= 4 && b.x1 <= G.W - 4; };
+    const clear = c => fits(c) && !obst.some(o => hitsBox(tbox(c.x, c.y, w, size, c.anchor), o));
+    const c = cands.find(clear) || cands.find(fits) || cands[0];
+    return Object.assign({}, c, { box: tbox(c.x, c.y, w, size, c.anchor) });
   }
 
   function panel(i, P, p, d) {
@@ -303,53 +331,72 @@ function outcome(pair, hackOn, delta) {
     // gate: shaded from the moment the 1st key's layer opens
     s += `<rect class="gatebg" x="${gx}" y="${gTop}" width="${X1 - gx}" height="${gBot - gTop}"/>`;
     s += `<line class="gate" x1="${gx}" x2="${gx}" y1="${gTop}" y2="${gBot}"/>`;
-    const gl = `gate opens at ${o.layerOn} (${p.A}’s layer)`;
-    const gEnd = gx + 6 + tw(gl, 11.5, true) > W - 4;
+    const gl = `gate opens at ${o.layerOn}`;
+    const glw = tw(gl, 11.5, true);
+    const gEnd = gx + 6 + glw > W - 4;
     s += `<text class="gatet halo" x="${gEnd ? gx - 6 : gx + 6}" y="${yGate}" text-anchor="${gEnd ? 'end' : 'start'}">${gl}</text>`;
+    const gateLine = { x0: gx - 2, x1: gx + 2, y0: gTop, y1: gBot };
+    const obst = [gateLine, tbox(gEnd ? gx - 6 : gx + 6, yGate, glw, 11.5, gEnd ? 'end' : 'start')];
 
     // lane 1: the 1st key
     s += `<text class="key" x="6" y="${l1 + 6}">${p.A}</text><text class="role" x="25" y="${l1 + 5}">1st</text>`;
     if (o.aOut < o.dA) s += `<rect class="ghost" x="${x(0)}" y="${l1 - 6}" width="${x(o.dA) - x(0)}" height="12" rx="2"/>`;
     if (o.aOut > 0) s += `<rect class="hold" x="${x(0)}" y="${l1 - 6}" width="${x(o.aOut) - x(0)}" height="12" rx="2"/>`;
     s += `<line class="press" x1="${x(0)}" x2="${x(0)}" y1="${l1 - 11}" y2="${l1 + 11}"/>`;
-    s += `<text class="lbl halo" x="${x(0) + 2}" y="${yTrigL}">${holdLabel(tl, p.kA, P.hackOn, true)}</text>`;
     // +10 ms connector, letter -> gate
+    const plx = (x(o.aOut) + 10 + gx) / 2;
     s += `<line class="plus" x1="${x(o.aOut) + 10}" x2="${gx}" y1="${l1}" y2="${l1}"/>`;
-    s += `<text class="plust halo" x="${(x(o.aOut) + 10 + gx) / 2}" y="${l1 + 4}" text-anchor="middle">+10 ms</text>`;
-    // ✂ cut short
-    if (o.aOut < o.dA) {
-      const cx = x(o.aOut);
-      const ct = o.together ? 'both leave at 11' : o.parked ? `${tl} leaves at 11` : 'cut short by the 2nd press';
-      s += `<text class="cutt halo" x="${cx + 20}" y="${yUnder}">✂ ${ct}</text>`;
-    }
+    s += `<text class="plust halo" x="${plx}" y="${l1 + 4}" text-anchor="middle">+10 ms</text>`;
+    obst.push(tbox(plx, l1 + 4, tw('+10 ms', 11, true), 11, 'middle'));
     s += `<circle class="bub" cx="${x(o.aOut)}" cy="${l1}" r="9.5"/><text class="bubt" x="${x(o.aOut)}" y="${l1 + 4.5}" text-anchor="middle">${tl}</text>`;
-    s += `<text class="typed halo" x="${x(o.aOut)}" y="${yUnder}" text-anchor="${o.aOut < o.dA ? 'middle' : 'middle'}">typed</text>`;
+    s += `<text class="typed halo" x="${x(o.aOut)}" y="${yUnder}" text-anchor="middle">typed</text>`;
+    const typedBox = tbox(x(o.aOut), yUnder, tw('typed', 11), 11, 'middle');
+    obst.push(typedBox);
+    // one state sentence for the 1st key: above the bar, else below it, else past the gate
+    const t1 = firstLabel(o, p, G.narrow), t1w = tw(t1, 11.5);
+    const L1 = place(t1w, 11.5, [
+      { x: x(0) + 2, y: yTrigL, anchor: 'start' },
+      { x: typedBox.x1 + 6, y: yUnder, anchor: 'start' },
+      { x: gx + 6, y: yTrigL, anchor: 'start' },
+      { x: gx + 6, y: yUnder, anchor: 'start' },
+      { x: W - 6, y: yTrigL, anchor: 'end' },
+      { x: W - 6, y: yUnder, anchor: 'end' }
+    ], obst);
+    s += `<text class="lbl halo" x="${L1.x}" y="${L1.y}" text-anchor="${L1.anchor}">${esc(t1)}</text>`;
+    obst.push(L1.box);
 
     // lane 2: the 2nd key
     s += `<text class="key" x="6" y="${l2 + 6}">${p.B}</text><text class="role" x="25" y="${l2 + 5}">2nd</text>`;
-    let flab;
-    if (o.parked) {
-      s += `<rect class="parkhold" x="${x(d)}" y="${l2 - 6}" width="${X1 - x(d)}" height="12" rx="2"/>`;
-      flab = `${fl} is held, not typed yet`;
-    } else {
-      if (o.bOut > d) s += `<rect class="hold" x="${x(d)}" y="${l2 - 6}" width="${x(o.bOut) - x(d)}" height="12" rx="2"/>`;
-      flab = o.together ? `${fl} is released with ${p.A} at 11` : holdLabel(fl, p.kB, P.hackOn, false);
-    }
+    if (o.parked) s += `<rect class="parkhold" x="${x(d)}" y="${l2 - 6}" width="${X1 - x(d)}" height="12" rx="2"/>`;
+    else if (o.bOut > d) s += `<rect class="hold" x="${x(d)}" y="${l2 - 6}" width="${x(o.bOut) - x(d)}" height="12" rx="2"/>`;
     s += `<line class="press" style="stroke:var(--handle)" x1="${x(d)}" x2="${x(d)}" y1="${l2 - 12}" y2="${l2 + 12}"/>`;
-    const fw = tw(flab, 11.5, o.parked);
-    const fStart = x(d) + 3 + fw <= W - 4;
-    const fx = fStart ? x(d) + 3 : Math.max(4 + fw, x(d) - 3);
-    s += `<text class="lbl halo" x="${fx}" y="${yFolL}" text-anchor="${fStart ? 'start' : 'end'}">${flab}</text>`;
+    // one state sentence for the 2nd key, next to its press, kept off the gate line
+    const flab = secondLabel(o, p, G.narrow), fw = tw(flab, 11.5);
+    const L2 = place(fw, 11.5, [
+      { x: x(d) + 3, y: yFolL, anchor: 'start' },
+      { x: x(d) - 3, y: yFolL, anchor: 'end' },
+      { x: gx + 6, y: yFolL, anchor: 'start' },
+      { x: gx - 6, y: yFolL, anchor: 'end' },
+      { x: W - 6, y: yFolL, anchor: 'end' },
+      { x: 4, y: yFolL, anchor: 'start' }
+    ], obst);
+    s += `<text class="lbl halo" x="${L2.x}" y="${L2.y}" text-anchor="${L2.anchor}">${esc(flab)}</text>`;
 
-    // margin arrow: when the 2nd letter is typed vs when the gate opens
+    // margin as a dimension: bracket between the 2nd letter's typing moment and the gate line
     let mtxt = '', mcls = o.verdict, stemGap = false;
-    if (o.parked) mtxt = `⏸ exactly 10 ms: ${fl} waits for your next key`;
+    if (o.parked) mtxt = `⏸ exactly 10 ms: ${fl} held until your next key`;
     if (!o.parked) {
       const bx = x(o.bOut);
-      if (o.margin !== 0) s += `<line class="marg ${o.verdict}" x1="${bx}" x2="${gx}" y1="${yArr}" y2="${yArr}" marker-end="url(#arr-${o.verdict})"/>`;
+      if (o.margin !== 0) {
+        const mc = o.margin > 0 ? 'ok' : 'bad';
+        s += `<line class="mext ${mc}" x1="${bx}" x2="${bx}" y1="${l2 + 10}" y2="${yArr + 5}"/>`;
+        s += `<line class="marg ${mc}" x1="${bx}" x2="${gx}" y1="${yArr}" y2="${yArr}"/>`;
+        s += `<line class="marg ${mc}" x1="${bx}" x2="${bx}" y1="${yArr - 5}" y2="${yArr + 5}"/>`;
+        s += `<line class="marg ${mc}" x1="${gx}" x2="${gx}" y1="${yArr - 5}" y2="${yArr + 5}"/>`;
+      }
       mtxt = o.margin > 0 ? `${fl} typed ${o.margin} ms after the gate opens`
            : o.margin < 0 ? `${fl} typed ${-o.margin} ms before the gate opens`
-           : `${fl} typed the same ms the gate opens`;
+           : `${fl} typed as the gate opens: tie`;
       const glyph = o.bGlyph;
       s += `<circle class="bub ${o.verdict}" cx="${bx}" cy="${l2}" r="9.5"/><text class="bubt ${o.verdict}" x="${bx}" y="${l2 + 4.5}" text-anchor="middle">${esc(glyph)}</text>`;
     }
@@ -403,6 +450,9 @@ function outcome(pair, hackOn, delta) {
   function drawStrips() {
     const p = PAIRS[state.pair], d = state.delta;
     document.getElementById('stripsh').textContent = `Every gap at once, ${p.A}→${p.B}`;
+    document.getElementById('costnote').textContent = state.pair === 'PC'
+      ? 'No cost on this pair: the price is on M→T, rolls 0–9 ms.'
+      : 'No fix on this pair: the fix is on P→C, 11–26 ms.';
     const W = Math.max(280, Math.round(stripbox.clientWidth - 12));
     const narrow = W < 520;
     const LBL = 62, TAIL = narrow ? 76 : 92;
@@ -415,7 +465,7 @@ function outcome(pair, hackOn, delta) {
     body += `<text class="${z.tcls} halo" x="${x(z.from) + (z.from ? 5 : 1)}" y="${y - 8}">${z.txt}</text>`;
     const rows = [];
     [true, false].forEach((on, ri) => {
-      if (ri) y += narrow ? 4 : 16;
+      if (ri) y += narrow ? 12 : 16;
       rows.push(y);
       body += `<text class="tm" x="${LBL - 6}" y="${y + 16}" text-anchor="end">hack ${on ? 'ON' : 'OFF'}</text>`;
       if (on) body += `<rect class="${z.cls}" x="${x(z.from) - 2}" y="${y - 3}" width="${(z.to - z.from) * s + 4}" height="${RH + 6}" rx="4"/>`;
@@ -427,8 +477,18 @@ function outcome(pair, hackOn, delta) {
           const tip = `${EMO[c0]} ${st}${v - 1 > st ? '–' + (v - 1) : ''} ms${NOTE[c0] ? ': ' + NOTE[c0] : ''}`;
           body += `<rect class="c-${c0}" x="${x(st)}" y="${y}" width="${w + 0.4}" height="${RH}"><title>${tip}</title></rect>`;
           const lab = `${EMO[c0]} ${c0 === 'ok' ? p.adapted : p.base}`;
-          if ((c0 === 'ok' || c0 === 'bad') && w > 46) body += `<text class="st" x="${x(st) + w / 2}" y="${y + 16}" text-anchor="middle">${lab}</text>`;
+          if ((c0 === 'ok' || c0 === 'bad') && w > 46) {
+            // keep the label off the cursor box: centre it in the free part of the band, or hide it
+            const lw = tw(lab, 11.5, true) + 6, c0x = x(d) - 2, c1x = x(d) + s + 2;
+            let lx = x(st) + w / 2;
+            if (lx - lw / 2 < c1x && lx + lw / 2 > c0x) {
+              const left = c0x - x(st), right = x(st) + w - c1x;
+              lx = left >= lw && left >= right ? x(st) + left / 2 : right >= lw ? c1x + right / 2 : null;
+            }
+            if (lx !== null) body += `<text class="st" x="${lx}" y="${y + 16}" text-anchor="middle">${lab}</text>`;
+          }
           if (!narrow && NOTE[c0]) body += `<text class="sg" x="${x(st) + w / 2}" y="${y - (on ? 6 : 4)}" text-anchor="middle">${EMO[c0]}</text>`;
+          if (narrow && c0 === 'tie' && !on) body += `<text class="sgt" x="${x(st) + w / 2}" y="${y - 3}" text-anchor="middle">tie</text>`;
           st = v;
         }
       }
