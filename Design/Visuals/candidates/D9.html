@@ -103,8 +103,16 @@ svg{display:block;width:100%;height:auto;overflow:visible}
 .meas .big{font:800 44px/1 ui-monospace,SFMono-Regular,Menlo,monospace;font-variant-numeric:tabular-nums}
 .meas .big small{font-size:20px;font-weight:700;margin-left:4px}
 .note{margin:4px 0 0;font-size:12px;color:var(--muted)}
-.slow{margin:6px 0 0;font-size:14px;font-weight:600;color:var(--wait)}
-.slow[hidden]{display:none}
+.vline{margin:8px 0 0;font-size:15px;font-weight:600;color:var(--fg);border-left:4px solid var(--line);padding-left:10px}
+.vline.cost{border-color:var(--bad)} .vline.stall{border-color:var(--wait)} .vline.fix{border-color:var(--ok)}
+.field .l.plain{color:var(--tie)}
+.verdict.plain{background:var(--tieBg);color:var(--tie)}
+.ctl label{display:block;font-size:14px;margin-bottom:4px}
+.ctl input{width:100%;max-width:540px}
+details.mech{margin:12px 0 0}
+details.mech summary{cursor:pointer;font-size:14px;font-weight:600}
+details.mech p{margin:8px 0 0;font-size:14px}
+@media (max-width:480px){ .field{padding:10px} .field .l{font-size:28px} }
 .hist{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:10px 0 0;min-height:34px}
 .hist .hl{font-size:12px;color:var(--muted)}
 .hist button{border:0;border-radius:999px;min-height:32px;min-width:44px;padding:4px 10px;background:var(--chip);color:var(--fg);font:600 13px ui-monospace,SFMono-Regular,Menlo,monospace;cursor:pointer}
@@ -121,7 +129,7 @@ svg{display:block;width:100%;height:auto;overflow:visible}
 <div class="wrap">
   <a class="pill" href="index.html">← All candidates</a>
   <h1>Type it yourself</h1>
-  <p class="lead">Wanted: the adapted letter. On Flo's board <b>kept</b> is typed K E P C and <b>column</b> C O L U M T. Roll two keys here and see what his firmware would type at your speed.</p>
+  <p class="lead">Goal: <b>kept</b>, not <b>kepc</b> (and <b>column</b>, not <b>columt</b>). Roll two keys; the page shows which word Flo's board would type at your speed, with and without the hack.</p>
 
   <div class="card">
     <div class="pad" id="pad" tabindex="0" role="button" aria-label="Typing pad: focus it, then roll two keys">
@@ -133,40 +141,44 @@ svg{display:block;width:100%;height:auto;overflow:visible}
       <span class="lbl" id="gapLbl">example gap:</span>
       <span class="big" id="gapBig">15<small>ms</small></span>
     </div>
+    <p class="vline" id="vline" aria-live="polite"></p>
     <p class="note">rounded to the ms; browser timing, not the board's, so take it as ±2 ms</p>
-    <p class="slow" id="slow" hidden>slower than the 100 ms adaptive window: nothing adapts, you get the plain letters</p>
     <div class="hist" id="hist" aria-label="Your last gaps"></div>
-    <button type="button" class="manual" id="manual">Use 15 ms instead</button>
+    <button type="button" class="manual" id="manual">No keyboard? Set the gap by hand</button>
     <div class="ctl" id="ctl" hidden>
-      <label for="gap"><span>Gap, set by hand</span><span class="num" id="gapVal">15 ms</span></label>
+      <label for="gap" class="num" id="gapVal">gap set by hand: 15 ms</label>
       <input type="range" id="gap" min="0" max="40" step="1" value="15">
     </div>
   </div>
 
+  <div class="card wrow">
+    <svg id="strip" viewBox="0 0 400 160" role="img" aria-label="Outcome for every gap from 0 to 40 ms, for kept and column, hack on and hack off, with your gap marked"></svg>
+    <p class="legend"><span>✅ adapted</span><span>❌ base letter</span><span>⏸ 2nd key waits for your next key</span><span>⚖️ exact tie</span></p>
+  </div>
+
   <section class="card wrow" id="rowKept" data-word="kept" aria-labelledby="hKept">
-    <h2 id="hKept"><span class="wd">kept</span> · <span class="ks">K E P C</span> · P→C, <span class="mut">the pair the hack fixes</span></h2>
+    <h2 id="hKept"><span class="wd">kept</span> · <span class="ks">K E P C</span> · P→C, <span>the pair the hack fixes</span></h2>
     <div class="boxes">
       <div class="box" data-on="1"><h3>hack ON</h3><div class="field" aria-live="polite"></div><div class="verdict"></div></div>
       <div class="box" data-on="0"><h3>hack OFF</h3><div class="field" aria-live="polite"></div><div class="verdict"></div></div>
     </div>
-    <p class="why"></p>
     <p class="whyWait" hidden></p>
   </section>
 
   <section class="card wrow" id="rowColumn" data-word="column" aria-labelledby="hColumn">
-    <h2 id="hColumn"><span class="wd">column</span> · <span class="ks">C O L U M T</span> · M→T, <span class="mut">the pair the hack costs</span></h2>
+    <h2 id="hColumn"><span class="wd">column</span> · <span class="ks">C O L U M T</span> · M→T, <span>the pair the hack costs</span></h2>
     <div class="boxes">
       <div class="box" data-on="1"><h3>hack ON</h3><div class="field" aria-live="polite"></div><div class="verdict"></div></div>
       <div class="box" data-on="0"><h3>hack OFF</h3><div class="field" aria-live="polite"></div><div class="verdict"></div></div>
     </div>
-    <p class="why"></p>
     <p class="whyWait" hidden></p>
   </section>
 
-  <div class="card">
-    <svg id="strip" viewBox="0 0 400 160" role="img" aria-label="Outcome for every gap from 0 to 40 ms, for kept and column, hack on and hack off, with your gap marked"></svg>
-    <p class="legend"><span>✅ adapted</span><span>❌ base letter</span><span>⏸ 2nd key waits for your next key</span><span>⚖️ exact tie</span></p>
-  </div>
+  <details class="mech">
+    <summary>why? (the mechanism in two sentences)</summary>
+    <p id="whyKept"></p>
+    <p id="whyColumn"></p>
+  </details>
 
   <p class="ctx">Real two-key combos fire on presses up to 15 ms apart (M+W is Z). A roll under 10 ms sits inside that range, so giving it up is the intended trade. 11–25 ms is where the inconsistency was: 11 pairs used to be unreliable there.</p>
   <p class="foot">⏸ at exactly 10 ms and the ⚖️ edges are hardware predictions. 11 pairs behave like kept (the 2nd key has no combo: X C F and a thumb), 34 like column; together 45 pairs with no shared combo. The 6 pairs that share a real combo and the 3 with no timing band type the same with the hack on or off. Numbers from <code>Design/Timing/FACTS.md</code>. Your gap is measured by the browser on your keyboard; Flo's numbers are the board's engine time. For the mechanism, see D6 and D7.</p>
@@ -232,33 +244,45 @@ var WHY = {
 };
 var WAIT_LINE = '⏸ at exactly 10 ms the 2nd key is held until your next key, then usually adapts late (predicted, not measured)';
 var SLOW = 125; /* above this nothing adapts, hack on or off */
+document.getElementById('whyKept').textContent = WHY.kept;
+document.getElementById('whyColumn').textContent = WHY.column;
+
+/* verdict sentence under the gap number: board bands at the set/measured gap */
+function verdictLine(g){
+  if (g <= 9)   return {cls:'cost',  s:g+' ms: inside the 0–9 ms cost zone. column breaks with the hack; kept never worked this fast anyway.'};
+  if (g === 10) return {cls:'stall', s:'10 ms: the predicted stall. The 2nd key waits for your next key, then usually adapts late. Treat it as a near-miss.'};
+  if (g <= 25)  return {cls:'fix',   s:g+' ms: inside the 11–25 ms fix zone. kept works only thanks to the hack; column works either way.'};
+  if (g === 26) return {cls:'edge',  s:'26 ms: the tie edge for kept without the hack (either letter). With the hack, both words are fine.'};
+  if (g <= 109) return {cls:'fine',  s:g+' ms: a relaxed roll. Both words come out right, hack or not.'};
+  if (g <= SLOW) return {cls:'edge', s:g+' ms: at the edge of the 100 ms adaptive window; the outcome can tie.'};
+  return {cls:'slow', s:g+' ms: slower than the adaptive window. Nothing adapts: you get the plain letters, which is normal typing, not a failure.'};
+}
 
 function pillText(r){
   if (r.verdict === 'ok') return '✅ adapted · <span class="mono">'+r.text+'</span>';
   if (r.verdict === 'bad') return '❌ base letter · <span class="mono">'+r.text+'</span>';
-  if (r.verdict === 'wait') return '⏸ waits for your next key';
+  if (r.verdict === 'wait') return '⏸ near-miss · waits for your next key';
   return '⚖️ tie: either letter, unpredictable';
 }
 
 /* one word row at the current gap (D8's final state, no replay) */
 function buildRow(row){
-  var w = WORDS[row.word], n = w.keys.length, anyWait = false, popIt = state.pop;
+  var w = WORDS[row.word], n = w.keys.length, anyWait = false, popIt = state.pop, plain = state.gap > SLOW;
   row.el.querySelectorAll('.box').forEach(function(box){
     var on = box.getAttribute('data-on') === '1', r = typedWord(row.word, on, state.gap);
     if (r.verdict === 'wait') anyWait = true;
     var f = '';
     r.head.split('').forEach(function(c, i){ f += '<span class="l in" data-i="'+i+'">'+c+'</span>'; });
     if (r.verdict === 'wait') f += '<span class="w in" data-i="'+(n-1)+'">⏸ waits for your next key</span>';
-    else f += '<span class="l in '+r.verdict+'" data-i="'+(n-1)+'">'+r.crit+'</span>';
+    else f += '<span class="l in '+(plain ? 'plain' : r.verdict)+'" data-i="'+(n-1)+'">'+r.crit+'</span>';
     var field = box.querySelector('.field');
     field.innerHTML = f;
     field.setAttribute('data-text', r.text);
     field.setAttribute('aria-label', (on ? 'hack on' : 'hack off')+', typed: '+r.text+(r.verdict === 'wait' ? ', then waits' : ''));
     var pill = box.querySelector('.verdict');
-    pill.className = 'verdict in '+r.verdict+(popIt ? ' pop' : '');
-    pill.innerHTML = pillText(r);
+    pill.className = 'verdict in '+(plain ? 'plain' : r.verdict)+(popIt ? ' pop' : '');
+    pill.innerHTML = plain ? 'no adaptation · plain letters' : pillText(r);
   });
-  row.el.querySelector('.why').textContent = WHY[row.word];
   var ww = row.el.querySelector('.whyWait');
   ww.textContent = WAIT_LINE; ww.hidden = !anyWait;
 }
@@ -266,8 +290,9 @@ function buildRow(row){
 function render(){
   document.getElementById('gapLbl').textContent = state.measured ? 'your gap:' : state.byHand ? 'gap set by hand:' : 'example gap:';
   document.getElementById('gapBig').innerHTML = state.gap+'<small>ms</small>';
-  document.getElementById('slow').hidden = !(state.gap > SLOW);
-  document.getElementById('gapVal').textContent = Math.min(state.gap, 40)+' ms';
+  var vl = verdictLine(state.gap), vel = document.getElementById('vline');
+  vel.textContent = vl.s; vel.className = 'vline '+vl.cls;
+  document.getElementById('gapVal').textContent = 'gap set by hand: '+Math.min(state.gap, 40)+' ms';
   var g = document.getElementById('gap'); if (+g.value !== Math.min(state.gap, 40)) g.value = Math.min(state.gap, 40);
   g.setAttribute('aria-valuetext', g.value+' ms');
   renderHist();
@@ -322,16 +347,19 @@ pad.addEventListener('keydown', function(e){
   }
   armReset();
 });
-pad.addEventListener('focus', function(){ padPh.textContent = 'Ready: roll two keys, first one, then the other, fast'; });
-pad.addEventListener('blur', function(){ padPh.textContent = 'Click here, then roll two keys: first one, then the other, fast'; first = null; });
+var coarse = window.matchMedia && window.matchMedia('(pointer: coarse)').matches;
+var PH_IDLE = coarse ? 'No physical keyboard here: drag the slider below' : 'Click here, then roll two keys: first one, then the other, fast';
+var PH_READY = coarse ? PH_IDLE : 'Ready: roll two keys, first one, then the other, fast';
+padPh.textContent = PH_IDLE;
+pad.addEventListener('focus', function(){ padPh.textContent = PH_READY; });
+pad.addEventListener('blur', function(){ padPh.textContent = PH_IDLE; first = null; });
 pad.addEventListener('pointerdown', function(){ pad.focus(); });
 
 /* ===== by hand ===== */
-var ctl = document.getElementById('ctl');
-var coarse = window.matchMedia && window.matchMedia('(pointer: coarse)').matches;
-if (coarse || ('ontouchstart' in window && !(window.matchMedia && window.matchMedia('(pointer: fine)').matches))) ctl.hidden = false;
-document.getElementById('manual').addEventListener('click', function(){
-  ctl.hidden = false; histSel = -1; state.gap = 15; state.measured = false; state.byHand = true; state.pop = true; render();
+var ctl = document.getElementById('ctl'), manual = document.getElementById('manual');
+if (coarse || ('ontouchstart' in window && !(window.matchMedia && window.matchMedia('(pointer: fine)').matches))){ ctl.hidden = false; manual.hidden = true; }
+manual.addEventListener('click', function(){
+  ctl.hidden = false; manual.hidden = true; histSel = -1; state.gap = 15; state.measured = false; state.byHand = true; state.pop = true; render();
 });
 document.getElementById('gap').addEventListener('input', function(e){
   histSel = -1; state.gap = +e.target.value; state.measured = false; state.byHand = true; render();
@@ -369,7 +397,7 @@ function renderStrip(){
   var cg = Math.min(state.gap, DMAX), hx = x(cg);
   s += '<rect class="cur" x="'+(hx-SC/2-1.5)+'" y="'+(yt-4)+'" width="'+(SC+3)+'" height="'+(yb-yt+8)+'" rx="2"/>';
   s += '<path class="knob" d="M'+hx+' '+(yb+5)+' l-6 9 h12 z"/>';
-  var you = state.gap > DMAX ? 'you ('+state.gap+') →' : 'you';
+  var you = state.gap > SLOW ? 'you ('+state.gap+') → beyond the strip' : state.gap > DMAX ? 'you ('+state.gap+') →' : 'you';
   s += txt('you', Math.max(X0 - 10, Math.min(hx, W - 4 - you.length*3.6)), yb+28, you, 'middle');
   [0,10,20,30,40].forEach(function(t){ s += txt('t-ax', x(t), yb+46, t, 'middle'); });
   s += txt('t-ax', 0, yb+46, 'gap, ms');

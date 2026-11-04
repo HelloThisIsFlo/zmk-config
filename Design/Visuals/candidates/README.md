@@ -20,7 +20,7 @@
 | `D6.html` | Watch the letters land: slow-motion replay (1 s = 20 ms), hack on/off scenes in sync, letters fly into a text field at their typing moment | from both critics' "the hold wait never landed"; critic pass + fix round done (1 s = 6 ms, 0.8 s hold on each event, per-pair sentence per panel) |
 | `D7.html` | Two presses, one gate: D2's playground reworked (opens where the hack wins, labels in place, rule stated, 0–40 strip below) | from Flo's "D2 is the keeper playground" + D2's critic; critic pass + fix round done (labels now sit right of the gate line when they don't fit left of it) |
 | `D8.html` | What comes out: a real word (kept = K E P C, column = C O L U M T) typed at a chosen gap, hack on beside off, outcome not mechanism | from every critic's "why is mt wrong?"; critic pass + fix round done (both words always on screen, replay timed around the critical gap) |
-| `D9.html` | Type it yourself: the browser times your own two-key roll and shows what the firmware would type at that gap, kept and column, hack on beside off | from "the ms stays abstract"; critic pass pending |
+| `D9.html` | Type it yourself: the browser times your own two-key roll and shows what the firmware would type at that gap, kept and column, hack on beside off | from "the ms stays abstract"; critic pass + fix round done (verdict sentence under your gap, strip first, mechanism behind a toggle) |
 | `test_outcome*.js` | `node test_outcome.js` (D3), `_d4.js`, `_d5.js` check each page's pure `outcome()` against 11 FACTS cases and print the bands | all pass |
 
 - Open any page locally: `python3 -m http.server` in this folder, then `http://127.0.0.1:8000/index.html`
