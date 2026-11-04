@@ -4,8 +4,8 @@
 >
 > - The **proven timing model** of the adaptive-key system: how the combo engine, the `&ak` macro, sticky layers, hold-taps and the Callum buffer behave, millisecond by millisecond
 > - Established 2026-09-28 → 2026-10-01 from the fork's source (ZMK `6e03a0bb`, Zephyr 3.5) and **181 native_posix test cases**, 58 of them on the real NAQUADAH keymap
-> - It **replaces** the explanations in `ak-combo-hack.md`, the `combos.dtsi` comment block and the timing sections of `MECHANICS.md`, which were wrong in their core claim
-> - Status: **banked, under review**. Nothing here is committed yet; the website rebuild comes after review
+> - `ak-combo-hack.md`, the `combos.dtsi` comment block and the timing sections of `MECHANICS.md` and `ak-deepdive.md` were wrong in their core claim; they were rewritten from this folder on 2026-11-04
+> - Status: **banked and committed**; the old explanations are rewritten from it, the website rebuild is next
 
 ## 🏷️ Legend (same in every file here)
 
@@ -89,7 +89,7 @@
 
 | Read | When |
 |---|---|
-| [`CONCEPTS.md`](CONCEPTS.md) | You want the big picture first: the seven concepts the page covers, one block each, one minute |
+| [`CONCEPTS.md`](CONCEPTS.md) | You want the big picture first: the eight concepts the page covers, one plain sentence each, one minute |
 | [`MODEL.md`](MODEL.md) | You want the mechanism: pipeline, combo-engine rules, `&ak` path, the hack theorem and Δ tables, every statement tagged |
 | [`FACTS.md`](FACTS.md) | You build the website or rewrite a doc: facts allowed, worked examples on real keys, must-NOT-say lists, what changed |
 | [`PAIRS.md`](PAIRS.md) | Which of the 54 pairs are fragile and why; the sweep evidence |
@@ -113,8 +113,7 @@
 
 ## ⏭️ Not done yet
 
-- Website rebuild from `FACTS.md` (after review)
-- Rewrite of `ak-combo-hack.md`, `MECHANICS.md` timing sections, the `combos.dtsi` comment (after review; superseded markers are in place)
+- One explanatory diagram of the hack, then the website rebuild from `FACTS.md` (`Design/Visuals/index.html` is still the old page)
 - Hardware measurements (`T-24`)
 
 ---

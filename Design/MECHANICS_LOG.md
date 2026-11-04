@@ -9,6 +9,35 @@
 
 ---
 
+## 2026-11-04 -- Old AK timing explanations rewritten from the proven model
+
+**Context**: The 2026-10-01 investigation left the old explanations marked
+"superseded" but not rewritten. Flo had not reviewed `Design/Timing/` yet and
+asked for the rewrite to be done without him.
+
+**Decision**: Rewrite everything the superseded markers pointed at, from
+`Design/Timing/FACTS.md` and `MODEL.md` only:
+- `Design/ak-combo-hack.md`: full rewrite (what the hack is, what a press
+  really does, why rolls under 11 ms miss, bands per pair class, the exactly
+  10 ms stall, the trade, hack off = upstream v0.3+).
+- The comment block in `adaptive_keys/combos.dtsi`: rewritten, plain ASCII,
+  comment-only (bytes after the closing `*/` byte-identical; right half
+  rebuilt to confirm).
+- `Design/MECHANICS.md`: timing statements corrected in Adaptive Keys,
+  Buffered Behaviors, Linger Keys, Combo System (two live tiers), Callum
+  mods, Timing Architecture; superseded warning removed.
+- `Design/ak-deepdive.md`: targeted fixes (10 ms gap, window from layer ON,
+  modifier pin, R thumb is adaptive, dead window, the hack's real role).
+
+**Process**: Opus writers, one Fable correctness reviewer per document
+checking every number against FACTS/MODEL/PAIRS and the source. Stale
+pointers from the October config-hierarchy move fixed in FACTS/MODEL.
+
+**Next**: one explanatory diagram of the hack, then the website rebuild from
+`FACTS.md` (`Design/Visuals/index.html` is still the old, wrong page).
+
+---
+
 ## 2026-10-11 -- Config hierarchy: layout / keyboard / unit / side
 
 **Context**: A second Chocofi was built on Pro Micro nRF52840 clones (the old one
