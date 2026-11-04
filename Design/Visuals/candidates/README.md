@@ -128,7 +128,7 @@
   - Fallback if the merge is too much: D9 first, D7 linked as "why?"
 - ⚠️ **What every page still fails at**: the 0–9 ms cost band is the same red as a failure, and "intentional" lives in a footer → draw 0–9 as "combo territory" (hatched/grey, ⌨️ label) with the one-line reason beside it
 - 🗑️ Delete without regret: D6 (motion win, but nobody watches it twice), D8 (contained in D9), D5 (map = the strip, lanes = a smaller D7), D4 (keep only the ghost-bar idea)
-- 👀 To check if D8 survives: in the jury's headless run its boxes showed "ke" / "colu" long after Play and the full words only after a resize
+- 👀 D8 replay "stuck at ke / colu" seen by the jury: checked, not reproducible (words complete by 2.5 s at 1100 and 400 px, background tab too); the replay runs on timers, not animation frames. Only a window that draws no frames hides the letters (the `drop` keyframe fades from opacity 0). Hardening if ever needed: drop `opacity: 0` from that keyframe
 
 ## 🔚 Where this stopped (2026-11-04 ~21:50)
 - Nine candidates in the artifact (version 12) and in this folder; usage guard reached ~96 % weekly before the 23:00 reset
