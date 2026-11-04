@@ -1,0 +1,449 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>What the hack trades</title>
+<style>
+:root{
+  --bg:#f6f5f1; --card:#ffffff; --fg:#1c1c1f; --muted:#6a6a72; --grid:#e6e3db; --line:#bdb9ae;
+  --hold:#8c867a; --holdBg:#efebe2;
+  --layer:#2a74c8; --layerBg:#d8e7f8; --layerTx:#174a85;
+  --ok:#1e874a; --okBg:#dcf2e4; --bad:#c3352b; --badBg:#fbe1de; --wait:#a86d10; --waitBg:#fbecd2;
+  --tie:#6c6c74; --tieBg:#e8e8ec; --focus:#2563eb; --chip:#eceae4; --chipOn:#1c1c1f; --chipOnTx:#ffffff;
+  --stripTx:#ffffff;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#131316; --card:#1c1c20; --fg:#ececf0; --muted:#9b9ba4; --grid:#2a2a30; --line:#4a4a53;
+    --hold:#97927f; --holdBg:#25252a;
+    --layer:#5aa2ee; --layerBg:#1b3350; --layerTx:#b9d8fb;
+    --ok:#4fca7d; --okBg:#173a25; --bad:#ff6d61; --badBg:#46201c; --wait:#f1b54d; --waitBg:#3e2e13;
+    --tie:#acacb4; --tieBg:#303036; --focus:#7aa7ff; --chip:#28282e; --chipOn:#ececf0; --chipOnTx:#131316;
+    --stripTx:#131316;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#131316; --card:#1c1c20; --fg:#ececf0; --muted:#9b9ba4; --grid:#2a2a30; --line:#4a4a53;
+  --hold:#97927f; --holdBg:#25252a;
+  --layer:#5aa2ee; --layerBg:#1b3350; --layerTx:#b9d8fb;
+  --ok:#4fca7d; --okBg:#173a25; --bad:#ff6d61; --badBg:#46201c; --wait:#f1b54d; --waitBg:#3e2e13;
+  --tie:#acacb4; --tieBg:#303036; --focus:#7aa7ff; --chip:#28282e; --chipOn:#ececf0; --chipOnTx:#131316;
+  --stripTx:#131316;
+  color-scheme: dark;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--fg);font:15px/1.45 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  padding:12px max(16px,env(safe-area-inset-right)) 32px max(16px,env(safe-area-inset-left));overflow-x:hidden}
+.wrap{max-width:720px;margin:0 auto}
+.num,svg text{font-variant-numeric:tabular-nums}
+a.pill{display:inline-block;font-size:13px;color:var(--fg);text-decoration:none;background:var(--chip);border-radius:999px;padding:4px 12px}
+a.pill:focus-visible,button:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+h1{font-size:21px;margin:14px 0 2px}
+.claim{margin:0 0 12px;font-size:16px}
+.card{background:var(--card);border-radius:14px;padding:10px 8px;box-shadow:0 1px 0 var(--grid)}
+.box{width:100%}
+svg{display:block;width:100%;height:auto}
+svg text{font-family:inherit}
+.concl{margin:8px 2px 18px;font-size:14px}
+.bar{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:0 0 6px}
+.bar h2{font-size:15px;margin:0 6px 0 2px}
+.chip{border:0;border-radius:999px;padding:6px 14px;background:var(--chip);color:var(--fg);font:inherit;font-size:14px;font-weight:600;cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--chipOn);color:var(--chipOnTx)}
+.dv{margin-left:auto;font-size:14px;color:var(--muted)}
+.dv b{color:var(--focus);font-size:18px}
+.foot{font-size:12.5px;color:var(--muted);margin:16px 2px 0;padding-left:10px;border-left:2px solid var(--grid)}
+.foot p{margin:3px 0}
+.foot code{font-size:12px}
+
+/* svg */
+.t{fill:var(--fg);font-size:12px}
+.tm{fill:var(--muted);font-size:11px}
+.th{fill:var(--fg);font-size:12.5px;font-weight:700}
+.halo{paint-order:stroke;stroke:var(--card);stroke-width:4px;stroke-linejoin:round}
+.gridl{stroke:var(--grid);stroke-width:1}
+.zcost{fill:var(--bad);fill-opacity:.08;stroke:var(--bad);stroke-width:1.2;stroke-dasharray:4 3}
+.zfix{fill:var(--ok);fill-opacity:.09;stroke:var(--ok);stroke-width:1.2;stroke-dasharray:4 3}
+.zct{fill:var(--bad);font-size:11.5px;font-weight:700}
+.zft{fill:var(--ok);font-size:11.5px;font-weight:700}
+.c-ok{fill:var(--ok)} .c-bad{fill:var(--bad)} .c-wait{fill:var(--wait)} .c-tie{fill:var(--tie)}
+.st{fill:var(--stripTx);font-size:11.5px;font-weight:700}
+.tail{fill:var(--okBg);stroke:var(--ok);stroke-width:1}
+.tailt{fill:var(--ok);font-size:11px;font-weight:700}
+.zig{fill:none;stroke:var(--muted);stroke-width:1.2}
+.scrub{stroke:var(--fg);stroke-width:1.6}
+.scell{fill:none;stroke:var(--fg);stroke-width:1.6}
+.hpill{fill:var(--focus)} .hpt{fill:#fff;font-size:12px;font-weight:700}
+.hring{fill:none;stroke:var(--focus);stroke-width:2;opacity:0}
+#map{touch-action:pan-y;cursor:ew-resize;user-select:none;-webkit-user-select:none}
+#map:focus{outline:none}
+#map:focus-visible .hring{opacity:1}
+/* detail */
+.hold{fill:url(#hatch);stroke:var(--hold);stroke-width:1}
+.hold.wait{fill:url(#hatchW);stroke:var(--wait);stroke-dasharray:4 3}
+.ghost{fill:none;stroke:var(--hold);stroke-width:1;stroke-dasharray:3 3}
+.press{stroke:var(--fg);stroke-width:2}
+.cut{stroke:var(--bad);stroke-width:2.2}
+.cutt{fill:var(--bad);font-size:11.5px;font-weight:600}
+.gate{stroke:var(--layer);stroke-width:2;stroke-dasharray:5 3}
+.gatet{fill:var(--layer);font-size:11.5px;font-weight:700}
+.gatebg{fill:var(--layerBg);opacity:.55}
+.plus{stroke:var(--layer);stroke-width:1;stroke-dasharray:1 2}
+.plust{fill:var(--layer);font-size:11px}
+.bub{fill:var(--card);stroke:var(--fg);stroke-width:1.6}
+.bub.ok{fill:var(--okBg);stroke:var(--ok)} .bub.bad{fill:var(--badBg);stroke:var(--bad)} .bub.tie{fill:var(--tieBg);stroke:var(--tie)}
+.bubt{fill:var(--fg);font:700 13px ui-monospace,SFMono-Regular,Menlo,monospace}
+.bubt.ok{fill:var(--ok)} .bubt.bad{fill:var(--bad)} .bubt.tie{fill:var(--tie)}
+.key{fill:var(--fg);font-size:16px;font-weight:700}
+.role{fill:var(--muted);font-size:11px}
+.marg{stroke-width:2.4}
+.marg.ok{stroke:var(--ok)} .marg.bad{stroke:var(--bad)}
+.mt{font-size:12.5px;font-weight:700}
+.mt.ok{fill:var(--ok)} .mt.bad{fill:var(--bad)} .mt.tie{fill:var(--tie)} .mt.wait{fill:var(--wait)}
+.vp.ok{fill:var(--okBg);stroke:var(--ok)} .vp.bad{fill:var(--badBg);stroke:var(--bad)} .vp.wait{fill:var(--waitBg);stroke:var(--wait)} .vp.tie{fill:var(--tieBg);stroke:var(--tie)}
+.vpt{font-size:12.5px;font-weight:700}
+.vpt.ok{fill:var(--ok)} .vpt.bad{fill:var(--bad)} .vpt.wait{fill:var(--wait)} .vpt.tie{fill:var(--tie)}
+.sep{stroke:var(--grid);stroke-width:1}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="pill" href="index.html">← All candidates</a>
+  <h1>What the hack trades</h1>
+  <p class="claim">The hack trades rolls under 10 ms for a reliable <span style="white-space:nowrap">11–26 ms</span>.</p>
+
+  <div class="card">
+    <div class="box" id="mapbox">
+      <svg id="map" tabindex="0" role="slider" aria-label="Gap between the two key presses, ms" aria-valuemin="0" aria-valuemax="40"></svg>
+    </div>
+  </div>
+  <p class="concl">Without the hack, 11 pairs type the base letter until 26 ms; with it, they adapt from 11 ms, and 34 other pairs pay with their sub-10 ms rolls.</p>
+
+  <div class="bar" role="group" aria-label="Key pair for the detail">
+    <h2>Why, at</h2>
+    <button class="chip" type="button" data-pair="MT" aria-pressed="false">M→T</button>
+    <button class="chip" type="button" data-pair="PC" aria-pressed="true">P→C</button>
+    <span class="dv num">Δ <b id="dval">15</b> ms</span>
+  </div>
+  <div class="card">
+    <div class="box" id="detbox">
+      <svg id="det" aria-live="polite">
+      </svg>
+    </div>
+  </div>
+
+  <div class="foot">
+    <p>Not drawn: 6 pairs that share a real combo and 3 with no timing band type the same with the hack on or off.</p>
+    <p>⏸ at exactly 10 ms and the ⚖️ edges (✅ ends near 110–125 ms) are hardware predictions. Board engine time, numbers from <code>Design/Timing/FACTS.md</code>.</p>
+  </div>
+</div>
+
+<script>
+// BEGIN outcome
+var PAIRS = {
+  MT: { trig: "M", fol: "T", k1: 16, k2: 16, ok: "mn", bad: "mt" },
+  PC: { trig: "P", fol: "C", k1: 16, k2: 0,  ok: "pt", bad: "pc" }
+};
+// Board engine time in ms, t = 0 is the trigger press, delta = follower press.
+// Returns letter delivery times, the AK layer window and the class:
+// ok (adapted), bad (base letter), wait (stalled), tie (lands on an edge).
+function outcome(pair, hackOn, delta) {
+  var dA = hackOn ? Math.max(11, pair.k1) : pair.k1;
+  var d2 = hackOn ? Math.max(11, pair.k2) : pair.k2;
+  var a, b;
+  if (hackOn && delta <= 10) {
+    a = 11;
+    b = delta === 10 ? null : 11;          // delta 10: follower stalls
+  } else {
+    a = Math.min(delta, dA);
+    b = delta + d2;
+  }
+  var on = a + 10, off = a + 110, cls;
+  if (b === null) cls = "wait";
+  else if (b < on) cls = "bad";
+  else if (b === on) cls = "tie";
+  else if (b < off) cls = "ok";
+  else if (b === off) cls = "tie";
+  else cls = "bad";
+  var out = cls === "ok" ? pair.ok : cls === "bad" ? pair.bad
+          : cls === "wait" ? pair.ok[0] + "…" : pair.ok + " or " + pair.bad;
+  return { cls: cls, a: a, b: b, on: on, off: off, delta: delta, out: out };
+}
+// END outcome
+
+(function () {
+  var MAXD = 40;
+  var state = { delta: 15, pair: "PC" };
+  var EMO = { ok: "✅", bad: "❌", wait: "⏸", tie: "⚖️" };
+  var GROUPS = [
+    { key: "MT", head: "34 pairs like M→T · 2nd key has its own combos", short: "34 pairs like M→T · 2nd key has combos" },
+    { key: "PC", head: "11 pairs like P→C · 2nd key has no combo (X C F, thumbs)", short: "11 pairs like P→C · 2nd key has no combo" }
+  ];
+  function lastOk(pair, on) { var d = 200; while (d > 0 && outcome(pair, on, d).cls !== "ok") d--; return d; }
+
+  // ---------------- the map ----------------
+  var map = document.getElementById("map");
+  var mapbox = document.getElementById("mapbox");
+  var M = {};   // geometry of the last render
+
+  function renderMap() {
+    var W = Math.max(300, Math.round(mapbox.clientWidth));
+    var narrow = W < 520;
+    var LBL = 62, TAIL = narrow ? 80 : 92;
+    var PR = W - TAIL;
+    var s = (PR - LBL) / (MAXD + 1);
+    function x(d) { return LBL + d * s; }
+    M = { W: W, LBL: LBL, s: s, x: x, segs: [] };
+    var o = "";
+    var ZT = 30, AXY = 46;
+    var y = 58, groupsY = [];
+    var body = "";
+    GROUPS.forEach(function (g, gi) {
+      var pair = PAIRS[g.key];
+      y += 8;
+      body += '<text class="th halo" x="2" y="' + (y + 4) + '">' + (narrow ? g.short : g.head) + '</text>';
+      y += 15;
+      var top = y;
+      [true, false].forEach(function (on) {
+        var H = 24;
+        body += '<text class="tm" x="' + (LBL - 6) + '" y="' + (y + 16) + '" text-anchor="end">hack ' + (on ? "ON" : "OFF") + '</text>';
+        var st = 0;
+        for (var d = 1; d <= MAXD + 1; d++) {
+          var c0 = outcome(pair, on, st).cls;
+          if (d === MAXD + 1 || outcome(pair, on, d).cls !== c0) {
+            var w = (d - st) * s;
+            body += '<rect class="c-' + c0 + '" x="' + x(st) + '" y="' + y + '" width="' + (w + 0.4) + '" height="' + H + '"><title>' + EMO[c0] + ' ' + st + (d - 1 > st ? '–' + (d - 1) : '') + ' ms</title></rect>';
+            var lab = EMO[c0] + ' ' + (c0 === "ok" ? pair.ok : pair.bad);
+            if ((c0 === "ok" || c0 === "bad") && w > 44) body += '<text class="st" x="' + (x(st) + w / 2) + '" y="' + (y + 16) + '" text-anchor="middle">' + lab + '</text>';
+            st = d;
+          }
+        }
+        // cut + tail
+        var zx = x(MAXD + 1) + 3;
+        body += '<path class="zig" d="M' + zx + ' ' + (y - 2) + ' l4 7 l-4 7 l4 7 l-4 7"/>';
+        var tx = zx + 9;
+        body += '<rect class="tail" x="' + tx + '" y="' + y + '" width="' + (W - tx - 1) + '" height="' + H + '" rx="4"/>';
+        body += '<text class="tailt" x="' + (tx + 6) + '" y="' + (y + 16) + '">' + (narrow ? '… ✅ ~' : '… ✅ to ~') + (lastOk(pair, on) + 1) + '</text>';
+        y += H + 4;
+      });
+      M.segs.push({ top: top, bot: y - 4, key: g.key });
+      groupsY.push([top, y - 4]);
+      y += 6;
+    });
+    var bottom = y;
+    // zones across both groups
+    var zTop = 34, zBot = bottom - 4;
+    o += '<rect class="zcost" x="' + x(0) + '" y="' + zTop + '" width="' + (10 * s) + '" height="' + (zBot - zTop) + '" rx="3"/>';
+    o += '<rect class="zfix" x="' + x(11) + '" y="' + zTop + '" width="' + (16 * s) + '" height="' + (zBot - zTop) + '" rx="3"/>';
+    o += '<text class="zct" x="' + (x(10) - 2) + '" y="13" text-anchor="end">what it costs</text>';
+    o += '<text class="zct" x="' + (x(10) - 2) + '" y="27" text-anchor="end">0–9 ms</text>';
+    o += '<text class="zft" x="' + (x(11) + 2) + '" y="13">what it fixes</text>';
+    o += '<text class="zft" x="' + (x(11) + 2) + '" y="27">11–26 ms</text>';
+    // axis, even ticks
+    for (var t = 0; t <= MAXD; t += 5) {
+      o += '<line class="gridl" x1="' + (x(t) + s / 2) + '" x2="' + (x(t) + s / 2) + '" y1="' + (AXY + 4) + '" y2="' + zBot + '"/>';
+      o += '<text class="tm" x="' + (x(t) + s / 2) + '" y="' + AXY + '" text-anchor="middle">' + t + '</text>';
+    }
+    o += '<text class="tm" x="' + (LBL - 6) + '" y="' + AXY + '" text-anchor="end">gap, ms</text>';
+    o += body;
+    // scrub: one segment per group, never over headings
+    o += '<g id="scrub"></g>';
+    // handle
+    var hy = bottom + 6;
+    M.hy = hy;
+    o += '<g id="handle"></g>';
+    var H2 = hy + 34;
+    map.setAttribute("viewBox", "0 0 " + W + " " + H2);
+    map.style.height = H2 + "px";
+    map.innerHTML = o;
+    drawScrub();
+  }
+
+  function drawScrub() {
+    var x = M.x, s = M.s, d = state.delta, cx = x(d) + s / 2, g = "";
+    M.segs.forEach(function (sg) {
+      g += '<rect class="scell" x="' + x(d) + '" y="' + (sg.top - 2) + '" width="' + s + '" height="' + (sg.bot - sg.top + 4) + '" rx="1.5"/>';
+    });
+    g += '<line class="scrub" x1="' + cx + '" x2="' + cx + '" y1="' + (M.segs[1].bot + 2) + '" y2="' + (M.hy + 2) + '"/>';
+    document.getElementById("scrub").innerHTML = g;
+    var hx = Math.min(M.W - 34, Math.max(34, cx));
+    document.getElementById("handle").innerHTML =
+      '<rect class="hring" x="' + (hx - 36) + '" y="' + (M.hy - 1) + '" width="72" height="30" rx="15"/>' +
+      '<rect class="hpill" x="' + (hx - 32) + '" y="' + (M.hy + 2) + '" width="64" height="24" rx="12"/>' +
+      '<text class="hpt" x="' + hx + '" y="' + (M.hy + 18.5) + '" text-anchor="middle">◂ ' + d + ' ms ▸</text>';
+    map.setAttribute("aria-valuenow", d);
+    map.setAttribute("aria-valuetext", d + " ms");
+  }
+
+  function setDelta(d) {
+    d = Math.max(0, Math.min(MAXD, Math.round(d)));
+    if (d === state.delta) return;
+    state.delta = d;
+    drawScrub();
+    renderDetail();
+  }
+  function setPair(k) {
+    if (k === state.pair) return;
+    state.pair = k;
+    document.querySelectorAll(".chip").forEach(function (b) { b.setAttribute("aria-pressed", String(b.dataset.pair === k)); });
+    renderDetail();
+  }
+  function evPos(e) {
+    var pt = map.createSVGPoint(); pt.x = e.clientX; pt.y = e.clientY;
+    return pt.matrixTransform(map.getScreenCTM().inverse());
+  }
+  var drag = null;
+  map.addEventListener("pointerdown", function (e) {
+    drag = e.pointerId;
+    try { map.setPointerCapture(e.pointerId); } catch (_) {}
+    var p = evPos(e);
+    M.segs.forEach(function (sg) { if (p.y >= sg.top - 20 && p.y <= sg.bot + 2) setPair(sg.key); });
+    setDelta((p.x - M.LBL) / M.s - 0.5);
+  });
+  map.addEventListener("pointermove", function (e) { if (drag === e.pointerId) setDelta((evPos(e).x - M.LBL) / M.s - 0.5); });
+  ["pointerup", "pointercancel"].forEach(function (n) { map.addEventListener(n, function () { drag = null; }); });
+  document.addEventListener("keydown", function (e) {
+    var tag = e.target.tagName;
+    if (tag === "A" || tag === "BUTTON") { if (e.key !== "ArrowLeft" && e.key !== "ArrowRight") return; }
+    var step = e.shiftKey ? 5 : 1, d = state.delta;
+    if (e.key === "ArrowRight" || (e.key === "ArrowUp" && e.target === map)) d += step;
+    else if (e.key === "ArrowLeft" || (e.key === "ArrowDown" && e.target === map)) d -= step;
+    else if (e.key === "Home" && e.target === map) d = 0;
+    else if (e.key === "End" && e.target === map) d = MAXD;
+    else return;
+    e.preventDefault();
+    setDelta(d);
+  });
+  document.querySelectorAll(".chip").forEach(function (b) {
+    b.addEventListener("click", function () { setPair(b.dataset.pair); });
+  });
+
+  // ---------------- the detail: a race with a gate ----------------
+  var det = document.getElementById("det");
+  var detbox = document.getElementById("detbox");
+  var DEFS = '<defs>' +
+    '<pattern id="hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="6" height="6" style="fill:var(--holdBg)"/><line x1="0" y1="0" x2="0" y2="6" style="stroke:var(--hold)" stroke-width="2"/></pattern>' +
+    '<pattern id="hatchW" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="6" height="6" style="fill:var(--waitBg)"/><line x1="0" y1="0" x2="0" y2="6" style="stroke:var(--wait)" stroke-width="2"/></pattern>' +
+    '</defs>';
+
+  function holdLabel(k, hackOn) {
+    var h = hackOn ? Math.max(11, k) : k;
+    if (h === 0) return "no hold";
+    return h === k ? "held " + h + " ms by its combos" : "held " + h + " ms by the hack";
+  }
+
+  function renderDetail() {
+    var W = Math.max(300, Math.round(detbox.clientWidth));
+    var LX = 40, PR = W - 10, TM = 60, s = (PR - LX) / TM;
+    function x(t) { return LX + Math.min(Math.max(t, 0), TM) * s; }
+    var pair = PAIRS[state.pair], d = state.delta;
+    var tl = pair.trig.toLowerCase(), fl = pair.fol.toLowerCase();
+    var o = DEFS, y = 0;
+    // axis
+    for (var t = 0; t <= TM; t += 10) {
+      o += '<text class="tm" x="' + x(t) + '" y="13" text-anchor="middle">' + t + '</text>';
+    }
+    o += '<text class="tm" x="' + (LX - 14) + '" y="13" text-anchor="end">ms</text>';
+    y = 20;
+    var aria = [];
+    [true, false].forEach(function (on, bi) {
+      var r = outcome(pair, on, d);
+      var hA = on ? Math.max(11, pair.k1) : pair.k1;
+      var together = on && d <= 10;
+      var yb = y;
+      if (bi) o += '<line class="sep" x1="0" x2="' + W + '" y1="' + (yb - 4) + '" y2="' + (yb - 4) + '"/>';
+      // grid
+      for (var t2 = 0; t2 <= TM; t2 += 10) o += '<line class="gridl" x1="' + x(t2) + '" x2="' + x(t2) + '" y1="' + (yb + 24) + '" y2="' + (yb + 122) + '"/>';
+      // title + verdict pill
+      o += '<text class="th" x="2" y="' + (yb + 15) + '">hack ' + (on ? "ON" : "OFF") + '</text>';
+      var vtxt = r.cls === "ok" ? "✅ " + pair.ok : r.cls === "bad" ? "❌ " + pair.bad : r.cls === "wait" ? "⏸ " + tl + "… waits" : "⚖️ " + pair.ok + " or " + pair.bad;
+      var vw = r.cls === "tie" ? 104 : r.cls === "wait" ? 88 : 62;
+      o += '<rect class="vp ' + r.cls + '" x="' + (W - vw - 2) + '" y="' + (yb + 1) + '" width="' + vw + '" height="22" rx="11"/>';
+      o += '<text class="vpt ' + r.cls + '" x="' + (W - vw / 2 - 2) + '" y="' + (yb + 16.5) + '" text-anchor="middle">' + vtxt + '</text>';
+
+      var gx = x(r.on);
+      // gate
+      o += '<rect class="gatebg" x="' + gx + '" y="' + (yb + 26) + '" width="' + (PR - gx) + '" height="96"/>';
+      o += '<line class="gate" x1="' + gx + '" x2="' + gx + '" y1="' + (yb + 26) + '" y2="' + (yb + 122) + '"/>';
+      var gl = pair.trig + "’s layer opens at " + r.on;
+      var gAnchor = gx + 150 > PR ? "end" : "start";
+      o += '<text class="gatet halo" x="' + (gx + (gAnchor === "start" ? 5 : -5)) + '" y="' + (yb + 37) + '" text-anchor="' + gAnchor + '">' + gl + '</text>';
+
+      // lane 1: trigger
+      var l1 = yb + 56;
+      o += '<text class="key" x="4" y="' + (l1 + 5) + '">' + pair.trig + '</text><text class="role" x="21" y="' + (l1 + 5) + '">1st</text>';
+      o += '<rect class="ghost" x="' + x(0) + '" y="' + (l1 - 6) + '" width="' + (x(hA) - x(0)) + '" height="12" rx="2"/>';
+      o += '<rect class="hold" x="' + x(0) + '" y="' + (l1 - 6) + '" width="' + (x(r.a) - x(0)) + '" height="12" rx="2"/>';
+      o += '<line class="press" x1="' + x(0) + '" x2="' + x(0) + '" y1="' + (l1 - 11) + '" y2="' + (l1 + 11) + '"/>';
+      o += '<text class="tm halo" x="' + (x(0) + 2) + '" y="' + (l1 - 10) + '">' + holdLabel(pair.k1, on) + '</text>';
+      if (r.a < hA) {
+        var cx = x(r.a);
+        o += '<path class="cut" d="M' + (cx - 3) + ' ' + (l1 - 10) + ' l6 5 l-6 5 l6 5 l-3 5"/>';
+        var ctxt = together ? "released at 11 with " + pair.fol + ": the hack gives up" : "cut short by the 2nd press";
+        o += '<text class="cutt halo" x="' + (x(0) + 2) + '" y="' + (l1 + 24) + '">✂ ' + ctxt + '</text>';
+      }
+      // +10 to gate
+      o += '<line class="plus" x1="' + (x(r.a) + 9) + '" x2="' + gx + '" y1="' + l1 + '" y2="' + l1 + '"/>';
+      if (gx - x(r.a) > 34) o += '<text class="plust halo" x="' + ((x(r.a) + 9 + gx) / 2) + '" y="' + (l1 + 4) + '" text-anchor="middle">+10</text>';
+      o += '<circle class="bub" cx="' + x(r.a) + '" cy="' + l1 + '" r="9"/><text class="bubt" x="' + x(r.a) + '" y="' + (l1 + 4.5) + '" text-anchor="middle">' + tl + '</text>';
+
+      // lane 2: follower
+      var l2 = yb + 100;
+      o += '<text class="key" x="4" y="' + (l2 + 5) + '">' + pair.fol + '</text><text class="role" x="21" y="' + (l2 + 5) + '">2nd</text>';
+      var flab;
+      if (r.b === null) {
+        o += '<rect class="hold wait" x="' + x(d) + '" y="' + (l2 - 6) + '" width="' + (PR - x(d)) + '" height="12" rx="2"/>';
+        flab = "held until your next key";
+      } else {
+        if (r.b > d) o += '<rect class="hold" x="' + x(d) + '" y="' + (l2 - 6) + '" width="' + (x(r.b) - x(d)) + '" height="12" rx="2"/>';
+        flab = together ? "released with " + pair.trig + " at 11" : holdLabel(pair.k2, on);
+      }
+      o += '<line class="press" x1="' + x(d) + '" x2="' + x(d) + '" y1="' + (l2 - 11) + '" y2="' + (l2 + 11) + '"/>';
+      var fAnchor = x(d) + 160 > PR ? "end" : "start";
+      o += '<text class="tm halo" x="' + (fAnchor === "start" ? x(d) + 2 : x(d) - 2) + '" y="' + (l2 - 10) + '" text-anchor="' + fAnchor + '">' + flab + '</text>';
+      if (r.b !== null) {
+        var glyph = r.cls === "ok" ? pair.ok[1] : r.cls === "bad" ? fl : "?";
+        o += '<circle class="bub ' + r.cls + '" cx="' + x(r.b) + '" cy="' + l2 + '" r="9"/><text class="bubt ' + r.cls + '" x="' + x(r.b) + '" y="' + (l2 + 4.5) + '" text-anchor="middle">' + glyph + '</text>';
+      }
+      // margin
+      var my = yb + 128, mtxt;
+      if (r.b === null) {
+        mtxt = "⏸ exactly 10 ms: " + fl + " waits for your next key";
+      } else {
+        var m = r.b - r.on;
+        if (m !== 0) {
+          o += '<line class="marg ' + r.cls + '" x1="' + x(r.b) + '" x2="' + gx + '" y1="' + (l2 + 14) + '" y2="' + (l2 + 14) + '"/>';
+        }
+        mtxt = m > 0 ? fl + " leaves " + m + " ms after the gate opens"
+             : m < 0 ? fl + " leaves " + (-m) + " ms before the gate opens"
+             : fl + " leaves the same ms the gate opens";
+      }
+      o += '<text class="mt ' + r.cls + '" x="' + LX + '" y="' + (my + 8) + '">' + mtxt + '</text>';
+      aria.push("hack " + (on ? "ON" : "OFF") + ": " + mtxt + ", " + vtxt);
+      y = my + 22;
+    });
+    det.setAttribute("viewBox", "0 0 " + W + " " + y);
+    det.style.height = y + "px";
+    det.setAttribute("aria-label", pair.trig + "→" + pair.fol + " at " + d + " ms. " + aria.join(". "));
+    det.innerHTML = o;
+    document.getElementById("dval").textContent = d;
+  }
+
+  var raf = 0;
+  window.addEventListener("resize", function () {
+    cancelAnimationFrame(raf);
+    raf = requestAnimationFrame(function () { renderMap(); renderDetail(); });
+  });
+  var q = new URLSearchParams(location.search);
+  if (q.get("d") !== null) state.delta = Math.max(0, Math.min(MAXD, +q.get("d") || 0));
+  if (q.get("p") === "MT" || q.get("p") === "PC") state.pair = q.get("p");
+  document.querySelectorAll(".chip").forEach(function (b) { b.setAttribute("aria-pressed", String(b.dataset.pair === state.pair)); });
+  renderMap();
+  renderDetail();
+})();
+</script>
+</body>
+</html>
