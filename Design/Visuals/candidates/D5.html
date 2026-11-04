@@ -55,6 +55,7 @@ svg text{font-family:inherit}
 .chip[aria-pressed="true"]{background:var(--chipOn);color:var(--chipOnTx)}
 .dv{margin-left:auto;font-size:14px;color:var(--muted)}
 .dv b{color:var(--focus);font-size:18px}
+.rule{margin:0 2px 8px;font-size:14px}
 .foot{font-size:12.5px;color:var(--muted);margin:16px 2px 0;padding-left:10px;border-left:2px solid var(--grid)}
 .foot p{margin:3px 0}
 .foot code{font-size:12px}
@@ -69,6 +70,8 @@ svg text{font-family:inherit}
 .zfix{fill:var(--ok);fill-opacity:.09;stroke:var(--ok);stroke-width:1.2;stroke-dasharray:4 3}
 .zct{fill:var(--bad);font-size:11.5px;font-weight:700}
 .zft{fill:var(--ok);font-size:11.5px;font-weight:700}
+.sg{fill:var(--fg);font-size:10px}
+.typed{fill:var(--muted);font-size:10px}
 .c-ok{fill:var(--ok)} .c-bad{fill:var(--bad)} .c-wait{fill:var(--wait)} .c-tie{fill:var(--tie)}
 .st{fill:var(--stripTx);font-size:11.5px;font-weight:700}
 .tail{fill:var(--okBg);stroke:var(--ok);stroke-width:1}
@@ -113,14 +116,14 @@ svg text{font-family:inherit}
 <div class="wrap">
   <a class="pill" href="index.html">← All candidates</a>
   <h1>What the hack trades</h1>
-  <p class="claim">The hack trades rolls under 10 ms for a reliable <span style="white-space:nowrap">11–26 ms</span>.</p>
+  <p class="claim">Wanted: the second letter adapted (M→T types mn, P→C types pt). The hack makes that reliable from 11 ms on for 11 pairs, and gives up rolls under 10 ms on 34 others.</p>
 
   <div class="card">
     <div class="box" id="mapbox">
       <svg id="map" tabindex="0" role="slider" aria-label="Gap between the two key presses, ms" aria-valuemin="0" aria-valuemax="40"></svg>
     </div>
   </div>
-  <p class="concl">Without the hack, 11 pairs type the base letter until 26 ms; with it, they adapt from 11 ms, and 34 other pairs pay with their sub-10 ms rolls.</p>
+  <p class="concl">✅ mn / pt = adapted · ❌ mt / pc = the adaptation missed, base letter typed · ⏸ 2nd key waits for your next key · ⚖️ exact tie</p>
 
   <div class="bar" role="group" aria-label="Key pair for the detail">
     <h2>Why, at</h2>
@@ -128,6 +131,7 @@ svg text{font-family:inherit}
     <button class="chip" type="button" data-pair="PC" aria-pressed="true">P→C</button>
     <span class="dv num">Δ <b id="dval">15</b> ms</span>
   </div>
+  <p class="rule">Rule: the 2nd letter adapts only if it leaves after the gate opens. The gate = the 1st letter + 10 ms.</p>
   <div class="card">
     <div class="box" id="detbox">
       <svg id="det" aria-live="polite">
@@ -198,26 +202,39 @@ function outcome(pair, hackOn, delta) {
     function x(d) { return LBL + d * s; }
     M = { W: W, LBL: LBL, s: s, x: x, segs: [] };
     var o = "";
-    var ZT = 30, AXY = 46;
-    var y = 58, groupsY = [];
-    var body = "";
+    var AXY = 14;
+    var y = AXY + 12, groupsY = [];
+    var body = "", zones = "";
+    var ZONE = {
+      MT: { cls: "zcost", tcls: "zct", from: 0, to: 10, txt: "what it costs: 0–9 ms" },
+      PC: { cls: "zfix", tcls: "zft", from: 11, to: 27, txt: "what it fixes: 11–26 ms" }
+    };
+    var NOTE = { wait: "2nd key waits for your next key", tie: "exact tie" };
     GROUPS.forEach(function (g, gi) {
       var pair = PAIRS[g.key];
       y += 8;
       body += '<text class="th halo" x="2" y="' + (y + 4) + '">' + (narrow ? g.short : g.head) + '</text>';
       y += 15;
+      // zone label line, just above the hack ON row it marks
+      var z = ZONE[g.key];
+      y += 15;
+      body += '<text class="' + z.tcls + ' halo" x="' + (x(z.from) + (z.from ? 5 : 1)) + '" y="' + (y - 7) + '">' + z.txt + '</text>';
       var top = y;
-      [true, false].forEach(function (on) {
+      [true, false].forEach(function (on, ri) {
         var H = 24;
+        if (ri) y += narrow ? 0 : 15;     // room for a sliver glyph above the OFF row
         body += '<text class="tm" x="' + (LBL - 6) + '" y="' + (y + 16) + '" text-anchor="end">hack ' + (on ? "ON" : "OFF") + '</text>';
+        if (on) zones += '<rect class="' + z.cls + '" x="' + (x(z.from) - 2) + '" y="' + (y - 3) + '" width="' + ((z.to - z.from) * s + 4) + '" height="' + (H + 6) + '" rx="4"/>';
         var st = 0;
         for (var d = 1; d <= MAXD + 1; d++) {
           var c0 = outcome(pair, on, st).cls;
           if (d === MAXD + 1 || outcome(pair, on, d).cls !== c0) {
             var w = (d - st) * s;
-            body += '<rect class="c-' + c0 + '" x="' + x(st) + '" y="' + y + '" width="' + (w + 0.4) + '" height="' + H + '"><title>' + EMO[c0] + ' ' + st + (d - 1 > st ? '–' + (d - 1) : '') + ' ms</title></rect>';
+            var tip = EMO[c0] + ' ' + st + (d - 1 > st ? '–' + (d - 1) : '') + ' ms' + (NOTE[c0] ? ': ' + NOTE[c0] : '');
+            body += '<rect class="c-' + c0 + '" x="' + x(st) + '" y="' + y + '" width="' + (w + 0.4) + '" height="' + H + '"><title>' + tip + '</title></rect>';
             var lab = EMO[c0] + ' ' + (c0 === "ok" ? pair.ok : pair.bad);
             if ((c0 === "ok" || c0 === "bad") && w > 44) body += '<text class="st" x="' + (x(st) + w / 2) + '" y="' + (y + 16) + '" text-anchor="middle">' + lab + '</text>';
+            if (!narrow && NOTE[c0]) body += '<text class="sg" x="' + (x(st) + w / 2) + '" y="' + (y - (on ? 5 : 3)) + '" text-anchor="middle"><title>' + tip + '</title>' + EMO[c0] + '</text>';
             st = d;
           }
         }
@@ -234,20 +251,15 @@ function outcome(pair, hackOn, delta) {
       y += 6;
     });
     var bottom = y;
-    // zones across both groups
-    var zTop = 34, zBot = bottom - 4;
-    o += '<rect class="zcost" x="' + x(0) + '" y="' + zTop + '" width="' + (10 * s) + '" height="' + (zBot - zTop) + '" rx="3"/>';
-    o += '<rect class="zfix" x="' + x(11) + '" y="' + zTop + '" width="' + (16 * s) + '" height="' + (zBot - zTop) + '" rx="3"/>';
-    o += '<text class="zct" x="' + (x(10) - 2) + '" y="13" text-anchor="end">what it costs</text>';
-    o += '<text class="zct" x="' + (x(10) - 2) + '" y="27" text-anchor="end">0–9 ms</text>';
-    o += '<text class="zft" x="' + (x(11) + 2) + '" y="13">what it fixes</text>';
-    o += '<text class="zft" x="' + (x(11) + 2) + '" y="27">11–26 ms</text>';
+    var zBot = bottom - 4;
     // axis, even ticks
     for (var t = 0; t <= MAXD; t += 5) {
       o += '<line class="gridl" x1="' + (x(t) + s / 2) + '" x2="' + (x(t) + s / 2) + '" y1="' + (AXY + 4) + '" y2="' + zBot + '"/>';
       o += '<text class="tm" x="' + (x(t) + s / 2) + '" y="' + AXY + '" text-anchor="middle">' + t + '</text>';
     }
-    o += '<text class="tm" x="' + (LBL - 6) + '" y="' + AXY + '" text-anchor="end">gap, ms</text>';
+    if (narrow) o += '<text class="tm" x="' + (W - 1) + '" y="' + AXY + '" text-anchor="end">gap, ms</text>';
+    else o += '<text class="tm" x="' + (LBL - 6) + '" y="' + AXY + '" text-anchor="end">gap, ms</text>';
+    o += zones;
     o += body;
     // scrub: one segment per group, never over headings
     o += '<g id="scrub"></g>';
@@ -329,10 +341,10 @@ function outcome(pair, hackOn, delta) {
     '<pattern id="hatchW" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="6" height="6" style="fill:var(--waitBg)"/><line x1="0" y1="0" x2="0" y2="6" style="stroke:var(--wait)" stroke-width="2"/></pattern>' +
     '</defs>';
 
-  function holdLabel(k, hackOn) {
+  function holdLabel(letter, k, hackOn, first) {
     var h = hackOn ? Math.max(11, k) : k;
-    if (h === 0) return "no hold";
-    return h === k ? "held " + h + " ms by its combos" : "held " + h + " ms by the hack";
+    if (h === 0) return letter + " is typed at once: no hold";
+    return letter + " waits " + h + " ms behind " + (h === k ? "its combos" : "the hack") + (first ? ", then is typed" : "");
   }
 
   function renderDetail() {
@@ -355,8 +367,10 @@ function outcome(pair, hackOn, delta) {
       var together = on && d <= 10;
       var yb = y;
       if (bi) o += '<line class="sep" x1="0" x2="' + W + '" y1="' + (yb - 4) + '" y2="' + (yb - 4) + '"/>';
-      // grid
-      for (var t2 = 0; t2 <= TM; t2 += 10) o += '<line class="gridl" x1="' + x(t2) + '" x2="' + x(t2) + '" y1="' + (yb + 24) + '" y2="' + (yb + 122) + '"/>';
+      // rows in this lane (y offsets from yb): gate label 33, trigger label 47, trigger bar 59,
+      // under-trigger row 77, follower label 93, follower bar 105, margin 119/141
+      var gTop = yb + 22, gBot = yb + 116;
+      for (var t2 = 0; t2 <= TM; t2 += 10) o += '<line class="gridl" x1="' + x(t2) + '" x2="' + x(t2) + '" y1="' + gTop + '" y2="' + gBot + '"/>';
       // title + verdict pill
       o += '<text class="th" x="2" y="' + (yb + 15) + '">hack ' + (on ? "ON" : "OFF") + '</text>';
       var vtxt = r.cls === "ok" ? "✅ " + pair.ok : r.cls === "bad" ? "❌ " + pair.bad : r.cls === "wait" ? "⏸ " + tl + "… waits" : "⚖️ " + pair.ok + " or " + pair.bad;
@@ -365,33 +379,35 @@ function outcome(pair, hackOn, delta) {
       o += '<text class="vpt ' + r.cls + '" x="' + (W - vw / 2 - 2) + '" y="' + (yb + 16.5) + '" text-anchor="middle">' + vtxt + '</text>';
 
       var gx = x(r.on);
-      // gate
-      o += '<rect class="gatebg" x="' + gx + '" y="' + (yb + 26) + '" width="' + (PR - gx) + '" height="96"/>';
-      o += '<line class="gate" x1="' + gx + '" x2="' + gx + '" y1="' + (yb + 26) + '" y2="' + (yb + 122) + '"/>';
-      var gl = pair.trig + "’s layer opens at " + r.on;
-      var gAnchor = gx + 150 > PR ? "end" : "start";
-      o += '<text class="gatet halo" x="' + (gx + (gAnchor === "start" ? 5 : -5)) + '" y="' + (yb + 37) + '" text-anchor="' + gAnchor + '">' + gl + '</text>';
+      // gate: its label sits on the lane's top row, above every hold label
+      o += '<rect class="gatebg" x="' + gx + '" y="' + gTop + '" width="' + (PR - gx) + '" height="' + (gBot - gTop) + '"/>';
+      o += '<line class="gate" x1="' + gx + '" x2="' + gx + '" y1="' + gTop + '" y2="' + gBot + '"/>';
+      var gl = "gate opens at " + r.on + " (" + pair.trig + "’s layer)";
+      var gAnchor = gx + 160 > PR ? "end" : "start";
+      o += '<text class="gatet halo" x="' + (gx + (gAnchor === "start" ? 5 : -5)) + '" y="' + (yb + 33) + '" text-anchor="' + gAnchor + '">' + gl + '</text>';
 
       // lane 1: trigger
-      var l1 = yb + 56;
+      var l1 = yb + 59;
       o += '<text class="key" x="4" y="' + (l1 + 5) + '">' + pair.trig + '</text><text class="role" x="21" y="' + (l1 + 5) + '">1st</text>';
       o += '<rect class="ghost" x="' + x(0) + '" y="' + (l1 - 6) + '" width="' + (x(hA) - x(0)) + '" height="12" rx="2"/>';
       o += '<rect class="hold" x="' + x(0) + '" y="' + (l1 - 6) + '" width="' + (x(r.a) - x(0)) + '" height="12" rx="2"/>';
       o += '<line class="press" x1="' + x(0) + '" x2="' + x(0) + '" y1="' + (l1 - 11) + '" y2="' + (l1 + 11) + '"/>';
-      o += '<text class="tm halo" x="' + (x(0) + 2) + '" y="' + (l1 - 10) + '">' + holdLabel(pair.k1, on) + '</text>';
+      o += '<text class="tm halo" x="' + (x(0) + 2) + '" y="' + (l1 - 12) + '">' + holdLabel(tl, pair.k1, on, true) + '</text>';
+      o += '<text class="typed halo" x="' + x(r.a) + '" y="' + (l1 + 19) + '" text-anchor="middle">typed</text>';
       if (r.a < hA) {
         var cx = x(r.a);
         o += '<path class="cut" d="M' + (cx - 3) + ' ' + (l1 - 10) + ' l6 5 l-6 5 l6 5 l-3 5"/>';
-        var ctxt = together ? "released at 11 with " + pair.fol + ": the hack gives up" : "cut short by the 2nd press";
-        o += '<text class="cutt halo" x="' + (x(0) + 2) + '" y="' + (l1 + 24) + '">✂ ' + ctxt + '</text>';
+        var ctxt = together ? "both leave at 11" : "cut short by the 2nd press";
+        o += '<text class="cutt halo" x="' + (cx + 18) + '" y="' + (l1 + 19) + '">✂ ' + ctxt + '</text>';
       }
-      // +10 to gate
+      // +10 ms to gate
       o += '<line class="plus" x1="' + (x(r.a) + 9) + '" x2="' + gx + '" y1="' + l1 + '" y2="' + l1 + '"/>';
-      if (gx - x(r.a) > 34) o += '<text class="plust halo" x="' + ((x(r.a) + 9 + gx) / 2) + '" y="' + (l1 + 4) + '" text-anchor="middle">+10</text>';
+      var room = gx - x(r.a) - 9;
+      if (room > 38) o += '<text class="plust halo" x="' + ((x(r.a) + 9 + gx) / 2) + '" y="' + (l1 + 4) + '" text-anchor="middle"' + (room < 56 ? ' style="font-size:9.5px"' : '') + '>+10 ms</text>';
       o += '<circle class="bub" cx="' + x(r.a) + '" cy="' + l1 + '" r="9"/><text class="bubt" x="' + x(r.a) + '" y="' + (l1 + 4.5) + '" text-anchor="middle">' + tl + '</text>';
 
       // lane 2: follower
-      var l2 = yb + 100;
+      var l2 = yb + 105;
       o += '<text class="key" x="4" y="' + (l2 + 5) + '">' + pair.fol + '</text><text class="role" x="21" y="' + (l2 + 5) + '">2nd</text>';
       var flab;
       if (r.b === null) {
@@ -399,17 +415,17 @@ function outcome(pair, hackOn, delta) {
         flab = "held until your next key";
       } else {
         if (r.b > d) o += '<rect class="hold" x="' + x(d) + '" y="' + (l2 - 6) + '" width="' + (x(r.b) - x(d)) + '" height="12" rx="2"/>';
-        flab = together ? "released with " + pair.trig + " at 11" : holdLabel(pair.k2, on);
+        flab = together ? "released with " + pair.trig + " at 11" : holdLabel(fl, pair.k2, on, false);
       }
       o += '<line class="press" x1="' + x(d) + '" x2="' + x(d) + '" y1="' + (l2 - 11) + '" y2="' + (l2 + 11) + '"/>';
-      var fAnchor = x(d) + 160 > PR ? "end" : "start";
-      o += '<text class="tm halo" x="' + (fAnchor === "start" ? x(d) + 2 : x(d) - 2) + '" y="' + (l2 - 10) + '" text-anchor="' + fAnchor + '">' + flab + '</text>';
+      var fAnchor = x(d) + 170 > PR ? "end" : "start";
+      o += '<text class="tm halo" x="' + (fAnchor === "start" ? x(d) + 2 : x(d) - 2) + '" y="' + (l2 - 12) + '" text-anchor="' + fAnchor + '">' + flab + '</text>';
       if (r.b !== null) {
         var glyph = r.cls === "ok" ? pair.ok[1] : r.cls === "bad" ? fl : "?";
         o += '<circle class="bub ' + r.cls + '" cx="' + x(r.b) + '" cy="' + l2 + '" r="9"/><text class="bubt ' + r.cls + '" x="' + x(r.b) + '" y="' + (l2 + 4.5) + '" text-anchor="middle">' + glyph + '</text>';
       }
       // margin
-      var my = yb + 128, mtxt;
+      var my = yb + 133, mtxt;
       if (r.b === null) {
         mtxt = "⏸ exactly 10 ms: " + fl + " waits for your next key";
       } else {

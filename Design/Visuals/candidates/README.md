@@ -15,8 +15,8 @@
 | `D1.html` | Build-up in three steps: one key, two keys without the hack, with it | reviewed by Flo (gut, tired) |
 | `D2.html` | One race, two rows: hack on above, hack off below, drag Δ | reviewed by Flo (gut, tired) |
 | `D3.html` | Outcome map: every pair class 0–130 ms at once, cursor + mini-timeline | reviewed by Flo (gut, tired) |
-| `D4.html` | Problem first, three steps: P→C without the hack, with it, then the price on M→T; every element labelled in place | built from Flo's feedback, critic pass pending |
-| `D5.html` | What the hack trades: map of the two groups that differ + race-lane "why" under the scrubber | built from the critic's verdict, critic pass pending |
+| `D4.html` | Problem first, three steps: P→C without the hack, with it, then the price on M→T; every element labelled in place | from Flo's feedback; critic pass + fix round done |
+| `D5.html` | What the hack trades: map of the two groups that differ + race-lane "why" under the scrubber | from the critic's verdict; critic pass + fix round done |
 | `test_outcome*.js` | `node test_outcome.js` (D3), `_d4.js`, `_d5.js` check each page's pure `outcome()` against 11 FACTS cases and print the bands | all pass |
 
 - Open any page locally: `python3 -m http.server` in this folder, then `http://127.0.0.1:8000/index.html`
