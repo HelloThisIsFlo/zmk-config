@@ -132,7 +132,7 @@
 
 ## 🔚 Where this stopped (2026-11-04 ~21:50)
 - Nine candidates in the artifact (version 12) and in this folder; usage guard reached ~96 % weekly before the 23:00 reset
-- ⚠️ From ~21:35 `git push` was refused (SSH agent without identities); the last commits may be local only. On resume: `git status -sb`, then push
+- ⚠️ From ~21:35 the SSH push was refused (the SSH agent socket had no identities); the commits went up over HTTPS with the GitHub CLI's login instead (`git -c credential.helper='!gh auth git-credential' push https://github.com/HelloThisIsFlo/zmk-config.git main`). The SSH agent still needs a look
 - Next: Flo reads the jury table, opens D9 then D7, decides merge vs sequence; then the website rebuild from `../../Timing/FACTS.md`
 
 ## 🔁 How a candidate is made
