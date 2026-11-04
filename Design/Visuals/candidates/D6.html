@@ -62,12 +62,16 @@ input[type=range]::-moz-range-thumb{width:28px;height:28px;border-radius:50%;bac
 .scene{background:var(--card);border-radius:14px;padding:10px 10px 6px;box-shadow:0 1px 0 var(--grid);margin:0 0 10px}
 .scene header{display:flex;align-items:center;gap:10px;min-height:30px;margin:0 2px 2px}
 .scene h2{font-size:16px;margin:0}
-.verdict{margin-left:auto;font-weight:650;font-size:14px;border-radius:999px;padding:3px 12px;visibility:hidden}
-.verdict.show{visibility:visible}
-.verdict.ok{background:var(--okBg);color:var(--ok)} .verdict.bad{background:var(--badBg);color:var(--bad)}
-.verdict.wait{background:var(--waitBg);color:var(--wait)} .verdict.tie{background:var(--tieBg);color:var(--tie)}
-.verdict i{font-style:normal;display:inline-block;min-width:1.5em}
-.verdict b{font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.why{font-size:14px;margin:0 2px 6px;max-width:540px}
+.cmp{display:none}
+@media (max-width: 480px){
+  .cmp{display:flex;gap:8px;position:sticky;top:var(--ctlH,0px);z-index:1;background:var(--bg);padding:4px 0 8px;margin:-4px 0 6px}
+  .cmp div{flex:1 1 0;display:flex;align-items:center;gap:6px;background:var(--card);border-radius:10px;padding:5px 8px;box-shadow:0 1px 0 var(--grid);font-size:13px;font-weight:650;white-space:nowrap}
+  .cmp b{font:700 17px ui-monospace,SFMono-Regular,Menlo,monospace;background:var(--bg);border:1.2px solid var(--line);border-radius:6px;padding:1px 6px;min-width:3.4em;text-align:left}
+  .cmp b .ok{color:var(--ok)} .cmp b .bad{color:var(--bad)} .cmp b .tie{color:var(--tie)}
+  .cmp i{font-style:normal;margin-left:auto;min-width:1.3em}
+}
 svg{display:block;width:100%;height:auto;overflow:visible}
 .scene svg,.strip svg{max-width:540px;margin:0 auto}
 .strip{background:var(--card);border-radius:14px;padding:10px 10px 8px;box-shadow:0 1px 0 var(--grid);margin-top:4px}
@@ -89,6 +93,11 @@ svg{display:block;width:100%;height:auto;overflow:visible}
 .fl.ok{fill:var(--ok)} .fl.bad{fill:var(--bad)} .fl.tie{fill:var(--tie)}
 .caret{stroke:var(--fg);stroke-width:2;animation:blink 1s steps(1) infinite}
 @keyframes blink{50%{opacity:0}}
+.chipR.ok{fill:var(--okBg)} .chipR.bad{fill:var(--badBg)} .chipR.wait{fill:var(--waitBg)} .chipR.tie{fill:var(--tieBg)}
+.chipR.hlOn{stroke:var(--focus);stroke-width:1.6}
+.vt{font-size:14px;font-weight:650} .vt.ok{fill:var(--ok)} .vt.bad{fill:var(--bad)} .vt.wait{fill:var(--wait)} .vt.tie{fill:var(--tie)}
+.mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-weight:700}
+.hl{fill:var(--chip);stroke:var(--focus);stroke-width:1.2}
 .kc{fill:var(--capBg);stroke:var(--fg);stroke-width:1.4}
 .kc.down{fill:var(--chip);stroke-width:2}
 .kc.held{stroke:var(--hold);stroke-width:2.4}
@@ -112,12 +121,12 @@ svg{display:block;width:100%;height:auto;overflow:visible}
 .dot.ok{fill:var(--ok);stroke:var(--ok)} .dot.bad{fill:var(--bad);stroke:var(--bad)} .dot.tie{fill:var(--tie);stroke:var(--tie)}
 .dl{font-size:13px;font-weight:650;fill:var(--fg)}
 .dl.ok{fill:var(--ok)} .dl.bad{fill:var(--bad)} .dl.tie{fill:var(--tie)}
-.baseL{fill:var(--base)} .layerL{fill:var(--layerBg);stroke:var(--layer);stroke-width:1.2}
+.gBase{stroke:var(--line);stroke-width:2;stroke-linecap:round} .gOpen{stroke:var(--layer);stroke-width:4;stroke-linecap:round}
 .gateLine{stroke:var(--layer);stroke-width:1.3;stroke-dasharray:4 3}
 .halo{paint-order:stroke;stroke:var(--card);stroke-width:4px;stroke-linejoin:round}
 .ph{stroke:var(--focus);stroke-width:2}
 .phk{fill:var(--focus)}
-.scrub{fill:transparent;cursor:ew-resize;touch-action:pan-y}
+.scrub,.phHit{fill:transparent;cursor:ew-resize;touch-action:pan-y}
 .phg{outline:none}
 .phg:focus-visible .phk{stroke:var(--fg);stroke-width:2}
 .c-ok{fill:var(--ok)} .c-bad{fill:var(--bad)} .c-wait{fill:var(--wait)} .c-tie{fill:var(--tie)}
@@ -144,13 +153,16 @@ svg{display:block;width:100%;height:auto;overflow:visible}
     <span class="clock" id="clock" aria-live="off">now: 0 ms</span>
   </div>
 
+  <div class="cmp" id="cmp" aria-hidden="true"></div>
   <section class="scene" id="scene-on">
-    <header><h2>hack ON</h2><span class="verdict" id="v-on" aria-live="polite"></span></header>
-    <svg id="svg-on" viewBox="0 0 400 236" role="img" aria-label="Hack on: replay of the two key presses"></svg>
+    <header><h2>hack ON</h2><span class="sr" id="v-on" aria-live="polite"></span></header>
+    <p class="why" id="why-on"></p>
+    <svg id="svg-on" viewBox="0 0 400 310" role="img" aria-label="Hack on: replay of the two key presses"></svg>
   </section>
   <section class="scene" id="scene-off">
-    <header><h2>hack OFF</h2><span class="verdict" id="v-off" aria-live="polite"></span></header>
-    <svg id="svg-off" viewBox="0 0 400 236" role="img" aria-label="Hack off: replay of the two key presses"></svg>
+    <header><h2>hack OFF</h2><span class="sr" id="v-off" aria-live="polite"></span></header>
+    <p class="why" id="why-off"></p>
+    <svg id="svg-off" viewBox="0 0 400 310" role="img" aria-label="Hack off: replay of the two key presses"></svg>
   </section>
 
   <div class="strip">
@@ -220,11 +232,21 @@ function schedule(pair, hackOn, delta){
 var X0 = 44, SC = (392 - X0) / TMAX, FLY = 2.5, CW = 7.3;
 function x(t){ return X0 + t*SC; }
 function clamp(v, a, b){ return Math.max(a, Math.min(b, v)); }
-function txt(cls, X, Y, s, anchor){ return '<text class="'+cls+'" x="'+X+'" y="'+Y+'"'+(anchor?' text-anchor="'+anchor+'"':'')+'>'+s+'</text>'; }
+function txt(cls, X, Y, s, anchor, bg){ return '<text class="'+cls+'" x="'+X+'" y="'+Y+'"'+(anchor?' text-anchor="'+anchor+'"':'')+(bg?' data-bg="'+bg+'"':'')+'>'+s+'</text>'; }
 function fmt(n){ return Math.round(n*10)/10; }
-var KA = 152, KB = 212, KY = 44, LAMP = 266;
-var RA = 152, RB = 176, RG = 200, AXY = 214;
+/* top: typed box + verdict chip; then keycaps + gate lamp; status lines; timeline */
+var KA = 28, KB = 88, KY = 104, LAMP = 142;
+var ST = 158, LH = 18, WRAP = 50;
+var RA = 220, RB = 242, RG = 272, AXY = 288;
 var EMO = {ok:'✅', bad:'❌', wait:'⏸', tie:'⚖️'};
+
+/* the one sentence per pair and hack state, first line of each panel */
+var SAY = {
+  PC: {on:  'C has no combo of its own. The hack is a 36-key combo that never fires: it makes C wait 11 ms, like every key.',
+       off: 'C has no combo of its own, so c is typed the instant you press it.'},
+  MT: {on:  'T already waits 16 ms for its own combos; the hack changes nothing for T. But a roll under 10 ms makes the hack’s combo time out at 11 ms with both keys held, so both letters are typed together.',
+       off: 'T already waits 16 ms for its own combos, so t always lands after the gate.'}
+};
 
 function defs(){
   return '<defs>'+
@@ -265,7 +287,7 @@ function aLabel(sc, now){
   var A = sc.A, a = sc.a;
   if (now < sc.aTyped) return {cls:'', s:A+': waiting '+Math.ceil(sc.aHoldEnd - now - 1e-9)+' ms'};
   var when = now < sc.aTyped + 4 ? 'now' : 'at '+sc.aTyped;
-  if (sc.both) return {cls:'', s:A+' + '+sc.B+' both leave at 11: '+a+' typed '+when};
+  if (sc.both) return {cls:'', s:'the hack’s combo times out at 11 ms: '+a+' and '+sc.B.toLowerCase()+' typed together'};
   if (sc.aCut) return {cls:'', s:A+': cut short: '+a+' typed '+when};
   return {cls:'', s:A+': held '+sc.aHoldEnd+' ms, '+a+' typed '+when};
 }
@@ -283,8 +305,14 @@ function bLabel(sc, now){
   if (sc.verdict === 'ok') return {cls:'ok', s:B+': typed'+how+' after the gate → '+sc.bChar};
   return {cls:'bad', s:B+': typed'+how+' before the gate → '+sc.bChar};
 }
+function wrap(s, n){
+  if (s.length <= n) return [s];
+  var cut = s.lastIndexOf(' ', n);
+  return [s.slice(0, cut), s.slice(cut+1)];
+}
 
-function scene(sc, now){
+/* hl: which lines the clock is holding on ({A,B,G,V}); fin: scene over, verdict shown */
+function scene(sc, now, hl, fin){
   var s = defs();
   /* text field */
   s += txt('t-mut', 6, 14, 'typed');
@@ -294,7 +322,7 @@ function scene(sc, now){
   var shown = 0, flying = '';
   ev.forEach(function(e, i){
     if (now < e.t) return;
-    var sx = 16 + i*15, sy = 52, k = clamp((now - e.t)/FLY, 0, 1);
+    var sx = 16 + i*15, sy = 52, k = hl.held ? 1 : clamp((now - e.t)/FLY, 0, 1);
     s += '<text class="fl '+e.cls+'" x="'+sx+'" y="'+sy+'" style="opacity:'+fmt(k)+'">'+e.ch+'</text>';
     if (k < 1){
       var fx = e.from - 6 + (sx - e.from + 6)*k, fy = KY + 8 + (sy - KY - 8)*k - Math.sin(k*Math.PI)*22;
@@ -304,6 +332,8 @@ function scene(sc, now){
   });
   var cx = 16 + shown*15 + 1;
   s += '<line class="caret" x1="'+cx+'" y1="31" x2="'+cx+'" y2="57"/>';
+  /* verdict chip, beside the typed box, at the scene end */
+  if (fin) s += '<text class="vt '+sc.verdict+'" x="122" y="48" data-bg="chipR '+sc.verdict+(hl.V ? ' hlOn' : '')+'">'+verdictSVG(sc)+'</text>';
 
   /* keycaps */
   s += keycap(KA, sc.A, sc.aPress, sc.aHoldEnd, sc.aTyped, now, false);
@@ -314,15 +344,16 @@ function scene(sc, now){
   if (on) s += '<circle class="glow" cx="'+LAMP+'" cy="'+KY+'" r="19"/>';
   s += '<circle class="lamp'+(on?' on':'')+'" cx="'+LAMP+'" cy="'+KY+'" r="12"/>';
   var gl1, gl2;
-  if (on){ gl1 = 'gate open:'; gl2 = sc.A+'’s layer'; }
-  else if (now >= sc.aTyped){ gl1 = 'gate opens'; gl2 = 'in '+Math.ceil(sc.gate - now - 1e-9)+' ms'; }
-  else { gl1 = 'gate closed'; gl2 = 'opens at '+sc.a+' + 10'; }
-  s += txt('t-gate'+(on?' on':''), LAMP+18, KY-3, gl1) + txt('t-gate'+(on?' on':''), LAMP+18, KY+14, gl2);
+  if (on){ gl1 = 'gate open ·'; gl2 = 'adapted letters possible'; }
+  else if (now >= sc.aTyped){ gl1 = 'gate opens in '+Math.ceil(sc.gate - now - 1e-9)+' ms'; gl2 = ''; }
+  else { gl1 = 'gate closed ·'; gl2 = 'opens 10 ms after '+sc.a; }
+  var gc = 't-gate'+(on?' on':''), gb = hl.G ? 'hl' : '';
+  s += txt(gc, LAMP+22, gl2 ? KY-3 : KY+5, gl1, '', gb) + (gl2 ? txt(gc, LAMP+22, KY+14, gl2, '', gb) : '');
 
   /* status lines */
-  var la = aLabel(sc, now), lb = bLabel(sc, now);
-  s += txt('t-lab '+la.cls, 4, 98, la.s);
-  s += txt('t-lab '+lb.cls, 4, 118, lb.s);
+  var la = aLabel(sc, now), lb = bLabel(sc, now), y = ST;
+  wrap(la.s, WRAP).forEach(function(l){ s += txt('t-lab '+la.cls, 4, y, l, '', hl.A ? 'hl' : ''); y += LH; });
+  wrap(lb.s, WRAP).forEach(function(l){ s += txt('t-lab '+lb.cls, 4, y, l, '', hl.B ? 'hl' : ''); y += LH; });
 
   /* timeline */
   for (var t=0; t<=TMAX; t+=10){
@@ -332,28 +363,30 @@ function scene(sc, now){
   s += '<line class="axis" x1="'+x(0)+'" y1="'+AXY+'" x2="'+x(TMAX)+'" y2="'+AXY+'"/>';
   s += txt('t-ax', 2, AXY+14, 'ms');
   s += txt('t-row', 2, RA+5, sc.A) + txt('t-row', 2, RB+5, sc.B) + txt('t-row', 2, RG+5, 'gate');
-  /* gate row */
-  var gEnd = Math.min(now, sc.gate);
-  if (gEnd > 0) s += '<rect class="baseL" x="'+x(0)+'" y="'+(RG-6)+'" width="'+(x(gEnd)-x(0))+'" height="12" rx="2"/>';
+  /* gate row: a moment, not a bar: thin line, blue from the gate moment to the axis end */
+  s += '<line class="gBase" x1="'+x(0)+'" y1="'+RG+'" x2="'+x(TMAX)+'" y2="'+RG+'"/>';
   if (now >= sc.gate){
-    s += '<rect class="layerL" x="'+x(sc.gate)+'" y="'+(RG-6)+'" width="'+Math.max(1, x(Math.min(now,TMAX))-x(sc.gate))+'" height="12" rx="2"/>';
-    s += '<line class="gateLine" x1="'+x(sc.gate)+'" y1="'+(RA-12)+'" x2="'+x(sc.gate)+'" y2="'+(RG-6)+'"/>';
-    s += sideTxt('dl halo', sc.gate, RG+5, 'open '+sc.gate, 9);
+    s += '<line class="gOpen" x1="'+x(sc.gate)+'" y1="'+RG+'" x2="'+x(TMAX)+'" y2="'+RG+'"/>';
+    s += '<line class="gateLine" x1="'+x(sc.gate)+'" y1="'+(RA-12)+'" x2="'+x(sc.gate)+'" y2="'+(RG-3)+'"/>';
+    s += '<circle class="lamp on" cx="'+x(sc.gate)+'" cy="'+RG+'" r="4"/>';
+    s += sideTxt('dl halo', sc.gate, RG+5, 'open '+sc.gate, 9, true);
   }
   s += lane(RA, sc.aPress, sc.aHoldEnd, sc.aTyped, now, '', sc.a, false);
   s += lane(RB, sc.bPress, sc.bHoldEnd, sc.bTyped, now, sc.verdict, sc.bChar, sc.wait);
-  /* playhead */
+  /* playhead, with a wide grab zone around it */
   var px = x(clamp(now, 0, TMAX));
   s += '<rect class="scrub" data-scrub="1" x="'+(X0-12)+'" y="'+(RA-16)+'" width="'+(x(TMAX)-X0+20)+'" height="'+(AXY-RA+34)+'"/>';
   s += '<g class="phg" tabindex="0" role="slider" aria-label="Now, board time in ms" aria-valuemin="0" aria-valuemax="'+TMAX+'" aria-valuenow="'+fmt(now)+'" data-scrub="1">'+
+       '<rect class="phHit" x="'+(px-22)+'" y="'+(RA-16)+'" width="44" height="'+(AXY-RA+34)+'" data-scrub="1"/>'+
        '<line class="ph" x1="'+px+'" y1="'+(RA-14)+'" x2="'+px+'" y2="'+AXY+'" data-scrub="1"/>'+
        '<circle class="phk" cx="'+px+'" cy="'+AXY+'" r="6" data-scrub="1"/></g>';
   return s;
 }
-function sideTxt(cls, t, y, s, gap){
-  var w = s.length*CW;
-  if (x(t) + gap + w <= 398) return txt(cls, x(t)+gap, y, s);
-  return txt(cls, x(t)-gap, y, s, 'end');
+/* label beside a moment; prefers the right; 'above' lifts it off a thin line */
+function sideTxt(cls, t, y, s, gap, above){
+  var w = s.length*CW, yy = above ? y - 13 : y;
+  if (x(t) + gap + w <= 398) return txt(cls, x(t)+gap, yy, s);
+  return txt(cls, x(t)-gap, yy, s, 'end');
 }
 function lane(y, press, holdEnd, typed, now, vcls, ch, stall){
   var s = '';
@@ -373,23 +406,46 @@ function lane(y, press, holdEnd, typed, now, vcls, ch, stall){
   return s;
 }
 
-function verdictHTML(sc){
+function verdictSVG(sc){
+  var p = PAIRS[sc.pair], m = function(w, first){ return '<tspan class="mono"'+(first ? ' dx="4"' : '')+'>'+w+'</tspan>'; };
+  if (sc.verdict === 'ok') return '✅\u00a0'+m(p.adapted, true)+' adapted';
+  if (sc.verdict === 'bad') return '❌\u00a0'+m(p.base, true)+' base letter';
+  if (sc.verdict === 'wait') return '⏸\u00a0waits for your next key';
+  return '⚖️\u00a0tie: '+m(p.adapted)+' or '+m(p.base);
+}
+function verdictText(sc){
   var p = PAIRS[sc.pair];
-  if (sc.verdict === 'ok') return '<i>✅</i><b>'+p.adapted+'</b> adapted';
-  if (sc.verdict === 'bad') return '<i>❌</i><b>'+p.base+'</b> base letter';
-  if (sc.verdict === 'wait') return '<i>⏸</i>waits for your next key';
-  return '<i>⚖️</i>tie: <b>'+p.adapted+'</b> or <b>'+p.base+'</b>';
+  return sc.verdict === 'ok' ? p.adapted+' adapted' : sc.verdict === 'bad' ? p.base+' base letter'
+       : sc.verdict === 'wait' ? 'waits for your next key' : 'tie: '+p.adapted+' or '+p.base;
+}
+/* backgrounds sized to their text (highlight while the clock holds, verdict chip) */
+var NS = 'http://www.w3.org/2000/svg';
+function backs(svg){
+  svg.querySelectorAll('[data-bg]').forEach(function(el){
+    var cls = el.getAttribute('data-bg'); if (!cls) return;
+    var b = el.getBBox(), chip = cls.indexOf('chipR') === 0, px = chip ? 10 : 4;
+    var r = document.createElementNS(NS, 'rect');
+    r.setAttribute('class', cls);
+    r.setAttribute('x', b.x - px); r.setAttribute('width', b.width + 2*px);
+    if (chip){ r.setAttribute('y', 28); r.setAttribute('height', 30); r.setAttribute('rx', 15); }
+    else { r.setAttribute('y', b.y - 1); r.setAttribute('height', b.height + 2); r.setAttribute('rx', 4); }
+    el.parentNode.insertBefore(r, el);
+  });
 }
 
 /* ===== band strip (D4's), handle mirrored to Δ ===== */
 var SX0 = 64, SSC = 5.4;
 function sxf(d){ return SX0 + d*SSC; }
-function runs(pair, hackOn, max){
+function runList(pair, hackOn, max){
   var out = [];
   for (var d=0; d<=max; d++){
     var v = outcome(pair, hackOn, d).verdict, last = out[out.length-1];
     if (last && last.v === v) last.end = d; else out.push({v:v, start:d, end:d});
   }
+  return out;
+}
+function runs(pair, hackOn, max){
+  var out = runList(pair, hackOn, max);
   if (out.length === 1) return EMO[out[0].v]+' every gap';
   return out.map(function(r){
     var span = r.end === max && r.start !== r.end ? r.start+'+' : (r.start === r.end ? ''+r.start : r.start+'–'+r.end);
@@ -400,21 +456,24 @@ var NARROW = window.matchMedia ? window.matchMedia('(max-width: 479px)') : null;
 function narrow(){ return !!(NARROW && NARROW.matches); }
 function renderStrip(){
   var pair = state.pair, d = state.delta, s = '';
+  var strip = document.getElementById('strip');
+  /* bands, not bars; a one-gap band never drawn under 6.5 screen px */
+  var scale = (strip.getBoundingClientRect().width || 400) / 400, minW = 6.5 / scale;
   var rows = [{label:'hack on', hackOn:true}, {label:'hack off', hackOn:false}];
   rows.forEach(function(row, i){
     var y = 4 + i*20;
     s += txt('t-lab', 4, y+11, row.label);
-    for (var k=0; k<=DMAX; k++){
-      var v = outcome(pair, row.hackOn, k).verdict;
-      s += '<rect class="c-'+v+'" x="'+(sxf(k)-SSC/2+0.4)+'" y="'+y+'" width="'+(SSC-0.8)+'" height="14" rx="1"/>';
-    }
+    runList(pair, row.hackOn, DMAX).sort(function(a, b){ return (b.end-b.start) - (a.end-a.start); }).forEach(function(r){
+      var x1 = sxf(r.start) - SSC/2 + 0.4, w = (r.end - r.start + 1)*SSC - 0.8;
+      if (w < minW){ x1 -= (minW - w)/2; w = minW; }
+      s += '<rect class="c-'+r.v+'" x="'+fmt(x1)+'" y="'+y+'" width="'+fmt(w)+'" height="14" rx="1" style="stroke:var(--card);stroke-width:1"/>';
+    });
     s += '<rect class="cur" x="'+(sxf(d)-SSC/2-1.5)+'" y="'+(y-2.5)+'" width="'+(SSC+3)+'" height="19" rx="2"/>';
   });
   var yb = 4 + rows.length*20;
   (narrow() ? [0,20,40] : [0,10,20,30,40]).forEach(function(t){ s += txt('t-ax', sxf(t), yb+11, t, 'middle'); });
   s += txt('t-ax', sxf(DMAX)+12, yb+11, 'gap, ms');
   s += '<rect class="stripHit" data-strip="1" x="'+(sxf(0)-SSC)+'" y="-6" width="'+(sxf(DMAX)-sxf(0)+2*SSC)+'" height="'+(yb+16)+'"/>';
-  var strip = document.getElementById('strip');
   strip.setAttribute('viewBox', '0 0 400 '+(yb+18));
   strip.innerHTML = s;
   var lab = PAIRS[pair].label;
@@ -427,49 +486,89 @@ function renderStrip(){
 /* ===== state + one clock ===== */
 var RM = window.matchMedia ? window.matchMedia('(prefers-reduced-motion: reduce)') : null;
 var reduced = !!(RM && RM.matches);
-var SPEED = 20; /* board ms per real second */
-var state = {pair:'PC', delta:15, now:0, playing:false, t0:0, n0:0};
+var SPEED = 6;   /* board ms per real second */
+var HOLD = 800;  /* real ms the clock stops on each event */
+var state = {pair:'PC', delta:15, now:0, hold:null, playing:false, t0:0, n0:0};
 var scenes = {};
 function build(){
   scenes.on = schedule(state.pair, true, state.delta);
   scenes.off = schedule(state.pair, false, state.delta);
 }
-function endT(){ return Math.min(TMAX, Math.max(scenes.on.end, scenes.off.end) + 1); }
+function endT(){ return Math.min(TMAX, Math.max(scenes.on.end, scenes.off.end)); }
+/* the events of one scene: 1st pressed, 2nd pressed, 1st typed, gate opens, 2nd typed, scene end */
+function events(sc){
+  var e = [{t:sc.aPress, el:'A'}, {t:sc.bPress, el:'B'}, {t:sc.aTyped, el:'A'}, {t:sc.gate, el:'G'}];
+  if (sc.bTyped != null) e.push({t:sc.bTyped, el:'B'});
+  e.push({t:endT(), el:'V'});
+  return e.filter(function(v){ return v.t <= endT(); });
+}
+function stops(){
+  var ts = events(scenes.on).concat(events(scenes.off)).map(function(v){ return v.t; });
+  return ts.filter(function(t, i){ return ts.indexOf(t) === i; }).sort(function(a, b){ return a - b; });
+}
+/* wall time since Play → board time: run at SPEED, stop HOLD ms on each event */
+function clockAt(n0, ms){
+  var t = n0, rem = ms, st = stops().filter(function(e){ return e >= n0 - 1e-9; });
+  for (var i=0; i<st.length; i++){
+    var dt = (st[i] - t)/SPEED*1000;
+    if (rem < dt) return {now:t + rem/1000*SPEED, hold:null};
+    rem -= dt; t = st[i];
+    if (rem < HOLD) return {now:t, hold:t};
+    rem -= HOLD;
+  }
+  return {now:endT(), hold:null, done:true};
+}
+function hlFor(sc, h){
+  var o = {};
+  if (h == null) return o;
+  o.held = true;
+  events(sc).forEach(function(v){ if (Math.abs(v.t - h) < 1e-9) o[v.el] = true; });
+  return o;
+}
 
+function typedHTML(sc, now){
+  var s = now >= sc.aTyped ? sc.a : '';
+  if (sc.bTyped != null && now >= sc.bTyped) s += ' <span class="'+sc.verdict+'">'+sc.bChar+'</span>';
+  else if (sc.wait && now >= sc.aTyped) s += ' …';
+  return s || '&nbsp;';
+}
 function render(){
-  var now = state.now;
+  var now = state.now, fin = now >= endT() - 1e-6, cmp = '';
   ['on','off'].forEach(function(k){
     var sc = scenes[k], svg = document.getElementById('svg-'+k);
     var hadFocus = document.activeElement && svg.contains(document.activeElement);
-    svg.innerHTML = scene(sc, now);
+    svg.innerHTML = scene(sc, now, hlFor(sc, state.hold), fin);
+    backs(svg);
     if (hadFocus){ var g = svg.querySelector('.phg'); if (g) g.focus({preventScroll:true}); }
-    var v = document.getElementById('v-'+k);
-    var done = now >= sc.end;
-    v.className = 'verdict '+sc.verdict+(done ? ' show' : '');
-    v.innerHTML = verdictHTML(sc);
+    var v = document.getElementById('v-'+k), say = fin ? verdictText(sc) : '';
+    if (v.textContent !== say) v.textContent = say;
+    document.getElementById('why-'+k).textContent = SAY[sc.pair][k];
+    cmp += '<div>hack '+k.toUpperCase()+' <b>'+typedHTML(sc, now)+'</b><i>'+(fin ? EMO[sc.verdict] : '')+'</i></div>';
   });
+  document.getElementById('cmp').innerHTML = cmp;
   document.getElementById('clock').textContent = 'now: '+(Math.floor(now*10)/10).toFixed(1)+' ms';
   var pb = document.getElementById('play');
-  pb.textContent = state.playing ? '❚❚ Pause' : (now >= endT() - 1e-6 ? '↺ Replay' : '▶ Play');
+  pb.textContent = state.playing ? '❚❚ Pause' : (fin ? '↺ Replay' : '▶ Play');
 }
 function frame(ts){
   if (!state.playing) return;
   if (!state.t0) state.t0 = ts;
-  state.now = state.n0 + (ts - state.t0)/1000*SPEED;
-  if (state.now >= endT()){ state.now = endT(); state.playing = false; }
+  var c = clockAt(state.n0, ts - state.t0);
+  state.now = c.now; state.hold = c.hold;
+  if (c.done){ state.playing = false; state.hold = null; }
   render();
   if (state.playing) requestAnimationFrame(frame);
 }
 function play(from){
   state.n0 = from == null ? state.now : from; state.now = state.n0;
-  state.t0 = 0; state.playing = true;
+  state.t0 = 0; state.hold = null; state.playing = true;
   render();
   requestAnimationFrame(frame);
 }
-function pause(){ state.playing = false; render(); }
+function pause(){ state.playing = false; state.hold = null; render(); }
 function changed(){
   build(); renderStrip();
-  if (reduced){ state.playing = false; state.now = endT(); render(); }
+  if (reduced){ state.playing = false; state.hold = null; state.now = endT(); render(); }
   else play(0);
 }
 
@@ -502,7 +601,7 @@ function nowFromEvent(svg, e){
   var loc = pt.matrixTransform(svg.getScreenCTM().inverse());
   return clamp((loc.x - X0)/SC, 0, TMAX);
 }
-function setNow(n){ state.playing = false; state.now = clamp(n, 0, TMAX); render(); }
+function setNow(n){ state.playing = false; state.hold = null; state.now = clamp(n, 0, TMAX); render(); }
 ['svg-on','svg-off'].forEach(function(id){
   var svg = document.getElementById(id), drag = null;
   svg.addEventListener('pointerdown', function(e){
@@ -543,10 +642,19 @@ function setNow(n){ state.playing = false; state.now = clamp(n, 0, TMAX); render
   svg.addEventListener('pointermove', function(e){ if (drag === e.pointerId) setDelta(dFrom(e)); });
   ['pointerup','pointercancel'].forEach(function(ev){ svg.addEventListener(ev, function(e){ if (drag === e.pointerId) drag = null; }); });
 })();
-if (NARROW){ var onNarrow = function(){ renderStrip(); }; if (NARROW.addEventListener) NARROW.addEventListener('change', onNarrow); else if (NARROW.addListener) NARROW.addListener(onNarrow); }
+/* the phone comparison strip sticks just under the sticky controls */
+function layout(){
+  var c = document.querySelector('.controls');
+  document.documentElement.style.setProperty('--ctlH', c.offsetHeight+'px');
+  renderStrip();
+}
+window.addEventListener('resize', layout);
+if (window.ResizeObserver) new ResizeObserver(function(){ document.documentElement.style.setProperty('--ctlH', document.querySelector('.controls').offsetHeight+'px'); }).observe(document.querySelector('.controls'));
 
 /* test hook: park the playhead from outside (screenshots, tests) */
-window.D6 = {setNow:setNow, setDelta:setDelta, setPair:function(p){ var b = document.querySelector('#pairs button[data-pair="'+p+'"]'); if (b) b.click(); }, end:endT};
+window.D6 = {setNow:setNow, setDelta:setDelta, setPair:function(p){ var b = document.querySelector('#pairs button[data-pair="'+p+'"]'); if (b) b.click(); }, end:endT, stops:stops,
+  holdAt:function(t){ state.playing = false; state.now = t; state.hold = t; render(); }};
+layout();
 changed();
 </script>
 </body>

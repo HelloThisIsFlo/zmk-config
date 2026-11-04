@@ -17,7 +17,7 @@
 | `D3.html` | Outcome map: every pair class 0–130 ms at once, cursor + mini-timeline | reviewed by Flo (gut, tired) |
 | `D4.html` | Problem first, three steps: P→C without the hack, with it, then the price on M→T; every element labelled in place | from Flo's feedback; critic pass + fix round done |
 | `D5.html` | What the hack trades: map of the two groups that differ + race-lane "why" under the scrubber | from the critic's verdict; critic pass + fix round done |
-| `D6.html` | Watch the letters land: slow-motion replay (1 s = 20 ms), hack on/off scenes in sync, letters fly into a text field at their typing moment | from both critics' "the hold wait never landed"; critic pass pending |
+| `D6.html` | Watch the letters land: slow-motion replay (1 s = 20 ms), hack on/off scenes in sync, letters fly into a text field at their typing moment | from both critics' "the hold wait never landed"; critic pass + fix round done (1 s = 6 ms, 0.8 s hold on each event, per-pair sentence per panel) |
 | `D7.html` | Two presses, one gate: D2's playground reworked (opens where the hack wins, labels in place, rule stated, 0–40 strip below) | from Flo's "D2 is the keeper playground" + D2's critic; critic pass + fix round done (labels now sit right of the gate line when they don't fit left of it) |
 | `test_outcome*.js` | `node test_outcome.js` (D3), `_d4.js`, `_d5.js` check each page's pure `outcome()` against 11 FACTS cases and print the bands | all pass |
 
