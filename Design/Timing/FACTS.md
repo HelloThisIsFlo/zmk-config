@@ -171,7 +171,7 @@ sequenceDiagram
 
 1. **The hack = a 36-key combo that never fires**
     - Layers 0–24 · 11 ms timeout · `&none` binding
-    - 📜 `adaptive_keys/combos.dtsi:64-65` at HEAD `83aa2ab` (the uncommitted 2026-10 header note shifts it to 70-71), `zephyr.dts`
+    - 📜 `adaptive_keys/combos.dtsi:49-50` (the `#define`), `zephyr.dts`
 2. **A press is held for its longest live combo**
     - 11 ms (8 hack-only keys) · 16 ms (most) · 18 ms (A E I H)
     - A key-up ends the hold early: a tap shorter than its hold is released at its key-up
@@ -846,7 +846,7 @@ sequenceDiagram
 |---|---|---|
 | ~~"Linger verdict depends only on how long you hold"~~ | a linger key right after a letter is forced to tap | 🧪 T-16-a, S-A_RT2-d10 |
 | ~~"The 100 ms start when the combo releases the key"~~ | from the press | 🧪 T-15-c |
-| ~~"th/sh/gh, qu linger combos; magicArrow"~~ | not compiled (`corne.keymap:86`, combos commented) | 📜 src |
+| ~~"th/sh/gh, qu linger combos; magicArrow"~~ | not compiled (`config/layout/layout.dtsi:86`, combos commented) | 📜 src |
 | ~~"A key pressed during the decision is typed immediately"~~ | it waits for the decision | 🧪 T-15-d/e/f |
 
 ### ⚠️ Honest caveats
@@ -865,7 +865,7 @@ sequenceDiagram
 
 > [!important] Tiers in three rules
 >
-> - Two live tiers: **16 ms** (22 combos) and **18 ms** (5 combos) · the 30 ms tier has no consumers — 📜 `zephyr.dts`, `corne.keymap:86-87`
+> - Two live tiers: **16 ms** (22 combos) and **18 ms** (5 combos) · the 30 ms tier has no consumers — 📜 `zephyr.dts`, `config/layout/layout.dtsi:86-87`
 > - A combo fires iff its keys' timestamps are at most **T − 1** apart — 🧪 T-22
 > - The hack is a hold, not a tier — 📜 src · 🧪 T-09-a
 
@@ -877,7 +877,7 @@ sequenceDiagram
     - 📜 `zephyr.dts`, D §6.2
 2. **The 30 ms two-hand tier has zero compiled combos**
     - The pronoun and h-digraph files are commented out
-    - 📜 `corne.keymap:86-87`
+    - 📜 `config/layout/layout.dtsi:86-87`
 3. **A combo fires iff its keys' timestamps are at most T − 1 apart**
     - 16 ms tier: gaps 0–15 in, 16 out
     - 🧪 T-22-a gap 15 `[00:00:00.030,000]`; T-22-b gap 16 `[00:00:00.032,000] … remaining_candidates=0 timestamp=32`; T-22-e/f at 30
@@ -1242,7 +1242,7 @@ flowchart LR
 | MECH | `Design/MECHANICS.md` |
 | MLOG | `Design/MECHANICS_LOG.md` |
 | COOK | `Design/COOKBOOK.md` |
-| CMT | `config/layout/features/hands_down/adaptive_keys/combos.dtsi:1-63` |
+| CMT | the old comment block of `config/layout/features/hands_down/adaptive_keys/combos.dtsi` (lines 1-63 before its 2026-11-04 rewrite; `git show 8db768a:config/layout/features/hands_down/adaptive_keys/combos.dtsi`) |
 | ART | earlier artifact |
 | E-xx | ids from `E-claims.md` |
 
@@ -1266,7 +1266,7 @@ flowchart LR
 | Slider "margin = v − 10 … adds N ms latency" (E-43, PAGE:2003-2020) | margin applies from 11 ms; lone-key latency only on hack-only keys; in rolls under 11 ms the first key pays 11 − gap on every position | T-04, T-11, T-02-a vs T-02-b-nohack |
 | "99.9 % reliable" (E-46, CMT:51) | not measured; drop or label as Flo's experience | — |
 | 4th tier bar "11 ms — all 36 keys (buffer only)" (E-52) | keep only as "hold", not as a tier | T-09 |
-| `MAX_KEYS_PER_COMBO=36` at `corne.conf:58`, compile error without it (E-51) | `corne.conf:44`; upstream v0.3+ drops the combo silently | src, F §2 |
+| `MAX_KEYS_PER_COMBO=36` at `corne.conf:58`, compile error without it (E-51) | `corne.conf:45`; upstream v0.3+ drops the combo silently | src, F §2 |
 
 > [!note] Resolved: the docs fix carries the roll exception
 >

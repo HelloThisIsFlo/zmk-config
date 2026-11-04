@@ -1,70 +1,49 @@
 /*
- * NOTE 2026-10: the explanation below is SUPERSEDED. The real mechanism is ZMK's quick-tap
- *   bypass (combo 'require-prior-idle-ms' defaults to -1): two keys <= 9 ms apart leave the
- *   engine together at the first key's 11 ms rung and the second lands on the BASE layer.
- *   Adaptation holds from 11 ms gaps up (6 pairs that share a real combo: from 16/18 ms).
- *   See zmk-config/Design/Timing/MODEL.md and Design/Timing/PAIRS.md. Rewrite pending review.
+ * COMBO_AK_CONSISTENCY_HACK
+ * =========================
  *
- * # This macro is a hack to ensure consistency with the AK layers.
+ * What it is: a 36-key combo (ALL_KEYS) on l_alpha_aks (layers 0-24), binding &none,
+ * timeout hold_key_event_delay (11 ms). Nobody presses 36 keys in 11 ms, so it never fires.
+ * Needs CONFIG_ZMK_COMBO_MAX_KEYS_PER_COMBO=36 (keyboards/chocofi/corne.conf).
  *
+ * What it really does: every key on layers 0-24 now has a combo candidate, so every press
+ * is captured and held by the combo engine. A key is held by its LONGEST live combo:
+ * 11 ms on the 8 hack-only keys (X, C, F, RT0, the 4 thumbs), 16 ms on most, 18 ms on A E I H.
+ * A key-up, or a press that shares none of its combos, releases it earlier.
  *
- * Explanation of the problem:
- * ---------------------------
+ * Why it matters for AKs: &ak types its letter at delivery D and turns the AK layer on at
+ * D+10 (ak_tap_time, one queue tick). A follower delivered before D+10 lands on the base layer.
  *
- * When a key is part of a combo, its keypress event is not sent until either: 
- * a) The combo is complete, all keys are pressed
- * b) The combo timesout, and the keys are released AT ONCE
- * c) A key not included in the combo is pressed, 
- * 
- * In a), the combo is fired and everything works as expected
- * 
- * In b) and c), the key presses that were buffered are all released AT ONCE! This is a problem because,
- * if we look at how &ak works, we can see the following steps:
- * 1) First the associated &kp binding is pressed
- * 2) Then, the associated adative layer is activated
- * 
- * The key press in 1) can not be instant ('tap-time = 0' causes missed key presses (on M1 macbook air)),
- * so it takes  'ak_tap_time' ms to complete. That means, we won't get to 2) until 'ak_tap_time' ms after.
- * That means the associated adaptive layer will only be activated 'ak_tap_time' ms after the key is pressed.
+ * Rolls, with the hack (t = trigger press, gap = follower press - t):
+ * - gap <= 9 ms: the follower shares the hack with the trigger, so both stay held and leave
+ *   together at the trigger's 11 ms mark. The trigger's letter is stamped "now"; the follower
+ *   keeps its old timestamp, so ZMK's quick-tap check (require-prior-idle-ms = -1) waves it
+ *   straight to the keymap, on BASE. M->T at 5 ms types "mt", C->P at 6 ms types "cp".
+ * - gap >= 11 ms (pairs sharing no real combo): the trigger is already out, or the follower's
+ *   press flushes it; the follower then waits out its own hold (>= 11 ms from its own press),
+ *   so it arrives after the AK layer is on. Adapts up to the window edge (~105-115 ms).
+ * - gap = exactly 10 ms: predicted stall on hardware (follower waits for the next key event,
+ *   then usually adapts late). Not measured; native tests cannot show it.
  *
- * THIS, combined with the fact that all the keys are released AT ONCE in scenario b) and c), means that
- * the second key press will always be triggered BEFORE the adaptive layer is activated. This is what's causing AK inconsistencies! 
- * 
- * 
- * Solution:
- * ---------
- * 
- * So, to prevent the issue, I introduced this COMBO_AK_CONSISTENCY_HACK, which is a combo including ALL the keys. That means, whenever a key is pressed
- * it will ALWAYS be delayed by the timeout of COMBO_AK_CONSISTENCY_HACK (since there's no real use-case where we'd press all the keys at once)
- * 
- * Now, if we set this timeout to 'ak_tap_time' + some buffer, let's call this timeout 'hold_key_event_delay', we GUARANTEE that even if a 
- * normal combo times out, it won't release all the keys AT ONCE. They will be delayed by 'hold_key_event_delay', which we configured to be
- * just enough to allow for the activation of the adaptive layer.
- * 
- * Here is what happens, step by step:
- * 1) The first &ak key is pressed
- * 2) It is captured by the "normal" combo (as well as the COMBO_AK_CONSISTENCY_HACK combo)
- * 3) Another key, not included in the "normal" combo, is pressed
- * 4) The new key is captured by COMBO_AK_CONSISTENCY_HACK
- * 5) The "normal" combo releases the original &ak key
- * 6) The key is pressed, and then 'ak_tap_time' later, the adaptive layer is activated
- * 7) After 'hold_key_event_delay', the second key is released. By now, the adaptive layer of the first key is activated, and everything works as expected
- *    This is because: ak_tap_time < hold_key_event_delay << ak_window
- * 
- * Conlusion:
- * ---------
- * 
- * This COMBO_AK_CONSISTENCY_HACK solves the last bit of inconsistency with AK layers and they are now 99.9% reliable! 
- * (with a minor caveat, see below))
- * 
- * 
- * 
- * Minor Caveat:
- * The _only_ scenario where we would get a misfire is if we press 2 keys both within 'hold_key_event_delay' of each other.
- * In that case, they would be captured by the same COMBO_AK_CONSISTENCY_HACK combo, and still released at the same time.
- * But this is a false problem, because 'hold_key_event_delay' is lower than anyone would reasonably set their "normal" combo timeout
- * anyway. So that means, when we press 2 keys so quickly one after the other, we're not actually wanting to use the adaptive key behavior,
- * but instead we'd like to trigger a "normal" combo. And, in that sceneario, the "normal" combo would be triggered as expected. So there's really no issue.
+ * The trade, over the 54 compiled AK pairs (23 AK layers); board bands, predicted from native tests:
+ * - Rescues 11 pairs whose follower has no combo of its own (X, C, F, R thumb), for 11-25 ms gaps.
+ *   Without the hack those pairs miss up to 25 ms.
+ * - Costs 34 ordinary pairs every roll <= 9 ms. Without the hack they never miss (below the edge):
+ *   C->P at 6 ms adapts to "tp".
+ * - 6 pairs that share a real combo with their trigger (L->G, H->E, M<->W, D<->V) keep the same
+ *   outcome with or without it: fragile up to 14-16 ms (M<->W / D<->V: only timing moves, below).
+ * - A real 2-key combo typed under 11 ms, when it is the only real combo left, fires at its
+ *   16 ms deadline instead of on completion.
+ *
+ * Upstream ZMK v0.3+ silently drops combos with >= 20 keys, so there this behaves like "hack off".
+ *
+ * The invariant that matters:
+ *   ak_tap_time (10) < max(hold_key_event_delay, follower's combo timeout)
+ * The margin at the start of the band is max(11, follower's combo) - 10: 1 ms on hack-only
+ * followers, 6 ms on 16 ms followers.
+ *
+ * Full explanation: Design/ak-combo-hack.md. Evidence (source reading + 181 native tests):
+ * Design/Timing/ (README.md, FACTS.md, MODEL.md, PAIRS.md).
  *
 */ 
 #define COMBO_AK_CONSISTENCY_HACK \

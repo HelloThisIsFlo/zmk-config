@@ -1181,7 +1181,7 @@ After the interrupt decision the interrupting key is re-raised at the hold-tap l
 
 ## 📏 Combo tiers
 
-- **Live tiers: 16 ms (22 combos) and 18 ms (5)** — 📜 `zephyr.dts`, `cfg/corne.keymap:86-87`
+- **Live tiers: 16 ms (22 combos) and 18 ms (5)** — 📜 `zephyr.dts`, `config/layout/layout.dtsi:86-87`
   - The 30 ms tier has zero consumers
   - `pronouns/combos.dtsi` and `h_digraphs/combos.dtsi` are commented out
 - **Acceptance** ts2 − ts1 ≤ T − 1, identical on board (timestamp comparison, not timer) — 🧪 T-22
