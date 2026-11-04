@@ -110,6 +110,31 @@
 - Verdicts: measuring the gap made it real; reads as "a reasonable trade, slightly in its favour"; would send to a friend after fix 1
 - Fix round applied: verdict sentence under the gap, strip moved under the pad with the mechanism behind a "why?" toggle, intro rewritten, phone copy (see git log)
 
+## 🧑‍⚖️ Jury verdict on D4–D9 (Fable, cold, 2026-11-04; a starting point, not a decision)
+
+| # | Page | 60 s: fix + cost + intent | mechanism | phone | little reading | alone | One line |
+|---|---|---|---|---|---|---|---|
+| 1 | **D9** Type it yourself | 5 | 2 | 3 | 4 | 4 | goal first, your own gap, verdict sentence names the zone; mechanism behind a toggle |
+| 2 | **D7** Two presses, one gate | 3 | 5 | 4 | 3 | 4 | best drawing of the why; the cost is invisible until you click M→T |
+| 3 | **D5** What the hack trades | 4 | 4 | 3 | 4 | 4 | one sentence + map say the trade; why-lanes collide at 400 px; never says "intentional" |
+| 4 | **D4** Problem first | 3 | 5 | 3 | 4 | 4 | everything labelled in place, ghost bar for the cut hold; three clicks to the price, first screen a red ❌ |
+| 5 | **D8** What comes out | 4 | 2 | 4 | 4 | 3 | the two words side by side are the claim in one glance; replay slow to reach the letter that matters |
+| 6 | **D6** Watch the letters land | 2 | 5 | 3 | 3 | 2 | the only page where "a letter waits behind its hold" lands (motion); 5 s replay, cost never on screen |
+
+- 🎯 **Recommendation: one page, D9 spine + D7 why**
+  - Spine = D9 as is (goal line, pad, gap number, verdict sentence, pills, 4-row strip with "you", on/off word tiles, slider for phones)
+  - Replace D9's "why?" toggle text with D7's two lanes driven by the same gap; default the lanes to the pair the reader's gap actually changes (≤ 9 → M→T, 11–25 → P→C); lift D4's dashed ghost of the uncut hold
+  - Promote the "intended trade" callout to right under the verdict sentence when the gap is ≤ 9 ms
+  - Fallback if the merge is too much: D9 first, D7 linked as "why?"
+- ⚠️ **What every page still fails at**: the 0–9 ms cost band is the same red as a failure, and "intentional" lives in a footer → draw 0–9 as "combo territory" (hatched/grey, ⌨️ label) with the one-line reason beside it
+- 🗑️ Delete without regret: D6 (motion win, but nobody watches it twice), D8 (contained in D9), D5 (map = the strip, lanes = a smaller D7), D4 (keep only the ghost-bar idea)
+- 👀 To check if D8 survives: in the jury's headless run its boxes showed "ke" / "colu" long after Play and the full words only after a resize
+
+## 🔚 Where this stopped (2026-11-04 ~21:50)
+- Nine candidates in the artifact (version 12) and in this folder; usage guard reached ~96 % weekly before the 23:00 reset
+- ⚠️ From ~21:35 `git push` was refused (SSH agent without identities); the last commits may be local only. On resume: `git status -sb`, then push
+- Next: Flo reads the jury table, opens D9 then D7, decides merge vs sequence; then the website rebuild from `../../Timing/FACTS.md`
+
 ## 🔁 How a candidate is made
 
 1. Builder writes `Dn.html` reusing a page's unit-tested `outcome(pair, hackOn, delta)`
