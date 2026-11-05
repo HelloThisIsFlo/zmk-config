@@ -243,7 +243,7 @@ details.mech[open] summary{margin-bottom:6px}
 
   <details class="mech card" id="mech">
     <summary>why? two presses, one gate</summary>
-    <p class="rule"><b>Rule:</b> a pressed key is held by the combo engine before its letter is typed (16 ms for most keys, 11 ms under the hack, 0 for keys like C); a 2nd press ends the 1st hold early. The gate opens 10 ms after the 1st letter is <em>typed</em>, and the 2nd letter adapts only if it is typed after that.</p>
+    <p class="rule"><b>Rule:</b> a pressed key is held by the combo engine before its letter is typed (16 ms for most keys, 18 for A E I H, 0 for keys like C; the hack raises every hold to at least 11 ms); a 2nd press ends the 1st hold early. The gate opens 10 ms after the 1st letter is <em>typed</em>, and the 2nd letter adapts only if it is typed after that.</p>
     <div class="pbar" role="group" aria-label="Key pair">
       <button class="pchip" type="button" data-pair="PC" aria-pressed="true">P→C</button>
       <button class="pchip" type="button" data-pair="MT" aria-pressed="false">M→T</button>
