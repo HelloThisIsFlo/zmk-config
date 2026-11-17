@@ -6,7 +6,7 @@ The physical side of the keyboards: cases, mods, CAD. Firmware and bindings live
 
 | Doc | What's in it |
 |---|---|
-| [Chocofi/TRACKPAD.md](Chocofi/TRACKPAD.md) | 🖲️ TPS43 trackpad mod: status, hard constraints, measurements, model facts, versions |
+| [Chocofi/TRACKPAD.md](Chocofi/TRACKPAD.md) | 🖲️ TPS43 trackpad mod: status, prior art (Temper, a proven build: plan is to build it first), hard constraints, measurements, model facts, versions |
 | [Chocofi/TRACKPAD_LOG.md](Chocofi/TRACKPAD_LOG.md) | 📜 Trackpad decisions, newest first |
 | [FUSION.md](FUSION.md) | 🧩 Fusion working conventions + API/MCP gotchas |
 | [scripts/](scripts/) | 🐍 `stlcheck.py` (STL size/volume), `pad_placement.py` (pad position study) |
