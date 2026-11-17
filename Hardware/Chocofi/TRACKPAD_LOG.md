@@ -4,6 +4,16 @@
 
 ---
 
+## 2026-11-17 -- Found a working build (Temper); build it first
+
+**Context**: finestedm/temper-zmkstudio has a TPS43 working on a Chocofi-family board, with the pad at 0° over the right controller (≈ our v3).
+
+**Decision**: build that proven version first (his wiring via the nice!view socket + his firmware stack), then go back to iterating our case. Details: TRACKPAD.md → 📚 Prior art.
+
+**Open**: firmware route (rebase our fork vs. start from his config), decided when the build starts. Not checked yet: whether his case fits our PCB + socketed nano.
+
+---
+
 ## 2026-10-15 -- v3 spike: index-aligned pad over the socketed nano
 
 **Context**: v2 doesn't fit the socketed nano and felt far. Spike v3 as its own timeline group, then stop for print feedback.

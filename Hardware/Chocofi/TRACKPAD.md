@@ -2,12 +2,65 @@
 
 An Azoteq **TPS43-201A** trackpad (43.3 × 40.3 mm, IQS572, I²C) built into the **right** half (central) of the Chocofi, in the **02 Massive** case.
 
-## 📍 Status (15 Oct 2026)
+## 📍 Status (17 Nov 2026)
 
+- 🧭 **Plan: build the Temper-proven version first** (see 📚 Prior art below), then go back to iterating the case
+  - Its wiring + firmware already work on a Chocofi-family board, so the first build only proves the pad. Case changes come after
+  - Firmware route (rebase the fork vs. start from his config) is decided when the build starts
 - 🧪 **v3 spike built** (active in Fusion): pad aligned with the index column, over the socketed nano (see 🆕 v3 at a glance)
   - ⏳ **Waiting on Flo's test prints**: `TEST v3 Reach Mockup` (reach) and `TEST Pin Gauge` (pin height). No polishing before that feedback
 - 🗄️ **v2** (Toucan2 style) is shelved: it doesn't fit the socketed nano (see 📌)
 - ⏳ Not started: buying parts, firmware (blocked on the ZMK fork rebase)
+
+## 📚 Prior art: Temper (finestedm), a working TPS43 build
+
+![Temper with the TPS43 right half](prior-art/temper/temper-tps43-top.jpeg)
+
+- 🔗 **Repo**: [github.com/finestedm/temper-zmkstudio](https://github.com/finestedm/temper-zmkstudio) (found 17 Nov 2026, last push 13 Nov 2026)
+  - Temper = a Chocofi continuation (pashutk/chocofi → raeedcho/temper → leikoilja/zmk-config-temper → this fork)
+  - The firmware is built and verified with the TPS43. Photos: [top](prior-art/temper/temper-tps43-top.jpeg) · [angled](prior-art/temper/temper-tps43-angled.jpeg)
+- 🖲️ **Shape**: square pad at **0°**, over the right controller, above the inner thumb key, on a neck that comes off the case
+  - ≈ our v3 spike: the idea is already proven
+  - The right nice!view is gone (the pad covers the controller)
+
+### 🔌 Wiring: reuse the 5-pin nice!view socket
+
+| Display socket | TPS43 | Pro Micro pin |
+| --- | --- | --- |
+| GND | GND | |
+| VCC | VDDHI (3V3) | |
+| SCL / SCK | SCL | 3 |
+| MOSI | SDA | 2 |
+| CS | RDY | 1 |
+
+- **NRST not connected**
+- 5 wires soldered to the pad, other ends on loose male header pins pushed into the female display socket
+- Stack: male headers **H = 7.5 mm**, female sockets **H = 3.5 mm**. Other heights hit the holder
+- ⚖️ vs. our plan (D8/D9 on `&i2c1`, RDY/NRST on extra nano pads): no extra-pad soldering, and the display bus pins become I²C. Check these pins against our PCB analysis before adopting
+
+### 🧠 Firmware
+
+- **Left = central**, right = peripheral. The right half forwards pointer events over split (`zmk,input-split` at `0x74` + an input listener on the left)
+  - ⚖️ Opposite of our "right = central" choice, and it shows split pointing works fine
+- ZMK pinned to upstream `6e2ef41e` (works with split pointing, nice!view screens and ZMK Studio)
+- Driver: [finestedm/zmk-driver-azoteq-iqs5xx](https://github.com/finestedm/zmk-driver-azoteq-iqs5xx) @ `bbeaf0a`, built on AYM1607's driver, adding:
+  - three-finger swipes (mapped to desktop switch / task view on the left)
+  - staged low-power wake, recovery after low power
+  - edge motion while dragging
+- Shield `temper_tps43` on `&pro_micro_i2c` at 400 kHz. X and Y inverted, `switch-xy`
+- Two right-half firmware files (`…-niceview-status` vs. `…-tps43-touchpad`): one config serves both hardware variants
+
+### 🧱 Case
+
+- `case/temper-tps43/`: STEP top + bottom shells per half + `TPS43-Right-Holder.step` (Onshape export, Jun 2026)
+- 10 × M2 heat-set inserts (3.2 mm OD, 2 mm long) + 10 × M2×6
+- ❓ Not checked: whether the shells fit our Chocofi PCB and the socketed nano
+
+### 🎯 What to take from it
+
+- Build this version first. It's proven, so it isolates "does the pad work" from our case iterations
+- Probably adopt: display-socket wiring, split pointing with left central, his driver fork
+- Keep iterating our own case once the pad works
 
 ## 📌 Hard constraints
 
